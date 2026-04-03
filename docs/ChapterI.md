@@ -54,9 +54,13 @@ Convertirnos en la plataforma líder en gestión de cuidado de adultos mayores e
 
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/team-member-profiles/" alt="" width="120" />
+      <img src="../assets/img/chapter-I/team-member-profiles/janover-saldana.jpg" alt="" width="120" />
     </td>
     <td valign="top">
+        <strong>Janover Gonzalo Saldaña Vela - (U20201B510)</strong> - Ingeniería de Software<br><br>
+        Soy estudiante de Ingeniería de Software con experiencia en desarrollo web y móvil. Manejo tecnologías como Vue.js, Flutter, ASP.NET y Spring Boot, aplicando buenas prácticas como Clean Architecture y Domain-Driven Design.
+        <br><br>
+        Me interesa la inteligencia artificial y el desarrollo de soluciones tecnológicas que optimicen procesos. Me considero una persona proactiva, responsable y orientada a resultados, con capacidad para trabajar en equipo y seguir aprendiendo constantemente.    
     </td>
   </tr>
 
