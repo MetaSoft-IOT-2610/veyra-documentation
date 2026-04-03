@@ -131,14 +131,17 @@ El Lean UX es un enfoque que permite validar las soluciones propuestas para prob
 
 ##### 1.2.2.1. Lean UX Problem Statements
 
-El envejecimiento poblacional en el Perú viene incrementándose de manera sostenida, superando los cuatro millones de adultos mayores, lo que representa una creciente demanda de servicios de cuidado especializado (Instituto Nacional de Estadística e Informática [INEI], 2023). Asimismo, se proyecta que este grupo poblacional continúe en aumento en las próximas décadas, generando una mayor presión sobre los sistemas de salud y cuidado geriátrico (Organización para la Cooperación y el Desarrollo Económicos [OCDE], 2025).
+El envejecimiento de la población en el Perú viene generando transformaciones significativas en la estructura demográfica y en la demanda de servicios de salud. De acuerdo con el Instituto Nacional de Estadística e Informática (INEI, 2026), la proporción de población adulta mayor ha aumentado de 5,7% en 1950 a 14,6% en 2026, evidenciando un proceso sostenido de envejecimiento poblacional .
 
-En este contexto, una alta proporción de adultos mayores presenta enfermedades crónicas que requieren seguimiento constante, lo que incrementa la necesidad de monitoreo continuo y oportuno (INEI, 2023). Sin embargo, los modelos actuales de atención en el cuidado de adultos mayores, tanto en entornos domiciliarios como institucionales, dependen en gran medida de mecanismos tradicionales como llamadas telefónicas o visitas periódicas, las cuales pueden presentar retrasos significativos en la obtención de información relevante sobre el estado de salud del paciente (Pontificia Universidad Católica del Perú [PUCP], 2022).
+Asimismo, este grupo etario presenta una alta prevalencia de condiciones de salud que requieren seguimiento constante. Según el mismo informe, el 79,3% de la población adulta mayor presenta al menos un problema de salud crónico, lo que incrementa la necesidad de monitoreo continuo y oportuno .
 
-Adicionalmente, la limitada disponibilidad de información en tiempo real dificulta la toma de decisiones oportunas por parte del personal de salud. Esta situación también afecta a los familiares, quienes no cuentan con acceso continuo a información confiable sobre el estado de sus seres queridos, generando incertidumbre y desconfianza en el servicio.
+Sin embargo, el sistema de salud peruano aún presenta importantes limitaciones estructurales. A pesar de los avances logrados en las últimas décadas, el sistema continúa siendo fragmentado y segmentado, lo que genera desigualdades en el acceso a la atención y dificulta la integración de la información clínica entre distintos niveles de atención (OCDE, 2025) .
+
+Esta fragmentación, sumada a la limitada interoperabilidad de los sistemas de información en salud, restringe la disponibilidad de datos en tiempo real y dificulta la toma de decisiones oportunas por parte del personal de salud. Asimismo, los familiares de los pacientes carecen de mecanismos eficientes para acceder de manera continua a información confiable sobre el estado de sus seres queridos, lo que genera incertidumbre y desconfianza.
+
+En este contexto, se evidencia una brecha en la gestión, acceso y disponibilidad de la información relacionada con el estado de salud de los adultos mayores, especialmente en entornos de cuidado continuo como casas de reposo.
 
 ¿Cómo podríamos mejorar la disponibilidad, acceso y confiabilidad de la información relacionada con el estado de salud de los adultos mayores en entornos de cuidado, de manera que permita una mejor toma de decisiones y una comunicación más efectiva entre el personal y los familiares?
-
 #### 1.2.2.2. Lean UX Assumptions
 
 **Business Assumptions:**
