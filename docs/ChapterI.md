@@ -6,7 +6,6 @@ En el contexto actual, las organizaciones enfrentan desafíos relacionados con l
 
 Frente a este escenario, el presente proyecto propone el desarrollo de un ecosistema digital que permita la automatización de la recolección de datos mediante dispositivos IoT, su procesamiento inteligente y su visualización a través de aplicaciones web y móviles, contribuyendo a la mejora de la eficiencia operativa y la toma de decisiones basada en datos.
 
-
 ### 1.1. Startup Profile
 
 La presente sección describe el contexto general de la startup responsable del desarrollo de la solución propuesta. Se presenta una visión general de la organización, su enfoque tecnológico y propuesta de valor, así como la caracterización de los integrantes del equipo, destacando sus perfiles y roles dentro del proyecto.
@@ -132,21 +131,13 @@ El Lean UX es un enfoque que permite validar las soluciones propuestas para prob
 
 ##### 1.2.2.1. Lean UX Problem Statements
 
-El estado actual del **cuidado de adultos mayores en casas de reposo** se ha enfocado principalmente en **procesos manuales y registros físicos,** lo que provoca **ineficiencias operativas, falta de transparencia, pérdida de información y riesgos en la gestión clínica y médica.** Esta situación afecta a **administradores, personal de salud y familiares de los residentes,** quienes dependen de métodos desactualizados para acceder y compartir información crítica sobre la salud de los adultos mayores.
+El envejecimiento poblacional en el Perú viene incrementándose de manera sostenida, superando los cuatro millones de adultos mayores, lo que representa una creciente demanda de servicios de cuidado especializado (Instituto Nacional de Estadística e Informática [INEI], 2023). Asimismo, se proyecta que este grupo poblacional continúe en aumento en las próximas décadas, generando una mayor presión sobre los sistemas de salud y cuidado geriátrico (Organización para la Cooperación y el Desarrollo Económicos [OCDE], 2025).
 
-Lo que los productos o servicios existentes no logran resolver es la centralización **digital de la gestión médica y comunicacional dentro de las casas de reposo.** Actualmente, **no existe una solución integrada que unifique el monitoreo de salud, la comunicación con familiares y el control administrativo** en una sola plataforma segura y confiable.
+En este contexto, una alta proporción de adultos mayores presenta enfermedades crónicas que requieren seguimiento constante, lo que incrementa la necesidad de monitoreo continuo y oportuno (INEI, 2023). Sin embargo, los modelos actuales de atención en el cuidado de adultos mayores, tanto en entornos domiciliarios como institucionales, dependen en gran medida de mecanismos tradicionales como llamadas telefónicas o visitas periódicas, las cuales pueden presentar retrasos significativos en la obtención de información relevante sobre el estado de salud del paciente (Pontificia Universidad Católica del Perú [PUCP], 2022).
 
-Nuestro producto, **Veyra**, abordará esta brecha mediante una **plataforma web segura, intuitiva y escalable que:**
+Adicionalmente, la limitada disponibilidad de información en tiempo real dificulta la toma de decisiones oportunas por parte del personal de salud. Esta situación también afecta a los familiares, quienes no cuentan con acceso continuo a información confiable sobre el estado de sus seres queridos, generando incertidumbre y desconfianza en el servicio.
 
-- Centraliza la información médica y administrativa de los residentes.
-
-- Facilita la comunicación directa y transparente entre las casas de reposo y los familiares.
-
-- Ofrece reportes visuales, alertas automáticas y seguimiento en tiempo real.
-
-Nuestro enfoque inicial estará dirigido a **los administradores de casas de reposo privadas ubicadas en zonas urbanas,** con entre **20 y 80 residentes,** que ya utilicen herramientas digitales básicas. También se orientará a **familiares y apoderados** que busquen un **seguimiento transparente y continuo** del estado de salud de sus seres queridos.
-
-Sabremos que tenemos éxito cuando observemos **mayor transparencia y confianza entre los administradores de casas de reposo y familiares de los adultos mayores, tiempos de respuesta más rápidos ante eventos médicos, mayor participación de los usuarios en la plataforma y una reducción medible de los errores de comunicación.**
+¿Cómo podríamos mejorar la disponibilidad, acceso y confiabilidad de la información relacionada con el estado de salud de los adultos mayores en entornos de cuidado, de manera que permita una mejor toma de decisiones y una comunicación más efectiva entre el personal y los familiares?
 
 #### 1.2.2.2. Lean UX Assumptions
 
