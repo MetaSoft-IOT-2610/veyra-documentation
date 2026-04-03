@@ -1,32 +1,31 @@
 ## Capítulo I: Introducción
 
-La introducción desempeña un papel fundamental en la estructuración y comprensión del proyecto, ya que establece el marco conceptual y contextual sobre el cual se desarrollará el trabajo. En esta sección inicial, se presenta una visión general que permite al lector comprender los objetivos principales que se desean alcanzar, así como los antecedentes que han llevado a la formulación del proyecto. También se delimita el alcance del mismo, es decir, hasta dónde se pretende llegar con el desarrollo de la propuesta. Asimismo, la introducción cumple la función de contextualizar la relevancia del proyecto en un entorno específico, destacando las razones que justifican su realización, los desafíos que se pretenden abordar y los beneficios esperados a partir de su implementación. En suma, esta parte inicial no solo informa, sino que también orienta y motiva al lector a profundizar en el contenido que se presentará a lo largo del documento.
+El presente proyecto tiene como finalidad el diseño, desarrollo e implementación de una solución tecnológica basada en el enfoque de Internet de las Cosas (IoT), integrando dispositivos físicos, procesamiento en el edge y servicios en la nube, con el objetivo de resolver problemáticas reales en contextos productivos. Esta solución se construye bajo un enfoque de ingeniería de software moderna, incorporando metodologías ágiles, diseño centrado en el usuario (Lean UX) y arquitecturas escalables orientadas a servicios.
+
+En el contexto actual, las organizaciones enfrentan desafíos relacionados con la captura, procesamiento y análisis de datos en tiempo real, especialmente en entornos donde aún predominan procesos manuales o semi-digitalizados. Estas limitaciones generan ineficiencias operativas, retrasos en la toma de decisiones y pérdida de información relevante.
+
+Frente a este escenario, el presente proyecto propone el desarrollo de un ecosistema digital que permita la automatización de la recolección de datos mediante dispositivos IoT, su procesamiento inteligente y su visualización a través de aplicaciones web y móviles, contribuyendo a la mejora de la eficiencia operativa y la toma de decisiones basada en datos.
 
 ### 1.1. Startup Profile
 
-El perfil de la startup es un elemento fundamental para comprender la identidad y el rumbo estratégico de una empresa emergente. A través de este perfil, se revela su visión de futuro, sus valores esenciales y la propuesta de valor que la diferencia en el mercado competitivo.
-
-En esta sección se describen los aspectos clave que definen a la startup, incluyendo su origen, las motivaciones que impulsaron su creación, el problema específico que busca solucionar y el enfoque innovador que emplea para posicionarse frente a sus competidores.
-
-Asimismo, se analizan los objetivos a mediano y largo plazo, junto con las estrategias diseñadas para su crecimiento y consolidación dentro del sector. Entender estos elementos resulta vital para evaluar el potencial de la startup y el impacto que puede generar en su entorno.
+La presente sección describe el contexto general de la startup responsable del desarrollo de la solución propuesta. Se presenta una visión general de la organización, su enfoque tecnológico y propuesta de valor, así como la caracterización de los integrantes del equipo, destacando sus perfiles y roles dentro del proyecto.
 
 #### 1.1.1. Descripción de la Startup
 
-En una sociedad donde el cuidado de los adultos mayores demanda mayor transparencia, confianza y eficiencia, Veyra nace con una visión clara: transformar la manera en que las familias y las casas de reposo gestionan la salud y el bienestar de los residentes. Nuestro propósito es brindar una plataforma que combine tecnología de vanguardia con un enfoque humano, garantizando que los familiares tengan acceso seguro y actualizado a la información de sus seres queridos, y que las instituciones cuenten con herramientas avanzadas para optimizar sus procesos.
+La startup Metasoft es una empresa tecnológica enfocada en el desarrollo de soluciones digitales innovadoras mediante el uso de tecnologías emergentes como Internet de las Cosas (IoT), computación en la nube y analítica de datos. Su objetivo es apoyar a organizaciones en la transformación digital de sus procesos, permitiendo una mayor eficiencia operativa, trazabilidad y toma de decisiones basada en datos.
 
-Nos diferenciamos por ofrecer un sistema web intuitivo, accesible y seguro, capaz de integrar historiales clínicos, tratamientos, recordatorios médicos y comunicación directa entre familias y personal de cuidado. Además, Veyra está preparada para evolucionar hacia un ecosistema conectado mediante dispositivos IoT —como brazaletes de monitoreo— que permitan obtener signos vitales en tiempo real y asegurar un seguimiento continuo de la salud.
+Metasoft desarrolla soluciones integrales que combinan dispositivos inteligentes, sistemas backend escalables y aplicaciones web y móviles, priorizando la interoperabilidad con sistemas existentes y la adaptabilidad a distintos contextos empresariales.
 
-Nuestra propuesta está diseñada para adaptarse a distintos niveles de necesidad, con planes de suscripción flexibles tanto para familiares individuales como para casas de reposo de diverso tamaño. Con ello, buscamos democratizar el acceso a la información clínica, generar confianza entre instituciones y familias, y elevar los estándares de cuidado a un nuevo nivel.
-
-Veyra no es solo una aplicación de gestión clínica. Es una plataforma de confianza, un puente entre familias y cuidadores, y un compromiso hacia un nuevo paradigma de atención centrado en la verdad (verity) y en una nueva era (era) del cuidado.
+En el marco de este proyecto, la startup desarrolla una solución orientada al sector salud, enfocada en el monitoreo remoto de pacientes en entornos de cuidado especializado.
 
 #### Misión 
 
-Desarrollar soluciones tecnológicas seguras, accesibles y centradas en la experiencia del usuario, que permitan a familiares y casas de reposo gestionar información clínica de manera eficiente y transparente. En Veyra nos enfocamos en la innovación constante, la protección de datos y la integración de herramientas digitales que fortalezcan la confianza y mejoren la calidad de vida de los adultos mayores.
+Desarrollar soluciones tecnológicas innovadoras que permitan a las organizaciones optimizar sus procesos mediante el uso de datos, automatización e integración de tecnologías emergentes.
 
 #### Visión
 
-Convertirnos en la plataforma líder en gestión de cuidado de adultos mayores en Latinoamérica, integrando tecnologías emergentes como el Internet de las Cosas y el análisis de datos en tiempo real. Aspiramos a transformar el cuidado geriátrico en un proceso transparente, confiable y humano, acompañando a familias e instituciones en la creación de una nueva era de atención integral.
+Ser una startup referente en el desarrollo de soluciones IoT y plataformas inteligentes en Latinoamérica, destacando por su capacidad de innovación, escalabilidad y enfoque centrado en el usuario.
+
 #### 1.1.2. Perfiles de integrantes del equipo
 
 <div style="page-break-after: always;"></div>
