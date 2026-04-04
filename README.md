@@ -1,70 +1,73 @@
+<div style="font-family: Arial, sans-serif; padding: 20px 60px;">
 
-![UPC Logo](assets/img/introduction/university-logo/UPC.png)
+<!-- Institución -->
+<p style="text-align: center;"><img src="./assets/img/introduction/logo-upc.png" width="130" alt="UPC Logo"></p>
 
-# Universidad Peruana de Ciencias Aplicadas
+<h1 style="font-size: 24px; margin: 0 0 6px 0; text-align: center;"><strong>Universidad Peruana de Ciencias Aplicadas</strong></h1>
+<p style="font-size: 14px; margin: 3px 0; text-align: center;"><strong>Facultad de Ingeniería</strong></p>
+<p style="font-size: 14px; margin: 3px 0; text-align: center;"><strong>Carrera de Ingeniería de Software</strong></p>
+<p style="font-size: 14px; margin: 3px 0; text-align: center;"><strong>Ciclo:</strong> 202610</p>
 
-## Faculty of Engineering
+<br>
 
-### Software Engineering Program
+<!-- Datos del curso -->
+<p style="font-size: 14px; margin: 4px 0; text-align: center;"><strong>Código del curso:</strong> 1ASI0572</p>
+<p style="font-size: 14px; margin: 4px 0; text-align: center;"><strong>Nombre del curso:</strong> Desarrollo de Soluciones IoT</p>
+<p style="font-size: 14px; margin: 4px 0; text-align: center;"><strong>NRC:</strong> 17757</p>
+<p style="font-size: 14px; margin: 4px 0; text-align: center;"><strong>Profesor:</strong> Ángel Augusto Velásquez Núñez</p>
 
-## Course Information
+<br>
+<!-- Informe -->
+<h2 style="font-size: 20px; margin: 16px 0; text-align: center;"><strong>Informe de Trabajo Final</strong></h2>
 
-| Field | Details |
-|-------|---------|
-| Term | 202610 |
-| Course Code & Name | 1ASI0572 - Development of IoT Solutions |
-| NRC | 17757 |
-| Professor | Ángel Augusto Velásquez Núñez |
+<br>
 
-## Final Project Report
+<!-- Startup y Producto -->
+<p style="font-size: 14px; margin: 4px 0; text-align: center;"><strong>Nombre del Startup:</strong> Metasoft</p>
+<p style="font-size: 14px; margin: 4px 0; text-align: center;"><strong>Nombre del Producto:</strong> Veyra</p>
 
-| Field | Details |
-|-------|---------|
-| Startup Name | MetaSoft |
-| Product Name | Veyra |
+<br>
 
-## Team Members
+<!-- Integrantes -->
+<h3 style="font-size: 16px; margin: 0 0 8px 0; letter-spacing: 1px; text-transform: uppercase;  text-align: center;"><strong>Relación de Integrantes</strong></h3>
 
-| Code | Full Name |
-|------|-----------|
-| u202217053 | Calvo Yálan Renato Guillermo |
-| U20211G192 | Armas Sánchez Oscar Javier |
-| U202312399 | Llerena Delgado Renzo Miguel |
-| U201822697 | Quijandria Araneda Vicente |
-| U202315283 | Rios Piñan Dayro Richard |
-| U20201B510 | Saldaña Vela Janover Gonzalo |
-| U202310670 | Villafuerte Tapia Renzo Alonso |
+<table style="margin: 0 auto; border-collapse: collapse; font-size: 12px;">
+  <thead>
+    <tr style="background-color: #f0f0f0;">
+      <th style="padding: 5px 20px; border: 1px solid #ccc; text-align: center;">Código</th>
+      <th style="padding: 5px 20px; border: 1px solid #ccc; text-align: left;">Apellidos y Nombres</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">u202217053</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Calvo Yálan, Renato Guillermo</td></tr>
+    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">U20211G192</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Armas Sánchez, Oscar Javier</td></tr>
+    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">U202312399</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Llerena Delgado, Renzo Miguel</td></tr>
+    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">U201822697</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Quijandria Araneda, Vicente</td></tr>
+    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">U202315283</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Rios Piñan, Dayro Richard</td></tr>
+    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">U20201B510</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Saldaña Vela, Janover Gonzalo</td></tr>
+    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">U202310670</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Villafuerte Tapia, Renzo Alonso</td></tr>
+  </tbody>
+</table>
 
-### April, 2026
+<br>
+
+<p style="font-size: 12px; margin-bottom: 20px; text-align: center;"><strong>Abril, 2026</strong></p>
+
+</div>
 
 ---
 
-## Registro de Versiones del Informe
+## Report Version History
 
-| Versión | Fecha | Autor | Descripción |
-|---------|-------|-------|-------------|
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
-|         |       |       |             |
+| Version | Date | Author | Description |
+|---------|------|--------|-------------|
+|         |      |        |             |
+|         |      |        |             |
+|         |      |        |             |
+|         |      |        |             |
+|         |      |        |             |
+|         |      |        |             |
+|         |      |        |             |
 
 ---
 
@@ -81,15 +84,15 @@ Durante la primera fase de elaboración del informe, el equipo  centró sus esfu
 
 Finalmente, estos gráficos representan la cantidad de commits realizados por cada miembro del equipo en el repositorio del proyecto. Cada barra representa a un miembro del equipo y la altura de la barra indica el número total de commits realizados por esa persona.
 
-![Commits 1](assets/img/introduction/Collaboration-Insights/AV1/)
+![Commits 1](assets/img/introduction/AV1/commits1.png)
 
-![Commits 2](assets/img/introduction/Collaboration-Insights/AV1/)
+![Commits 2](assets/img/introduction/AV1/commits2.png)
 
 **Ramificación del proyecto usando GitFlow:**
 
 Este gráfico ofrece una visualización de las veces que se ha clonado nuestro repositorio, junto con las fechas correspondientes a cada evento. También muestran datos sobre el número de visitas que ha recibido el repositorio de nuestro equipo a lo largo del tiempo.
 
-![Ramificación 1](assets/img/introduction/Collaboration-Insights/AV1/)
+![Ramificación 1](assets/img/introduction/AV1/gitflow.png)
 
 ---
 ## Tabla de contenido
