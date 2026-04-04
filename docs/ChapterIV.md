@@ -18,7 +18,15 @@
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
+El diagrama de contexto muestra una vista de alto nivel de las relaciones entre los diferentes contextos delimitados y otros sistemas externos. Este diagrama ayuda a comprender cómo los diferentes contextos interactúan entre sí y con el mundo exterior, proporcionando una visión general de la arquitectura del sistema.
+
+![Diagrama de Contexto](/assets/img/chapter-IV/software-architecture/Veyra_context_diagram.png)
+
 #### 4.1.3.2. Software Architecture Container Level Diagrams
+
+El diagrama de contenedores muestra los principales contenedores de software dentro de cada contexto delimitado, como aplicaciones, servicios, bases de datos, etc. Este diagrama ayuda a visualizar la estructura interna de cada contexto y cómo los diferentes contenedores interactúan entre sí.
+
+![Diagrama de Contenedores](/assets/img/chapter-IV/software-architecture/Veyra_container_diagram.png)
 
 #### 4.1.3.3. Software Architecture Deployment Diagrams
 
