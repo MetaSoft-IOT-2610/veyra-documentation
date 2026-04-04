@@ -72,6 +72,16 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
       Tengo 21 años. Soy puntual, responsable y con experiencia en gestión de proyectos y desarrollo web. Espero aprender y aportar para que el proyecto sea exitoso.
     </td>
   </tr>
+
+  <tr>
+    <td width="140" valign="top" align="center">
+      <img src="../assets/img/chapter-I/team-member-profiles/dayroRios.jpg" alt="Oscar Photo" width="120" />
+    </td>
+    <td valign="top">
+      <strong>Dayro Richard Rios Piñan - (U202315283)</strong> - Ingeniería de Software<br><br>
+      Mi nombre es Dayro Rios, tengo 19 años y actualmente estoy en el séptimo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Disfruto de escuchar música, jugar videojuegos y practicar deportes. Me considero una persona empática y tengo facilidad para comunicarme en entornos de trabajo en equipo.
+    </td>
+  </tr>
 </table>
 
 ### 1.2. Solution Profile
