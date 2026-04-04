@@ -65,14 +65,6 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
 
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/team-member-profiles/" alt="" width="120" />
-    </td>
-    <td valign="top">
-    </td>
-  </tr>
-
-  <tr>
-    <td width="140" valign="top" align="center">
       <img src="../assets/img/chapter-I/team-member-profiles/Oscar.jpg" alt="Oscar Photo" width="120" />
     </td>
     <td valign="top">
@@ -80,13 +72,6 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
       Tengo 21 años. Soy puntual, responsable y con experiencia en gestión de proyectos y desarrollo web. Espero aprender y aportar para que el proyecto sea exitoso.
     </td>
   </tr>
-<tr>
-    <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/team-member-profiles/" alt="" width="120" />
-    </td>
-    <td valign="top">
-    </td>
-  </tr>  
 </table>
 
 ### 1.2. Solution Profile
@@ -97,7 +82,7 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
 
 La población mundial envejece rápidamente, y América Latina no es la excepción. En 2022 había unos 88,6 millones de personas de 60 años o más en la región (13,4% de la población). En Perú, este fenómeno demográfico se refleja en que actualmente el 13,9% de la población (≈4 748 000 personas) tiene 60 años o más. Esta proporción crece a un ritmo sostenido (≈2,7% anual) y se estima que para el 2050 cerca del 25% de los peruanos formará parte de la comunidad de adultos mayores. De manera complementaria, el Instituto Nacional de Estadística e Informática (INEI, 2026) reporta que la proporción de población adulta mayor ha aumentado de 5,7% en 1950 a 14,6% en 2026, evidenciando un proceso sostenido de envejecimiento poblacional. Este cambio estructural incrementa la demanda de servicios geriátricos (casas de reposo, centros de día, atención domiciliaria, etc.) y plantea retos en salud, pensiones y cuidado social.
 
-Además, este grupo etario presenta una alta prevalencia de condiciones de salud que requieren seguimiento constante. Según el INEI (2026), el 79,3% de la población adulta mayor presenta al menos un problema de salud crónico. En consecuencia, la necesidad de monitoreo oportuno, trazabilidad clínica y comunicación efectiva entre instituciones y familias se vuelve cada vez más relevante en entornos de cuidado continuo.
+Además, muchas personas adultas mayores conviven con problemas de salud que requieren seguimiento permanente. Según el INEI (2026), el 79,3% de esta población presenta al menos una condición crónica. Esto hace que, en entornos de cuidado continuo, sea cada vez más importante contar con un monitoreo oportuno, una trazabilidad clínica adecuada y una comunicación fluida entre las instituciones y las familias.
 
 Al mismo tiempo, el sistema de salud peruano mantiene limitaciones estructurales relacionadas con la fragmentación de la información y la limitada interoperabilidad entre actores e instituciones. De acuerdo con la OCDE (2025), esta fragmentación genera desigualdades en el acceso a la atención y dificulta la integración de la información clínica entre distintos niveles de atención. Esto complica disponer de datos clínicos oportunos, integrados y accesibles para la toma de decisiones, especialmente cuando el cuidado del adulto mayor involucra a personal asistencial, responsables administrativos y familiares.
 
@@ -111,11 +96,11 @@ Falta de acceso a información en tiempo real: Los familiares no disponen de un 
 
 Ausencia de plataformas integradas: Actualmente, no existe en el sector una solución web centralizada que unifique la gestión clínica, administrativa y comunicacional en residencias peruanas. Muchas tareas administrativas –como el control de pagos, el registro de recetas o los reportes diarios– se realizan de forma manual o en hojas de cálculo, sin interoperabilidad. Esta falta de automatización genera lentitud en los procesos y riesgo de errores, afectando la eficiencia del personal y reduciendo la transparencia hacia los familiares.
 
-Baja adopción tecnológica: A diferencia de otros sectores de salud, las casas de reposo en Perú han incorporado la tecnología de forma limitada. Aunque en otros países especialistas destacan que la digitalización ofrece mejoras significativas en la calidad asistencial, en nuestro entorno las iniciativas tecnológicas (como teleasistencia o software de gestión) son incipientes Esta baja adopción implica que los centros dependen de métodos tradicionales, lo que aumenta la brecha con las expectativas modernas de atención y comunicación.
+Baja adopción tecnológica: A diferencia de otros sectores de salud, las casas de reposo en Perú han incorporado la tecnología de forma limitada. Aunque en otros países especialistas destacan que la digitalización ofrece mejoras significativas en la calidad asistencial, en nuestro entorno las iniciativas tecnológicas (como teleasistencia o software de gestión) son incipientes. Esta baja adopción implica que los centros dependen de métodos tradicionales, lo que aumenta la brecha con las expectativas modernas de atención y comunicación.
 
 **Análisis 5W+2H:**
 
-**What (¿Qué?):** Veyra busca resolver la falta de comunicación, visibilidad clínica y capacidad de monitoreo continuo entre las casas de reposo y las familias de los residentes. La solución integrará una plataforma web para gestión administrativa y clínica, acceso web y móvil para familiares, y dispositivos IoT para capturar signos vitales en tiempo real, permitiendo centralizar la información y ofrecer seguimiento oportuno del estado de cada paciente.
+**What (¿Qué?):** El problema se centra en la falta de acceso oportuno y confiable a la información sobre el estado de salud de los residentes en casas de reposo. Esta situación afecta tanto a las instituciones, que necesitan gestionar y dar seguimiento al cuidado de manera ordenada, como a los familiares, que requieren visibilidad sobre la condición de sus seres queridos.
 
 **Why (¿Por qué?):** Es importante abordar este problema para mejorar la calidad de vida de los adultos mayores y dar tranquilidad a sus familias. Al centralizar la información y ofrecer acceso en línea, Veyra reduce el estrés familiar, aumenta la transparencia en la atención y optimiza las tareas del personal. En un contexto de rápido envejecimiento poblacional, la solución contribuye a que las residencias operen de manera más eficiente y moderna, alineándose con estándares actuales de cuidado y facilitando el cumplimiento de las normativas de salud.
 
@@ -125,9 +110,9 @@ Baja adopción tecnológica: A diferencia de otros sectores de salud, las casas 
 
 **Where (¿Dónde?):** Ocurre principalmente en el ámbito de casas de reposo, residencias geriátricas y centros de atención diurna en Perú (especialmente en las zonas urbanas con más población envejecida), así como en cualquier institución similar de Latinoamérica interesada en mejorar su gestión. También implica el contexto familiar de esos residentes, quienes pueden estar localizados tanto en la misma ciudad como en regiones distantes, requiriendo acceso remoto a la información.
 
-**How (¿Cómo?):** Se resuelve mediante el desarrollo de Veyra como un ecosistema digital compuesto por una plataforma web centralizada para el personal de la residencia, acceso web y móvil para familiares y componentes IoT para la captura de signos vitales en tiempo real. El personal ingresará y consultará datos clínicos, tratamientos, reportes y alertas a través del panel administrativo, mientras que los familiares accederán de forma segura al estado actual e historial del residente desde navegador o dispositivo móvil. Los dispositivos IoT permitirán automatizar la recolección de datos biométricos, y la solución incorporará notificaciones, recordatorios y mecanismos de seguridad y cifrado para proteger la confidencialidad de la información.
+**How (¿Cómo?):** Este problema puede abordarse mediante una solución digital integrada que centralice la información clínica y operativa del residente, facilite el acceso remoto a los datos relevantes y permita mejorar el seguimiento del estado de salud. Bajo esta aproximación, la tecnología se plantea como un medio para fortalecer la trazabilidad, la comunicación y la capacidad de respuesta en el cuidado continuo.
 
-**How much (¿Cuánto?):** El modelo de ingresos proyectado es de tipo SaaS (Software como Servicio). Se planea ofrecer planes de suscripción flexibles para casas de reposo en función de su tamaño, número de residentes y nivel de funcionalidades requeridas, así como alternativas de acceso para familiares según el nivel de seguimiento y notificaciones deseado. La propuesta puede incluir un esquema escalonado con plan básico y planes avanzados con monitoreo IoT, reportes ampliados, recordatorios y capacidades adicionales, además de una posible tarifa de implementación para instituciones. Esto permitirá sostener económicamente la solución y adaptarla a distintos perfiles de cliente dentro del ecosistema de cuidado geriátrico.
+**How much (¿Cuánto?):** Desde una perspectiva preliminar, el problema también involucra una dimensión económica y operativa, ya que cualquier propuesta de mejora debe ser viable para instituciones con distintos niveles de capacidad y adaptarse a modelos sostenibles de implementación y mantenimiento.
 
 #### 1.2.2. Lean UX Process
 
@@ -135,9 +120,9 @@ El Lean UX es un enfoque que permite validar las soluciones propuestas para prob
 
 ##### 1.2.2.1. Lean UX Problem Statements
 
-A partir del análisis desarrollado en la sección anterior, se identifica que en el ámbito del cuidado geriátrico y del monitoreo remoto de pacientes en casas de reposo existe una necesidad crítica de gestionar y compartir información confiable sobre el estado de salud de los residentes. Tanto el personal de cuidado y los responsables administrativos como los familiares requieren acceso oportuno a datos relevantes para tomar decisiones adecuadas, dar seguimiento al cuidado y reducir la incertidumbre sobre la condición del adulto mayor.
+A partir del análisis desarrollado en la sección anterior, se identifica un problema central en el cuidado geriátrico de casas de reposo, especialmente en instituciones privadas que requieren fortalecer la relación de confianza con las familias: la información sobre el estado de salud del residente no siempre está disponible de forma oportuna, confiable y accesible para quienes la necesitan.
 
-Sin embargo, en el contexto actual la información clínica y operativa del residente suele encontrarse dispersa, la comunicación entre la institución y las familias se mantiene limitada o poco estructurada, y el seguimiento continuo de signos vitales no siempre resulta suficientemente oportuno para apoyar la reacción ante eventos críticos. Esta situación genera brechas de confianza, dificultades de coordinación y menor capacidad de respuesta frente a necesidades de cuidado que demandan rapidez y trazabilidad.
+Actualmente, el personal y los responsables de la institución necesitan tomar decisiones basadas en información clara y trazable, mientras que los familiares esperan contar con visibilidad suficiente para reducir la incertidumbre sobre el cuidado de sus seres queridos. Sin embargo, la información suele mantenerse fragmentada, la comunicación no siempre es fluida y el seguimiento del estado del residente resulta limitado en momentos donde la rapidez de respuesta es crítica.
 
 En consecuencia, se formula el siguiente Problem Statement: **¿Cómo mejorar la disponibilidad, acceso y confiabilidad de la información relacionada con el estado de salud de los adultos mayores en entornos de cuidado, de manera que permita una mejor toma de decisiones y una comunicación más efectiva entre el personal y los familiares?**
 
