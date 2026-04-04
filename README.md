@@ -3,36 +3,39 @@
 
 # Universidad Peruana de Ciencias Aplicadas
 
-**Facultad de Ingeniería**
+## Faculty of Engineering
 
-**Carrera de Ingeniería de Software**
+### Software Engineering Program
 
-**Ciclo:** 202610
+## Course Information
 
-**Código y nombre del curso:** 1ASI0572- Desarrollo de Soluciones IOT
+| Field | Details |
+|-------|---------|
+| Term | 202610 |
+| Course Code & Name | 1ASI0572 - Development of IoT Solutions |
+| NRC | 17757 |
+| Professor | Ángel Augusto Velásquez Núñez |
 
-**NRC:** 17757
+## Final Project Report
 
-**Nombre del profesor:** Ángel Augusto Velásquez Núñez
+| Field | Details |
+|-------|---------|
+| Startup Name | MetaSoft |
+| Product Name | Veyra |
 
-### "Informe de Trabajo Final"
+## Team Members
 
-**Nombre del Startup:** MetaSoft
+| Code | Full Name |
+|------|-----------|
+| u202217053 | Calvo Yálan Renato Guillermo |
+| U20211G192 | Armas Sánchez Oscar Javier |
+| U202312399 | Llerena Delgado Renzo Miguel |
+| U201822697 | Quijandria Araneda Vicente |
+| U202315283 | Rios Piñan Dayro Richard |
+| U20201B510 | Saldaña Vela Janover Gonzalo |
+| U202310670 | Villafuerte Tapia Renzo Alonso |
 
-**Nombre del Producto:** Veyra
-
-**Integrantes:**
-
-| Código     | Apellidos y Nombres            |
-|------------|--------------------------------|
-| u202217053 | Calvo Yálan Renato Guillermo   |
-| U20211G192 | Armas Sánchez  Oscar Javier    |
-| U202312399 | Llerena Delgado Renzo Miguel   |
-| U201822697 | Quijandria Araneda Vicente     |
-| U202315283 | Rios Piñan  Dayro Richard      |
-| U20201B510 | Saldaña Vela Janover Gonzalo   |
-| U202310670 | Villafuerte Tapia Renzo Alonso | 
-### Abril, 2026
+### April, 2026
 
 ---
 
