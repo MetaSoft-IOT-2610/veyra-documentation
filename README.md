@@ -61,13 +61,13 @@
 
 | Version | Date | Author | Description |
 |---------|------|--------|-------------|
-|         |      |        |             |
-|         |      |        |             |
-|         |      |        |             |
-|         |      |        |             |
-|         |      |        |             |
-|         |      |        |             |
-|         |      |        |             |
+| 1.0 | 03/04/2026 | Calvo Yálan, Renato Guillermo | Adición del Capítulo I: Se redactaron las secciones 1.1 Startup Profile y 1.1.1 Descripción de la Startup. |
+| 1.1 | 03/04/2026 | Armas Sánchez, Oscar Javier | Adición de la sección 1.1.2 Perfiles de integrantes del equipo. |
+| 1.2 | 03/04/2026 | Llerena Delgado, Renzo Miguel | Adición de la sección 1.2 Solution Profile y 1.2.1 Antecedentes y problemática aplicando la técnica 5W's y 2H's. |
+| 1.3 | 03/04/2026 | Quijandria Araneda, Vicente | Adición de la sección 1.2.2 Lean UX Process: Problem Statements y 1.2.2.1 Lean UX Problem Statements. |
+| 1.4 | 03/04/2026 | Rios Piñan, Dayro Richard | Adición de las secciones 1.2.2.2 Lean UX Assumptions y 1.2.2.3 Lean UX Hypothesis Statements. |
+| 1.5 | 03/04/2026 | Saldaña Vela, Janover Gonzalo | Adición de la sección 1.2.2.4 Lean UX Canvas. |
+| 1.6 | 03/04/2026 | Villafuerte Tapia, Renzo Alonso | Adición de la sección 1.3 Segmentos objetivo con características demográficas e información estadística de sustento. |
 
 ---
 
