@@ -82,6 +82,15 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
       Mi nombre es Dayro Rios, tengo 19 años y actualmente estoy en el séptimo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Disfruto de escuchar música, jugar videojuegos y practicar deportes. Me considero una persona empática y tengo facilidad para comunicarme en entornos de trabajo en equipo.
     </td>
   </tr>
+  <tr>
+    <td width="140" valign="top" align="center">
+      <img src="../assets/img/chapter-I/team-member-profiles/vicente-quijandria.png" alt="Oscar Photo" width="120" />
+    </td>
+    <td valign="top">
+      <strong>Vicente Quijandria Araneda - (U201822697)</strong> - Ingeniería de Software<br><br>
+      Mi nombre es Vicente Quijandria, actualmente estoy en el octavo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Disfruto de ver futbol, escuchar música, jugar videojuegos y practicar deportes. Me considero una persona proactiva, con buenas habilidades de comunicación y capacidad para colaborar eficazmente en equipos de trabajo.
+    </td>
+  </tr>
 </table>
 
 ### 1.2. Solution Profile
