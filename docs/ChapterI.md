@@ -104,6 +104,8 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
 
 ### 1.2. Solution Profile
 
+Veyra es una plataforma digital integral diseñada para mejorar la gestión de información clínica y operativa en casas de reposo, facilitando el acceso remoto a datos relevantes para familiares y personal de cuidado. Para fundamentar la propuesta de valor de nuestra startup, empleamos la técnica 5W y 2H. 
+
 #### 1.2.1. Antecedentes y problemática
 
 **1. ANTECEDENTES**
