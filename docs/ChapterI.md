@@ -142,20 +142,20 @@ En esta sección se presentan los supuestos iniciales del equipo sobre el negoci
 
 **Assumptions Worksheet (síntesis aplicada a Veyra)**
 
-| # | Supuesto aplicado |
-|---|-------------------|
-| 1 | Creemos que nuestros clientes necesitan visibilidad confiable y oportuna del estado de salud de los residentes. |
-| 2 | Estas necesidades pueden resolverse con una solución integrada web + móvil + IoT, con alertas y trazabilidad clínica. |
-| 3 | Nuestros clientes iniciales serán casas de reposo privadas de tamaño pequeño y mediano en zonas urbanas. |
-| 4 | El valor #1 para las instituciones es mejorar la confianza de las familias con información verificable y en tiempo real. |
-| 5 | Beneficios adicionales: menor carga operativa, mejor trazabilidad y respuesta más rápida ante eventos críticos. |
-| 6 | Adquiriremos clientes mediante contacto directo B2B, referidos del sector salud y alianzas institucionales. |
-| 7 | Generaremos ingresos con planes de suscripción escalonados para instituciones y alternativas de acceso para familiares. |
-| 8 | La competencia principal está basada en procesos manuales, comunicación informal y sistemas aislados. |
-| 9 | Nos diferenciaremos por monitoreo continuo IoT, acceso remoto y experiencia consistente para personal y familiares. |
-| 10 | El mayor riesgo de producto es que el personal no adopte un registro digital continuo por fricción operativa. |
-| 11 | Reduciremos ese riesgo con flujos simples, capacitación breve y automatización de captura vía sensores IoT. |
-| 12 | Si se demuestra baja adopción o bajo valor percibido, el modelo de negocio y el alcance funcional deben ajustarse. |
+| #  | Supuesto aplicado                                                                                                        |
+|----|--------------------------------------------------------------------------------------------------------------------------|
+| 1  | Creemos que nuestros clientes necesitan visibilid ad confiable y oportuna del estado de salud de los residentes.         |
+| 2  | Estas necesidades pueden resolverse con una solución integrada web + móvil + IoT, con alertas y trazabilidad clínica.    |
+| 3  | Nuestros clientes iniciales serán casas de reposo privadas de tamaño pequeño y mediano en zonas urbanas.                 |
+| 4  | El valor #1 para las instituciones es mejorar la confianza de las familias con información verificable y en tiempo real. |
+| 5  | Beneficios adicionales: menor carga operativa, mejor trazabilidad y respuesta más rápida ante eventos críticos.          |
+| 6  | Adquiriremos clientes mediante contacto directo B2B, referidos del sector salud y alianzas institucionales.              |
+| 7  | Generaremos ingresos con planes de suscripción escalonados para instituciones y alternativas de acceso para familiares.  |
+| 8  | La competencia principal está basada en procesos manuales, comunicación informal y sistemas aislados.                    |
+| 9  | Nos diferenciaremos por monitoreo continuo IoT, acceso remoto y experiencia consistente para personal y familiares.      |
+| 10 | El mayor riesgo de producto es que el personal no adopte un registro digital continuo por fricción operativa.            |
+| 11 | Reduciremos ese riesgo con flujos simples, capacitación breve y automatización de captura vía sensores IoT.              |
+| 12 | Si se demuestra baja adopción o bajo valor percibido, el modelo de negocio y el alcance funcional deben ajustarse.       |
 
 **Supuestos por dimensión**
 
@@ -189,13 +189,13 @@ En esta sección se presentan los supuestos iniciales del equipo sobre el negoci
 
 **Assumptions Priority (riesgo x incertidumbre)**
 
-| Prioridad | Supuesto a validar | Riesgo | Incertidumbre |
-|----------:|--------------------|:------:|:-------------:|
-| 1 | El personal adoptará el registro digital continuo sin afectar su flujo operativo. | Alto | Alto |
-| 2 | Las alertas basadas en IoT serán suficientemente precisas para ser confiables en operación diaria. | Alto | Alto |
-| 3 | Los familiares usarán de forma recurrente el canal web/móvil para seguimiento del residente. | Alto | Medio |
-| 4 | Las instituciones aceptarán el modelo de suscripción por el valor percibido de la solución. | Alto | Medio |
-| 5 | La integración web + móvil + IoT será percibida como diferencial frente a alternativas actuales. | Medio | Medio |
+| Prioridad | Supuesto a validar                                                                                 | Riesgo | Incertidumbre |
+|----------:|----------------------------------------------------------------------------------------------------|:------:|:-------------:|
+|         1 | El personal adoptará el registro digital continuo sin afectar su flujo operativo.                  |  Alto  |     Alto      |
+|         2 | Las alertas basadas en IoT serán suficientemente precisas para ser confiables en operación diaria. |  Alto  |     Alto      |
+|         3 | Los familiares usarán de forma recurrente el canal web/móvil para seguimiento del residente.       |  Alto  |     Medio     |
+|         4 | Las instituciones aceptarán el modelo de suscripción por el valor percibido de la solución.        |  Alto  |     Medio     |
+|         5 | La integración web + móvil + IoT será percibida como diferencial frente a alternativas actuales.   | Medio  |     Medio     |
 
 **Business Outcomes esperados**
 
@@ -228,52 +228,60 @@ En esta sección se formulan las hipótesis del producto a partir de los supuest
 
 **Hypothesis 1 – Transparencia y confianza**
 
-**Creemos que** si implementamos una plataforma web y móvil que permita a los familiares acceder en tiempo real a la información clínica de los residentes,
-**para** familiares de adultos mayores en casas de reposo,
-**lograremos** aumentar su nivel de confianza en el servicio,
-**lo sabremos cuando** al menos el 70% de los familiares accedan a la plataforma al menos 3 veces por semana y reporten una mejora en la percepción de confianza en encuestas.
+**Creemos que** implementar una plataforma web y móvil con acceso en tiempo real a la información clínica de los residentes aumentará el nivel de confianza de los familiares en el servicio de la casa de reposo.
+
+**Sabremos que** hemos tenido éxito.
+
+**Cuando veamos* que al menos el 70% de los familiares acceden a la plataforma un mínimo de 3 veces por semana y reportan una mejora en su percepción de confianza en encuestas de satisfacción.
 
 **Hypothesis 2 – Monitoreo IoT en tiempo real**
 
-**Creemos que** si incorporamos dispositivos IoT para el monitoreo continuo de signos vitales,
-**para** residentes de casas de reposo,
-**lograremos** mejorar la detección temprana de riesgos de salud,
-**lo sabremos cuando** al menos el 80% de las alertas críticas generadas por el sistema correspondan a eventos confirmados por el personal y se reduzca la cantidad de incidentes no detectados.
+**Creemos que** incorporar dispositivos IoT para el monitoreo continuo de signos vitales mejorará la detección temprana de riesgos de salud en residentes de casas de reposo.
+
+**Sabremos que** hemos tenido éxito.
+
+**Cuando veamos** que al menos el 80% de las alertas críticas generadas corresponden a eventos confirmados por el personal y se reduce la cantidad de incidentes no detectados.
 
 **Hypothesis 3 – Adopción por parte del personal**
 
-**Creemos que** si implementamos un sistema simple e integrado para el registro de información clínica,
-**para** el personal de cuidado,
-**lograremos** aumentar la frecuencia y calidad del registro de datos,
-**lo sabremos cuando** al menos el 85% de los registros se realicen dentro del mismo día y se reduzcan los errores en un 30%.
+**Creemos que** implementar un sistema simple e integrado para el registro de información clínica aumentará la frecuencia y calidad del registro de datos por parte del personal de cuidado.
+
+**Sabremos que** hemos tenido éxito.
+
+**Cuando veamos** que al menos el 85% de los registros se realizan dentro del mismo día y los errores de registro se reducen en un 30%.
+
 
 **Hypothesis 4 – Uso de la aplicación móvil**
 
-**Creemos que** si ofrecemos una aplicación móvil intuitiva con acceso a información en tiempo real,
-**para** familiares de residentes,
-**lograremos** aumentar el uso recurrente de la solución,
-**lo sabremos cuando** al menos el 60% de los usuarios activos utilicen la app diariamente o varias veces por semana.
+**Creemos que** ofrecer una aplicación móvil intuitiva con acceso a información en tiempo real aumentará el uso recurrente de la solución entre los familiares de residentes.
+
+**Sabremos que** hemos tenido éxito.
+
+**Cuando veamos** que al menos el 60% de los usuarios activos utilizan la app diariamente o varias veces por semana.
 
 **Hypothesis 5 – Alertas y reacción oportuna**
 
-**Creemos que** si implementamos un sistema de alertas automáticas ante cambios en signos vitales,
-**para** personal médico y familiares,
-**lograremos** una respuesta más rápida ante eventos críticos,
-**lo sabremos cuando** el tiempo promedio de respuesta ante alertas se reduzca en al menos un 40%.
+**Creemos que** implementar un sistema de alertas automáticas ante cambios en signos vitales permitirá una respuesta más rápida ante eventos críticos por parte del personal médico y los familiares.
+
+**Sabremos que** hemos tenido éxito.
+
+**Cuando veamos** que el tiempo promedio de respuesta ante alertas se reduce en al menos un 40% respecto a la situación actual.
 
 **Hypothesis 6 – Valor percibido y disposición de pago**
 
-**Creemos que** si ofrecemos una solución que combine monitoreo en tiempo real, acceso remoto y comunicación directa,
-**para** administradores de casas de reposo,
-**lograremos** validar la disposición de pago por el servicio,
-**lo sabremos cuando** al menos el 50% de las instituciones piloto acepten continuar con un plan de suscripción.
+**Creemos que** ofrecer una solución que combine monitoreo en tiempo real, acceso remoto y comunicación directa validará la disposición de pago de los administradores de casas de reposo.
+
+**Sabremos que** hemos tenido éxito.
+
+**Cuando veamos** que al menos el 50% de las instituciones piloto aceptan continuar con un plan de suscripción al finalizar el período de prueba.
 
 **Hypothesis 7 – Diferenciación en el mercado**
 
-**Creemos que** si ofrecemos una solución integrada (web + móvil + IoT),
-**para** casas de reposo privadas,
-**lograremos** diferenciarnos de soluciones tradicionales,
-**lo sabremos cuando** al menos el 60% de los decisores entrevistados en sesiones de validación comercial identifiquen el monitoreo en tiempo real como el principal valor diferencial.
+**Creemos que** ofrecer una solución integrada (web + móvil + IoT) nos diferenciará de las soluciones tradicionales disponibles para casas de reposo privadas.
+
+**Sabremos que** hemos tenido éxito.
+
+**Cuando veamos** que al menos el 60% de los decisores entrevistados en sesiones de validación comercial identifican el monitoreo en tiempo real como el principal valor diferencial de la solución.
 
 ##### 1.2.2.4. Lean UX Canvas
 
