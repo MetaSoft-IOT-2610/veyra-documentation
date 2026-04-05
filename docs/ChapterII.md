@@ -4,22 +4,132 @@
 
 ### 2.1.1. Análisis competitivo
 
-| Competitive Analysis Landscape            |                                                           |                                                                                                                                                                                                       |                                                                                                                                                                              |                                                                                                                               |                                                                                                          |                                                                                                                                 |
-|-------------------------------------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| **¿Por qué llevar a cabo este análisis?** |                                                           | ¿Cómo se posiciona Veyra frente a sus competidores en cuanto a propuesta de valor, marketing, producto y estrategia?                                                                                  |                                                                                                                                                                              |                                                                                                                               |                                                                                                          |                                                                                                                                 |
-|                                           |                                                           | Es un análisis comparativo que permite identificar fortalezas, debilidades, oportunidades y amenazas, así como entender mejor la posición del producto frente a otros actores relevantes del mercado. |                                                                                                                                                                              |                                                                                                                               |                                                                                                          |                                                                                                                                 |
-|                                           |                                                           |                                                                                                                                                                                                       | **Veyra**<br>![Veyra](../assets/img/veyralogo.jpeg)                                                                                                                          | **StoriiCare**<br>![StoriiCare](../assets/img/chapter-II/competitors/STORIICARE.png)                                          | **SeniorSoft**<br>![SeniorSoft](../assets/img/chapter-II/competitors/SENIOR%20SOFT.png)                  | **CareCloud**<br>![CareCloud](../assets/img/chapter-II/competitors/CARE%20CLOUD.png)                                            |
-| **Perfil**                                | **Overview**                                              |                                                                                                                                                                                                       | Plataforma SaaS integral enfocada en la gestión de casas de reposo y conexión con familias en Perú y Latinoamérica.                                                          | Software SaaS global para residencias de adultos mayores. Fundado en Reino Unido, con presencia en varios países.             | Software de escritorio dirigido a grandes clínicas y residencias geriátricas.                            | Plataforma cloud completa para la gestión de salud general (EE.UU.). Ofrece EHR, facturación, scheduling y portal de pacientes. |
-|                                           | **Ventaja competitiva ¿Qué valor ofrece a los clientes?** |                                                                                                                                                                                                       | Especialización regional: Diseñada para normativas peruanas y latinas. Modelo de suscripción escalable. Acceso granular y bidireccional para familias. Preparación para IoT. | Portal familiar muy desarrollado, integración de historias de vida y fotos, planificación de cuidados centrada en la persona. | Gestión integral (historial clínico, facturación, inventario, camas). Potente para operaciones internas. | Amplia suite de funcionalidades para gestión clínica y administrativa, integración con sistemas de pago.                        |
-| **Perfil de Marketing**                   | **Mercado objetivo**                                      |                                                                                                                                                                                                       | Mercado objetivo: Casas de reposo medianas/pequeñas y familias en LATAM.                                                                                                     | Mercado: Residencias en UK, US, Australia y Canadá.                                                                           | Mercado: Grandes clínicas geriátricas en mercados específicos.                                           | Mercado: Clínicas y centros de salud de todos los tamaños en EE.UU.                                                             |
-|                                           | **Estrategias de marketing**                              |                                                                                                                                                                                                       | Estrategia: Marketing digital, alianzas con asociaciones geriátricas, precios flexibles.                                                                                     | Estrategia: Marketing de contenidos, redes sociales, testimonios.                                                             | Estrategia: Ventas directas a grandes clientes.                                                          | Estrategia: Ventas directas, marketing sector salud.                                                                            |
-| **Perfil de Producto**                    | **Productos & Servicios.**                                |                                                                                                                                                                                                       | Productos: Plataforma web y app móvil.                                                                                                                                       | Productos: Plataforma web, app para familias.                                                                                 | Productos: Software de escritorio.                                                                       | Productos: CareCloud Central, Pulse, Companion.                                                                                 |
-|                                           | **Precios & Costos**                                      |                                                                                                                                                                                                       | Precios: Planes modular (Gratuito, Estándar, Premium).                                                                                                                       | Precios: Precios en libras/euros, no transparentes en web.                                                                    | Precios: No públicos, likely alto.                                                                       | Precios: Elevados (para mercado LATAM), cotización upon request.                                                                |
-|                                           | **Canales de distribución (Web y/o Móvil)**               |                                                                                                                                                                                                       | Canales: Web, móvil (iOS/Android), API para integraciones.                                                                                                                   | Canales: Web, móvil.                                                                                                          | Canales: Instalación local, sin acceso móvil nativo.                                                     | Canales: Web, móvil.                                                                                                            |
-| **Análisis SWOT**                         | **Fortalezas**                                            |                                                                                                                                                                                                       | Fortalezas: Especialización local, modelo escalable.                                                                                                                         | Fortalezas: Enfoque en experiencia familiar, fácil de usar.                                                                   | Fortalezas: Funcionalidades de gestión sólidas.                                                          | Fortalezas: Producto muy completo, robusto.                                                                                     |
-|                                           | **Debilidades**                                           |                                                                                                                                                                                                       | Debilidades: Nuevo en el mercado.                                                                                                                                            | Debilidades: Poca adaptación a normativas latinoamericanas, precios no accesibles para mercado LATAM.                         | Debilidades: Tecnología obsoleta (desktop), sin acceso para familias, sin movilidad.                     | Debilidades: Precio muy alto para LATAM, no especializado en geriatría, complejo de implementar.                                |
-|                                           | **Oportunidades**                                         |                                                                                                                                                                                                       | Oportunidades: Crecimiento del sector en LATAM.                                                                                                                              | Oportunidades: Expansión a nuevos mercados.                                                                                   | Oportunidades: Modernizar su plataforma.                                                                 | Oportunidades: Vender a grandes cadenas.                                                                                        |
-|                                           | **Amenazas**                                              |                                                                                                                                                                                                       | Amenazas: Competidores globales con más recursos.                                                                                                                            | Amenazas: Competencia local en cada región.                                                                                   | Amenazas: Migración general a la nube.                                                                   | Amenazas: Soluciones más niche y económicas.                                                                                    |
+
+<table border="1" cellpadding="10" cellspacing="0" style="margin-left: auto; margin-right: auto; font-family: sans-serif;">
+<tr>
+<th colspan="6">Competitive Analysis Landscape</th>
+</tr>
+<tr>
+<td colspan="2" rowspan="2"><b>¿Por qué llevar a cabo este análisis?</b></td>
+<td colspan="4">¿Cómo se posiciona Veyra frente a sus competidores en cuanto a propuesta de valor, marketing, producto y estrategia?</td>
+</tr>
+<tr>
+<td colspan="4">Es un análisis comparativo que permite identificar fortalezas, debilidades, oportunidades y amenazas, así como entender mejor la posición del producto frente a otros actores relevantes del mercado.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: center;"><b>Competidores</b></td>
+<td style="text-align: center; vertical-align: middle;">
+<b>Veyra</b>
+
+
+<img src="../assets/img/veyralogo.jpeg" alt="Veyra" width="50"/>
+</td>
+<td style="text-align: center; vertical-align: middle;">
+<b>StoriiCare</b>
+
+
+<img src="../assets/img/chapter-II/competitors/STORIICARE.png" alt="StoriiCare" width="50"/>
+</td>
+<td style="text-align: center; vertical-align: middle;">
+<b>SeniorSoft</b>
+
+
+<img src="../assets/img/chapter-II/competitors/SENIOR%20SOFT.png" alt="SeniorSoft" width="50"/>
+</td>
+<td style="text-align: center; vertical-align: middle;">
+<b>CareCloud</b>
+
+
+<img src="../assets/img/chapter-II/competitors/CARE%20CLOUD.png" alt="CareCloud" width="50"/>
+</td>
+</tr>
+<tr>
+<td rowspan="2"><b>Perfil</b></td>
+<td>Overview</td>
+<td>Plataforma SaaS integral enfocada en la gestión de casas de reposo y conexión con familias en Perú y Latinoamérica.</td>
+<td>Software SaaS global para residencias de adultos mayores. Fundado en Reino Unido, con presencia en varios países.</td>
+<td>Software de escritorio dirigido a grandes clínicas y residencias geriátricas.</td>
+<td>Plataforma cloud completa para la gestión de salud general (EE.UU.). Ofrece EHR, facturación y portal de pacientes.</td>
+</tr>
+<tr>
+<td>Ventaja competitiva</td>
+<td>Especialización regional (normativas LATAM), modelo escalable, acceso bidireccional para familias y preparación para IoT.</td>
+<td>Portal familiar muy desarrollado, integración de historias de vida y fotos, cuidado centrado en la persona.</td>
+<td>Gestión integral potente para operaciones internas (historial clínico, facturación, inventario, camas).</td>
+<td>Suite completa de funcionalidades clínicas y administrativas con integración nativa de sistemas de pago.</td>
+</tr>
+<tr>
+<td rowspan="2"><b>Perfil de Marketing</b></td>
+<td>Mercado objetivo</td>
+<td>Casas de reposo medianas/pequeñas y familias en LATAM.</td>
+<td>Residencias en UK, US, Australia y Canadá.</td>
+<td>Grandes clínicas geriátricas en mercados específicos.</td>
+<td>Clínicas y centros de salud de todos los tamaños en EE.UU.</td>
+</tr>
+<tr>
+<td>Estrategias de marketing</td>
+<td>Marketing digital, alianzas con asociaciones geriátricas y precios flexibles.</td>
+<td>Marketing de contenidos, redes sociales y testimonios de clientes.</td>
+<td>Ventas directas enfocadas a grandes clientes institucionales.</td>
+<td>Ventas directas y marketing especializado en el sector salud estadounidense.</td>
+</tr>
+<tr>
+<td rowspan="3"><b>Perfil de Producto</b></td>
+<td>Productos & Servicios</td>
+<td>Plataforma web y aplicación móvil.</td>
+<td>Plataforma web y app específica para familias.</td>
+<td>Software de instalación local (Escritorio).</td>
+<td>CareCloud Central, Pulse y Companion.</td>
+</tr>
+<tr>
+<td>Precios & Costos</td>
+<td>Modelo modular: Planes Gratuito, Estándar y Premium.</td>
+<td>Precios en libras/euros, no transparentes en el sitio web.</td>
+<td>Precios no públicos, probablemente elevados por licenciamiento.</td>
+<td>Costos elevados para el mercado LATAM, cotización bajo pedido.</td>
+</tr>
+<tr>
+<td>Canales de distribución</td>
+<td>Web, móvil (iOS/Android) y API para integraciones.</td>
+<td>Web y dispositivos móviles.</td>
+<td>Instalación local, sin acceso móvil nativo.</td>
+<td>Web y dispositivos móviles.</td>
+</tr>
+<tr>
+<td rowspan="5"><b>Análisis SWOT</b></td>
+</td>
+</tr>
+<tr>
+<td>Fortalezas</td>
+<td>Especialización local y modelo de negocio escalable.</td>
+<td>Enfoque en experiencia familiar y facilidad de uso.</td>
+<td>Funcionalidades de gestión operativa muy sólidas.</td>
+<td>Producto robusto, muy completo y reconocido.</td>
+</tr>
+<tr>
+<td>Debilidades</td>
+<td>Marca nueva con poca trayectoria en el mercado.</td>
+<td>Poca adaptación a normativas y precios de Latinoamérica.</td>
+<td>Tecnología obsoleta (desktop), sin movilidad ni acceso familiar.</td>
+<td>Precio prohibitivo para LATAM y complejidad de implementación.</td>
+</tr>
+<tr>
+<td>Oportunidades</td>
+<td>Crecimiento acelerado del sector geriátrico en LATAM.</td>
+<td>Expansión a nuevos mercados internacionales.</td>
+<td>Modernización de su plataforma hacia la nube.</td>
+<td>Venta de servicios a grandes cadenas de salud.</td>
+</tr>
+<tr>
+<td>Amenazas</td>
+<td>Competidores globales con mayores recursos financieros.</td>
+<td>Surgimiento de competidores locales en cada región.</td>
+<td>Migración general de los clientes hacia soluciones cloud.</td>
+<td>Aparición de soluciones más nicho y económicas.</td>
+</tr>
+</table>
+
+
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
