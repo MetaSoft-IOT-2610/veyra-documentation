@@ -91,6 +91,15 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
       Mi nombre es Vicente Quijandria, actualmente estoy en el octavo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Disfruto de ver futbol, escuchar música, jugar videojuegos y practicar deportes. Me considero una persona proactiva, con buenas habilidades de comunicación y capacidad para colaborar eficazmente en equipos de trabajo.
     </td>
   </tr>
+  <tr>
+  <td width="140" valign="top" align="center">
+    <img src="../assets/img/chapter-I/team-member-profiles/renzo-villafuerte.jpg" alt="Renzo Villafuerte Photo" width="120" />
+  </td>
+  <td valign="top">
+    <strong>Renzo Villafuerte - (U202310670)</strong> - Ingeniería de Software<br><br>
+    Tengo 19 años y actualmente curso el séptimo ciclo de la carrera de Ingeniería de Software. Me considero una persona responsable, proactiva y con gran capacidad de aprendizaje. Me encuentro comprometido con mi desarrollo académico y profesional, buscando constantemente mejorar tanto en el ámbito personal como en el profesional. Me interesa fortalecer mis habilidades, asumir nuevos retos y aportar soluciones creativas en los proyectos en los que participo.
+  </td>
+</tr>
 </table>
 
 ### 1.2. Solution Profile
