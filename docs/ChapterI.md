@@ -199,17 +199,17 @@ En esta sección se presentan los supuestos iniciales del equipo sobre el negoci
 
 **Business Outcomes esperados**
 
-* Lograr adopción inicial de Veyra en instituciones piloto.
-* Validar disposición de pago y permanencia en planes de suscripción.
-* Mejorar la percepción de confianza de las familias hacia la institución.
-* Reducir errores y tiempos de actualización de información clínica.
+* Lograr que al menos 3 instituciones piloto adopten Veyra durante los primeros 6 meses.
+* Lograr que el 50% de las instituciones piloto continúen con un plan de suscripción pago. 
+* Reducir en al menos un 25% los costos operativos de gestión de información clínica en las instituciones piloto. 
+* Lograr que al menos el 60% identifiquen a Veyra como una alternativa superior frente a los métodos tradicionales
 
 **User Outcomes esperados**
 
-* Incrementar visibilidad operativa del personal sobre el estado de los residentes.
-* Reducir la carga administrativa de registro manual.
-* Aumentar la frecuencia de consulta remota de familiares.
-* Mejorar el tiempo de reacción ante alertas de salud.
+* Lograr que enfermeros y doctores tengan disponible el 90% de los registros del residente en tiempo real y reduzcan el tiempo de registro manual en al menos un 35% por turno.
+* Lograr que los familiares consulten la plataforma un mínimo de 3 veces por semana, aumentando su frecuencia de seguimiento remoto.
+* Lograr que enfermeros, doctores y familiares reduzcan el tiempo de reacción ante alertas de salud en al menos un 40%.
+* Lograr que los administradores tengan visibilidad completa del estado de la institución en tiempo real, reduciendo en al menos un 50% el tiempo dedicado a recopilar información operativa manualmente.
 
 **Features mínimas para validación**
 
@@ -232,7 +232,7 @@ En esta sección se formulan las hipótesis del producto a partir de los supuest
 
 **Sabremos que** hemos tenido éxito.
 
-**Cuando veamos* que al menos el 70% de los familiares acceden a la plataforma un mínimo de 3 veces por semana y reportan una mejora en su percepción de confianza en encuestas de satisfacción.
+**Cuando veamos** que al menos el 70% de los familiares acceden a la plataforma un mínimo de 3 veces por semana y reportan una mejora en su percepción de confianza en encuestas de satisfacción.
 
 **Hypothesis 2 – Monitoreo IoT en tiempo real**
 
