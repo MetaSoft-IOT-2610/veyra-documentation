@@ -254,19 +254,20 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 | Timing donde inicia la entrevista |                                                                         |
 | Duración de la entrevista         |                                                                         |
 | Resumen                           | 
+
 **Segmento 2: Familiares de adultos mayores**
 
 | Entrevista #1                     |                                                                         |
 |-----------------------------------|-------------------------------------------------------------------------|
-| Nombre                            |                                                                         |
-| Apellidos                         |                                                                         |
-| Edad                              |                                                                         |
-| Distrito                          |                                                                         |
-| Evidencia                         | ![Entrevista](../assets/img/chapter-II/interviews/register/segment-two) |
+| Nombre                            |  José Carlos                                                            |
+| Apellidos                         |  Vargas Enríquez                                                        |
+| Edad                              |  25 años                                                                |
+| Distrito                          |  Chorrillos                                                             |
+| Evidencia                         | ![Entrevista](../assets/img/chapter-II/interviews/register/segment-two/Entrevista1-segmento2.png) |
 | Link                              | []()                                                                    |
-| Timing donde inicia la entrevista |                                                                         |
-| Duración de la entrevista         |                                                                         |
-| Resumen                           |                                                                         |
+| Timing donde inicia la entrevista |  0:00 minutos                                                           |
+| Duración de la entrevista         |  3:32 minutos                                                           |
+| Resumen                           |  El entrevistado es nieto de un paciente de la casa de reposo y se desempeña como ingeniero de software en un banco. Señala que actualmente la información sobre su familiar no es inmediata y depende de llamadas telefónicas, lo cual le genera incertidumbre. Por ello, desearía consultar el estado de salud, las medicaciones, las necesidades del paciente y recibir reportes médicos semanales. Al estar familiarizado con la tecnología, se sentiría muy cómodo utilizando plataformas web o aplicaciones móviles para este fin, ya que lo considera mucho más accesible. |
 
 | Entrevista #2                     |                                                                         |
 |-----------------------------------|-------------------------------------------------------------------------|
