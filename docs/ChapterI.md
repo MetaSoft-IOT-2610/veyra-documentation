@@ -305,7 +305,7 @@ En esta sección se formulan las hipótesis del producto a partir de los supuest
 
 ##### 1.2.2.4. Lean UX Canvas
 
-![Lean UX Canvas](../assets/img/chapter-I/lean-ux-canvas/Lean%20UX.png)
+![Lean UX Canvas](../assets/img/chapter-I/lean-ux-canvas/lean-ux.png)
 
 ### 1.3. Segmentos objetivos
 
