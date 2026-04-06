@@ -271,14 +271,14 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 
 | Entrevista #2                     |                                                                         |
 |-----------------------------------|-------------------------------------------------------------------------|
-| Nombre                            |                                                                         |
-| Apellidos                         |                                                                         |
-| Edad                              |                                                                         |
-| Distrito                          |                                                                         |
-| Evidencia                         | ![Entrevista](../assets/img/chapter-II/interviews/register/segment-two) |
+| Nombre                            |        Richard                                                                  |
+| Apellidos                         |  Rios Saandoval                                                                       |
+| Edad                              |         54                                                                |
+| Distrito                          |Villa el Salvador                                                                |
+| Evidencia                         | ![Entrevista](../assets/img/chapter-II/interviews/register/segment-two/Entrevista3-segmento2.png) |
 | Link                              | []()                                                                    |
 | Timing donde inicia la entrevista |                                                                         |
-| Duración de la entrevista         |                                                                         |
+| Duración de la entrevista         |   3:51 minutos                                                          |
 | Resumen                           |                                                                         |
 
 | Entrevista #3                     |                                                                         |
