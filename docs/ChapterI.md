@@ -18,11 +18,11 @@ Metasoft desarrolla soluciones integrales que combinan dispositivos inteligentes
 
 En el marco de este proyecto, la startup desarrolla una solución orientada al sector salud, enfocada en el monitoreo remoto de pacientes en entornos de cuidado especializado.
 
-#### Misión 
+##### Misión 
 
 Desarrollar soluciones tecnológicas innovadoras que permitan a las organizaciones optimizar sus procesos mediante el uso de datos, automatización e integración de tecnologías emergentes.
 
-#### Visión
+##### Visión
 
 Ser una startup referente en el desarrollo de soluciones IoT y plataformas inteligentes en Latinoamérica, destacando por su capacidad de innovación, escalabilidad y enfoque centrado en el usuario.
 
@@ -150,12 +150,11 @@ El Lean UX es un enfoque que permite validar las soluciones propuestas para prob
 
 ##### 1.2.2.1. Lean UX Problem Statements
 
-A partir del análisis desarrollado en la sección anterior, se identifica un problema central en el cuidado geriátrico de casas de reposo, especialmente en instituciones privadas que requieren fortalecer la relación de confianza con las familias: la información sobre el estado de salud del residente no siempre está disponible de forma oportuna, confiable y accesible para quienes la necesitan.
+Nuestro servicio brinda atención integral a adultos mayores en casas de reposo privadas. A través de un equipo de personal de salud y cuidadores, las instituciones buscan garantizar el bienestar de cada residente y mantener a sus familias tranquilas y bien informadas.
 
-Actualmente, el personal y los responsables de la institución necesitan tomar decisiones basadas en información clara y trazable, mientras que los familiares esperan contar con visibilidad suficiente para reducir la incertidumbre sobre el cuidado de sus seres queridos. Sin embargo, la información suele mantenerse fragmentada, la comunicación no siempre es fluida y el seguimiento del estado del residente resulta limitado en momentos donde la rapidez de respuesta es crítica.
+Hemos observado que los familiares no siempre cuentan con información oportuna sobre el estado de salud de su ser querido, y el personal enfrenta dificultades para mantener un seguimiento claro y continuo sin herramientas adecuadas.
 
-En consecuencia, se formula el siguiente Problem Statement: **¿Cómo mejorar la disponibilidad, acceso y confiabilidad de la información relacionada con el estado de salud de los adultos mayores en entornos de cuidado, de manera que permita una mejor toma de decisiones y una comunicación más efectiva entre el personal y los familiares?**
-
+¿Cómo podríamos lograr que tanto el personal como los familiares de adultos mayores en casas de reposo tengan acceso oportuno al estado de salud del residente, sin depender de procesos manuales o comunicación reactiva?
 ##### 1.2.2.2. Lean UX Assumptions
 
 En esta sección se presentan los supuestos iniciales del equipo sobre el negocio, los usuarios, el problema y la solución propuesta. Estos supuestos se formulan como creencias que deben validarse con evidencia durante entrevistas, prototipado y pruebas de uso.
