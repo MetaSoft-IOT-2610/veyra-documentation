@@ -279,7 +279,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 | Link                              | []()                                                                    |
 | Timing donde inicia la entrevista |                                                                         |
 | Duración de la entrevista         |   3:51 minutos                                                          |
-| Resumen                           |                                                                         |
+| Resumen                           | Señor tecnológico y analítico que busca seguridad para su padre. Su mayor frustración es la comunicación lenta e incierta con la casa de reposo, lo que le genera desconfianza.<br><br> **Comportamiento y Necesidades** Exige control y visibilidad inmediata de medicinas, salud y reportes semanales. Necesita respuestas rápidas y profesionales para sentirse tranquilo. <br><br>**Tecnología, Marcas y Canales** Usuario digital avanzado. Prefiere WhatsApp y Apps nativas con notificaciones directas, priorizando la rapidez (Chrome) sobre llamadas o correos.                                                                |
 
 | Entrevista #3                     |                                                                         |
 |-----------------------------------|-------------------------------------------------------------------------|
