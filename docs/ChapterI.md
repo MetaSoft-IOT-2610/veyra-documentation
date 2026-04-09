@@ -1,32 +1,31 @@
 ## Capítulo I: Introducción
 
-La introducción desempeña un papel fundamental en la estructuración y comprensión del proyecto, ya que establece el marco conceptual y contextual sobre el cual se desarrollará el trabajo. En esta sección inicial, se presenta una visión general que permite al lector comprender los objetivos principales que se desean alcanzar, así como los antecedentes que han llevado a la formulación del proyecto. También se delimita el alcance del mismo, es decir, hasta dónde se pretende llegar con el desarrollo de la propuesta. Asimismo, la introducción cumple la función de contextualizar la relevancia del proyecto en un entorno específico, destacando las razones que justifican su realización, los desafíos que se pretenden abordar y los beneficios esperados a partir de su implementación. En suma, esta parte inicial no solo informa, sino que también orienta y motiva al lector a profundizar en el contenido que se presentará a lo largo del documento.
+El presente proyecto tiene como finalidad el diseño, desarrollo e implementación de una solución tecnológica basada en el enfoque de Internet de las Cosas (IoT), integrando dispositivos físicos, procesamiento en el edge y servicios en la nube, con el objetivo de resolver problemáticas reales en contextos productivos. Esta solución se construye bajo un enfoque de ingeniería de software moderna, incorporando metodologías ágiles, diseño centrado en el usuario (Lean UX) y arquitecturas escalables orientadas a servicios.
+
+En el contexto actual, las organizaciones enfrentan desafíos relacionados con la captura, procesamiento y análisis de datos en tiempo real, especialmente en entornos donde aún predominan procesos manuales o semi-digitalizados. Estas limitaciones generan ineficiencias operativas, retrasos en la toma de decisiones y pérdida de información relevante.
+
+Frente a este escenario, el presente proyecto propone el desarrollo de un ecosistema digital que permita la automatización de la recolección de datos mediante dispositivos IoT, su procesamiento inteligente y su visualización a través de aplicaciones web y móviles, contribuyendo a la mejora de la eficiencia operativa y la toma de decisiones basada en datos.
 
 ### 1.1. Startup Profile
 
-El perfil de la startup es un elemento fundamental para comprender la identidad y el rumbo estratégico de una empresa emergente. A través de este perfil, se revela su visión de futuro, sus valores esenciales y la propuesta de valor que la diferencia en el mercado competitivo.
-
-En esta sección se describen los aspectos clave que definen a la startup, incluyendo su origen, las motivaciones que impulsaron su creación, el problema específico que busca solucionar y el enfoque innovador que emplea para posicionarse frente a sus competidores.
-
-Asimismo, se analizan los objetivos a mediano y largo plazo, junto con las estrategias diseñadas para su crecimiento y consolidación dentro del sector. Entender estos elementos resulta vital para evaluar el potencial de la startup y el impacto que puede generar en su entorno.
+La presente sección describe el contexto general de la startup responsable del desarrollo de la solución propuesta. Se presenta una visión general de la organización, su enfoque tecnológico y propuesta de valor, así como la caracterización de los integrantes del equipo, destacando sus perfiles y roles dentro del proyecto.
 
 #### 1.1.1. Descripción de la Startup
 
-En una sociedad donde el cuidado de los adultos mayores demanda mayor transparencia, confianza y eficiencia, Veyra nace con una visión clara: transformar la manera en que las familias y las casas de reposo gestionan la salud y el bienestar de los residentes. Nuestro propósito es brindar una plataforma que combine tecnología de vanguardia con un enfoque humano, garantizando que los familiares tengan acceso seguro y actualizado a la información de sus seres queridos, y que las instituciones cuenten con herramientas avanzadas para optimizar sus procesos.
+La startup Metasoft es una empresa tecnológica enfocada en el desarrollo de soluciones digitales innovadoras mediante el uso de tecnologías emergentes como Internet de las Cosas (IoT), computación en la nube y analítica de datos. Su objetivo es apoyar a organizaciones en la transformación digital de sus procesos, permitiendo una mayor eficiencia operativa, trazabilidad y toma de decisiones basada en datos.
 
-Nos diferenciamos por ofrecer un sistema web intuitivo, accesible y seguro, capaz de integrar historiales clínicos, tratamientos, recordatorios médicos y comunicación directa entre familias y personal de cuidado. Además, Veyra está preparada para evolucionar hacia un ecosistema conectado mediante dispositivos IoT —como brazaletes de monitoreo— que permitan obtener signos vitales en tiempo real y asegurar un seguimiento continuo de la salud.
+Metasoft desarrolla soluciones integrales que combinan dispositivos inteligentes, sistemas backend escalables y aplicaciones web y móviles, priorizando la interoperabilidad con sistemas existentes y la adaptabilidad a distintos contextos empresariales. Su modelo de negocio es inherentemente escalable: diseñado para crecer de forma exponencial mediante la incorporación de nuevas instituciones y usuarios sin incrementos proporcionales en los costos operativos, lo que le permite expandirse a múltiples segmentos del mercado geriátrico latinoamericano.
 
-Nuestra propuesta está diseñada para adaptarse a distintos niveles de necesidad, con planes de suscripción flexibles tanto para familiares individuales como para casas de reposo de diverso tamaño. Con ello, buscamos democratizar el acceso a la información clínica, generar confianza entre instituciones y familias, y elevar los estándares de cuidado a un nuevo nivel.
+En el marco de este proyecto, la startup desarrolla una solución orientada al sector salud, enfocada en el monitoreo remoto de pacientes en entornos de cuidado especializado.
 
-Veyra no es solo una aplicación de gestión clínica. Es una plataforma de confianza, un puente entre familias y cuidadores, y un compromiso hacia un nuevo paradigma de atención centrado en la verdad (verity) y en una nueva era (era) del cuidado.
+##### Misión 
 
-#### Misión 
+Desarrollar soluciones tecnológicas innovadoras que permitan a las organizaciones optimizar sus procesos mediante el uso de datos, automatización e integración de tecnologías emergentes.
 
-Desarrollar soluciones tecnológicas seguras, accesibles y centradas en la experiencia del usuario, que permitan a familiares y casas de reposo gestionar información clínica de manera eficiente y transparente. En Veyra nos enfocamos en la innovación constante, la protección de datos y la integración de herramientas digitales que fortalezcan la confianza y mejoren la calidad de vida de los adultos mayores.
+##### Visión
 
-#### Visión
+Ser una startup referente en el desarrollo de soluciones IoT y plataformas inteligentes en Latinoamérica, destacando por su capacidad de innovación, escalabilidad y enfoque centrado en el usuario.
 
-Convertirnos en la plataforma líder en gestión de cuidado de adultos mayores en Latinoamérica, integrando tecnologías emergentes como el Internet de las Cosas y el análisis de datos en tiempo real. Aspiramos a transformar el cuidado geriátrico en un proceso transparente, confiable y humano, acompañando a familias e instituciones en la creación de una nueva era de atención integral.
 #### 1.1.2. Perfiles de integrantes del equipo
 
 <div style="page-break-after: always;"></div>
@@ -54,17 +53,13 @@ Convertirnos en la plataforma líder en gestión de cuidado de adultos mayores e
 
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/team-member-profiles/" alt="" width="120" />
+      <img src="../assets/img/chapter-I/team-member-profiles/janover-saldana.jpg" alt="" width="120" />
     </td>
     <td valign="top">
-    </td>
-  </tr>
-
-  <tr>
-    <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/team-member-profiles/" alt="" width="120" />
-    </td>
-    <td valign="top">
+        <strong>Janover Gonzalo Saldaña Vela - (U20201B510)</strong> - Ingeniería de Software<br><br>
+        Soy estudiante de Ingeniería de Software con experiencia en desarrollo web y móvil. Manejo tecnologías como Vue.js, Flutter, ASP.NET y Spring Boot, aplicando buenas prácticas como Clean Architecture y Domain-Driven Design.
+        <br><br>
+        Me interesa la inteligencia artificial y el desarrollo de soluciones tecnológicas que optimicen procesos. Me considero una persona proactiva, responsable y orientada a resultados, con capacidad para trabajar en equipo y seguir aprendiendo constantemente.    
     </td>
   </tr>
 
@@ -77,22 +72,49 @@ Convertirnos en la plataforma líder en gestión de cuidado de adultos mayores e
       Tengo 21 años. Soy puntual, responsable y con experiencia en gestión de proyectos y desarrollo web. Espero aprender y aportar para que el proyecto sea exitoso.
     </td>
   </tr>
-<tr>
+
+  <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/team-member-profiles/" alt="" width="120" />
+      <img src="../assets/img/chapter-I/team-member-profiles/dayroRios.jpg" alt="Oscar Photo" width="120" />
     </td>
     <td valign="top">
+      <strong>Dayro Richard Rios Piñan - (U202315283)</strong> - Ingeniería de Software<br><br>
+      Mi nombre es Dayro Rios, tengo 19 años y actualmente estoy en el séptimo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Disfruto de escuchar música, jugar videojuegos y practicar deportes. Me considero una persona empática y tengo facilidad para comunicarme en entornos de trabajo en equipo.
     </td>
-  </tr>  
+  </tr>
+  <tr>
+    <td width="140" valign="top" align="center">
+      <img src="../assets/img/chapter-I/team-member-profiles/vicente-quijandria.png" alt="Vicente Photo" width="120" />
+    </td>
+    <td valign="top">
+      <strong>Vicente Quijandria Araneda - (U201822697)</strong> - Ingeniería de Software<br><br>
+      Mi nombre es Vicente Quijandria, actualmente estoy en el octavo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Disfruto de ver futbol, escuchar música, jugar videojuegos y practicar deportes. Me considero una persona proactiva, con buenas habilidades de comunicación y capacidad para colaborar eficazmente en equipos de trabajo.
+    </td>
+  </tr>
+  <tr>
+  <td width="140" valign="top" align="center">
+    <img src="../assets/img/chapter-I/team-member-profiles/renzo-villafuerte.jpg" alt="Renzo Villafuerte Photo" width="120" />
+  </td>
+  <td valign="top">
+    <strong>Renzo Villafuerte - (U202310670)</strong> - Ingeniería de Software<br><br>
+    Tengo 19 años y actualmente curso el séptimo ciclo de la carrera de Ingeniería de Software. Me considero una persona responsable, proactiva y con gran capacidad de aprendizaje. Me encuentro comprometido con mi desarrollo académico y profesional, buscando constantemente mejorar tanto en el ámbito personal como en el profesional. Me interesa fortalecer mis habilidades, asumir nuevos retos y aportar soluciones creativas en los proyectos en los que participo.
+  </td>
+</tr>
 </table>
 
 ### 1.2. Solution Profile
+
+Veyra es una plataforma digital integral diseñada para mejorar la gestión de información clínica y operativa en casas de reposo, facilitando el acceso remoto a datos relevantes para familiares y personal de cuidado. Para fundamentar la propuesta de valor de nuestra startup, empleamos la técnica 5W y 2H. 
 
 #### 1.2.1. Antecedentes y problemática
 
 **1. ANTECEDENTES**
 
-La población mundial envejece rápidamente, y América Latina no es la excepción. En 2022 había unos 88,6 millones de personas de 60 años o más en la región (13,4% de la población). En Perú, este fenómeno demográfico se refleja en que actualmente el 13,9% de la población (≈4 748 000 personas) tiene 60 años o más. Esta proporción crece a un ritmo sostenido (≈2,7% anual) y se estima que para el 2050 cerca del 25% de los peruanos formará parte de la comunidad de adultos mayores Este cambio estructural incrementa la demanda de servicios geriátricos (casas de reposo, centros de día, atención domiciliaria, etc.) y plantea retos en salud, pensiones y cuidado social.
+La población mundial envejece rápidamente, y América Latina no es la excepción. En 2022 había unos 88,6 millones de personas de 60 años o más en la región (13,4% de la población). En Perú, este fenómeno demográfico se refleja en que actualmente el 13,9% de la población (≈4 748 000 personas) tiene 60 años o más. Esta proporción crece a un ritmo sostenido (≈2,7% anual) y se estima que para el 2050 cerca del 25% de los peruanos formará parte de la comunidad de adultos mayores. De manera complementaria, el Instituto Nacional de Estadística e Informática (INEI, 2026) reporta que la proporción de población adulta mayor ha aumentado de 5,7% en 1950 a 14,6% en 2026, evidenciando un proceso sostenido de envejecimiento poblacional. Este cambio estructural incrementa la demanda de servicios geriátricos (casas de reposo, centros de día, atención domiciliaria, etc.) y plantea retos en salud, pensiones y cuidado social.
+
+Además, muchas personas adultas mayores conviven con problemas de salud que requieren seguimiento permanente. Según el INEI (2026), el 79,3% de esta población presenta al menos una condición crónica. Esto hace que, en entornos de cuidado continuo, sea cada vez más importante contar con un monitoreo oportuno, una trazabilidad clínica adecuada y una comunicación fluida entre las instituciones y las familias.
+
+Al mismo tiempo, el sistema de salud peruano mantiene limitaciones estructurales relacionadas con la fragmentación de la información y la limitada interoperabilidad entre actores e instituciones. De acuerdo con la OCDE (2025), esta fragmentación genera desigualdades en el acceso a la atención y dificulta la integración de la información clínica entre distintos niveles de atención. Esto complica disponer de datos clínicos oportunos, integrados y accesibles para la toma de decisiones, especialmente cuando el cuidado del adulto mayor involucra a personal asistencial, responsables administrativos y familiares.
 
 En este contexto, las casas de reposo cumplen un rol crucial en el bienestar de los mayores, pero su gestión enfrenta limitaciones tecnológicas. Tradicionalmente, ingresar a una residencia era visto como "apartar" al anciano, pero hoy se reconoce que la familia sigue teniendo un rol activo en el cuidado. Sin embargo, la modernización digital del sector es incipiente: muchas residencias aún manejan la información clínica y administrativa en papel o en sistemas aislados. De hecho, incluso en el sistema de salud peruano en general "muchos hospitales y postas aún registran a mano la información del paciente" y la compartición de datos es limitada, pues cada institución (MINSA, EsSalud, FF.AA., FFAA, sector privado) opera con historiales fragmentados. Solo unas pocas residencias pioneras habían iniciado planes de transformación digital antes de la pandemia, siendo la COVID-19 un catalizador que "agilizó la necesidad de un gran cambio" tecnológico en los centros geriátricos. Esta falta de digitalización contribuye a la desconexión informativa entre las casas de reposo y los familiares. En la práctica, la comunicación suele limitarse a llamadas telefónicas esporádicas o visitas puntuales, sin un canal permanente de intercambio de datos. Esta brecha se traduce en frustración y ansiedad: los familiares desean recibir información puntual sobre la salud, actividades y necesidades de sus seres queridos, pero carecen de medios eficientes para ello. De hecho, expertos han señalado "la necesidad de la creación de una plataforma" que aproveche las últimas tecnologías para facilitar la interacción continua entre los familiares y el centro de cuidado.
 
@@ -104,11 +126,11 @@ Falta de acceso a información en tiempo real: Los familiares no disponen de un 
 
 Ausencia de plataformas integradas: Actualmente, no existe en el sector una solución web centralizada que unifique la gestión clínica, administrativa y comunicacional en residencias peruanas. Muchas tareas administrativas –como el control de pagos, el registro de recetas o los reportes diarios– se realizan de forma manual o en hojas de cálculo, sin interoperabilidad. Esta falta de automatización genera lentitud en los procesos y riesgo de errores, afectando la eficiencia del personal y reduciendo la transparencia hacia los familiares.
 
-Baja adopción tecnológica: A diferencia de otros sectores de salud, las casas de reposo en Perú han incorporado la tecnología de forma limitada. Aunque en otros países especialistas destacan que la digitalización ofrece mejoras significativas en la calidad asistencial, en nuestro entorno las iniciativas tecnológicas (como teleasistencia o software de gestión) son incipientes Esta baja adopción implica que los centros dependen de métodos tradicionales, lo que aumenta la brecha con las expectativas modernas de atención y comunicación.
+Baja adopción tecnológica: A diferencia de otros sectores de salud, las casas de reposo en Perú han incorporado la tecnología de forma limitada. Aunque en otros países especialistas destacan que la digitalización ofrece mejoras significativas en la calidad asistencial, en nuestro entorno las iniciativas tecnológicas (como teleasistencia o software de gestión) son incipientes. Esta baja adopción implica que los centros dependen de métodos tradicionales, lo que aumenta la brecha con las expectativas modernas de atención y comunicación.
 
 **Análisis 5W+2H:**
 
-**What (¿Qué?):** Veyra busca resolver la falta de comunicación y coordinación entre las casas de reposo y las familias de los residentes. La plataforma web integrará el registro clínico, tratamientos, recordatorios, reportes diarios y datos administrativos en un único sistema accesible, permitiendo que el personal de las instituciones gestione la información y que los familiares consulten de forma segura el estado y la historia de su adulto mayor.
+**What (¿Qué?):** El problema se centra en la falta de acceso oportuno y confiable a la información sobre el estado de salud de los residentes en casas de reposo. Esta situación afecta tanto a las instituciones, que necesitan gestionar y dar seguimiento al cuidado de manera ordenada, como a los familiares, que requieren visibilidad sobre la condición de sus seres queridos.
 
 **Why (¿Por qué?):** Es importante abordar este problema para mejorar la calidad de vida de los adultos mayores y dar tranquilidad a sus familias. Al centralizar la información y ofrecer acceso en línea, Veyra reduce el estrés familiar, aumenta la transparencia en la atención y optimiza las tareas del personal. En un contexto de rápido envejecimiento poblacional, la solución contribuye a que las residencias operen de manera más eficiente y moderna, alineándose con estándares actuales de cuidado y facilitando el cumplimiento de las normativas de salud.
 
@@ -118,9 +140,9 @@ Baja adopción tecnológica: A diferencia de otros sectores de salud, las casas 
 
 **Where (¿Dónde?):** Ocurre principalmente en el ámbito de casas de reposo, residencias geriátricas y centros de atención diurna en Perú (especialmente en las zonas urbanas con más población envejecida), así como en cualquier institución similar de Latinoamérica interesada en mejorar su gestión. También implica el contexto familiar de esos residentes, quienes pueden estar localizados tanto en la misma ciudad como en regiones distantes, requiriendo acceso remoto a la información.
 
-**How (¿Cómo?):** Se resuelve mediante el desarrollo de Veyra, una aplicación web centralizada en la nube. El personal de la residencia ingresará datos clínicos, tratamientos y reportes a través de la plataforma, que implementará seguridad y cifrado para proteger la confidencialidad. Los familiares dispondrán de un portal web seguro (no se planea app móvil por el alcance actual) con acceso mediante credenciales, donde consultarán los datos relevantes en cualquier momento. En el futuro se integrarán dispositivos IoT (brazaletes, sensores biométricos) para automatizar la captura de constantes vitales y movimiento, pero esto queda fuera del alcance inicial. La plataforma facilitará notificaciones y recordatorios (por ejemplo, de medicación o citas) y podrá escalar conforme crezca el número de usuarios.
+**How (¿Cómo?):** Este problema puede abordarse mediante una solución digital integrada que centralice la información clínica y operativa del residente, facilite el acceso remoto a los datos relevantes y permita mejorar el seguimiento del estado de salud. Bajo esta aproximación, la tecnología se plantea como un medio para fortalecer la trazabilidad, la comunicación y la capacidad de respuesta en el cuidado continuo.
 
-**How much (¿Cuánto?):** El modelo de ingresos proyectado es de tipo SaaS (Software como Servicio). Se planea ofrecer suscripción mensual o anual a las instituciones (casas de reposo) basada en el tamaño o número de residentes. La tarifa cubriría acceso al sistema, soporte técnico y futuras actualizaciones (por ejemplo, incorporación de IoT). Los familiares tendrían acceso incluido con la suscripción del centro, de modo que el costo recae sobre la institución. Adicionalmente, se podría considerar un esquema escalonado: un plan básico con funciones esenciales y niveles superiores con módulos avanzados (informes personalizados, integración de dispositivos, etc.), así como una tarifa de implementación inicial para configurar el sistema. Esto permitirá sostenibilidad económica de Veyra adaptada al mercado de residencias de tercera edad.
+**How much (¿Cuánto?):** Desde una perspectiva preliminar, el problema también involucra una dimensión económica y operativa, ya que cualquier propuesta de mejora debe ser viable para instituciones con distintos niveles de capacidad y adaptarse a modelos sostenibles de implementación y mantenimiento.
 
 #### 1.2.2. Lean UX Process
 
@@ -128,149 +150,164 @@ El Lean UX es un enfoque que permite validar las soluciones propuestas para prob
 
 ##### 1.2.2.1. Lean UX Problem Statements
 
-El estado actual del **cuidado de adultos mayores en casas de reposo** se ha enfocado principalmente en **procesos manuales y registros físicos,** lo que provoca **ineficiencias operativas, falta de transparencia, pérdida de información y riesgos en la gestión clínica y médica.** Esta situación afecta a **administradores, personal de salud y familiares de los residentes,** quienes dependen de métodos desactualizados para acceder y compartir información crítica sobre la salud de los adultos mayores.
+Nuestro servicio brinda atención integral a adultos mayores en casas de reposo privadas. A través de un equipo de personal de salud y cuidadores, las instituciones buscan garantizar el bienestar de cada residente y mantener a sus familias tranquilas y bien informadas.
 
-Lo que los productos o servicios existentes no logran resolver es la centralización **digital de la gestión médica y comunicacional dentro de las casas de reposo.** Actualmente, **no existe una solución integrada que unifique el monitoreo de salud, la comunicación con familiares y el control administrativo** en una sola plataforma segura y confiable.
+Hemos observado que los familiares no siempre cuentan con información oportuna sobre el estado de salud de su ser querido, y el personal enfrenta dificultades para mantener un seguimiento claro y continuo sin herramientas adecuadas.
 
-Nuestro producto, **Veyra**, abordará esta brecha mediante una **plataforma web segura, intuitiva y escalable que:**
+¿Cómo podríamos lograr que tanto el personal como los familiares de adultos mayores en casas de reposo tengan acceso oportuno al estado de salud del residente, sin depender de procesos manuales o comunicación reactiva?
 
-- Centraliza la información médica y administrativa de los residentes.
+##### 1.2.2.2. Lean UX Assumptions
 
-- Facilita la comunicación directa y transparente entre las casas de reposo y los familiares.
+En esta sección se presentan los supuestos iniciales del equipo sobre el negocio, los usuarios, el problema y la solución propuesta. Estos supuestos se formulan como creencias que deben validarse con evidencia durante entrevistas, prototipado y pruebas de uso.
 
-- Ofrece reportes visuales, alertas automáticas y seguimiento en tiempo real.
+**Assumptions Worksheet (síntesis aplicada a Veyra)**
 
-Nuestro enfoque inicial estará dirigido a **los administradores de casas de reposo privadas ubicadas en zonas urbanas,** con entre **20 y 80 residentes,** que ya utilicen herramientas digitales básicas. También se orientará a **familiares y apoderados** que busquen un **seguimiento transparente y continuo** del estado de salud de sus seres queridos.
+| #  | Supuesto aplicado                                                                                                        |
+|----|--------------------------------------------------------------------------------------------------------------------------|
+| 1  | Creemos que nuestros clientes necesitan visibilid ad confiable y oportuna del estado de salud de los residentes.         |
+| 2  | Estas necesidades pueden resolverse con una solución integrada web + móvil + IoT, con alertas y trazabilidad clínica.    |
+| 3  | Nuestros clientes iniciales serán casas de reposo privadas de tamaño pequeño y mediano en zonas urbanas.                 |
+| 4  | El valor #1 para las instituciones es mejorar la confianza de las familias con información verificable y en tiempo real. |
+| 5  | Beneficios adicionales: menor carga operativa, mejor trazabilidad y respuesta más rápida ante eventos críticos.          |
+| 6  | Adquiriremos clientes mediante contacto directo B2B, referidos del sector salud y alianzas institucionales.              |
+| 7  | Generaremos ingresos con planes de suscripción escalonados para instituciones y alternativas de acceso para familiares.  |
+| 8  | La competencia principal está basada en procesos manuales, comunicación informal y sistemas aislados.                    |
+| 9  | Nos diferenciaremos por monitoreo continuo IoT, acceso remoto y experiencia consistente para personal y familiares.      |
+| 10 | El mayor riesgo de producto es que el personal no adopte un registro digital continuo por fricción operativa.            |
+| 11 | Reduciremos ese riesgo con flujos simples, capacitación breve y automatización de captura vía sensores IoT.              |
+| 12 | Si se demuestra baja adopción o bajo valor percibido, el modelo de negocio y el alcance funcional deben ajustarse.       |
 
-Sabremos que tenemos éxito cuando observemos **mayor transparencia y confianza entre los administradores de casas de reposo y familiares de los adultos mayores, tiempos de respuesta más rápidos ante eventos médicos, mayor participación de los usuarios en la plataforma y una reducción medible de los errores de comunicación.**
+**Supuestos por dimensión**
 
-#### 1.2.2.2. Lean UX Assumptions
+**Business Assumptions**
 
-**Business Assumptions:**
+* Asumimos que existe un segmento de casas de reposo privadas que enfrenta dificultades para brindar transparencia y acceso oportuno a la información clínica.
+* Asumimos que las instituciones están dispuestas a invertir en soluciones tecnológicas que reduzcan riesgos y mejoren su reputación.
+* Asumimos que el modelo de suscripción es viable y sostenible para distintos tamaños de institución.
+* Asumimos que la propuesta de valor diferencial se sostiene en la integración web + móvil + IoT.
 
-Existe un mercado suficientemente grande de **casas de reposo privadas medianas (20 a 80 residentes)** en Perú y Latinoamérica que necesitan digitalizar sus procesos para seguir siendo competitivas.
+**User Assumptions**
 
-Los **directores y administradores** están dispuestos a invertir en una plataforma SaaS como Veyra **si perciben mejoras claras en eficiencia operativa, control de la información y reputación frente a las familias**.
+* Asumimos que los principales usuarios serán administradores, personal de cuidado y familiares de adultos mayores.
+* Asumimos que los administradores necesitan visión centralizada del estado de los residentes.
+* Asumimos que el personal requiere registrar información de forma rápida, sin interrumpir tareas críticas.
+* Asumimos que los familiares necesitan acceso remoto continuo y notificaciones oportunas.
 
-Las residencias pueden **asumir una suscripción mensual o anual** (por sede o por número de residentes) sin afectar de forma crítica su estructura de costos, siempre que el valor percibido sea evidente.
+**Problem Assumptions**
 
-La **digitalización de procesos internos** (historial clínico, comunicación con familiares, reportes y cobros) genera **ahorros en tiempo y reducción de errores** que compensan el costo de implementación y operación de Veyra.
+* Asumimos que existe falta de transparencia en la gestión de información clínica en casas de reposo.
+* Asumimos que la comunicación entre institución y familia es limitada o poco estructurada.
+* Asumimos que los registros manuales generan inconsistencias y demoras en la toma de decisiones.
+* Asumimos que hoy no existe monitoreo continuo suficiente para anticipar riesgos de salud.
 
-Los beneficios de **mayor transparencia hacia los familiares** se traducen en **mayor ocupación, fidelización y recomendación** de la residencia, lo que hace sostenible el modelo de negocio de Veyra.
+**Solution Assumptions**
 
-El modelo **SaaS B2B** de Veyra es escalable a **otras ciudades y países de la región** con ajustes principalmente comerciales (precio, regulaciones), sin cambios estructurales en el producto base.
+* Asumimos que una plataforma digital centralizada mejorará la trazabilidad de la información.
+* Asumimos que el acceso en tiempo real reducirá incertidumbre y aumentará confianza en los familiares.
+* Asumimos que los dispositivos IoT permitirán capturar signos vitales de forma continua y útil para alertas.
+* Asumimos que la aplicación móvil incrementará frecuencia de consulta y capacidad de reacción.
 
-**Business Outcomes:**
+**Assumptions Priority (riesgo x incertidumbre)**
 
-Queremos que las **casas de reposo adopten Veyra como su herramienta principal de gestión**, registrando diariamente información médica, medicamentos y reportes.
+| Prioridad | Supuesto a validar                                                                                 | Riesgo | Incertidumbre |
+|----------:|----------------------------------------------------------------------------------------------------|:------:|:-------------:|
+|         1 | El personal adoptará el registro digital continuo sin afectar su flujo operativo.                  |  Alto  |     Alto      |
+|         2 | Las alertas basadas en IoT serán suficientemente precisas para ser confiables en operación diaria. |  Alto  |     Alto      |
+|         3 | Los familiares usarán de forma recurrente el canal web/móvil para seguimiento del residente.       |  Alto  |     Medio     |
+|         4 | Las instituciones aceptarán el modelo de suscripción por el valor percibido de la solución.        |  Alto  |     Medio     |
+|         5 | La integración web + móvil + IoT será percibida como diferencial frente a alternativas actuales.   | Medio  |     Medio     |
 
-Buscamos que los **familiares consulten regularmente la plataforma**, interactúen con el personal y reporten mayor confianza y satisfacción.
+**Business Outcomes esperados**
 
-Esperamos reducir en un 30% **los errores en la administración de medicamentos** y mejorar en un **40% la eficiencia operativa** del personal durante los primeros seis meses.
+* Lograr que al menos 3 instituciones piloto adopten Veyra durante los primeros 6 meses.
+* Lograr que el 50% de las instituciones piloto continúen con un plan de suscripción pago. 
+* Reducir en al menos un 25% los costos operativos de gestión de información clínica en las instituciones piloto. 
+* Lograr que al menos el 60% identifiquen a Veyra como una alternativa superior frente a los métodos tradicionales
 
-Queremos que las **instituciones perciban un ahorro de tiempo administrativo** y una reducción en las llamadas o consultas manuales de familiares.
+**User Outcomes esperados**
 
-Aspiramos a que **nuevas casas de reposo se suscriban a planes de pago mensuales**, validando el valor percibido del producto.
+* Lograr que enfermeros y doctores tengan disponible el 90% de los registros del residente en tiempo real y reduzcan el tiempo de registro manual en al menos un 35% por turno.
+* Lograr que los familiares consulten la plataforma un mínimo de 3 veces por semana, aumentando su frecuencia de seguimiento remoto.
+* Lograr que enfermeros, doctores y familiares reduzcan el tiempo de reacción ante alertas de salud en al menos un 40%.
+* Lograr que los administradores tengan visibilidad completa del estado de la institución en tiempo real, reduciendo en al menos un 50% el tiempo dedicado a recopilar información operativa manualmente.
 
-Buscamos que Veyra se consolide como una **solución tecnológica de referencia** en la gestión integral del cuidado de adultos mayores.
+**Features mínimas para validación**
 
-**User Assumptions:**
+1. Registro digital de historiales clínicos y tratamientos.
+2. Dashboard web de monitoreo para administradores y personal.
+3. Captura y visualización de signos vitales en tiempo real.
+4. Sistema de alertas automáticas ante variaciones críticas.
+5. Acceso web/móvil para familiares con historial y estado actual del residente.
+6. Canal básico de comunicación entre familia e institución.
 
-Los **administradores y personal médico** necesitan herramientas que integren historiales, medicamentos, citas y reportes en un solo lugar.
-
-Los **familiares o apoderados** requieren acceso rápido, seguro y claro a la información de salud de los residentes, sin depender de llamadas o correos.
-
-Ambos grupos valoran **la transparencia, la inmediatez y la facilidad de uso** por encima de las funciones excesivamente técnicas.
-
-Los **administradores** priorizan la eficiencia operativa y la reducción de errores.
-
-Los **familiares** buscan confianza, tranquilidad y cercanía con la institución.
-
-Existe una disposición positiva hacia las soluciones digitales siempre que sean **intuitivas, seguras y personalizables según el rol del usuario.**
-
-**User Outcomes:**
-
-Los **administradores** reportan una mejor organización y control del flujo de trabajo interno.
-
-El **personal médico** disminuye el uso de registros en papel y optimiza la actualización de información clínica.
-
-Los **familiares** se sienten más tranquilos e informados, reduciendo su necesidad de llamadas o visitas presenciales.
-
-Las **decisiones clínicas y administrativas** se basan en datos actualizados, reduciendo errores.
-
-Las instituciones **mejoran su comunicación y reputación** gracias a la transparencia en la atención.
-
-Los usuarios recomiendan Veyra como una **herramienta confiable, moderna y fácil de usar.**
-
-**Features:**
-
-1) **Módulo de historial clínico digital** con acceso restringido por rol, que permite a administradores y cuidadores gestionar y actualizar datos en tiempo real, evitando pérdidas de información.
-
-2) **Aplicación web para familiares** donde pueden visualizar notificaciones y reportes médicos actualizados, reduciendo la incertidumbre y aumentando la confianza en el servicio.
-
-3) **Sistema de alertas automáticas** sobre medicamentos, citas y posibles emergencias médicas, que mejora la coordinación del cuidado y reduce el riesgo de errores.
-
-4) **Paneles analíticos e informes descargables** que permiten a los administradores tomar decisiones basadas en datos y optimizar el uso de recursos clínicos y administrativos.
-
-5) **Canales de comunicación interna y externa** (por ejemplo, chat o registro estructurado de comunicaciones) integrados en la plataforma, para fortalecer el vínculo entre familias y personal del hogar.
 
 ##### 1.2.2.3. Lean UX Hypothesis Statements
 
-**Hipótesis 1 – Historial clínico digital**
+En esta sección se formulan las hipótesis del producto a partir de los supuestos previamente definidos. Estas hipótesis permiten validar, mediante experimentación, si la solución propuesta genera los resultados esperados en los usuarios y en el negocio. Cada hipótesis se estructura en términos de segmento de usuario, solución propuesta, resultado esperado y métrica de validación.
 
-Creemos que lograremos **una mejora significativa en la eficiencia operativa y reducción de errores en los registros médicos,**
 
-si **los administradores y cuidadores**
+**Hypothesis 1 – Transparencia y confianza**
 
-Obtienen **la capacidad de gestionar y actualizar la información clínica de los residentes en tiempo real y de forma segura,**
+**Creemos que** implementar una plataforma web y móvil con acceso en tiempo real a la información clínica de los residentes aumentará el nivel de confianza de los familiares en el servicio de la casa de reposo.
 
-Con **un módulo de historial clínico digital con acceso restringido por rol.**
+**Sabremos que** hemos tenido éxito.
 
-**Hipótesis 2 – Notificaciones y reportes para familiares**
+**Cuando veamos** que al menos el 70% de los familiares acceden a la plataforma un mínimo de 3 veces por semana y reportan una mejora en su percepción de confianza en encuestas de satisfacción.
 
-Creemos que lograremos **un aumento en la confianza y satisfacción de los familiares respecto al servicio de cuidado,**
+**Hypothesis 2 – Monitoreo IoT en tiempo real**
 
-Si **los familiares y apoderados de los adultos mayores**
+**Creemos que** incorporar dispositivos IoT para el monitoreo continuo de signos vitales mejorará la detección temprana de riesgos de salud en residentes de casas de reposo.
 
-Obtienen **visibilidad inmediata y transparente del estado de salud y atención médica de sus seres queridos,**
+**Sabremos que** hemos tenido éxito.
 
-Con **una aplicación web que les permita visualizar notificaciones y reportes médicos actualizados.**
+**Cuando veamos** que al menos el 80% de las alertas críticas generadas corresponden a eventos confirmados por el personal y se reduce la cantidad de incidentes no detectados.
 
-**Hipótesis 3 – Alertas automáticas de salud y medicación**
+**Hypothesis 3 – Adopción por parte del personal**
 
-Creemos que lograremos **una reducción en los errores médicos y una mejor coordinación del cuidado diario,**
+**Creemos que** implementar un sistema simple e integrado para el registro de información clínica aumentará la frecuencia y calidad del registro de datos por parte del personal de cuidado.
 
-Si **los cuidadores y administradores de las casas de reposo**
+**Sabremos que** hemos tenido éxito.
 
-Reciben **alertas oportunas sobre medicamentos, citas y posibles emergencias médicas,**
+**Cuando veamos** que al menos el 85% de los registros se realizan dentro del mismo día y los errores de registro se reducen en un 30%.
 
-Con **un sistema automatizado de notificaciones y recordatorios inteligentes.**
 
-**Hipótesis 4 – Paneles analíticos e informes descargables**
+**Hypothesis 4 – Uso de la aplicación móvil**
 
-Creemos que lograremos **una toma de decisiones más informada y una gestión más eficiente de los recursos clínicos,**
+**Creemos que** ofrecer una aplicación móvil intuitiva con acceso a información en tiempo real aumentará el uso recurrente de la solución entre los familiares de residentes.
 
-si **los administradores de las casas de reposo**
+**Sabremos que** hemos tenido éxito.
 
-Acceden a **indicadores visuales, métricas y reportes descargables sobre el estado de salud y desempeño institucional,**
+**Cuando veamos** que al menos el 60% de los usuarios activos utilizan la app diariamente o varias veces por semana.
 
-Con **paneles analíticos avanzados e informes generados por la plataforma.**
+**Hypothesis 5 – Alertas y reacción oportuna**
 
-**Hipótesis 5 – Canales de comunicación integrados**
+**Creemos que** implementar un sistema de alertas automáticas ante cambios en signos vitales permitirá una respuesta más rápida ante eventos críticos por parte del personal médico y los familiares.
 
-Creemos que lograremos **un fortalecimiento del vínculo emocional y la confianza entre familiares y cuidadores,**
+**Sabremos que** hemos tenido éxito.
 
-Si **las familias y el personal de las casas de reposo**
+**Cuando veamos** que el tiempo promedio de respuesta ante alertas se reduce en al menos un 40% respecto a la situación actual.
 
-Pueden **comunicarse de forma directa, rápida y segura sobre el estado del residente,**
+**Hypothesis 6 – Valor percibido y disposición de pago**
 
-Con **la integración de canales de comunicación interna y externa como chat o llamadas dentro de Veyra.**
+**Creemos que** ofrecer una solución que combine monitoreo en tiempo real, acceso remoto y comunicación directa validará la disposición de pago de los administradores de casas de reposo.
+
+**Sabremos que** hemos tenido éxito.
+
+**Cuando veamos** que al menos el 50% de las instituciones piloto aceptan continuar con un plan de suscripción al finalizar el período de prueba.
+
+**Hypothesis 7 – Diferenciación en el mercado**
+
+**Creemos que** ofrecer una solución integrada (web + móvil + IoT) nos diferenciará de las soluciones tradicionales disponibles para casas de reposo privadas.
+
+**Sabremos que** hemos tenido éxito.
+
+**Cuando veamos** que al menos el 60% de los decisores entrevistados en sesiones de validación comercial identifican el monitoreo en tiempo real como el principal valor diferencial de la solución.
 
 ##### 1.2.2.4. Lean UX Canvas
 
-![Lean UX Canvas](../assets/img/chapter-I/lean-ux-canvas/Lean%20UX.png)
+![Lean UX Canvas](../assets/img/chapter-I/lean-ux-canvas/lean-ux.png)
 
-### 1.3. Segmentos objetivos
+### 1.3. Segmentos objetivo
 
 Esta sección incluye la descripción de los segmentos asociados al dominio del problema, incluyendo características demográficas e información estadística de sustento.
 
