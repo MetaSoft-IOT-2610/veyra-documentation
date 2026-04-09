@@ -1,8 +1,15 @@
 # Capítulo II: Requirements Elicitation & Analysis
 
+En este capítulo, el equipo se enfoca en entender profundamente el entorno y las necesidades reales antes de desarrollar la solución. No se trata solo de listar funciones, sino de aplicar un proceso de Obtención y Análisis que nos permita validar si los problemas que buscamos resolver con Veyra son reales.
+
+
 ## 2.1. Competidores
 
+La mejor forma de diseñar un producto útil es escuchando a quienes lo usarán día a día. En esta etapa de la investigación, dejamos de lado las suposiciones y buscamos evidencia real a través de entrevistas. Esto nos permite conectar con los "puntos de dolor" (pain points) de los administradores y cuidadores, asegurando que la tecnología IoT que implementemos responda a una necesidad humana real.
+
 ### 2.1.1. Análisis competitivo
+
+Para lograr una recolección de información valiosa y estructurada, hemos diseñado guías de entrevista específicas para nuestros segmentos objetivo. El cuestionario busca explorar no solo datos demográficos, sino también la experiencia tecnológica del usuario y sus frustraciones actuales. A continuación, se presenta el diseño de preguntas para nuestros segmentos clave: administradores de casas de reposo y familiares de residentes.
 
 
 <table border="1" cellpadding="10" cellspacing="0" style="margin-left: auto; margin-right: auto; font-family: sans-serif;">
@@ -133,7 +140,9 @@
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
-Luego de haber realizado el análisis de nuestra solución con respecto a soluciones ya existentes, nuestro equipo procederá a plantear estrategias y tácticas que debemos poner en marcha para sobresalir de las otras soluciones.
+Una vez identificados los actores del mercado, el siguiente paso es definir cómo Veyra se abrirá paso entre ellos. No basta con conocer a la competencia; necesitamos un plan de acción que aproveche nuestras ventajas y blinde nuestras debilidades. Para lograrlo, utilizamos la Matriz CAME, una herramienta que nos permite "traducir" el análisis FODA previo en decisiones estratégicas reales.
+
+A través de este análisis, establecemos tácticas ofensivas para explotar nuestra especialización en el mercado latinoamericano, y acciones de supervivencia para mitigar los riesgos de ser una marca nueva. Este enfoque nos asegura que cada funcionalidad de nuestro sistema IoT tenga un propósito estratégico detrás.
 
 **Matriz CAME para el desarrollo de estrategias basándonos en el análisis FODA**
 
@@ -144,7 +153,13 @@ Luego de haber realizado el análisis de nuestra solución con respecto a soluci
 
 ## 2.2. Entrevistas
 
+Para que Veyra pase de ser una idea a una solución útil, necesitamos salir de la oficina y validar nuestras hipótesis con las personas que viven el día a día del cuidado geriátrico. La recolección de información mediante entrevistas directas nos permite entender no solo qué funciones necesitan los usuarios, sino cómo se sienten y qué problemas reales enfrentan.
+
+En esta sección, dejamos de lado las suposiciones para escuchar la voz de los administradores y familiares, asegurando que nuestra propuesta tecnológica sea intuitiva y genere un impacto positivo en su rutina.
+
 ### 2.2.1. Diseño de entrevistas
+
+Para que las conversaciones sean productivas y comparables, hemos estructurado guías de entrevista específicas para cada segmento. El objetivo no es solo obtener datos demográficos, sino identificar "puntos de dolor" críticos, como la fragmentación de la información clínica o la ansiedad de los familiares por la falta de comunicación. A continuación, presentamos los cuestionarios diseñados para Administradores y Familiares:
 
 #### Segmento objetivo: Administrador de casa de reposo
 
@@ -214,7 +229,7 @@ Cuando ocurre una urgencia médica, ¿cómo suele enterarse y cuánto tiempo dem
 
 ### 2.2.2. Registro de entrevistas
 
-En esta sección presentamos los registros de las entrevistas que hicimos para cada segmento objetivo de nuestra aplicación.
+En este apartado documentamos los resultados de las sesiones de campo. Aquí se sintetizan las experiencias y opiniones de los entrevistados, lo cual nos permite encontrar patrones comunes. Estos registros son fundamentales, ya que de aquí extraeremos los insights necesarios para construir nuestras User Personas y el Product Backlog del proyecto.
 
 **Segmento 1: Administradores de casas de reposo**
 
@@ -295,7 +310,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 
 ### 2.2.3. Análisis de entrevistas
 
-En esta sección se presenta el análisis detallado de la información recolectada. Para cada segmento, se explican primero los hallazgos estadísticos objetivos y subjetivos, seguidos de la evidencia gráfica correspondiente.
+Luego de conversar con nuestros segmentos objetivos, el siguiente paso es "hacer hablar" a los datos. En esta sección, procesamos la información recolectada para separar los hechos objetivos de las percepciones subjetivas de los entrevistados. Este análisis es crucial, ya que nos permite detectar patrones de comportamiento y necesidades insatisfechas que las gráficas estadísticas pondrán en evidencia. Al contrastar ambos segmentos, obtenemos una visión de 360 grados sobre el estado actual del cuidado geriátrico.
 
 #### Segmento 1: Administradores de Casas de Reposo
 
@@ -324,6 +339,8 @@ En esta sección se presenta el análisis detallado de la información recolecta
 
 ## 2.3. Needfinding
 
+Con los datos analizados, entramos en la fase de Needfinding o "búsqueda de necesidades". El objetivo aquí es empatizar profundamente con el usuario para diseñar una solución que no solo sea técnica, sino humana. No buscamos solo "digitalizar procesos", sino resolver problemas reales que generan fricción en la vida de los administradores y la tranquilidad de las familias. En esta etapa, utilizamos herramientas como User Personas, User Task Matrix, User Journey Mapping y Empathy Mapping para construir una imagen clara de quiénes son nuestros usuarios, qué hacen, cómo se sienten y qué necesitan realmente.
+
 ### 2.3.1. User Personas
 
 A partir del análisis de entrevistas y la recolección de información sobre las dinámicas en casas de reposo, se identificaron los principales perfiles de usuarios que interactúan directamente con la solución Veyra. Estos perfiles representan los segmentos clave para el sistema, ya que concentran tanto la necesidad de gestión operativa como la necesidad de acceso confiable a información médica en tiempo real. La construcción de los *User Persona* permite al equipo de desarrollo comprender mejor sus motivaciones, frustraciones y hábitos, lo que resulta esencial para diseñar funcionalidades adecuadas y experiencias de usuario efectivas.
@@ -340,7 +357,8 @@ A partir del análisis de entrevistas y la recolección de información sobre la
 
 ### 2.3.2. User Task Matrix
 
-El User Task Matrix presenta las tareas que realizan los User Persona para cumplir sus objetivos en su día a día, independientemente de si usan nuestro software o no. Se evalúa la frecuencia y la importancia de cada tarea para identificar dónde aportar valor.
+Para entender dónde Veyra puede generar mayor impacto, debemos analizar la rutina actual de nuestros usuarios. El User Task Matrix nos permite listar las tareas cotidianas que realizan, independientemente de la tecnología. Al evaluar qué tan seguido las hacen (frecuencia) y qué tan críticas son (importancia), podemos priorizar aquellas funciones que realmente aliviarán la carga de trabajo o reducirán la incertidumbre del familiar.
+
 
 | Tarea (Task) | Administrador () |                 | Familiar ()    |                 |
 |--------------|------------------|-----------------|----------------|-----------------|
@@ -357,6 +375,9 @@ El User Task Matrix presenta las tareas que realizan los User Persona para cumpl
 
 
 ### 2.3.3. User Journey Mapping
+
+El User Journey Mapping es una herramienta visual que nos permite "caminar en los zapatos" del usuario. Aquí mapeamos el viaje emocional y operativo que recorren tanto el administrador como el familiar ante situaciones específicas. Identificar los momentos de mayor frustración (puntos bajos) nos da la oportunidad de convertirlos en momentos de satisfacción gracias a nuestra intervención tecnológica.
+
 
 **Segmento 1 – Administrador de casa de reposo **
 
@@ -378,7 +399,9 @@ El User Task Matrix presenta las tareas que realizan los User Persona para cumpl
 
 ### 2.3.4. Empathy Mapping
 
-Para la elaboración de los *Empathy Maps*, el equipo partió del conocimiento y observaciones recolectadas durante el análisis de los User Persona. Se colocó al centro de cada mapa al usuario correspondiente y se respondieron las preguntas claves sobre su entorno, emociones, comportamientos y necesidades.
+Para diseñar una solución que realmente conecte con las personas, no basta con saber qué hacen; necesitamos entender qué sienten. El Empathy Mapping es una herramienta que nos permite ir más allá de los datos demográficos para profundizar en el mundo interior de nuestros usuarios.
+Al analizar qué es lo que el administrador y el familiar oyen, ven, dicen y hacen, logramos identificar sus miedos y sus aspiraciones. Este ejercicio es fundamental para que Veyra no sea solo una herramienta funcional, sino una plataforma que brinde seguridad y alivio emocional a todos sus usuarios
+
 
 **Segmento 1: Administradores de casas de reposo**
 
@@ -391,6 +414,9 @@ Para la elaboración de los *Empathy Maps*, el equipo partió del conocimiento y
 
 
 ## 2.4. Big Picture Event Storming
+
+Para diseñar un sistema robusto, primero debemos entender el negocio como un todo, sin tecnicismos de por medio. El Big Picture Event Storming es una técnica colaborativa que nos ayuda a visualizar todos los eventos que ocurren en una casa de reposo. Al organizar estos eventos de manera cronológica y lógica, logramos identificar los flujos críticos del negocio y los puntos donde la información suele perderse o demorar.
+
 
 **Step 1 – Free Exploration**
 
@@ -408,8 +434,9 @@ Esta estructura ayudó a identificar los procesos clave y las áreas de mejora q
 
 ## 2.5. Ubiquitous Language
 
-In this project, whose main objective is to improve transparency and efficiency in elderly care within nursing homes through a web platform,
-the following **ubiquitous language** has been defined to ensure clarity and consistency among users, developers, and stakeholders:
+En proyectos donde interactúan desarrolladores, médicos y familias, es fácil que ocurran malentendidos. Por ello, hemos establecido un Lenguaje Ubicuo: un diccionario común de términos que todos los involucrados entenderemos de la misma manera. Este glosario no solo facilita la comunicación interna, sino que asegura que el código y la interfaz del software reflejen fielmente la realidad del negocio geriátrico.
+
+
 
 | Term                   | Definition                                                                                                                         |
 |------------------------|------------------------------------------------------------------------------------------------------------------------------------|
