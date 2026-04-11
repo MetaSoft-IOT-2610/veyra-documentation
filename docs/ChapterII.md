@@ -348,12 +348,12 @@ A partir del análisis de entrevistas y la recolección de información sobre la
 **1) Segmento 1: Administradores de casas de reposo**
 
 
-![User Persona 1](../assets/img/chapter-II/needfinding/user-person/segment-one)
+![User Persona 1](../assets/img/chapter-II/needfinding/user-person/segment-one/roberto_sanchez_uxpressia.png)
 
 **2) Segmento 2: Familiares de adultos mayores**
 
 
-![User Persona 2](../assets/img/chapter-II/needfinding/user-person/segment-two)
+![User Persona 2](../assets/img/chapter-II/needfinding/user-person/segment-two/carlos_andrade_uxpressia.png)
 
 ### 2.3.2. User Task Matrix
 
