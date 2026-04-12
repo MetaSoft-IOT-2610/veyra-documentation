@@ -445,12 +445,12 @@ como un requisito prioritario en la solución.
 El User Journey Mapping es una herramienta visual que nos permite "caminar en los zapatos" del usuario. Aquí mapeamos el viaje emocional y operativo que recorren tanto el administrador como el familiar ante situaciones específicas. Identificar los momentos de mayor frustración (puntos bajos) nos da la oportunidad de convertirlos en momentos de satisfacción gracias a nuestra intervención tecnológica.
 
 
-**Segmento 1 – Administrador de casa de reposo **
+**Segmento 1 – Administrador de casa de reposo (Roberto Sanchez)**
 
 
 ![Journey Map Segmento 1](../assets/img/chapter-II/needfinding/user-journey-mapping/segment-one/roberto-sanchez-journey-map.png)
 
-**Segmento 2 – Familiar de adulto mayor (Carmen Morales Quispe)**
+**Segmento 2 – Familiar de adulto mayor (Carlos Andrade)**
 
 
 ![Journey Map Segmento 2](../assets/img/chapter-II/needfinding/user-journey-mapping/segment-two/carlos-andrade-journey-map.png)
