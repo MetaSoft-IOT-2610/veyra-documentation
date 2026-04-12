@@ -326,7 +326,7 @@ A nivel subjetivo, el 67% de los entrevistados manifestó la necesidad de implem
 
 En conjunto, se observa que el administrador busca eficiencia operativa, orden y control, pero requiere una solución tecnológica simple, intuitiva y adaptada a su realidad.
 
-![Gráfico Estadístico Administradores](../assets/img/chapter-II/interviews/analysis/segment-one)
+![Gráfico Estadístico Administradores](../assets/img/chapter-II/interviews/analysis/segment-one/segment-one.png)
 
 ---
 
@@ -344,7 +344,7 @@ A nivel subjetivo, el 100% de los entrevistados mostró una alta disposición a 
 
 En general, el familiar necesita acceso rápido, claro y confiable a la información para reducir la incertidumbre y sentirse más cercano al cuidado del adulto mayor.
 
-![Gráfico Estadístico Familiares](../assets/img/chapter-II/interviews/analysis/segment-two)
+![Gráfico Estadístico Familiares](../assets/img/chapter-II/interviews/analysis/segment-two/segment-two%20.png)
 
 ---
 
@@ -358,7 +358,7 @@ Sin embargo, también se identifican diferencias importantes. Mientras los admin
 
 La principal brecha radica en la percepción del problema: para el administrador, la falta de un sistema representa una limitación operativa; para el familiar, representa una fuente de preocupación e incertidumbre. Esta diferencia define claramente el enfoque de la solución: mejorar la gestión interna y, al mismo tiempo, brindar tranquilidad al usuario externo.
 
-![Gráfico Comparativo Segmentos](../assets/img/chapter-II/interviews/analysis)
+![Gráfico Comparativo Segmentos](../assets/img/chapter-II/interviews/analysis/Segment%20Comparator%20Bar%20Chart.png)
 
 ---
 
