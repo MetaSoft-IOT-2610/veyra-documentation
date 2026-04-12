@@ -150,95 +150,85 @@ El Lean UX es un enfoque que permite validar las soluciones propuestas para prob
 
 ##### 1.2.2.1. Lean UX Problem Statements
 
-Nuestro servicio brinda atención integral a adultos mayores en casas de reposo privadas. A través de un equipo de personal de salud y cuidadores, las instituciones buscan garantizar el bienestar de cada residente y mantener a sus familias tranquilas y bien informadas.
+El cuidado geriátrico en Perú enfrenta un déficit de gestión clínica: el 14.6% de la población es adulta mayor y el 80% padece enfermedades crónicas (INEI, 2024). Actualmente, las casas de reposo operan con procesos manuales que generan alta incertidumbre operativa y falta de trazabilidad de datos.
+Esta deficiencia afecta a dos segmentos: administradores/personal clínico, que carecen de herramientas de respuesta rápida, y familiares, que dependen de comunicación reactiva para conocer el estado de salud del residente. El impacto es crítico: el personal no detecta anomalías a tiempo y el 65% de los familiares desconfía de la calidad del cuidado por falta de transparencia (APESEG, 2023).
 
-Hemos observado que los familiares no siempre cuentan con información oportuna sobre el estado de salud de su ser querido, y el personal enfrenta dificultades para mantener un seguimiento claro y continuo sin herramientas adecuadas.
+No existe en el mercado local una solución que integre monitoreo continuo (IoT), gestión centralizada y acceso remoto. Veyra capitaliza la alta penetración de smartphones (85%, BID) para modernizar este sector mediante un ecosistema digital distribuido de captura de datos en tiempo real.
 
-¿Cómo podríamos lograr que tanto el personal como los familiares de adultos mayores en casas de reposo tengan acceso oportuno al estado de salud del residente, sin depender de procesos manuales o comunicación reactiva?
+La gestión actual en casas de reposo no satisface las expectativas de transparencia de las familias ni la eficiencia operativa del personal, elevando los riesgos ante emergencias. 
+
+**¿Cómo podríamos mejorar la visibilidad del estado de salud del residente para que el personal actúe preventivamente y los familiares obtengan tranquilidad mediante datos verificables en tiempo real?**
+
 
 ##### 1.2.2.2. Lean UX Assumptions
 
-En esta sección se presentan los supuestos iniciales del equipo sobre el negocio, los usuarios, el problema y la solución propuesta. Estos supuestos se formulan como creencias que deben validarse con evidencia durante entrevistas, prototipado y pruebas de uso.
+En esta sección se declaran las creencias fundamentales del equipo sobre las que se construye la propuesta de valor de Veyra. Bajo el marco de trabajo Lean UX, estos supuestos identifican las áreas de mayor riesgo e incertidumbre, sirviendo como base estratégica para la creación de hipótesis y experimentos de validación.
 
-**Assumptions Worksheet (síntesis aplicada a Veyra)**
+**Assumptions Worksheet (Síntesis del Proyecto)**
 
-| #  | Supuesto aplicado                                                                                                        |
-|----|--------------------------------------------------------------------------------------------------------------------------|
-| 1  | Creemos que nuestros clientes necesitan visibilid ad confiable y oportuna del estado de salud de los residentes.         |
-| 2  | Estas necesidades pueden resolverse con una solución integrada web + móvil + IoT, con alertas y trazabilidad clínica.    |
-| 3  | Nuestros clientes iniciales serán casas de reposo privadas de tamaño pequeño y mediano en zonas urbanas.                 |
-| 4  | El valor #1 para las instituciones es mejorar la confianza de las familias con información verificable y en tiempo real. |
-| 5  | Beneficios adicionales: menor carga operativa, mejor trazabilidad y respuesta más rápida ante eventos críticos.          |
-| 6  | Adquiriremos clientes mediante contacto directo B2B, referidos del sector salud y alianzas institucionales.              |
-| 7  | Generaremos ingresos con planes de suscripción escalonados para instituciones y alternativas de acceso para familiares.  |
-| 8  | La competencia principal está basada en procesos manuales, comunicación informal y sistemas aislados.                    |
-| 9  | Nos diferenciaremos por monitoreo continuo IoT, acceso remoto y experiencia consistente para personal y familiares.      |
-| 10 | El mayor riesgo de producto es que el personal no adopte un registro digital continuo por fricción operativa.            |
-| 11 | Reduciremos ese riesgo con flujos simples, capacitación breve y automatización de captura vía sensores IoT.              |
-| 12 | Si se demuestra baja adopción o bajo valor percibido, el modelo de negocio y el alcance funcional deben ajustarse.       |
+| #  | Supuesto Estratégico aplicado a Veyra |
+|----|---------------------------------------|
+| 1  | Creemos que los familiares de adultos mayores experimentan altos niveles de ansiedad debido a la opacidad y lentitud de los reportes tradicionales de salud. |
+| 2  | Asumimos que los administradores de casas de reposo ven en la transparencia de datos una ventaja competitiva clave para justificar sus tarifas y mejorar su reputación. |
+| 3  | La necesidad de visibilidad se resolverá con un ecosistema IoT + Cloud que automatice la captura de data crítica, eliminando el sesgo y error del registro manual. |
+| 4  | El modelo de ingresos será un SaaS B2B escalable por número de residentes monitoreados, complementado con accesos premium para familiares. |
+| 5  | El mayor riesgo de adopción es la resistencia al cambio del personal asistencial; se mitigará mediante interfaces de baja fricción y automatización de toma de datos. |
 
-**Supuestos por dimensión**
+**Supuestos por Dimensión**
 
-**Business Assumptions**
+**Business Assumptions (Viabilidad y Mercado)**
 
-* Asumimos que existe un segmento de casas de reposo privadas que enfrenta dificultades para brindar transparencia y acceso oportuno a la información clínica.
-* Asumimos que las instituciones están dispuestas a invertir en soluciones tecnológicas que reduzcan riesgos y mejoren su reputación.
-* Asumimos que el modelo de suscripción es viable y sostenible para distintos tamaños de institución.
-* Asumimos que la propuesta de valor diferencial se sostiene en la integración web + móvil + IoT.
+* Asumimos que las casas de reposo privadas en zonas urbanas están dispuestas a invertir en tecnología para diferenciarse de la competencia informal y mejorar su estándar de servicio.
+* Asumimos que el modelo de suscripción escalonado permite la captación de instituciones pequeñas y medianas sin comprometer la rentabilidad operativa.
+* Asumimos que la propuesta de valor integrada (Web/Móvil/IoT) justifica el costo de implementación frente a soluciones de software tradicionales.
 
-**User Assumptions**
+**User Assumptions (Comportamiento y Segmentación)**
 
-* Asumimos que los principales usuarios serán administradores, personal de cuidado y familiares de adultos mayores.
-* Asumimos que los administradores necesitan visión centralizada del estado de los residentes.
-* Asumimos que el personal requiere registrar información de forma rápida, sin interrumpir tareas críticas.
-* Asumimos que los familiares necesitan acceso remoto continuo y notificaciones oportunas.
+* **Personal Asistencial:** Asumimos que adoptarán el registro digital solo si este reduce su carga administrativa operativa al cierre de cada turno.
+* **Administradores:** Asumimos que requieren una visión centralizada del estado de salud de todos los residentes para mitigar riesgos legales y operativos.
+* **Familiares:** Asumimos que prefieren el autoservicio de información a través de una aplicación móvil que depender de llamadas telefónicas o mensajes de WhatsApp.
 
-**Problem Assumptions**
+**Problem Assumptions (Deseabilidad y Dolores)**
 
-* Asumimos que existe falta de transparencia en la gestión de información clínica en casas de reposo.
-* Asumimos que la comunicación entre institución y familia es limitada o poco estructurada.
-* Asumimos que los registros manuales generan inconsistencias y demoras en la toma de decisiones.
-* Asumimos que hoy no existe monitoreo continuo suficiente para anticipar riesgos de salud.
+* Creemos que la dependencia de registros manuales y comunicación informal (papel/voz) genera pérdida de trazabilidad y lentitud en la detección de crisis.
+* Asumimos que existe una brecha de confianza entre la institución y la familia debido a la falta de pruebas objetivas sobre la frecuencia y calidad del cuidado.
+* Creemos que el personal médico gasta tiempo crítico en tareas de digitación manual que restan calidad a la atención directa del residente.
 
-**Solution Assumptions**
+**Solution Assumptions (Factibilidad y Valor)**
 
-* Asumimos que una plataforma digital centralizada mejorará la trazabilidad de la información.
-* Asumimos que el acceso en tiempo real reducirá incertidumbre y aumentará confianza en los familiares.
-* Asumimos que los dispositivos IoT permitirán capturar signos vitales de forma continua y útil para alertas.
-* Asumimos que la aplicación móvil incrementará frecuencia de consulta y capacidad de reacción.
+* Creemos que la captura automática vía dispositivos IoT proporcionará una fuente de verdad única que reducirá fricciones y reclamos por parte de los familiares.
+* Asumimos que una plataforma en la nube facilitará la gestión de alertas preventivas, permitiendo una reacción médica hasta un 40% más rápida.
+* Creemos que el acceso remoto continuo aumentará la percepción de valor del servicio prestado por la casa de reposo.
 
-**Assumptions Priority (riesgo x incertidumbre)**
+**Assumptions Priority (Matriz de Riesgo x Incertidumbre)**
 
-| Prioridad | Supuesto a validar                                                                                 | Riesgo | Incertidumbre |
-|----------:|----------------------------------------------------------------------------------------------------|:------:|:-------------:|
-|         1 | El personal adoptará el registro digital continuo sin afectar su flujo operativo.                  |  Alto  |     Alto      |
-|         2 | Las alertas basadas en IoT serán suficientemente precisas para ser confiables en operación diaria. |  Alto  |     Alto      |
-|         3 | Los familiares usarán de forma recurrente el canal web/móvil para seguimiento del residente.       |  Alto  |     Medio     |
-|         4 | Las instituciones aceptarán el modelo de suscripción por el valor percibido de la solución.        |  Alto  |     Medio     |
-|         5 | La integración web + móvil + IoT será percibida como diferencial frente a alternativas actuales.   | Medio  |     Medio     |
+| Prioridad | Supuesto a validar | Riesgo | Incertidumbre |
+|----------:|--------------------|:------:|:-------------:|
+| 1 | El personal asistencial adoptará el registro digital continuo sin afectar su flujo operativo actual. | Alto | Alto |
+| 2 | Los sensores IoT mantendrán la precisión y conectividad necesaria para generar alertas confiables. | Alto | Medio |
+| 3 | Las instituciones aceptarán el modelo de suscripción SaaS por el valor percibido de la transparencia. | Medio | Alto |
+| 4 | Los familiares usarán la plataforma de forma recurrente como canal principal de seguimiento. | Medio | Bajo |
 
-**Business Outcomes esperados**
+**Outcomes Esperados (Métricas de Éxito)**
 
-* Lograr que al menos 3 instituciones piloto adopten Veyra durante los primeros 6 meses.
-* Lograr que el 50% de las instituciones piloto continúen con un plan de suscripción pago. 
-* Reducir en al menos un 25% los costos operativos de gestión de información clínica en las instituciones piloto. 
-* Lograr que al menos el 60% identifiquen a Veyra como una alternativa superior frente a los métodos tradicionales
+*Business Outcomes:*
 
-**User Outcomes esperados**
+* Lograr que al menos 3 instituciones piloto completen el ciclo de validación de 6 meses.
+* Reducir en un 25% los costos operativos relacionados con la gestión de información clínica.
+* Incrementar en un 15% la tasa de captación de nuevos residentes tras la implementación tecnológica.
 
-* Lograr que enfermeros y doctores tengan disponible el 90% de los registros del residente en tiempo real y reduzcan el tiempo de registro manual en al menos un 35% por turno.
-* Lograr que los familiares consulten la plataforma un mínimo de 3 veces por semana, aumentando su frecuencia de seguimiento remoto.
-* Lograr que enfermeros, doctores y familiares reduzcan el tiempo de reacción ante alertas de salud en al menos un 40%.
-* Lograr que los administradores tengan visibilidad completa del estado de la institución en tiempo real, reduciendo en al menos un 50% el tiempo dedicado a recopilar información operativa manualmente.
+*User Outcomes:*
 
-**Features mínimas para validación**
+* Reducir el tiempo de registro manual del personal asistencial en un 35% por turno.
+* Lograr que los familiares consulten la plataforma un promedio de 3 veces por semana, reduciendo las llamadas de consulta externa.
+* Disminuir el tiempo de respuesta ante alertas críticas en al menos un 40%.
 
-1. Registro digital de historiales clínicos y tratamientos.
-2. Dashboard web de monitoreo para administradores y personal.
-3. Captura y visualización de signos vitales en tiempo real.
-4. Sistema de alertas automáticas ante variaciones críticas.
-5. Acceso web/móvil para familiares con historial y estado actual del residente.
-6. Canal básico de comunicación entre familia e institución.
+**Features mínimas para validación (MVP)**
+
+1. **Dashboard de Monitoreo:** Panel centralizado para administradores con el estado de salud global.
+2. **Registro de Signos Vitales IoT:** Captura y visualización en tiempo real de data biométrica.
+3. **Módulo de Alertas:** Notificaciones automáticas ante variaciones críticas de salud.
+4. **Portal Familiar:** Aplicación de consulta de historial clínico, medicación y actividades diarias.
 
 
 ##### 1.2.2.3. Lean UX Hypothesis Statements
