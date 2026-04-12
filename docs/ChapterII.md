@@ -448,12 +448,12 @@ El User Journey Mapping es una herramienta visual que nos permite "caminar en lo
 **Segmento 1 – Administrador de casa de reposo **
 
 
-![Journey Map Segmento 1](../assets/img/chapter-II/needfinding/user-journey-mapping/segment-one)
+![Journey Map Segmento 1](../assets/img/chapter-II/needfinding/segment-one/roberto-sanchez-journey-map.png)
 
 **Segmento 2 – Familiar de adulto mayor (Carmen Morales Quispe)**
 
 
-![Journey Map Segmento 2](../assets/img/chapter-II/needfinding/user-journey-mapping/segment-two)
+![Journey Map Segmento 2](../assets/img/chapter-II/needfinding/segment-one/carlos-andrade-journey-map.png)
 
 ### 2.3.4. Empathy Mapping
 
