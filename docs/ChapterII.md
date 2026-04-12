@@ -312,29 +312,73 @@ En este apartado documentamos los resultados de las sesiones de campo. Aquí se 
 
 Luego de conversar con nuestros segmentos objetivos, el siguiente paso es "hacer hablar" a los datos. En esta sección, procesamos la información recolectada para separar los hechos objetivos de las percepciones subjetivas de los entrevistados. Este análisis es crucial, ya que nos permite detectar patrones de comportamiento y necesidades insatisfechas que las gráficas estadísticas pondrán en evidencia. Al contrastar ambos segmentos, obtenemos una visión de 360 grados sobre el estado actual del cuidado geriátrico.
 
+---
+
 #### Segmento 1: Administradores de Casas de Reposo
 
 **Análisis de Características Objetivas y Subjetivas:**
 
+El análisis de las entrevistas evidencia que la gestión en las casas de reposo aún se realiza bajo métodos tradicionales y poco integrados. El 100% de los entrevistados ocupa cargos administrativos o de dirección, con amplia experiencia en el sector, lo que valida la relevancia de sus opiniones. En cuanto a la comunicación con los familiares, el 100% utiliza WhatsApp y llamadas telefónicas como medios principales, mientras que solo un 33% utiliza correo electrónico o videollamadas en casos específicos.
+
+Respecto a la gestión de la información, el 100% de los entrevistados trabaja con historias clínicas físicas o expedientes manuales, lo que evidencia una digitalización precaria. Esta situación genera dificultades para mantener la información ordenada, actualizada y accesible, además de riesgos asociados a la pérdida de información. Un 33% complementa su gestión con herramientas como Excel, pero sin integración con otros procesos.
+
+A nivel subjetivo, el 67% de los entrevistados manifestó la necesidad de implementar una solución digital que permita mejorar la organización y el acceso a la información. Sin embargo, existe una condición clave: la herramienta debe ser sencilla y funcional, evitando la complejidad de sistemas hospitalarios. Asimismo, se identificó que valoran altamente funcionalidades como el registro del paciente, historial clínico, evolución diaria, control de medicación, almacenamiento de documentos y validación médica.
+
+En conjunto, se observa que el administrador busca eficiencia operativa, orden y control, pero requiere una solución tecnológica simple, intuitiva y adaptada a su realidad.
 
 ![Gráfico Estadístico Administradores](../assets/img/chapter-II/interviews/analysis/segment-one)
+
+---
 
 #### Segmento 2: Familiares de Adultos Mayores
 
 **Análisis de Características Objetivas y Subjetivas:**
 
+El análisis muestra que los familiares tienen acceso a dispositivos tecnológicos, ya que el 100% utiliza celular y computadora, lo que facilita la adopción de soluciones digitales. Sin embargo, el 100% reporta dificultades para acceder a información sobre el estado de su familiar, principalmente debido a la demora, la dependencia de llamadas y la falta de comunicación directa.
+
+Además, el 100% manifestó que la información más relevante para ellos es el estado de salud, la medicación, los reportes médicos y los cambios importantes en la condición del adulto mayor. Actualmente, esta información no se encuentra centralizada ni disponible de manera inmediata.
+
+En situaciones de urgencia, el 100% se entera a través de llamadas telefónicas, pero con demoras o intermediarios, lo que genera incertidumbre. Esta falta de inmediatez constituye uno de los principales problemas del segmento.
+
+A nivel subjetivo, el 100% de los entrevistados mostró una alta disposición a utilizar una plataforma web o aplicación móvil. Asimismo, buscan confianza, seguridad y actualización constante de la información, además de respaldo profesional. También prefieren recibir notificaciones por medios rápidos como WhatsApp o aplicaciones móviles.
+
+En general, el familiar necesita acceso rápido, claro y confiable a la información para reducir la incertidumbre y sentirse más cercano al cuidado del adulto mayor.
 
 ![Gráfico Estadístico Familiares](../assets/img/chapter-II/interviews/analysis/segment-two)
+
+---
 
 #### Análisis Comparativo
 
 **Contrastación de Segmentos:**
 
+Al comparar ambos segmentos, se identifican coincidencias clave que validan la necesidad de una solución digital. En primer lugar, el 100% de ambos segmentos evidencia la necesidad de centralizar la información, lo que confirma la existencia de un problema estructural en la gestión actual.
+
+Sin embargo, también se identifican diferencias importantes. Mientras los administradores priorizan la eficiencia operativa, el orden y la simplicidad en las herramientas, los familiares priorizan la rapidez, la transparencia y el acceso inmediato a la información.
+
+La principal brecha radica en la percepción del problema: para el administrador, la falta de un sistema representa una limitación operativa; para el familiar, representa una fuente de preocupación e incertidumbre. Esta diferencia define claramente el enfoque de la solución: mejorar la gestión interna y, al mismo tiempo, brindar tranquilidad al usuario externo.
 
 ![Gráfico Comparativo Segmentos](../assets/img/chapter-II/interviews/analysis)
 
+---
+
 ### Conclusiones y Definición de Arquetipos
 
+A partir del análisis realizado, se definen los siguientes perfiles de usuario (User Personas):
+
+**User Persona Administrador: "El Gestor Operativo"**
+
+Rasgo clave: Busca eficiencia, control y orden, pero necesita una solución tecnológica sencilla.
+
+Sustento: El 100% utiliza herramientas básicas como WhatsApp, el 100% trabaja con información física y el 67% desea digitalizar sus procesos. Esto demuestra que requiere una plataforma intuitiva que centralice la información sin generar complejidad adicional.
+
+---
+
+**User Persona Familiar: "El Monitor Preocupado"**
+
+Rasgo clave: Necesita información inmediata, clara y confiable para reducir la incertidumbre.
+
+Sustento: El 100% reporta dificultades para acceder a información, el 100% desea conocer el estado de salud de forma frecuente y el 100% está dispuesto a usar una aplicación. Esto evidencia que la solución debe centrarse en notificaciones en tiempo real, transparencia y confianza en la información.
 
 
 ## 2.3. Needfinding
