@@ -481,7 +481,7 @@ Para diseñar un sistema robusto, primero debemos entender el negocio como un to
 En esta primera etapa, el equipo realizó una sesión de lluvia de ideas para capturar todos los eventos relevantes dentro del dominio, sin preocuparse por el orden o la jerarquía.
 El objetivo principal fue representar los acontecimientos reales del negocio, de manera independiente a cualquier función técnica o relacionada con un sistema.
 
-![bigpicture](../assets/img/chapter-II/big-picture-event-storming/step1-big%20picture%20event%20storming.png)
+![bigpicture](../assets/img/chapter-II/big-picture-event-storming/step1-bigPicture.jpeg)
 
 **Step 2 – Structured Organization**
 
