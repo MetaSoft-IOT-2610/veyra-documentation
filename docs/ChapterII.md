@@ -463,7 +463,7 @@ Al analizar qué es lo que el administrador y el familiar oyen, ven, dicen y hac
 
 **Segmento 1: Administradores de casas de reposo**
 
-![Empathy Mapping 1](../assets/img/chapter-II/needfinding/empathy-mapping/segment-one)
+![Empathy Mapping 1](../assets/img/chapter-II/needfinding/empathy-mapping/segment-one/Admin.png)
 
 
 **Segmento 2: Familiares de adultos mayores**
