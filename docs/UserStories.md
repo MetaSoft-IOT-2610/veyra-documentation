@@ -4,6 +4,7 @@ En esta sección se presentan los requisitos del sistema a través de historias 
 
 Cada historia de usuario describe el rol del actor, la funcionalidad esperada y los criterios de aceptación, permitiendo definir de manera clara el comportamiento del sistema desde la perspectiva del usuario.
 
+
 ---
 
 ## Actores del sistema
@@ -18,6 +19,7 @@ Cada historia de usuario describe el rol del actor, la funcionalidad esperada y 
 | **Usuario de la plataforma** | Actor transversal que representa a cualquier usuario autenticado del sistema (Administrador, Personal asistencial, Médico, Familiar) en el contexto de las operaciones de acceso y gestión de sesión. |
 
 ---
+
 
 ## Epics
 
