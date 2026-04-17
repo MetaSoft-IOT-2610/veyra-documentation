@@ -30,7 +30,7 @@ El diagrama de contenedores muestra los principales contenedores de software den
 ![Diagrama de Contenedores](/assets/img/chapter-IV/software-architecture/Veyra_container_diagram.svg)
 
 #### 4.1.3.3. Software Architecture Deployment Diagrams
-![Deployment diagram]((https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/system/deployment.plantuml&fmt=svg)
+![Deployment diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/system/deployment.plantuml&fmt=svg)
 ## 4.2. Tactical-Level Domain-Driven Design
 
 ### 4.2.1. Bounded Context: \<Bounded Context Name\>
