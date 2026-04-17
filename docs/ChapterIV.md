@@ -15,6 +15,7 @@
 ### 4.1.3. Software Architecture
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
+![Landscape diagram](/assets/img/chapter-IV/software-architecture/Veyra_landscape_diagram.svg)
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
