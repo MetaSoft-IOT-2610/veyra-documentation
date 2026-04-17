@@ -484,8 +484,7 @@ El objetivo principal fue representar los acontecimientos reales del negocio, de
 
 **Step 2 – Structured Organization**
 
-Después de listar los eventos, el equipo los organizó en flujos de negocio lógicos que reflejan las principales etapas en la operación de una casa de reposo.
-Esta estructura ayudó a identificar los procesos clave y las áreas de mejora que posteriormente podrían abordarse mediante soluciones digitales o de gestión.
+Tras la exploración inicial, el equipo ordenó cronológicamente los eventos de dominio, agrupándolos en flujos lógicos que reflejan la operación diaria de la casa de reposo (ej. Pre-admisión, Evaluación Clínica, Gestión de Medicación). En esta fase, se introdujeron los Actores (Admin, Doctor, Nurse, Relative) para mapear claramente las interacciones y responsabilidades. Además, el análisis iterativo permitió identificar Hotspots (puntos críticos o dudas del negocio, señalados mediante rombos morados), revelando escenarios excepcionales o reglas por definir, tales como admisiones de emergencia sin familiares presentes, ausencias imprevistas del personal o el rechazo constante de medicación vital. Esta estructura permite visualizar no solo el "camino feliz", sino la complejidad real a resolver mediante soluciones digitales.
 
 ![bigpicture](../assets/img/chapter-II/big-picture-event-storming/step2-big%20picture%20event%20storming.png)
 
