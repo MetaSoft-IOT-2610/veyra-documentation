@@ -492,7 +492,6 @@ Tras la exploración inicial, el equipo ordenó cronológicamente los eventos de
 
 To ensure seamless communication among developers, medical staff, and family members, the following glossary has been established. These terms must be used consistently across business meetings, source code (classes, methods, databases), and the user interface.
 
-### Actors (Domain Roles)
 
 | Term | Definition |
 | :--- | :--- |
@@ -501,22 +500,12 @@ To ensure seamless communication among developers, medical staff, and family mem
 | **Admin** | The facility administrator responsible for admissions, billing, room assignments, and staff scheduling. |
 | **Doctor** | A specialized medical professional who conducts initial assessments, defines treatment plans, and prescribes medication. |
 | **Nurse** | The frontline caregiver responsible for executing the care plan, administering medication, recording vital signs, and assisting with daily hygiene. |
-
-### Business Artifacts
-
-| Term | Definition |
-| :--- | :--- |
 | **Medical Record** | The centralized, official health history of a Resident, including diagnoses, allergies, and past medical history. |
 | **Care Quotation** | The initial financial and service estimate provided to a Relative before formal admission. |
 | **Care Plan** | The central, individualized strategy outlining a Resident's medical, dietary, and daily care needs over a specific period. |
 | **Treatment Plan** | A specific medical regimen defined by the Doctor, comprising prescriptions, therapies, and periodic checkups. |
 | **Medication Schedule** | The strict timetable defining the exact moments when specific doses of medication must be administered to a Resident. |
 | **Consent Documents** | Legal paperwork signed by the Relative authorizing medical care, emergency procedures, and admission rules. |
-
-### Operational & Clinical Terms
-
-| Term | Definition |
-| :--- | :--- |
 | **Vital Signs** | Key physiological metrics (e.g., heart rate, oxygen saturation, temperature) monitored continuously via IoT devices or recorded manually by a Nurse. |
 | **Shift Handover** | The formal process of transferring clinical information, pending tasks, and Resident status updates between nursing staff during shift changes. |
 | **Adverse Reaction** | An unexpected, negative clinical response exhibited by a Resident after medication administration. |
