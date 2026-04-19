@@ -488,45 +488,43 @@ Tras la exploración inicial, el equipo ordenó cronológicamente los eventos de
 
 ![bigpicture](../assets/img/chapter-II/big-picture-event-storming/step2-big%20picture%20event%20storming.png)
 
-## 2.5. Ubiquitous Language
+## 2.5 Ubiquitous Language
 
-Para garantizar una comunicación fluida entre desarrolladores, personal médico y familiares, se ha definido el siguiente glosario. Estos términos deben utilizarse de forma consistente tanto en las reuniones de negocio como en el código fuente (clases, métodos, base de datos) y la interfaz de usuario.
+To ensure seamless communication among developers, medical staff, and family members, the following glossary has been established. These terms must be used consistently across business meetings, source code (classes, methods, databases), and the user interface.
 
+### Actors (Domain Roles)
 
-### 2.5.1 Actores (Roles del Dominio)
-
-| Término | Definición |
+| Term | Definition |
 | :--- | :--- |
-| **Resident** | Persona adulta mayor admitida en la casa de reposo que recibe atención médica, cuidados diarios y monitoreo constante. |
-| **Relative** | Familiar o responsable legal autorizado para acceder a la información del residente, recibir notificaciones y supervisar el cuidado. |
-| **Admin** | Administrador de la residencia encargado de la gestión de ingresos, facturación, asignación de habitaciones y programación del personal. |
-| **Doctor** | Profesional médico encargado de realizar evaluaciones iniciales, definir planes de tratamiento y prescribir medicación. |
-| **Nurse** | Personal de enfermería responsable de ejecutar el plan de cuidado, administrar medicamentos, registrar signos vitales y asistir en la higiene diaria. |
+| **Resident** | An elderly person admitted to the nursing home receiving continuous medical and daily care. |
+| **Relative** | A designated family member or sponsor legally and financially authorized to access the resident's information, receive notifications, and oversee their care. |
+| **Admin** | The facility administrator responsible for admissions, billing, room assignments, and staff scheduling. |
+| **Doctor** | A specialized medical professional who conducts initial assessments, defines treatment plans, and prescribes medication. |
+| **Nurse** | The frontline caregiver responsible for executing the care plan, administering medication, recording vital signs, and assisting with daily hygiene. |
 
-### 2.5.2 Artefactos del Negocio (Business Artifacts)
+### Business Artifacts
 
-| Término | Definición |
+| Term | Definition |
 | :--- | :--- |
-| **Medical Record** | Registro histórico centralizado de la salud del Residente, incluyendo diagnósticos, alergias y antecedentes médicos. |
-| **Care Quotation** | Estimación financiera y de servicios proporcionada al Relative antes de la admisión formal del Residente. |
-| **Care Plan** | Estrategia centralizada e individualizada que detalla las necesidades médicas, dietéticas y de cuidado diario de un Residente. |
-| **Treatment Plan** | Régimen médico específico definido por el Doctor que comprende prescripciones, terapias y controles periódicos. |
-| **Medication Schedule** | Horario estricto que define el momento exacto en que se deben administrar dosis específicas de medicamentos a un Residente. |
-| **Consent Documents** | Documentación legal firmada por el Relative que autoriza el cuidado médico, procedimientos de emergencia y normas de admisión. |
+| **Medical Record** | The centralized, official health history of a Resident, including diagnoses, allergies, and past medical history. |
+| **Care Quotation** | The initial financial and service estimate provided to a Relative before formal admission. |
+| **Care Plan** | The central, individualized strategy outlining a Resident's medical, dietary, and daily care needs over a specific period. |
+| **Treatment Plan** | A specific medical regimen defined by the Doctor, comprising prescriptions, therapies, and periodic checkups. |
+| **Medication Schedule** | The strict timetable defining the exact moments when specific doses of medication must be administered to a Resident. |
+| **Consent Documents** | Legal paperwork signed by the Relative authorizing medical care, emergency procedures, and admission rules. |
 
+### Operational & Clinical Terms
 
-### 2.5.3 Términos Operativos y Clínicos
-
-| Término | Definición |
+| Term | Definition |
 | :--- | :--- |
-| **Vital Signs** | Métricas fisiológicas clave (frecuencia cardíaca, saturación de oxígeno, temperatura) monitoreadas mediante dispositivos IoT o registro manual. |
-| **Shift Handover** | Proceso formal de transferencia de información clínica, tareas pendientes y estado del Residente entre el personal de enfermería durante el cambio de turno. |
-| **Adverse Reaction** | Respuesta clínica negativa e inesperada de un Residente tras la administración de un medicamento. |
-| **Critical Condition** | Deterioro severo y repentino de la salud del Residente que requiere intervención inmediata y notificación de emergencia. |
-| **Visit Restriction** | Regla temporal aplicada por el Admin o Doctor que limita el acceso de un Relative al Residente por razones médicas o administrativas. |
-| **Hotspot** | Punto crítico o duda de negocio identificada en el proceso (ej. rechazo de medicación vital) que requiere la definición de reglas de negocio explícitas. |
+| **Vital Signs** | Key physiological metrics (e.g., heart rate, oxygen saturation, temperature) monitored continuously via IoT devices or recorded manually by a Nurse. |
+| **Shift Handover** | The formal process of transferring clinical information, pending tasks, and Resident status updates between nursing staff during shift changes. |
+| **Adverse Reaction** | An unexpected, negative clinical response exhibited by a Resident after medication administration. |
+| **Critical Condition** | A severe and sudden health deterioration of a Resident that requires immediate medical intervention and emergency notification. |
+| **Visit Restriction** | A temporary rule applied by the Admin or Doctor limiting a Relative's access to the Resident due to medical or administrative reasons. |
+| **Hotspot** | A critical point or edge case identified in the process (e.g., constant refusal of vital medication) that requires explicit business rules to be defined. |
 
-### Beneficios Esperados
-* **Eliminación de ambigüedades:** Desarrolladores y médicos utilizan los mismos nombres para los mismos conceptos.
-* **Consistencia técnica:** El modelo de datos y el código reflejan fielmente el dominio geriátrico.
-* **Facilidad de inducción:** Nuevos miembros del equipo comprenden el flujo del negocio rápidamente a través del glosario.
+### Expected Benefits
+* **Elimination of ambiguities:** Developers and medical staff use the exact same names for the same concepts.
+* **Technical consistency:** The data model and codebase accurately reflect the geriatric domain.
+* **Easier onboarding:** New team members quickly grasp the business logic and flows through the glossary.
