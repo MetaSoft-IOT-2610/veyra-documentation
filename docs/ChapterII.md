@@ -495,23 +495,23 @@ To ensure seamless communication among developers, medical staff, and family mem
 
 | Term | Definition |
 | :--- | :--- |
-| **Resident** | An elderly person admitted to the nursing home receiving continuous medical and daily care. |
-| **Relative** | A designated family member or sponsor legally and financially authorized to access the resident's information, receive notifications, and oversee their care. |
-| **Admin** | The facility administrator responsible for admissions, billing, room assignments, and staff scheduling. |
-| **Doctor** | A specialized medical professional who conducts initial assessments, defines treatment plans, and prescribes medication. |
-| **Nurse** | The frontline caregiver responsible for executing the care plan, administering medication, recording vital signs, and assisting with daily hygiene. |
-| **Medical Record** | The centralized, official health history of a Resident, including diagnoses, allergies, and past medical history. |
-| **Care Quotation** | The initial financial and service estimate provided to a Relative before formal admission. |
-| **Care Plan** | The central, individualized strategy outlining a Resident's medical, dietary, and daily care needs over a specific period. |
-| **Treatment Plan** | A specific medical regimen defined by the Doctor, comprising prescriptions, therapies, and periodic checkups. |
-| **Medication Schedule** | The strict timetable defining the exact moments when specific doses of medication must be administered to a Resident. |
-| **Consent Documents** | Legal paperwork signed by the Relative authorizing medical care, emergency procedures, and admission rules. |
-| **Vital Signs** | Key physiological metrics (e.g., heart rate, oxygen saturation, temperature) monitored continuously via IoT devices or recorded manually by a Nurse. |
-| **Shift Handover** | The formal process of transferring clinical information, pending tasks, and Resident status updates between nursing staff during shift changes. |
-| **Adverse Reaction** | An unexpected, negative clinical response exhibited by a Resident after medication administration. |
-| **Critical Condition** | A severe and sudden health deterioration of a Resident that requires immediate medical intervention and emergency notification. |
-| **Visit Restriction** | A temporary rule applied by the Admin or Doctor limiting a Relative's access to the Resident due to medical or administrative reasons. |
-| **Hotspot** | A critical point or edge case identified in the process (e.g., constant refusal of vital medication) that requires explicit business rules to be defined. |
+| **Resident (Residente)** | Persona adulta mayor admitida en el centro geriátrico que recibe atención médica y cuidados diarios continuos. |
+| **Relative (Responsable)** | Persona designada con autorización legal y financiera para acceder a la información del residente, recibir notificaciones y supervisar su cuidado. |
+| **Admin (Administrador)** | Responsable de la gestión del centro, incluyendo admisiones, facturación, asignación de habitaciones y programación del personal. |
+| **Doctor (Médico)** | Profesional de la salud que realiza evaluaciones iniciales, define planes de tratamiento y prescribe medicamentos. |
+| **Nurse (Enfermero/a)** | Personal de atención directa encargado de ejecutar el plan de cuidado, administrar medicamentos, registrar signos vitales y asistir en la higiene diaria. |
+| **Medical Record (Historia Clínica)** | Registro centralizado del historial de salud del residente, incluyendo diagnósticos, alergias y antecedentes médicos. |
+| **Care Quotation (Cotización de Atención)** | Estimación inicial de costos y servicios proporcionada al responsable antes de la admisión formal. |
+| **Care Plan (Plan de Cuidado)** | Estrategia individualizada que define las necesidades médicas, alimenticias y de atención diaria del residente durante un período determinado. |
+| **Treatment Plan (Plan de Tratamiento)** | Régimen médico específico que incluye medicamentos, terapias y controles periódicos. |
+| **Medication Schedule (Horario de Medicación)** | Cronograma que indica los momentos exactos en que deben administrarse los medicamentos al residente. |
+| **Consent Documents (Documentos de Consentimiento)** | Documentación legal firmada por el responsable que autoriza la atención médica y procedimientos necesarios. |
+| **Vital Signs (Signos Vitales)** | Indicadores fisiológicos como frecuencia cardíaca, temperatura u oxigenación monitoreados regularmente. |
+| **Shift Handover (Cambio de Turno)** | Proceso de transferencia de información clínica y tareas entre el personal de enfermería. |
+| **Adverse Reaction (Reacción Adversa)** | Respuesta negativa e inesperada del residente tras la administración de un medicamento. |
+| **Critical Condition (Condición Crítica)** | Estado de salud grave que requiere atención médica inmediata. |
+| **Visit Restriction (Restricción de Visitas)** | Medida temporal que limita el acceso de visitas al residente por razones médicas o administrativas. |
+| **Hotspot (Punto Crítico)** | Situación especial del proceso que requiere reglas de negocio específicas. |
 
 ### Expected Benefits
 * **Elimination of ambiguities:** Developers and medical staff use the exact same names for the same concepts.
