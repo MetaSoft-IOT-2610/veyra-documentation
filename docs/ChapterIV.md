@@ -14,7 +14,7 @@ El EventStorming es una técnica colaborativa de modelado que permite explorar e
 
 El primer paso consistió en realizar una exploración sin estructura para identificar todos los posibles eventos del dominio. Durante esta etapa, el equipo analizó criterios como la frecuencia y relevancia de eventos, identificando una variedad de situaciones que los diferentes actores del sistema pueden experimentar, tales como "Resident Admitted", "Vital Signs Taken", "Medication Administered", "Visit Authorized", "Care Plan Created", "Shift Started", "User Signed In", "Subscription Purchased", "Admission Request Received" y "Role Assigned", entre otros. Esta exploración libre permitió capturar el dominio en su totalidad sin restricciones previas.
 
-![Step 1 - Brainstorming](assets/img/chapter-IV/design-level-event-storming/design-level-event-storming-step-1.png)
+![Step 1 - Brainstorming](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-1.png)
 
 
 ## Paso 2: Timelines
