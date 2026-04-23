@@ -8,16 +8,16 @@ El diseño estratégico establece los límites y responsabilidades de cada área
 
 ### 4.1.1. Design-Level EventStorming
 
-El EventStorming es una técnica colaborativa de modelado que permite explorar el dominio del negocio a partir de los eventos relevantes que ocurren en el sistema. A través de esta práctica, el equipo identificó los flujos de información, los actores involucrados y las fronteras naturales entre las distintas áreas funcionales de la plataforma Veyra. Eventos como la recepción de una lectura de signos vitales desde un dispositivo IoT, la detección de una anomalía fuera del rango configurado, el disparo de una alerta hacia el personal o los familiares, o el registro de un nuevo residente, permitieron delimitar las responsabilidades de cada área del sistema y visibilizar las dependencias entre ellas.
+El EventStorming es una técnica colaborativa de modelado de dominio que permite comprender de manera integral los procesos, eventos relevantes, actores involucrados y relaciones existentes dentro de un sistema. En el caso de la plataforma Veyra, esta técnica permitió explorar el funcionamiento del dominio del cuidado geriátrico y la gestión de casas de reposo, identificando situaciones clave como la admisión de residentes, el monitoreo de signos vitales, la administración de medicamentos, la asignación de personal, la interacción con familiares y la gestión de suscripciones. Para desarrollar este proceso, el equipo realizó sesiones colaborativas utilizando la herramienta Miro, lo que facilitó la visualización de eventos, flujos, dependencias y puntos críticos del sistema.
 
-## Paso 1: Brainstorming (Unstructured Exploration)
+Paso 1: Brainstorming (Unstructured Exploration)
 
 El primer paso consistió en realizar una exploración sin estructura para identificar todos los posibles eventos del dominio. Durante esta etapa, el equipo analizó criterios como la frecuencia y relevancia de eventos, identificando una variedad de situaciones que los diferentes actores del sistema pueden experimentar, tales como "Resident Admitted", "Vital Signs Taken", "Medication Administered", "Visit Authorized", "Care Plan Created", "Shift Started", "User Signed In", "Subscription Purchased", "Admission Request Received" y "Role Assigned", entre otros. Esta exploración libre permitió capturar el dominio en su totalidad sin restricciones previas.
 
 ![Step 1 - Brainstorming](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-1.png)
 
 
-## Paso 2: Timelines
+Paso 2: Timelines
 
 Posteriormente, organizamos los eventos en líneas de tiempo para visualizar el flujo de interacciones y secuencias entre eventos. Se identificaron los siguientes flujos principales:
 
@@ -39,7 +39,7 @@ Esta organización temporal facilitó la comprensión de dependencias y secuenci
 ![Step 2 - Timelines](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-2.png)
 
 
-## Paso 3: Commands
+Paso 3: Commands
 
 En este paso definimos los comandos que los diferentes actores pueden ejecutar en el sistema. Los comandos representan las intenciones o acciones que desencadenan eventos en el dominio.
 
@@ -53,7 +53,7 @@ En este paso definimos los comandos que los diferentes actores pueden ejecutar e
 ![Step 3 - Commands](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-3.png)
 
 
-## Paso 4: Policies and Actors
+Paso 4: Policies and Actors
 
 En este paso identificamos las políticas de negocio (reglas WHEN/THEN) y los actores responsables de cada flujo. Las políticas representan las reglas automáticas que el sistema ejecuta en respuesta a ciertos eventos.
 
@@ -74,8 +74,11 @@ Estas políticas permiten automatizar procesos críticos del sistema, reduciendo
 
 ![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4.png)
 
+#### 4.1.1.1. Candidate Context Discovery
 
-## Paso 5: Read Models
+Una vez identificados los eventos, flujos, comandos y políticas del dominio, se procedió al descubrimiento de contextos candidatos. Esta etapa permitió agrupar elementos relacionados según su cohesión funcional y sus reglas de negocio compartidas, facilitando la identificación de futuros Bounded Contexts. El análisis se centró en reconocer eventos pivote, dependencias funcionales y agrupaciones naturales dentro del sistema, permitiendo delimitar áreas específicas como gestión de identidad, perfiles, suscripciones, admisión, evaluación clínica, monitoreo de salud, gestión de medicamentos y visitas. De esta manera, el equipo logró estructurar el dominio de Veyra en contextos con responsabilidades claramente diferenciadas.
+
+Paso 5: Read Models
 
 Los Read Models representan las vistas de consulta que los actores utilizan para tomar decisiones dentro del sistema. Fueron identificadas las siguientes vistas:
 
@@ -92,7 +95,7 @@ Los Read Models representan las vistas de consulta que los actores utilizan para
 ![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-5.png)
 
 
-## Paso 6: External Systems
+Paso 6: External Systems
 
 En este paso identificamos los sistemas externos que interactúan con el dominio pero que están fuera del control directo del sistema.
 
@@ -103,7 +106,7 @@ En este paso identificamos los sistemas externos que interactúan con el dominio
 ![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6.png)
 
 
-## Paso 7: Add Aggregates
+Paso 7: Add Aggregates
 
 En este paso identificamos los Aggregates, que representan los objetos de dominio centrales que agrupan entidades relacionadas y se tratan como una sola unidad. Cada aggregate actúa como el punto central alrededor del cual giran los eventos y comandos de cada flujo.
 
@@ -131,7 +134,7 @@ En este paso identificamos los Aggregates, que representan los objetos de domini
 ![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7.png)
 
 
-## Paso 8: Bounded Contexts
+Paso 8: Bounded Contexts
 
 Finalmente, definimos los Bounded Contexts que agrupan los flujos relacionados en contextos delimitados con responsabilidades claras. Cada Bounded Context representa un subdominio independiente con su propio lenguaje ubicuo.
 
@@ -160,9 +163,6 @@ El tablero completo del Event Storming puede ser consultado en el siguiente enla
 
 [Ver tablero en Miro](https://miro.com/app/board/uXjVHfIKGvE=/?share_link_id=903651467736)
 
-#### 4.1.1.1. Candidate Context Discovery
-
-En esta etapa se identificaron los candidatos a contextos delimitados del sistema. A partir del análisis de los eventos del dominio de Veyra, se agruparon las responsabilidades relacionadas y se definieron las fronteras preliminares de cada contexto, considerando la cohesión funcional y el lenguaje ubicuo de cada área de negocio. El proceso condujo a la identificación de contextos candidatos en torno a la captura y transmisión de datos IoT, el monitoreo clínico y la gestión de alertas, la administración de residentes e historial clínico, el control de acceso de usuarios, y la gestión de suscripciones y pagos institucionales.
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
