@@ -10,6 +10,134 @@ El diseño estratégico establece los límites y responsabilidades de cada área
 
 El EventStorming es una técnica colaborativa de modelado que permite explorar el dominio del negocio a partir de los eventos relevantes que ocurren en el sistema. A través de esta práctica, el equipo identificó los flujos de información, los actores involucrados y las fronteras naturales entre las distintas áreas funcionales de la plataforma Veyra. Eventos como la recepción de una lectura de signos vitales desde un dispositivo IoT, la detección de una anomalía fuera del rango configurado, el disparo de una alerta hacia el personal o los familiares, o el registro de un nuevo residente, permitieron delimitar las responsabilidades de cada área del sistema y visibilizar las dependencias entre ellas.
 
+## Paso 1: Brainstorming (Unstructured Exploration)
+
+El primer paso consistió en realizar una exploración sin estructura para identificar todos los posibles eventos del dominio. Durante esta etapa, el equipo analizó criterios como la frecuencia y relevancia de eventos, identificando una variedad de situaciones que los diferentes actores del sistema pueden experimentar, tales como "Resident Admitted", "Vital Signs Taken", "Medication Administered", "Visit Authorized", "Care Plan Created", "Shift Started", "User Signed In", "Subscription Purchased", "Admission Request Received" y "Role Assigned", entre otros. Esta exploración libre permitió capturar el dominio en su totalidad sin restricciones previas.
+
+
+## Paso 2: Timelines
+
+Posteriormente, organizamos los eventos en líneas de tiempo para visualizar el flujo de interacciones y secuencias entre eventos. Se identificaron los siguientes flujos principales:
+
+- **IAM Flow:** gestión de identidad, roles, sign in y sign up de usuarios.
+- **Profiles Flow:** creación y gestión de perfiles de persona y negocio.
+- **Subscription Flow:** selección, contratación y cancelación de planes de suscripción.
+- **Pre-admission and Application Flow:** solicitud de admisión, verificación de documentos y emisión de cotización.
+- **Resident Registration and Formal Admission Flow:** registro formal del residente, admisión, facturación y asignación de habitación.
+- **Initial Clinical Assessment Flow:** evaluación médica inicial del residente.
+- **Care and Treatment Plan Flow:** creación y gestión del plan de cuidado.
+- **Staff Allocation and Operation Flow:** contratación, asignación y gestión de turnos del personal.
+- **Medication Management Workflow:** gestión del ciclo completo de medicamentos.
+- **Resident's Daily Care Flow:** registro de actividades diarias de cuidado.
+- **Continuous Monitoring Flow:** monitoreo continuo de signos vitales.
+- **Interaction Flow with Family Members:** gestión de visitas de familiares.
+
+Esta organización temporal facilitó la comprensión de dependencias y secuencias críticas entre eventos, permitiendo un diseño más coherente del sistema.
+
+
+## Paso 3: Commands
+
+En este paso definimos los comandos que los diferentes actores pueden ejecutar en el sistema. Los comandos representan las intenciones o acciones que desencadenan eventos en el dominio.
+
+| Actor | Comandos |
+|-------|----------|
+| **Admin** | Assign Roles, Sign In, Sign Up, Create Person Profile, Create Business Profile, Update Person Profile, Change Password, Disable Person Profile, Hire Staff Member, Verify Credentials, Assign Nurse, Assign Care Task, Assign Replacement, Approve Admission, Reject Admission, Waitlist Admission, Cancel Admission, Submit Admission Request, Register Personal Information, Assign Relative, Assign Room, Admit Resident |
+| **Doctor** | Create Care Plan, Evaluate Care Plan, Record Diagnosis, Adjust Dosage, Prescribe Medication, Create Medical History |
+| **Healthcare Staff** | Take Vital Signs, Record Vital Signs, Administer Medication, Start Shift, Report Absence, Log Meal, Log Bath, Log Hygiene Care, Complete Care Task, End Shift, Log Observation |
+| **Relative** | Submit Resident Documents, Schedule Visit, Process Payment |
+
+
+## Paso 4: Policies and Actors
+
+En este paso identificamos las políticas de negocio (reglas WHEN/THEN) y los actores responsables de cada flujo. Las políticas representan las reglas automáticas que el sistema ejecuta en respuesta a ciertos eventos.
+
+Las políticas identificadas fueron:
+
+- **WHEN** admin signs in for the first time **THEN** register nursing home.
+- **WHEN** admin deactivates a person profile **THEN** it shows as inactive in the platform.
+- **WHEN** relative wants to pay **THEN** generate payment order.
+- **WHEN** abnormal vital signs are detected **THEN** trigger critical notification.
+- **WHEN** medication stock is ending soon **THEN** send a notification to the resident's relative.
+- **WHEN** medication is used **THEN** subtract automatically from the inventory.
+- **WHEN** fall prevention is provided **THEN** check if resident's mobility risk is high.
+- **WHEN** hydration is recorded **THEN** check if daily minimum threshold is met.
+- **WHEN** visit status changes (Authorized/Denied) **THEN** notify the relative.
+- **WHEN** one relative can have more than one resident in the nursing home **THEN** link accordingly.
+
+Estas políticas permiten automatizar procesos críticos del sistema, reduciendo la intervención manual y asegurando respuestas oportunas ante situaciones de riesgo.
+
+
+## Paso 5: Read Models
+
+Los Read Models representan las vistas de consulta que los actores utilizan para tomar decisiones dentro del sistema. Fueron identificadas las siguientes vistas:
+
+- **Subscription Plans:** permite al usuario consultar los planes de suscripción disponibles antes de seleccionar uno.
+- **Profile Settings:** permite al Admin consultar y gestionar la configuración del perfil.
+- **Registration Form for Residents:** permite al Admin consultar el formulario de registro de residentes durante el proceso de admisión.
+- **Care Plan View:** permite al Doctor consultar el estado actual del plan de cuidado del residente.
+- **Resident Status View:** permite al Healthcare Staff consultar el estado general del residente antes de iniciar las actividades diarias.
+- **Health Monitoring View:** permite al Healthcare Staff visualizar el historial de signos vitales del residente.
+- **Tasks Assigned View:** permite al Healthcare Staff consultar las tareas asignadas para su turno.
+- **Visit Schedule View:** permite al Admin consultar la agenda de visitas programadas.
+- **Medication Inventory:** permite al Healthcare Staff consultar el stock disponible de medicamentos.
+
+
+## Paso 6: External Systems
+
+En este paso identificamos los sistemas externos que interactúan con el dominio pero que están fuera del control directo del sistema.
+
+- **Cloudinary:** sistema externo de gestión de imágenes utilizado para almacenar y gestionar las fotos de perfil de los usuarios y residentes.
+- **Stripe:** sistema externo de procesamiento de pagos utilizado para gestionar las transacciones de suscripciones y pagos de admisión.
+- **Notification Service:** sistema encargado de enviar notificaciones automáticas a familiares y personal médico ante cambios en el estado de visitas, condiciones críticas del residente o alertas de medicación.
+
+
+## Paso 7: Add Aggregates
+
+En este paso identificamos los Aggregates, que representan los objetos de dominio centrales que agrupan entidades relacionadas y se tratan como una sola unidad. Cada aggregate actúa como el punto central alrededor del cual giran los eventos y comandos de cada flujo.
+
+| Aggregate | Bounded Context | Descripción |
+|-----------|----------------|-------------|
+| **Role** | BC: Role Management | Agrupa el usuario, sus roles asignados y permisos de acceso al sistema. |
+| **User** | BC: Role Management | Agrupa las credenciales de acceso, estado de sesión y tipo de usuario. |
+| **Profile** | BC: Profile Management | Agrupa el perfil de persona o negocio, foto, contraseña y estado en la plataforma. |
+| **Subscription** | BC: Subscription & Payments | Agrupa el plan seleccionado, estado de suscripción y fecha de vigencia. |
+| **Pay** | BC: Subscription & Payments | Agrupa los detalles de pago, método de pago y estado de la transacción. |
+| **Resident** | BC: Application Management | Agrupa los documentos del residente, información personal y estado de la solicitud. |
+| **Admission Request** | BC: Application Management | Agrupa la solicitud de admisión, cotización, documentos verificados y estado de aprobación. |
+| **Admission** | BC: Admission & Billing | Agrupa la admisión formal, proceso de pago, asignación de habitación y familiar responsable. |
+| **Invoice** | BC: Admission & Billing | Agrupa la factura emitida, detalles de pago y estado de la transacción. |
+| **Medical History** | BC: Admission & Billing | Agrupa el historial médico creado durante la admisión formal del residente. |
+| **Clinical Assessment** | BC: Clinical Assessment | Agrupa la evaluación médica inicial, historial médico, signos vitales y perfil de riesgo. |
+| **Care Plan** | BC: Care Plan Management | Agrupa el plan de cuidado, medicamentos prescritos, agenda de medicación y estado del plan. |
+| **Staff Assignment** | BC: Staff Management | Agrupa el miembro del personal, credenciales, rol y residente asignado. |
+| **Shift Record** | BC: Staff Management | Agrupa el turno, Healthcare Staff asignado, horario, tareas completadas y estado del turno. |
+| **Medication Record** | BC: Medication Management | Agrupa el medicamento, residente, dosis, Healthcare Staff que lo administró y timestamp. |
+| **Daily Care Record** | BC: Daily Care | Agrupa las actividades diarias de cuidado: comida, higiene, baño, movilidad, hidratación y actividad recreativa. |
+| **Vital Signs Record** | BC: Health Monitoring | Agrupa la lectura del signo vital, residente, timestamp, enfermera y estado (normal/anormal). |
+| **Visit** | BC: Visit Management | Agrupa la visita, estado de autorización, restricciones, familiar y residente. |
+
+
+## Paso 8: Bounded Contexts
+
+Finalmente, definimos los Bounded Contexts que agrupan los flujos relacionados en contextos delimitados con responsabilidades claras. Cada Bounded Context representa un subdominio independiente con su propio lenguaje ubicuo.
+
+| Bounded Context | Flujo | Descripción |
+|----------------|-------|-------------|
+| **BC: Role Management** | IAM Flow | Gestiona la identidad, autenticación y asignación de roles de los usuarios del sistema. |
+| **BC: Profile Management** | Profiles Flow | Gestiona la creación, actualización y desactivación de perfiles de persona y negocio. |
+| **BC: Subscription & Payments** | Subscription Flow | Gestiona la selección, contratación, cancelación de planes de suscripción y procesamiento de pagos. |
+| **BC: Application Management** | Pre-admission and Application Flow | Gestiona el proceso de solicitud de admisión, verificación de documentos y emisión de cotización. |
+| **BC: Resident Registration** | Resident Registration and Formal Admission Flow | Gestiona el registro formal del residente en la plataforma. |
+| **BC: Admission & Billing** | Resident Registration and Formal Admission Flow | Gestiona la admisión formal, facturación, creación del historial médico y asignación de habitación. |
+| **BC: Clinical Assessment** | Initial Clinical Assessment Flow | Gestiona la evaluación clínica inicial del residente al momento de su admisión. |
+| **BC: Care Plan Management** | Care and Treatment Plan Flow | Gestiona la creación, seguimiento y cierre del plan de cuidado y tratamiento del residente. |
+| **BC: Staff Management** | Staff Allocation and Operation Flow | Gestiona la contratación, asignación y operación del personal de cuidado. |
+| **BC: Medication Management** | Medication Management Workflow | Gestiona el ciclo completo de medicamentos: stock, administración, rechazo y reacciones adversas. |
+| **BC: Daily Care** | Resident's Daily Care Flow | Gestiona el registro de actividades diarias de cuidado del residente. |
+| **BC: Health Monitoring** | Continuous Monitoring Flow | Gestiona el monitoreo continuo de signos vitales y la detección de estados críticos. |
+| **BC: Visit Management** | Interaction Flow with Family Members | Gestiona la autorización, restricción y registro de visitas de familiares. |
+
+
 #### 4.1.1.1. Candidate Context Discovery
 
 En esta etapa se identificaron los candidatos a contextos delimitados del sistema. A partir del análisis de los eventos del dominio de Veyra, se agruparon las responsabilidades relacionadas y se definieron las fronteras preliminares de cada contexto, considerando la cohesión funcional y el lenguaje ubicuo de cada área de negocio. El proceso condujo a la identificación de contextos candidatos en torno a la captura y transmisión de datos IoT, el monitoreo clínico y la gestión de alertas, la administración de residentes e historial clínico, el control de acceso de usuarios, y la gestión de suscripciones y pagos institucionales.
