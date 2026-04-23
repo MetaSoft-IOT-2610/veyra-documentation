@@ -154,7 +154,7 @@ Finalmente, definimos los Bounded Contexts que agrupan los flujos relacionados e
 | **BC: Health Monitoring** | Continuous Monitoring Flow | Gestiona el monitoreo continuo de signos vitales y la detección de estados críticos. |
 | **BC: Visit Management** | Interaction Flow with Family Members | Gestiona la autorización, restricción y registro de visitas de familiares. |
 
-![Step 8 - Bounded Contexts](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-8.png)
+![Step 8 - Bounded Contexts](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-8.jpg)
 
 
 ## Enlace al tablero de Miro
