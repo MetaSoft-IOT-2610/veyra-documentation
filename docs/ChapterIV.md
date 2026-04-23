@@ -138,6 +138,12 @@ Finalmente, definimos los Bounded Contexts que agrupan los flujos relacionados e
 | **BC: Visit Management** | Interaction Flow with Family Members | Gestiona la autorización, restricción y registro de visitas de familiares. |
 
 
+## Enlace al tablero de Miro
+
+El tablero completo del Event Storming puede ser consultado en el siguiente enlace:
+
+[Ver tablero en Miro](https://miro.com/app/board/uXjVHfIKGvE=/?share_link_id=903651467736)
+
 #### 4.1.1.1. Candidate Context Discovery
 
 En esta etapa se identificaron los candidatos a contextos delimitados del sistema. A partir del análisis de los eventos del dominio de Veyra, se agruparon las responsabilidades relacionadas y se definieron las fronteras preliminares de cada contexto, considerando la cohesión funcional y el lenguaje ubicuo de cada área de negocio. El proceso condujo a la identificación de contextos candidatos en torno a la captura y transmisión de datos IoT, el monitoreo clínico y la gestión de alertas, la administración de residentes e historial clínico, el control de acceso de usuarios, y la gestión de suscripciones y pagos institucionales.
