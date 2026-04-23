@@ -138,21 +138,22 @@ Paso 8: Bounded Contexts
 
 Finalmente, definimos los Bounded Contexts que agrupan los flujos relacionados en contextos delimitados con responsabilidades claras. Cada Bounded Context representa un subdominio independiente con su propio lenguaje ubicuo.
 
-| Bounded Context | Flujo | Descripción |
-|----------------|-------|-------------|
-| **BC: Role Management** | IAM Flow | Gestiona la identidad, autenticación y asignación de roles de los usuarios del sistema. |
-| **BC: Profile Management** | Profiles Flow | Gestiona la creación, actualización y desactivación de perfiles de persona y negocio. |
-| **BC: Subscription & Payments** | Subscription Flow | Gestiona la selección, contratación, cancelación de planes de suscripción y procesamiento de pagos. |
-| **BC: Application Management** | Pre-admission and Application Flow | Gestiona el proceso de solicitud de admisión, verificación de documentos y emisión de cotización. |
-| **BC: Resident Registration** | Resident Registration and Formal Admission Flow | Gestiona el registro formal del residente en la plataforma. |
-| **BC: Admission & Billing** | Resident Registration and Formal Admission Flow | Gestiona la admisión formal, facturación, creación del historial médico y asignación de habitación. |
-| **BC: Clinical Assessment** | Initial Clinical Assessment Flow | Gestiona la evaluación clínica inicial del residente al momento de su admisión. |
-| **BC: Care Plan Management** | Care and Treatment Plan Flow | Gestiona la creación, seguimiento y cierre del plan de cuidado y tratamiento del residente. |
-| **BC: Staff Management** | Staff Allocation and Operation Flow | Gestiona la contratación, asignación y operación del personal de cuidado. |
-| **BC: Medication Management** | Medication Management Workflow | Gestiona el ciclo completo de medicamentos: stock, administración, rechazo y reacciones adversas. |
-| **BC: Daily Care** | Resident's Daily Care Flow | Gestiona el registro de actividades diarias de cuidado del residente. |
-| **BC: Health Monitoring** | Continuous Monitoring Flow | Gestiona el monitoreo continuo de signos vitales y la detección de estados críticos. |
-| **BC: Visit Management** | Interaction Flow with Family Members | Gestiona la autorización, restricción y registro de visitas de familiares. |
+| Bounded Context   | Flujo                                   | Descripción                                                                 |
+|-------------------|-----------------------------------------|-----------------------------------------------------------------------------|
+| **BC: IAM**       | IAM Flow                                | Gestiona la identidad, autenticación y asignación de roles de los usuarios. |
+| **BC: Profiles**  | Profiles Flow                           | Gestiona la creación, actualización y desactivación de perfiles.            |
+| **BC: Profiles**  | Pre-admission and Application Flow      | Gestiona la solicitud de admisión y verificación de documentos.             |
+| **BC: Profiles**  | Formal Admission Flow                   | Gestiona la admisión formal del residente.                                  |
+| **BC: Profiles**  | Resident Registration                   | Gestiona el registro formal del residente en la plataforma.                 |
+| **BC: Payments**  | Subscription Flow                       | Gestiona planes de suscripción, pagos y cancelaciones.                      |
+| **BC: Payments**  | Billing Flow                            | Gestiona la facturación de los servicios brindados al residente.            |
+| **BC: Tracking**  | Initial Clinical Assessment Flow        | Gestiona la evaluación clínica inicial del residente.                       |
+| **BC: Nursing**   | Care and Treatment Plan Flow            | Gestiona el plan de cuidado y tratamiento del residente.                    |
+| **BC: Nursing**   | Medication Management Workflow          | Gestiona el ciclo completo de medicamentos.                                 |
+| **BC: Nursing**   | Family Interaction Flow                 | Gestiona visitas y relación con familiares.                                 |
+| **BC: HCM**       | Staff Allocation and Operation Flow     | Gestiona la contratación y asignación del personal.                         |
+| **BC: Activities**| Resident Daily Care Flow                | Gestiona las actividades diarias del residente.                             |
+| **BC: Health**    | Continuous Monitoring Flow              | Gestiona monitoreo de signos vitales y alertas críticas.                    |
 
 ![Step 8 - Bounded Contexts](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-8.jpg)
 
