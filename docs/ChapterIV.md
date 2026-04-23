@@ -36,7 +36,7 @@ Posteriormente, organizamos los eventos en líneas de tiempo para visualizar el 
 
 Esta organización temporal facilitó la comprensión de dependencias y secuencias críticas entre eventos, permitiendo un diseño más coherente del sistema.
 
-![Step 2 - Timelines](assets/img/chapter-IV/design-level-event-storming/design-level-event-storming-step-2.png)
+![Step 2 - Timelines](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-2.png)
 
 
 ## Paso 3: Commands
@@ -50,7 +50,7 @@ En este paso definimos los comandos que los diferentes actores pueden ejecutar e
 | **Healthcare Staff** | Take Vital Signs, Record Vital Signs, Administer Medication, Start Shift, Report Absence, Log Meal, Log Bath, Log Hygiene Care, Complete Care Task, End Shift, Log Observation |
 | **Relative** | Submit Resident Documents, Schedule Visit, Process Payment |
 
-![Step 3 - Commands](assets/img/chapter-IV/design-level-event-storming/design-level-event-storming-step-3.png)
+![Step 3 - Commands](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-3.png)
 
 
 ## Paso 4: Policies and Actors
@@ -72,7 +72,7 @@ Las políticas identificadas fueron:
 
 Estas políticas permiten automatizar procesos críticos del sistema, reduciendo la intervención manual y asegurando respuestas oportunas ante situaciones de riesgo.
 
-![Step 4 - Policies and Actors](assets/img/chapter-IV/design-level-event-storming/design-level-event-storming-step-4.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4.png)
 
 
 ## Paso 5: Read Models
@@ -89,7 +89,7 @@ Los Read Models representan las vistas de consulta que los actores utilizan para
 - **Visit Schedule View:** permite al Admin consultar la agenda de visitas programadas.
 - **Medication Inventory:** permite al Healthcare Staff consultar el stock disponible de medicamentos.
 
-![Step 5 - Read Models](assets/img/chapter-IV/design-level-event-storming/design-level-event-storming-step-5.png)
+![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-5.png)
 
 
 ## Paso 6: External Systems
@@ -100,7 +100,7 @@ En este paso identificamos los sistemas externos que interactúan con el dominio
 - **Stripe:** sistema externo de procesamiento de pagos utilizado para gestionar las transacciones de suscripciones y pagos de admisión.
 - **Notification Service:** sistema encargado de enviar notificaciones automáticas a familiares y personal médico ante cambios en el estado de visitas, condiciones críticas del residente o alertas de medicación.
 
-![Step 6 - External Systems](assets/img/chapter-IV/design-level-event-storming/design-level-event-storming-step-6.png)
+![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6.png)
 
 
 ## Paso 7: Add Aggregates
@@ -128,7 +128,7 @@ En este paso identificamos los Aggregates, que representan los objetos de domini
 | **Vital Signs Record** | BC: Health Monitoring | Agrupa la lectura del signo vital, residente, timestamp, enfermera y estado (normal/anormal). |
 | **Visit** | BC: Visit Management | Agrupa la visita, estado de autorización, restricciones, familiar y residente. |
 
-![Step 7 - Add Aggregates](assets/img/chapter-IV/design-level-event-storming/design-level-event-storming-step-7.png)
+![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7.png)
 
 
 ## Paso 8: Bounded Contexts
@@ -151,7 +151,7 @@ Finalmente, definimos los Bounded Contexts que agrupan los flujos relacionados e
 | **BC: Health Monitoring** | Continuous Monitoring Flow | Gestiona el monitoreo continuo de signos vitales y la detección de estados críticos. |
 | **BC: Visit Management** | Interaction Flow with Family Members | Gestiona la autorización, restricción y registro de visitas de familiares. |
 
-![Step 8 - Bounded Contexts](assets/img/chapter-IV/design-level-event-storming/design-level-event-storming-step-8.png)
+![Step 8 - Bounded Contexts](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-8.png)
 
 
 ## Enlace al tablero de Miro
