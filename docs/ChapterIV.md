@@ -147,13 +147,21 @@ El modelado de flujos de mensajes describe cómo los distintos contextos delimit
 
 En esta sección se detallan los bounded contexts siguiendo un proceso iterativo recomendado para el Bounded Context Canvas. A continuación se describe el proceso de diseño de cada contexto, incluyendo la definición del contexto, las reglas de negocio, el lenguaje ubicuo, y el análisis de capacidades.
 
-#### 4.1.1.3.1 Nursing Context Canvas
+#### 4.1.1.3.1. Nursing Context - Canvas
 
 Gestiona el ciclo de vida clínico completo de un residente dentro del hogar de reposo, incluyendo la creación, aprobación y ejecución de planes de cuidado, la prescripción, programación y administración de medicamentos, el control de stock de medicación, la asignación de habitaciones y familiares, y el manejo de reacciones adversas y dosis perdidas, garantizando que cada residente reciba la atención clínica adecuada en todo momento.
 
 ![bc1_nursing.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc1_nursing.png)
 
 El bounded context de Nursing representa un **Core Domain**, ya que su funcionalidad es fundamental para el éxito del negocio principal de la plataforma. Este contexto se enfoca en la gestión clínica operativa del residente, lo cual es crucial para garantizar la calidad del cuidado y la seguridad del paciente. La administración de planes de cuidado y medicamentos es una parte esencial de las operaciones diarias del hogar de reposo y tiene un impacto directo en la continuidad del servicio, la satisfacción de las familias y el cumplimiento de estándares clínicos. Por ello, este contexto actúa como **Execution Context** y **Enforcer**, siendo el núcleo alrededor del cual giran los demás bounded contexts del sistema Veyra.
+
+#### 4.1.1.3.2. Tracking Context - Canvas
+
+Gestiona la evaluación clínica inicial y continua de los residentes realizada por el Doctor, cubriendo la creación y registro del historial médico, el diagnóstico, la medición de signos vitales y la evaluación del nivel de riesgo y dependencia, proporcionando la línea base clínica que alimenta los bounded contexts de Nursing y Health.
+
+![bc2_tracking.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc2_tracking.png)
+
+El bounded context de Tracking representa un **Core Domain**, ya que establece el punto de partida clínico indispensable para que el resto del sistema pueda operar correctamente. Sin una evaluación médica completa, no es posible crear un Plan de Cuidado en Nursing ni iniciar el monitoreo continuo en Health. Este contexto actúa como **Execution Context** y **Analysis Context**, siendo responsable de transformar la información clínica recolectada por el Doctor en eventos de dominio concretos — como `Risk Level Assessed` y `Medical History Created` — que otros bounded contexts consumen para tomar decisiones de negocio críticas sobre el cuidado del residente.
 
 ### 4.1.2. Context Mapping
 
