@@ -232,11 +232,11 @@ El diagrama de despliegue describe cómo los contenedores de software se distrib
 
 El diseño táctico traduce el modelo estratégico en estructuras concretas de código dentro de cada contexto delimitado. En esta sección se detallan las capas de cada contexto de Veyra, sus entidades, agregados, servicios de dominio y repositorios, así como los diagramas de componentes y de base de datos que guían la implementación del sistema de monitoreo IoT. Cada subsección corresponde a un contexto delimitado identificado durante el diseño estratégico.
 
-## 4.2. Identity and Access Management (IAM) Bounded Context: Diseño Táctico
+### 4.2.1 Bounded Context: Identity and Access Management (IAM)
 
 En esta sección, el equipo presenta las clases identificadas y las detalla a manera de diccionario, explicando para cada una su nombre, propósito y la documentación de atributos y métodos considerados, junto con las relaciones entre ellas.
 
-#### 4.2.1. Domain Layer
+#### 4.2.1.1 Domain Layer
 
 Esta capa contiene el núcleo del negocio, incluyendo las entidades, objetos de valor y abstracciones de repositorios que definen las reglas de identidad y acceso, manteniéndose agnóstica de frameworks externos.
 
@@ -276,7 +276,7 @@ Esta capa contiene el núcleo del negocio, incluyendo las entidades, objetos de 
   * `existsByUsername(String username): boolean`
   * `save(User user): User`
 
-#### 4.2.2. Application Layer
+#### 4.2.1.2. Application Layer
 Esta capa orquesta los casos de uso del negocio. Maneja el flujo del proceso utilizando un patrón CQRS (Command Query Responsibility Segregation) implícito, separando las intenciones de modificación (Commands) de las de lectura (Queries).
 
 **`SignUpCommand` & `SignInCommand`**
@@ -300,7 +300,7 @@ Esta capa orquesta los casos de uso del negocio. Maneja el flujo del proceso uti
 * **Métodos principales:**
   * `handle(GetAllUsersQuery query): List<User>`
   * `handle(GetUserByIdQuery query): Optional<User>`
-#### 4.2.3. Interface Layer
+#### 4.2.1.3. Interface Layer
 Esta capa expone los *capabilities* del Bounded Context hacia clientes externos, actuando como la frontera del sistema.
 
 **`AuthenticationController`**
@@ -311,8 +311,24 @@ Esta capa expone los *capabilities* del Bounded Context hacia clientes externos,
   * `POST /api/v1/authentication/sign-in`
 * **Relaciones:** Interactúa con `UserCommandService`. Utiliza clases `Assembler` o `Mapper` para aislar los DTOs de presentación (`SignUpResource`, `SignInResource`) de los comandos de aplicación.
 
-#### 4.2.4. Infrastructure Layer
+#### 4.2.1.4. Infrastructure Layer
 
+Esta capa proporciona las implementaciones técnicas de los contratos definidos en las capas superiores.
+
+**`UserRepository` & `RoleRepository`**
+* **Tipo:** Repository Implementations
+* **Propósito:** Implementaciones concretas utilizando Spring Data JPA para el acceso a la base de datos relacional.
+* **Atributos:** Extienden de `JpaRepository<T, ID>`.
+* **Relaciones:** Mapean las entidades del dominio a tablas de la base de datos a través de anotaciones ORM.
+
+**`HashingServiceImpl`**
+* **Tipo:** Infrastructure Service
+* **Propósito:** Implementa la interfaz de dominio/aplicación para la seguridad de contraseñas utilizando un algoritmo criptográfico robusto (`BCryptPasswordEncoder`).
+
+**`TokenServiceImpl`**
+* **Tipo:** Infrastructure Service (External)
+* **Propósito:** Encargado de la generación, firma y validación de los JSON Web Tokens (JWT) para mantener la sesión *stateless* del sistema tras un inicio de sesión exitoso.
+* **Relaciones:** Utilizado por `UserCommandServiceImpl` para empaquetar la identidad confirmada en un token retornable.
 ### 4.2.1. Bounded Context: \<Bounded Context Name\>
 
 Este bounded context encapsula las responsabilidades relacionadas con \<área funcional\>. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
