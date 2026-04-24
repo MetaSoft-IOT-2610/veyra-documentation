@@ -155,7 +155,7 @@ Gestiona el ciclo de vida clínico completo de un residente dentro del hogar de 
 
 El bounded context de Nursing representa un **Core Domain**, ya que su funcionalidad es fundamental para el éxito del negocio principal de la plataforma. Este contexto se enfoca en la gestión clínica operativa del residente, lo cual es crucial para garantizar la calidad del cuidado y la seguridad del paciente. La administración de planes de cuidado y medicamentos es una parte esencial de las operaciones diarias del hogar de reposo y tiene un impacto directo en la continuidad del servicio, la satisfacción de las familias y el cumplimiento de estándares clínicos. Por ello, este contexto actúa como **Execution Context** y **Enforcer**, siendo el núcleo alrededor del cual giran los demás bounded contexts del sistema Veyra.
 
-#### 4.1.1.3.2. Tracking Context - Canvas
+#### Tracking Context - Canvas
 
 Gestiona la evaluación clínica inicial y continua de los residentes realizada por el Doctor, cubriendo la creación y registro del historial médico, el diagnóstico, la medición de signos vitales y la evaluación del nivel de riesgo y dependencia, proporcionando la línea base clínica que alimenta los bounded contexts de Nursing y Health.
 
@@ -163,7 +163,7 @@ Gestiona la evaluación clínica inicial y continua de los residentes realizada 
 
 El bounded context de Tracking representa un **Core Domain**, ya que establece el punto de partida clínico indispensable para que el resto del sistema pueda operar correctamente. Sin una evaluación médica completa, no es posible crear un Plan de Cuidado en Nursing ni iniciar el monitoreo continuo en Health. Este contexto actúa como **Execution Context** y **Analysis Context**, siendo responsable de transformar la información clínica recolectada por el Doctor en eventos de dominio concretos — como `Risk Level Assessed` y `Medical History Created` — que otros bounded contexts consumen para tomar decisiones de negocio críticas sobre el cuidado del residente.
 
-#### 4.1.1.3.3. Health Context - Canvas
+#### Health Context - Canvas
 
 Gestiona el monitoreo continuo en tiempo real del estado de salud de los residentes admitidos, cubriendo la toma y registro de signos vitales, detección de anomalías, identificación de condiciones críticas, seguimiento de cambios en la condición del residente, reporte de alergias con clasificación de severidad, y notificación al personal de enfermería a través de un servicio externo de notificaciones.
 
@@ -171,7 +171,7 @@ Gestiona el monitoreo continuo en tiempo real del estado de salud de los residen
 
 El bounded context de Health representa un **Core Domain**, ya que su funcionalidad es crítica para garantizar la seguridad y bienestar de los residentes en todo momento. Este contexto actúa como centinela de salud en tiempo real, detectando anomalías y condiciones críticas que requieren intervención inmediata. Al operar como **Analysis Context**, **Gateway Context** y **Enforcer**, asegura que cualquier cambio relevante en el estado de salud de un residente sea comunicado oportunamente tanto al personal interno como a familiares a través del servicio externo de notificaciones, siendo indispensable para el cumplimiento de estándares clínicos y la confianza de las familias en la plataforma Veyra.
 
-#### 4.1.1.3.4. HCM Context - Canvas
+#### HCM Context - Canvas
 
 Gestiona el ciclo de vida completo del personal de salud dentro del hogar de reposo, cubriendo la contratación, verificación de credenciales, gestión de turnos, asignación de enfermeras y tareas de cuidado a residentes, reporte de ausencias, asignación de reemplazos y cierre de turnos con handover formal, garantizando que el personal correcto esté verificado, disponible y asignado en todo momento.
 
@@ -179,7 +179,7 @@ Gestiona el ciclo de vida completo del personal de salud dentro del hogar de rep
 
 El bounded context de HCM representa un **Core Domain**, ya que la disponibilidad y correcta asignación del personal de salud es fundamental para la operación continua del hogar de reposo. Sin este contexto, ningún residente podría recibir atención clínica ni actividades diarias de cuidado. Actúa como **Execution Context** y **Enforcer**, asegurando que ningún staff no verificado pueda ser asignado a un turno, y que toda ausencia tenga una respuesta operativa inmediata mediante la asignación de un reemplazo, siendo un pilar indispensable para la continuidad del servicio en la plataforma Veyra.
 
-#### 4.1.1.3.5. Activities Context - Canvas
+#### Activities Context - Canvas
 
 Registra las actividades diarias de cuidado del residente realizadas por el personal de salud como parte del Resident's Daily Care Flow, cubriendo el registro de comidas, baño, higiene, asistencia de alimentación, asistencia de movilidad, prevención de caídas, hidratación y actividades recreacionales, proporcionando una línea de tiempo completa en tiempo real por residente y disparando reasignaciones médicas cuando se superan umbrales configurados.
 
@@ -187,7 +187,7 @@ Registra las actividades diarias de cuidado del residente realizadas por el pers
 
 El bounded context de Activities representa un **Core Domain**, ya que el seguimiento en tiempo real de las actividades diarias de cada residente es esencial para garantizar la calidad del cuidado y el cumplimiento de los planes de atención. Este contexto actúa como **Execution Context** y **Analysis Context**, siendo responsable de capturar cada acción de cuidado realizada por el personal y de detectar situaciones que requieren intervención, como el incumplimiento del umbral de hidratación o el alto riesgo de caídas, comunicándolas oportunamente a los bounded contexts de Health y Tracking para mantener la seguridad y bienestar del residente en la plataforma Veyra.
 
-#### 4.1.1.3.6. Communication Context - Canvas
+#### Communication Context - Canvas
 
 Gestiona todas las interacciones entre el hogar de reposo y los familiares de los residentes, controlando el ciclo de vida completo de las visitas: autorización, aplicación de restricciones, denegación, programación, inicio, fin y registro. Notifica a los familiares cuando el estado de una visita cambia o cuando se producen alertas críticas de salud, a través de un servicio externo de notificaciones.
 
@@ -195,7 +195,7 @@ Gestiona todas las interacciones entre el hogar de reposo y los familiares de lo
 
 El bounded context de Communication representa un **Core Domain** con enfoque en **engagement**, ya que la conexión continua entre los familiares y el hogar de reposo es fundamental para la confianza en la plataforma y la satisfacción de los usuarios. Actúa como **Execution Context** y **Gateway Context**, siendo el punto de salida hacia el Notification Service externo para comunicar cambios de estado de visitas y alertas críticas de salud. Sin este contexto, las familias no tendrían visibilidad del estado de sus residentes ni podrían coordinar visitas de manera controlada y segura en la plataforma Veyra.
 
-#### 4.1.1.3.7. IAM Context - Canvas
+#### IAM Context - Canvas
 
 Gestiona la autenticación, autorización y asignación de roles para todos los usuarios de la plataforma, manejando el Sign In, Sign Up, registro de información personal y asignación de roles. Aplica un flujo especial: cuando un Admin inicia sesión por primera vez, el sistema lo redirige al flujo de registro del hogar de reposo. Es el guardián de seguridad y punto de entrada para todos los demás bounded contexts de la plataforma Veyra.
 
@@ -203,7 +203,7 @@ Gestiona la autenticación, autorización y asignación de roles para todos los 
 
 El bounded context de IAM representa un **Supporting Domain** con enfoque en **compliance**, ya que garantizar que solo usuarios autenticados y correctamente autorizados puedan acceder a la plataforma es un requisito fundamental de seguridad y no diferenciador del negocio principal. Actúa como **Gateway Context** y **Enforcer**, siendo el primer punto de control que todos los usuarios deben atravesar antes de interactuar con cualquier otro bounded context. Sin este contexto, ningún flujo de negocio de la plataforma Veyra podría operar de forma segura y controlada.
 
-#### 4.1.1.3.8. Profiles Context - Canvas
+#### Profiles Context - Canvas
 
 Gestiona los perfiles personales y de negocio de todos los usuarios de la plataforma, permitiendo crear, actualizar y deshabilitar perfiles de persona, cambiar contraseñas, gestionar fotos de perfil mediante Cloudinary (servicio externo), autorizar visitantes y crear perfiles de negocio vinculados al hogar de reposo, garantizando que cada usuario tenga una identidad completamente configurada más allá de la autenticación.
 
@@ -211,7 +211,7 @@ Gestiona los perfiles personales y de negocio de todos los usuarios de la plataf
 
 El bounded context de Profiles representa un **Supporting Domain** con enfoque en **engagement**, ya que una identidad completa y personalizada para cada usuario mejora la experiencia en la plataforma y facilita la gestión operativa del hogar de reposo. Actúa como **Execution Context** y **Gateway Context**, siendo el responsable de enriquecer la identidad creada en IAM con información personal y de negocio, y de publicar eventos relevantes hacia Communication y Nursing cuando el estado de un perfil cambia. La integración con Cloudinary como servicio externo permite una gestión eficiente de imágenes sin sobrecargar la infraestructura interna de la plataforma Veyra.
 
-#### 4.1.1.3.9. Subscriptions & Payments Context - Canvas
+#### Subscriptions & Payments Context - Canvas
 
 Gestiona el ciclo de vida de las suscripciones SaaS y el procesamiento de pagos para los hogares de reposo en la plataforma, manejando la selección y cancelación de planes de suscripción, y el procesamiento de pagos a través de Stripe (pasarela externa). El estado de la suscripción actúa como la puerta que habilita o deshabilita el acceso a todos los demás bounded contexts, y genera órdenes de pago cuando un familiar desea pagar por los servicios de un residente.
 
