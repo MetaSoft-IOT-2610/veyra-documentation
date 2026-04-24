@@ -105,31 +105,11 @@ En este paso identificamos los sistemas externos que interactúan con el dominio
 
 ![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6.png)
 
-
+ 
 Paso 7: Add Aggregates
 
 En este paso identificamos los Aggregates, que representan los objetos de dominio centrales que agrupan entidades relacionadas y se tratan como una sola unidad. Cada aggregate actúa como el punto central alrededor del cual giran los eventos y comandos de cada flujo.
 
-| Aggregate | Bounded Context | Descripción |
-|-----------|----------------|-------------|
-| **Role** | BC: Role Management | Agrupa el usuario, sus roles asignados y permisos de acceso al sistema. |
-| **User** | BC: Role Management | Agrupa las credenciales de acceso, estado de sesión y tipo de usuario. |
-| **Profile** | BC: Profile Management | Agrupa el perfil de persona o negocio, foto, contraseña y estado en la plataforma. |
-| **Subscription** | BC: Subscription & Payments | Agrupa el plan seleccionado, estado de suscripción y fecha de vigencia. |
-| **Pay** | BC: Subscription & Payments | Agrupa los detalles de pago, método de pago y estado de la transacción. |
-| **Resident** | BC: Application Management | Agrupa los documentos del residente, información personal y estado de la solicitud. |
-| **Admission Request** | BC: Application Management | Agrupa la solicitud de admisión, cotización, documentos verificados y estado de aprobación. |
-| **Admission** | BC: Admission & Billing | Agrupa la admisión formal, proceso de pago, asignación de habitación y familiar responsable. |
-| **Invoice** | BC: Admission & Billing | Agrupa la factura emitida, detalles de pago y estado de la transacción. |
-| **Medical History** | BC: Admission & Billing | Agrupa el historial médico creado durante la admisión formal del residente. |
-| **Clinical Assessment** | BC: Clinical Assessment | Agrupa la evaluación médica inicial, historial médico, signos vitales y perfil de riesgo. |
-| **Care Plan** | BC: Care Plan Management | Agrupa el plan de cuidado, medicamentos prescritos, agenda de medicación y estado del plan. |
-| **Staff Assignment** | BC: Staff Management | Agrupa el miembro del personal, credenciales, rol y residente asignado. |
-| **Shift Record** | BC: Staff Management | Agrupa el turno, Healthcare Staff asignado, horario, tareas completadas y estado del turno. |
-| **Medication Record** | BC: Medication Management | Agrupa el medicamento, residente, dosis, Healthcare Staff que lo administró y timestamp. |
-| **Daily Care Record** | BC: Daily Care | Agrupa las actividades diarias de cuidado: comida, higiene, baño, movilidad, hidratación y actividad recreativa. |
-| **Vital Signs Record** | BC: Health Monitoring | Agrupa la lectura del signo vital, residente, timestamp, enfermera y estado (normal/anormal). |
-| **Visit** | BC: Visit Management | Agrupa la visita, estado de autorización, restricciones, familiar y residente. |
 
 ![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7.png)
 
@@ -138,22 +118,16 @@ Paso 8: Bounded Contexts
 
 Finalmente, definimos los Bounded Contexts que agrupan los flujos relacionados en contextos delimitados con responsabilidades claras. Cada Bounded Context representa un subdominio independiente con su propio lenguaje ubicuo.
 
-| Bounded Context   | Flujo                                   | Descripción                                                                 |
-|-------------------|-----------------------------------------|-----------------------------------------------------------------------------|
-| **BC: IAM**       | IAM Flow                                | Gestiona la identidad, autenticación y asignación de roles de los usuarios. |
-| **BC: Profiles**  | Profiles Flow                           | Gestiona la creación, actualización y desactivación de perfiles.            |
-| **BC: Profiles**  | Pre-admission and Application Flow      | Gestiona la solicitud de admisión y verificación de documentos.             |
-| **BC: Profiles**  | Formal Admission Flow                   | Gestiona la admisión formal del residente.                                  |
-| **BC: Profiles**  | Resident Registration                   | Gestiona el registro formal del residente en la plataforma.                 |
-| **BC: Payments**  | Subscription Flow                       | Gestiona planes de suscripción, pagos y cancelaciones.                      |
-| **BC: Payments**  | Billing Flow                            | Gestiona la facturación de los servicios brindados al residente.            |
-| **BC: Tracking**  | Initial Clinical Assessment Flow        | Gestiona la evaluación clínica inicial del residente.                       |
-| **BC: Nursing**   | Care and Treatment Plan Flow            | Gestiona el plan de cuidado y tratamiento del residente.                    |
-| **BC: Nursing**   | Medication Management Workflow          | Gestiona el ciclo completo de medicamentos.                                 |
-| **BC: Nursing**   | Family Interaction Flow                 | Gestiona visitas y relación con familiares.                                 |
-| **BC: HCM**       | Staff Allocation and Operation Flow     | Gestiona la contratación y asignación del personal.                         |
-| **BC: Activities**| Resident Daily Care Flow                | Gestiona las actividades diarias del residente.                             |
-| **BC: Health**    | Continuous Monitoring Flow              | Gestiona monitoreo de signos vitales y alertas críticas.                    |
+| Bounded Context   |Descripción                                                                 |
+|-------------------|-----------------------------------------------------------------------------|
+| **BC: IAM**      | Gestiona la identidad, autenticación y asignación de roles de los usuarios. |
+| **BC: Profiles**| Gestiona la creación, actualización y desactivación de perfiles.         |
+| **BC: Payments**  | Gestiona planes de suscripción, pagos y cancelaciones.              |
+| **BC: Tracking**   | Gestiona la evaluación clínica inicial del residente.                       |
+| **BC: Nursing** | Gestiona el plan de cuidado y tratamiento del residente.                    |
+| **BC: HCM**    | Gestiona la contratación y asignación del personal.                         |
+| **BC: Activities**| Gestiona las actividades diarias del residente.                             |
+| **BC: Health**    | Gestiona monitoreo de signos vitales y alertas críticas.                    |
 
 ![Step 8 - Bounded Contexts](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-8.jpg)
 
