@@ -179,7 +179,13 @@ Gestiona el ciclo de vida completo del personal de salud dentro del hogar de rep
 
 El bounded context de HCM representa un **Core Domain**, ya que la disponibilidad y correcta asignación del personal de salud es fundamental para la operación continua del hogar de reposo. Sin este contexto, ningún residente podría recibir atención clínica ni actividades diarias de cuidado. Actúa como **Execution Context** y **Enforcer**, asegurando que ningún staff no verificado pueda ser asignado a un turno, y que toda ausencia tenga una respuesta operativa inmediata mediante la asignación de un reemplazo, siendo un pilar indispensable para la continuidad del servicio en la plataforma Veyra.
 
+#### 4.1.1.3.5. Activities Context - Canvas
 
+Registra las actividades diarias de cuidado del residente realizadas por el personal de salud como parte del Resident's Daily Care Flow, cubriendo el registro de comidas, baño, higiene, asistencia de alimentación, asistencia de movilidad, prevención de caídas, hidratación y actividades recreacionales, proporcionando una línea de tiempo completa en tiempo real por residente y disparando reasignaciones médicas cuando se superan umbrales configurados.
+
+![bc5_activities.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc5_activities.png)
+
+El bounded context de Activities representa un **Core Domain**, ya que el seguimiento en tiempo real de las actividades diarias de cada residente es esencial para garantizar la calidad del cuidado y el cumplimiento de los planes de atención. Este contexto actúa como **Execution Context** y **Analysis Context**, siendo responsable de capturar cada acción de cuidado realizada por el personal y de detectar situaciones que requieren intervención, como el incumplimiento del umbral de hidratación o el alto riesgo de caídas, comunicándolas oportunamente a los bounded contexts de Health y Tracking para mantener la seguridad y bienestar del residente en la plataforma Veyra.
 ### 4.1.2. Context Mapping
 
 El Context Mapping describe las relaciones y los patrones de integración entre los contextos delimitados del sistema. A través de este mapa se establecen los tipos de colaboración entre contextos —como cliente-proveedor, conformista o anticorrupción— y se identifican los contratos de comunicación que garantizan la consistencia del sistema en su conjunto. En Veyra, este mapa es especialmente relevante para definir cómo el contexto de dispositivos IoT alimenta al de monitoreo clínico, cómo el contexto de alertas depende del de monitoreo, y cómo los contextos de suscripción y control de acceso colaboran para regular el uso de la plataforma por parte de las instituciones y los familiares.
