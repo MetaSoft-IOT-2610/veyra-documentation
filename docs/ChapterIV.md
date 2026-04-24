@@ -97,7 +97,7 @@ Los Read Models representan las vistas de consulta que los actores utilizan para
 
 Paso 6: External Systems
 
-En este paso identificamos los sistemas externos que interactúan con el dominio pero que están fuera del control directo del sistema.
+En este paso identificamos los sistemas externos que interactúan con el dominio, pero que están fuera del control directo del sistema.
 
 - **Cloudinary:** sistema externo de gestión de imágenes utilizado para almacenar y gestionar las fotos de perfil de los usuarios y residentes.
 - **Stripe:** sistema externo de procesamiento de pagos utilizado para gestionar las transacciones de suscripciones y pagos de admisión.
@@ -145,7 +145,15 @@ El modelado de flujos de mensajes describe cómo los distintos contextos delimit
 
 #### 4.1.1.3. Bounded Context Canvases
 
-Los Bounded Context Canvases documentan en detalle cada contexto delimitado identificado, especificando su propósito, el lenguaje ubicuo que lo rige, sus responsabilidades, las dependencias con otros contextos y los mecanismos de colaboración. Este artefacto sirve como referencia compartida entre el equipo técnico y el negocio.
+En esta sección se detallan los bounded contexts siguiendo un proceso iterativo recomendado para el Bounded Context Canvas. A continuación se describe el proceso de diseño de cada contexto, incluyendo la definición del contexto, las reglas de negocio, el lenguaje ubicuo, y el análisis de capacidades.
+
+#### 4.1.1.3.1 Nursing Context Canvas
+
+Gestiona el ciclo de vida clínico completo de un residente dentro del hogar de reposo, incluyendo la creación, aprobación y ejecución de planes de cuidado, la prescripción, programación y administración de medicamentos, el control de stock de medicación, la asignación de habitaciones y familiares, y el manejo de reacciones adversas y dosis perdidas, garantizando que cada residente reciba la atención clínica adecuada en todo momento.
+
+![bc1_nursing.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc1_nursing.png)
+
+El bounded context de Nursing representa un **Core Domain**, ya que su funcionalidad es fundamental para el éxito del negocio principal de la plataforma. Este contexto se enfoca en la gestión clínica operativa del residente, lo cual es crucial para garantizar la calidad del cuidado y la seguridad del paciente. La administración de planes de cuidado y medicamentos es una parte esencial de las operaciones diarias del hogar de reposo y tiene un impacto directo en la continuidad del servicio, la satisfacción de las familias y el cumplimiento de estándares clínicos. Por ello, este contexto actúa como **Execution Context** y **Enforcer**, siendo el núcleo alrededor del cual giran los demás bounded contexts del sistema Veyra.
 
 ### 4.1.2. Context Mapping
 
@@ -197,7 +205,7 @@ La capa de interfaz expone los puntos de entrada al contexto delimitado hacia el
 
 #### 4.2.1.3. Application Layer
 
-La capa de aplicación orquesta los casos de uso del contexto delimitado. Coordina la interacción entre la capa de dominio y la capa de infraestructura, ejecutando los flujos de negocio sin contener lógica de dominio propia. Aquí se implementan los manejadores de comandos y las consultas de la aplicación.
+La capa de aplicación orquesta los casos de uso del contexto delimitado. Coordina la interacción entre la capa de dominio y la capa de infraestructura, ejecutando los flujos de negocios sin contener lógica de dominio propia. Aquí se implementan los manejadores de comandos y las consultas de la aplicación.
 
 #### 4.2.1.4. Infrastructure Layer
 
@@ -209,11 +217,11 @@ El diagrama de componentes muestra la estructura interna del contexto delimitado
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
-Los diagramas de nivel de código ofrecen una vista detallada de las estructuras internas del contexto delimitado, mostrando las clases, sus relaciones y el esquema de base de datos que soporta el modelo de dominio.
+Los diagramas de nivel de código ofrecen una vista detallada de las estructuras internas del contexto delimitado, mostrando las clases, sus relaciones y el esquema de base de datos que soporta el modelo del dominio.
 
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo de negocio del contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
+El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo del negocio de contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
@@ -253,7 +261,7 @@ ACL (Anti-Corruption Layer): La interfaz NursingContextFacade se expone para que
 
 #### 4.2.1.3. Application Layer
 
-La capa de aplicación orquesta los casos de uso del contexto delimitado y coordina la ejecución de los flujos de negocio.
+La capa de aplicación orquesta los casos de uso del contexto delimitado y coordina la ejecución de los flujos de negocios.
 
 Command Services: Implementaciones concretas como NursingHomeCommandServiceImpl, ResidentCommandServiceImpl y MedicationCommandServicesImpl.
 
@@ -277,7 +285,7 @@ Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
 
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo de negocio del contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
+El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo del negocio de contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
