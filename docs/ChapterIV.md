@@ -420,21 +420,35 @@ Transform/Assemblers: Clases como ResidentResourceFromEntityAssembler, Medicatio
 
 ACL (Anti-Corruption Layer): La interfaz NursingContextFacade se expone para que otros módulos interactúen de manera segura con el contexto de Nursing.
 
-#### 4.2.1.3. Application Layer
+#### 4.2.1.3. Interface Layer
+Esta capa expone los *capabilities* del Bounded Context hacia clientes externos, actuando como la frontera del sistema.
 
-La capa de aplicación orquesta los casos de uso del contexto delimitado y coordina la ejecución de los flujos de negocios.
-
-Command Services: Implementaciones concretas como NursingHomeCommandServiceImpl, ResidentCommandServiceImpl y MedicationCommandServicesImpl.
-
-Query Services: Implementaciones concretas como NursingHomeQueryServiceImpl, ResidentQueryServiceImpl y MedicationQueryServiceImpl.
-
-Outbound Services / ACL: La clase NursingContextFacadeImpl y la interfaz ExternalAclOutbound gestionan la comunicación hacia afuera del contexto.
+**`AuthenticationController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los puntos finales (endpoints) HTTP, recibir las peticiones, des-serializar el JSON en *Resources/DTOs* y mapearlos a *Commands*.
+* **Endpoints expuestos:**
+  * `POST /api/v1/authentication/sign-up`
+  * `POST /api/v1/authentication/sign-in`
+* **Relaciones:** Interactúa con `UserCommandService`. Utiliza clases `Assembler` o `Mapper` para aislar los DTOs de presentación (`SignUpResource`, `SignInResource`) de los comandos de aplicación.
 
 #### 4.2.1.4. Infrastructure Layer
 
-La capa de infraestructura provee las implementaciones concretas de las interfaces definidas en el dominio, como los repositorios para la base de datos.
+Esta capa proporciona las implementaciones técnicas de los contratos definidos en las capas superiores.
 
-Persistence (JPA): Interfaces de acceso a datos que extienden de JPA, incluyendo NursingHomeRepository, ResidentRepository, RoomRepository y MedicationRepository.
+**`UserRepository` & `RoleRepository`**
+* **Tipo:** Repository Implementations
+* **Propósito:** Implementaciones concretas utilizando Spring Data JPA para el acceso a la base de datos relacional.
+* **Atributos:** Extienden de `JpaRepository<T, ID>`.
+* **Relaciones:** Mapean las entidades del dominio a tablas de la base de datos a través de anotaciones ORM.
+
+**`HashingServiceImpl`**
+* **Tipo:** Infrastructure Service
+* **Propósito:** Implementa la interfaz de dominio/aplicación para la seguridad de contraseñas utilizando un algoritmo criptográfico robusto (`BCryptPasswordEncoder`).
+
+**`TokenServiceImpl`**
+* **Tipo:** Infrastructure Service (External)
+* **Propósito:** Encargado de la generación, firma y validación de los JSON Web Tokens (JWT) para mantener la sesión *stateless* del sistema tras un inicio de sesión exitoso.
+* **Relaciones:** Utilizado por `UserCommandServiceImpl` para empaquetar la identidad confirmada en un token retornable.
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
