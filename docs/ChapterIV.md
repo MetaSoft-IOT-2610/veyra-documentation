@@ -267,7 +267,30 @@ Esta capa contiene el núcleo del negocio, incluyendo las entidades, objetos de 
   * `save(User user): User`
 
 #### 4.2.2. Application Layer
-#### 4.2.3. Interface Layer (Presentation)
+Esta capa orquesta los casos de uso del negocio. Maneja el flujo del proceso utilizando un patrón CQRS (Command Query Responsibility Segregation) implícito, separando las intenciones de modificación (Commands) de las de lectura (Queries).
+
+**`SignUpCommand` & `SignInCommand`**
+* **Tipo:** Command (Input DTO)
+* **Propósito:** Objetos inmutables que encapsulan la intención del usuario de registrarse o iniciar sesión, transportando los datos necesarios (Username, Password, Roles) hacia los manejadores.
+
+**`UserCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de mutación de estado. Valida reglas de negocio de aplicación (ej. verificar si el usuario ya existe vía el repositorio) y delega la creación del token de infraestructura.
+* **Atributos inyectados:**
+  * `userRepository`: IUserRepository
+  * `hashingService`: HashingService
+  * `tokenService`: TokenService
+* **Métodos principales:**
+  * `handle(SignUpCommand command): Optional<User>`
+  * `handle(SignInCommand command): Optional<ImmutablePair<User, String>>`
+
+**`UserQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre el estado de los usuarios, garantizando que estas operaciones no produzcan efectos secundarios (side-effects) en el dominio.
+* **Métodos principales:**
+  * `handle(GetAllUsersQuery query): List<User>`
+  * `handle(GetUserByIdQuery query): Optional<User>`
+#### 4.2.3. Interface Layer
 #### 4.2.4. Infrastructure Layer
 
 ### 4.2.1. Bounded Context: \<Bounded Context Name\>
