@@ -195,6 +195,7 @@ Gestiona todas las interacciones entre el hogar de reposo y los familiares de lo
 
 El bounded context de Communication representa un **Core Domain** con enfoque en **engagement**, ya que la conexión continua entre los familiares y el hogar de reposo es fundamental para la confianza en la plataforma y la satisfacción de los usuarios. Actúa como **Execution Context** y **Gateway Context**, siendo el punto de salida hacia el Notification Service externo para comunicar cambios de estado de visitas y alertas críticas de salud. Sin este contexto, las familias no tendrían visibilidad del estado de sus residentes ni podrían coordinar visitas de manera controlada y segura en la plataforma Veyra.
 
+
 ### 4.1.2. Context Mapping
 
 El Context Mapping describe las relaciones y los patrones de integración entre los contextos delimitados del sistema. A través de este mapa se establecen los tipos de colaboración entre contextos —como cliente-proveedor, conformista o anticorrupción— y se identifican los contratos de comunicación que garantizan la consistencia del sistema en su conjunto. En Veyra, este mapa es especialmente relevante para definir cómo el contexto de dispositivos IoT alimenta al de monitoreo clínico, cómo el contexto de alertas depende del de monitoreo, y cómo los contextos de suscripción y control de acceso colaboran para regular el uso de la plataforma por parte de las instituciones y los familiares.
