@@ -291,6 +291,16 @@ Esta capa orquesta los casos de uso del negocio. Maneja el flujo del proceso uti
   * `handle(GetAllUsersQuery query): List<User>`
   * `handle(GetUserByIdQuery query): Optional<User>`
 #### 4.2.3. Interface Layer
+Esta capa expone los *capabilities* del Bounded Context hacia clientes externos, actuando como la frontera del sistema.
+
+**`AuthenticationController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los puntos finales (endpoints) HTTP, recibir las peticiones, des-serializar el JSON en *Resources/DTOs* y mapearlos a *Commands*.
+* **Endpoints expuestos:**
+  * `POST /api/v1/authentication/sign-up`
+  * `POST /api/v1/authentication/sign-in`
+* **Relaciones:** Interactúa con `UserCommandService`. Utiliza clases `Assembler` o `Mapper` para aislar los DTOs de presentación (`SignUpResource`, `SignInResource`) de los comandos de aplicación.
+
 #### 4.2.4. Infrastructure Layer
 
 ### 4.2.1. Bounded Context: \<Bounded Context Name\>
