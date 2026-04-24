@@ -211,6 +211,14 @@ Gestiona los perfiles personales y de negocio de todos los usuarios de la plataf
 
 El bounded context de Profiles representa un **Supporting Domain** con enfoque en **engagement**, ya que una identidad completa y personalizada para cada usuario mejora la experiencia en la plataforma y facilita la gestión operativa del hogar de reposo. Actúa como **Execution Context** y **Gateway Context**, siendo el responsable de enriquecer la identidad creada en IAM con información personal y de negocio, y de publicar eventos relevantes hacia Communication y Nursing cuando el estado de un perfil cambia. La integración con Cloudinary como servicio externo permite una gestión eficiente de imágenes sin sobrecargar la infraestructura interna de la plataforma Veyra.
 
+#### 4.1.1.3.9. Subscriptions & Payments Context - Canvas
+
+Gestiona el ciclo de vida de las suscripciones SaaS y el procesamiento de pagos para los hogares de reposo en la plataforma, manejando la selección y cancelación de planes de suscripción, y el procesamiento de pagos a través de Stripe (pasarela externa). El estado de la suscripción actúa como la puerta que habilita o deshabilita el acceso a todos los demás bounded contexts, y genera órdenes de pago cuando un familiar desea pagar por los servicios de un residente.
+
+![bc9_subscriptions.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc9_subscriptions.png)
+
+El bounded context de Subscriptions & Payments representa un **Supporting Domain** con enfoque en **revenue**, ya que el modelo de negocio de la plataforma Veyra depende directamente de la suscripción activa de los hogares de reposo para generar ingresos. Actúa como **Execution Context**, **Gateway Context** y **Enforcer**, siendo el único contexto autorizado para gestionar el acceso económico a la plataforma. La integración con Stripe mediante un Anti-Corruption Layer garantiza que los cambios en la API externa no afecten la lógica interna del dominio, manteniendo la independencia y resiliencia del sistema Veyra ante variaciones del proveedor de pagos.
+
 ### 4.1.2. Context Mapping
 
 El Context Mapping describe las relaciones y los patrones de integración entre los contextos delimitados del sistema. A través de este mapa se establecen los tipos de colaboración entre contextos —como cliente-proveedor, conformista o anticorrupción— y se identifican los contratos de comunicación que garantizan la consistencia del sistema en su conjunto. En Veyra, este mapa es especialmente relevante para definir cómo el contexto de dispositivos IoT alimenta al de monitoreo clínico, cómo el contexto de alertas depende del de monitoreo, y cómo los contextos de suscripción y control de acceso colaboran para regular el uso de la plataforma por parte de las instituciones y los familiares.
