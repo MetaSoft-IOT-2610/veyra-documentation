@@ -352,6 +352,23 @@ Esta capa proporciona las implementaciones técnicas de los contratos definidos 
 * **Tipo:** Infrastructure Service (External)
 * **Propósito:** Encargado de la generación, firma y validación de los JSON Web Tokens (JWT) para mantener la sesión *stateless* del sistema tras un inicio de sesión exitoso.
 * **Relaciones:** Utilizado por `UserCommandServiceImpl` para empaquetar la identidad confirmada en un token retornable.
+
+#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes muestra la estructura interna del contexto delimitado, detallando los principales componentes de software que lo conforman y las relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+
+#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+Los diagramas de nivel de código ofrecen una vista detallada de las estructuras internas del contexto delimitado, mostrando las clases, sus relaciones y el esquema de base de datos que soporta el modelo del dominio.
+
+##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo del negocio de contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
+
+##### 4.2.1.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos muestra el esquema de persistencia del contexto delimitado, incluyendo las tablas, columnas, claves primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos adoptadas para soportar el dominio.
+
 ### 4.2.1. Bounded Context: \<Bounded Context Name\>
 
 Este bounded context encapsula las responsabilidades relacionadas con \<área funcional\>. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
@@ -392,33 +409,70 @@ El diagrama de diseño de base de datos muestra el esquema de persistencia del c
 
 Este bounded context encapsula las responsabilidades relacionadas con la gestión de las casas de reposo, la admisión y asignación de residentes a habitaciones, y el control del inventario y suministro de medicamentos. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
 
-#### 4.2.1.1. Domain Layer
+#### 4.2.1.1 Domain Layer
 
-La capa de dominio contiene los elementos centrales del modelo de negocio, los cuales para el contexto de Nursing se estructuran de la siguiente manera:
+Esta capa contiene el núcleo del negocio, incluyendo las entidades, objetos de valor y abstracciones de repositorios que definen las reglas de identidad y acceso, manteniéndose agnóstica de frameworks externos.
 
-Aggregates: NursingHome, Resident y Medication.
+**`User`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa la identidad principal de un usuario en el sistema. Es el agregado raíz que asegura la consistencia de las credenciales y la asignación de roles antes de permitir el acceso a otros contextos de la plataforma Veyra.
+* **Atributos:**
+  * `Id`: Long
+  * `Username`: String
+  * `Password`: String (Encapsulado conceptualmente como credencial segura)
+  * `Roles`: Set<Role>
+* **Métodos principales:**
+  * `addRole(Role role): User`
+  * `addRoles(List<Role> roles): User`
+* **Relaciones:** Contiene una colección de la entidad `Role`. Es administrado a través de la abstracción `IUserRepository`.
 
-Entities: Room.
+**`Role`**
+* **Tipo DDD:** Entity
+* **Propósito:** Representa un nivel de acceso o grupo de permisos asignado a un usuario (ej. Doctor, Nurse, Admin, Relative).
+* **Atributos:**
+  * `Id`: Long
+  * `Name`: Roles (Value Object / Enum)
+* **Métodos principales:**
+  * `getStringName(): String`
+  * `getDefaultRole(): Role` (Estático)
+* **Relaciones:** Asociado bidireccional o unidireccionalmente al `User`.
 
-Value Objects: Address, PersonProfile, Dose, Stock, RoomId, NursingHomeId, ResidentId y MedicationId.
+**`Roles`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define estrictamente los valores de rol permitidos en el sistema (ej. `ROLE_USER`, `ROLE_ADMIN`, `ROLE_FAMILIAR`). Al ser inmutable, garantiza que no existan roles inválidos en tiempo de ejecución.
 
-Commands: Incluye acciones como CreateNursingHomeCommand, CreateResidentCommand, AssignRoomForResidentCommand, ChangeOfRoomForTheResidentCommand y CreateMedicationCommand.
+**`IUserRepository` & `IRoleRepository`**
+* **Tipo DDD:** Repository Interfaces
+* **Propósito:** Contratos de abstracción que definen las operaciones de persistencia y recuperación de agregados, aislando el dominio de la base de datos.
+* **Métodos representativos (`IUserRepository`):**
+  * `findByUsername(String username): Optional<User>`
+  * `existsByUsername(String username): boolean`
+  * `save(User user): User`
 
-Queries: Incluye consultas como GetAllResidentsByNursingHomeIdQuery, GetResidentByIdQuery, GetMedicationByIdQuery y GetRoomByNursingHomeIdAndRoomNumberQuery.
+#### 4.2.1.2. Application Layer
+Esta capa orquesta los casos de uso del negocio. Maneja el flujo del proceso utilizando un patrón CQRS (Command Query Responsibility Segregation) implícito, separando las intenciones de modificación (Commands) de las de lectura (Queries).
 
-Events: AdmittedResidentEvent, MedicationStockLowEvent y RetiredResidentEvent.
+**`SignUpCommand` & `SignInCommand`**
+* **Tipo:** Command (Input DTO)
+* **Propósito:** Objetos inmutables que encapsulan la intención del usuario de registrarse o iniciar sesión, transportando los datos necesarios (Username, Password, Roles) hacia los manejadores.
 
-Domain Services: Interfaces que dictan el contrato de negocio, como NursingHomeCommandServices, ResidentQueryServices y MedicationCommandServices.
+**`UserCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de mutación de estado. Valida reglas de negocio de aplicación (ej. verificar si el usuario ya existe vía el repositorio) y delega la creación del token de infraestructura.
+* **Atributos inyectados:**
+  * `userRepository`: IUserRepository
+  * `hashingService`: HashingService
+  * `tokenService`: TokenService
+* **Métodos principales:**
+  * `handle(SignUpCommand command): Optional<User>`
+  * `handle(SignInCommand command): Optional<ImmutablePair<User, String>>`
 
-#### 4.2.1.2. Interface Layer
-
-La capa de interfaz expone los puntos de entrada al contexto delimitado hacia el exterior.
-
-REST Controllers: Controladores como NursingHomesController, ResidentsController, MedicationsController, NursingHomeRoomsController y ResidentMedicationsController manejan las peticiones externas.
-
-Transform/Assemblers: Clases como ResidentResourceFromEntityAssembler, MedicationResourceFromEntityAssembler y CreateMedicationCommandFromResourceAssembler transforman los recursos HTTP en comandos u objetos de dominio.
-
-ACL (Anti-Corruption Layer): La interfaz NursingContextFacade se expone para que otros módulos interactúen de manera segura con el contexto de Nursing.
+**`UserQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre el estado de los usuarios, garantizando que estas operaciones no produzcan efectos secundarios (side-effects) en el dominio.
+* **Métodos principales:**
+  * `handle(GetAllUsersQuery query): List<User>`
+  * `handle(GetUserByIdQuery query): Optional<User>`
 
 #### 4.2.1.3. Interface Layer
 Esta capa expone los *capabilities* del Bounded Context hacia clientes externos, actuando como la frontera del sistema.
