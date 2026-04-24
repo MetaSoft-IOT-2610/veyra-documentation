@@ -231,6 +231,87 @@ El diagrama de despliegue describe cómo los contenedores de software se distrib
 
 El diseño táctico traduce el modelo estratégico en estructuras concretas de código dentro de cada contexto delimitado. En esta sección se detallan las capas de cada contexto de Veyra, sus entidades, agregados, servicios de dominio y repositorios, así como los diagramas de componentes y de base de datos que guían la implementación del sistema de monitoreo IoT. Cada subsección corresponde a un contexto delimitado identificado durante el diseño estratégico.
 
+## 4.2. Identity and Access Management (IAM) Bounded Context: Diseño Táctico
+
+En esta sección, el equipo presenta las clases identificadas y las detalla a manera de diccionario, explicando para cada una su nombre, propósito y la documentación de atributos y métodos considerados, junto con las relaciones entre ellas.
+
+#### 4.2.1. Domain Layer
+
+Esta capa contiene el núcleo del negocio, incluyendo las entidades, objetos de valor y abstracciones de repositorios que definen las reglas de identidad y acceso, manteniéndose agnóstica de frameworks externos.
+
+**`User`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa la identidad principal de un usuario en el sistema. Es el agregado raíz que asegura la consistencia de las credenciales y la asignación de roles antes de permitir el acceso a otros contextos de la plataforma Veyra.
+* **Atributos:**
+  * `Id`: Long
+  * `Username`: String
+  * `Password`: String (Encapsulado conceptualmente como credencial segura)
+  * `Roles`: Set<Role>
+* **Métodos principales:**
+  * `addRole(Role role): User`
+  * `addRoles(List<Role> roles): User`
+* **Relaciones:** Contiene una colección de la entidad `Role`. Es administrado a través de la abstracción `IUserRepository`.
+
+**`Role`**
+* **Tipo DDD:** Entity
+* **Propósito:** Representa un nivel de acceso o grupo de permisos asignado a un usuario (ej. Doctor, Nurse, Admin, Relative).
+* **Atributos:**
+  * `Id`: Long
+  * `Name`: Roles (Value Object / Enum)
+* **Métodos principales:**
+  * `getStringName(): String`
+  * `getDefaultRole(): Role` (Estático)
+* **Relaciones:** Asociado bidireccional o unidireccionalmente al `User`.
+
+**`Roles`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define estrictamente los valores de rol permitidos en el sistema (ej. `ROLE_USER`, `ROLE_ADMIN`, `ROLE_FAMILIAR`). Al ser inmutable, garantiza que no existan roles inválidos en tiempo de ejecución.
+
+**`IUserRepository` & `IRoleRepository`**
+* **Tipo DDD:** Repository Interfaces
+* **Propósito:** Contratos de abstracción que definen las operaciones de persistencia y recuperación de agregados, aislando el dominio de la base de datos.
+* **Métodos representativos (`IUserRepository`):**
+  * `findByUsername(String username): Optional<User>`
+  * `existsByUsername(String username): boolean`
+  * `save(User user): User`
+
+#### 4.2.2. Application Layer
+Esta capa orquesta los casos de uso del negocio. Maneja el flujo del proceso utilizando un patrón CQRS (Command Query Responsibility Segregation) implícito, separando las intenciones de modificación (Commands) de las de lectura (Queries).
+
+**`SignUpCommand` & `SignInCommand`**
+* **Tipo:** Command (Input DTO)
+* **Propósito:** Objetos inmutables que encapsulan la intención del usuario de registrarse o iniciar sesión, transportando los datos necesarios (Username, Password, Roles) hacia los manejadores.
+
+**`UserCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de mutación de estado. Valida reglas de negocio de aplicación (ej. verificar si el usuario ya existe vía el repositorio) y delega la creación del token de infraestructura.
+* **Atributos inyectados:**
+  * `userRepository`: IUserRepository
+  * `hashingService`: HashingService
+  * `tokenService`: TokenService
+* **Métodos principales:**
+  * `handle(SignUpCommand command): Optional<User>`
+  * `handle(SignInCommand command): Optional<ImmutablePair<User, String>>`
+
+**`UserQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre el estado de los usuarios, garantizando que estas operaciones no produzcan efectos secundarios (side-effects) en el dominio.
+* **Métodos principales:**
+  * `handle(GetAllUsersQuery query): List<User>`
+  * `handle(GetUserByIdQuery query): Optional<User>`
+#### 4.2.3. Interface Layer
+Esta capa expone los *capabilities* del Bounded Context hacia clientes externos, actuando como la frontera del sistema.
+
+**`AuthenticationController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los puntos finales (endpoints) HTTP, recibir las peticiones, des-serializar el JSON en *Resources/DTOs* y mapearlos a *Commands*.
+* **Endpoints expuestos:**
+  * `POST /api/v1/authentication/sign-up`
+  * `POST /api/v1/authentication/sign-in`
+* **Relaciones:** Interactúa con `UserCommandService`. Utiliza clases `Assembler` o `Mapper` para aislar los DTOs de presentación (`SignUpResource`, `SignInResource`) de los comandos de aplicación.
+
+#### 4.2.4. Infrastructure Layer
+
 ### 4.2.1. Bounded Context: \<Bounded Context Name\>
 
 Este bounded context encapsula las responsabilidades relacionadas con \<área funcional\>. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
