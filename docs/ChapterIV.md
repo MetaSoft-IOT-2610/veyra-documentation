@@ -409,3 +409,34 @@ El diagrama de diseño de base de datos muestra el esquema de persistencia del c
 
 Este bounded context encapsula las responsabilidades relacionadas con \<área funcional\>. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
 
+#### 4.2.3.1. Domain Layer
+
+La capa de dominio contiene los elementos centrales del modelo de negocio: entidades, objetos de valor, agregados, eventos de dominio e interfaces de repositorio. Esta capa es independiente de cualquier tecnología o framework y representa las reglas e invariantes propias del contexto delimitado.
+
+#### 4.2.3.2. Interface Layer
+
+La capa de interfaz expone los puntos de entrada al contexto delimitado hacia el exterior, ya sea mediante controladores REST, consumidores de mensajes u otros mecanismos de comunicación. Su responsabilidad es transformar las solicitudes entrantes en comandos o consultas comprensibles por las capas internas.
+
+#### 4.2.3.3. Application Layer
+
+La capa de aplicación orquesta los casos de uso del contexto delimitado. Coordina la interacción entre la capa de dominio y la capa de infraestructura, ejecutando los flujos de negocios sin contener lógica de dominio propia. Aquí se implementan los manejadores de comandos y las consultas de la aplicación.
+
+#### 4.2.3.4. Infrastructure Layer
+
+La capa de infraestructura provee las implementaciones concretas de las interfaces definidas en el dominio, incluyendo repositorios, adaptadores de servicios externos, clientes de mensajería y configuraciones de persistencia. Esta capa gestiona los detalles técnicos que permiten que el sistema funcione sobre la infraestructura elegida.
+
+#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes muestra la estructura interna del contexto delimitado, detallando los principales componentes de software que lo conforman y las relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+
+#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+Los diagramas de nivel de código ofrecen una vista detallada de las estructuras internas del contexto delimitado, mostrando las clases, sus relaciones y el esquema de base de datos que soporta el modelo del dominio.
+
+##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo del negocio de contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
+
+##### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos muestra el esquema de persistencia del contexto delimitado, incluyendo las tablas, columnas, claves primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos adoptadas para soportar el dominio.
