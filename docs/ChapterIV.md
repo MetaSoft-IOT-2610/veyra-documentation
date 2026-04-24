@@ -218,3 +218,67 @@ El diagrama de clases de la capa de dominio representa las entidades, objetos de
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del contexto delimitado, incluyendo las tablas, columnas, claves primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos adoptadas para soportar el dominio.
+
+### 4.2.1. Bounded Context: \<Nursing\>
+
+Este bounded context encapsula las responsabilidades relacionadas con la gestión de las casas de reposo, la admisión y asignación de residentes a habitaciones, y el control del inventario y suministro de medicamentos. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
+
+#### 4.2.1.1. Domain Layer
+
+La capa de dominio contiene los elementos centrales del modelo de negocio, los cuales para el contexto de Nursing se estructuran de la siguiente manera:
+
+Aggregates: NursingHome, Resident y Medication.
+
+Entities: Room.
+
+Value Objects: Address, PersonProfile, Dose, Stock, RoomId, NursingHomeId, ResidentId y MedicationId.
+
+Commands: Incluye acciones como CreateNursingHomeCommand, CreateResidentCommand, AssignRoomForResidentCommand, ChangeOfRoomForTheResidentCommand y CreateMedicationCommand.
+
+Queries: Incluye consultas como GetAllResidentsByNursingHomeIdQuery, GetResidentByIdQuery, GetMedicationByIdQuery y GetRoomByNursingHomeIdAndRoomNumberQuery.
+
+Events: AdmittedResidentEvent, MedicationStockLowEvent y RetiredResidentEvent.
+
+Domain Services: Interfaces que dictan el contrato de negocio, como NursingHomeCommandServices, ResidentQueryServices y MedicationCommandServices.
+
+#### 4.2.1.2. Interface Layer
+
+La capa de interfaz expone los puntos de entrada al contexto delimitado hacia el exterior.
+
+REST Controllers: Controladores como NursingHomesController, ResidentsController, MedicationsController, NursingHomeRoomsController y ResidentMedicationsController manejan las peticiones externas.
+
+Transform/Assemblers: Clases como ResidentResourceFromEntityAssembler, MedicationResourceFromEntityAssembler y CreateMedicationCommandFromResourceAssembler transforman los recursos HTTP en comandos u objetos de dominio.
+
+ACL (Anti-Corruption Layer): La interfaz NursingContextFacade se expone para que otros módulos interactúen de manera segura con el contexto de Nursing.
+
+#### 4.2.1.3. Application Layer
+
+La capa de aplicación orquesta los casos de uso del contexto delimitado y coordina la ejecución de los flujos de negocio.
+
+Command Services: Implementaciones concretas como NursingHomeCommandServiceImpl, ResidentCommandServiceImpl y MedicationCommandServicesImpl.
+
+Query Services: Implementaciones concretas como NursingHomeQueryServiceImpl, ResidentQueryServiceImpl y MedicationQueryServiceImpl.
+
+Outbound Services / ACL: La clase NursingContextFacadeImpl y la interfaz ExternalAclOutbound gestionan la comunicación hacia afuera del contexto.
+
+#### 4.2.1.4. Infrastructure Layer
+
+La capa de infraestructura provee las implementaciones concretas de las interfaces definidas en el dominio, como los repositorios para la base de datos.
+
+Persistence (JPA): Interfaces de acceso a datos que extienden de JPA, incluyendo NursingHomeRepository, ResidentRepository, RoomRepository y MedicationRepository.
+
+#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes muestra la estructura interna del contexto delimitado, detallando los principales componentes de software que lo conforman y las relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+
+#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+Los diagramas de nivel de código ofrecen una vista detallada de las estructuras internas del contexto delimitado, mostrando las clases, sus relaciones y el esquema de base de datos que soporta el modelo de dominio.
+
+##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo de negocio del contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
+
+##### 4.2.1.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos muestra el esquema de persistencia del contexto delimitado, incluyendo las tablas, columnas, claves primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos adoptadas para soportar el dominio.
