@@ -499,6 +499,7 @@ To ensure seamless communication among developers, medical staff, and family mem
 | **Relative (Responsable)** | Persona designada con autorización legal y financiera para acceder a la información del residente, recibir notificaciones y supervisar su cuidado. |
 | **Admin (Administrador)** | Responsable de la gestión del centro, incluyendo admisiones, facturación, asignación de habitaciones y programación del personal. |
 | **Doctor (Médico)** | Profesional de la salud que realiza evaluaciones iniciales, define planes de tratamiento y prescribe medicamentos. |
+| **Nursing Home (Casa de Reposo)** | Establecimiento de larga estadía diseñado para el cuidado integral de adultos mayores, ya sea de forma temporal o permanente. |
 | **Healthcare Staff (Personal de Cuidado)** | Personal de atención directa encargado de ejecutar el plan de cuidado, administrar medicamentos, registrar signos vitales y asistir en la higiene diaria. |
 | **Medical Record (Historia Clínica)** | Registro centralizado del historial de salud del residente, incluyendo diagnósticos, alergias y antecedentes médicos. |
 | **Care Quotation (Cotización de Atención)** | Estimación inicial de costos y servicios proporcionada al responsable antes de la admisión formal. |
