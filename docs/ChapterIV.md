@@ -1927,6 +1927,76 @@ modificación (Commands) de las de lectura (Queries).
   * `handle(GetRecreationalActivitiesByResidentIdQuery query): List<RecreationalActivity>`
 ---
 
+#### 4.2.5.4. Infrastructure Layer
+
+Esta capa proporciona las implementaciones técnicas de los contratos definidos en
+las capas superiores del contexto Activities.
+
+**`ActivityRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IActivityRepository` utilizando
+  Spring Data JPA para el acceso a la base de datos relacional.
+* **Atributos:** Extiende de `JpaRepository<Activity, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `Activity` a la tabla `activities`
+  mediante anotaciones ORM.
+  **`LogMealRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `ILogMealRepository` utilizando
+  Spring Data JPA.
+* **Atributos:** Extiende de `JpaRepository<LogMeal, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `LogMeal` a la tabla `log_meals`
+  mediante anotaciones ORM.
+  **`LogBathRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `ILogBathRepository` utilizando
+  Spring Data JPA.
+* **Atributos:** Extiende de `JpaRepository<LogBath, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `LogBath` a la tabla `log_baths`
+  mediante anotaciones ORM.
+  **`UpdateRiskProfileRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IUpdateRiskProfileRepository`
+  utilizando Spring Data JPA.
+* **Atributos:** Extiende de `JpaRepository<UpdateRiskProfile, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `UpdateRiskProfile` a la tabla
+  `risk_profile_updates` mediante anotaciones ORM.
+  **`RecreationalActivityRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IRecreationalActivityRepository`
+  utilizando Spring Data JPA.
+* **Atributos:** Extiende de `JpaRepository<RecreationalActivity, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `RecreationalActivity` a la tabla
+  `recreational_activities` mediante anotaciones ORM.
+---
+
+#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes muestra la estructura interna del Bounded Context
+Activities, detallando los principales componentes de software que lo conforman y
+las relaciones entre ellos. Permite visualizar cómo se organizan las
+responsabilidades dentro del contexto y cómo se comunican con otros contextos
+o servicios externos.
+
+#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
+
+Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
+internas del Bounded Context Activities, mostrando las clases, sus relaciones y el
+esquema de base de datos que soporta el modelo del dominio.
+
+##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases de la capa de dominio representa las entidades, objetos de
+valor, agregados e interfaces que conforman el modelo del negocio del contexto
+Activities. Muestra las relaciones de composición, herencia y dependencia entre
+los elementos del dominio.
+
+##### 4.2.5.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos muestra el esquema de persistencia del
+Bounded Context Activities, incluyendo las tablas, columnas, claves primarias,
+claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado
+de datos adoptadas para soportar el dominio.
+
 ### 4.2.7 Bounded Context: Identity and Access Management (IAM)
 
 En esta sección, el equipo presenta las clases identificadas y las detalla a manera de diccionario, explicando para cada una su nombre, propósito y la documentación de atributos y métodos considerados, junto con las relaciones entre ellas.
