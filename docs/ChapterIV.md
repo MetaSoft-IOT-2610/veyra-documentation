@@ -272,6 +272,7 @@ Con base en el análisis, se implementaron los siguientes patrones de relación 
 - **Published Language** entre Tracking → Communication, Communication → Activities y Health → Nursing.
 - **Anti-Corruption Layer** entre Activities y Health, para proteger el modelo clínico del lenguaje propio de las actividades cotidianas.
 
+![Context Mapping diagram](../assets/img/chapter-IV/context-mapping/context-map.jpg)
 
 ### 4.1.3. Software Architecture
 
