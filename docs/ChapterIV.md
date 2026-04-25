@@ -873,6 +873,159 @@ frameworks externos.
   * `save(RiskProfile riskProfile): RiskProfile`
 ---
 
+#### 4.2.2.2. Interface Layer
+
+Esta capa expone los capabilities del Bounded Context Tracking hacia clientes externos,
+actuando como la frontera del sistema y traduciendo las peticiones HTTP en comandos
+de aplicación mediante el uso de Resources.
+
+**`ClinicalAssessmentController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para la gestión del ciclo de vida de las
+  evaluaciones clínicas. Recibe las peticiones, deserializa el JSON en Resources y
+  los mapea a Commands mediante clases Assembler.
+* **Endpoints expuestos:**
+  * `POST /api/v1/clinical-assessments` — Iniciar evaluación clínica
+  * `PUT /api/v1/clinical-assessments/{id}/complete` — Completar evaluación
+  * `PUT /api/v1/clinical-assessments/{id}/notify-medical-need` — Notificar necesidad médica
+  * `GET /api/v1/clinical-assessments/{id}` — Consultar evaluación por ID
+  * `GET /api/v1/clinical-assessments/resident/{residentId}` — Evaluación por residente
+* **Relaciones:** Interactúa con `ClinicalAssessmentCommandService` y
+  `ClinicalAssessmentQueryService`.
+  **`MedicalHistoryController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para la gestión del historial médico
+  de un residente. Recibe las peticiones, deserializa el JSON en Resources y los
+  mapea a Commands.
+* **Endpoints expuestos:**
+  * `POST /api/v1/medical-histories` — Crear historial médico
+  * `PUT /api/v1/medical-histories/{id}/diagnosis` — Registrar diagnóstico
+  * `PUT /api/v1/medical-histories/{id}/condition` — Registrar condición
+  * `GET /api/v1/medical-histories/{id}` — Consultar historial por ID
+  * `GET /api/v1/medical-histories/resident/{residentId}` — Historial por residente
+* **Relaciones:** Interactúa con `MedicalHistoryCommandService` y
+  `MedicalHistoryQueryService`.
+  **`VitalSignsController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para el registro y consulta de signos
+  vitales durante una evaluación clínica.
+* **Endpoints expuestos:**
+  * `POST /api/v1/vital-signs` — Registrar signos vitales
+  * `GET /api/v1/vital-signs/assessment/{assessmentId}` — Signos por evaluación
+  * `GET /api/v1/vital-signs/resident/{residentId}/abnormal` — Signos anómalos por residente
+* **Relaciones:** Interactúa con `VitalSignsCommandService` y
+  `VitalSignsQueryService`.
+  **`RiskProfileController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para la evaluación y consulta del perfil
+  de riesgo y dependencia de un residente.
+* **Endpoints expuestos:**
+  * `POST /api/v1/risk-profiles` — Crear perfil de riesgo
+  * `PUT /api/v1/risk-profiles/{id}/risk-level` — Evaluar nivel de riesgo
+  * `PUT /api/v1/risk-profiles/{id}/dependency-level` — Evaluar nivel de dependencia
+  * `GET /api/v1/risk-profiles/resident/{residentId}` — Perfil por residente
+* **Relaciones:** Interactúa con `RiskProfileCommandService` y
+  `RiskProfileQueryService`.
+---
+
+#### 4.2.2.3. Application Layer
+
+Esta capa orquesta los casos de uso del negocio del contexto Tracking. Maneja el
+flujo del proceso utilizando un patrón CQRS implícito, separando las intenciones de
+modificación (Commands) de las de lectura (Queries).
+
+**`StartClinicalAssessmentCommand`**, **`CompleteClinicalAssessmentCommand`**,
+**`NotifyMedicalNeedCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan la intención de modificar el
+  estado de una evaluación clínica, transportando los datos necesarios hacia los
+  manejadores de comandos.
+  **`CreateMedicalHistoryCommand`**, **`RecordDiagnosisCommand`**,
+  **`RecordConditionCommand`**, **`EvaluateResidentConditionCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan las intenciones de creación y
+  enriquecimiento del historial médico de un residente.
+  **`RecordVitalSignsCommand`**
+* **Tipo:** Command
+* **Propósito:** Objeto inmutable que encapsula la intención de registrar los signos
+  vitales de un residente durante una evaluación clínica, incluyendo presión arterial,
+  frecuencia cardíaca, temperatura y saturación de oxígeno.
+  **`AssessRiskLevelCommand`**, **`AssessDependencyLevelCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan la intención de evaluar el nivel
+  de riesgo y dependencia de un residente, respectivamente.
+  **`ClinicalAssessmentCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de mutación de estado del agregado
+  `ClinicalAssessment`. Valida las precondiciones de negocio y coordina la
+  persistencia a través del repositorio.
+* **Atributos inyectados:**
+  * `clinicalAssessmentRepository`: IClinicalAssessmentRepository
+  * `residentRepository`: IResidentRepository (referencia al BC Nursing via ACL)
+* **Métodos principales:**
+  * `handle(StartClinicalAssessmentCommand command): Optional<ClinicalAssessment>`
+  * `handle(CompleteClinicalAssessmentCommand command): Optional<ClinicalAssessment>`
+  * `handle(NotifyMedicalNeedCommand command): Optional<ClinicalAssessment>`
+    **`MedicalHistoryCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de creación y enriquecimiento del
+  agregado `MedicalHistory`.
+* **Atributos inyectados:**
+  * `medicalHistoryRepository`: IMedicalHistoryRepository
+  * `clinicalAssessmentRepository`: IClinicalAssessmentRepository
+* **Métodos principales:**
+  * `handle(CreateMedicalHistoryCommand command): Optional<MedicalHistory>`
+  * `handle(RecordDiagnosisCommand command): Optional<MedicalHistory>`
+  * `handle(RecordConditionCommand command): Optional<MedicalHistory>`
+  * `handle(EvaluateResidentConditionCommand command): Optional<MedicalHistory>`
+    **`VitalSignsCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta el registro de signos vitales y delega la detección de
+  anomalías al agregado, publicando el resultado hacia el contexto Health cuando
+  se detectan valores anómalos.
+* **Atributos inyectados:**
+  * `vitalSignsRepository`: IVitalSignsRepository
+  * `clinicalAssessmentRepository`: IClinicalAssessmentRepository
+* **Métodos principales:**
+  * `handle(RecordVitalSignsCommand command): Optional<VitalSigns>`
+    **`RiskProfileCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta la evaluación del nivel de riesgo y dependencia del
+  residente, coordinando la persistencia y publicando los eventos resultantes
+  hacia el contexto Nursing.
+* **Atributos inyectados:**
+  * `riskProfileRepository`: IRiskProfileRepository
+  * `clinicalAssessmentRepository`: IClinicalAssessmentRepository
+* **Métodos principales:**
+  * `handle(AssessRiskLevelCommand command): Optional<RiskProfile>`
+  * `handle(AssessDependencyLevelCommand command): Optional<RiskProfile>`
+    **`ClinicalAssessmentQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre evaluaciones clínicas,
+  garantizando que estas operaciones no produzcan efectos secundarios en el dominio.
+* **Métodos principales:**
+  * `handle(GetClinicalAssessmentByIdQuery query): Optional<ClinicalAssessment>`
+  * `handle(GetClinicalAssessmentByResidentIdQuery query): Optional<ClinicalAssessment>`
+  * `handle(GetAssessmentsByStatusQuery query): List<ClinicalAssessment>`
+    **`MedicalHistoryQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre historiales médicos.
+* **Métodos principales:**
+  * `handle(GetMedicalHistoryByIdQuery query): Optional<MedicalHistory>`
+  * `handle(GetMedicalHistoryByResidentIdQuery query): Optional<MedicalHistory>`
+    **`VitalSignsQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre signos vitales registrados.
+* **Métodos principales:**
+  * `handle(GetVitalSignsByAssessmentIdQuery query): List<VitalSigns>`
+  * `handle(GetAbnormalVitalSignsByResidentIdQuery query): List<VitalSigns>`
+    **`RiskProfileQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre perfiles de riesgo.
+* **Métodos principales:**
+  * `handle(GetRiskProfileByResidentIdQuery query): Optional<RiskProfile>`
+---
+
 ### 4.2.3. Bounded Context: \<Bounded Context Name\>
 
 Este bounded context encapsula las responsabilidades relacionadas con \<área funcional\>. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
