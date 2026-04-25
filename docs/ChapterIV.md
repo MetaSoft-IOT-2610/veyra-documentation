@@ -1026,6 +1026,68 @@ modificación (Commands) de las de lectura (Queries).
   * `handle(GetRiskProfileByResidentIdQuery query): Optional<RiskProfile>`
 ---
 
+#### 4.2.2.4. Infrastructure Layer
+
+Esta capa proporciona las implementaciones técnicas de los contratos definidos en
+las capas superiores del contexto Tracking.
+
+**`ClinicalAssessmentRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IClinicalAssessmentRepository`
+  utilizando Spring Data JPA para el acceso a la base de datos relacional.
+* **Atributos:** Extiende de `JpaRepository<ClinicalAssessment, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `ClinicalAssessment` a la tabla
+  `clinical_assessments` mediante anotaciones ORM.
+  **`MedicalHistoryRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IMedicalHistoryRepository` utilizando
+  Spring Data JPA.
+* **Atributos:** Extiende de `JpaRepository<MedicalHistory, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `MedicalHistory` a la tabla
+  `medical_histories` mediante anotaciones ORM.
+  **`VitalSignsRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IVitalSignsRepository` utilizando
+  Spring Data JPA.
+* **Atributos:** Extiende de `JpaRepository<VitalSigns, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `VitalSigns` a la tabla `vital_signs`
+  mediante anotaciones ORM.
+  **`RiskProfileRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IRiskProfileRepository` utilizando
+  Spring Data JPA.
+* **Atributos:** Extiende de `JpaRepository<RiskProfile, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `RiskProfile` a la tabla `risk_profiles`
+  mediante anotaciones ORM.
+---
+
+#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes muestra la estructura interna del Bounded Context
+Tracking, detallando los principales componentes de software que lo conforman y las
+relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades
+dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+
+#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
+internas del Bounded Context Tracking, mostrando las clases, sus relaciones y el
+esquema de base de datos que soporta el modelo del dominio.
+
+##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases de la capa de dominio representa las entidades, objetos de
+valor, agregados e interfaces que conforman el modelo del negocio del contexto
+Tracking. Muestra las relaciones de composición, herencia y dependencia entre los
+elementos del dominio.
+
+##### 4.2.2.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos muestra el esquema de persistencia del
+Bounded Context Tracking, incluyendo las tablas, columnas, claves primarias, claves
+foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
+adoptadas para soportar el dominio.
+
 ### 4.2.3. Bounded Context: \<Bounded Context Name\>
 
 Este bounded context encapsula las responsabilidades relacionadas con \<área funcional\>. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
