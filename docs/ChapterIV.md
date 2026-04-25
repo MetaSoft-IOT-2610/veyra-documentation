@@ -219,6 +219,14 @@ Gestiona el ciclo de vida de las suscripciones SaaS y el procesamiento de pagos 
 
 El bounded context de Subscriptions & Payments representa un **Supporting Domain** con enfoque en **revenue**, ya que el modelo de negocio de la plataforma Veyra depende directamente de la suscripción activa de los hogares de reposo para generar ingresos. Actúa como **Execution Context**, **Gateway Context** y **Enforcer**, siendo el único contexto autorizado para gestionar el acceso económico a la plataforma. La integración con Stripe mediante un Anti-Corruption Layer garantiza que los cambios en la API externa no afecten la lógica interna del dominio, manteniendo la independencia y resiliencia del sistema Veyra ante variaciones del proveedor de pagos.
 
+#### Analytics Context - Canvas
+
+Provee el monitoreo continuo en tiempo real y la visualización de métricas de salud de los residentes, incluyendo frecuencia cardíaca, saturación de oxígeno y datos de ubicación. Permite a Doctores, Familiares y personal de Healthcare Assistance consultar dashboards de métricas en cualquier momento, integrándose con Google Maps para analíticas basadas en ubicación.
+
+![bc_analytics.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc10_analytics.png)
+
+El bounded context de Analytics representa un **Core Domain** con rol de **Analysis Context** y **Gateway Context**, ya que la capacidad de monitorear métricas de salud en tiempo real es un diferenciador clave de la plataforma Veyra frente a soluciones tradicionales. Este contexto transforma datos crudos de dispositivos IoT en información clínica accionable, siendo consumido simultáneamente por tres tipos de actores con diferentes necesidades de visualización, y delegando la resolución de ubicación al servicio externo Google Maps mediante un Anti-Corruption Layer.
+
 ### 4.1.2. Context Mapping
 
 Durante la fase de modelado basada en el dominio, hemos logrado identificar los siguientes contextos limitados: Identity and Access Management (IAM), Profiles, Subscriptions and Payments, Tracking, HCM (Human Capital Management), Nursing, Communication, Activities y Health. A continuación, explicaremos qué tipo de relación existe entre estos contextos y cómo se comunican entre ellos.
