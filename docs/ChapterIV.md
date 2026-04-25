@@ -453,6 +453,155 @@ manteniéndose agnóstica de frameworks externos.
 
 ---
 
+#### 4.2.1.2. Interface Layer
+
+Esta capa expone los capabilities del Bounded Context Nursing hacia clientes externos,
+actuando como la frontera del sistema y traduciendo las peticiones HTTP en comandos
+de aplicación mediante el uso de Resources.
+
+**`CarePlanController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para la gestión del ciclo de vida de los
+  planes de cuidado. Recibe las peticiones, deserializa el JSON en Resources y los
+  mapea a Commands mediante clases Assembler.
+* **Endpoints expuestos:**
+  * `POST /api/v1/care-plans` — Crear plan de cuidado
+  * `PUT /api/v1/care-plans/{id}/approve` — Aprobar plan
+  * `PUT /api/v1/care-plans/{id}/suspend` — Suspender plan
+  * `PUT /api/v1/care-plans/{id}/complete` — Completar plan
+  * `PUT /api/v1/care-plans/{id}/cancel` — Cancelar plan
+  * `PUT /api/v1/care-plans/{id}/reassess` — Reasignar plan
+  * `GET /api/v1/care-plans/{id}` — Consultar plan por ID
+  * `GET /api/v1/care-plans/resident/{residentId}` — Planes por residente
+* **Relaciones:** Interactúa con `CarePlanCommandService` y `CarePlanQueryService`.
+  Utiliza clases Assembler para aislar los Resources de presentación de los
+  Commands de aplicación.
+  **`MedicationController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para la gestión del ciclo de administración
+  de medicamentos. Recibe las peticiones, deserializa el JSON en Resources y los
+  mapea a Commands.
+* **Endpoints expuestos:**
+  * `POST /api/v1/medications` — Prescribir medicamento
+  * `PUT /api/v1/medications/{id}/schedule` — Programar medicamento
+  * `PUT /api/v1/medications/{id}/administer` — Administrar medicamento
+  * `PUT /api/v1/medications/{id}/confirm` — Confirmar administración
+  * `PUT /api/v1/medications/{id}/missed-dose` — Registrar dosis perdida
+  * `PUT /api/v1/medications/{id}/adjust-dosage` — Ajustar dosis
+  * `PUT /api/v1/medications/{id}/discontinue` — Discontinuar medicamento
+  * `GET /api/v1/medications/care-plan/{carePlanId}` — Medicamentos por plan
+  * `GET /api/v1/medications/low-stock` — Medicamentos con stock bajo
+* **Relaciones:** Interactúa con `MedicationCommandService` y
+  `MedicationQueryService`.
+  **`ResidentController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para la gestión de los residentes y sus
+  asignaciones de habitación y familiar. Recibe las peticiones, deserializa el JSON
+  en Resources y los mapea a Commands.
+* **Endpoints expuestos:**
+  * `POST /api/v1/residents` — Registrar residente
+  * `PUT /api/v1/residents/{id}/assign-room` — Asignar habitación
+  * `PUT /api/v1/residents/{id}/assign-relative` — Asignar familiar
+  * `PUT /api/v1/residents/{id}/condition` — Registrar condición
+  * `GET /api/v1/residents/{id}` — Consultar residente por ID
+  * `GET /api/v1/residents` — Listar residentes
+* **Relaciones:** Interactúa con `ResidentCommandService` y
+  `ResidentQueryService`.
+---
+
+#### 4.2.1.3. Application Layer
+
+Esta capa orquesta los casos de uso del negocio del contexto Nursing. Maneja el
+flujo del proceso utilizando un patrón CQRS implícito, separando las intenciones de
+modificación (Commands) de las de lectura (Queries).
+
+**`CreateCarePlanCommand`**, **`ApproveCarePlanCommand`**,
+**`SuspendCarePlanCommand`**, **`CompleteCarePlanCommand`**,
+**`CancelCarePlanCommand`**, **`ReassessCarePlanCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan la intención de modificar el
+  estado de un plan de cuidado, transportando los datos necesarios hacia los
+  manejadores de comandos.
+  **`PrescribeMedicationCommand`**, **`ScheduleMedicationCommand`**,
+  **`AdministerMedicationCommand`**, **`ConfirmAdministrationCommand`**,
+  **`RegisterMissedDoseCommand`**, **`AdjustDosageCommand`**,
+  **`DiscontinueMedicationCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan cada intención de modificación
+  sobre el ciclo de vida de un medicamento.
+  **`RegisterResidentCommand`**, **`AssignRoomCommand`**,
+  **`AssignRelativeCommand`**, **`RegisterConditionCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan las intenciones de creación y
+  actualización sobre el agregado `Resident`.
+  **`CarePlanCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de mutación de estado del agregado
+  `CarePlan`. Valida reglas de negocio de aplicación y coordina la persistencia
+  a través del repositorio.
+* **Atributos inyectados:**
+  * `carePlanRepository`: ICarePlanRepository
+  * `residentRepository`: IResidentRepository
+* **Métodos principales:**
+  * `handle(CreateCarePlanCommand command): Optional<CarePlan>`
+  * `handle(ApproveCarePlanCommand command): Optional<CarePlan>`
+  * `handle(SuspendCarePlanCommand command): Optional<CarePlan>`
+  * `handle(CompleteCarePlanCommand command): Optional<CarePlan>`
+  * `handle(CancelCarePlanCommand command): Optional<CarePlan>`
+  * `handle(ReassessCarePlanCommand command): Optional<CarePlan>`
+    **`MedicationCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de mutación del agregado `Medication`,
+  incluyendo la validación de stock y la generación de alertas cuando el stock
+  es bajo.
+* **Atributos inyectados:**
+  * `medicationRepository`: IMedicationRepository
+  * `carePlanRepository`: ICarePlanRepository
+  * `notificationService`: NotificationService
+* **Métodos principales:**
+  * `handle(PrescribeMedicationCommand command): Optional<Medication>`
+  * `handle(ScheduleMedicationCommand command): Optional<Medication>`
+  * `handle(AdministerMedicationCommand command): Optional<Medication>`
+  * `handle(ConfirmAdministrationCommand command): Optional<Medication>`
+  * `handle(RegisterMissedDoseCommand command): Optional<Medication>`
+  * `handle(AdjustDosageCommand command): Optional<Medication>`
+  * `handle(DiscontinueMedicationCommand command): Optional<Medication>`
+    **`ResidentCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de mutación del agregado `Resident`.
+* **Atributos inyectados:**
+  * `residentRepository`: IResidentRepository
+  * `nursingHomeRepository`: INursingHomeRepository
+  * `relativeRepository`: IRelativeRepository
+* **Métodos principales:**
+  * `handle(RegisterResidentCommand command): Optional<Resident>`
+  * `handle(AssignRoomCommand command): Optional<Resident>`
+  * `handle(AssignRelativeCommand command): Optional<Resident>`
+  * `handle(RegisterConditionCommand command): Optional<Resident>`
+    **`CarePlanQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre planes de cuidado, garantizando
+  que estas operaciones no produzcan efectos secundarios en el dominio.
+* **Métodos principales:**
+  * `handle(GetCarePlanByIdQuery query): Optional<CarePlan>`
+  * `handle(GetCarePlansByResidentIdQuery query): List<CarePlan>`
+  * `handle(GetCarePlansByStatusQuery query): List<CarePlan>`
+    **`MedicationQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre medicamentos y stock.
+* **Métodos principales:**
+  * `handle(GetMedicationByIdQuery query): Optional<Medication>`
+  * `handle(GetMedicationsByCarePlanIdQuery query): List<Medication>`
+  * `handle(GetLowStockMedicationsQuery query): List<Medication>`
+    **`ResidentQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre residentes.
+* **Métodos principales:**
+  * `handle(GetResidentByIdQuery query): Optional<Resident>`
+  * `handle(GetAllResidentsQuery query): List<Resident>`
+  * `handle(GetResidentsByStatusQuery query): List<Resident>`
+---
+
 ### 4.2.3. Bounded Context: \<Bounded Context Name\>
 
 Este bounded context encapsula las responsabilidades relacionadas con \<área funcional\>. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
