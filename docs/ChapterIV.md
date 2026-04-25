@@ -2597,3 +2597,110 @@ El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Profiles, incluyendo las tablas, columnas, claves primarias, claves
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
+
+### 4.2.9. Bounded Context: Subscriptions & Payments
+
+En esta sección, el equipo presenta las clases identificadas y las detalla a manera de
+diccionario, explicando para cada una su nombre, propósito y la documentación de
+atributos y métodos considerados, junto con las relaciones entre ellas.
+
+#### 4.2.9.1. Domain Layer
+
+Esta capa contiene el núcleo del negocio del contexto Subscriptions & Payments,
+incluyendo las entidades, objetos de valor y abstracciones de repositorios que
+definen las reglas del ciclo de vida de las suscripciones SaaS y el procesamiento
+de pagos, manteniéndose agnóstica de frameworks externos.
+
+**`Subscription`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa el acuerdo contractual entre un hogar de reposo y la
+  plataforma Veyra que otorga acceso a sus funcionalidades. Es el agregado raíz
+  que garantiza la consistencia del ciclo de vida de la suscripción: selección del
+  plan, activación tras confirmación de pago, y cancelación. El estado activo de
+  una suscripción es la condición que habilita el acceso de todos los usuarios del
+  hogar de reposo a los demás bounded contexts de la plataforma.
+* **Atributos:**
+  * `id`: Long
+  * `adminId`: Long
+  * `plan`: SubscriptionPlan (Value Object)
+  * `status`: SubscriptionStatus (Value Object / Enum)
+  * `startDate`: LocalDate
+  * `endDate`: LocalDate
+  * `createdAt`: LocalDateTime
+  * `updatedAt`: LocalDateTime
+* **Métodos principales:**
+  * `selectPlan(SubscriptionPlan plan): Subscription`
+  * `activate(): Subscription`
+  * `cancel(): Subscription`
+  * `isActive(): boolean`
+* **Relaciones:** Referencia a `adminId` del contexto IAM. Referencia a `Payment`
+  por identificador. Administrado a través de `ISubscriptionRepository`.
+  **`Payment`**
+* **Tipo DDD:** Entity
+* **Propósito:** Representa una transacción de pago asociada a una suscripción
+  o a una orden de pago generada para un familiar. Registra el ciclo de vida
+  del pago desde el ingreso de datos hasta la confirmación por parte de Stripe,
+  garantizando la trazabilidad de cada transacción monetaria en la plataforma.
+* **Atributos:**
+  * `id`: Long
+  * `subscriptionId`: Long
+  * `amount`: Double
+  * `currency`: String
+  * `status`: PaymentStatus (Value Object / Enum)
+  * `stripePaymentId`: String
+  * `paymentOrderType`: PaymentOrderType (Value Object / Enum)
+  * `processedAt`: LocalDateTime
+  * `acceptedAt`: LocalDateTime
+* **Métodos principales:**
+  * `enterDetails(Double amount, String currency): Payment`
+  * `process(): Payment`
+  * `accept(): Payment`
+  * `isAccepted(): boolean`
+* **Relaciones:** Pertenece a una `Subscription`. Administrado a través de
+  `IPaymentRepository`.
+  **`SubscriptionPlan`**
+* **Tipo DDD:** Value Object
+* **Propósito:** Encapsula los datos de un plan de suscripción de forma inmutable,
+  incluyendo el nombre del plan, el precio mensual y las características incluidas.
+  Garantiza que los planes sean consistentes y no modificables sin emitir un nuevo
+  comando de selección.
+* **Atributos:**
+  * `name`: String (ej. `BASIC`, `STANDARD`, `PREMIUM`)
+  * `monthlyPrice`: Double
+  * `features`: List<String>
+    **`SubscriptionStatus`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los estados válidos del ciclo de vida de una suscripción:
+  `PENDING`, `ACTIVE`, `CANCELLED`, `EXPIRED`. Garantiza que el acceso a la
+  plataforma solo se otorgue cuando la suscripción esté en estado `ACTIVE`.
+  **`PaymentStatus`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los estados válidos de un pago: `PENDING`, `DETAILS_ENTERED`,
+  `PROCESSING`, `ACCEPTED`, `REJECTED`. Asegura la trazabilidad completa del
+  ciclo de procesamiento de cada transacción.
+  **`PaymentOrderType`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los tipos válidos de orden de pago: `SUBSCRIPTION`,
+  `RELATIVE_SERVICE_PAYMENT`. Permite distinguir entre pagos de suscripción
+  de la plataforma y pagos generados cuando un familiar quiere pagar por los
+  servicios de un residente.
+  **`ISubscriptionRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción que define las operaciones de persistencia
+  y recuperación del agregado `Subscription`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<Subscription>`
+  * `findByAdminId(Long adminId): Optional<Subscription>`
+  * `findByStatus(SubscriptionStatus status): List<Subscription>`
+  * `save(Subscription subscription): Subscription`
+    **`IPaymentRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia de la entidad
+  `Payment`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<Payment>`
+  * `findBySubscriptionId(Long subscriptionId): List<Payment>`
+  * `findByStatus(PaymentStatus status): List<Payment>`
+  * `findByStripePaymentId(String stripePaymentId): Optional<Payment>`
+  * `save(Payment payment): Payment`
+---
