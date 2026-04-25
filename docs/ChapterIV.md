@@ -1088,13 +1088,103 @@ Bounded Context Tracking, incluyendo las tablas, columnas, claves primarias, cla
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
 
-### 4.2.3. Bounded Context: \<Bounded Context Name\>
+### 4.2.3. Bounded Context: Health
 
-Este bounded context encapsula las responsabilidades relacionadas con \<área funcional\>. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
+En esta sección, el equipo presenta las clases identificadas y las detalla a manera de
+diccionario, explicando para cada una su nombre, propósito y la documentación de
+atributos y métodos considerados, junto con las relaciones entre ellas.
 
 #### 4.2.3.1. Domain Layer
 
-La capa de dominio contiene los elementos centrales del modelo de negocio: entidades, objetos de valor, agregados, eventos de dominio e interfaces de repositorio. Esta capa es independiente de cualquier tecnología o framework y representa las reglas e invariantes propias del contexto delimitado.
+Esta capa contiene el núcleo del negocio del contexto Health, incluyendo las
+entidades, objetos de valor y abstracciones de repositorios que definen las reglas
+de monitoreo continuo de salud del residente, manteniéndose agnóstica de
+frameworks externos.
+
+**`VitalSigns`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa el monitoreo continuo de signos vitales de un residente
+  admitido, realizado por el personal de salud. Es el agregado raíz que garantiza
+  la consistencia del registro, la detección de anomalías y la trazabilidad de
+  cambios en la condición del residente a lo largo del tiempo.
+* **Atributos:**
+  * `id`: Long
+  * `residentId`: Long
+  * `healthcareStaffId`: Long
+  * `bloodPressure`: BloodPressure (Value Object)
+  * `heartRate`: Integer
+  * `temperature`: Double
+  * `oxygenSaturation`: Double
+  * `isAbnormal`: boolean
+  * `conditionStatus`: ConditionStatus (Value Object / Enum)
+  * `recordedAt`: LocalDateTime
+  * `observationLog`: String
+* **Métodos principales:**
+  * `take(): VitalSigns`
+  * `record(): VitalSigns`
+  * `detectAnomaly(): VitalSigns`
+  * `triggerNotification(): VitalSigns`
+  * `updateCondition(ConditionStatus status): VitalSigns`
+  * `identifyCriticalState(): VitalSigns`
+  * `logObservation(String observation): VitalSigns`
+* **Relaciones:** Referencia a `Allergy` por residentId. Administrado a través de
+  `IVitalSignsRepository`.
+  **`Allergy`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa una alergia reportada para un residente, incluyendo
+  la clasificación de severidad. Garantiza que toda alergia registrada cuente
+  siempre con un nivel de severidad válido, permitiendo al personal de salud
+  tomar decisiones clínicas informadas.
+* **Atributos:**
+  * `id`: Long
+  * `residentId`: Long
+  * `healthcareStaffId`: Long
+  * `allergen`: String
+  * `severity`: AllergySeverity (Value Object / Enum)
+  * `reportedAt`: LocalDateTime
+* **Métodos principales:**
+  * `report(String allergen, AllergySeverity severity): Allergy`
+  * `updateSeverity(AllergySeverity severity): Allergy`
+* **Relaciones:** Pertenece a un residente identificado por `residentId`.
+  Administrado a través de `IAllergyRepository`.
+  **`BloodPressure`**
+* **Tipo DDD:** Value Object
+* **Propósito:** Encapsula los valores de presión arterial sistólica y diastólica
+  de forma inmutable, permitiendo la validación de rangos normales en el momento
+  del registro continuo.
+* **Atributos:**
+  * `systolic`: Integer
+  * `diastolic`: Integer
+    **`ConditionStatus`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los estados válidos de la condición de salud de un residente:
+  `STABLE`, `WORSENED`, `IMPROVED`, `CRITICAL`. Garantiza que cualquier cambio
+  de condición sea trazable y reconocido por el sistema.
+  **`AllergySeverity`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los niveles de severidad válidos para una alergia:
+  `MILD`, `MODERATE`, `SEVERE`, `LIFE_THREATENING`. Asegura que toda alergia
+  registrada tenga siempre un nivel de riesgo clasificado.
+  **`IVitalSignsRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción que define las operaciones de persistencia
+  y recuperación del agregado `VitalSigns` en el contexto Health.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<VitalSigns>`
+  * `findByResidentId(Long residentId): List<VitalSigns>`
+  * `findAbnormalByResidentId(Long residentId): List<VitalSigns>`
+  * `findByConditionStatus(ConditionStatus status): List<VitalSigns>`
+  * `save(VitalSigns vitalSigns): VitalSigns`
+    **`IAllergyRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia del agregado
+  `Allergy`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<Allergy>`
+  * `findByResidentId(Long residentId): List<Allergy>`
+  * `findBySeverity(AllergySeverity severity): List<Allergy>`
+  * `save(Allergy allergy): Allergy`
+---
 
 #### 4.2.3.2. Interface Layer
 
