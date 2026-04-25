@@ -1997,6 +1997,70 @@ Bounded Context Activities, incluyendo las tablas, columnas, claves primarias,
 claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado
 de datos adoptadas para soportar el dominio.
 
+### 4.2.6. Bounded Context: Communication
+
+En esta sección, el equipo presenta las clases identificadas y las detalla a manera de
+diccionario, explicando para cada una su nombre, propósito y la documentación de
+atributos y métodos considerados, junto con las relaciones entre ellas.
+
+#### 4.2.6.1. Domain Layer
+
+Esta capa contiene el núcleo del negocio del contexto Communication, incluyendo
+las entidades, objetos de valor y abstracciones de repositorios que definen las
+reglas de gestión de visitas y comunicación con los familiares del residente,
+manteniéndose agnóstica de frameworks externos.
+
+**`Visit`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa el ciclo de vida completo de una visita entre un familiar
+  y un residente en el hogar de reposo. Es el agregado raíz que garantiza la
+  consistencia de todas las transiciones de estado: ninguna visita puede iniciarse
+  sin haber sido previamente autorizada, y ninguna visita puede registrarse sin
+  haber sido formalmente finalizada. Además, coordina la notificación al familiar
+  cuando el estado de la visita cambia.
+* **Atributos:**
+  * `id`: Long
+  * `residentId`: Long
+  * `relativeId`: Long
+  * `adminId`: Long
+  * `status`: VisitStatus (Value Object / Enum)
+  * `scheduledAt`: LocalDateTime
+  * `startedAt`: LocalDateTime
+  * `endedAt`: LocalDateTime
+  * `recordedAt`: LocalDateTime
+  * `restrictionReason`: String
+* **Métodos principales:**
+  * `authorize(): Visit`
+  * `applyRestriction(String reason): Visit`
+  * `deny(): Visit`
+  * `schedule(LocalDateTime scheduledAt): Visit`
+  * `start(): Visit`
+  * `end(): Visit`
+  * `record(): Visit`
+  * `isAuthorized(): boolean`
+  * `hasEnded(): boolean`
+* **Relaciones:** Referencia a `Relative` y `Resident` por identificador.
+  Administrado a través de `IVisitRepository`.
+  **`VisitStatus`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los estados válidos del ciclo de vida de una visita:
+  `PENDING`, `AUTHORIZED`, `RESTRICTION_APPLIED`, `DENIED`, `SCHEDULED`,
+  `STARTED`, `ENDED`, `RECORDED`. Garantiza que no existan transiciones de
+  estado inválidas y que toda visita sea rastreable en cualquier punto de
+  su ciclo de vida.
+  **`IVisitRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción que define las operaciones de persistencia
+  y recuperación del agregado `Visit`, aislando el dominio de la base de datos.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<Visit>`
+  * `findByResidentId(Long residentId): List<Visit>`
+  * `findByRelativeId(Long relativeId): List<Visit>`
+  * `findByStatus(VisitStatus status): List<Visit>`
+  * `findScheduledVisits(): List<Visit>`
+  * `save(Visit visit): Visit`
+---
+
 ### 4.2.7 Bounded Context: Identity and Access Management (IAM)
 
 En esta sección, el equipo presenta las clases identificadas y las detalla a manera de diccionario, explicando para cada una su nombre, propósito y la documentación de atributos y métodos considerados, junto con las relaciones entre ellas.
