@@ -136,7 +136,7 @@ Finalmente, definimos los Bounded Contexts que agrupan los flujos relacionados e
 
 El tablero completo del Event Storming puede ser consultado en el siguiente enlace:
 
-[Ver tablero en Miro](https://miro.com/app/board/uXjVHfIKGvE=/?share_link_id=903651467736)
+**Ver tablero en Miro:** [https://miro.com/app/board/uXjVHfIKGvE=/?share_link_id=903651467736](https://miro.com/app/board/uXjVHfIKGvE=/?share_link_id=903651467736)
 
 
 #### 4.1.1.2. Domain Message Flows Modeling
