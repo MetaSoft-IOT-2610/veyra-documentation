@@ -2061,6 +2061,79 @@ manteniéndose agnóstica de frameworks externos.
   * `save(Visit visit): Visit`
 ---
 
+#### 4.2.6.2. Interface Layer
+
+Esta capa expone los capabilities del Bounded Context Communication hacia clientes
+externos, actuando como la frontera del sistema y traduciendo las peticiones HTTP
+en comandos de aplicación mediante el uso de Resources.
+
+**`VisitController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para la gestión del ciclo de vida
+  completo de las visitas. Recibe las peticiones, deserializa el JSON en Resources
+  y los mapea a Commands mediante clases Assembler.
+* **Endpoints expuestos:**
+  * `POST /api/v1/visits` — Crear solicitud de visita
+  * `PUT /api/v1/visits/{id}/authorize` — Autorizar visita
+  * `PUT /api/v1/visits/{id}/restrict` — Aplicar restricción
+  * `PUT /api/v1/visits/{id}/deny` — Denegar visita
+  * `PUT /api/v1/visits/{id}/schedule` — Programar visita
+  * `PUT /api/v1/visits/{id}/start` — Iniciar visita
+  * `PUT /api/v1/visits/{id}/end` — Finalizar visita
+  * `PUT /api/v1/visits/{id}/record` — Registrar visita
+  * `GET /api/v1/visits/{id}` — Consultar visita por ID
+  * `GET /api/v1/visits/resident/{residentId}` — Visitas por residente
+  * `GET /api/v1/visits/relative/{relativeId}` — Visitas por familiar
+  * `GET /api/v1/visits/scheduled` — Visitas programadas
+* **Relaciones:** Interactúa con `VisitCommandService` y `VisitQueryService`.
+  Utiliza clases Assembler para aislar los Resources de presentación de los
+  Commands de aplicación.
+---
+
+#### 4.2.6.3. Application Layer
+
+Esta capa orquesta los casos de uso del negocio del contexto Communication. Maneja
+el flujo del proceso utilizando un patrón CQRS implícito, separando las intenciones
+de modificación (Commands) de las de lectura (Queries).
+
+**`CreateVisitCommand`**, **`AuthorizeVisitCommand`**,
+**`ApplyVisitRestrictionCommand`**, **`DenyVisitCommand`**,
+**`ScheduleVisitCommand`**, **`StartVisitCommand`**,
+**`EndVisitCommand`**, **`RecordVisitCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan cada intención de modificación
+  sobre el ciclo de vida del agregado `Visit`, transportando los datos necesarios
+  hacia los manejadores de comandos.
+  **`VisitCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de mutación del agregado `Visit`.
+  Valida las reglas de negocio (una visita no puede iniciarse sin autorización,
+  no puede registrarse sin haber finalizado) y coordina el envío de notificaciones
+  al familiar a través del Notification Service externo cuando el estado cambia.
+* **Atributos inyectados:**
+  * `visitRepository`: IVisitRepository
+  * `notificationService`: NotificationService
+* **Métodos principales:**
+  * `handle(CreateVisitCommand command): Optional<Visit>`
+  * `handle(AuthorizeVisitCommand command): Optional<Visit>`
+  * `handle(ApplyVisitRestrictionCommand command): Optional<Visit>`
+  * `handle(DenyVisitCommand command): Optional<Visit>`
+  * `handle(ScheduleVisitCommand command): Optional<Visit>`
+  * `handle(StartVisitCommand command): Optional<Visit>`
+  * `handle(EndVisitCommand command): Optional<Visit>`
+  * `handle(RecordVisitCommand command): Optional<Visit>`
+    **`VisitQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre visitas, garantizando que
+  estas operaciones no produzcan efectos secundarios en el dominio.
+* **Métodos principales:**
+  * `handle(GetVisitByIdQuery query): Optional<Visit>`
+  * `handle(GetVisitsByResidentIdQuery query): List<Visit>`
+  * `handle(GetVisitsByRelativeIdQuery query): List<Visit>`
+  * `handle(GetVisitsByStatusQuery query): List<Visit>`
+  * `handle(GetScheduledVisitsQuery query): List<Visit>`
+---
+
 ### 4.2.7 Bounded Context: Identity and Access Management (IAM)
 
 En esta sección, el equipo presenta las clases identificadas y las detalla a manera de diccionario, explicando para cada una su nombre, propósito y la documentación de atributos y métodos considerados, junto con las relaciones entre ellas.
