@@ -1286,23 +1286,59 @@ modificación (Commands) de las de lectura (Queries).
 
 #### 4.2.3.4. Infrastructure Layer
 
-La capa de infraestructura provee las implementaciones concretas de las interfaces definidas en el dominio, incluyendo repositorios, adaptadores de servicios externos, clientes de mensajería y configuraciones de persistencia. Esta capa gestiona los detalles técnicos que permiten que el sistema funcione sobre la infraestructura elegida.
+Esta capa proporciona las implementaciones técnicas de los contratos definidos en
+las capas superiores del contexto Health.
+
+**`VitalSignsRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IVitalSignsRepository` utilizando
+  Spring Data JPA para el acceso a la base de datos relacional.
+* **Atributos:** Extiende de `JpaRepository<VitalSigns, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `VitalSigns` a la tabla
+  `health_vital_signs` mediante anotaciones ORM.
+  **`AllergyRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IAllergyRepository` utilizando
+  Spring Data JPA.
+* **Atributos:** Extiende de `JpaRepository<Allergy, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `Allergy` a la tabla `allergies`
+  mediante anotaciones ORM.
+  **`NotificationServiceImpl`**
+* **Tipo:** Infrastructure Service (External)
+* **Propósito:** Implementa la interfaz de notificación para enviar alertas críticas
+  de salud al personal de enfermería y familiares cuando se detectan anomalías
+  en los signos vitales o se identifica un estado crítico. Se integra con el
+  Notification Service externo de la plataforma.
+* **Relaciones:** Utilizado por `VitalSignsCommandServiceImpl` para disparar
+  alertas críticas hacia los actores correspondientes.
+---
 
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
 
-El diagrama de componentes muestra la estructura interna del contexto delimitado, detallando los principales componentes de software que lo conforman y las relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+El diagrama de componentes muestra la estructura interna del Bounded Context
+Health, detallando los principales componentes de software que lo conforman y las
+relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades
+dentro del contexto y cómo se comunican con otros contextos o servicios externos.
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
 
-Los diagramas de nivel de código ofrecen una vista detallada de las estructuras internas del contexto delimitado, mostrando las clases, sus relaciones y el esquema de base de datos que soporta el modelo del dominio.
+Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
+internas del Bounded Context Health, mostrando las clases, sus relaciones y el
+esquema de base de datos que soporta el modelo del dominio.
 
 ##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
 
-El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo del negocio de contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
+El diagrama de clases de la capa de dominio representa las entidades, objetos de
+valor, agregados e interfaces que conforman el modelo del negocio del contexto
+Health. Muestra las relaciones de composición, herencia y dependencia entre los
+elementos del dominio.
 
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
 
-El diagrama de diseño de base de datos muestra el esquema de persistencia del contexto delimitado, incluyendo las tablas, columnas, claves primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos adoptadas para soportar el dominio.
+El diagrama de diseño de base de datos muestra el esquema de persistencia del
+Bounded Context Health, incluyendo las tablas, columnas, claves primarias, claves
+foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
+adoptadas para soportar el dominio.
 
 ### 4.2.7 Bounded Context: Identity and Access Management (IAM)
 
