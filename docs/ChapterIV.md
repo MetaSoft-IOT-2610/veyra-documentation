@@ -2297,3 +2297,112 @@ El diagrama de clases de la capa de dominio representa las entidades, objetos de
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del contexto delimitado, incluyendo las tablas, columnas, claves primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos adoptadas para soportar el dominio.
 
+### 4.2.8. Bounded Context: Profiles
+
+En esta sección, el equipo presenta las clases identificadas y las detalla a manera de
+diccionario, explicando para cada una su nombre, propósito y la documentación de
+atributos y métodos considerados, junto con las relaciones entre ellas.
+
+#### 4.2.8.1. Domain Layer
+
+Esta capa contiene el núcleo del negocio del contexto Profiles, incluyendo las
+entidades, objetos de valor y abstracciones de repositorios que definen las reglas
+de gestión de perfiles de persona y negocio para todos los usuarios de la plataforma,
+manteniéndose agnóstica de frameworks externos.
+
+**`Profile`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa la identidad extendida de un usuario en la plataforma,
+  más allá de sus credenciales de autenticación. Es el agregado raíz que garantiza
+  la consistencia del perfil personal: creación, actualización, cambio de contraseña,
+  deshabilitación y gestión de imagen de perfil. Cuando un perfil es deshabilitado
+  por el Admin, el sistema lo muestra como inactivo en toda la plataforma.
+* **Atributos:**
+  * `id`: Long
+  * `userId`: Long
+  * `firstName`: String
+  * `lastName`: String
+  * `email`: String
+  * `phone`: String
+  * `profilePictureUrl`: String
+  * `status`: ProfileStatus (Value Object / Enum)
+  * `createdAt`: LocalDateTime
+  * `updatedAt`: LocalDateTime
+* **Métodos principales:**
+  * `update(String firstName, String lastName, String phone): Profile`
+  * `changePassword(String newPassword): Profile`
+  * `updateProfilePicture(String pictureUrl): Profile`
+  * `disable(): Profile`
+  * `isActive(): boolean`
+* **Relaciones:** Referencia a `userId` del contexto IAM. Administrado a través
+  de `IProfileRepository`.
+  **`BusinessProfile`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa el perfil de negocio del hogar de reposo vinculado al
+  Admin que lo registró. Centraliza la información organizacional del hogar de
+  reposo dentro de la plataforma, siendo el punto de referencia para todos los
+  contextos que necesiten datos del establecimiento.
+* **Atributos:**
+  * `id`: Long
+  * `adminId`: Long
+  * `nursingHomeName`: String
+  * `address`: String
+  * `phone`: String
+  * `email`: String
+  * `logoUrl`: String
+  * `createdAt`: LocalDateTime
+  * `updatedAt`: LocalDateTime
+* **Métodos principales:**
+  * `update(String name, String address, String phone): BusinessProfile`
+  * `updateLogo(String logoUrl): BusinessProfile`
+* **Relaciones:** Referencia a `adminId` del contexto IAM. Administrado a través
+  de `IBusinessProfileRepository`.
+  **`AuthorizedVisitor`**
+* **Tipo DDD:** Entity
+* **Propósito:** Representa a un visitante autorizado explícitamente por el Admin
+  para visitar a un residente en el hogar de reposo. Garantiza que solo los
+  visitantes registrados y aprobados puedan acceder al módulo de visitas del
+  contexto Communication.
+* **Atributos:**
+  * `id`: Long
+  * `profileId`: Long
+  * `residentId`: Long
+  * `fullName`: String
+  * `relationship`: String
+  * `authorizedAt`: LocalDateTime
+* **Métodos principales:**
+  * `authorize(): AuthorizedVisitor`
+* **Relaciones:** Pertenece a un `Profile`. Administrado a través de
+  `IAuthorizedVisitorRepository`.
+  **`ProfileStatus`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los estados válidos de un perfil de persona: `ACTIVE`,
+  `INACTIVE`. Garantiza que cuando el Admin deshabilite un perfil, este sea
+  marcado como inactivo en toda la plataforma de forma consistente.
+  **`IProfileRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción que define las operaciones de persistencia
+  y recuperación del agregado `Profile`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<Profile>`
+  * `findByUserId(Long userId): Optional<Profile>`
+  * `findByStatus(ProfileStatus status): List<Profile>`
+  * `save(Profile profile): Profile`
+    **`IBusinessProfileRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia del agregado
+  `BusinessProfile`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<BusinessProfile>`
+  * `findByAdminId(Long adminId): Optional<BusinessProfile>`
+  * `save(BusinessProfile businessProfile): BusinessProfile`
+    **`IAuthorizedVisitorRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia de la entidad
+  `AuthorizedVisitor`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<AuthorizedVisitor>`
+  * `findByProfileId(Long profileId): List<AuthorizedVisitor>`
+  * `findByResidentId(Long residentId): List<AuthorizedVisitor>`
+  * `save(AuthorizedVisitor visitor): AuthorizedVisitor`
+---
