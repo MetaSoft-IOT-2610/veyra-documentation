@@ -1340,6 +1340,112 @@ Bounded Context Health, incluyendo las tablas, columnas, claves primarias, clave
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
 
+### 4.2.4. Bounded Context: HCM — Human Capital Management
+
+En esta sección, el equipo presenta las clases identificadas y las detalla a manera de
+diccionario, explicando para cada una su nombre, propósito y la documentación de
+atributos y métodos considerados, junto con las relaciones entre ellas.
+
+#### 4.2.4.1. Domain Layer
+
+Esta capa contiene el núcleo del negocio del contexto HCM, incluyendo las
+entidades, objetos de valor y abstracciones de repositorios que definen las reglas
+de gestión del personal de salud dentro del hogar de reposo, manteniéndose
+agnóstica de frameworks externos.
+
+**`Staff`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa al miembro del personal de salud dentro del hogar de
+  reposo. Es el agregado raíz que garantiza la consistencia del ciclo de vida del
+  staff: contratación, verificación de credenciales, gestión de turnos, asignación
+  de tareas, reporte de ausencias y cierre de turno con handover formal. Ningún
+  staff puede ser asignado a un turno o tarea sin haber verificado sus credenciales
+  previamente.
+* **Atributos:**
+  * `id`: Long
+  * `fullName`: String
+  * `email`: String
+  * `role`: StaffRole (Value Object / Enum)
+  * `credentialStatus`: CredentialStatus (Value Object / Enum)
+  * `currentShift`: Shift (Value Object)
+  * `assignedResidentIds`: List<Long>
+  * `hiredAt`: LocalDate
+* **Métodos principales:**
+  * `verifyCredentials(): Staff`
+  * `startShift(Shift shift): Staff`
+  * `completeHandover(): Staff`
+  * `reportAbsence(): Staff`
+  * `assignToResident(Long residentId): Staff`
+  * `assignCareTask(Long taskId): Staff`
+  * `completeCareTask(Long taskId): Staff`
+  * `endShift(): Staff`
+  * `isVerified(): boolean`
+* **Relaciones:** Referencia a residentes asignados por identificador. Administrado
+  a través de `IStaffRepository`.
+  **`StaffRole`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los roles válidos del personal de salud en el sistema:
+  `NURSE`, `DOCTOR`, `CAREGIVER`, `ADMIN`. Garantiza que ningún staff pueda
+  operar con un rol no reconocido por la plataforma.
+  **`CredentialStatus`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los estados válidos de verificación de credenciales del
+  personal: `PENDING`, `VERIFIED`, `REJECTED`. Asegura que solo el personal
+  con credenciales verificadas pueda ser activado en turnos y tareas.
+  **`Shift`**
+* **Tipo DDD:** Value Object
+* **Propósito:** Encapsula los datos de un turno de trabajo de forma inmutable,
+  incluyendo la fecha, hora de inicio y hora de fin, garantizando la consistencia
+  del registro de turnos.
+* **Atributos:**
+  * `date`: LocalDate
+  * `startTime`: LocalTime
+  * `endTime`: LocalTime
+  * `handoverCompleted`: boolean
+    **`CareTask`**
+* **Tipo DDD:** Entity
+* **Propósito:** Representa una tarea de cuidado específica asignada a un miembro
+  del personal para ser ejecutada con un residente. Permite el seguimiento del
+  estado de completitud de cada tarea dentro de un turno.
+* **Atributos:**
+  * `id`: Long
+  * `staffId`: Long
+  * `residentId`: Long
+  * `description`: String
+  * `status`: CareTaskStatus (Value Object / Enum)
+  * `assignedAt`: LocalDateTime
+  * `completedAt`: LocalDateTime
+* **Métodos principales:**
+  * `complete(): CareTask`
+* **Relaciones:** Pertenece a un `Staff`. Administrado a través de
+  `ICareTaskRepository`.
+  **`CareTaskStatus`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los estados válidos de una tarea de cuidado: `ASSIGNED`,
+  `IN_PROGRESS`, `COMPLETED`. Garantiza la trazabilidad del ciclo de vida de
+  cada tarea asignada al personal.
+  **`IStaffRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción que define las operaciones de persistencia
+  y recuperación del agregado `Staff`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<Staff>`
+  * `findByCredentialStatus(CredentialStatus status): List<Staff>`
+  * `findByRole(StaffRole role): List<Staff>`
+  * `findAvailableReplacements(): List<Staff>`
+  * `save(Staff staff): Staff`
+    **`ICareTaskRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia de la entidad
+  `CareTask`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<CareTask>`
+  * `findByStaffId(Long staffId): List<CareTask>`
+  * `findByResidentId(Long residentId): List<CareTask>`
+  * `findByStatus(CareTaskStatus status): List<CareTask>`
+  * `save(CareTask careTask): CareTask`
+---
+
 ### 4.2.7 Bounded Context: Identity and Access Management (IAM)
 
 En esta sección, el equipo presenta las clases identificadas y las detalla a manera de diccionario, explicando para cada una su nombre, propósito y la documentación de atributos y métodos considerados, junto con las relaciones entre ellas.
