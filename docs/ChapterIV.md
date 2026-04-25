@@ -1772,6 +1772,161 @@ agnóstica de frameworks externos.
   * `save(RecreationalActivity activity): RecreationalActivity`
 ---
 
+#### 4.2.5.2. Interface Layer
+
+Esta capa expone los capabilities del Bounded Context Activities hacia clientes externos,
+actuando como la frontera del sistema y traduciendo las peticiones HTTP en comandos
+de aplicación mediante el uso de Resources.
+
+**`ActivityController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para el registro y consulta de
+  actividades de cuidado diario de residentes. Recibe las peticiones, deserializa
+  el JSON en Resources y los mapea a Commands mediante clases Assembler.
+* **Endpoints expuestos:**
+  * `POST /api/v1/activities` — Registrar actividad
+  * `PUT /api/v1/activities/{id}/complete` — Completar actividad
+  * `GET /api/v1/activities/resident/{residentId}` — Actividades por residente
+  * `GET /api/v1/activities/type/{type}` — Actividades por tipo
+* **Relaciones:** Interactúa con `ActivityCommandService` y
+  `ActivityQueryService`.
+  **`LogMealController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para el registro de comidas y
+  asistencia de alimentación de residentes.
+* **Endpoints expuestos:**
+  * `POST /api/v1/activities/meals` — Registrar comida
+  * `PUT /api/v1/activities/meals/{id}/feeding-assistance` — Registrar asistencia
+  * `GET /api/v1/activities/meals/resident/{residentId}` — Comidas por residente
+* **Relaciones:** Interactúa con `LogMealCommandService` y
+  `LogMealQueryService`.
+  **`LogBathController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para el registro de baño e higiene
+  personal de residentes.
+* **Endpoints expuestos:**
+  * `POST /api/v1/activities/baths` — Registrar baño
+  * `PUT /api/v1/activities/baths/{id}/hygiene-care` — Registrar higiene
+  * `GET /api/v1/activities/baths/resident/{residentId}` — Baños por residente
+* **Relaciones:** Interactúa con `LogBathCommandService` y
+  `LogBathQueryService`.
+  **`RiskProfileUpdateController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para el registro de prevención de
+  caídas, hidratación y actualización del perfil de riesgo del residente.
+* **Endpoints expuestos:**
+  * `POST /api/v1/activities/risk-profile` — Crear actualización de perfil de riesgo
+  * `PUT /api/v1/activities/risk-profile/{id}/fall-prevention` — Registrar prevención de caídas
+  * `PUT /api/v1/activities/risk-profile/{id}/hydration` — Registrar hidratación
+  * `PUT /api/v1/activities/risk-profile/{id}/medical-reassessment` — Solicitar reasignación médica
+  * `GET /api/v1/activities/risk-profile/resident/{residentId}` — Perfil por residente
+* **Relaciones:** Interactúa con `UpdateRiskProfileCommandService` y
+  `UpdateRiskProfileQueryService`.
+  **`RecreationalActivityController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para el inicio y cierre formal de
+  actividades recreacionales de residentes.
+* **Endpoints expuestos:**
+  * `POST /api/v1/activities/recreational` — Iniciar actividad recreacional
+  * `PUT /api/v1/activities/recreational/{id}/end` — Finalizar actividad recreacional
+  * `GET /api/v1/activities/recreational/resident/{residentId}` — Actividades por residente
+* **Relaciones:** Interactúa con `RecreationalActivityCommandService` y
+  `RecreationalActivityQueryService`.
+---
+
+#### 4.2.5.3. Application Layer
+
+Esta capa orquesta los casos de uso del negocio del contexto Activities. Maneja el
+flujo del proceso utilizando un patrón CQRS implícito, separando las intenciones de
+modificación (Commands) de las de lectura (Queries).
+
+**`LogActivityCommand`**, **`CompleteActivityCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan la intención de registrar y
+  completar una actividad de cuidado diario.
+  **`LogMealCommand`**, **`LogFeedingAssistanceCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan el registro de una comida y la
+  asistencia de alimentación provista al residente.
+  **`LogBathCommand`**, **`LogHygieneCareCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan el registro de baño e higiene
+  personal de un residente.
+  **`LogFallPreventionCommand`**, **`RecordHydrationCommand`**,
+  **`UpdateRiskProfileCommand`**, **`RequestMedicalReassessmentCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan las intenciones de registro de
+  prevención de caídas, hidratación y actualización del perfil de riesgo del residente.
+  **`StartRecreationalActivityCommand`**, **`EndRecreationalActivityCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan el inicio y cierre formal de
+  una actividad recreacional.
+  **`ActivityCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta el registro y completitud de actividades de cuidado
+  diario, garantizando el registro en tiempo real contra el perfil del residente.
+* **Atributos inyectados:**
+  * `activityRepository`: IActivityRepository
+* **Métodos principales:**
+  * `handle(LogActivityCommand command): Optional<Activity>`
+  * `handle(CompleteActivityCommand command): Optional<Activity>`
+    **`LogMealCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta el registro de comidas y asistencia de alimentación.
+* **Atributos inyectados:**
+  * `logMealRepository`: ILogMealRepository
+* **Métodos principales:**
+  * `handle(LogMealCommand command): Optional<LogMeal>`
+  * `handle(LogFeedingAssistanceCommand command): Optional<LogMeal>`
+    **`LogBathCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta el registro de baño e higiene personal del residente.
+* **Atributos inyectados:**
+  * `logBathRepository`: ILogBathRepository
+* **Métodos principales:**
+  * `handle(LogBathCommand command): Optional<LogBath>`
+  * `handle(LogHygieneCareCommand command): Optional<LogBath>`
+    **`UpdateRiskProfileCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta el registro de prevención de caídas e hidratación,
+  verificando los umbrales configurados y coordinando la solicitud de reasignación
+  médica hacia el contexto Tracking cuando se detecta un riesgo.
+* **Atributos inyectados:**
+  * `updateRiskProfileRepository`: IUpdateRiskProfileRepository
+* **Métodos principales:**
+  * `handle(LogFallPreventionCommand command): Optional<UpdateRiskProfile>`
+  * `handle(RecordHydrationCommand command): Optional<UpdateRiskProfile>`
+  * `handle(UpdateRiskProfileCommand command): Optional<UpdateRiskProfile>`
+  * `handle(RequestMedicalReassessmentCommand command): Optional<UpdateRiskProfile>`
+    **`RecreationalActivityCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta el inicio y cierre formal de actividades recreacionales,
+  garantizando que toda actividad cuente con ambos eventos registrados.
+* **Atributos inyectados:**
+  * `recreationalActivityRepository`: IRecreationalActivityRepository
+* **Métodos principales:**
+  * `handle(StartRecreationalActivityCommand command): Optional<RecreationalActivity>`
+  * `handle(EndRecreationalActivityCommand command): Optional<RecreationalActivity>`
+    **`ActivityQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre actividades de cuidado
+  diario registradas.
+* **Métodos principales:**
+  * `handle(GetActivitiesByResidentIdQuery query): List<Activity>`
+  * `handle(GetActivitiesByTypeQuery query): List<Activity>`
+  * `handle(GetActivitiesByResidentIdAndDateRangeQuery query): List<Activity>`
+    **`LogMealQueryServiceImpl`**, **`LogBathQueryServiceImpl`**,
+    **`UpdateRiskProfileQueryServiceImpl`**, **`RecreationalActivityQueryServiceImpl`**
+* **Tipo:** Query Handlers (Application Services)
+* **Propósito:** Manejan las consultas de lectura sobre sus respectivos agregados,
+  garantizando que estas operaciones no produzcan efectos secundarios en el dominio.
+* **Métodos principales (por servicio):**
+  * `handle(GetLogMealsByResidentIdQuery query): List<LogMeal>`
+  * `handle(GetLogBathsByResidentIdQuery query): List<LogBath>`
+  * `handle(GetRiskProfileByResidentIdQuery query): List<UpdateRiskProfile>`
+  * `handle(GetRecreationalActivitiesByResidentIdQuery query): List<RecreationalActivity>`
+---
+
 ### 4.2.7 Bounded Context: Identity and Access Management (IAM)
 
 En esta sección, el equipo presenta las clases identificadas y las detalla a manera de diccionario, explicando para cada una su nombre, propósito y la documentación de atributos y métodos considerados, junto con las relaciones entre ellas.
