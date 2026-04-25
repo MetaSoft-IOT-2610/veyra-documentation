@@ -1446,6 +1446,110 @@ agnóstica de frameworks externos.
   * `save(CareTask careTask): CareTask`
 ---
 
+#### 4.2.4.2. Interface Layer
+
+Esta capa expone los capabilities del Bounded Context HCM hacia clientes externos,
+actuando como la frontera del sistema y traduciendo las peticiones HTTP en comandos
+de aplicación mediante el uso de Resources.
+
+**`StaffController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para la gestión del ciclo de vida del
+  personal de salud. Recibe las peticiones, deserializa el JSON en Resources y
+  los mapea a Commands mediante clases Assembler.
+* **Endpoints expuestos:**
+  * `POST /api/v1/staff` — Contratar miembro del personal
+  * `PUT /api/v1/staff/{id}/verify-credentials` — Verificar credenciales
+  * `PUT /api/v1/staff/{id}/start-shift` — Iniciar turno
+  * `PUT /api/v1/staff/{id}/complete-handover` — Completar handover
+  * `PUT /api/v1/staff/{id}/report-absence` — Reportar ausencia
+  * `PUT /api/v1/staff/{id}/assign-resident` — Asignar a residente
+  * `PUT /api/v1/staff/{id}/end-shift` — Finalizar turno
+  * `GET /api/v1/staff/{id}` — Consultar miembro por ID
+  * `GET /api/v1/staff` — Listar personal
+  * `GET /api/v1/staff/available-replacements` — Listar reemplazos disponibles
+* **Relaciones:** Interactúa con `StaffCommandService` y `StaffQueryService`.
+  **`CareTaskController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para la gestión de tareas de cuidado
+  asignadas al personal. Recibe las peticiones, deserializa el JSON en Resources
+  y los mapea a Commands.
+* **Endpoints expuestos:**
+  * `POST /api/v1/care-tasks` — Crear y asignar tarea de cuidado
+  * `PUT /api/v1/care-tasks/{id}/complete` — Completar tarea
+  * `GET /api/v1/care-tasks/staff/{staffId}` — Tareas por personal
+  * `GET /api/v1/care-tasks/resident/{residentId}` — Tareas por residente
+  * `GET /api/v1/care-tasks/status/{status}` — Tareas por estado
+* **Relaciones:** Interactúa con `CareTaskCommandService` y
+  `CareTaskQueryService`.
+---
+
+#### 4.2.4.3. Application Layer
+
+Esta capa orquesta los casos de uso del negocio del contexto HCM. Maneja el
+flujo del proceso utilizando un patrón CQRS implícito, separando las intenciones de
+modificación (Commands) de las de lectura (Queries).
+
+**`HireStaffMemberCommand`**, **`VerifyCredentialsCommand`**,
+**`StartStaffShiftCommand`**, **`CompleteShiftHandoverCommand`**,
+**`ReportAbsenceCommand`**, **`AssignNurseCommand`**,
+**`AssignReplacementCommand`**, **`EndShiftCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan cada intención de modificación
+  sobre el ciclo de vida del agregado `Staff`, transportando los datos necesarios
+  hacia los manejadores de comandos.
+  **`AssignCareTaskCommand`**, **`CompleteCareTaskCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan las intenciones de asignación
+  y completitud de una tarea de cuidado.
+  **`StaffCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de mutación del agregado `Staff`.
+  Valida reglas de negocio como la verificación de credenciales antes de activar
+  al personal en un turno, y coordina la búsqueda de reemplazos cuando se reporta
+  una ausencia.
+* **Atributos inyectados:**
+  * `staffRepository`: IStaffRepository
+  * `careTaskRepository`: ICareTaskRepository
+* **Métodos principales:**
+  * `handle(HireStaffMemberCommand command): Optional<Staff>`
+  * `handle(VerifyCredentialsCommand command): Optional<Staff>`
+  * `handle(StartStaffShiftCommand command): Optional<Staff>`
+  * `handle(CompleteShiftHandoverCommand command): Optional<Staff>`
+  * `handle(ReportAbsenceCommand command): Optional<Staff>`
+  * `handle(AssignNurseCommand command): Optional<Staff>`
+  * `handle(AssignReplacementCommand command): Optional<Staff>`
+  * `handle(EndShiftCommand command): Optional<Staff>`
+    **`CareTaskCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de creación y completitud de tareas de
+  cuidado, garantizando que solo el personal verificado y asignado pueda completar
+  tareas.
+* **Atributos inyectados:**
+  * `careTaskRepository`: ICareTaskRepository
+  * `staffRepository`: IStaffRepository
+* **Métodos principales:**
+  * `handle(AssignCareTaskCommand command): Optional<CareTask>`
+  * `handle(CompleteCareTaskCommand command): Optional<CareTask>`
+    **`StaffQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre el personal de salud,
+  garantizando que estas operaciones no produzcan efectos secundarios en el dominio.
+* **Métodos principales:**
+  * `handle(GetStaffByIdQuery query): Optional<Staff>`
+  * `handle(GetAllStaffQuery query): List<Staff>`
+  * `handle(GetStaffByCredentialStatusQuery query): List<Staff>`
+  * `handle(GetAvailableReplacementsQuery query): List<Staff>`
+    **`CareTaskQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre las tareas de cuidado
+  asignadas al personal.
+* **Métodos principales:**
+  * `handle(GetCareTasksByStaffIdQuery query): List<CareTask>`
+  * `handle(GetCareTasksByResidentIdQuery query): List<CareTask>`
+  * `handle(GetCareTasksByStatusQuery query): List<CareTask>`
+---
+
 ### 4.2.7 Bounded Context: Identity and Access Management (IAM)
 
 En esta sección, el equipo presenta las clases identificadas y las detalla a manera de diccionario, explicando para cada una su nombre, propósito y la documentación de atributos y métodos considerados, junto con las relaciones entre ellas.
