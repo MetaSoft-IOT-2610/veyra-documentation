@@ -221,7 +221,57 @@ El bounded context de Subscriptions & Payments representa un **Supporting Domain
 
 ### 4.1.2. Context Mapping
 
-El Context Mapping describe las relaciones y los patrones de integración entre los contextos delimitados del sistema. A través de este mapa se establecen los tipos de colaboración entre contextos —como cliente-proveedor, conformista o anticorrupción— y se identifican los contratos de comunicación que garantizan la consistencia del sistema en su conjunto. En Veyra, este mapa es especialmente relevante para definir cómo el contexto de dispositivos IoT alimenta al de monitoreo clínico, cómo el contexto de alertas depende del de monitoreo, y cómo los contextos de suscripción y control de acceso colaboran para regular el uso de la plataforma por parte de las instituciones y los familiares.
+Durante la fase de modelado basada en el dominio, hemos logrado identificar los siguientes contextos limitados: Identity and Access Management (IAM), Profiles, Subscriptions and Payments, Tracking, HCM (Human Capital Management), Nursing, Communication, Activities y Health. A continuación, explicaremos qué tipo de relación existe entre estos contextos y cómo se comunican entre ellos.
+
+### Análisis de Bounded Contexts
+
+#### Subscriptions and Payments ↔ IAM
+- **Relación:** Upstream (Subscriptions) / Downstream (IAM)
+- **Patrón:** Customer/Supplier — IAM depende de Subscriptions para validar que un usuario cuenta con un plan activo antes de concederle acceso al sistema. Subscriptions actúa como proveedor de la información del plan, y IAM como cliente que la consume para sus decisiones de autorización.
+
+#### IAM ↔ Profiles
+- **Relación:** Upstream (IAM) / Downstream (Profiles)
+- **Patrón:** Conformist — Profiles adopta directamente el modelo de identidad definido por IAM sin transformación propia. IAM es la fuente de verdad de autenticación, y Profiles se conforma a ese modelo para construir el perfil de la persona (residente, familiar, staff).
+
+#### IAM ↔ Tracking
+- **Relación:** Upstream (IAM) / Downstream (Tracking)
+- **Patrón:** Conformist — Tracking adopta el modelo de usuario de IAM para asociar evaluaciones clínicas e historiales médicos a la identidad de un residente concreto, sin necesidad de reinterpretar el modelo de identidad.
+
+#### Profiles ↔ Subscriptions and Payments
+- **Relación:** Upstream (Profiles) / Downstream (Subscriptions)
+- **Patrón:** Customer/Supplier — Subscriptions necesita datos del perfil del familiar o responsable para generar órdenes de pago correctamente asociadas a la persona. Profiles provee esos datos bajo los términos que Subscriptions negocia.
+
+#### Tracking ↔ Nursing
+- **Relación:** Upstream (Tracking) / Downstream (Nursing)
+- **Patrón:** Customer/Supplier — Nursing consume la información del historial clínico y la evaluación de riesgo del residente que Tracking gestiona, para fundamentar las decisiones del Care Plan. Tracking es el proveedor del contexto clínico longitudinal que Nursing necesita.
+
+#### Tracking ↔ Communication
+- **Relación:** Upstream (Tracking) / Downstream (Communication)
+- **Patrón:** Published Language — Tracking emite eventos como `MedicalNeedNotified` o `RiskLevelAssessed` que Communication consume directamente para notificar al personal médico o a los familiares del residente sin alterar el modelo de Tracking.
+
+#### HCM ↔ Nursing
+- **Relación:** Upstream (HCM) / Downstream (Nursing)
+- **Patrón:** Customer/Supplier — Nursing necesita saber qué enfermera está asignada a un residente y en qué turno está activa antes de ejecutar tareas de cuidado. HCM provee esta información operativa del personal bajo los términos que Nursing solicita como cliente.
+
+#### Communication ↔ Activities
+- **Relación:** Upstream (Communication) / Downstream (Activities)
+- **Patrón:** Published Language — Communication emite eventos como `VisitScheduled` o `VisitAuthorized` que Activities consume para adaptar la rutina diaria del residente (por ejemplo, pausar actividades durante una visita), sin que Activities conozca la lógica interna de Communication.
+
+#### Activities ↔ Health
+- **Relación:** Upstream (Activities) / Downstream (Health)
+- **Patrón:** ACL (Anti-Corruption Layer) — Cuando Activities registra eventos como una caída durante movilidad o un nivel de hidratación crítico, Health los consume pero los traduce a su propio modelo clínico a través de un ACL. Esto protege al dominio de salud de ser contaminado con el lenguaje propio de las actividades cotidianas.
+
+#### Health ↔ Nursing
+- **Relación:** Upstream (Health) / Downstream (Nursing)
+- **Patrón:** Published Language — Health emite eventos como `AbnormalVitalSignsDetected` o `CriticalConditionIdentified` que Nursing consume para ajustar el Care Plan o la medicación del residente. Nursing no conoce los detalles internos de cómo Health detecta las anomalías.
+
+Con base en el análisis, se implementaron los siguientes patrones de relación entre contextos:
+
+- **Customer/Supplier** entre Subscriptions → IAM, Profiles → Subscriptions, Tracking → Nursing y HCM → Nursing.
+- **Conformist** entre IAM → Profiles e IAM → Tracking.
+- **Published Language** entre Tracking → Communication, Communication → Activities y Health → Nursing.
+- **Anti-Corruption Layer** entre Activities y Health, para proteger el modelo clínico del lenguaje propio de las actividades cotidianas.
+
 
 ### 4.1.3. Software Architecture
 
