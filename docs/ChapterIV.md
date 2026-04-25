@@ -2406,3 +2406,194 @@ manteniéndose agnóstica de frameworks externos.
   * `findByResidentId(Long residentId): List<AuthorizedVisitor>`
   * `save(AuthorizedVisitor visitor): AuthorizedVisitor`
 ---
+
+#### 4.2.8.2. Interface Layer
+
+Esta capa expone los capabilities del Bounded Context Profiles hacia clientes externos,
+actuando como la frontera del sistema y traduciendo las peticiones HTTP en comandos
+de aplicación mediante el uso de Resources.
+
+**`ProfileController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para la gestión del perfil personal de
+  los usuarios de la plataforma. Recibe las peticiones, deserializa el JSON en
+  Resources y los mapea a Commands mediante clases Assembler.
+* **Endpoints expuestos:**
+  * `POST /api/v1/profiles` — Crear perfil de persona
+  * `PUT /api/v1/profiles/{id}` — Actualizar perfil
+  * `PUT /api/v1/profiles/{id}/password` — Cambiar contraseña
+  * `PUT /api/v1/profiles/{id}/picture` — Actualizar foto de perfil
+  * `PUT /api/v1/profiles/{id}/disable` — Deshabilitar perfil
+  * `GET /api/v1/profiles/{id}` — Consultar perfil por ID
+  * `GET /api/v1/profiles/user/{userId}` — Perfil por usuario
+  * `GET /api/v1/profiles/status/{status}` — Perfiles por estado
+* **Relaciones:** Interactúa con `ProfileCommandService` y
+  `ProfileQueryService`.
+  **`BusinessProfileController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para la gestión del perfil de negocio
+  del hogar de reposo. Recibe las peticiones, deserializa el JSON en Resources y
+  los mapea a Commands.
+* **Endpoints expuestos:**
+  * `POST /api/v1/business-profiles` — Crear perfil de negocio
+  * `PUT /api/v1/business-profiles/{id}` — Actualizar perfil de negocio
+  * `PUT /api/v1/business-profiles/{id}/logo` — Actualizar logo
+  * `GET /api/v1/business-profiles/{id}` — Consultar perfil por ID
+  * `GET /api/v1/business-profiles/admin/{adminId}` — Perfil por Admin
+* **Relaciones:** Interactúa con `BusinessProfileCommandService` y
+  `BusinessProfileQueryService`.
+  **`AuthorizedVisitorController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para la gestión de visitantes
+  autorizados por el Admin para visitar residentes.
+* **Endpoints expuestos:**
+  * `POST /api/v1/authorized-visitors` — Autorizar visitante
+  * `GET /api/v1/authorized-visitors/profile/{profileId}` — Visitantes por perfil
+  * `GET /api/v1/authorized-visitors/resident/{residentId}` — Visitantes por residente
+* **Relaciones:** Interactúa con `AuthorizedVisitorCommandService` y
+  `AuthorizedVisitorQueryService`.
+---
+
+#### 4.2.8.3. Application Layer
+
+Esta capa orquesta los casos de uso del negocio del contexto Profiles. Maneja el
+flujo del proceso utilizando un patrón CQRS implícito, separando las intenciones de
+modificación (Commands) de las de lectura (Queries).
+
+**`CreatePersonProfileCommand`**, **`UpdatePersonProfileCommand`**,
+**`ChangePasswordCommand`**, **`UpdateProfilePictureCommand`**,
+**`DisablePersonProfileCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan cada intención de modificación
+  sobre el agregado `Profile`, transportando los datos necesarios hacia los
+  manejadores de comandos.
+  **`CreateBusinessProfileCommand`**, **`UpdateBusinessProfileCommand`**,
+  **`UpdateBusinessLogoCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan las intenciones de creación y
+  actualización del perfil de negocio del hogar de reposo.
+  **`AuthorizeVisitorCommand`**
+* **Tipo:** Command
+* **Propósito:** Objeto inmutable que encapsula la intención de autorizar a un
+  visitante para acceder al hogar de reposo.
+  **`ProfileCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de mutación del agregado `Profile`.
+  Coordina con el servicio externo Cloudinary para la gestión de imágenes de
+  perfil, y garantiza que los perfiles deshabilitados sean marcados como inactivos
+  en la plataforma.
+* **Atributos inyectados:**
+  * `profileRepository`: IProfileRepository
+  * `cloudinaryService`: CloudinaryService
+* **Métodos principales:**
+  * `handle(CreatePersonProfileCommand command): Optional<Profile>`
+  * `handle(UpdatePersonProfileCommand command): Optional<Profile>`
+  * `handle(ChangePasswordCommand command): Optional<Profile>`
+  * `handle(UpdateProfilePictureCommand command): Optional<Profile>`
+  * `handle(DisablePersonProfileCommand command): Optional<Profile>`
+    **`BusinessProfileCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de creación y actualización del agregado
+  `BusinessProfile`, coordinando con Cloudinary para la gestión del logo del
+  hogar de reposo.
+* **Atributos inyectados:**
+  * `businessProfileRepository`: IBusinessProfileRepository
+  * `cloudinaryService`: CloudinaryService
+* **Métodos principales:**
+  * `handle(CreateBusinessProfileCommand command): Optional<BusinessProfile>`
+  * `handle(UpdateBusinessProfileCommand command): Optional<BusinessProfile>`
+  * `handle(UpdateBusinessLogoCommand command): Optional<BusinessProfile>`
+    **`AuthorizedVisitorCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta la autorización de visitantes, verificando que el perfil
+  del visitante exista antes de registrarlo como autorizado.
+* **Atributos inyectados:**
+  * `authorizedVisitorRepository`: IAuthorizedVisitorRepository
+  * `profileRepository`: IProfileRepository
+* **Métodos principales:**
+  * `handle(AuthorizeVisitorCommand command): Optional<AuthorizedVisitor>`
+    **`ProfileQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre perfiles de persona,
+  garantizando que estas operaciones no produzcan efectos secundarios en el dominio.
+* **Métodos principales:**
+  * `handle(GetProfileByIdQuery query): Optional<Profile>`
+  * `handle(GetProfileByUserIdQuery query): Optional<Profile>`
+  * `handle(GetProfilesByStatusQuery query): List<Profile>`
+    **`BusinessProfileQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre perfiles de negocio.
+* **Métodos principales:**
+  * `handle(GetBusinessProfileByIdQuery query): Optional<BusinessProfile>`
+  * `handle(GetBusinessProfileByAdminIdQuery query): Optional<BusinessProfile>`
+    **`AuthorizedVisitorQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre visitantes autorizados.
+* **Métodos principales:**
+  * `handle(GetAuthorizedVisitorsByProfileIdQuery query): List<AuthorizedVisitor>`
+  * `handle(GetAuthorizedVisitorsByResidentIdQuery query): List<AuthorizedVisitor>`
+---
+
+#### 4.2.8.4. Infrastructure Layer
+
+Esta capa proporciona las implementaciones técnicas de los contratos definidos en
+las capas superiores del contexto Profiles.
+
+**`ProfileRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IProfileRepository` utilizando Spring
+  Data JPA para el acceso a la base de datos relacional.
+* **Atributos:** Extiende de `JpaRepository<Profile, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `Profile` a la tabla `profiles`
+  mediante anotaciones ORM.
+  **`BusinessProfileRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IBusinessProfileRepository`
+  utilizando Spring Data JPA.
+* **Atributos:** Extiende de `JpaRepository<BusinessProfile, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `BusinessProfile` a la tabla
+  `business_profiles` mediante anotaciones ORM.
+  **`AuthorizedVisitorRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IAuthorizedVisitorRepository`
+  utilizando Spring Data JPA.
+* **Atributos:** Extiende de `JpaRepository<AuthorizedVisitor, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `AuthorizedVisitor` a la tabla
+  `authorized_visitors` mediante anotaciones ORM.
+  **`CloudinaryServiceImpl`**
+* **Tipo:** Infrastructure Service (External)
+* **Propósito:** Implementa la interfaz de gestión de imágenes para subir y
+  gestionar fotos de perfil y logos del hogar de reposo a través de la API de
+  Cloudinary. Actúa como Anti-Corruption Layer entre el dominio y el servicio
+  externo de almacenamiento de medios.
+* **Relaciones:** Utilizado por `ProfileCommandServiceImpl` y
+  `BusinessProfileCommandServiceImpl` para la gestión de imágenes.
+---
+
+#### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes muestra la estructura interna del Bounded Context
+Profiles, detallando los principales componentes de software que lo conforman y
+las relaciones entre ellos. Permite visualizar cómo se organizan las
+responsabilidades dentro del contexto y cómo se comunican con otros contextos
+o servicios externos.
+
+#### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
+
+Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
+internas del Bounded Context Profiles, mostrando las clases, sus relaciones y el
+esquema de base de datos que soporta el modelo del dominio.
+
+##### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases de la capa de dominio representa las entidades, objetos de
+valor, agregados e interfaces que conforman el modelo del negocio del contexto
+Profiles. Muestra las relaciones de composición, herencia y dependencia entre los
+elementos del dominio.
+
+##### 4.2.8.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos muestra el esquema de persistencia del
+Bounded Context Profiles, incluyendo las tablas, columnas, claves primarias, claves
+foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
+adoptadas para soportar el dominio.
