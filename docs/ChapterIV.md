@@ -1598,6 +1598,180 @@ Bounded Context HCM, incluyendo las tablas, columnas, claves primarias, claves
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
 
+### 4.2.5. Bounded Context: Activities
+
+En esta sección, el equipo presenta las clases identificadas y las detalla a manera de
+diccionario, explicando para cada una su nombre, propósito y la documentación de
+atributos y métodos considerados, junto con las relaciones entre ellas.
+
+#### 4.2.5.1. Domain Layer
+
+Esta capa contiene el núcleo del negocio del contexto Activities, incluyendo las
+entidades, objetos de valor y abstracciones de repositorios que definen las reglas
+del registro de actividades diarias de cuidado del residente, manteniéndose
+agnóstica de frameworks externos.
+
+**`Activity`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa cualquier actividad de cuidado diario registrada por el
+  personal de salud para un residente como parte del Resident's Daily Care Flow.
+  Es el agregado raíz que garantiza la consistencia del registro en tiempo real,
+  asegurando que toda actividad quede trazada contra el perfil del residente con
+  su respectivo estado y timestamp.
+* **Atributos:**
+  * `id`: Long
+  * `residentId`: Long
+  * `healthcareStaffId`: Long
+  * `type`: ActivityType (Value Object / Enum)
+  * `status`: ActivityStatus (Value Object / Enum)
+  * `notes`: String
+  * `loggedAt`: LocalDateTime
+* **Métodos principales:**
+  * `log(): Activity`
+  * `complete(): Activity`
+* **Relaciones:** Referencia a `LogMeal`, `LogBath` y `UpdateRiskProfile` por
+  residentId. Administrado a través de `IActivityRepository`.
+  **`LogMeal`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa el registro de una comida provista al residente,
+  incluyendo la asistencia de alimentación cuando aplica. Garantiza que toda
+  comida registrada quede asociada al residente y al turno del personal
+  responsable.
+* **Atributos:**
+  * `id`: Long
+  * `residentId`: Long
+  * `healthcareStaffId`: Long
+  * `mealType`: MealType (Value Object / Enum)
+  * `feedingAssistanceProvided`: boolean
+  * `servedAt`: LocalDateTime
+* **Métodos principales:**
+  * `serve(): LogMeal`
+  * `logFeedingAssistance(): LogMeal`
+* **Relaciones:** Pertenece a un residente identificado por `residentId`.
+  Administrado a través de `ILogMealRepository`.
+  **`LogBath`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa el registro del baño e higiene personal provisto al
+  residente. Garantiza que cada actividad de higiene quede formalmente registrada
+  con el personal responsable y el momento de ejecución.
+* **Atributos:**
+  * `id`: Long
+  * `residentId`: Long
+  * `healthcareStaffId`: Long
+  * `hygieneCareProvided`: boolean
+  * `bathedAt`: LocalDateTime
+* **Métodos principales:**
+  * `logBath(): LogBath`
+  * `logHygieneCare(): LogBath`
+* **Relaciones:** Pertenece a un residente identificado por `residentId`.
+  Administrado a través de `ILogBathRepository`.
+  **`UpdateRiskProfile`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa la actualización del perfil de riesgo de un residente
+  generada a partir de las actividades diarias registradas. Cuando se detecta
+  un umbral de riesgo (caídas, hidratación baja), este agregado coordina la
+  solicitud de reasignación médica hacia el contexto Tracking.
+* **Atributos:**
+  * `id`: Long
+  * `residentId`: Long
+  * `healthcareStaffId`: Long
+  * `mobilityRiskHigh`: boolean
+  * `hydrationBelowThreshold`: boolean
+  * `fallPreventionProvided`: boolean
+  * `hydrationRecorded`: Double
+  * `updatedAt`: LocalDateTime
+* **Métodos principales:**
+  * `logFallPrevention(): UpdateRiskProfile`
+  * `recordHydration(Double amount): UpdateRiskProfile`
+  * `checkMobilityRisk(): UpdateRiskProfile`
+  * `checkHydrationThreshold(): UpdateRiskProfile`
+  * `requestMedicalReassessment(): UpdateRiskProfile`
+* **Relaciones:** Pertenece a un residente identificado por `residentId`.
+  Administrado a través de `IUpdateRiskProfileRepository`.
+  **`RecreationalActivity`**
+* **Tipo DDD:** Entity
+* **Propósito:** Representa una actividad recreacional iniciada y formalmente
+  finalizada para un residente. Garantiza que toda actividad recreacional cuente
+  con un evento de inicio y un evento de cierre, permitiendo el seguimiento
+  de la participación del residente.
+* **Atributos:**
+  * `id`: Long
+  * `residentId`: Long
+  * `healthcareStaffId`: Long
+  * `description`: String
+  * `startedAt`: LocalDateTime
+  * `endedAt`: LocalDateTime
+  * `status`: RecreationalActivityStatus (Value Object / Enum)
+* **Métodos principales:**
+  * `start(): RecreationalActivity`
+  * `end(): RecreationalActivity`
+* **Relaciones:** Pertenece a un `Activity`. Administrado a través de
+  `IRecreationalActivityRepository`.
+  **`ActivityType`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los tipos válidos de actividad de cuidado diario:
+  `MEAL`, `BATH`, `HYGIENE_CARE`, `MOBILITY_ASSISTANCE`, `FALL_PREVENTION`,
+  `HYDRATION`, `RECREATIONAL`, `FEEDING_ASSISTANCE`. Garantiza que solo
+  actividades reconocidas por el sistema puedan ser registradas.
+  **`ActivityStatus`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los estados válidos de una actividad: `LOGGED`,
+  `COMPLETED`. Garantiza la trazabilidad del ciclo de vida de cada actividad
+  registrada.
+  **`MealType`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los tipos válidos de comida provista al residente:
+  `BREAKFAST`, `LUNCH`, `DINNER`, `SNACK`. Permite clasificar y analizar
+  el patrón de alimentación del residente.
+  **`RecreationalActivityStatus`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los estados válidos de una actividad recreacional:
+  `STARTED`, `ENDED`. Garantiza que toda actividad recreacional tenga un
+  cierre formal registrado.
+  **`IActivityRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción que define las operaciones de persistencia
+  y recuperación del agregado `Activity`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<Activity>`
+  * `findByResidentId(Long residentId): List<Activity>`
+  * `findByType(ActivityType type): List<Activity>`
+  * `findByResidentIdAndLoggedAtBetween(Long residentId, LocalDateTime from, LocalDateTime to): List<Activity>`
+  * `save(Activity activity): Activity`
+    **`ILogMealRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia del agregado
+  `LogMeal`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<LogMeal>`
+  * `findByResidentId(Long residentId): List<LogMeal>`
+  * `save(LogMeal logMeal): LogMeal`
+    **`ILogBathRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia del agregado
+  `LogBath`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<LogBath>`
+  * `findByResidentId(Long residentId): List<LogBath>`
+  * `save(LogBath logBath): LogBath`
+    **`IUpdateRiskProfileRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia del agregado
+  `UpdateRiskProfile`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<UpdateRiskProfile>`
+  * `findByResidentId(Long residentId): List<UpdateRiskProfile>`
+  * `save(UpdateRiskProfile updateRiskProfile): UpdateRiskProfile`
+    **`IRecreationalActivityRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia de la entidad
+  `RecreationalActivity`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<RecreationalActivity>`
+  * `findByResidentId(Long residentId): List<RecreationalActivity>`
+  * `save(RecreationalActivity activity): RecreationalActivity`
+---
+
 ### 4.2.7 Bounded Context: Identity and Access Management (IAM)
 
 En esta sección, el equipo presenta las clases identificadas y las detalla a manera de diccionario, explicando para cada una su nombre, propósito y la documentación de atributos y métodos considerados, junto con las relaciones entre ellas.
