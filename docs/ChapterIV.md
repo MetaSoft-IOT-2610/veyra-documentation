@@ -2704,3 +2704,101 @@ de pagos, manteniéndose agnóstica de frameworks externos.
   * `findByStripePaymentId(String stripePaymentId): Optional<Payment>`
   * `save(Payment payment): Payment`
 ---
+
+#### 4.2.9.2. Interface Layer
+
+Esta capa expone los capabilities del Bounded Context Subscriptions & Payments hacia
+clientes externos, actuando como la frontera del sistema y traduciendo las peticiones
+HTTP en comandos de aplicación mediante el uso de Resources.
+
+**`SubscriptionController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para la gestión del ciclo de vida de
+  las suscripciones SaaS. Recibe las peticiones, deserializa el JSON en Resources
+  y los mapea a Commands mediante clases Assembler.
+* **Endpoints expuestos:**
+  * `POST /api/v1/subscriptions` — Crear suscripción
+  * `PUT /api/v1/subscriptions/{id}/select-plan` — Seleccionar plan
+  * `PUT /api/v1/subscriptions/{id}/cancel` — Cancelar suscripción
+  * `GET /api/v1/subscriptions/{id}` — Consultar suscripción por ID
+  * `GET /api/v1/subscriptions/admin/{adminId}` — Suscripción por Admin
+  * `GET /api/v1/subscriptions/plans` — Listar planes disponibles
+* **Relaciones:** Interactúa con `SubscriptionCommandService` y
+  `SubscriptionQueryService`.
+  **`PaymentController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para el procesamiento de pagos de
+  suscripción y órdenes de pago de familiares. Recibe las peticiones, deserializa
+  el JSON en Resources y los mapea a Commands.
+* **Endpoints expuestos:**
+  * `POST /api/v1/payments` — Crear pago
+  * `PUT /api/v1/payments/{id}/details` — Ingresar detalles de pago
+  * `PUT /api/v1/payments/{id}/process` — Procesar pago
+  * `GET /api/v1/payments/{id}` — Consultar pago por ID
+  * `GET /api/v1/payments/subscription/{subscriptionId}` — Pagos por suscripción
+* **Relaciones:** Interactúa con `PaymentCommandService` y
+  `PaymentQueryService`.
+---
+
+#### 4.2.9.3. Application Layer
+
+Esta capa orquesta los casos de uso del negocio del contexto Subscriptions &
+Payments. Maneja el flujo del proceso utilizando un patrón CQRS implícito,
+separando las intenciones de modificación (Commands) de las de lectura (Queries).
+
+**`CreateSubscriptionCommand`**, **`SelectSubscriptionPlanCommand`**,
+**`CancelSubscriptionPlanCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan cada intención de modificación
+  sobre el ciclo de vida del agregado `Subscription`, transportando los datos
+  necesarios hacia los manejadores de comandos.
+  **`CreatePaymentCommand`**, **`EnterPaymentDetailsCommand`**,
+  **`ProcessPaymentCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan cada intención de modificación
+  sobre el ciclo de procesamiento de un pago, incluyendo la generación de órdenes
+  de pago para familiares.
+  **`SubscriptionCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de mutación del agregado `Subscription`.
+  Valida que solo exista una suscripción activa por hogar de reposo, coordina la
+  activación tras la confirmación del pago, y publica el evento de suscripción
+  activa hacia el contexto IAM para habilitar el acceso a la plataforma.
+* **Atributos inyectados:**
+  * `subscriptionRepository`: ISubscriptionRepository
+  * `paymentRepository`: IPaymentRepository
+* **Métodos principales:**
+  * `handle(CreateSubscriptionCommand command): Optional<Subscription>`
+  * `handle(SelectSubscriptionPlanCommand command): Optional<Subscription>`
+  * `handle(CancelSubscriptionPlanCommand command): Optional<Subscription>`
+    **`PaymentCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta el ciclo de procesamiento de pagos, coordinando con
+  Stripe como pasarela externa de pagos a través de un Anti-Corruption Layer.
+  Cuando el pago es aceptado por Stripe, activa la suscripción correspondiente.
+* **Atributos inyectados:**
+  * `paymentRepository`: IPaymentRepository
+  * `subscriptionRepository`: ISubscriptionRepository
+  * `stripeService`: StripeService
+* **Métodos principales:**
+  * `handle(CreatePaymentCommand command): Optional<Payment>`
+  * `handle(EnterPaymentDetailsCommand command): Optional<Payment>`
+  * `handle(ProcessPaymentCommand command): Optional<Payment>`
+    **`SubscriptionQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre suscripciones, garantizando
+  que estas operaciones no produzcan efectos secundarios en el dominio.
+* **Métodos principales:**
+  * `handle(GetSubscriptionByIdQuery query): Optional<Subscription>`
+  * `handle(GetSubscriptionByAdminIdQuery query): Optional<Subscription>`
+  * `handle(GetSubscriptionsByStatusQuery query): List<Subscription>`
+  * `handle(GetAvailablePlansQuery query): List<SubscriptionPlan>`
+    **`PaymentQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre pagos y transacciones
+  registradas en la plataforma.
+* **Métodos principales:**
+  * `handle(GetPaymentByIdQuery query): Optional<Payment>`
+  * `handle(GetPaymentsBySubscriptionIdQuery query): List<Payment>`
+  * `handle(GetPaymentsByStatusQuery query): List<Payment>`
+---
