@@ -84,7 +84,7 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
   </tr>
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/team-member-profiles/vicente-quijandria.png" alt="Vicente Photo" width="120" />
+      <img src="../assets/img/chapter-I/team-member-profiles/vicente-quijandra.png" alt="Vicente Photo" width="120" />
     </td>
     <td valign="top">
       <strong>Vicente Quijandria Araneda - (U201822697)</strong> - Ingeniería de Software<br><br>
