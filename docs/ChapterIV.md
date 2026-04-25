@@ -1188,11 +1188,101 @@ frameworks externos.
 
 #### 4.2.3.2. Interface Layer
 
-La capa de interfaz expone los puntos de entrada al contexto delimitado hacia el exterior, ya sea mediante controladores REST, consumidores de mensajes u otros mecanismos de comunicación. Su responsabilidad es transformar las solicitudes entrantes en comandos o consultas comprensibles por las capas internas.
+Esta capa expone los capabilities del Bounded Context Health hacia clientes externos,
+actuando como la frontera del sistema y traduciendo las peticiones HTTP en comandos
+de aplicación mediante el uso de Resources.
+
+**`VitalSignsController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para el monitoreo continuo de signos
+  vitales de residentes admitidos. Recibe las peticiones, deserializa el JSON en
+  Resources y los mapea a Commands mediante clases Assembler.
+* **Endpoints expuestos:**
+  * `POST /api/v1/health/vital-signs` — Tomar y registrar signos vitales
+  * `PUT /api/v1/health/vital-signs/{id}/detect-anomaly` — Detectar anomalía
+  * `PUT /api/v1/health/vital-signs/{id}/trigger-notification` — Disparar notificación
+  * `PUT /api/v1/health/vital-signs/{id}/condition` — Actualizar condición
+  * `PUT /api/v1/health/vital-signs/{id}/critical-state` — Identificar estado crítico
+  * `PUT /api/v1/health/vital-signs/{id}/observation` — Registrar observación
+  * `GET /api/v1/health/vital-signs/resident/{residentId}` — Signos por residente
+  * `GET /api/v1/health/vital-signs/resident/{residentId}/abnormal` — Signos anómalos
+* **Relaciones:** Interactúa con `VitalSignsCommandService` y
+  `VitalSignsQueryService`.
+  **`AllergyController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para el reporte y consulta de alergias
+  de residentes. Recibe las peticiones, deserializa el JSON en Resources y los
+  mapea a Commands.
+* **Endpoints expuestos:**
+  * `POST /api/v1/health/allergies` — Reportar alergia
+  * `PUT /api/v1/health/allergies/{id}/severity` — Actualizar severidad
+  * `GET /api/v1/health/allergies/resident/{residentId}` — Alergias por residente
+  * `GET /api/v1/health/allergies/severity/{severity}` — Alergias por severidad
+* **Relaciones:** Interactúa con `AllergyCommandService` y
+  `AllergyQueryService`.
+---
 
 #### 4.2.3.3. Application Layer
 
-La capa de aplicación orquesta los casos de uso del contexto delimitado. Coordina la interacción entre la capa de dominio y la capa de infraestructura, ejecutando los flujos de negocios sin contener lógica de dominio propia. Aquí se implementan los manejadores de comandos y las consultas de la aplicación.
+Esta capa orquesta los casos de uso del negocio del contexto Health. Maneja el
+flujo del proceso utilizando un patrón CQRS implícito, separando las intenciones de
+modificación (Commands) de las de lectura (Queries).
+
+**`TakeVitalSignsCommand`**, **`RecordVitalSignsCommand`**,
+**`DetectAnomalyCommand`**, **`TriggerNotificationCommand`**,
+**`UpdateConditionCommand`**, **`IdentifyCriticalStateCommand`**,
+**`LogObservationCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan cada intención de modificación
+  sobre el ciclo de monitoreo de signos vitales de un residente, transportando
+  los datos necesarios hacia los manejadores de comandos.
+  **`ReportAllergyCommand`**, **`UpdateAllergySeverityCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan las intenciones de reporte y
+  actualización de una alergia de un residente.
+  **`VitalSignsCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de mutación del agregado `VitalSigns`
+  en el contexto Health. Delega la detección de anomalías al agregado y coordina
+  el envío de alertas críticas al Notification Service externo cuando corresponde.
+* **Atributos inyectados:**
+  * `vitalSignsRepository`: IVitalSignsRepository
+  * `notificationService`: NotificationService
+* **Métodos principales:**
+  * `handle(TakeVitalSignsCommand command): Optional<VitalSigns>`
+  * `handle(RecordVitalSignsCommand command): Optional<VitalSigns>`
+  * `handle(DetectAnomalyCommand command): Optional<VitalSigns>`
+  * `handle(TriggerNotificationCommand command): Optional<VitalSigns>`
+  * `handle(UpdateConditionCommand command): Optional<VitalSigns>`
+  * `handle(IdentifyCriticalStateCommand command): Optional<VitalSigns>`
+  * `handle(LogObservationCommand command): Optional<VitalSigns>`
+    **`AllergyCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de creación y actualización del agregado
+  `Allergy`, garantizando que toda alergia registrada tenga siempre un nivel de
+  severidad válido.
+* **Atributos inyectados:**
+  * `allergyRepository`: IAllergyRepository
+* **Métodos principales:**
+  * `handle(ReportAllergyCommand command): Optional<Allergy>`
+  * `handle(UpdateAllergySeverityCommand command): Optional<Allergy>`
+    **`VitalSignsQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre signos vitales registrados
+  en el contexto Health, garantizando que estas operaciones no produzcan efectos
+  secundarios en el dominio.
+* **Métodos principales:**
+  * `handle(GetVitalSignsByResidentIdQuery query): List<VitalSigns>`
+  * `handle(GetAbnormalVitalSignsByResidentIdQuery query): List<VitalSigns>`
+  * `handle(GetVitalSignsByConditionStatusQuery query): List<VitalSigns>`
+    **`AllergyQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre alergias registradas para
+  los residentes.
+* **Métodos principales:**
+  * `handle(GetAllergiesByResidentIdQuery query): List<Allergy>`
+  * `handle(GetAllergiesBySeverityQuery query): List<Allergy>`
+---
 
 #### 4.2.3.4. Infrastructure Layer
 
