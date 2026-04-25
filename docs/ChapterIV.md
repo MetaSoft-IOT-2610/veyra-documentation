@@ -602,6 +602,67 @@ modificación (Commands) de las de lectura (Queries).
   * `handle(GetResidentsByStatusQuery query): List<Resident>`
 ---
 
+#### 4.2.1.4. Infrastructure Layer
+
+Esta capa proporciona las implementaciones técnicas de los contratos definidos en
+las capas superiores del contexto Nursing.
+
+**`CarePlanRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `ICarePlanRepository` utilizando
+  Spring Data JPA para el acceso a la base de datos relacional.
+* **Atributos:** Extiende de `JpaRepository<CarePlan, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `CarePlan` a la tabla `care_plans`
+  mediante anotaciones ORM.
+  **`MedicationRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IMedicationRepository` utilizando
+  Spring Data JPA.
+* **Atributos:** Extiende de `JpaRepository<Medication, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `Medication` a la tabla `medications`.
+  **`ResidentRepository`**, **`RelativeRepository`**, **`NursingHomeRepository`**
+* **Tipo:** Repository Implementations
+* **Propósito:** Implementaciones concretas de sus respectivas interfaces de
+  repositorio utilizando Spring Data JPA.
+* **Atributos:** Extienden de `JpaRepository<T, Long>`.
+* **Relaciones:** Mapean las entidades del dominio a sus tablas correspondientes
+  (`residents`, `relatives`, `nursing_homes`) mediante anotaciones ORM.
+  **`NotificationServiceImpl`**
+* **Tipo:** Infrastructure Service (External)
+* **Propósito:** Implementa la interfaz de notificación para enviar alertas externas
+  cuando el stock de un medicamento está por agotarse o cuando se registra una
+  reacción adversa. Se integra con el Notification Service externo de la plataforma.
+* **Relaciones:** Utilizado por `MedicationCommandServiceImpl` para disparar
+  alertas de stock bajo hacia los familiares del residente.
+---
+
+#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes muestra la estructura interna del Bounded Context
+Nursing, detallando los principales componentes de software que lo conforman y las
+relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades
+dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+
+#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
+internas del Bounded Context Nursing, mostrando las clases, sus relaciones y el
+esquema de base de datos que soporta el modelo del dominio.
+
+##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases de la capa de dominio representa las entidades, objetos de
+valor, agregados e interfaces que conforman el modelo del negocio del contexto
+Nursing. Muestra las relaciones de composición, herencia y dependencia entre los
+elementos del dominio.
+
+##### 4.2.1.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos muestra el esquema de persistencia del
+Bounded Context Nursing, incluyendo las tablas, columnas, claves primarias, claves
+foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
+adoptadas para soportar el dominio.
+
 ### 4.2.3. Bounded Context: \<Bounded Context Name\>
 
 Este bounded context encapsula las responsabilidades relacionadas con \<área funcional\>. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
