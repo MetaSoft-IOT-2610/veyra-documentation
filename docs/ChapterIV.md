@@ -714,6 +714,165 @@ Bounded Context Nursing, incluyendo las tablas, columnas, claves primarias, clav
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
 
+### 4.2.2. Bounded Context: Tracking
+
+En esta sección, el equipo presenta las clases identificadas y las detalla a manera de
+diccionario, explicando para cada una su nombre, propósito y la documentación de
+atributos y métodos considerados, junto con las relaciones entre ellas.
+
+#### 4.2.2.1. Domain Layer
+
+Esta capa contiene el núcleo del negocio del contexto Tracking, incluyendo las
+entidades, objetos de valor y abstracciones de repositorios que definen las reglas
+de evaluación clínica inicial y continua del residente, manteniéndose agnóstica de
+frameworks externos.
+
+**`ClinicalAssessment`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa la evaluación clínica formal realizada por un Doctor sobre
+  un residente. Es el agregado raíz que garantiza la consistencia del proceso de
+  evaluación inicial, asegurando que ninguna fase (registro de historial, diagnóstico,
+  signos vitales, nivel de riesgo) pueda completarse sin haber iniciado formalmente
+  la evaluación.
+* **Atributos:**
+  * `id`: Long
+  * `residentId`: Long
+  * `doctorId`: Long
+  * `status`: AssessmentStatus (Value Object / Enum)
+  * `startedAt`: LocalDateTime
+  * `completedAt`: LocalDateTime
+  * `medicalNeedNotified`: boolean
+* **Métodos principales:**
+  * `complete(): ClinicalAssessment`
+  * `notifyMedicalNeed(): ClinicalAssessment`
+* **Relaciones:** Referencia a `MedicalHistory`, `VitalSigns` y `RiskProfile` por
+  identificador. Administrado a través de `IClinicalAssessmentRepository`.
+  **`MedicalHistory`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa el historial médico acumulativo de un residente. Es creado
+  una única vez durante la evaluación inicial y enriquecido iterativamente con
+  diagnósticos y condiciones registradas. Garantiza la trazabilidad clínica completa
+  del residente a lo largo del tiempo.
+* **Atributos:**
+  * `id`: Long
+  * `residentId`: Long
+  * `assessmentId`: Long
+  * `diagnoses`: List<Diagnosis> (Value Object)
+  * `conditions`: List<String>
+  * `createdAt`: LocalDateTime
+  * `updatedAt`: LocalDateTime
+* **Métodos principales:**
+  * `addDiagnosis(Diagnosis diagnosis): MedicalHistory`
+  * `recordCondition(String condition): MedicalHistory`
+  * `evaluateResidentCondition(String condition): MedicalHistory`
+* **Relaciones:** Pertenece a un `ClinicalAssessment`. Administrado a través de
+  `IMedicalHistoryRepository`.
+  **`VitalSigns`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa el registro de signos vitales de un residente durante una
+  evaluación clínica. Detecta automáticamente anomalías al momento del registro
+  y emite la señal correspondiente para escalar al contexto Health.
+* **Atributos:**
+  * `id`: Long
+  * `assessmentId`: Long
+  * `residentId`: Long
+  * `bloodPressure`: BloodPressure (Value Object)
+  * `heartRate`: Integer
+  * `temperature`: Double
+  * `oxygenSaturation`: Double
+  * `recordedAt`: LocalDateTime
+  * `isAbnormal`: boolean
+* **Métodos principales:**
+  * `record(BloodPressure bp, Integer heartRate, Double temp, Double oxygen): VitalSigns`
+  * `detectAnomaly(): VitalSigns`
+  * `isAbnormal(): boolean`
+* **Relaciones:** Pertenece a un `ClinicalAssessment`. Administrado a través de
+  `IVitalSignsRepository`.
+  **`RiskProfile`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa la evaluación del nivel de riesgo clínico y dependencia
+  de un residente. Provee la información base que el contexto Nursing necesita para
+  crear el plan de cuidado adecuado.
+* **Atributos:**
+  * `id`: Long
+  * `assessmentId`: Long
+  * `residentId`: Long
+  * `riskLevel`: RiskLevel (Value Object / Enum)
+  * `dependencyLevel`: DependencyLevel (Value Object / Enum)
+  * `assessedAt`: LocalDateTime
+* **Métodos principales:**
+  * `assessRisk(RiskLevel level): RiskProfile`
+  * `assessDependency(DependencyLevel level): RiskProfile`
+* **Relaciones:** Pertenece a un `ClinicalAssessment`. Administrado a través de
+  `IRiskProfileRepository`.
+  **`AssessmentStatus`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los estados válidos del ciclo de vida de una evaluación clínica:
+  `STARTED`, `IN_PROGRESS`, `COMPLETED`. Garantiza que no existan transiciones
+  de estado inválidas en tiempo de ejecución.
+  **`Diagnosis`**
+* **Tipo DDD:** Value Object
+* **Propósito:** Encapsula un diagnóstico clínico de forma inmutable, incluyendo
+  el código de diagnóstico y su descripción, garantizando consistencia en el registro
+  del historial médico.
+* **Atributos:**
+  * `code`: String (ej. `ICD-10`)
+  * `description`: String
+  * `diagnosedAt`: LocalDate
+    **`BloodPressure`**
+* **Tipo DDD:** Value Object
+* **Propósito:** Encapsula los valores de presión arterial sistólica y diastólica de
+  forma inmutable, permitiendo la validación de rangos normales en el momento
+  del registro.
+* **Atributos:**
+  * `systolic`: Integer
+  * `diastolic`: Integer
+    **`RiskLevel`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los niveles de riesgo clínico válidos: `LOW`, `MEDIUM`,
+  `HIGH`, `CRITICAL`. Garantiza que el nivel de riesgo asignado sea siempre un
+  valor reconocido por el sistema.
+  **`DependencyLevel`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los niveles de dependencia válidos para un residente:
+  `INDEPENDENT`, `PARTIAL`, `TOTAL`. Permite al contexto Nursing determinar
+  el tipo de cuidado necesario.
+  **`IClinicalAssessmentRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción que define las operaciones de persistencia
+  y recuperación del agregado `ClinicalAssessment`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<ClinicalAssessment>`
+  * `findByResidentId(Long residentId): Optional<ClinicalAssessment>`
+  * `findByStatus(AssessmentStatus status): List<ClinicalAssessment>`
+  * `save(ClinicalAssessment assessment): ClinicalAssessment`
+    **`IMedicalHistoryRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia del agregado
+  `MedicalHistory`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<MedicalHistory>`
+  * `findByResidentId(Long residentId): Optional<MedicalHistory>`
+  * `save(MedicalHistory history): MedicalHistory`
+    **`IVitalSignsRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia del agregado
+  `VitalSigns`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<VitalSigns>`
+  * `findByAssessmentId(Long assessmentId): List<VitalSigns>`
+  * `findAbnormalByResidentId(Long residentId): List<VitalSigns>`
+  * `save(VitalSigns vitalSigns): VitalSigns`
+    **`IRiskProfileRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia del agregado
+  `RiskProfile`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<RiskProfile>`
+  * `findByResidentId(Long residentId): Optional<RiskProfile>`
+  * `save(RiskProfile riskProfile): RiskProfile`
+---
+
 ### 4.2.3. Bounded Context: \<Bounded Context Name\>
 
 Este bounded context encapsula las responsabilidades relacionadas con \<área funcional\>. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
