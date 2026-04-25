@@ -747,7 +747,6 @@ Esta capa contiene el núcleo del negocio, incluyendo las entidades, objetos de 
 Esta capa orquesta los casos de uso del negocio. Maneja el flujo del proceso utilizando un patrón CQRS (Command Query Responsibility Segregation) implícito, separando las intenciones de modificación (Commands) de las de lectura (Queries).
 
 **`SignUpCommand` & `SignInCommand`**
-* **Tipo:** Command (Input DTO)
 * **Propósito:** Objetos inmutables que encapsulan la intención del usuario de registrarse o iniciar sesión, transportando los datos necesarios (Username, Password, Roles) hacia los manejadores.
 
 **`UserCommandServiceImpl`**
@@ -772,11 +771,11 @@ Esta capa expone los *capabilities* del Bounded Context hacia clientes externos,
 
 **`AuthenticationController`**
 * **Tipo:** REST API Controller
-* **Propósito:** Proveer los puntos finales (endpoints) HTTP, recibir las peticiones, des-serializar el JSON en *Resources/DTOs* y mapearlos a *Commands*.
+* **Propósito:** Proveer los puntos finales (endpoints) HTTP, recibir las peticiones, des-serializar el JSON en *Resources* y mapearlos a *Commands*.
 * **Endpoints expuestos:**
   * `POST /api/v1/authentication/sign-up`
   * `POST /api/v1/authentication/sign-in`
-* **Relaciones:** Interactúa con `UserCommandService`. Utiliza clases `Assembler` o `Mapper` para aislar los DTOs de presentación (`SignUpResource`, `SignInResource`) de los comandos de aplicación.
+* **Relaciones:** Interactúa con `UserCommandService`. Utiliza clases `Assembler` o `Mapper` para aislar los *Resources* de presentación (`SignUpResource`, `SignInResource`) de los comandos de aplicación.
 
 #### 4.2.7.4. Infrastructure Layer
 
