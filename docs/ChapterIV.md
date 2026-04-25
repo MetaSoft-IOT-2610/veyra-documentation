@@ -1550,6 +1550,54 @@ modificación (Commands) de las de lectura (Queries).
   * `handle(GetCareTasksByStatusQuery query): List<CareTask>`
 ---
 
+#### 4.2.4.4. Infrastructure Layer
+
+Esta capa proporciona las implementaciones técnicas de los contratos definidos en
+las capas superiores del contexto HCM.
+
+**`StaffRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IStaffRepository` utilizando Spring
+  Data JPA para el acceso a la base de datos relacional.
+* **Atributos:** Extiende de `JpaRepository<Staff, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `Staff` a la tabla `staff` mediante
+  anotaciones ORM.
+  **`CareTaskRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `ICareTaskRepository` utilizando
+  Spring Data JPA.
+* **Atributos:** Extiende de `JpaRepository<CareTask, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `CareTask` a la tabla `care_tasks`
+  mediante anotaciones ORM.
+---
+
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes muestra la estructura interna del Bounded Context HCM,
+detallando los principales componentes de software que lo conforman y las
+relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades
+dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
+internas del Bounded Context HCM, mostrando las clases, sus relaciones y el
+esquema de base de datos que soporta el modelo del dominio.
+
+##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases de la capa de dominio representa las entidades, objetos de
+valor, agregados e interfaces que conforman el modelo del negocio del contexto HCM.
+Muestra las relaciones de composición, herencia y dependencia entre los elementos
+del dominio.
+
+##### 4.2.4.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos muestra el esquema de persistencia del
+Bounded Context HCM, incluyendo las tablas, columnas, claves primarias, claves
+foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
+adoptadas para soportar el dominio.
+
 ### 4.2.7 Bounded Context: Identity and Access Management (IAM)
 
 En esta sección, el equipo presenta las clases identificadas y las detalla a manera de diccionario, explicando para cada una su nombre, propósito y la documentación de atributos y métodos considerados, junto con las relaciones entre ellas.
