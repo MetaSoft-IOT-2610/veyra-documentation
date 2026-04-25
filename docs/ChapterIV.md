@@ -255,11 +255,245 @@ El diagrama de despliegue describe cómo los contenedores de software se distrib
 
 El diseño táctico traduce el modelo estratégico en estructuras concretas de código dentro de cada contexto delimitado. En esta sección se detallan las capas de cada contexto de Veyra, sus entidades, agregados, servicios de dominio y repositorios, así como los diagramas de componentes y de base de datos que guían la implementación del sistema de monitoreo IoT. Cada subsección corresponde a un contexto delimitado identificado durante el diseño estratégico.
 
-### 4.2.1 Bounded Context: Identity and Access Management (IAM)
+### 4.2.1. Bounded Context: Nursing
+
+En esta sección, el equipo presenta las clases identificadas y las detalla a manera de
+diccionario, explicando para cada una su nombre, propósito y la documentación de
+atributos y métodos considerados, junto con las relaciones entre ellas.
+
+#### 4.2.1.1. Domain Layer
+
+Esta capa contiene el núcleo del negocio del contexto Nursing, incluyendo las
+entidades, objetos de valor y abstracciones de repositorios que definen las reglas
+clínicas de cuidado, administración de medicamentos y gestión del residente,
+manteniéndose agnóstica de frameworks externos.
+
+**`CarePlan`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa el plan de cuidado clínico de un residente. Es el agregado
+  raíz que garantiza la consistencia del ciclo de vida del plan (creación, aprobación,
+  ejecución, suspensión y cierre), asegurando que ninguna fase pueda ejecutarse sin
+  haber cumplido las precondiciones de negocio establecidas.
+* **Atributos:**
+  * `id`: Long
+  * `residentId`: Long
+  * `doctorId`: Long
+  * `status`: CarePlanStatus (Value Object / Enum)
+  * `description`: String
+  * `startDate`: LocalDate
+  * `endDate`: LocalDate
+  * `createdAt`: LocalDateTime
+  * `updatedAt`: LocalDateTime
+* **Métodos principales:**
+  * `approve(): CarePlan`
+  * `suspend(): CarePlan`
+  * `complete(): CarePlan`
+  * `reassess(): CarePlan`
+  * `cancel(): CarePlan`
+* **Relaciones:** Referencia a `Resident` y a `Doctor` por identificador. Administrado
+  a través de `ICarePlanRepository`.
+
+**`Medication`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa el ciclo de vida completo de un medicamento dentro del
+  hogar de reposo: desde su prescripción y programación, hasta su administración,
+  confirmación y control de stock. Garantiza que ningún medicamento pueda ser
+  administrado sin una orden programada válida.
+* **Atributos:**
+  * `id`: Long
+  * `name`: String
+  * `carePlanId`: Long
+  * `dosage`: Dosage (Value Object)
+  * `schedule`: MedicationSchedule (Value Object)
+  * `stock`: Integer
+  * `status`: MedicationStatus (Value Object / Enum)
+  * `prescribedAt`: LocalDateTime
+* **Métodos principales:**
+  * `schedule(MedicationSchedule schedule): Medication`
+  * `administer(): Medication`
+  * `confirmAdministration(): Medication`
+  * `registerMissedDose(): Medication`
+  * `adjustDosage(Dosage newDosage): Medication`
+  * `discontinue(): Medication`
+  * `decrementStock(): Medication`
+  * `isStockLow(): boolean`
+* **Relaciones:** Pertenece a un `CarePlan`. Administrado a través de
+  `IMedicationRepository`.
+
+**`Resident`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa al residente admitido en el hogar de reposo. Centraliza
+  la información de su estado de admisión, condición registrada y asignación de
+  habitación y familiar, asegurando la consistencia de todos los datos que otros
+  contextos consumen sobre el residente.
+* **Atributos:**
+  * `id`: Long
+  * `fullName`: String
+  * `admissionDate`: LocalDate
+  * `roomId`: Long
+  * `relativeId`: Long
+  * `condition`: String
+  * `status`: ResidentStatus (Value Object / Enum)
+* **Métodos principales:**
+  * `assignRoom(Long roomId): Resident`
+  * `assignRelative(Long relativeId): Resident`
+  * `registerCondition(String condition): Resident`
+  * `accept(MedicationAdministration administration): Resident`
+  * `refuse(MedicationAdministration administration): Resident`
+* **Relaciones:** Referenciado por `CarePlan` y `Medication`. Administrado a través
+  de `IResidentRepository`.
+
+**`Relative`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa al familiar vinculado a uno o más residentes. Permite
+  gestionar la relación de responsabilidad económica y de visita, y recibir
+  notificaciones de stock bajo o de eventos críticos de salud.
+* **Atributos:**
+  * `id`: Long
+  * `fullName`: String
+  * `email`: String
+  * `phone`: String
+  * `residentIds`: List<Long>
+* **Métodos principales:**
+  * `linkResident(Long residentId): Relative`
+  * `unlinkResident(Long residentId): Relative`
+* **Relaciones:** Referenciado por `Resident`. Administrado a través de
+  `IRelativeRepository`.
+
+**`NursingHome`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa la entidad del hogar de reposo como organización.
+  Centraliza la asignación de habitaciones y la capacidad operativa del establecimiento.
+* **Atributos:**
+  * `id`: Long
+  * `name`: String
+  * `address`: String
+  * `totalRooms`: Integer
+  * `availableRooms`: Integer
+* **Métodos principales:**
+  * `assignRoom(Long residentId): NursingHome`
+  * `releaseRoom(Long roomId): NursingHome`
+  * `hasAvailableRooms(): boolean`
+* **Relaciones:** Referenciado por `Resident`. Administrado a través de
+  `INursingHomeRepository`.
+
+**`CarePlanStatus`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los estados válidos del ciclo de vida de un plan de cuidado:
+  `DRAFT`, `APPROVED`, `ACTIVE`, `SUSPENDED`, `COMPLETED`, `CANCELLED`,
+  `REASSESSED`. Garantiza que no existan transiciones de estado inválidas en
+  tiempo de ejecución.
+
+**`MedicationStatus`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los estados válidos de un medicamento: `PRESCRIBED`,
+  `SCHEDULED`, `ADMINISTERED`, `MISSED`, `DISCONTINUED`. Asegura la
+  trazabilidad completa del ciclo de administración.
+
+**`Dosage`**
+* **Tipo DDD:** Value Object
+* **Propósito:** Encapsula la cantidad y unidad de medida de una dosis de
+  medicamento de forma inmutable, evitando errores por dosificación incorrecta.
+* **Atributos:**
+  * `amount`: Double
+  * `unit`: String (ej. `mg`, `ml`)
+
+**`MedicationSchedule`**
+* **Tipo DDD:** Value Object
+* **Propósito:** Encapsula la frecuencia y horarios en que debe administrarse un
+  medicamento, garantizando que la programación sea consistente y no modificable
+  una vez establecida sin emitir un nuevo comando.
+* **Atributos:**
+  * `frequency`: String (ej. `every 8 hours`)
+  * `times`: List<LocalTime>
+  * `startDate`: LocalDate
+
+**`ResidentStatus`**
+* **Tipo DDD:** Value Object (Enum)
+* **Propósito:** Define los estados válidos de un residente: `ADMITTED`,
+  `DISCHARGED`, `WAITLISTED`. Garantiza la consistencia del estado de admisión
+  en todos los contextos que lo consumen.
+
+**`ICarePlanRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción que define las operaciones de persistencia
+  y recuperación del agregado `CarePlan`, aislando el dominio de la base de datos.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<CarePlan>`
+  * `findByResidentId(Long residentId): List<CarePlan>`
+  * `findByStatus(CarePlanStatus status): List<CarePlan>`
+  * `save(CarePlan carePlan): CarePlan`
+
+**`IMedicationRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia del agregado
+  `Medication`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<Medication>`
+  * `findByCarePlanId(Long carePlanId): List<Medication>`
+  * `findLowStock(): List<Medication>`
+  * `save(Medication medication): Medication`
+
+**`IResidentRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción para la persistencia del agregado
+  `Resident`.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<Resident>`
+  * `findByStatus(ResidentStatus status): List<Resident>`
+  * `save(Resident resident): Resident`
+
+**`IRelativeRepository`** & **`INursingHomeRepository`**
+* **Tipo DDD:** Repository Interfaces
+* **Propósito:** Contratos de abstracción para la persistencia de los agregados
+  `Relative` y `NursingHome` respectivamente.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<T>`
+  * `save(T entity): T`
+
+---
+
+### 4.2.3. Bounded Context: \<Bounded Context Name\>
+
+Este bounded context encapsula las responsabilidades relacionadas con \<área funcional\>. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
+
+#### 4.2.3.1. Domain Layer
+
+La capa de dominio contiene los elementos centrales del modelo de negocio: entidades, objetos de valor, agregados, eventos de dominio e interfaces de repositorio. Esta capa es independiente de cualquier tecnología o framework y representa las reglas e invariantes propias del contexto delimitado.
+
+#### 4.2.3.2. Interface Layer
+
+La capa de interfaz expone los puntos de entrada al contexto delimitado hacia el exterior, ya sea mediante controladores REST, consumidores de mensajes u otros mecanismos de comunicación. Su responsabilidad es transformar las solicitudes entrantes en comandos o consultas comprensibles por las capas internas.
+
+#### 4.2.3.3. Application Layer
+
+La capa de aplicación orquesta los casos de uso del contexto delimitado. Coordina la interacción entre la capa de dominio y la capa de infraestructura, ejecutando los flujos de negocios sin contener lógica de dominio propia. Aquí se implementan los manejadores de comandos y las consultas de la aplicación.
+
+#### 4.2.3.4. Infrastructure Layer
+
+La capa de infraestructura provee las implementaciones concretas de las interfaces definidas en el dominio, incluyendo repositorios, adaptadores de servicios externos, clientes de mensajería y configuraciones de persistencia. Esta capa gestiona los detalles técnicos que permiten que el sistema funcione sobre la infraestructura elegida.
+
+#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes muestra la estructura interna del contexto delimitado, detallando los principales componentes de software que lo conforman y las relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+
+#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+Los diagramas de nivel de código ofrecen una vista detallada de las estructuras internas del contexto delimitado, mostrando las clases, sus relaciones y el esquema de base de datos que soporta el modelo del dominio.
+
+##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo del negocio de contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
+
+##### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos muestra el esquema de persistencia del contexto delimitado, incluyendo las tablas, columnas, claves primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos adoptadas para soportar el dominio.
+
+### 4.2.7 Bounded Context: Identity and Access Management (IAM)
 
 En esta sección, el equipo presenta las clases identificadas y las detalla a manera de diccionario, explicando para cada una su nombre, propósito y la documentación de atributos y métodos considerados, junto con las relaciones entre ellas.
 
-#### 4.2.1.1 Domain Layer
+#### 4.2.7.1 Domain Layer
 
 Esta capa contiene el núcleo del negocio, incluyendo las entidades, objetos de valor y abstracciones de repositorios que definen las reglas de identidad y acceso, manteniéndose agnóstica de frameworks externos.
 
@@ -299,7 +533,7 @@ Esta capa contiene el núcleo del negocio, incluyendo las entidades, objetos de 
   * `existsByUsername(String username): boolean`
   * `save(User user): User`
 
-#### 4.2.1.2. Application Layer
+#### 4.2.7.2. Application Layer
 Esta capa orquesta los casos de uso del negocio. Maneja el flujo del proceso utilizando un patrón CQRS (Command Query Responsibility Segregation) implícito, separando las intenciones de modificación (Commands) de las de lectura (Queries).
 
 **`SignUpCommand` & `SignInCommand`**
@@ -323,7 +557,7 @@ Esta capa orquesta los casos de uso del negocio. Maneja el flujo del proceso uti
 * **Métodos principales:**
   * `handle(GetAllUsersQuery query): List<User>`
   * `handle(GetUserByIdQuery query): Optional<User>`
-#### 4.2.1.3. Interface Layer
+#### 4.2.7.3. Interface Layer
 Esta capa expone los *capabilities* del Bounded Context hacia clientes externos, actuando como la frontera del sistema.
 
 **`AuthenticationController`**
@@ -334,7 +568,7 @@ Esta capa expone los *capabilities* del Bounded Context hacia clientes externos,
   * `POST /api/v1/authentication/sign-in`
 * **Relaciones:** Interactúa con `UserCommandService`. Utiliza clases `Assembler` o `Mapper` para aislar los DTOs de presentación (`SignUpResource`, `SignInResource`) de los comandos de aplicación.
 
-#### 4.2.1.4. Infrastructure Layer
+#### 4.2.7.4. Infrastructure Layer
 
 Esta capa proporciona las implementaciones técnicas de los contratos definidos en las capas superiores.
 
@@ -353,90 +587,19 @@ Esta capa proporciona las implementaciones técnicas de los contratos definidos 
 * **Propósito:** Encargado de la generación, firma y validación de los JSON Web Tokens (JWT) para mantener la sesión *stateless* del sistema tras un inicio de sesión exitoso.
 * **Relaciones:** Utilizado por `UserCommandServiceImpl` para empaquetar la identidad confirmada en un token retornable.
 
-#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+#### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
 
 El diagrama de componentes muestra la estructura interna del contexto delimitado, detallando los principales componentes de software que lo conforman y las relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades dentro del contexto y cómo se comunican con otros contextos o servicios externos.
 
-#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
+#### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
 
 Los diagramas de nivel de código ofrecen una vista detallada de las estructuras internas del contexto delimitado, mostrando las clases, sus relaciones y el esquema de base de datos que soporta el modelo del dominio.
 
-##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+##### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
 
 El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo del negocio de contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
 
-##### 4.2.1.6.2. Bounded Context Database Design Diagram
+##### 4.2.7.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del contexto delimitado, incluyendo las tablas, columnas, claves primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos adoptadas para soportar el dominio.
 
-### 4.2.2. Bounded Context: \<Bounded Context Name\>
-
-Este bounded context encapsula las responsabilidades relacionadas con \<área funcional\>. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
-
-#### 4.2.2.1. Domain Layer
-
-La capa de dominio contiene los elementos centrales del modelo de negocio: entidades, objetos de valor, agregados, eventos de dominio e interfaces de repositorio. Esta capa es independiente de cualquier tecnología o framework y representa las reglas e invariantes propias del contexto delimitado.
-
-#### 4.2.2.2. Interface Layer
-
-La capa de interfaz expone los puntos de entrada al contexto delimitado hacia el exterior, ya sea mediante controladores REST, consumidores de mensajes u otros mecanismos de comunicación. Su responsabilidad es transformar las solicitudes entrantes en comandos o consultas comprensibles por las capas internas.
-
-#### 4.2.2.3. Application Layer
-
-La capa de aplicación orquesta los casos de uso del contexto delimitado. Coordina la interacción entre la capa de dominio y la capa de infraestructura, ejecutando los flujos de negocios sin contener lógica de dominio propia. Aquí se implementan los manejadores de comandos y las consultas de la aplicación.
-
-#### 4.2.2.4. Infrastructure Layer
-
-La capa de infraestructura provee las implementaciones concretas de las interfaces definidas en el dominio, incluyendo repositorios, adaptadores de servicios externos, clientes de mensajería y configuraciones de persistencia. Esta capa gestiona los detalles técnicos que permiten que el sistema funcione sobre la infraestructura elegida.
-
-#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
-
-El diagrama de componentes muestra la estructura interna del contexto delimitado, detallando los principales componentes de software que lo conforman y las relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades dentro del contexto y cómo se comunican con otros contextos o servicios externos.
-
-#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
-
-Los diagramas de nivel de código ofrecen una vista detallada de las estructuras internas del contexto delimitado, mostrando las clases, sus relaciones y el esquema de base de datos que soporta el modelo del dominio.
-
-##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
-
-El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo del negocio de contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
-
-##### 4.2.2.6.2. Bounded Context Database Design Diagram
-
-El diagrama de diseño de base de datos muestra el esquema de persistencia del contexto delimitado, incluyendo las tablas, columnas, claves primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos adoptadas para soportar el dominio.
-
-### 4.2.3. Bounded Context: \<Bounded Context Name\>
-
-Este bounded context encapsula las responsabilidades relacionadas con \<área funcional\>. A continuación se describen las capas que lo componen, siguiendo la arquitectura en capas propia del diseño táctico de DDD, y se presentan los diagramas que detallan su estructura interna y modelo de datos.
-
-#### 4.2.3.1. Domain Layer
-
-La capa de dominio contiene los elementos centrales del modelo de negocio: entidades, objetos de valor, agregados, eventos de dominio e interfaces de repositorio. Esta capa es independiente de cualquier tecnología o framework y representa las reglas e invariantes propias del contexto delimitado.
-
-#### 4.2.3.2. Interface Layer
-
-La capa de interfaz expone los puntos de entrada al contexto delimitado hacia el exterior, ya sea mediante controladores REST, consumidores de mensajes u otros mecanismos de comunicación. Su responsabilidad es transformar las solicitudes entrantes en comandos o consultas comprensibles por las capas internas.
-
-#### 4.2.3.3. Application Layer
-
-La capa de aplicación orquesta los casos de uso del contexto delimitado. Coordina la interacción entre la capa de dominio y la capa de infraestructura, ejecutando los flujos de negocios sin contener lógica de dominio propia. Aquí se implementan los manejadores de comandos y las consultas de la aplicación.
-
-#### 4.2.3.4. Infrastructure Layer
-
-La capa de infraestructura provee las implementaciones concretas de las interfaces definidas en el dominio, incluyendo repositorios, adaptadores de servicios externos, clientes de mensajería y configuraciones de persistencia. Esta capa gestiona los detalles técnicos que permiten que el sistema funcione sobre la infraestructura elegida.
-
-#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
-
-El diagrama de componentes muestra la estructura interna del contexto delimitado, detallando los principales componentes de software que lo conforman y las relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades dentro del contexto y cómo se comunican con otros contextos o servicios externos.
-
-#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
-
-Los diagramas de nivel de código ofrecen una vista detallada de las estructuras internas del contexto delimitado, mostrando las clases, sus relaciones y el esquema de base de datos que soporta el modelo del dominio.
-
-##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
-
-El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo del negocio de contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
-
-##### 4.2.3.6.2. Bounded Context Database Design Diagram
-
-El diagrama de diseño de base de datos muestra el esquema de persistencia del contexto delimitado, incluyendo las tablas, columnas, claves primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos adoptadas para soportar el dominio.
