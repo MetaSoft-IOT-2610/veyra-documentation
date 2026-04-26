@@ -75,7 +75,15 @@ Las políticas identificadas fueron:
 
 Estas políticas permiten automatizar procesos críticos del sistema, reduciendo la intervención manual y asegurando respuestas oportunas ante situaciones de riesgo.
 
-![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4.png)
+
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part1.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part2.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part3.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part4.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part5.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part6.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part7.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part8.png)
 
 #### 4.1.1.1. Candidate Context Discovery
 
