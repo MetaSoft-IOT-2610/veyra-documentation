@@ -2868,3 +2868,78 @@ El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Subscriptions & Payments, incluyendo las tablas, columnas, claves
 primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de
 modelado de datos adoptadas para soportar el dominio.
+
+### 4.2.10. Bounded Context: Analytics
+
+En esta sección, el equipo presenta las clases identificadas y las detalla a manera de
+diccionario, explicando para cada una su nombre, propósito y la documentación de
+atributos y métodos considerados, junto con las relaciones entre ellas.
+
+#### 4.2.10.1. Domain Layer
+
+Esta capa contiene el núcleo del negocio del contexto Analytics, incluyendo las
+entidades, objetos de valor y abstracciones de repositorios que definen las reglas
+de monitoreo continuo de métricas de salud de los residentes, manteniéndose
+agnóstica de frameworks externos.
+
+**`Metrics`**
+* **Tipo DDD:** Aggregate Root
+* **Propósito:** Representa el conjunto de métricas de salud monitoreadas en tiempo
+  real para un residente a través de dispositivos IoT. Es el agregado raíz que
+  garantiza la consistencia del registro y consulta de métricas clínicas,
+  asegurando que todas las mediciones queden trazadas contra el perfil del residente
+  con su respectivo timestamp. Integra métricas de frecuencia cardíaca, saturación
+  de oxígeno y ubicación geográfica, siendo esta última resuelta a través del
+  servicio externo Google Maps.
+* **Atributos:**
+  * `id`: Long
+  * `residentId`: Long
+  * `heartRate`: HeartRateMetric (Value Object)
+  * `oxygenSaturation`: OxygenSaturationMetric (Value Object)
+  * `location`: LocationMetric (Value Object)
+  * `recordedAt`: LocalDateTime
+* **Métodos principales:**
+  * `monitorHeartRate(HeartRateMetric heartRate): Metrics`
+  * `monitorOxygenSaturation(OxygenSaturationMetric oxygenSaturation): Metrics`
+  * `monitorLocation(LocationMetric location): Metrics`
+* **Relaciones:** Referencia al residente por `residentId`. Administrado a través
+  de `IMetricsRepository`.
+  **`HeartRateMetric`**
+* **Tipo DDD:** Value Object
+* **Propósito:** Encapsula la medición de frecuencia cardíaca de un residente de
+  forma inmutable, incluyendo el valor en BPM y el indicador de si el valor se
+  encuentra fuera del rango normal configurado.
+* **Atributos:**
+  * `bpm`: Integer
+  * `isAbnormal`: boolean
+  * `measuredAt`: LocalDateTime
+    **`OxygenSaturationMetric`**
+* **Tipo DDD:** Value Object
+* **Propósito:** Encapsula la medición de saturación de oxígeno en sangre (SpO2)
+  de un residente de forma inmutable, permitiendo detectar eventos de hipoxia
+  cuando el valor cae por debajo del umbral configurado.
+* **Atributos:**
+  * `percentage`: Double
+  * `isAbnormal`: boolean
+  * `measuredAt`: LocalDateTime
+    **`LocationMetric`**
+* **Tipo DDD:** Value Object
+* **Propósito:** Encapsula la posición geográfica en tiempo real de un residente
+  de forma inmutable. Integra con Google Maps como servicio externo para resolver
+  la ubicación y presentarla en el Analytics View.
+* **Atributos:**
+  * `latitude`: Double
+  * `longitude`: Double
+  * `address`: String
+  * `measuredAt`: LocalDateTime
+    **`IMetricsRepository`**
+* **Tipo DDD:** Repository Interface
+* **Propósito:** Contrato de abstracción que define las operaciones de persistencia
+  y recuperación del agregado `Metrics`, aislando el dominio de la base de datos.
+* **Métodos representativos:**
+  * `findById(Long id): Optional<Metrics>`
+  * `findByResidentId(Long residentId): List<Metrics>`
+  * `findLatestByResidentId(Long residentId): Optional<Metrics>`
+  * `findByResidentIdAndRecordedAtBetween(Long residentId, LocalDateTime from, LocalDateTime to): List<Metrics>`
+  * `save(Metrics metrics): Metrics`
+---
