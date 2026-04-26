@@ -188,6 +188,32 @@ El tablero completo del Event Storming puede ser consultado en el siguiente enla
 
 El modelado de flujos de mensajes describe cómo los distintos contextos delimitados se comunican entre sí a través de eventos y comandos. En Veyra, estos flujos incluyen la propagación de lecturas de signos vitales desde el contexto de dispositivos IoT hacia el contexto de monitoreo, la emisión de alertas clínicas hacia el contexto de notificaciones cuando se detecta una anomalía, y la sincronización del estado de suscripción entre el contexto de pagos y el de control de acceso. Este modelo permite visualizar las dependencias entre contextos, los puntos de integración y el flujo de información a lo largo de los procesos clave de la plataforma.
 
+
+Scenario 1: Report adverse reaction to medication
+
+![Scenario 1](../assets/img/chapter-IV/domain-message-flow/domain-message-1.png)
+
+
+Scenario 2: Send notifications to relative due to abnormal vital signs detected
+
+![Scenario 2](../assets/img/chapter-IV/domain-message-flow/domain-message-2.png)
+
+Scenario 3: Create care plan
+
+![Scenario 3](../assets/img/chapter-IV/domain-message-flow/domain-message-3.png)
+
+Scenario 4: Access to platform
+
+![Scenario 4](../assets/img/chapter-IV/domain-message-flow/domain-message-4.png)
+
+Scenario 5: Choose subscription plan
+
+![Scenario 5](../assets/img/chapter-IV/domain-message-flow/domain-message-5.png)
+
+Sceraio 6: Resident register
+
+![Scenario 6](../assets/img/chapter-IV/domain-message-flow/domain-message-6.png)
+
 #### 4.1.1.3. Bounded Context Canvases
 
 En esta sección se detallan los bounded contexts siguiendo un proceso iterativo recomendado para el Bounded Context Canvas. A continuación se describe el proceso de diseño de cada contexto, incluyendo la definición del contexto, las reglas de negocio, el lenguaje ubicuo, y el análisis de capacidades.
