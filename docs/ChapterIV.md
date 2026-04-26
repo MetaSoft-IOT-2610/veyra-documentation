@@ -339,8 +339,23 @@ Durante la fase de modelado basada en el dominio, hemos logrado identificar los 
 - **Patrón de integración:** *Customer/Supplier*
 - **Descripción:** Nursing necesita conocer qué enfermera está asignada a un residente y en qué turno se encuentra activa antes de ejecutar tareas de cuidado. HCM provee esta información operativa del personal bajo los términos que Nursing negocia como cliente, asegurando que la asignación de responsables sea válida en el momento de cada intervención.
 
+#### Communication → Activities
+- **Relación:** Upstream (Communication) / Downstream (Activities)
+- **Patrón de integración:** *Published Language*
+- **Descripción:** Communication emite eventos como `VisitScheduled` o `VisitAuthorized` que Activities consume para adaptar la rutina diaria del residente, por ejemplo, pausando o reagendando actividades durante una visita. Activities no conoce la lógica interna de Communication; solo reacciona a los eventos publicados.
 
-  
+#### Activities → Health
+- **Relación:** Upstream (Activities) / Downstream (Health)
+- **Patrón de integración:** *Anti-Corruption Layer (ACL)*
+- **Descripción:** Cuando Activities registra eventos como una caída durante sesiones de movilidad o un nivel de hidratación crítico, Health los consume pero los traduce a su propio modelo clínico a través de una capa anticorrupción (*ACL*). Este mecanismo protege al dominio de salud de ser contaminado con el lenguaje y las abstracciones propias de las actividades cotidianas, preservando la integridad semántica del modelo médico.
+
+#### Health → Nursing
+- **Relación:** Upstream (Health) / Downstream (Nursing)
+- **Patrón de integración:** *Published Language*
+- **Descripción:** Health emite eventos como `AbnormalVitalSignsDetected` o `CriticalConditionIdentified` que Nursing consume para ajustar el *Care Plan* o la medicación del residente. Nursing no necesita conocer los detalles internos del proceso de detección de anomalías de Health; únicamente reacciona a los eventos publicados bajo un contrato estable.
+
+
+
 ![Context Mapping diagram](/assets/img/chapter-IV/context-mapping/context-mapping.png)
 
 ### 4.1.3. Software Architecture
