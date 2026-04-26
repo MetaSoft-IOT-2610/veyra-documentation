@@ -319,7 +319,13 @@ Durante la fase de modelado basada en el dominio, hemos logrado identificar los 
 - **Patrón de integración:** *Conformist*
 - **Descripción:** Tracking adopta el modelo de usuario definido por IAM para asociar evaluaciones clínicas e historiales médicos a la identidad concreta de un residente. No existe reinterpretación del modelo de identidad: Tracking lo consume tal como IAM lo expone.
 
+#### Profiles → Subscriptions and Payments
+- **Relación:** Upstream (Profiles) / Downstream (Subscriptions and Payments)
+- **Patrón de integración:** *Customer/Supplier*
+- **Descripción:** Subscriptions and Payments necesita datos del perfil del familiar o responsable legal para generar órdenes de pago correctamente vinculadas a la persona. Profiles provee esos datos bajo los términos que Subscriptions and Payments negocia como cliente, garantizando que la facturación quede asociada al titular correcto.
 
+
+  
 ![Context Mapping diagram](/assets/img/chapter-IV/context-mapping/context-mapping.png)
 
 ### 4.1.3. Software Architecture
