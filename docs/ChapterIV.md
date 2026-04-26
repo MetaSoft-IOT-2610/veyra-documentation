@@ -2394,9 +2394,13 @@ Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
 
 El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo del negocio de contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
 
+![iam back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/iam/iam-backend-diagram.puml)
+
 ##### 4.2.7.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del contexto delimitado, incluyendo las tablas, columnas, claves primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/iam/iam-database-diagram.puml)
 
 ### 4.2.8. Bounded Context: Profiles
 
@@ -2692,12 +2696,16 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Profiles. Muestra las relaciones de composición, herencia y dependencia entre los
 elementos del dominio.
 
+![profiles back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/profiles/profiles-backend-diagram.puml)
+
 ##### 4.2.8.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Profiles, incluyendo las tablas, columnas, claves primarias, claves
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/profiles/profiles-database-diagram.puml)
 
 ### 4.2.9. Bounded Context: Subscriptions & Payments
 
@@ -2955,12 +2963,16 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Subscriptions & Payments. Muestra las relaciones de composición, herencia y
 dependencia entre los elementos del dominio.
 
+![subscriptions back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/payments/payments-backend-diagram.puml)
+
 ##### 4.2.9.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Subscriptions & Payments, incluyendo las tablas, columnas, claves
 primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de
 modelado de datos adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/payments/payments-database-diagram.puml)
 
 ### 4.2.10. Bounded Context: Analytics
 
@@ -3143,6 +3155,8 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Analytics. Muestra las relaciones de composición, herencia y dependencia entre los
 elementos del dominio.
 
+![analytics back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/analytics/analytics-backend-diagram.puml)
+
 ##### 4.2.10.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
@@ -3150,3 +3164,4 @@ Bounded Context Analytics, incluyendo las tablas, columnas, claves primarias, cl
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
  
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/analytics/analytics-database-diagram.puml)
