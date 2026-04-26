@@ -59,16 +59,33 @@
 
 ## Report Version History
 
-| Version | Date | Author | Description |
-|---------|------|--------|-------------|
-| 1.0 | 03/04/2026 | Calvo Yálan, Renato Guillermo | Adición del Capítulo I: Se redactaron las secciones 1.1 Startup Profile y 1.1.1 Descripción de la Startup. |
-| 1.1 | 03/04/2026 | Armas Sánchez, Oscar Javier | Adición de la sección 1.1.2 Perfiles de integrantes del equipo. |
-| 1.2 | 03/04/2026 | Llerena Delgado, Renzo Miguel | Adición de la sección 1.2 Solution Profile y 1.2.1 Antecedentes y problemática aplicando la técnica 5W's y 2H's. |
-| 1.3 | 03/04/2026 | Quijandria Araneda, Vicente | Adición de la sección 1.2.2 Lean UX Process: Problem Statements y 1.2.2.1 Lean UX Problem Statements. |
-| 1.4 | 03/04/2026 | Rios Piñan, Dayro Richard | Adición de las secciones 1.2.2.2 Lean UX Assumptions y 1.2.2.3 Lean UX Hypothesis Statements. |
-| 1.5 | 03/04/2026 | Saldaña Vela, Janover Gonzalo | Adición de la sección 1.2.2.4 Lean UX Canvas. |
-| 1.6 | 03/04/2026 | Villafuerte Tapia, Renzo Alonso | Adición de la sección 1.3 Segmentos objetivo con características demográficas e información estadística de sustento. |
-
+| Version | Date       | Author                                  | Description                                                                                                          |
+|---------|-----------|------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| 1.0     | 03/04/2026 | Calvo Yálan, Renato Guillermo            | Se creó la estructura inicial del informe y se redactó la sección 1.1 Startup Profile.                              |
+| 1.1     | 03/04/2026 | Armas Sánchez, Oscar Javier              | Se agregó la sección 1.1.2 Perfiles de integrantes del equipo.                                                       |
+| 1.2     | 04/04/2026 | Llerena Delgado, Renzo Miguel            | Se desarrolló la sección 1.2.1 Antecedentes y problemática aplicando 5W's y 2H's.                                     |
+| 1.3     | 05/04/2026 | Quijandria Araneda, Vicente              | Se agregó la sección 1.2.2.1 Lean UX Problem Statements.                                                              |
+| 1.4     | 06/04/2026 | Rios Piñan, Dayro Richard                | Se desarrollaron las secciones 1.2.2.2 Lean UX Assumptions y 1.2.2.3 Lean UX Hypothesis Statements.                   |
+| 1.5     | 07/04/2026 | Saldaña Vela, Janover Gonzalo            | Se agregó la sección 1.2.2.4 Lean UX Canvas.                                                                          |
+| 1.6     | 08/04/2026 | Villafuerte Tapia, Renzo Alonso          | Se desarrolló la sección 1.3 Segmentos objetivo con sustento estadístico.                                             |
+| 1.7     | 09/04/2026 | Calvo Yálan, Renato Guillermo            | Se inició el Capítulo II con la sección 2.1 Competidores.                                                             |
+| 1.8     | 10/04/2026 | Armas Sánchez, Oscar Javier              | Se desarrolló la sección 2.1.1 Análisis competitivo.                                                                  |
+| 1.9     | 11/04/2026 | Llerena Delgado, Renzo Miguel            | Se agregó la sección 2.1.2 Estrategias y tácticas frente a competidores.                                              |
+| 2.0     | 12/04/2026 | Quijandria Araneda, Vicente              | Se desarrolló la sección 2.2.1 Diseño de entrevistas.                                                                 |
+| 2.1     | 13/04/2026 | Rios Piñan, Dayro Richard                | Se registraron las entrevistas en la sección 2.2.2 Registro de entrevistas.                                          |
+| 2.2     | 14/04/2026 | Saldaña Vela, Janover Gonzalo            | Se realizó el análisis de entrevistas en la sección 2.2.3.                                                            |
+| 2.3     | 15/04/2026 | Villafuerte Tapia, Renzo Alonso          | Se desarrollaron los User Personas en la sección 2.3.1.                                                               |
+| 2.4     | 16/04/2026 | Calvo Yálan, Renato Guillermo            | Se agregó la sección 2.3.2 User Task Matrix.                                                                          |
+| 2.5     | 17/04/2026 | Armas Sánchez, Oscar Javier              | Se desarrolló la sección 2.3.3 User Journey Mapping.                                                                  |
+| 2.6     | 18/04/2026 | Llerena Delgado, Renzo Miguel            | Se agregó la sección 2.3.4 Empathy Mapping.                                                                           |
+| 2.7     | 19/04/2026 | Quijandria Araneda, Vicente              | Se desarrolló la sección 2.4 Big Picture EventStorming.                                                               |
+| 2.8     | 20/04/2026 | Rios Piñan, Dayro Richard                | Se definió el Ubiquitous Language en la sección 2.5.                                                                  |
+| 2.9     | 21/04/2026 | Saldaña Vela, Janover Gonzalo            | Se inició el Capítulo III con la sección 3.1 User Stories.                                                            |
+| 3.0     | 22/04/2026 | Villafuerte Tapia, Renzo Alonso          | Se desarrolló la sección 3.2 Impact Mapping.                                                                          |
+| 3.1     | 23/04/2026 | Calvo Yálan, Renato Guillermo            | Se elaboró el Product Backlog en la sección 3.3.                                                                      |
+| 3.2     | 24/04/2026 | Armas Sánchez, Oscar Javier              | Se inició el Capítulo IV con la sección 4.1 Strategic-Level Domain-Driven Design.                                     |
+| 3.3     | 25/04/2026 | Llerena Delgado, Renzo Miguel            | Se desarrollaron las secciones de EventStorming y Candidate Context Discovery.                                       |
+| 3.4     | 26/04/2026 | Saldaña Vela, Janover Gonzalo            | Se avanzó la arquitectura de software (Context, Container y Deployment Diagrams) y revisión general del documento.  |
 ---
 
 ## Project Report Collaboration Insights
