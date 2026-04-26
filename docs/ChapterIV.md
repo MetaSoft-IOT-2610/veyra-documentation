@@ -779,6 +779,7 @@ Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
 internas del Bounded Context Nursing, mostrando las clases, sus relaciones y el
 esquema de base de datos que soporta el modelo del dominio.
 
+
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
 El diagrama de clases de la capa de dominio representa las entidades, objetos de
@@ -786,12 +787,17 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Nursing. Muestra las relaciones de composición, herencia y dependencia entre los
 elementos del dominio.
 
+![nursing back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/nursing/nursing-backend-diagram.puml)
+
+
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Nursing, incluyendo las tablas, columnas, claves primarias, claves
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/nursing/nursing-database-diagram.puml)
 
 ### 4.2.2. Bounded Context: Tracking
 
