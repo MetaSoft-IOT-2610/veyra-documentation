@@ -354,7 +354,14 @@ Durante la fase de modelado basada en el dominio, hemos logrado identificar los 
 - **Patrón de integración:** *Published Language*
 - **Descripción:** Health emite eventos como `AbnormalVitalSignsDetected` o `CriticalConditionIdentified` que Nursing consume para ajustar el *Care Plan* o la medicación del residente. Nursing no necesita conocer los detalles internos del proceso de detección de anomalías de Health; únicamente reacciona a los eventos publicados bajo un contrato estable.
 
+### Resumen de patrones aplicados
 
+| Patrón | Relaciones |
+|---|---|
+| *Customer/Supplier* | Subscriptions → IAM, Profiles → Subscriptions, Tracking → Nursing, HCM → Nursing |
+| *Conformist* | IAM → Profiles, IAM → Tracking |
+| *Published Language* | Tracking → Communication, Communication → Activities, Health → Nursing |
+| *Anti-Corruption Layer* | Activities → Health |
 
 ![Context Mapping diagram](/assets/img/chapter-IV/context-mapping/context-mapping.png)
 
