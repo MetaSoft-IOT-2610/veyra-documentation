@@ -173,7 +173,6 @@ Finalmente, definimos los Bounded Contexts que agrupan los flujos relacionados e
 | **BC: Activities**| Gestiona las actividades diarias del residente.                             |
 | **BC: Health**    | Gestiona monitoreo de signos vitales y alertas críticas.                    |
 
-![Step 8 - Bounded Contexts](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-8.jpg)
 
 
 ## Enlace al tablero de Miro
