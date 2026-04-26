@@ -159,6 +159,8 @@ En este paso identificamos los Aggregates, que representan los objetos de domini
 
 
 Paso 8: Bounded Contexts
+![Step 8 - Bounded Contexts](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-8.jpg)
+
 
 Finalmente, definimos los Bounded Contexts que agrupan los flujos relacionados en contextos delimitados con responsabilidades claras. Cada Bounded Context representa un subdominio independiente con su propio lenguaje ubicuo.
 
