@@ -52,8 +52,9 @@ En este paso definimos los comandos que los diferentes actores pueden ejecutar e
 | **Healthcare Staff** | Take Vital Signs, Record Vital Signs, Administer Medication, Start Shift, Report Absence, Log Meal, Log Bath, Log Hygiene Care, Complete Care Task, End Shift, Log Observation |
 | **Relative** | Submit Resident Documents, Schedule Visit, Process Payment |
 
-![Step 3 - Commands](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-3.png)
-
+![Step 3 - Commands](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-3-part1.png)
+![Step 3 - Commands](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-3-part2.png)
+![Step 3 - Commands](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-3-part3.png)
 
 Paso 4: Policies and Actors
 
