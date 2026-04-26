@@ -333,6 +333,13 @@ Durante la fase de modelado basada en el dominio, hemos logrado identificar los 
 - **Relación:** Upstream (Tracking) / Downstream (Communication)
 - **Patrón de integración:** *Published Language*
 - **Descripción:** Tracking emite eventos de dominio con un lenguaje publicado y estable, como `MedicalNeedNotified` o `RiskLevelAssessed`, que Communication consume directamente para notificar al personal médico o a los familiares del residente. Communication no altera el modelo de Tracking ni necesita conocer su lógica interna.
+
+#### HCM → Nursing
+- **Relación:** Upstream (HCM) / Downstream (Nursing)
+- **Patrón de integración:** *Customer/Supplier*
+- **Descripción:** Nursing necesita conocer qué enfermera está asignada a un residente y en qué turno se encuentra activa antes de ejecutar tareas de cuidado. HCM provee esta información operativa del personal bajo los términos que Nursing negocia como cliente, asegurando que la asignación de responsables sea válida en el momento de cada intervención.
+
+
   
 ![Context Mapping diagram](/assets/img/chapter-IV/context-mapping/context-mapping.png)
 
