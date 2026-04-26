@@ -779,6 +779,7 @@ Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
 internas del Bounded Context Nursing, mostrando las clases, sus relaciones y el
 esquema de base de datos que soporta el modelo del dominio.
 
+
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
 El diagrama de clases de la capa de dominio representa las entidades, objetos de
@@ -786,12 +787,17 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Nursing. Muestra las relaciones de composición, herencia y dependencia entre los
 elementos del dominio.
 
+![nursing back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/nursing/nursing-backend-diagram.puml)
+
+
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Nursing, incluyendo las tablas, columnas, claves primarias, claves
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/nursing/nursing-database-diagram.puml)
 
 ### 4.2.2. Bounded Context: Tracking
 
@@ -1160,12 +1166,16 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Tracking. Muestra las relaciones de composición, herencia y dependencia entre los
 elementos del dominio.
 
+![tracking back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/tracking/tracking-backend-diagram.puml)
+
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Tracking, incluyendo las tablas, columnas, claves primarias, claves
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/tracking/tracking-database-diagram.puml)
 
 ### 4.2.3. Bounded Context: Health
 
@@ -1412,12 +1422,16 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Health. Muestra las relaciones de composición, herencia y dependencia entre los
 elementos del dominio.
 
+![health back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/health/health-backend-diagram.puml)
+
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Health, incluyendo las tablas, columnas, claves primarias, claves
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/health/health-database-diagram.puml)
 
 ### 4.2.4. Bounded Context: HCM — Human Capital Management
 
@@ -1670,12 +1684,16 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto H
 Muestra las relaciones de composición, herencia y dependencia entre los elementos
 del dominio.
 
+![hcm back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/hcm/hcm-backend-diagram.puml)
+
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context HCM, incluyendo las tablas, columnas, claves primarias, claves
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/hcm/hcm-database-diagram.puml)
 
 ### 4.2.5. Bounded Context: Activities
 
@@ -2069,12 +2087,16 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Activities. Muestra las relaciones de composición, herencia y dependencia entre
 los elementos del dominio.
 
+![activities back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/activities/activities-backend-diagram.puml)
+
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Activities, incluyendo las tablas, columnas, claves primarias,
 claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado
 de datos adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/activities/activities-database-diagram.puml)
 
 ### 4.2.6. Bounded Context: Communication
 
@@ -2372,9 +2394,13 @@ Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
 
 El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo del negocio de contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
 
+![iam back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/iam/iam-backend-diagram.puml)
+
 ##### 4.2.7.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del contexto delimitado, incluyendo las tablas, columnas, claves primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/iam/iam-database-diagram.puml)
 
 ### 4.2.8. Bounded Context: Profiles
 
@@ -2670,12 +2696,16 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Profiles. Muestra las relaciones de composición, herencia y dependencia entre los
 elementos del dominio.
 
+![profiles back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/profiles/profiles-backend-diagram.puml)
+
 ##### 4.2.8.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Profiles, incluyendo las tablas, columnas, claves primarias, claves
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/profiles/profiles-database-diagram.puml)
 
 ### 4.2.9. Bounded Context: Subscriptions & Payments
 
@@ -2933,12 +2963,16 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Subscriptions & Payments. Muestra las relaciones de composición, herencia y
 dependencia entre los elementos del dominio.
 
+![subscriptions back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/payments/payments-backend-diagram.puml)
+
 ##### 4.2.9.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Subscriptions & Payments, incluyendo las tablas, columnas, claves
 primarias, claves foráneas y relaciones entre entidades. Refleja las decisiones de
 modelado de datos adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/payments/payments-database-diagram.puml)
 
 ### 4.2.10. Bounded Context: Analytics
 
@@ -3121,6 +3155,8 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Analytics. Muestra las relaciones de composición, herencia y dependencia entre los
 elementos del dominio.
 
+![analytics back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/analytics/analytics-backend-diagram.puml)
+
 ##### 4.2.10.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
@@ -3128,3 +3164,4 @@ Bounded Context Analytics, incluyendo las tablas, columnas, claves primarias, cl
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
  
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/analytics/analytics-database-diagram.puml)
