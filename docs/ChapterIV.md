@@ -2087,6 +2087,7 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Activities. Muestra las relaciones de composición, herencia y dependencia entre
 los elementos del dominio.
 
+![activities back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/activities/activities-backend-diagram.puml)
 
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
 
@@ -2094,6 +2095,8 @@ El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Activities, incluyendo las tablas, columnas, claves primarias,
 claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado
 de datos adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/activities/activities-database-diagram.puml)
 
 ### 4.2.6. Bounded Context: Communication
 
