@@ -3005,3 +3005,55 @@ modificación (Commands) de las de lectura (Queries).
   * `handle(GetLatestMetricsByResidentIdQuery query): Optional<Metrics>`
   * `handle(GetMetricsByResidentIdAndDateRangeQuery query): List<Metrics>`
 ---
+
+#### 4.2.10.4. Infrastructure Layer
+
+Esta capa proporciona las implementaciones técnicas de los contratos definidos en
+las capas superiores del contexto Analytics.
+
+**`MetricsRepository`**
+* **Tipo:** Repository Implementation
+* **Propósito:** Implementación concreta de `IMetricsRepository` utilizando Spring
+  Data JPA para el acceso a la base de datos relacional.
+* **Atributos:** Extiende de `JpaRepository<Metrics, Long>`.
+* **Relaciones:** Mapea la entidad de dominio `Metrics` a la tabla
+  `resident_metrics` mediante anotaciones ORM.
+  **`GoogleMapsServiceImpl`**
+* **Tipo:** Infrastructure Service (External)
+* **Propósito:** Implementa la interfaz de geolocalización para resolver la
+  dirección y coordenadas geográficas de un residente a través de la API de
+  Google Maps. Actúa como Anti-Corruption Layer entre el dominio y el servicio
+  externo de mapas, traduciendo las coordenadas IoT en datos de ubicación
+  comprensibles para los usuarios del Analytics View.
+* **Relaciones:** Utilizado por `MetricsCommandServiceImpl` para enriquecer
+  las métricas de ubicación con información geográfica legible.
+---
+
+#### 4.2.10.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama de componentes muestra la estructura interna del Bounded Context
+Analytics, detallando los principales componentes de software que lo conforman y
+las relaciones entre ellos. Permite visualizar cómo se organizan las
+responsabilidades dentro del contexto y cómo se comunican con otros contextos
+o servicios externos como Google Maps.
+
+#### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams
+
+Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
+internas del Bounded Context Analytics, mostrando las clases, sus relaciones y el
+esquema de base de datos que soporta el modelo del dominio.
+
+##### 4.2.10.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases de la capa de dominio representa las entidades, objetos de
+valor, agregados e interfaces que conforman el modelo del negocio del contexto
+Analytics. Muestra las relaciones de composición, herencia y dependencia entre los
+elementos del dominio.
+
+##### 4.2.10.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos muestra el esquema de persistencia del
+Bounded Context Analytics, incluyendo las tablas, columnas, claves primarias, claves
+foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
+adoptadas para soportar el dominio.
+ 
