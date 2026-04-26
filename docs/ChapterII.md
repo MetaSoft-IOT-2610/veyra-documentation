@@ -514,6 +514,7 @@ To ensure seamless communication among developers, medical staff, and family mem
 | **Visit Restriction (Restricción de Visitas)** | Medida temporal que limita el acceso de visitas al residente por razones médicas o administrativas. |
 | **Hotspot (Punto Crítico)** | Situación especial del proceso que requiere reglas de negocio específicas. |
 
+
 ### Expected Benefits
 * **Elimination of ambiguities:** Developers and medical staff use the exact same names for the same concepts.
 * **Technical consistency:** The data model and codebase accurately reflect the geriatric domain.
