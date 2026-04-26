@@ -324,7 +324,15 @@ Durante la fase de modelado basada en el dominio, hemos logrado identificar los 
 - **Patrón de integración:** *Customer/Supplier*
 - **Descripción:** Subscriptions and Payments necesita datos del perfil del familiar o responsable legal para generar órdenes de pago correctamente vinculadas a la persona. Profiles provee esos datos bajo los términos que Subscriptions and Payments negocia como cliente, garantizando que la facturación quede asociada al titular correcto.
 
+#### Tracking → Nursing
+- **Relación:** Upstream (Tracking) / Downstream (Nursing)
+- **Patrón de integración:** *Customer/Supplier*
+- **Descripción:** Nursing consume la información del historial clínico longitudinal y la evaluación de riesgo del residente que Tracking gestiona, con el fin de fundamentar las decisiones del *Care Plan*. Tracking actúa como proveedor del contexto clínico acumulado que Nursing requiere para operar correctamente.
 
+#### Tracking → Communication
+- **Relación:** Upstream (Tracking) / Downstream (Communication)
+- **Patrón de integración:** *Published Language*
+- **Descripción:** Tracking emite eventos de dominio con un lenguaje publicado y estable, como `MedicalNeedNotified` o `RiskLevelAssessed`, que Communication consume directamente para notificar al personal médico o a los familiares del residente. Communication no altera el modelo de Tracking ni necesita conocer su lógica interna.
   
 ![Context Mapping diagram](/assets/img/chapter-IV/context-mapping/context-mapping.png)
 
