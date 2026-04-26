@@ -304,6 +304,20 @@ Durante la fase de modelado basada en el dominio, hemos logrado identificar los 
 
 ### Análisis de Bounded Contexts
 
+#### Subscriptions and Payments → IAM
+- **Relación:** Upstream (Subscriptions and Payments) / Downstream (IAM)
+- **Patrón de integración:** *Customer/Supplier*
+- **Descripción:** IAM depende de Subscriptions and Payments para validar que un usuario cuenta con un plan activo antes de concederle acceso al sistema. Subscriptions and Payments actúa como proveedor (*supplier*) de la información del plan vigente, mientras que IAM es el cliente (*customer*) que la consume para sus decisiones de autorización. La interfaz entre ambos se negocia bajo los términos que IAM requiere.
+
+#### IAM → Profiles
+- **Relación:** Upstream (IAM) / Downstream (Profiles)
+- **Patrón de integración:** *Conformist*
+- **Descripción:** Profiles adopta directamente el modelo de identidad definido por IAM sin aplicar ninguna transformación propia. IAM es la fuente de verdad (*source of truth*) en materia de autenticación, y Profiles se conforma a ese modelo para construir el perfil de cada persona: residente, familiar o personal de la institución.
+
+#### IAM → Tracking
+- **Relación:** Upstream (IAM) / Downstream (Tracking)
+- **Patrón de integración:** *Conformist*
+- **Descripción:** Tracking adopta el modelo de usuario definido por IAM para asociar evaluaciones clínicas e historiales médicos a la identidad concreta de un residente. No existe reinterpretación del modelo de identidad: Tracking lo consume tal como IAM lo expone.
 
 
 ![Context Mapping diagram](/assets/img/chapter-IV/context-mapping/context-mapping.png)
