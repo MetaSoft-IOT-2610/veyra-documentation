@@ -2943,3 +2943,65 @@ agnóstica de frameworks externos.
   * `findByResidentIdAndRecordedAtBetween(Long residentId, LocalDateTime from, LocalDateTime to): List<Metrics>`
   * `save(Metrics metrics): Metrics`
 ---
+
+#### 4.2.10.2. Interface Layer
+
+Esta capa expone los capabilities del Bounded Context Analytics hacia clientes
+externos, actuando como la frontera del sistema y traduciendo las peticiones HTTP
+en comandos de aplicación mediante el uso de Resources.
+
+**`MetricsController`**
+* **Tipo:** REST API Controller
+* **Propósito:** Proveer los endpoints HTTP para el monitoreo y consulta de métricas
+  de salud de residentes en tiempo real. Recibe las peticiones, deserializa el JSON
+  en Resources y los mapea a Commands mediante clases Assembler. Accesible por
+  Doctores, Familiares y personal de Healthcare Assistance.
+* **Endpoints expuestos:**
+  * `POST /api/v1/analytics/metrics` — Registrar métricas de residente
+  * `PUT /api/v1/analytics/metrics/{id}/heart-rate` — Monitorear frecuencia cardíaca
+  * `PUT /api/v1/analytics/metrics/{id}/oxygen-saturation` — Monitorear saturación de oxígeno
+  * `PUT /api/v1/analytics/metrics/{id}/location` — Monitorear ubicación
+  * `GET /api/v1/analytics/metrics/resident/{residentId}` — Todas las métricas por residente
+  * `GET /api/v1/analytics/metrics/resident/{residentId}/latest` — Últimas métricas por residente
+  * `GET /api/v1/analytics/metrics/resident/{residentId}/range` — Métricas por rango de fechas
+* **Relaciones:** Interactúa con `MetricsCommandService` y `MetricsQueryService`.
+  Utiliza clases Assembler para aislar los Resources de presentación de los
+  Commands de aplicación.
+---
+
+#### 4.2.10.3. Application Layer
+
+Esta capa orquesta los casos de uso del negocio del contexto Analytics. Maneja el
+flujo del proceso utilizando un patrón CQRS implícito, separando las intenciones de
+modificación (Commands) de las de lectura (Queries).
+
+**`CreateMetricsCommand`**, **`MonitorHeartRateCommand`**,
+**`MonitorOxygenSaturationCommand`**, **`MonitorLocationCommand`**
+* **Tipo:** Command
+* **Propósito:** Objetos inmutables que encapsulan cada intención de modificación
+  sobre el agregado `Metrics`, transportando los datos de las mediciones de los
+  dispositivos IoT hacia los manejadores de comandos.
+  **`MetricsCommandServiceImpl`**
+* **Tipo:** Command Handler (Application Service)
+* **Propósito:** Orquesta los casos de uso de registro y actualización de métricas
+  de salud. Coordina con el servicio externo Google Maps para resolver la ubicación
+  geográfica del residente cuando se registran métricas de localización.
+* **Atributos inyectados:**
+  * `metricsRepository`: IMetricsRepository
+  * `googleMapsService`: GoogleMapsService
+* **Métodos principales:**
+  * `handle(CreateMetricsCommand command): Optional<Metrics>`
+  * `handle(MonitorHeartRateCommand command): Optional<Metrics>`
+  * `handle(MonitorOxygenSaturationCommand command): Optional<Metrics>`
+  * `handle(MonitorLocationCommand command): Optional<Metrics>`
+    **`MetricsQueryServiceImpl`**
+* **Tipo:** Query Handler (Application Service)
+* **Propósito:** Maneja las consultas de lectura sobre métricas de salud de
+  residentes, garantizando que estas operaciones no produzcan efectos secundarios
+  en el dominio. Provee el Analytics View accesible en cualquier momento por los
+  actores autorizados.
+* **Métodos principales:**
+  * `handle(GetMetricsByResidentIdQuery query): List<Metrics>`
+  * `handle(GetLatestMetricsByResidentIdQuery query): Optional<Metrics>`
+  * `handle(GetMetricsByResidentIdAndDateRangeQuery query): List<Metrics>`
+---
