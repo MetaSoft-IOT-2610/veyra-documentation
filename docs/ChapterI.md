@@ -24,6 +24,7 @@ Desarrollar soluciones tecnológicas innovadoras que permitan a las organizacion
 
 ##### Visión
 
+
 Ser una startup referente en el desarrollo de soluciones IoT y plataformas inteligentes en Latinoamérica, destacando por su capacidad de innovación, escalabilidad y enfoque centrado en el usuario.
 
 #### 1.1.2. Perfiles de integrantes del equipo
