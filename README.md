@@ -71,21 +71,21 @@
 | 1.7     | 09/04/2026 | Calvo Yálan, Renato Guillermo            | Se inició el Capítulo II con la sección 2.1 Competidores.                                                             |
 | 1.8     | 10/04/2026 | Armas Sánchez, Oscar Javier              | Se desarrolló la sección 2.1.1 Análisis competitivo.                                                                  |
 | 1.9     | 11/04/2026 | Llerena Delgado, Renzo Miguel            | Se agregó la sección 2.1.2 Estrategias y tácticas frente a competidores.                                              |
-| 2.0     | 12/04/2026 | Quijandria Araneda, Vicente              | Se desarrolló la sección 2.2.1 Diseño de entrevistas.                                                                 |
-| 2.1     | 13/04/2026 | Rios Piñan, Dayro Richard                | Se registraron las entrevistas en la sección 2.2.2 Registro de entrevistas.                                          |
-| 2.2     | 14/04/2026 | Saldaña Vela, Janover Gonzalo            | Se realizó el análisis de entrevistas en la sección 2.2.3.                                                            |
-| 2.3     | 15/04/2026 | Villafuerte Tapia, Renzo Alonso          | Se desarrollaron los User Personas en la sección 2.3.1.                                                               |
-| 2.4     | 16/04/2026 | Calvo Yálan, Renato Guillermo            | Se agregó la sección 2.3.2 User Task Matrix.                                                                          |
-| 2.5     | 17/04/2026 | Armas Sánchez, Oscar Javier              | Se desarrolló la sección 2.3.3 User Journey Mapping.                                                                  |
-| 2.6     | 18/04/2026 | Llerena Delgado, Renzo Miguel            | Se agregó la sección 2.3.4 Empathy Mapping.                                                                           |
-| 2.7     | 19/04/2026 | Quijandria Araneda, Vicente              | Se desarrolló la sección 2.4 Big Picture EventStorming.                                                               |
-| 2.8     | 20/04/2026 | Rios Piñan, Dayro Richard                | Se definió el Ubiquitous Language en la sección 2.5.                                                                  |
-| 2.9     | 21/04/2026 | Saldaña Vela, Janover Gonzalo            | Se inició el Capítulo III con la sección 3.1 User Stories.                                                            |
-| 3.0     | 22/04/2026 | Villafuerte Tapia, Renzo Alonso          | Se desarrolló la sección 3.2 Impact Mapping.                                                                          |
-| 3.1     | 23/04/2026 | Calvo Yálan, Renato Guillermo            | Se elaboró el Product Backlog en la sección 3.3.                                                                      |
-| 3.2     | 24/04/2026 | Armas Sánchez, Oscar Javier              | Se inició el Capítulo IV con la sección 4.1 Strategic-Level Domain-Driven Design.                                     |
-| 3.3     | 25/04/2026 | Llerena Delgado, Renzo Miguel            | Se desarrollaron las secciones de EventStorming y Candidate Context Discovery.                                       |
-| 3.4     | 26/04/2026 | Saldaña Vela, Janover Gonzalo            | Se avanzó la arquitectura de software (Context, Container y Deployment Diagrams) y revisión general del documento.  |
+| 1.10     | 12/04/2026 | Quijandria Araneda, Vicente              | Se desarrolló la sección 2.2.1 Diseño de entrevistas.                                                                 |
+| 1.11     | 13/04/2026 | Rios Piñan, Dayro Richard                | Se registraron las entrevistas en la sección 2.2.2 Registro de entrevistas.                                          |
+| 1.12     | 14/04/2026 | Saldaña Vela, Janover Gonzalo            | Se realizó el análisis de entrevistas en la sección 2.2.3.                                                            |
+| 1.13     | 15/04/2026 | Villafuerte Tapia, Renzo Alonso          | Se desarrollaron los User Personas en la sección 2.3.1.                                                               |
+| 1.14     | 16/04/2026 | Calvo Yálan, Renato Guillermo            | Se agregó la sección 2.3.2 User Task Matrix.                                                                          |
+| 1.15     | 17/04/2026 | Armas Sánchez, Oscar Javier              | Se desarrolló la sección 2.3.3 User Journey Mapping.                                                                  |
+| 1.16     | 18/04/2026 | Llerena Delgado, Renzo Miguel            | Se agregó la sección 2.3.4 Empathy Mapping.                                                                           |
+| 1.17     | 19/04/2026 | Quijandria Araneda, Vicente              | Se desarrolló la sección 2.4 Big Picture EventStorming.                                                               |
+| 1.18     | 20/04/2026 | Rios Piñan, Dayro Richard                | Se definió el Ubiquitous Language en la sección 2.5.                                                                  |
+| 1.19     | 21/04/2026 | Saldaña Vela, Janover Gonzalo            | Se inició el Capítulo III con la sección 3.1 User Stories.                                                            |
+| 1.20     | 22/04/2026 | Villafuerte Tapia, Renzo Alonso          | Se desarrolló la sección 3.2 Impact Mapping.                                                                          |
+| 1.21     | 23/04/2026 | Calvo Yálan, Renato Guillermo            | Se elaboró el Product Backlog en la sección 3.3.                                                                      |
+| 1.22     | 24/04/2026 | Armas Sánchez, Oscar Javier              | Se inició el Capítulo IV con la sección 4.1 Strategic-Level Domain-Driven Design.                                     |
+| 1.23     | 25/04/2026 | Llerena Delgado, Renzo Miguel            | Se desarrollaron las secciones de EventStorming y Candidate Context Discovery.                                       |
+| 1.24     | 26/04/2026 | Saldaña Vela, Janover Gonzalo            | Se avanzó la arquitectura de software (Context, Container y Deployment Diagrams) y revisión general del documento.  |
 ---
 
 ## Project Report Collaboration Insights
@@ -161,15 +161,97 @@ Este gráfico ofrece una visualización de las veces que se ha clonado nuestro r
         - [4.1.3.2. Software Architecture Container Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterIV.md#4132-software-architecture-container-level-diagrams)
         - [4.1.3.3. Software Architecture Deployment Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterIV.md#4133-software-architecture-deployment-diagrams)
     - [4.2. Tactical-Level Domain-Driven Design](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterIV.md#42-tactical-level-domain-driven-design)
-        - [4.2.1. Bounded Context: \<Bounded Context Name\>](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterIV.md#42x-bounded-context-bounded-context-name)
-        - [4.2.1.1. Domain Layer](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterIV.md#42x1-domain-layer)
-        - [4.2.1.2. Interface Layer](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterIV.md#42x2-interface-layer)
-        - [4.2.1.3. Application Layer](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterIV.md#42x3-application-layer)
-        - [4.2.1.4. Infrastructure Layer](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterIV.md#42x4-infrastructure-layer)
-        - [4.2.1.5. Bounded Context Software Architecture Component Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterIV.md#42x5-bounded-context-software-architecture-component-level-diagrams)
-        - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterIV.md#42x6-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.1.6.1. Bounded Context Domain Layer Class Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterIV.md#42x61-bounded-context-domain-layer-class-diagrams)
-        - [4.2.1.6.2. Bounded Context Database Design Diagram](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterIV.md#42x62-bounded-context-database-design-diagram)
+        - [4.2.1. Bounded Context: Nursing](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#421-bounded-context-nursing)
+        - [4.2.1.1. Domain Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4211-domain-layer)
+        - [4.2.1.2. Interface Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4212-interface-layer)
+        - [4.2.1.3. Application Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4213-application-layer)
+        - [4.2.1.4. Infrastructure Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4214-infrastructure-layerr)
+        - [4.2.1.5. Bounded Context Software Architecture Component Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4215-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4216-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.1.6.1. Bounded Context Domain Layer Class Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42161-bounded-context-domain-layer-class-diagrams)
+        - [4.2.1.6.2. Bounded Context Database Design Diagram](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42162-bounded-context-database-design-diagram)
+        - [4.2.2. Bounded Context: Tracking](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#422-bounded-context-tracking)
+        - [4.2.2.1. Domain Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4221-domain-layer)
+        - [4.2.2.2. Interface Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4222-interface-layer)
+        - [4.2.2.3. Application Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4223-application-layer)
+        - [4.2.2.4. Infrastructure Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4224-infrastructure-layerr)
+        - [4.2.2.5. Bounded Context Software Architecture Component Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4225-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4226-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.2.6.1. Bounded Context Domain Layer Class Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42261-bounded-context-domain-layer-class-diagrams)
+        - [4.2.2.6.2. Bounded Context Database Design Diagram](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42262-bounded-context-database-design-diagram)
+        - [4.2.3. Bounded Context: Health](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#423-bounded-context-health)
+        - [4.2.3.1. Domain Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4231-domain-layer)
+        - [4.2.3.2. Interface Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4232-interface-layer)
+        - [4.2.3.3. Application Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4233-application-layer)
+        - [4.2.3.4. Infrastructure Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4234-infrastructure-layerr)
+        - [4.2.3.5. Bounded Context Software Architecture Component Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4235-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4236-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.3.6.1. Bounded Context Domain Layer Class Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42361-bounded-context-domain-layer-class-diagrams)
+        - [4.2.3.6.2. Bounded Context Database Design Diagram](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42362-bounded-context-database-design-diagram)
+        - [4.2.4. Bounded Context: HCM - Human Capital Management](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#424-bounded-context-hcm--human-capital-management)
+        - [4.2.4.1. Domain Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4241-domain-layer)
+        - [4.2.4.2. Interface Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4242-interface-layer)
+        - [4.2.4.3. Application Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4243-application-layer)
+        - [4.2.4.4. Infrastructure Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4244-infrastructure-layerr)
+        - [4.2.4.5. Bounded Context Software Architecture Component Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4245-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4246-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.4.6.1. Bounded Context Domain Layer Class Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42461-bounded-context-domain-layer-class-diagrams)
+        - [4.2.4.6.2. Bounded Context Database Design Diagram](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42462-bounded-context-database-design-diagram)
+        - [4.2.5. Bounded Context: Activities](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#425-bounded-context-activities)
+        - [4.2.5.1. Domain Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4251-domain-layer)
+        - [4.2.5.2. Interface Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4252-interface-layer)
+        - [4.2.5.3. Application Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4253-application-layer)
+        - [4.2.5.4. Infrastructure Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4254-infrastructure-layerr)
+        - [4.2.5.5. Bounded Context Software Architecture Component Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4255-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.5.6. Bounded Context Software Architecture Code Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4256-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.5.6.1. Bounded Context Domain Layer Class Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42561-bounded-context-domain-layer-class-diagrams)
+        - [4.2.5.6.2. Bounded Context Database Design Diagram](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42562-bounded-context-database-design-diagram)
+        - [4.2.6. Bounded Context: Communication](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#426-bounded-context-communication)
+        - [4.2.6.1. Domain Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4261-domain-layer)
+        - [4.2.6.2. Interface Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4262-interface-layer)
+        - [4.2.6.3. Application Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4263-application-layer)
+        - [4.2.6.4. Infrastructure Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4264-infrastructure-layerr)
+        - [4.2.6.5. Bounded Context Software Architecture Component Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4265-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.6.6. Bounded Context Software Architecture Code Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4266-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.6.6.1. Bounded Context Domain Layer Class Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42661-bounded-context-domain-layer-class-diagrams)
+        - [4.2.6.6.2. Bounded Context Database Design Diagram](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42662-bounded-context-database-design-diagram)
+        - [4.2.7. Bounded Context:  Identity and Access Management (IAM)](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#427-bounded-context-identity-and-access-management-iam)
+        - [4.2.7.1. Domain Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4271-domain-layer)
+        - [4.2.7.2. Interface Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4272-interface-layer)
+        - [4.2.7.3. Application Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4273-application-layer)
+        - [4.2.7.4. Infrastructure Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4274-infrastructure-layerr)
+        - [4.2.7.5. Bounded Context Software Architecture Component Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4275-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.7.6. Bounded Context Software Architecture Code Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4276-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.7.6.1. Bounded Context Domain Layer Class Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42761-bounded-context-domain-layer-class-diagrams)
+        - [4.2.7.6.2. Bounded Context Database Design Diagram](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42762-bounded-context-database-design-diagram)
+        - [4.2.8. Bounded Context: Profiles](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#428-bounded-context-profiles)
+        - [4.2.8.1. Domain Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4281-domain-layer)
+        - [4.2.8.2. Interface Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4282-interface-layer)
+        - [4.2.8.3. Application Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4283-application-layer)
+        - [4.2.8.4. Infrastructure Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4284-infrastructure-layerr)
+        - [4.2.8.5. Bounded Context Software Architecture Component Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4285-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.8.6. Bounded Context Software Architecture Code Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4286-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.8.6.1. Bounded Context Domain Layer Class Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42861-bounded-context-domain-layer-class-diagrams)
+        - [4.2.8.6.2. Bounded Context Database Design Diagram](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42862-bounded-context-database-design-diagram)
+        - [4.2.9. Bounded Context: Subscriptions & Payments](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#429-bounded-context-subscriptions--payments)
+        - [4.2.9.1. Domain Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4291-domain-layer)
+        - [4.2.9.2. Interface Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4292-interface-layer)
+        - [4.2.9.3. Application Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4293-application-layer)
+        - [4.2.9.4. Infrastructure Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4294-infrastructure-layerr)
+        - [4.2.9.5. Bounded Context Software Architecture Component Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4295-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.9.6. Bounded Context Software Architecture Code Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4296-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.9.6.1. Bounded Context Domain Layer Class Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42961-bounded-context-domain-layer-class-diagrams)
+        - [4.2.9.6.2. Bounded Context Database Design Diagram](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42962-bounded-context-database-design-diagram)
+        - [4.2.10. Bounded Context: Subscriptions & Payments](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#4210-bounded-context-analytics)
+        - [4.2.10.1. Domain Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42101-domain-layer)
+        - [4.2.10.2. Interface Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42102-interface-layer)
+        - [4.2.10.3. Application Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42103-application-layer)
+        - [4.2.10.4. Infrastructure Layer](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42104-infrastructure-layerr)
+        - [4.2.10.5. Bounded Context Software Architecture Component Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42105-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.10.6. Bounded Context Software Architecture Code Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42106-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.10.6.1. Bounded Context Domain Layer Class Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#421061-bounded-context-domain-layer-class-diagrams)
+        - [4.2.10.6.2. Bounded Context Database Design Diagram](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#421062-bounded-context-database-design-diagram)
+        
 
 - [Capítulo V: Solution UI/UX Design](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#cap%C3%ADtulo-v-solution-uiux-design)
     - [5.1. Style Guidelines](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#51-style-guidelines)
