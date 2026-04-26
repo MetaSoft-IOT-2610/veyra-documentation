@@ -214,9 +214,9 @@ Sceraio 6: Resident register
 
 ![Scenario 6](../assets/img/chapter-IV/domain-message-flow/domain-message-6.png)
 
-#### 4.1.1.3. Bounded Context Canvases
+### 4.1.2. Context Mapping
 
-En esta sección se detallan los bounded contexts siguiendo un proceso iterativo recomendado para el Bounded Context Canvas. A continuación se describe el proceso de diseño de cada contexto, incluyendo la definición del contexto, las reglas de negocio, el lenguaje ubicuo, y el análisis de capacidades.
+Durante la fase de modelado basada en el dominio (*Domain-Driven Design*), se identificaron los siguientes *bounded contexts*: **Identity and Access Management (IAM)**, **Profiles**, **Subscriptions and Payments**, **Tracking**, **Human Capital Management (HCM)**, **Nursing**, **Communication**, **Activities** y **Health**. A continuación se describe el tipo de relación existente entre cada par de contextos y el patrón de integración que los gobierna.
 
 #### Nursing Context - Canvas
 
