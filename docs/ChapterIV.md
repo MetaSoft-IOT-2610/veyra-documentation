@@ -785,6 +785,8 @@ Nursing, detallando los principales componentes de software que lo conforman y l
 relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades
 dentro del contexto y cómo se comunican con otros contextos o servicios externos.
 
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/NursingBCView.png)
+
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
 Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
@@ -1165,6 +1167,8 @@ Tracking, detallando los principales componentes de software que lo conforman y 
 relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades
 dentro del contexto y cómo se comunican con otros contextos o servicios externos.
 
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/TrackingBCView.png)
+
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 
 Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
@@ -1420,6 +1424,8 @@ El diagrama de componentes muestra la estructura interna del Bounded Context
 Health, detallando los principales componentes de software que lo conforman y las
 relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades
 dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/HealthBCView.png)
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1682,6 +1688,8 @@ El diagrama de componentes muestra la estructura interna del Bounded Context HCM
 detallando los principales componentes de software que lo conforman y las
 relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades
 dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/HCMBCView.png)
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -2085,6 +2093,8 @@ Activities, detallando los principales componentes de software que lo conforman 
 las relaciones entre ellos. Permite visualizar cómo se organizan las
 responsabilidades dentro del contexto y cómo se comunican con otros contextos
 o servicios externos.
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/ActivitiesBCView.png)
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
 
