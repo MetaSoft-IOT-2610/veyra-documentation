@@ -785,6 +785,16 @@ Nursing, detallando los principales componentes de software que lo conforman y l
 relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades
 dentro del contexto y cómo se comunican con otros contextos o servicios externos.
 
+Aplicación web: 
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebNursingBCView.png)
+
+Aplicación móvil:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileNursingBCView.png)
+
+Api: 
+
 ![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/NursingBCView.png)
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
@@ -1167,6 +1177,16 @@ Tracking, detallando los principales componentes de software que lo conforman y 
 relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades
 dentro del contexto y cómo se comunican con otros contextos o servicios externos.
 
+Aplicación web:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebTrackingBCView.png)
+
+Aplicación móvil:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileTrackingBCView.png)
+
+Api: 
+
 ![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/TrackingBCView.png)
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
@@ -1424,6 +1444,14 @@ El diagrama de componentes muestra la estructura interna del Bounded Context
 Health, detallando los principales componentes de software que lo conforman y las
 relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades
 dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+
+Aplicación web:
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebHealthBCView.png)
+
+Aplicación móvil:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileHealthBCView.png)
+
 
 ![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/HealthBCView.png)
 
@@ -1688,6 +1716,15 @@ El diagrama de componentes muestra la estructura interna del Bounded Context HCM
 detallando los principales componentes de software que lo conforman y las
 relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades
 dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+
+Aplicación web:
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebHcmBCView.png)
+
+
+Aplicación móvil:
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileHcmBCView.png)
+
+Api: 
 
 ![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/HCMBCView.png)
 
@@ -2094,6 +2131,15 @@ las relaciones entre ellos. Permite visualizar cómo se organizan las
 responsabilidades dentro del contexto y cómo se comunican con otros contextos
 o servicios externos.
 
+Aplicación web:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebActivitiesBCView.png)
+
+Aplicación móvil:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileActivitiesBCView.png)
+
+Api:
 ![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/ActivitiesBCView.png)
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
@@ -2287,6 +2333,17 @@ y las relaciones entre ellos. Permite visualizar cómo se organizan las
 responsabilidades dentro del contexto y cómo se comunican con otros contextos
 o servicios externos.
 
+Aplicación web:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebCommunicationBCView.png)
+
+
+Aplicación móvil:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileCommunicationBCView.png)
+
+Api:
+
 ![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/communication-component-diagram.svg)
 
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
@@ -2409,6 +2466,17 @@ Esta capa proporciona las implementaciones técnicas de los contratos definidos 
 #### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
 
 El diagrama de componentes muestra la estructura interna del contexto delimitado, detallando los principales componentes de software que lo conforman y las relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+
+Aplicación web:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebIAMBCView.png)
+
+
+Aplicación móvil:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileIAMBCView.png)
+
+Api:
 
 ![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/IAM-component-diagram.svg)
 
@@ -2709,6 +2777,17 @@ las relaciones entre ellos. Permite visualizar cómo se organizan las
 responsabilidades dentro del contexto y cómo se comunican con otros contextos
 o servicios externos.
 
+Aplicación web:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebProfilesBCView.png)
+
+
+Aplicación móvil:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileProfilesBCView.png)
+
+Api:
+
 ![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/profiles-component-diagram.svg)
 
 #### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
@@ -2978,6 +3057,18 @@ lo conforman y las relaciones entre ellos. Permite visualizar cómo se organizan
 las responsabilidades dentro del contexto y cómo se comunican con otros contextos
 o servicios externos como Stripe.
 
+Aplicación web:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebSubscriptionsBCView.png)
+
+
+Aplicación móvil:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileSubscriptionsBCView.png)
+
+Api:
+
+
 ![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/subscription&payments-component-diagram.svg)
 
 #### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
@@ -3171,6 +3262,17 @@ Analytics, detallando los principales componentes de software que lo conforman y
 las relaciones entre ellos. Permite visualizar cómo se organizan las
 responsabilidades dentro del contexto y cómo se comunican con otros contextos
 o servicios externos como Google Maps.
+
+Aplicación web:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebAnalyticsBCView.png)
+
+
+Aplicación móvil:
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileAnalyticsBCView.png)
+
+Api:
 
 ![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/analytics-component-diagram.svg)
 
