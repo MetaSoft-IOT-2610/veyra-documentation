@@ -2287,6 +2287,8 @@ y las relaciones entre ellos. Permite visualizar cómo se organizan las
 responsabilidades dentro del contexto y cómo se comunican con otros contextos
 o servicios externos.
 
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/communication-component-diagram.svg)
+
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
 
 Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
@@ -2407,6 +2409,8 @@ Esta capa proporciona las implementaciones técnicas de los contratos definidos 
 #### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
 
 El diagrama de componentes muestra la estructura interna del contexto delimitado, detallando los principales componentes de software que lo conforman y las relaciones entre ellos. Permite visualizar cómo se organizan las responsabilidades dentro del contexto y cómo se comunican con otros contextos o servicios externos.
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/IAM-component-diagram.svg)
 
 #### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -2705,6 +2709,8 @@ las relaciones entre ellos. Permite visualizar cómo se organizan las
 responsabilidades dentro del contexto y cómo se comunican con otros contextos
 o servicios externos.
 
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/profiles-component-diagram.svg)
+
 #### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
 
 Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
@@ -2972,6 +2978,8 @@ lo conforman y las relaciones entre ellos. Permite visualizar cómo se organizan
 las responsabilidades dentro del contexto y cómo se comunican con otros contextos
 o servicios externos como Stripe.
 
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/subscription&payments-component-diagram.svg)
+
 #### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
 
 Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
@@ -3163,6 +3171,8 @@ Analytics, detallando los principales componentes de software que lo conforman y
 las relaciones entre ellos. Permite visualizar cómo se organizan las
 responsabilidades dentro del contexto y cómo se comunican con otros contextos
 o servicios externos como Google Maps.
+
+![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/analytics-component-diagram.svg)
 
 #### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams
 
