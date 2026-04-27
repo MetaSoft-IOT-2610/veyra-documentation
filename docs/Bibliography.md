@@ -20,9 +20,11 @@
 - Gothelf, J., & Seiden, J. (2021). *Lean UX: Designing Great Products with Agile Teams* (3rd ed.). O'Reilly Media. Recuperado de https://www.oreilly.com/library/view/lean-ux-2nd/9781491953594/
 - HubSpot. (s.f.). *Full List of Meta Tags, Why They Matter for SEO & How to Write Them*. Recuperado de https://blog.hubspot.com/marketing/meta-tags
 - IBM Design. (s.f.). *Empathy Map*. Enterprise Design Thinking. Recuperado de https://www.ibm.com/design/thinking/page/toolkit/activity/empathy-map
+- Instituto Nacional de Estadística e Informática (INEI). (2026). *Situación de la población adulta mayor: IV trimestre 2025* (Informe técnico N.º 01). Recuperado de https://www.gob.pe/institucion/inei/informes-publicaciones/7940487-situacion-de-la-poblacion-adulta-mayor-iv-trimestre-2025
 - Mendel, J. (s.f.). *Seriously, what's your (startup's) problem?*. Medium. Recuperado de https://medium.com/@jakemendel/seriously-whats-your-startup-s-problem-b3a884c54ab4
 - Nielsen Norman Group. (1994). *10 Usability Heuristics for User Interface Design*. Recuperado de https://www.nngroup.com/articles/ten-usability-heuristics/
 - Nielsen Norman Group. (2016). *The Four Dimensions of Tone of Voice*. Recuperado de https://www.nngroup.com/articles/tone-of-voice-dimensions/
+- Organización para la Cooperación y el Desarrollo Económicos (OCDE). (2025). *Estudios de la OCDE sobre los sistemas de salud: Perú 2025*. OECD Publishing. Recuperado de https://doi.org/10.1787/262a739e-es
 - Preston-Werner, T. (s.f.). *Semantic Versioning 2.0.0*. Recuperado de https://semver.org/
 - Progressa Lean. (s.f.). *5W+2H - Técnica de análisis de problemas*. Recuperado de https://www.progressalean.com/5w2h-tecnica-de-analisis-de-problemas/
 - Refactoring.Guru. (s.f.). *Design Patterns*. Recuperado de https://refactoring.guru/es/design-patterns
