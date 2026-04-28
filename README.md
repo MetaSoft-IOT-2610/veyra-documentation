@@ -94,6 +94,36 @@
 
 **Link del repositorio-Informe**: https://github.com/MetaSoft-IOT-2610/veyra-documentation
 
+Github Collaboration Insights proporciona un cronograma que muestra las principales ramas y los procesos de fusión que han ocurrido. Todas las ramas se han generado siguiendo los principios de GitFlow, lo que garantiza una organización efectiva al utilizar un sistema de control de versiones.
+
+Janover Gonzalo Saldaña Vela (JanoverSaldana)
+Calvo Yálan, Renato Guillermo (RenatoCY)
+Armas Sánchez, Oscar Javier (Racso24k)
+Llerena Delgado, Renzo Miguel (Renxoll)
+Quijandria Araneda, Vicente (vquijandria)
+Rios Piñan, Dayro Richard (Addicted2you)
+Villafuerte Tapia, Renzo Alonso (RenzoVillafuerteTapia)
+
+Se dividieron las siguientes ramas para la colaboración en el proyecto:
+
+main
+develop
+feature/introduction
+feature/chapter-I
+feature/chapter-II
+feature/chapter-III
+feature/chapter-IV
+feature/chapter-V
+feature/chapter-VI
+feature/conclusions
+feature/bibliography
+feature/anexos
+release-av1
+release-tb1
+release-av2
+release-tb2
+
+
 **Reporte de colaboración de la entrega del AV1**:
 
 Durante la primera fase de elaboración del informe, el equipo  centró sus esfuerzos en la construcción de los fundamentos conceptuales, de investigación y diseño inicial del proyecto. Cada integrante asumió un rol activo en la redacción, modelado y documentación de secciones clave del reporte, asegurando una coherencia entre la teoría, la metodología y la propuesta tecnológica.
@@ -101,15 +131,19 @@ Durante la primera fase de elaboración del informe, el equipo  centró sus esfu
 
 Finalmente, estos gráficos representan la cantidad de commits realizados por cada miembro del equipo en el repositorio del proyecto. Cada barra representa a un miembro del equipo y la altura de la barra indica el número total de commits realizados por esa persona.
 
-![Commits 1](assets/img/introduction/AV1/commits1.png)
+En la siguiente imagen se muestra el número de commits realizados por cada miembro del equipo, lo que refleja la contribución individual al desarrollo del proyecto. Cada barra representa a un miembro del equipo y la altura de la barra indica el número total de commits realizados por esa persona.
+ 
+![img.png](assets/img/introduction/pulse-av1.png)
 
-![Commits 2](assets/img/introduction/AV1/commits2.png)
+Aquí se muestra el gráfico de clones del repositorio, que indica la cantidad de veces que el repositorio ha sido clonado por los miembros del equipo. Cada punto en el gráfico representa un evento de clonación, y la altura de cada punto refleja la cantidad de clones realizados en ese momento específico.
+
+![img.png](assets/img/introduction/git-clones-av1.png)
 
 **Ramificación del proyecto usando GitFlow:**
 
-Este gráfico ofrece una visualización de las veces que se ha clonado nuestro repositorio, junto con las fechas correspondientes a cada evento. También muestran datos sobre el número de visitas que ha recibido el repositorio de nuestro equipo a lo largo del tiempo.
+Este gráfico muestra la aplicación de GitFlow en el proyecto, evidenciando la organización de ramas principales, de desarrollo, de funcionalidades y de releases utilizadas por el equipo durante el ciclo de trabajo.
 
-![Ramificación 1](assets/img/introduction/AV1/gitflow.png)
+![img.png](assets/img/introduction/network-graph-av1.png)
 
 ---
 ## Tabla de contenido
@@ -251,51 +285,6 @@ Este gráfico ofrece una visualización de las veces que se ha clonado nuestro r
         - [4.2.10.6. Bounded Context Software Architecture Code Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42106-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.10.6.1. Bounded Context Domain Layer Class Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#421061-bounded-context-domain-layer-class-diagrams)
         - [4.2.10.6.2. Bounded Context Database Design Diagram](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#421062-bounded-context-database-design-diagram)
-        
-
-- [Capítulo V: Solution UI/UX Design](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#cap%C3%ADtulo-v-solution-uiux-design)
-    - [5.1. Style Guidelines](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#51-style-guidelines)
-        - [5.1.1. General Style Guidelines](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#511-general-style-guidelines)
-        - [5.1.2. Web, Mobile and IoT Style Guidelines](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#512-web-mobile-and-iot-style-guidelines)
-    - [5.2. Information Architecture](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#52-information-architecture)
-        - [5.2.1. Organization Systems](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#521-organization-systems)
-        - [5.2.2. Labeling Systems](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#522-labeling-systems)
-        - [5.2.3. SEO Tags and Meta Tags](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#523-seo-tags-and-meta-tags)
-        - [5.2.4. Searching Systems](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#524-searching-systems)
-        - [5.2.5. Navigation Systems](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#525-navigation-systems)
-    - [5.3. Landing Page UI Design](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#53-landing-page-ui-design)
-        - [5.3.1. Landing Page Wireframe](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#531-landing-page-wireframe)
-        - [5.3.2. Landing Page Mock-up](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#532-landing-page-mock-up)
-    - [5.4. Applications UX/UI Design](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#54-applications-uxui-design)
-        - [5.4.1. Applications Wireframes](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#541-applications-wireframes)
-        - [5.4.2. Applications Wireflow Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#542-applications-wireflow-diagrams)
-        - [5.4.2. Applications Mock-ups](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#542-applications-mock-ups)
-        - [5.4.3. Applications User Flow Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#543-applications-user-flow-diagrams)
-    - [5.5. Applications Prototyping](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#55-applications-prototyping)
-    - [5.6. IoT Device Design](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterV.md#56-iot-device-design)
-
-- [Capítulo VI: Product Implementation, Validation & Deployment](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#cap%C3%ADtulo-vi-product-implementation-validation--deployment)
-    - [6.1. Software Configuration Management](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#61-software-configuration-management)
-        - [6.1.1. Software Development Environment Configuration](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#611-software-development-environment-configuration)
-        - [6.1.2. Source Code Management](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#612-source-code-management)
-        - [6.1.3. Source Code Style Guide & Conventions](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#613-source-code-style-guide--conventions)
-        - [6.1.4. Software Deployment Configuration](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#614-software-deployment-configuration)
-    - [6.2. Landing Page, Services & Applications Implementation](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#62-landing-page-services--applications-implementation)
-        - [6.2.X. Sprint n](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#62x-sprint-n)
-        - [6.2.X.1. Sprint Planning n](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#62x1-sprint-planning-n)
-        - [6.2.X.2. Aspect Leaders and Collaborators](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#62x2-aspect-leaders-and-collaborators)
-        - [6.2.X.3. Sprint Backlog n](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#62x3-sprint-backlog-n)
-        - [6.2.X.4. Development Evidence for Sprint Review](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#62x4-development-evidence-for-sprint-review)
-        - [6.2.X.5. Testing Suite Evidence for Sprint Review](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#62x5-testing-suite-evidence-for-sprint-review)
-        - [6.2.X.6. Execution Evidence for Sprint Review](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#62x6-execution-evidence-for-sprint-review)
-        - [6.2.X.7. Services Documentation Evidence for Sprint Review](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#62x7-services-documentation-evidence-for-sprint-review)
-        - [6.2.X.8. Software Deployment Evidence for Sprint Review](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#62x8-software-deployment-evidence-for-sprint-review)
-        - [6.2.X.9. Team Collaboration Insights during Sprint](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#62x9-team-collaboration-insights-during-sprint)
-    - [6.3. Validation Interviews](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#63-validation-interviews)
-        - [6.3.1. Diseño de Entrevistas](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#631-dise%C3%B1o-de-entrevistas)
-        - [6.3.2. Registro de Entrevistas](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#632-registro-de-entrevistas)
-        - [6.3.3. Evaluaciones según heurísticas](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#633-evaluaciones-seg%C3%BAn-heur%C3%ADsticas)
-    - [6.4. Video About-the-Product](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#64-video-about-the-product)
 
 - [Conclusiones](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#conclusiones)
     - [Conclusiones y recomendaciones](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#conclusiones-y-recomendaciones)
