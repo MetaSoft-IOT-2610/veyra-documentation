@@ -33,7 +33,7 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
 <table border="1" width="100%">
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/RenatoCalvo.jpeg" alt="Renato Photo" width="120" />
+      <img src="../assets/img/chapter-I/Renato.png" alt="Renato Photo" width="120" />
     </td>
     <td valign="top">
       <strong>Renato Guillermo Calvo Yalan - (U202217053)</strong> - Ingeniería de Software<br><br>
