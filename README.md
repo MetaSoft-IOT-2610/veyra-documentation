@@ -96,7 +96,7 @@
 
 Github Collaboration Insights proporciona un cronograma que muestra las principales ramas y los procesos de fusión que han ocurrido. Todas las ramas se han generado siguiendo los principios de GitFlow, lo que garantiza una organización efectiva al utilizar un sistema de control de versiones.
 
-Janover Gonzalo Saldaña Vela (JanoverSaldana)
+Saldaña Vela, Janover Gonzalo (JanoverSaldana)
 Calvo Yálan, Renato Guillermo (RenatoCY)
 Armas Sánchez, Oscar Javier (Racso24k)
 Llerena Delgado, Renzo Miguel (Renxoll)
