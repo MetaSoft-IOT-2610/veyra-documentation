@@ -14,7 +14,7 @@ Paso 1: Brainstorming (Unstructured Exploration)
 
 El primer paso consistió en realizar una exploración sin estructura para identificar todos los posibles eventos del dominio. Durante esta etapa, el equipo analizó criterios como la frecuencia y relevancia de eventos, identificando una variedad de situaciones que los diferentes actores del sistema pueden experimentar, tales como "Resident Admitted", "Vital Signs Taken", "Medication Administered", "Visit Authorized", "Care Plan Created", "Shift Started", "User Signed In", "Subscription Purchased", "Admission Request Received" y "Role Assigned", entre otros. Esta exploración libre permitió capturar el dominio en su totalidad sin restricciones previas.
 
-![Step 1 - Brainstorming](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-1.png)
+![Step 1 - Brainstorming](../assets/img/chapter-IV/design-level-event-storming-step-1.png)
 
 
 Paso 2: Timelines
@@ -36,9 +36,9 @@ Posteriormente, organizamos los eventos en líneas de tiempo para visualizar el 
 
 Esta organización temporal facilitó la comprensión de dependencias y secuencias críticas entre eventos, permitiendo un diseño más coherente del sistema.
 
-![Step 2 - Timelines](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-2-part1.png)
-![Step 2 - Timelines](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-2-part2.png)
-![Step 2 - Timelines](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-2-part3.png)
+![Step 2 - Timelines](../assets/img/chapter-IV/design-level-event-storming-step-2-part1.png)
+![Step 2 - Timelines](../assets/img/chapter-IV/design-level-event-storming-step-2-part2.png)
+![Step 2 - Timelines](../assets/img/chapter-IV/design-level-event-storming-step-2-part3.png)
 
 
 Paso 3: Commands
@@ -52,9 +52,9 @@ En este paso definimos los comandos que los diferentes actores pueden ejecutar e
 | **Healthcare Staff** | Take Vital Signs, Record Vital Signs, Administer Medication, Start Shift, Report Absence, Log Meal, Log Bath, Log Hygiene Care, Complete Care Task, End Shift, Log Observation |
 | **Relative** | Submit Resident Documents, Schedule Visit, Process Payment |
 
-![Step 3 - Commands](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-3-part1.png)
-![Step 3 - Commands](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-3-part2.png)
-![Step 3 - Commands](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-3-part3.png)
+![Step 3 - Commands](../assets/img/chapter-IV/design-level-event-storming-step-3-part1.png)
+![Step 3 - Commands](../assets/img/chapter-IV/design-level-event-storming-step-3-part2.png)
+![Step 3 - Commands](../assets/img/chapter-IV/design-level-event-storming-step-3-part3.png)
 
 Paso 4: Policies and Actors
 
@@ -76,14 +76,14 @@ Las políticas identificadas fueron:
 Estas políticas permiten automatizar procesos críticos del sistema, reduciendo la intervención manual y asegurando respuestas oportunas ante situaciones de riesgo.
 
 
-![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part1.png)
-![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part2.png)
-![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part3.png)
-![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part4.png)
-![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part5.png)
-![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part6.png)
-![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part7.png)
-![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-4-part8.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming-step-4-part1.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming-step-4-part2.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming-step-4-part3.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming-step-4-part4.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming-step-4-part5.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming-step-4-part6.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming-step-4-part7.png)
+![Step 4 - Policies and Actors](../assets/img/chapter-IV/design-level-event-storming-step-4-part8.png)
 
 #### 4.1.1.1. Candidate Context Discovery
 
@@ -103,14 +103,14 @@ Los Read Models representan las vistas de consulta que los actores utilizan para
 - **Visit Schedule View:** permite al Admin consultar la agenda de visitas programadas.
 - **Medication Inventory:** permite al Healthcare Staff consultar el stock disponible de medicamentos.
 
-![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-5-part1.png)
-![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-5-part2.png)
-![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-5-part3.png)
-![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-5-part4.png)
-![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-5-part5.png)
-![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-5-part6.png)
-![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-5-part7.png)
-![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-5-part8.png)
+![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming-step-5-part1.png)
+![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming-step-5-part2.png)
+![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming-step-5-part3.png)
+![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming-step-5-part4.png)
+![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming-step-5-part5.png)
+![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming-step-5-part6.png)
+![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming-step-5-part7.png)
+![Step 5 - Read Models](../assets/img/chapter-IV/design-level-event-storming-step-5-part8.png)
 
 
 
@@ -122,18 +122,18 @@ En este paso identificamos los sistemas externos que interactúan con el dominio
 - **Stripe:** sistema externo de procesamiento de pagos utilizado para gestionar las transacciones de suscripciones y pagos de admisión.
 - **Notification Service:** sistema encargado de enviar notificaciones automáticas a familiares y personal médico ante cambios en el estado de visitas, condiciones críticas del residente o alertas de medicación.
 
-![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6-part1.png)
-![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6-part2.png)
-![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6-part3.png)
-![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6-part4.png)
-![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6-part5.png)
-![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6-part6.png)
-![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6-part7.png)
-![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6-part8.png)
-![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6-part9.png)
-![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6-part10.png)
-![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6-part11.png)
-![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-6-part12.png)
+![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming-step-6-part1.png)
+![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming-step-6-part2.png)
+![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming-step-6-part3.png)
+![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming-step-6-part4.png)
+![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming-step-6-part5.png)
+![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming-step-6-part6.png)
+![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming-step-6-part7.png)
+![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming-step-6-part8.png)
+![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming-step-6-part9.png)
+![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming-step-6-part10.png)
+![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming-step-6-part11.png)
+![Step 6 - External Systems](../assets/img/chapter-IV/design-level-event-storming-step-6-part12.png)
 
 
 
@@ -143,23 +143,23 @@ Paso 7: Add Aggregates
 En este paso identificamos los Aggregates, que representan los objetos de dominio centrales que agrupan entidades relacionadas y se tratan como una sola unidad. Cada aggregate actúa como el punto central alrededor del cual giran los eventos y comandos de cada flujo.
 
 
-![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7-part1.png)
-![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7-part2.png)
-![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7-part3.png)
-![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7-part4.png)
-![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7-part5.png)
-![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7-part6.png)
-![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7-part7.png)
-![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7-part8.png)
-![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7-part9.png)
-![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7-part10.png)
-![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7-part11.png)
-![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-7-part12.png)
+![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming-step-7-part1.png)
+![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming-step-7-part2.png)
+![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming-step-7-part3.png)
+![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming-step-7-part4.png)
+![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming-step-7-part5.png)
+![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming-step-7-part6.png)
+![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming-step-7-part7.png)
+![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming-step-7-part8.png)
+![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming-step-7-part9.png)
+![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming-step-7-part10.png)
+![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming-step-7-part11.png)
+![Step 7 - Add Aggregates](../assets/img/chapter-IV/design-level-event-storming-step-7-part12.png)
 
 
 
 Paso 8: Bounded Contexts
-![Step 8 - Bounded Contexts](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/design-level-event-storming-step-8.jpg)
+![Step 8 - Bounded Contexts](../assets/img/chapter-IV/design-level-event-storming-step-8.jpg)
 
 
 Finalmente, definimos los Bounded Contexts que agrupan los flujos relacionados en contextos delimitados con responsabilidades claras. Cada Bounded Context representa un subdominio independiente con su propio lenguaje ubicuo.
@@ -191,28 +191,28 @@ El modelado de flujos de mensajes describe cómo los distintos contextos delimit
 
 Scenario 1: Report adverse reaction to medication
 
-![Scenario 1](../assets/img/chapter-IV/domain-message-flow/domain-message-1.png)
+![Scenario 1](../assets/img/chapter-IV/domain-message-1.png)
 
 
 Scenario 2: Send notifications to relative due to abnormal vital signs detected
 
-![Scenario 2](../assets/img/chapter-IV/domain-message-flow/domain-message-2.png)
+![Scenario 2](../assets/img/chapter-IV/domain-message-2.png)
 
 Scenario 3: Create care plan
 
-![Scenario 3](../assets/img/chapter-IV/domain-message-flow/domain-message-3.png)
+![Scenario 3](../assets/img/chapter-IV/domain-message-3.png)
 
 Scenario 4: Access to platform
 
-![Scenario 4](../assets/img/chapter-IV/domain-message-flow/domain-message-4.png)
+![Scenario 4](../assets/img/chapter-IV/domain-message-4.png)
 
 Scenario 5: Choose subscription plan
 
-![Scenario 5](../assets/img/chapter-IV/domain-message-flow/domain-message-5.png)
+![Scenario 5](../assets/img/chapter-IV/domain-message-5.png)
 
 Sceraio 6: Resident register
 
-![Scenario 6](../assets/img/chapter-IV/domain-message-flow/domain-message-6.png)
+![Scenario 6](../assets/img/chapter-IV/domain-message-6.png)
 
 ### 4.1.2. Context Mapping
 
@@ -222,7 +222,7 @@ Durante la fase de modelado basada en el dominio (*Domain-Driven Design*), se id
 
 Gestiona el ciclo de vida clínico completo de un residente dentro del hogar de reposo, incluyendo la creación, aprobación y ejecución de planes de cuidado, la prescripción, programación y administración de medicamentos, el control de stock de medicación, la asignación de habitaciones y familiares, y el manejo de reacciones adversas y dosis perdidas, garantizando que cada residente reciba la atención clínica adecuada en todo momento.
 
-![bc1_nursing.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc1_nursing.png)
+![Canvas bounded context Nursing](../assets/img/chapter-IV/bc1_nursing.png)
 
 El bounded context de Nursing representa un **Core Domain**, ya que su funcionalidad es fundamental para el éxito del negocio principal de la plataforma. Este contexto se enfoca en la gestión clínica operativa del residente, lo cual es crucial para garantizar la calidad del cuidado y la seguridad del paciente. La administración de planes de cuidado y medicamentos es una parte esencial de las operaciones diarias del hogar de reposo y tiene un impacto directo en la continuidad del servicio, la satisfacción de las familias y el cumplimiento de estándares clínicos. Por ello, este contexto actúa como **Execution Context** y **Enforcer**, siendo el núcleo alrededor del cual giran los demás bounded contexts del sistema Veyra.
 
@@ -230,7 +230,7 @@ El bounded context de Nursing representa un **Core Domain**, ya que su funcional
 
 Gestiona la evaluación clínica inicial y continua de los residentes realizada por el Doctor, cubriendo la creación y registro del historial médico, el diagnóstico, la medición de signos vitales y la evaluación del nivel de riesgo y dependencia, proporcionando la línea base clínica que alimenta los bounded contexts de Nursing y Health.
 
-![bc2_tracking.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc2_tracking.png)
+![Canvas bounded context Tracking](../assets/img/chapter-IV/bc2_tracking.png)
 
 El bounded context de Tracking representa un **Core Domain**, ya que establece el punto de partida clínico indispensable para que el resto del sistema pueda operar correctamente. Sin una evaluación médica completa, no es posible crear un Plan de Cuidado en Nursing ni iniciar el monitoreo continuo en Health. Este contexto actúa como **Execution Context** y **Analysis Context**, siendo responsable de transformar la información clínica recolectada por el Doctor en eventos de dominio concretos — como `Risk Level Assessed` y `Medical History Created` — que otros bounded contexts consumen para tomar decisiones de negocio críticas sobre el cuidado del residente.
 
@@ -238,7 +238,7 @@ El bounded context de Tracking representa un **Core Domain**, ya que establece e
 
 Gestiona el monitoreo continuo en tiempo real del estado de salud de los residentes admitidos, cubriendo la toma y registro de signos vitales, detección de anomalías, identificación de condiciones críticas, seguimiento de cambios en la condición del residente, reporte de alergias con clasificación de severidad, y notificación al personal de enfermería a través de un servicio externo de notificaciones.
 
-![bc3_health.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc3_health.png)
+![Canvas bounded context Health](../assets/img/chapter-IV/bc3_health.png)
 
 El bounded context de Health representa un **Core Domain**, ya que su funcionalidad es crítica para garantizar la seguridad y bienestar de los residentes en todo momento. Este contexto actúa como centinela de salud en tiempo real, detectando anomalías y condiciones críticas que requieren intervención inmediata. Al operar como **Analysis Context**, **Gateway Context** y **Enforcer**, asegura que cualquier cambio relevante en el estado de salud de un residente sea comunicado oportunamente tanto al personal interno como a familiares a través del servicio externo de notificaciones, siendo indispensable para el cumplimiento de estándares clínicos y la confianza de las familias en la plataforma Veyra.
 
@@ -246,7 +246,7 @@ El bounded context de Health representa un **Core Domain**, ya que su funcionali
 
 Gestiona el ciclo de vida completo del personal de salud dentro del hogar de reposo, cubriendo la contratación, verificación de credenciales, gestión de turnos, asignación de enfermeras y tareas de cuidado a residentes, reporte de ausencias, asignación de reemplazos y cierre de turnos con handover formal, garantizando que el personal correcto esté verificado, disponible y asignado en todo momento.
 
-![bc4_hcm.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc4_hcm.png)
+![Canvas bounded context HCM](../assets/img/chapter-IV/bc4_hcm.png)
 
 El bounded context de HCM representa un **Core Domain**, ya que la disponibilidad y correcta asignación del personal de salud es fundamental para la operación continua del hogar de reposo. Sin este contexto, ningún residente podría recibir atención clínica ni actividades diarias de cuidado. Actúa como **Execution Context** y **Enforcer**, asegurando que ningún staff no verificado pueda ser asignado a un turno, y que toda ausencia tenga una respuesta operativa inmediata mediante la asignación de un reemplazo, siendo un pilar indispensable para la continuidad del servicio en la plataforma Veyra.
 
@@ -254,7 +254,7 @@ El bounded context de HCM representa un **Core Domain**, ya que la disponibilida
 
 Registra las actividades diarias de cuidado del residente realizadas por el personal de salud como parte del Resident's Daily Care Flow, cubriendo el registro de comidas, baño, higiene, asistencia de alimentación, asistencia de movilidad, prevención de caídas, hidratación y actividades recreacionales, proporcionando una línea de tiempo completa en tiempo real por residente y disparando reasignaciones médicas cuando se superan umbrales configurados.
 
-![bc5_activities.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc5_activities.png)
+![Canvas bounded context Activities](../assets/img/chapter-IV/bc5_activities.png)
 
 El bounded context de Activities representa un **Core Domain**, ya que el seguimiento en tiempo real de las actividades diarias de cada residente es esencial para garantizar la calidad del cuidado y el cumplimiento de los planes de atención. Este contexto actúa como **Execution Context** y **Analysis Context**, siendo responsable de capturar cada acción de cuidado realizada por el personal y de detectar situaciones que requieren intervención, como el incumplimiento del umbral de hidratación o el alto riesgo de caídas, comunicándolas oportunamente a los bounded contexts de Health y Tracking para mantener la seguridad y bienestar del residente en la plataforma Veyra.
 
@@ -262,7 +262,7 @@ El bounded context de Activities representa un **Core Domain**, ya que el seguim
 
 Gestiona todas las interacciones entre el hogar de reposo y los familiares de los residentes, controlando el ciclo de vida completo de las visitas: autorización, aplicación de restricciones, denegación, programación, inicio, fin y registro. Notifica a los familiares cuando el estado de una visita cambia o cuando se producen alertas críticas de salud, a través de un servicio externo de notificaciones.
 
-![bc6_communication.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc6_communication.png)
+![Canvas bounded context Communication](../assets/img/chapter-IV/bc6_communication.png)
 
 El bounded context de Communication representa un **Core Domain** con enfoque en **engagement**, ya que la conexión continua entre los familiares y el hogar de reposo es fundamental para la confianza en la plataforma y la satisfacción de los usuarios. Actúa como **Execution Context** y **Gateway Context**, siendo el punto de salida hacia el Notification Service externo para comunicar cambios de estado de visitas y alertas críticas de salud. Sin este contexto, las familias no tendrían visibilidad del estado de sus residentes ni podrían coordinar visitas de manera controlada y segura en la plataforma Veyra.
 
@@ -270,7 +270,7 @@ El bounded context de Communication representa un **Core Domain** con enfoque en
 
 Gestiona la autenticación, autorización y asignación de roles para todos los usuarios de la plataforma, manejando el Sign In, Sign Up, registro de información personal y asignación de roles. Aplica un flujo especial: cuando un Admin inicia sesión por primera vez, el sistema lo redirige al flujo de registro del hogar de reposo. Es el guardián de seguridad y punto de entrada para todos los demás bounded contexts de la plataforma Veyra.
 
-![bc7_iam.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc7_iam.png)
+![Canvas bounded context IAM](../assets/img/chapter-IV/bc7_iam.png)
 
 El bounded context de IAM representa un **Supporting Domain** con enfoque en **compliance**, ya que garantizar que solo usuarios autenticados y correctamente autorizados puedan acceder a la plataforma es un requisito fundamental de seguridad y no diferenciador del negocio principal. Actúa como **Gateway Context** y **Enforcer**, siendo el primer punto de control que todos los usuarios deben atravesar antes de interactuar con cualquier otro bounded context. Sin este contexto, ningún flujo de negocio de la plataforma Veyra podría operar de forma segura y controlada.
 
@@ -278,7 +278,7 @@ El bounded context de IAM representa un **Supporting Domain** con enfoque en **c
 
 Gestiona los perfiles personales y de negocio de todos los usuarios de la plataforma, permitiendo crear, actualizar y deshabilitar perfiles de persona, cambiar contraseñas, gestionar fotos de perfil mediante Cloudinary (servicio externo), autorizar visitantes y crear perfiles de negocio vinculados al hogar de reposo, garantizando que cada usuario tenga una identidad completamente configurada más allá de la autenticación.
 
-![bc8_profiles.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc8_profiles.png)
+![Canvas bounded context Profiles](../assets/img/chapter-IV/bc8_profiles.png)
 
 El bounded context de Profiles representa un **Supporting Domain** con enfoque en **engagement**, ya que una identidad completa y personalizada para cada usuario mejora la experiencia en la plataforma y facilita la gestión operativa del hogar de reposo. Actúa como **Execution Context** y **Gateway Context**, siendo el responsable de enriquecer la identidad creada en IAM con información personal y de negocio, y de publicar eventos relevantes hacia Communication y Nursing cuando el estado de un perfil cambia. La integración con Cloudinary como servicio externo permite una gestión eficiente de imágenes sin sobrecargar la infraestructura interna de la plataforma Veyra.
 
@@ -286,7 +286,7 @@ El bounded context de Profiles representa un **Supporting Domain** con enfoque e
 
 Gestiona el ciclo de vida de las suscripciones SaaS y el procesamiento de pagos para los hogares de reposo en la plataforma, manejando la selección y cancelación de planes de suscripción, y el procesamiento de pagos a través de Stripe (pasarela externa). El estado de la suscripción actúa como la puerta que habilita o deshabilita el acceso a todos los demás bounded contexts, y genera órdenes de pago cuando un familiar desea pagar por los servicios de un residente.
 
-![bc9_subscriptions.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc9_subscriptions.png)
+![Canvas bounded context Subscriptions](../assets/img/chapter-IV/bc9_subscriptions.png)
 
 El bounded context de Subscriptions & Payments representa un **Supporting Domain** con enfoque en **revenue**, ya que el modelo de negocio de la plataforma Veyra depende directamente de la suscripción activa de los hogares de reposo para generar ingresos. Actúa como **Execution Context**, **Gateway Context** y **Enforcer**, siendo el único contexto autorizado para gestionar el acceso económico a la plataforma. La integración con Stripe mediante un Anti-Corruption Layer garantiza que los cambios en la API externa no afecten la lógica interna del dominio, manteniendo la independencia y resiliencia del sistema Veyra ante variaciones del proveedor de pagos.
 
@@ -294,7 +294,7 @@ El bounded context de Subscriptions & Payments representa un **Supporting Domain
 
 Provee el monitoreo continuo en tiempo real y la visualización de métricas de salud de los residentes, incluyendo frecuencia cardíaca, saturación de oxígeno y datos de ubicación. Permite a Doctores, Familiares y personal de Healthcare Assistance consultar dashboards de métricas en cualquier momento, integrándose con Google Maps para analíticas basadas en ubicación.
 
-![bc_analytics.png](../assets/img/chapter-IV/design-level-event-storming/design-level-event-storming/boumded-context-canvases/bc10_analytics.png)
+![Canvas bounded context Analytics](../assets/img/chapter-IV/bc10_analytics.png)
 
 El bounded context de Analytics representa un **Core Domain** con rol de **Analysis Context** y **Gateway Context**, ya que la capacidad de monitorear métricas de salud en tiempo real es un diferenciador clave de la plataforma Veyra frente a soluciones tradicionales. Este contexto transforma datos crudos de dispositivos IoT en información clínica accionable, siendo consumido simultáneamente por tres tipos de actores con diferentes necesidades de visualización, y delegando la resolución de ubicación al servicio externo Google Maps mediante un Anti-Corruption Layer.
 
@@ -363,7 +363,7 @@ Durante la fase de modelado basada en el dominio, hemos logrado identificar los 
 | *Published Language* | Tracking → Communication, Communication → Activities, Health → Nursing |
 | *Anti-Corruption Layer* | Activities → Health |
 
-![Context Mapping diagram](/assets/img/chapter-IV/context-mapping/context-mapping.png)
+![Diagrama de context mapping](../assets/img/chapter-IV/context-mapping.png)
 
 ### 4.1.3. Software Architecture
 
@@ -373,25 +373,25 @@ En esta sección se presenta la arquitectura de software de la plataforma Veyra 
 
 El diagrama de paisaje del sistema muestra la plataforma Veyra en el contexto de su ecosistema más amplio, incluyendo los usuarios, los sistemas externos y los servicios de terceros con los que interactúa. Permite obtener una visión global del sistema y sus fronteras antes de profundizar en los detalles internos.
 
-![Landscape diagram](/assets/img/chapter-IV/software-architecture/Veyra_landscape_diagram.svg)
+![Diagrama landscape C4](../assets/img/chapter-IV/Veyra_landscape_diagram.svg)
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
 El diagrama de contexto muestra una vista de alto nivel de las relaciones entre los diferentes contextos delimitados y otros sistemas externos. Este diagrama ayuda a comprender cómo los diferentes contextos interactúan entre sí y con el mundo exterior, proporcionando una visión general de la arquitectura del sistema.
 
-![Diagrama de Contexto](/assets/img/chapter-IV/software-architecture/Veyra_context_diagram.svg)
+![Diagrama de contexto C4](../assets/img/chapter-IV/Veyra_context_diagram.svg)
 
 #### 4.1.3.2. Software Architecture Container Level Diagrams
 
 El diagrama de contenedores muestra los principales contenedores de software dentro de cada contexto delimitado, como aplicaciones, servicios, bases de datos, etc. Este diagrama ayuda a visualizar la estructura interna de cada contexto y cómo los diferentes contenedores interactúan entre sí.
 
-![Diagrama de Contenedores](/assets/img/chapter-IV/software-architecture/Veyra_container_diagram.svg)
+![Diagrama de contenedores C4](../assets/img/chapter-IV/Veyra_container_diagram.svg)
 
 #### 4.1.3.3. Software Architecture Deployment Diagrams
 
 El diagrama de despliegue describe cómo los contenedores de software se distribuyen en la infraestructura física y en la nube. Muestra los entornos de ejecución, los servicios de Azure utilizados y las relaciones de red entre los componentes desplegados, permitiendo comprender las decisiones de infraestructura adoptadas para la plataforma Veyra.
 
-![Deployment diagram](/assets/img/chapter-IV/software-architecture/Veyra-Platform-Production-Deployment.svg)
+![Diagrama de despliegue en producción](../assets/img/chapter-IV/Veyra-Platform-Production-Deployment.svg)
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
@@ -787,15 +787,15 @@ dentro del contexto y cómo se comunican con otros contextos o servicios externo
 
 Aplicación web: 
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebNursingBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/WebNursingBCView.png)
 
 Aplicación móvil:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileNursingBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/MobileNursingBCView.png)
 
 Api: 
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/NursingBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/NursingBCView.png)
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1179,15 +1179,15 @@ dentro del contexto y cómo se comunican con otros contextos o servicios externo
 
 Aplicación web:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebTrackingBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/WebTrackingBCView.png)
 
 Aplicación móvil:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileTrackingBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/MobileTrackingBCView.png)
 
 Api: 
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/TrackingBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/TrackingBCView.png)
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1446,14 +1446,14 @@ relaciones entre ellos. Permite visualizar cómo se organizan las responsabilida
 dentro del contexto y cómo se comunican con otros contextos o servicios externos.
 
 Aplicación web:
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebHealthBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/WebHealthBCView.png)
 
 Aplicación móvil:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileHealthBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/MobileHealthBCView.png)
 
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/HealthBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/HealthBCView.png)
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1718,15 +1718,15 @@ relaciones entre ellos. Permite visualizar cómo se organizan las responsabilida
 dentro del contexto y cómo se comunican con otros contextos o servicios externos.
 
 Aplicación web:
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebHcmBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/WebHcmBCView.png)
 
 
 Aplicación móvil:
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileHcmBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/MobileHcmBCView.png)
 
 Api: 
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/HCMBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/HCMBCView.png)
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -2133,14 +2133,14 @@ o servicios externos.
 
 Aplicación web:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebActivitiesBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/WebActivitiesBCView.png)
 
 Aplicación móvil:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileActivitiesBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/MobileActivitiesBCView.png)
 
 Api:
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/ActivitiesBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/ActivitiesBCView.png)
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -2335,16 +2335,16 @@ o servicios externos.
 
 Aplicación web:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebCommunicationBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/WebCommunicationBCView.png)
 
 
 Aplicación móvil:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileCommunicationBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/MobileCommunicationBCView.png)
 
 Api:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/communication-component-diagram.svg)
+![Diagrama de Componentes](../assets/img/chapter-IV/communication-component-diagram.svg)
 
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -2469,16 +2469,16 @@ El diagrama de componentes muestra la estructura interna del contexto delimitado
 
 Aplicación web:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebIAMBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/WebIAMBCView.png)
 
 
 Aplicación móvil:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileIAMBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/MobileIAMBCView.png)
 
 Api:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/IAM-component-diagram.svg)
+![Diagrama de Componentes](../assets/img/chapter-IV/IAM-component-diagram.svg)
 
 #### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -2779,16 +2779,16 @@ o servicios externos.
 
 Aplicación web:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebProfilesBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/WebProfilesBCView.png)
 
 
 Aplicación móvil:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileProfilesBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/MobileProfilesBCView.png)
 
 Api:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/profiles-component-diagram.svg)
+![Diagrama de Componentes](../assets/img/chapter-IV/profiles-component-diagram.svg)
 
 #### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -3059,17 +3059,17 @@ o servicios externos como Stripe.
 
 Aplicación web:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebSubscriptionsBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/WebSubscriptionsBCView.png)
 
 
 Aplicación móvil:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileSubscriptionsBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/MobileSubscriptionsBCView.png)
 
 Api:
 
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/subscription&payments-component-diagram.svg)
+![Diagrama de Componentes](../assets/img/chapter-IV/subscription-payments-component-diagram.svg)
 
 #### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -3265,16 +3265,16 @@ o servicios externos como Google Maps.
 
 Aplicación web:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/WebAnalyticsBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/WebAnalyticsBCView.png)
 
 
 Aplicación móvil:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/MobileAnalyticsBCView.png)
+![Diagrama de Componentes](../assets/img/chapter-IV/MobileAnalyticsBCView.png)
 
 Api:
 
-![Diagrama de Componentes](/assets/img/chapter-IV/software-architecture/bounded-context-component-diagrams/analytics-component-diagram.svg)
+![Diagrama de Componentes](../assets/img/chapter-IV/analytics-component-diagram.svg)
 
 #### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams
 
