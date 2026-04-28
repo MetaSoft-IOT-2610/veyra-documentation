@@ -34,27 +34,25 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
 <table border="1" width="100%">
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/team-member-profiles/RenatoCalvo.jpeg" alt="Renato Photo" width="120" />
+      <img src="../assets/img/chapter-I/RenatoCalvo.jpeg" alt="Renato Photo" width="120" />
     </td>
     <td valign="top">
       <strong>Renato Guillermo Calvo Yalan - (U202217053)</strong> - Ingeniería de Software<br><br>
       Tengo 21 años. Me interesa la ciberseguridad y la inteligencia artificial; mi principal fortaleza es liderar equipos de trabajo. Además, soy perseverante, manejo algunos lenguajes de programación y quiero seguir aprendiendo. Espero realizar un gran proyecto con mi grupo de manera exitosa.
     </td>
   </tr>
-
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/team-member-profiles/RenzoLlerena.jpg" alt="Renzo Photo" width="120" />
+      <img src="../assets/img/chapter-I/RenzoLlerena.jpg" alt="Renzo Photo" width="120" />
     </td>
     <td valign="top">
       <strong>Renzo Miguel Llerena Delgado - (U202312399)</strong> - Ingeniería de Software<br><br>
       Tengo 19 años, soy una persona tranquila, colaborativa y adaptable. Me gusta trabajar en equipo, aportando ideas y soluciones. Cuento con conocimientos en C++ y Python y siempre busco formas de hacer las cosas de manera eficiente.
     </td>
   </tr>
-
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/team-member-profiles/janover-saldana.jpg" alt="" width="120" />
+      <img src="../assets/img/chapter-I/janover-saldana.jpg" alt="Janover Photo" width="120" />
     </td>
     <td valign="top">
         <strong>Janover Gonzalo Saldaña Vela - (U20201B510)</strong> - Ingeniería de Software<br><br>
@@ -63,20 +61,18 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
         Me interesa la inteligencia artificial y el desarrollo de soluciones tecnológicas que optimicen procesos. Me considero una persona proactiva, responsable y orientada a resultados, con capacidad para trabajar en equipo y seguir aprendiendo constantemente.    
     </td>
   </tr>
-
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/team-member-profiles/Oscar.jpg" alt="Oscar Photo" width="120" />
+      <img src="../assets/img/chapter-I/Oscar.jpg" alt="Oscar Photo" width="120" />
     </td>
     <td valign="top">
       <strong>Oscar Javier Armas Sánchez - (U20211g192)</strong> - Ingeniería de Software<br><br>
       Tengo 21 años. Soy puntual, responsable y con experiencia en gestión de proyectos y desarrollo web. Espero aprender y aportar para que el proyecto sea exitoso.
     </td>
   </tr>
-
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/team-member-profiles/dayroRios.jpg" alt="Oscar Photo" width="120" />
+      <img src="../assets/img/chapter-I/dayroRios.jpg" alt="Dayro Photo" width="120" />
     </td>
     <td valign="top">
       <strong>Dayro Richard Rios Piñan - (U202315283)</strong> - Ingeniería de Software<br><br>
@@ -85,7 +81,7 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
   </tr>
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/team-member-profiles/vicente-quijandria.png" alt="Vicente Photo" width="120" />
+      <img src="../assets/img/chapter-I/vicente-quijandria.png" alt="Vicente Photo" width="120" />
     </td>
     <td valign="top">
       <strong>Vicente Quijandria Araneda - (U201822697)</strong> - Ingeniería de Software<br><br>
@@ -94,7 +90,7 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
   </tr>
   <tr>
   <td width="140" valign="top" align="center">
-    <img src="../assets/img/chapter-I/team-member-profiles/renzo-villafuerte.jpg" alt="Renzo Villafuerte Photo" width="120" />
+    <img src="../assets/img/chapter-I/renzo-villafuerte.jpg" alt="Renzo Villafuerte Photo" width="120" />
   </td>
   <td valign="top">
     <strong>Renzo Villafuerte - (U202310670)</strong> - Ingeniería de Software<br><br>
@@ -296,7 +292,7 @@ En esta sección se formulan las hipótesis del producto a partir de los supuest
 
 ##### 1.2.2.4. Lean UX Canvas
 
-![Lean UX Canvas](../assets/img/chapter-I/lean-ux-canvas/lean-ux.png)
+![Lean UX Canvas](../assets/img/chapter-I/lean-ux.png)
 
 ### 1.3. Segmentos objetivo
 
@@ -341,7 +337,3 @@ Ubicación geográfica: Zonas urbanas de Perú, especialmente Lima Metropolitana
 Información estadística de sustento:
 
 El INEI reporta que el 30% de adultos mayores peruanos vive en hogares multigeneracionales, pero la migración laboral y la urbanización han aumentado la demanda de residencias geriátricas.
-
-Un estudio de APESEG (2023) muestra que el 65% de familiares percibe desconfianza en la calidad del cuidado en residencias, debido a la falta de transparencia en la comunicación.
-
-El Banco Interamericano de Desarrollo (BID) destaca que el 85% de peruanos usa smartphones, lo que facilita la adopción de soluciones digitales para monitoreo remoto.
