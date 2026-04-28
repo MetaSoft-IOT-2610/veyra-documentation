@@ -34,19 +34,19 @@ Para lograr una recolección de información valiosa y estructurada, hemos dise�
 <td colspan="2" style="text-align: center;"><b>Competidores</b></td>
 <td style="text-align: center; vertical-align: middle;">
 <b style="display: block; margin-bottom: 6px;">Veyra</b>
-<img src="../assets/img/chapter-II/veyra-logo.jpeg" alt="Veyra" width="50"/>
+<img src="../assets/img/chapter-II/veyra-logo-chapter2.jpeg" alt="Veyra" width="50"/>
 </td>
 <td style="text-align: center; vertical-align: middle;">
 <b style="display: block; margin-bottom: 6px;">StoriiCare</b>
-<img src="../assets/img/chapter-II/competitor-storiicare.png" alt="StoriiCare" width="50"/>
+<img src="../assets/img/chapter-II/competitor-storiicare-chapter2.png" alt="StoriiCare" width="50"/>
 </td>
 <td style="text-align: center; vertical-align: middle;">
 <b style="display: block; margin-bottom: 6px;">SeniorSoft</b>
-<img src="../assets/img/chapter-II/competitor-senior-soft.png" alt="SeniorSoft" width="50"/>
+<img src="../assets/img/chapter-II/competitor-senior-soft-chapter2.png" alt="SeniorSoft" width="50"/>
 </td>
 <td style="text-align: center; vertical-align: middle;">
 <b style="display: block; margin-bottom: 6px;">CareCloud</b>
-<img src="../assets/img/chapter-II/competitor-care-cloud.png" alt="CareCloud" width="50"/>
+<img src="../assets/img/chapter-II/competitor-care-cloud-chapter2.png" alt="CareCloud" width="50"/>
 </td>
 </tr>
 <tr>
