@@ -42,7 +42,7 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
   </tr>
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/RenzoLlerena.jpg" alt="Renzo Photo" width="120" />
+      <img src="../assets/img/chapter-I/Renzo-llerena.jpg" alt="Renzo Photo" width="120" />
     </td>
     <td valign="top">
       <strong>Renzo Miguel Llerena Delgado - (U202312399)</strong> - Ingeniería de Software<br><br>
@@ -62,7 +62,7 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
   </tr>
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/Oscar.jpg" alt="Oscar Photo" width="120" />
+      <img src="../assets/img/chapter-I/oscar.jpg" alt="Oscar Photo" width="120" />
     </td>
     <td valign="top">
       <strong>Oscar Javier Armas Sánchez - (U20211g192)</strong> - Ingeniería de Software<br><br>
@@ -71,7 +71,7 @@ Ser una startup referente en el desarrollo de soluciones IoT y plataformas intel
   </tr>
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/dayroRios.jpg" alt="Dayro Photo" width="120" />
+      <img src="../assets/img/chapter-I/dayroRios.png" alt="Dayro Photo" width="120" />
     </td>
     <td valign="top">
       <strong>Dayro Richard Rios Piñan - (U202315283)</strong> - Ingeniería de Software<br><br>
