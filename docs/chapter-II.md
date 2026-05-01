@@ -447,13 +447,12 @@ A partir del análisis de entrevistas y la recolección de información sobre la
 **1) Segmento 1: Administradores de casas de reposo**
 
 
-![User Persona 1](../assets/img/chapter-II/persona-roberto-sanchez-uxpressia.png)
+<img src="../assets/img/chapter-II/persona-roberto-sanchez-uxpressia.png" alt="User Persona 1" width="680">
 
 **2) Segmento 2: Familiares de adultos mayores**
 
 
-![User Persona 2](../assets/img/chapter-II/persona-carlos-andrade-uxpressia.png)
-
+<img src="../assets/img/chapter-II/persona-carlos-andrade-uxpressia.png" alt="User Persona 2" width="680">
 ### 2.3.2. User Task Matrix
 
 Para este análisis se consideran dos segmentos objetivos: el Guardian, representado por Carlos Andrade, familiar responsable de un residente en una residencia de adultos mayores; y el Artisan, representado por Roberto Sánchez, director de una residencia geriátrica. Ambos interactúan con el dominio del problema desde perspectivas distintas pero complementarias, y las tareas identificadas son realizadas por cada segmento con independencia de la existencia de cualquier solución tecnológica.
