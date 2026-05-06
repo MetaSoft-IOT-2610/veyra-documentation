@@ -35,6 +35,19 @@ El primer sprint se centró en sentar las bases tecnológicas de VEYRA, logrando
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
 
+Se designaron líderes para cada uno de los aspectos clave del proyecto, con el objetivo de garantizar una gestión eficiente y una clara asignación de responsabilidades. Cada líder se encargará de coordinar las actividades relacionadas con su aspecto, mientras que los colaboradores apoyarán en la ejecución de las tareas asignadas.
+ 
+| Team Member (Last Name, First Name) | Aspect: Nursing | Aspect: Activities |Aspect: Health | Aspect: Tracking | Aspect: Subscriptions and payments | Aspect: Communications |
+|-------------------------------------|---------|---------|-------|----------|-----------|---------|
+| Calvo Yalan, Renato Guillermo       | L       | C       | C     |  C       | C        | C       |
+| Armas Sánchez, Oscar Javier         | C       | L       | C     |  C       | C        | C       |
+| Rios Piñan, Dayro Richard           | C       | C       | C     |  C       | C        | C       |
+| Llerena Delgado, Renzo Miguel       | C       | C       | C     |  C       | L        | C       |
+| 	Quijandria Araneda, Vicente       | C       | C       | C     |  L       | C        | C       |
+| 	Saldaña Vela, Janover Gonzalo     | C       | C       | C     |  C       | C        | L       |
+| 	Villafuerte Tapia, Renzo Alonso    | C      | C       | L     |  C       | C        | C       |
+
+
 #### 6.2.1.3. Sprint Backlog
 
 #### 6.2.1.4. Development Evidence for Sprint Review
