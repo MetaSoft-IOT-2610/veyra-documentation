@@ -146,29 +146,29 @@ El Lean UX es un enfoque que permite validar las soluciones propuestas para prob
 
 ##### 1.2.2.1. Lean UX Problem Statements
 
-El cuidado geriátrico en Perú enfrenta un déficit de gestión clínica: el 14.6% de la población es adulta mayor y el 80% padece enfermedades crónicas (INEI, 2024). Actualmente, las casas de reposo operan con procesos manuales que generan alta incertidumbre operativa y falta de trazabilidad de datos.
-Esta deficiencia afecta a dos segmentos: administradores/personal clínico, que carecen de herramientas de respuesta rápida, y familiares, que dependen de comunicación reactiva para conocer el estado de salud del residente. El impacto es crítico: el personal no detecta anomalías a tiempo y el 65% de los familiares desconfía de la calidad del cuidado por falta de transparencia (APESEG, 2023).
 
-No existe en el mercado local una solución que integre monitoreo continuo (IoT), gestión centralizada y acceso remoto. Veyra capitaliza la alta penetración de smartphones (85%, BID) para modernizar este sector mediante un ecosistema digital distribuido de captura de datos en tiempo real.
+El estado actual de la gestión y cuidado de adultos mayores se ha enfocado principalmente en procesos manuales, registros en papel y comunicación informal, tanto en casas de reposo como en los hogares. Esto genera información fragmentada, difícil de actualizar y propensa a errores, especialmente cuando múltiples personas participan en el cuidado.
 
-La gestión actual en casas de reposo no satisface las expectativas de transparencia de las familias ni la eficiencia operativa del personal, elevando los riesgos ante emergencias. 
+Lo que los productos o servicios existentes no logran abordar esa necesidad de acceso oportuno a información confiable, el seguimiento continuo del estado del adulto mayor y una comunicación clara e eficiente entre las personas involucradas en su cuidado.
 
-**¿Cómo podríamos mejorar la visibilidad del estado de salud del residente para que el personal actúe preventivamente y los familiares obtengan tranquilidad mediante datos verificables en tiempo real?**
+Nuestro servicio abordará esta brecha mediante una solución digital que centraliza la información y facilita el acceso remoto a datos relevantes para el seguimiento del cuidado.
 
+Nuestro enfoque inicial estará dirigido a administradores de casas de reposo y familiares responsables del cuidado de adultos mayores en el hogar.
 
+Sabremos que tenemos éxito cuando observemos una reducción en los errores de gestión, un acceso más rapido a la información del adulto mayor y un incremento en la frecuencia de consulta por parte de los usuarios.
 ##### 1.2.2.2. Lean UX Assumptions
 
 En esta sección se declaran las creencias fundamentales del equipo sobre las que se construye la propuesta de valor de Veyra. Bajo el marco de trabajo Lean UX, estos supuestos identifican las áreas de mayor riesgo e incertidumbre, sirviendo como base estratégica para la creación de hipótesis y experimentos de validación.
 
 **Assumptions Worksheet (Síntesis del Proyecto)**
 
-| #  | Supuesto Estratégico aplicado a Veyra |
-|----|---------------------------------------|
-| 1  | Creemos que los familiares de adultos mayores experimentan altos niveles de ansiedad debido a la opacidad y lentitud de los reportes tradicionales de salud. |
-| 2  | Asumimos que los administradores de casas de reposo ven en la transparencia de datos una ventaja competitiva clave para justificar sus tarifas y mejorar su reputación. |
-| 3  | La necesidad de visibilidad se resolverá con un ecosistema IoT + Cloud que automatice la captura de data crítica, eliminando el sesgo y error del registro manual. |
-| 4  | El modelo de ingresos será un SaaS B2B escalable por número de residentes monitoreados, complementado con accesos premium para familiares. |
-| 5  | El mayor riesgo de adopción es la resistencia al cambio del personal asistencial; se mitigará mediante interfaces de baja fricción y automatización de toma de datos. |
+| # | Supuesto Estratégico aplicado a Veyra                                                                                                                                   |
+|---|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | Creemos que los familiares de adultos mayores experimentan altos niveles de ansiedad debido a la opacidad y lentitud de los reportes tradicionales de salud.            |
+| 2 | Asumimos que los administradores de casas de reposo ven en la transparencia de datos una ventaja competitiva clave para justificar sus tarifas y mejorar su reputación. |
+| 3 | La necesidad de visibilidad se resolverá con un ecosistema IoT + Cloud que automatice la captura de data crítica, eliminando el sesgo y error del registro manual.      |
+| 4 | El modelo de ingresos será un SaaS B2B escalable por número de residentes monitoreados, complementado con accesos premium para familiares.                              |
+| 5 | El mayor riesgo de adopción es la resistencia al cambio del personal asistencial; se mitigará mediante interfaces de baja fricción y automatización de toma de datos.   |
 
 **Supuestos por Dimensión**
 
@@ -198,12 +198,12 @@ En esta sección se declaran las creencias fundamentales del equipo sobre las qu
 
 **Assumptions Priority (Matriz de Riesgo x Incertidumbre)**
 
-| Prioridad | Supuesto a validar | Riesgo | Incertidumbre |
-|----------:|--------------------|:------:|:-------------:|
-| 1 | El personal asistencial adoptará el registro digital continuo sin afectar su flujo operativo actual. | Alto | Alto |
-| 2 | Los sensores IoT mantendrán la precisión y conectividad necesaria para generar alertas confiables. | Alto | Medio |
-| 3 | Las instituciones aceptarán el modelo de suscripción SaaS por el valor percibido de la transparencia. | Medio | Alto |
-| 4 | Los familiares usarán la plataforma de forma recurrente como canal principal de seguimiento. | Medio | Bajo |
+| Prioridad | Supuesto a validar                                                                                    | Riesgo | Incertidumbre |
+|----------:|-------------------------------------------------------------------------------------------------------|:------:|:-------------:|
+|         1 | El personal asistencial adoptará el registro digital continuo sin afectar su flujo operativo actual.  |  Alto  |     Alto      |
+|         2 | Los sensores IoT mantendrán la precisión y conectividad necesaria para generar alertas confiables.    |  Alto  |     Medio     |
+|         3 | Las instituciones aceptarán el modelo de suscripción SaaS por el valor percibido de la transparencia. | Medio  |     Alto      |
+|         4 | Los familiares usarán la plataforma de forma recurrente como canal principal de seguimiento.          | Medio  |     Bajo      |
 
 **Outcomes Esperados (Métricas de Éxito)**
 
