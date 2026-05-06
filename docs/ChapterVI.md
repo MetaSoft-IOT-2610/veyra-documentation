@@ -12,25 +12,42 @@
 
 ## 6.2. Landing Page, Services & Applications Implementation
 
-### 6.2.X. Sprint n
+### 6.2.1. Sprint 1
 
-#### 6.2.X.1. Sprint Planning n
+El primer sprint se centró en sentar las bases tecnológicas de VEYRA, logrando el desarrollo tanto del backend como de la interfaz web. Paralelamente, se puso en desarrollo la landing page, optimizada para la presentación del negocio y publicada mediante GitHub Pages para garantizar su accesibilidad inmediata.
 
-#### 6.2.X.2. Aspect Leaders and Collaborators
+#### 6.2.1.1. Sprint Planning
 
-#### 6.2.X.3. Sprint Backlog n
+| Sprint #                        | Sprint 1                                                                                                                                                                                                                                                                                                     |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Sprint Planning Background      |                                                                                                                                                                                                                                                                                                              |
+| Date                            | 04/05/2026                                                                                                                                                                                                                                                                                                   |
+| Time                            | 03:00 PM                                                                                                                                                                                                                                                                                                     |
+| Location                        | Servidor de Discord del Equipo                                                                                                                                                                                                                                                                               |
+| Prepared By                     | Janover Saldaña                                                                                                                                                                                                                                                                                                |
+| Attendees (to planning meeting) | Janover Saldaña / Dayro Rios / Vicente Quijandria / Renato Calvo / Renzo Llerena / Renzo Villafuerte / Oscar Armas                                                                                                                                                                                                                      |
+| Sprint 0 Review Summary         | N/A (primer entregable del proyecto)                                                                                                              |
+| Sprint 0 Retrospective Summary  | N/A (primer entregable del proyecto)                                                                                                         |
+| Sprint Goal & User Stories      |         |
+| Sprint 1 Goal                   | Our focus is on delivering the first version of Veyra's landing page to the visitors, that clearly communicates the business value and clearly communicates the value proposition and service offerings to first-time visitors to the site. Also the first version of Veyra's web application with core features and views such as nursing, activities and communications and <br> We believe it delivers a clear definition of Veyra and our goal and commitment with our customers, giving them the core features of Veyra's web application <br> This will be confirmed when visitors access to the landing page and web application to try the features added and implemented by the Veyra development team |
+| Sprint 1 Velocity               | Velocity                                                                                                                                                                                                                                                                                                  |
+| Sum of Story Points             |  Story Points.                                                                                                                                                                                                                                                                                             |
 
-#### 6.2.X.4. Development Evidence for Sprint Review
+#### 6.2.1.2. Aspect Leaders and Collaborators
 
-#### 6.2.X.5. Testing Suite Evidence for Sprint Review
+#### 6.2.1.3. Sprint Backlog
 
-#### 6.2.X.6. Execution Evidence for Sprint Review
+#### 6.2.1.4. Development Evidence for Sprint Review
 
-#### 6.2.X.7. Services Documentation Evidence for Sprint Review
+#### 6.2.1.5. Testing Suite Evidence for Sprint Review
 
-#### 6.2.X.8. Software Deployment Evidence for Sprint Review
+#### 6.2.1.6. Execution Evidence for Sprint Review
 
-#### 6.2.X.9. Team Collaboration Insights during Sprint
+#### 6.2.1.7. Services Documentation Evidence for Sprint Review
+
+#### 6.2.1.8. Software Deployment Evidence for Sprint Review
+
+#### 6.2.1.9. Team Collaboration Insights during Sprint
 
 ## 6.3. Validation Interviews
 
