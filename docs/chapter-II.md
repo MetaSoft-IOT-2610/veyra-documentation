@@ -564,7 +564,7 @@ Tras la exploración inicial, el equipo ordenó cronológicamente los eventos de
 
 ## 2.5 Ubiquitous Language
 
-To ensure seamless communication among developers, medical staff, and family members, the following glossary has been established. These terms must be used consistently across business meetings, source code (classes, methods, databases), and the user interface.
+Con el fin de garantizar una comunicación fluida entre los desarrolladores, el personal médico y los familiares, se ha elaborado el siguiente glosario. Estos términos deben utilizarse de manera coherente en las reuniones de trabajo, el código fuente (clases, métodos, bases de datos) y la interfaz de usuario.
 
 
 - **Resident (Residente):** Persona adulta mayor admitida en el centro geriátrico que recibe atención médica y cuidados diarios continuos.
