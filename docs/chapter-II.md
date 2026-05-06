@@ -347,7 +347,11 @@ En este apartado documentamos los resultados de las sesiones de campo. Aquí se 
   <tr><td>Link</td><td><a href="https://shorturl.at/vQBoO">Link Entrevistas</a> — https://shorturl.at/vQBoO</td></tr>
   <tr><td>Timing donde inicia la entrevista</td><td>17:04 min</td></tr>
   <tr><td>Duración de la entrevista</td><td>3:51 min</td></tr>
-  <tr><td>Resumen</td><td>Señor tecnológico y analítico que busca seguridad para su padre. Su mayor frustración es la comunicación lenta e incierta con la casa de reposo, lo que le genera desconfianza.<br><br><b>Comportamiento y Necesidades</b> Exige control y visibilidad inmediata de medicinas, salud y reportes semanales. Necesita respuestas rápidas y profesionales para sentirse tranquilo.<br><br><b>Tecnología, Marcas y Canales</b> Usuario digital avanzado. Prefiere WhatsApp y Apps nativas con notificaciones directas, priorizando la rapidez (Chrome) sobre llamadas o correos.</td></tr>
+  <tr><td>Resumen</td><td> Richard es un usuario con un perfil tecnológico y analítico que reside en Villa El Salvador y gestiona un negocio independiente. Su principal motivación es garantizar la seguridad y el bienestar de sus padres, quienes se encuentran actualmente en una casa de reposo. Se caracteriza por ser un usuario exigente que busca fiabilidad en la información, ya que la comunicación lenta e incierta por parte de la institución le genera una profunda desconfianza e inseguridad.<br><br>
+  <b>Comportamiento y necesidades:</b>
+  Debido a sus responsabilidades laborales, este usuario tiene una necesidad crítica de rapidez y eficiencia en la entrega de información. Exige tener un control total y una visibilidad inmediata sobre la administración de medicinas, el estado de salud general y la recepción de reportes periódicos para sentirse tranquilo. Considera fundamental que las notificaciones de la casa de reposo sean instantáneas, ya que actualmente suelen tardar demasiado, y prefiere que cualquier comunicación importante se realice directamente a su dispositivo móvil.<br><br>
+  <b>Tecnología, marcas y canales:</b>
+  Es un usuario digital avanzado que utiliza principalmente un celular Samsung y una laptop para sus actividades diarias. Actualmente se comunica con la casa de reposo a través de WhatsApp y correo electrónico, pero considera que una aplicación móvil dedicada al monitoreo del adulto mayor sería la solución ideal para consultar información de manera frecuente. Prioriza el uso de canales directos y aplicaciones nativas que ofrezcan notificaciones en tiempo real, prefiriendo la agilidad de herramientas como Chrome y apps sobre los métodos de comunicación tradicionales.</td></tr>
 </table>
 
 <table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse;">
@@ -360,7 +364,11 @@ En este apartado documentamos los resultados de las sesiones de campo. Aquí se 
   <tr><td>Link</td><td><a href="https://shorturl.at/vQBoO">Link Entrevistas</a> — https://shorturl.at/vQBoO</td></tr>
   <tr><td>Timing donde inicia la entrevista</td><td>20:56 min</td></tr>
   <tr><td>Duración de la entrevista</td><td>3:00 min</td></tr>
-  <tr><td>Resumen</td><td>Ama de casa frustrada por depender de su hermano para recibir información sobre su madre en la casa de reposo.<br><br><b>Comportamiento y Necesidades</b> Desea acceso directo e inmediato al estado de salud y a las rutinas diarias de su madre para sentir mayor tranquilidad y confianza en el servicio.<br><br><b>Tecnología, Marcas y Canales</b> Usuaria de smartphone Samsung y laptop; considera fantásticas las plataformas o apps de salud, pero prefiere explícitamente llamadas o WhatsApp para recibir notificaciones importantes o de urgencia.</td></tr>
+  <tr><td>Resumen</td><td>Se trata de una ama de casa cuya principal frustración es la falta de autonomía informativa respecto al cuidado de su madre. Actualmente, se encuentra en una posición de dependencia, ya que debe recurrir a su hermano para conocer cualquier detalle sobre la situación en la casa de reposo, lo que genera una barrera en su tranquilidad personal. Busca eliminar intermediarios para establecer un vínculo directo con la institución, transformando esa incertidumbre en una relación de confianza basada en la transparencia y el flujo constante de datos.<br><br>
+  <b>Comportamiento y necesidades:</b>
+  Su prioridad absoluta es el acceso inmediato y sin filtros al estado de salud físico y emocional de su madre. Más allá de los reportes médicos, tiene un interés profundo en conocer las rutinas diarias, como la alimentación, las actividades recreativas y las horas de descanso, ya que estos pequeños detalles son los que realmente le brindan paz mental. Necesita sentir que tiene el control de la situación desde su hogar, exigiendo un servicio que sea proactivo en la entrega de información para no tener que estar solicitándola constantemente a terceros.<br><br>
+  <b>Tecnología, marcas y canales:</b>
+  Es una usuaria familiarizada con el entorno digital, utilizando habitualmente un smartphone Samsung y una laptop para sus gestiones cotidianas. Aunque tiene una opinión muy positiva sobre las plataformas y aplicaciones especializadas en salud, considerándolas herramientas "fantásticas" para el seguimiento, su comportamiento ante situaciones críticas es más tradicional. Prefiere explícitamente que las notificaciones de urgencia o avisos importantes se realicen mediante llamadas telefónicas o WhatsApp, priorizando la calidez y la inmediatez de estos canales sobre las notificaciones pasivas de una aplicación.</td></tr>
 </table>
 
 ### 2.2.3. Análisis de entrevistas
@@ -453,6 +461,7 @@ A partir del análisis de entrevistas y la recolección de información sobre la
 
 
 <img src="../assets/img/chapter-II/persona-carlos-andrade-uxpressia.png" alt="User Persona 2" width="680">
+
 ### 2.3.2. User Task Matrix
 
 Para este análisis se consideran dos segmentos objetivos: el Guardian, representado por Carlos Andrade, familiar responsable de un residente en una residencia de adultos mayores; y el Artisan, representado por Roberto Sánchez, director de una residencia geriátrica. Ambos interactúan con el dominio del problema desde perspectivas distintas pero complementarias, y las tareas identificadas son realizadas por cada segmento con independencia de la existencia de cualquier solución tecnológica.
