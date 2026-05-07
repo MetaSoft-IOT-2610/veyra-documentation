@@ -216,6 +216,21 @@ En esta sección se declaran las creencias fundamentales del equipo sobre las qu
 
 En esta sección se formulan las hipótesis del producto a partir de los supuestos previamente definidos. Estas hipótesis permiten validar, mediante experimentación, si la solución propuesta genera los resultados esperados en los usuarios y en el negocio. Cada hipótesis se estructura en términos de segmento de usuario, solución propuesta, resultado esperado y métrica de validación.
 
+**1. Centralización de información clínica y operativa**
+
+**Creemos que** lograremos reducir en un 25% los errores asociados a la gestión manual de información clínica y operativa, **si** los administradores de casas de reposo **alcanzan** un acceso más rápido y centralizado a la información de los residentes, **mediante** un panel de monitoreo.
+
+**2. Digitalización del registro y monitoreo de residentes**
+
+**Creemos que** lograremos incrementar en un 40% el uso de herramientas digitales en procesos relacionados con el cuidado del adulto mayor, **si** los administradores de casas de reposo **alcanzan** una reducción del tiempo dedicado a registros manuales, **mediante** un módulo digital de registro de signos vitales
+
+**3. Seguimiento oportuno mediante alertas y notificaciones**
+
+**Creemos que** lograremos mejorar en un 30% la disponibilidad y trazabilidad de la información clínica y operativa, **si** los administradores y familiares **alcanzan** acceso oportuno a información actualizada sobre cambios relevantes en el estado del adulto mayor, **mediante** un módulo de alertas y notificaciones automáticas.
+
+**4. Transparencia y acceso remoto para familiares**
+
+**Creemos que** lograremos mejorar en un 45% la percepción de transparencia y comunicación con la residencia, **si** los familiares **alcanzan** acceso remoto y continuo a información clínica, medicación y actividades diarias, **mediante** un portal familiar digital.
 
 
 ##### 1.2.2.4. Lean UX Canvas
