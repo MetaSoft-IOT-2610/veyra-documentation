@@ -183,20 +183,34 @@ En esta sección se declaran las creencias fundamentales del equipo sobre las qu
 * Los familiares utilizarán la plataforma principalmente desde dispositivos móviles.
 * Los familiares esperan una interfaz simple y fácil de usar.
 
+**Business Outcomes and Benefits:**
 
-**Outcomes Esperados (Métricas de Éxito)**
+* Reducir en un 25% los errores asociados a la gestión manual de información clínica y operativa.
 
-*Business Outcomes:*
+* Incrementar en un 30% la eficiencia en el acceso y actualización de información relacionada con el cuidado del adulto mayor.
+* Reducir en un 35% el tiempo requerido para gestionar y dar seguimiento a la información de los residentes.
+
+* Incrementar en un 40% el uso de herramientas digitales en procesos relacionados con el monitoreo y cuidado del adulto mayor.
+
+* Mejorar en un 30% la disponibilidad y trazabilidad de la información clínica y operativa dentro de la plataforma.
+
+**User Outcomes and Benefits:**
+
+* Reducir en un 30% el tiempo dedicado a registros manuales y tareas administrativas.
+* Incrementar en un 40% la rapidez de acceso a información clínica y operativa de los residentes.
+* Reducir en un 40% la incertidumbre relacionada con el estado del adulto mayor.
+* Mejorar en un 45% la percepción de transparencia y comunicación con la residencia.
 
 
+**Features  Assumptions**
 
-*User Outcomes:*
+1. **Dashboard de Monitoreo:** Panel centralizado para visualizar el estado general y seguimiento de los adultos mayores.
 
+2. **Registro de Signos Vitales:** Captura y visualización de información biométrica relacionada con el estado de salud de los residentes.
 
+3. **Módulo de Alertas y Notificaciones:** Envío de alertas automáticas ante cambios o situaciones relevantes relacionadas con el estado del adulto mayor.
 
-**Features mínimas para validación (MVP)**
-
-
+4. **Portal Familiar:** Acceso remoto para familiares a información clínica, medicación y actividades diarias de los residentes.
 
 ##### 1.2.2.3. Lean UX Hypothesis Statements
 
