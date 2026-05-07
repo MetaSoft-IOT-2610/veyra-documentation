@@ -127,9 +127,18 @@ Se presenta el diseño visual y de interacción en formato de wireframes de nues
 
 Tenemos las pantallas generales que vendrían a ser el inicio sesión y registro.
 
+
 Iniciar sesión: En esta pantalla le mostramos al administrador de casa de reposo y al doctor los campos a llenar para ingresar con su cuenta en nuestra plataforma,
 
+<p align="center">
+  <img src="../assets/img/chapter-V/veyra-wireframes/web-application/Sign-in.png" alt="Wireframe" width="500px" height="auto"/>
+</p>
+
 Registrar Admin: En esta pantalla le mostramos al administrador de casa de reposo los campos a llenar para crearse una cuenta en nuestra plataforma. Se usaron elementos como formas, textos y colores.
+
+<p align="center">
+  <img src="../assets/img/chapter-V/veyra-wireframes/web-application/create-admin.png" alt="Wireframe" width="500px" height="auto"/>
+</p>
 
 **MOBILE APPLICATION WIREFRAMES**
 
