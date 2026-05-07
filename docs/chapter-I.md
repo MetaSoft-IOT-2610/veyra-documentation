@@ -1,4 +1,4 @@
-## Capítulo I: Introducción
+# Capítulo I: Introducción
 
 El presente proyecto tiene como finalidad el diseño, desarrollo e implementación de una solución tecnológica basada en el enfoque de Internet de las Cosas (IoT), integrando dispositivos físicos, procesamiento en el edge y servicios en la nube, con el objetivo de resolver problemáticas reales en contextos productivos. Esta solución se construye bajo un enfoque de ingeniería de software moderna, incorporando metodologías ágiles, diseño centrado en el usuario (Lean UX) y arquitecturas escalables orientadas a servicios.
 
@@ -160,71 +160,42 @@ Sabremos que tenemos éxito cuando observemos una reducción en los errores de g
 
 En esta sección se declaran las creencias fundamentales del equipo sobre las que se construye la propuesta de valor de Veyra. Bajo el marco de trabajo Lean UX, estos supuestos identifican las áreas de mayor riesgo e incertidumbre, sirviendo como base estratégica para la creación de hipótesis y experimentos de validación.
 
-**Assumptions Worksheet (Síntesis del Proyecto)**
 
-| # | Supuesto Estratégico aplicado a Veyra                                                                                                                                   |
-|---|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1 | Creemos que los familiares de adultos mayores experimentan altos niveles de ansiedad debido a la opacidad y lentitud de los reportes tradicionales de salud.            |
-| 2 | Asumimos que los administradores de casas de reposo ven en la transparencia de datos una ventaja competitiva clave para justificar sus tarifas y mejorar su reputación. |
-| 3 | La necesidad de visibilidad se resolverá con un ecosistema IoT + Cloud que automatice la captura de data crítica, eliminando el sesgo y error del registro manual.      |
-| 4 | El modelo de ingresos será un SaaS B2B escalable por número de residentes monitoreados, complementado con accesos premium para familiares.                              |
-| 5 | El mayor riesgo de adopción es la resistencia al cambio del personal asistencial; se mitigará mediante interfaces de baja fricción y automatización de toma de datos.   |
+**Business Assumptions**
 
-**Supuestos por Dimensión**
+* Creemos que nuestros clientes necesitan una solución centralizada para gestionar medicamentos y el cuidado de los adultos mayores.
+* Estas necesidades se pueden resolver con un servicio digital que integre información clínica y operativa, facilitando el acceso remoto a datos relevantes para el seguimiento del cuidado.
+* Nuestros clientes iniciales serán administradores de casas de reposo privadas y familiares de adultos mayores que buscan mejorar la comunicación y el seguimiento del cuidado.
+* El valor #1 que nuestros clientes quieren de nuestro servicio es la capacidad de acceder a la información del adulto mayor de manera rápida, confiable y en tiempo real, lo que les permitirá tomar decisiones informadas y mejorar la calidad del cuidado.
+* Nuestros clientes también pueden obtener estos beneficios adicionales como la reducción de errores en la gestión de información y medicamentos, una mejora en la comunicación entre el personal de cuidado y los familiares, y una mayor tranquilidad al contar con acceso constante a información actualizada sobre el estado del adulto mayor.  
+* Vamos a adquirir la mayoría de nuestros clientes a través de estrategias de marketing digital dirigidas a administradores de casas de reposo y familiares de adultos mayores, tales como publicidad en redes sociales y contenido educativo en blogs.
+* Haremos dinero a través de un modelo de suscripción mensual o anual para el uso de la plataforma.
+* Nuestra competencia principal en el mercado será cualquier otra plataforma digital que ofrezca servicios similares de gestión de información clínica y operativa para casas de reposo, así como métodos tradicionales como el uso de papel o sistemas no integrados.
+* Esperamos diferenciarnos mediante una propuesta de valor que centraliza la información, facilita el acceso remoto y mejora la comunicación entre los involucrados en el cuidado del adulto mayor.
+* Nuestro mayor riesgo del producto es la resistencia al cambio por parte de los usuarios, especialmente en un sector que ha dependido tradicionalmente de métodos manuales.
+* Buscaremos mitigar este riesgo mediante una estrategia de adopción gradual, ofreciendo capacitación, soporte continuo y demostrando el valor tangible de la plataforma.
 
-**Business Assumptions (Viabilidad y Mercado)**
+**User Assumptions**
+* Los administradores necesitan acceder rápidamente a información clínica y operativa de los residentes.
+* Los administradores consideran importante reducir el tiempo dedicado a registros manuales.
+* Los administradores valorarán funcionalidades relacionadas con control de medicamentos y seguimiento de actividades.
+* Los familiares necesitan acceso remoto a información actualizada sobre el estado del adulto mayor.
+* Los familiares utilizarán la plataforma principalmente desde dispositivos móviles.
+* Los familiares esperan una interfaz simple y fácil de usar.
 
-* Asumimos que las casas de reposo privadas en zonas urbanas están dispuestas a invertir en tecnología para diferenciarse de la competencia informal y mejorar su estándar de servicio.
-* Asumimos que el modelo de suscripción escalonado permite la captación de instituciones pequeñas y medianas sin comprometer la rentabilidad operativa.
-* Asumimos que la propuesta de valor integrada (Web/Móvil/IoT) justifica el costo de implementación frente a soluciones de software tradicionales.
-
-**User Assumptions (Comportamiento y Segmentación)**
-
-* **Personal Asistencial:** Asumimos que adoptarán el registro digital solo si este reduce su carga administrativa operativa al cierre de cada turno.
-* **Administradores:** Asumimos que requieren una visión centralizada del estado de salud de todos los residentes para mitigar riesgos legales y operativos.
-* **Familiares:** Asumimos que prefieren el autoservicio de información a través de una aplicación móvil que depender de llamadas telefónicas o mensajes de WhatsApp.
-
-**Problem Assumptions (Deseabilidad y Dolores)**
-
-* Creemos que la dependencia de registros manuales y comunicación informal (papel/voz) genera pérdida de trazabilidad y lentitud en la detección de crisis.
-* Asumimos que existe una brecha de confianza entre la institución y la familia debido a la falta de pruebas objetivas sobre la frecuencia y calidad del cuidado.
-* Creemos que el personal médico gasta tiempo crítico en tareas de digitación manual que restan calidad a la atención directa del residente.
-
-**Solution Assumptions (Factibilidad y Valor)**
-
-* Creemos que la captura automática vía dispositivos IoT proporcionará una fuente de verdad única que reducirá fricciones y reclamos por parte de los familiares.
-* Asumimos que una plataforma en la nube facilitará la gestión de alertas preventivas, permitiendo una reacción médica hasta un 40% más rápida.
-* Creemos que el acceso remoto continuo aumentará la percepción de valor del servicio prestado por la casa de reposo.
-
-**Assumptions Priority (Matriz de Riesgo x Incertidumbre)**
-
-| Prioridad | Supuesto a validar                                                                                    | Riesgo | Incertidumbre |
-|----------:|-------------------------------------------------------------------------------------------------------|:------:|:-------------:|
-|         1 | El personal asistencial adoptará el registro digital continuo sin afectar su flujo operativo actual.  |  Alto  |     Alto      |
-|         2 | Los sensores IoT mantendrán la precisión y conectividad necesaria para generar alertas confiables.    |  Alto  |     Medio     |
-|         3 | Las instituciones aceptarán el modelo de suscripción SaaS por el valor percibido de la transparencia. | Medio  |     Alto      |
-|         4 | Los familiares usarán la plataforma de forma recurrente como canal principal de seguimiento.          | Medio  |     Bajo      |
 
 **Outcomes Esperados (Métricas de Éxito)**
 
 *Business Outcomes:*
 
-* Lograr que al menos 3 instituciones piloto completen el ciclo de validación de 6 meses.
-* Reducir en un 25% los costos operativos relacionados con la gestión de información clínica.
-* Incrementar en un 15% la tasa de captación de nuevos residentes tras la implementación tecnológica.
+
 
 *User Outcomes:*
 
-* Reducir el tiempo de registro manual del personal asistencial en un 35% por turno.
-* Lograr que los familiares consulten la plataforma un promedio de 3 veces por semana, reduciendo las llamadas de consulta externa.
-* Disminuir el tiempo de respuesta ante alertas críticas en al menos un 40%.
+
 
 **Features mínimas para validación (MVP)**
 
-1. **Dashboard de Monitoreo:** Panel centralizado para administradores con el estado de salud global.
-2. **Registro de Signos Vitales IoT:** Captura y visualización en tiempo real de data biométrica.
-3. **Módulo de Alertas:** Notificaciones automáticas ante variaciones críticas de salud.
-4. **Portal Familiar:** Aplicación de consulta de historial clínico, medicación y actividades diarias.
 
 
 ##### 1.2.2.3. Lean UX Hypothesis Statements
@@ -232,62 +203,6 @@ En esta sección se declaran las creencias fundamentales del equipo sobre las qu
 En esta sección se formulan las hipótesis del producto a partir de los supuestos previamente definidos. Estas hipótesis permiten validar, mediante experimentación, si la solución propuesta genera los resultados esperados en los usuarios y en el negocio. Cada hipótesis se estructura en términos de segmento de usuario, solución propuesta, resultado esperado y métrica de validación.
 
 
-**Hypothesis 1 – Transparencia y confianza**
-
-**Creemos que** implementar una plataforma web y móvil con acceso en tiempo real a la información clínica de los residentes aumentará el nivel de confianza de los familiares en el servicio de la casa de reposo.
-
-**Sabremos que** hemos tenido éxito.
-
-**Cuando veamos** que al menos el 70% de los familiares acceden a la plataforma un mínimo de 3 veces por semana y reportan una mejora en su percepción de confianza en encuestas de satisfacción.
-
-**Hypothesis 2 – Monitoreo IoT en tiempo real**
-
-**Creemos que** incorporar dispositivos IoT para el monitoreo continuo de signos vitales mejorará la detección temprana de riesgos de salud en residentes de casas de reposo.
-
-**Sabremos que** hemos tenido éxito.
-
-**Cuando veamos** que al menos el 80% de las alertas críticas generadas corresponden a eventos confirmados por el personal y se reduce la cantidad de incidentes no detectados.
-
-**Hypothesis 3 – Adopción por parte del personal**
-
-**Creemos que** implementar un sistema simple e integrado para el registro de información clínica aumentará la frecuencia y calidad del registro de datos por parte del personal de cuidado.
-
-**Sabremos que** hemos tenido éxito.
-
-**Cuando veamos** que al menos el 85% de los registros se realizan dentro del mismo día y los errores de registro se reducen en un 30%.
-
-
-**Hypothesis 4 – Uso de la aplicación móvil**
-
-**Creemos que** ofrecer una aplicación móvil intuitiva con acceso a información en tiempo real aumentará el uso recurrente de la solución entre los familiares de residentes.
-
-**Sabremos que** hemos tenido éxito.
-
-**Cuando veamos** que al menos el 60% de los usuarios activos utilizan la app diariamente o varias veces por semana.
-
-**Hypothesis 5 – Alertas y reacción oportuna**
-
-**Creemos que** implementar un sistema de alertas automáticas ante cambios en signos vitales permitirá una respuesta más rápida ante eventos críticos por parte del personal médico y los familiares.
-
-**Sabremos que** hemos tenido éxito.
-
-**Cuando veamos** que el tiempo promedio de respuesta ante alertas se reduce en al menos un 40% respecto a la situación actual.
-
-**Hypothesis 6 – Valor percibido y disposición de pago**
-
-**Creemos que** ofrecer una solución que combine monitoreo en tiempo real, acceso remoto y comunicación directa validará la disposición de pago de los administradores de casas de reposo.
-
-**Sabremos que** hemos tenido éxito.
-
-**Cuando veamos** que al menos el 50% de las instituciones piloto aceptan continuar con un plan de suscripción al finalizar el período de prueba.
-
-**Hypothesis 7 – Diferenciación en el mercado**
-
-**Creemos que** ofrecer una solución integrada (web + móvil + IoT) nos diferenciará de las soluciones tradicionales disponibles para casas de reposo privadas.
-
-**Sabremos que** hemos tenido éxito.
-
-**Cuando veamos** que al menos el 60% de los decisores entrevistados en sesiones de validación comercial identifican el monitoreo en tiempo real como el principal valor diferencial de la solución.
 
 ##### 1.2.2.4. Lean UX Canvas
 
