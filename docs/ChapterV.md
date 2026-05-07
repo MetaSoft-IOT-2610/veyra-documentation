@@ -159,6 +159,19 @@ Nuestros flujos de tareas (TaskFlows) se dividen según el rol del usuario para 
 
 **Flujo Informativo**: Consulta del estado diario del residente por parte del familiar.
 ### 5.4.2. Applications Mock-ups
+**WEB APPLICATION MOCK-UPS**
+
+Se observa una interfaz con un Dashboard robusto. Para el Doctor, resaltan las tablas de telemetría (ej. ritmo cardíaco, saturación de oxigeno y estado de salud).
+
+<p align="center">
+  <img src="../assets/img/chapter-V/veyra-mockups/web-application/doctor-dashboard.png" alt="Mockup" width="500px" height="auto"/>
+</p>
+
+**MOBILE APPLICATION MOCK-UPS**
+
+En la aplicación móvil, el familiar tiene una vista clara y reconfortante del estado de su ser querido, con enlaces rapidos para ver sus indicadores de salud.
+<p align="center">
+  <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/family-dashboard.png" alt="Mockup" width="200px" height="auto"/>
 
 ### 5.4.3. Applications User Flow Diagrams
 
