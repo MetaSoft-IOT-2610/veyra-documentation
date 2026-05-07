@@ -116,6 +116,22 @@ Backend:
 
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review
 
+Para este sprint se realizó el despliegue de tres artefactos: Landing page, backend y frontend. La landing page se desplegó utilizando GitHub Pages, lo que permitió su acceso inmediato y facilitó la recopilación de feedback de los usuarios. El backend y el frontend se desplegaron utilizando servicios de hosting adecuados para cada uno, asegurando su disponibilidad y rendimiento para los usuarios finales.
+
+
+Landing page:
+
+Para deplegar con github pages, se creó un repositorio específico para la landing page, donde se desarrolló el contenido y diseño de la página. Una vez finalizado el desarrollo, se configuró GitHub Pages para publicar la página directamente desde el repositorio, lo que permitió su acceso inmediato a través de una URL pública.
+
+![Landing Page Deployment](/assets/img/chapter-VI/deployment-evidence-landing-page.png)
+
+
+El despliegue fue exitoso y la landing page está disponible para los usuarios.
+
+![Landing Page Deployment](/assets/img/chapter-VI/deployment-evidence-landing-page-2.png)
+
+
+
 #### 6.2.1.9. Team Collaboration Insights during Sprint
 
 ## 6.3. Validation Interviews
