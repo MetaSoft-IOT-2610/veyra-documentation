@@ -190,6 +190,32 @@ Codificación de Estados por Color: Siguiendo la paleta funcional definida en la
 
 ### 5.2.3. SEO Tags and Meta Tags
 
+En esta sección se documentan las meta tags y elementos del <head> configurados tanto en la Landing Page como en la aplicación web de Veyra, los cuales son fundamentales para el correcto posicionamiento en buscadores, la compatibilidad con dispositivos y la experiencia visual consistente.
+
+Meta Tags de la Landing Page:
+
+Charset: Se utiliza <meta charset="UTF-8" /> para garantizar la correcta codificación de caracteres especiales en español (tildes, ñ) y símbolos.
+Compatibilidad con Internet Explorer: Se incluye <meta http-equiv="X-UA-Compatible" content="IE=edge" /> para que el navegador utilice la última versión de renderizado disponible.
+Viewport Responsivo: Se configura <meta name="viewport" content="width=device-width, initial-scale=1.0" /> para asegurar que la Landing Page se adapte correctamente a dispositivos móviles, tablets y escritorio.
+Título de la Página: Se define <title>Veyra</title> como el nombre identificador de la marca en la pestaña del navegador y en los resultados de búsqueda.
+Iconografía Externa: Se importa Font Awesome 5.15.3 desde el CDN de Cloudflare para acceder a la librería de iconos utilizada en toda la Landing Page.
+Tipografías de Google Fonts: Se preconectan los dominios de Google Fonts (fonts.googleapis.com y fonts.gstatic.com) para optimizar la carga, y se importan las familias tipográficas Instrument Serif, Jost, Konkhmer Sleokchher, Lexend, Manrope y Rubik, siendo esta última la tipografía principal definida en la sección 5.1.1.
+Estilos Locales: Se enlaza la hoja de estilos public/assets/styles/style.css que contiene las reglas CSS específicas de la Landing Page.
+
+
+Meta Tags de la Aplicación Web:
+
+Charset: Se define <meta charset="utf-8"> para la correcta interpretación de caracteres especiales en la interfaz administrativa y clínica.
+Título de la Aplicación: Se establece <title>FrontendNovaPeruTech</title> como identificador de la aplicación web durante el desarrollo, el cual será reemplazado por "Veyra" en producción.
+Base URL: Se incluye <base href="/"> para definir la ruta raíz desde la cual se resuelven todas las rutas relativas de la aplicación.
+Viewport Responsivo: Se utiliza <meta name="viewport" content="width=device-width, initial-scale=1"> para garantizar la correcta visualización en distintos dispositivos.
+Favicon: Se enlaza <link rel="icon" type="image/x-icon" href="favicon.ico"> para representar la marca Veyra en la pestaña del navegador.
+Tipografía Roboto: Se importa la familia Roboto desde Google Fonts en sus pesos 300, 400 y 500, utilizada como tipografía complementaria en componentes específicos de la aplicación.
+Iconografía Material: Se importa la librería Material Icons desde Google Fonts para mantener consistencia con los componentes UI estándar de la aplicación.
+
+
+Optimizaciones SEO Recomendadas: Para mejorar el posicionamiento orgánico de la Landing Page, se considera la incorporación progresiva de los siguientes meta tags: <meta name="description"> con una descripción atractiva de la propuesta de valor de Veyra, <meta name="keywords"> con términos como "casa de reposo", "monitoreo IoT", "adultos mayores" y "salud geriátrica", etiquetas Open Graph (og:title, og:description, og:image) para una correcta previsualización al compartir en redes sociales, etiquetas Twitter Cards para compartir en X (anteriormente Twitter), <link rel="canonical"> para evitar contenido duplicado, y <meta name="robots" content="index, follow"> para autorizar la indexación por motores de búsqueda.
+
 ### 5.2.4. Searching Systems
 
 Barra de Búsqueda Global: En la aplicación web, el administrador, el médico y el personal asistencial cuentan con una barra de búsqueda persistente y prominente en el header, que permite localizar rápidamente residentes, miembros del personal o alertas. La búsqueda es predictiva y muestra sugerencias mientras el usuario escribe. La Landing Page no incluye barra de búsqueda al estar orientada a un recorrido lineal de descubrimiento.
