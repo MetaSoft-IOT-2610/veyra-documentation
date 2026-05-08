@@ -104,6 +104,41 @@ La arquitectura de la información de Veyra está diseñada para que cada usuari
 
 ### 5.2.1. Organization Systems
 
+Jerarquía de Contenidos: La información se estructura de lo general a lo específico. En la Landing Page partimos de un mensaje de impacto en la sección Hero, seguido de un resumen de los servicios y luego del detalle de funcionalidades, beneficios y planes de suscripción. En las aplicaciones web y móvil, el usuario parte de un Dashboard general adaptado a su rol y desciende progresivamente hacia el detalle de cada residente, signo vital, alerta o evento clínico.
+Secciones Principales de la Landing Page:
+
+Hero: La promesa de Veyra como puente digital entre casas de reposo y familias.
+What We Offer: Visión general del monitoreo IoT y la gestión clínica integral.
+Features: Funcionalidades clave (monitoreo de signos vitales en tiempo real, alertas críticas, portal familiar e historial clínico).
+Benefits: Beneficios diferenciados para instituciones geriátricas y familias.
+About Us: Sobre Metasoft y la misión de Veyra.
+Our Team: Las personas detrás del proyecto.
+Plans: Planes de suscripción Familiar y Casa de Reposo en modalidad mensual y anual.
+Testimonials & CTA: Reseñas de usuarios y llamado a la acción para iniciar el registro.
+
+
+Secciones Principales de la Aplicación Web (Admin / Doctor / Healthcare Staff):
+
+Dashboard: Vista global de residentes, alertas activas y métricas operativas del día.
+Residentes: Listado y perfil detallado (datos personales, dispositivo IoT asignado, familiar vinculado, personal responsable).
+Monitoreo: Panel de signos vitales en tiempo real con los datos transmitidos por el dispositivo IoT.
+Historial Clínico: Eventos clínicos cronológicos registrados por turno.
+Parámetros Clínicos: Rangos de signos vitales definidos por el médico para cada residente, base para la generación de alertas personalizadas.
+Personal y Familiares: Gestión del personal asistencial, médicos, familiares y vinculaciones con residentes.
+Alertas: Bandeja de alertas críticas, advertencias e informativas, con su estado de atención.
+Suscripción y Pagos: Gestión del plan contratado y método de pago.
+
+
+Secciones Principales de la Aplicación Móvil (Familiar / Healthcare Staff):
+
+Home/Dashboard: Estado actual del residente con un mensaje claro y reconfortante para el familiar, o lista de residentes asignados al turno para el personal asistencial.
+Signos Vitales: Visualización rápida de los últimos valores y su tendencia reciente.
+Historial: Consulta del historial de signos vitales y eventos clínicos con filtro por período.
+Notificaciones: Centro unificado de alertas críticas y avisos.
+Perfil: Configuración de la cuenta y preferencias de notificación.
+
+
+Agrupación de Contenidos: Los contenidos se agrupan según los Bounded Contexts del sistema, lo que permite que cada módulo conserve la cohesión funcional de su dominio. Los signos vitales y alertas se presentan en tarjetas con codificación visual de severidad; los residentes aparecen en un listado con vista detallada en su perfil; y los eventos clínicos se organizan en un timeline cronológico ordenado de más reciente a más antiguo.
 ### 5.2.2. Labeling Systems
 
 ### 5.2.3. SEO Tags and Meta Tags
