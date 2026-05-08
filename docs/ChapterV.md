@@ -100,6 +100,8 @@ Este enfoque comunicacional busca generar confianza y lealtad, asegurando a las 
 
 ## 5.2. Information Architecture
 
+La arquitectura de la información de Veyra está diseñada para que cada usuario —administrador, médico, personal asistencial o familiar— acceda con el menor número de pasos posible a los datos relevantes para su rol, ya sea desde la Landing Page, la aplicación web, la aplicación móvil o la pantalla del dispositivo IoT. La estructura responde a los Bounded Contexts identificados en el Capítulo IV (IAM, Profiles, Tracking, Health, HCM, Communication, Subscriptions & Payments) y al lenguaje ubicuo definido en el Capítulo II.
+
 ### 5.2.1. Organization Systems
 
 ### 5.2.2. Labeling Systems
