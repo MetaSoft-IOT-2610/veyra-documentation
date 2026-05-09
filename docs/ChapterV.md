@@ -416,6 +416,11 @@ La sección "What our users are saying" muestra tres tarjetas de testimonios con
 
 ![Mock-up - Testimonials y Footer](../assets/img/chapter-V/mockup-testimonials-footer.png)
 
+**Our Team — Veyra**
+
+La sección del equipo presenta el título "Our Team" con los integrantes de NovaPeru Tech en tarjetas con foto de perfil circular, nombre, rol en cursiva azul y descripción: Renato Guillermo Calvo Yalan, Renzo Miguel Llerena Delgado, Oscar Javier Armas Sánchez, Vicente Quijandria Araneda, Dayro Richard Rios Piñan, Janover Gonzalo Saldaña Vela y Renzo Alonso Villafuerte Tapia.
+
+![Mock-up - Our Team](../assets/img/chapter-V/mockup-our-team.png)
 
 ## 5.4. Applications UX/UI Design
 Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups de nuestra aplicación móvil y aplicación web de nuestro producto Veyra
