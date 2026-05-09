@@ -1785,7 +1785,7 @@ agnóstica de frameworks externos.
   * `complete(): Activity`
 * **Relaciones:** Referencia a `LogMeal`, `LogBath` y `UpdateRiskProfile` por
   residentId. Administrado a través de `IActivityRepository`.
-  **`LogMeal`**
+  **`LogMeal`** 
 * **Tipo DDD:** Aggregate Root
 * **Propósito:** Representa el registro de una comida provista al residente,
   incluyendo la asistencia de alimentación cuando aplica. Garantiza que toda
