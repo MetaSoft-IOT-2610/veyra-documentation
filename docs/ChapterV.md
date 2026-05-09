@@ -387,6 +387,7 @@ Esta sección presenta el título "What we offer" centrado con una línea decora
 ![Mock-up - What We Offer](../assets/img/chapter-V/mockup-what-we-offer.png)
 
 
+
 ## 5.4. Applications UX/UI Design
 Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups de nuestra aplicación móvil y aplicación web de nuestro producto Veyra
 
