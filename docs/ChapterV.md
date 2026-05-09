@@ -380,6 +380,12 @@ El hero presenta el navbar con el logotipo de Veyra en azul-verde, los enlaces d
 
 ![Mock-up - Hero](../assets/img/chapter-V/mockup-hero.png)
 
+**What We Offer — Veyra**
+
+Esta sección presenta el título "What we offer" centrado con una línea decorativa inferior. Se despliega una cuadrícula 2x2 con cuatro tarjetas de servicios, cada una con un ícono representativo, título en azul oscuro y descripción: Home Health Care, Pediatric Care, Companion Care y Conditions Treated.
+
+![Mock-up - What We Offer](../assets/img/chapter-V/mockup-what-we-offer.png)
+
 
 ## 5.4. Applications UX/UI Design
 Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups de nuestra aplicación móvil y aplicación web de nuestro producto Veyra
