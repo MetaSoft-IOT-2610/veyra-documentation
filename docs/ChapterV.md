@@ -372,6 +372,13 @@ La sección de testimonios muestra tarjetas con foto de perfil circular y texto 
 
 ### 5.3.2. Landing Page Mock-up
 
+El mock-up del landing page de Veyra representa el diseño visual final con la paleta de colores, tipografía, imágenes e iconografía definitivos. Refleja la identidad de marca de NovaPeru Tech aplicada a cada sección de la página.
+
+**Hero — Veyra**
+
+El hero presenta el navbar con el logotipo de Veyra en azul-verde, los enlaces de navegación en gris oscuro y los botones "Sign In" y "Sign Up" diferenciados. El fondo es de tonos azul claro con una curva decorativa ondulada. El titular principal reza **"The Best Care is Always Connected"** acompañado del subtítulo "Veyra keeps you close to your loved ones' health and well-being, no matter the distance." A la derecha se muestra una fotografía de un cuidador con un adulto mayor en silla de ruedas. El CTA principal es el botón "Start now →" en azul-verde.
+
+![Mock-up - Hero](../assets/img/chapter-V/mockup-hero.png)
 
 
 ## 5.4. Applications UX/UI Design
