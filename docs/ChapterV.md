@@ -392,6 +392,12 @@ La sección Features muestra la etiqueta "Features" en un chip verde-azulado y e
 
 ![Mock-up - Features](../assets/img/chapter-V/mockup-features.png)
 
+**Benefits — Veyra**
+
+Encabezada por la etiqueta "Benefits" y el título "The Veyra Advantage: Benefits for a New Era of Elder Care", presenta cuatro tarjetas en cuadrícula 2x2 con imagen fotográfica, título en negrita y descripción: Enhanced Communication, Streamlined Clinical Management, Improved Resident Well-being e Increased Peace of Mind.
+
+![Mock-up - Benefits](../assets/img/chapter-V/mockup-benefits.png)
+
 
 ## 5.4. Applications UX/UI Design
 Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups de nuestra aplicación móvil y aplicación web de nuestro producto Veyra
