@@ -422,6 +422,17 @@ La sección del equipo presenta el título "Our Team" con los integrantes de Nov
 
 ![Mock-up - Our Team](../assets/img/chapter-V/mockup-our-team.png)
 
+### 5.3.3. Landing Page Mock-up Mobile Web Browser.
+
+El diseño responsive del landing page de Veyra se adapta completamente a dispositivos móviles, manteniendo la identidad visual de la marca y reorganizando los elementos en una sola columna para facilitar la navegación táctil.
+
+**Hero — Mobile**
+
+El navbar mobile muestra el logotipo de Veyra a la izquierda, un selector de idioma EN y el ícono de menú hamburguesa a la derecha. El hero presenta el título "The Best Care is Always Connected" centrado en tipografía bold, el subtítulo y el botón "Start now →" apilados verticalmente, seguidos de la imagen representativa a ancho completo.
+
+![Mock-up Mobile - Hero](../assets/img/chapter-V/mockup-mobile-hero.png)
+
+
 ## 5.4. Applications UX/UI Design
 Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups de nuestra aplicación móvil y aplicación web de nuestro producto Veyra
 
