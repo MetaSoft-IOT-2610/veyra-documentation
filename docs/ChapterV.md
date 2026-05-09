@@ -338,9 +338,17 @@ Acceso Persistente a Notificaciones y Cuenta: En todas las aplicaciones, el íco
 
 ## 5.3. Landing Page UI Design
 
+El landing page juega un papel esencial en atraer la atención de los visitantes y guiarlos hacia acciones concretas, como inscribirse, adquirir un producto o informarse sobre un servicio. En este apartado, se tratará el diseño de la interfaz de usuario del landing page, enfocándose en los elementos clave que optimizan la experiencia del usuario, creando una página interactiva y fácil de usar.
+
+
+
 ### 5.3.1. Landing Page Wireframe
 
+
+
 ### 5.3.2. Landing Page Mock-up
+
+
 
 ## 5.4. Applications UX/UI Design
 Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups de nuestra aplicación móvil y aplicación web de nuestro producto Veyra
