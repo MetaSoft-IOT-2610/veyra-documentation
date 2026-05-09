@@ -404,6 +404,12 @@ La sección About Us presenta el título "NovaPeru Tech: Transforming Elder Care
 
 ![Mock-up - About Us](../assets/img/chapter-V/mockup-about-us.png)
 
+**Plans — Veyra**
+
+Encabezada por la etiqueta "Plans" y el título "Choose the Plan that Fits Your Needs", muestra un toggle Monthly/Annually y dos tarjetas: **Family Plan ($30/mes)** para familias que desean supervisar el cuidado en casa, y **Nursing Home Plan ($300/mes)** como solución completa para instituciones de cuidado.
+
+![Mock-up - Plans](../assets/img/chapter-V/mockup-plans.png)
+
 
 ## 5.4. Applications UX/UI Design
 Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups de nuestra aplicación móvil y aplicación web de nuestro producto Veyra
