@@ -98,7 +98,9 @@ Este enfoque comunicacional busca generar confianza y lealtad, asegurando a las 
 
 ### 5.1.2. Web, Mobile and IoT Style Guidelines
 
-#### Web  Style Guidelines
+### General Style Guidelines
+
+### Web  Style Guidelines
 
 Las directrices de estilo web de Veyra se centran en la simplicidad, la accesibilidad y la modernidad. Nuestro objetivo es crear una experiencia visual que refleje la misión de nuestra plataforma: conectar y simplificar el cuidado de los adultos mayores con un diseño limpio e intuitivo.
 
@@ -133,10 +135,99 @@ Las directrices de estilo web de Veyra se centran en la simplicidad, la accesibi
 * **Versionado:** Usamos un sistema de control de versiones como Git para gestionar los cambios en los archivos de estilo y contenido. Esto asegura que todos los colaboradores trabajen en la versión más reciente del proyecto.
 
 
-#### Mobile   Style Guidelines
+### Mobile   Style Guidelines
  
-#### Iot  Style Guidelines
+### Iot  Style Guidelines
 
+
+### Introducción
+
+Los dispositivos IoT de **Veyra** son el punto de contacto físico más crítico del sistema: son los únicos componentes que interactúan directamente con el **Residente** en el entorno de la casa de reposo. A diferencia de las interfaces web y móvil, estos dispositivos operan en segundo plano de forma continua, sin requerir atención activa del usuario. Por esta razón, sus lineamientos de diseño deben garantizar que **cualquier información visual sea comprensible en menos de dos segundos**, sin conocimientos técnicos previos.
+
+Estos lineamientos aplican a los dos dispositivos que conforman la capa Embedded de Veyra:
+
+- **Pulsera Inteligente** (*Smart Wristband*): dispositivo tipo wristband que monitorea signos vitales biométricos del Residente.
+- **Escarapela Inteligente** (*Smart Badge*): dispositivo colgante que realiza seguimiento de ubicación del Residente dentro o fuera de la instalación.
+
+Ambos dispositivos deben ser coherentes entre sí y con el resto de la plataforma Veyra (landing page, aplicación web, aplicación móvil) en términos de lenguaje visual, codificación de color y terminología del Ubiquitous Language.
+
+---
+
+### Principios de Diseño para Dispositivos IoT
+
+Los siguientes principios rigen todas las decisiones de diseño de los dispositivos físicos de Veyra:
+
+1. **Invisibilidad funcional**: el dispositivo no debe requerir atención del Residente durante la operación normal. Funciona en silencio y solo se manifiesta visualmente cuando existe un estado relevante que comunicar.
+
+2. **Legibilidad inmediata**: cualquier indicador de estado debe ser interpretable rapido por el Healthcare Staff, incluso en condiciones de baja iluminación (turnos nocturnos).
+
+3. **Consistencia cross-platform**: la codificación de colores, los iconos y la terminología son idénticos entre el dispositivo físico, la aplicación móvil y el dashboard web. Un estado que aparece como rojo en el dispositivo, también aparece como rojo en la app.
+
+4. **Mínima fricción operativa**: el Healthcare Staff trabaja bajo alta presión de tiempo. Las interacciones físicas con el dispositivo deben requerir el menor número posible de acciones. Se prioriza la automatización por sobre la interacción manual.
+
+5. **Diseño inclusivo**: los indicadores visuales no dependen únicamente del color. Se complementan con formas diferenciadas, frecuencias de parpadeo distintas y, cuando aplica, retroalimentación háptica, para garantizar accesibilidad ante daltonismo o condiciones de visión reducida.
+
+6. **Resiliencia ante desconectividad**: el dispositivo comunica visualmente su estado de sincronización. El Healthcare Staff debe poder saber si el dispositivo está transmitiendo datos en tiempo real o en modo offline, sin consultar la aplicación.
+
+---
+
+### Dispositivo 1 — Pulsera Inteligente (*Smart Wristband*)
+
+### Descripción General
+
+| Atributo                    | Detalle                                                                                                      |
+|-----------------------------|--------------------------------------------------------------------------------------------------------------|
+| Tipo                        | Wristband (pulsera de muñeca)                                                                                |
+| Usuario portador            | Residente adulto mayor                                                                                       |
+| Operador principal          | Healthcare Staff (configura, asigna y supervisa)                                                             |
+| Función principal           | Monitoreo continuo de signos vitales (frecuencia cardíaca, temperatura corporal, saturación de oxígeno SpO2) |
+| Modo de operación           | Pasivo y continuo — no requiere acción del Residente                                                         |
+| Evento disparador de alerta | Valores fuera de los Parámetros Clínicos definidos por el Doctor para ese Residente                          |
+
+#### Diseño Físico
+
+- **Forma**: correa suave y ergonómica, adaptable a muñecas de distintos tamaños. El perfil debe ser bajo para no interferir con el descanso ni las actividades diarias del Residente.
+- **Material**: silicona médica hipoalergénica, resistente al agua y a desinfectantes de uso clínico estándar.
+- **Peso**: el dispositivo debe ser lo suficientemente liviano para no ser percibido por el Residente durante el sueño.
+- **Cierre**: hebilla de liberación rápida para facilitar la colocación y el retiro por parte del Healthcare Staff.
+- **Identificación del Residente**: el interior de la correa incluye espacio para una etiqueta impresa con el nombre del Residente y su número de cama, facilitando la identificación física en caso de ser encontrada fuera de su lugar.
+
+#### Indicador LED de Estado
+
+La pulsera cuenta con un único LED RGB que comunica el estado del dispositivo mediante la combinación de color y patrón de parpadeo. Este indicador está ubicado en la cara superior del dispositivo, visible con un vistazo rápido.
+
+| Estado del Sistema                        | Color LED    | Patrón                                      | Descripción                                                                   |
+|-------------------------------------------|--------------|---------------------------------------------|-------------------------------------------------------------------------------|
+| **Dispositivo activo / operación normal** | 🟢 Verde     | Pulso lento                                 | Signos vitales dentro de los Parámetros Clínicos.                             |
+| **Dispositivo apagado / inactivo**        | 🔴 Rojo      | Sólido fijo                                 | El dispositivo no está operativo. Requiere intervención del Healthcare Staff. |
+| **Alerta crítica — valor fuera de rango** | 🔴 Rojo      | Parpadeo rápido                             | Signo vital fuera de lo normal.                                               |
+| **En proceso de carga**                   | 🔵 Azul      | Pulso suave y continuo                      | El dispositivo está conectado a la fuente de carga.                           |
+| **Carga completa**                        | 🟢 Verde     | Sólido fijo durante 5 segundos, luego apaga | La carga ha finalizado. Listo para su uso.                                    |
+
+
+#### Retroalimentación Háptica
+
+| Evento                | Patrón de Vibración                |
+|-----------------------|------------------------------------|
+| Alerta crítica activa | Vibración corta repetida           |
+| Batería baja          | Dos pulsos cortos cada 60 segundos |
+
+ 
+#### Botón Físico
+
+La pulsera incluye un único botón en el lateral del dispositivo, cuya función exclusiva es encender y apagar el dispositivo.
+
+| Acción                     | Resultado                                                                        |
+|----------------------------|----------------------------------------------------------------------------------|
+| Presión larga (3 segundos) | Enciende el dispositivo si está apagado / Apaga el dispositivo si está encendido |
+
+#### Pantalla 
+
+En caso de incorporar una pantalla OLED de baja resolución, la información se presenta con la siguiente jerarquía:
+
+<p align="center">
+  <img src="../assets/img/chapter-V/pulsera.png" alt="pulsera-veyra" width="750px" height="auto"/>
+</p>
 
 ## 5.2. Information Architecture
 
