@@ -398,6 +398,12 @@ Encabezada por la etiqueta "Benefits" y el título "The Veyra Advantage: Benefit
 
 ![Mock-up - Benefits](../assets/img/chapter-V/mockup-benefits.png)
 
+**About Us — Veyra**
+
+La sección About Us presenta el título "NovaPeru Tech: Transforming Elder Care with Trust and Innovation" seguido de dos párrafos descriptivos y tres puntos destacados con íconos de check: Seamless Communication, Real-Time Insights y Enhanced Security. A la derecha se muestra un video embebido complementario.
+
+![Mock-up - About Us](../assets/img/chapter-V/mockup-about-us.png)
+
 
 ## 5.4. Applications UX/UI Design
 Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups de nuestra aplicación móvil y aplicación web de nuestro producto Veyra
