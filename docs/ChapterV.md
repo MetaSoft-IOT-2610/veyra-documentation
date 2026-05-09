@@ -386,6 +386,11 @@ Esta sección presenta el título "What we offer" centrado con una línea decora
 
 ![Mock-up - What We Offer](../assets/img/chapter-V/mockup-what-we-offer.png)
 
+**Features — Veyra**
+
+La sección Features muestra la etiqueta "Features" en un chip verde-azulado y el título "Key Features of Our Platform". A la izquierda se presenta un video embebido de YouTube; a la derecha, un listado desplegable con acordeón interactivo: Seamless Communication, Real-Time Health Monitoring, Streamlined Clinical Management y Comprehensive Reporting & Analytics.
+
+![Mock-up - Features](../assets/img/chapter-V/mockup-features.png)
 
 
 ## 5.4. Applications UX/UI Design
