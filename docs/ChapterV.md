@@ -364,8 +364,11 @@ La sección Features presenta un layout de dos columnas: a la izquierda un bloqu
 
 ![Wireframe - Features y Plans](../assets/img/chapter-V/wireframe-testimonials-contact.png)
 
+**Testimonials, Contact y Footer:**
 
+La sección de testimonios muestra tarjetas con foto de perfil circular y texto de reseña. El formulario de contacto presenta campos de entrada y un botón de envío. El footer incluye el logotipo, columnas de enlaces y datos de contacto sobre un fondo oscuro.
 
+![Wireframe - Testimonials, Contact y Footer](../assets/img/chapter-V/wireframe-footer-video.png)
 
 ### 5.3.2. Landing Page Mock-up
 
