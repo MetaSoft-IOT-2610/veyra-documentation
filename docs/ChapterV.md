@@ -410,6 +410,12 @@ Encabezada por la etiqueta "Plans" y el título "Choose the Plan that Fits Your 
 
 ![Mock-up - Plans](../assets/img/chapter-V/mockup-plans.png)
 
+**Testimonials y Footer — Veyra**
+
+La sección "What our users are saying" muestra tres tarjetas de testimonios con calificación de 5 estrellas en dorado, texto de reseña en cursiva y nombre del usuario. Debajo se presenta el banner "It's time to connect and care for your loved ones." con botón "Subscribe". El footer presenta sobre fondo azul marino oscuro el logotipo de Veyra, columnas de enlaces (About y Contact) y el copyright de NovaPerú Tech 2025.
+
+![Mock-up - Testimonials y Footer](../assets/img/chapter-V/mockup-testimonials-footer.png)
+
 
 ## 5.4. Applications UX/UI Design
 Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups de nuestra aplicación móvil y aplicación web de nuestro producto Veyra
