@@ -340,9 +340,30 @@ Acceso Persistente a Notificaciones y Cuenta: En todas las aplicaciones, el íco
 
 El landing page juega un papel esencial en atraer la atención de los visitantes y guiarlos hacia acciones concretas, como inscribirse, adquirir un producto o informarse sobre un servicio. En este apartado, se tratará el diseño de la interfaz de usuario del landing page, enfocándose en los elementos clave que optimizan la experiencia del usuario, creando una página interactiva y fácil de usar.
 
-
-
 ### 5.3.1. Landing Page Wireframe
+
+El wireframe del landing page de Veyra representa la estructura visual básica y el esquema de distribución de los elementos principales de la página, sin aplicar colores ni estilos definitivos. Actúa como guía inicial para asegurar una disposición clara y coherente antes del diseño final.
+
+El wireframe incluye las siguientes secciones:
+
+**Nav y Hero:**
+
+La sección de navegación incluye el logotipo de Veyra en la parte superior izquierda, junto con los enlaces de menú principales (Home, Benefits, Features, About Us, Plans) y los botones de acción "Sign In" y "Sign Up". La sección Hero presenta el título principal y subtítulo de la plataforma a la izquierda, un espacio reservado para imagen representativa a la derecha, y un botón de llamado a la acción destacado ("Start now").
+
+![Wireframe - Nav y Hero](../assets/img/chapter-V/wireframe-hero-navbar.png)
+
+**Benefits (Beneficios):**
+
+Esta sección muestra un título centrado seguido de una cuadrícula de 2x2 con cuatro tarjetas de contenido. Cada tarjeta contiene un placeholder de título y bloques de texto descriptivo, representando los beneficios clave de la plataforma para el cuidado del adulto mayor.
+
+![Wireframe - Benefits](../assets/img/chapter-V/wireframe-features-plans.png)
+
+**Features y Plans:**
+
+La sección Features presenta un layout de dos columnas: a la izquierda un bloque de contenido con título y descripción; a la derecha un componente de video embebido. La sección de Planes muestra tres tarjetas de precios en disposición horizontal, cada una con título del plan, lista de características y un botón de acción.
+
+![Wireframe - Features y Plans](../assets/img/chapter-V/wireframe-testimonials-contact.png)
+
 
 
 
