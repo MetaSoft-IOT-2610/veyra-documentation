@@ -560,7 +560,9 @@ El objetivo principal fue representar los acontecimientos reales del negocio, de
 
 Tras la exploración inicial, el equipo ordenó cronológicamente los eventos de dominio, agrupándolos en flujos lógicos que reflejan la operación diaria de la casa de reposo (ej. Pre-admisión, Evaluación Clínica, Gestión de Medicación). En esta fase, se introdujeron los Actores (Admin, Doctor, Nurse, Relative) para mapear claramente las interacciones y responsabilidades. Además, el análisis iterativo permitió identificar Hotspots (puntos críticos o dudas del negocio, señalados mediante rombos morados), revelando escenarios excepcionales o reglas por definir, tales como admisiones de emergencia sin familiares presentes, ausencias imprevistas del personal o el rechazo constante de medicación vital. Esta estructura permite visualizar no solo el "camino feliz", sino la complejidad real a resolver mediante soluciones digitales.
 
-![bigpicture](../assets/img/chapter-II/event-storming-step2-overview.jpg)
+![bigpicture](../assets/img/chapter-II/big-picture-step2-part1-overview.png)
+![bigpicture](../assets/img/chapter-II/big-picture-step2-part2-overview.png)
+![bigpicture](../assets/img/chapter-II/big-picture-step2-part3-overview.png)
 
 ## 2.5 Ubiquitous Language
 
