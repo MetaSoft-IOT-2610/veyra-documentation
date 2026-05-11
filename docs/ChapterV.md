@@ -432,6 +432,59 @@ El navbar mobile muestra el logotipo de Veyra a la izquierda, un selector de idi
 
 ![Mock-up Mobile - Hero](../assets/img/chapter-V/mockup-mobile-hero.png)
 
+**What We Offer — Mobile**
+
+Las cuatro tarjetas de servicios se reorganizan en una sola columna, cada una a ancho completo con ícono, título y descripción. La navegación sticky superior se mantiene visible durante el scroll.
+
+![Mock-up Mobile - What We Offer](../assets/img/chapter-V/mockup-mobile-what-we-offer.png)
+
+**Features — Mobile**
+
+La sección Features presenta el chip "Features" y el título centrados, seguidos del video embebido a ancho completo. Las características clave se muestran en acordeón desplegable debajo del video, optimizando el espacio vertical.
+
+![Mock-up Mobile - Features](../assets/img/chapter-V/mockup-mobile-features.png)
+
+**Benefits — Mobile**
+
+El chip "Benefits" y el título "The Veyra Advantage: Benefits for a New Era of Elder Care" se muestran centrados. Cada beneficio ocupa una tarjeta completa con imagen superior, título en negrita y descripción, apiladas verticalmente: Enhanced Communication, Streamlined Clinical Management, Improved Resident Well-being e Increased Peace of Mind.
+
+![Mock-up Mobile - Benefits](../assets/img/chapter-V/mockup-mobile-benefits.png)
+
+**About Us — Mobile**
+
+El chip "About Us" y el título "NovaPeru Tech: Transforming Elder Care with Trust and Innovation" se presentan a ancho completo con el contenido textual centrado. Los tres puntos destacados con íconos de check azul se apilan verticalmente, seguidos del video embebido.
+
+![Mock-up Mobile - About Us](../assets/img/chapter-V/mockup-mobile-about-us.png)
+
+**Our Team — Mobile**
+
+Los integrantes del equipo se presentan en tarjetas individuales a ancho completo, cada una con foto de perfil circular centrada, nombre, rol en verde-azulado y descripción. Las tarjetas se apilan verticalmente facilitando la lectura en pantallas pequeñas.
+
+![Mock-up Mobile - Our Team](../assets/img/chapter-V/mockup-mobile-our-team.png)
+
+**Plans — Mobile**
+
+El chip "Plans" y el título "Choose the Plan that Fits Your Needs" se muestran centrados, con el toggle Monthly/Annually a ancho completo. Las tarjetas de planes Family Plan ($30) y Nursing Home Plan ($300) se apilan verticalmente, cada una con precio destacado, botón de acción y lista de características con íconos de check.
+
+![Mock-up Mobile - Plans](../assets/img/chapter-V/mockup-mobile-plans.png)
+
+**Testimonials — Mobile**
+
+La sección "What our users are saying" presenta las tres tarjetas de testimonios apiladas verticalmente, cada una con calificación en estrellas doradas, texto en cursiva y nombre del usuario: Ana G. (5 estrellas), Carlos R. (5 estrellas) y Sofía L. (4.5 estrellas).
+
+![Mock-up Mobile - Testimonials](../assets/img/chapter-V/mockup-mobile-testimonials.png)
+
+**Call to Action — Mobile**
+
+El banner "It's time to connect and care for your loved ones." se presenta con el texto y el botón "Subscribe" apilados verticalmente a ancho completo sobre fondo azul claro.
+
+![Mock-up Mobile - CTA](../assets/img/chapter-V/mockup-mobile-cta.png)
+
+**Footer — Mobile**
+
+El footer sobre fondo azul marino oscuro reorganiza el contenido en cuatro columnas compactas: logotipo de Veyra con tagline "Connecting families and caregivers" e íconos de redes sociales (Instagram, Facebook, LinkedIn); columna Platform con enlaces Home, Features, Benefits, About Us y Plans; columna Company con About Us, Help Center y Community; y columna Contact con email contacto@metasoft.pe, teléfono +1 (555) 482-9599 y ubicación UPC Lima – Perú.
+
+![Mock-up Mobile - Footer](../assets/img/chapter-V/mockup-mobile-footer.png)
 
 ## 5.4. Applications UX/UI Design
 Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups de nuestra aplicación móvil y aplicación web de nuestro producto Veyra
