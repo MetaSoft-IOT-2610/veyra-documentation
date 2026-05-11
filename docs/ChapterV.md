@@ -422,9 +422,57 @@ La sección del equipo presenta el título "Our Team" con los integrantes de Met
 
 ![Mock-up - Our Team](../assets/img/chapter-V/mockup-our-team.png)
 
-### 5.3.4. Landing Page Wireframe Mobile Web Browser.
+### 5.3.3. Landing Page Wireframe Mobile Web Browser.
 
+El wireframe mobile del landing page de Veyra representa la estructura básica adaptada a dispositivos móviles, reorganizando los elementos en una sola columna para facilitar la navegación táctil. Se evidencia la aplicación de principios de diseño inclusivo y arquitectura de información optimizada para pantallas pequeñas.
 
+**Nav y Hero — Mobile**
+
+El navbar mobile muestra el logotipo de Veyra a la izquierda, con el toggle de idioma EN/ES y los enlaces de navegación simplificados a la derecha. El hero presenta el título principal, subtítulo y descripción apilados verticalmente con jerarquía tipográfica clara, seguidos del botón de llamado a la acción "Button" centrado y un placeholder de imagen a ancho completo.
+
+![Wireframe Mobile - Hero](../assets/img/chapter-V/wireframe-mobile-hero.png)
+
+**What We Offer — Mobile**
+
+Las tarjetas de servicios se reorganizan en una sola columna, cada una a ancho completo con placeholder de título y bloques de texto descriptivo apilados. El fondo oscuro de la sección contrasta con las tarjetas de contenido en blanco para facilitar la legibilidad.
+
+![Wireframe Mobile - What We Offer](../assets/img/chapter-V/wireframe-mobile-what-we-offer.png)
+
+**Features — Mobile**
+
+La sección Features presenta el título y descripción centrados verticalmente, seguidos de un placeholder de video embebido a ancho completo con dos botones de acción inferiores, optimizando el espacio vertical disponible en pantallas pequeñas.
+
+![Wireframe Mobile - Features](../assets/img/chapter-V/wireframe-mobile-features.png)
+
+**Plans — Mobile**
+
+Las tarjetas de planes se apilan verticalmente, cada una con título, descripción, precio, lista de características con pares etiqueta-campo y un botón de acción a ancho completo. La disposición en columna facilita la comparación secuencial de planes en mobile.
+
+![Wireframe Mobile - Plans](../assets/img/chapter-V/wireframe-mobile-plans.png)
+
+**Our Team — Mobile**
+
+Los integrantes del equipo se presentan en tarjetas horizontales apiladas verticalmente, cada una con avatar circular a la izquierda y bloques de texto de nombre y descripción a la derecha, optimizando el espacio en pantallas estrechas.
+
+![Wireframe Mobile - Our Team](../assets/img/chapter-V/wireframe-mobile-our-team.png)
+
+**Contact — Mobile**
+
+El formulario de contacto se presenta a ancho completo con título y subtítulo centrados, seguidos de pares etiqueta-campo de entrada apilados verticalmente: nombre, email, mensaje y un área de texto amplia. El botón de envío "Button" se ubica centrado al pie del formulario.
+
+![Wireframe Mobile - Contact](../assets/img/chapter-V/wireframe-mobile-contact.png)
+
+**About Us — Mobile**
+
+La sección About Us presenta el título centrado seguido de un placeholder de imagen representativa a ancho completo, evidenciando la reorganización vertical del contenido que en desktop se dispone en dos columnas.
+
+![Wireframe Mobile - About Us](../assets/img/chapter-V/wireframe-mobile-about-us.png)
+
+**Footer — Mobile**
+
+El footer mobile muestra el título de sección centrado, un placeholder de video o imagen principal a ancho completo, y debajo el footer con logotipo, íconos de redes sociales y columnas de enlaces reorganizadas en una cuadrícula compacta sobre fondo oscuro.
+
+![Wireframe Mobile - Footer](../assets/img/chapter-V/wireframe-mobile-footer.png)
 
 ### 5.3.4. Landing Page Mock-up Mobile Web Browser.
 
