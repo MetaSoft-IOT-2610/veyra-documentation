@@ -297,7 +297,7 @@ Estilos Locales: Se enlaza la hoja de estilos public/assets/styles/style.css que
 Meta Tags de la Aplicación Web:
 
 Charset: Se define <meta charset="utf-8"> para la correcta interpretación de caracteres especiales en la interfaz administrativa y clínica.
-Título de la Aplicación: Se establece <title>FrontendNovaPeruTech</title> como identificador de la aplicación web durante el desarrollo, el cual será reemplazado por "Veyra" en producción.
+Título de la Aplicación: Se establece <title>FrontendMetasoft</title> como identificador de la aplicación web durante el desarrollo, el cual será reemplazado por "Veyra" en producción.
 Base URL: Se incluye <base href="/"> para definir la ruta raíz desde la cual se resuelven todas las rutas relativas de la aplicación.
 Viewport Responsivo: Se utiliza <meta name="viewport" content="width=device-width, initial-scale=1"> para garantizar la correcta visualización en distintos dispositivos.
 Favicon: Se enlaza <link rel="icon" type="image/x-icon" href="favicon.ico"> para representar la marca Veyra en la pestaña del navegador.
@@ -372,7 +372,7 @@ La sección de testimonios muestra tarjetas con foto de perfil circular y texto 
 
 ### 5.3.2. Landing Page Mock-up
 
-El mock-up del landing page de Veyra representa el diseño visual final con la paleta de colores, tipografía, imágenes e iconografía definitivos. Refleja la identidad de marca de NovaPeru Tech aplicada a cada sección de la página.
+El mock-up del landing page de Veyra representa el diseño visual final con la paleta de colores, tipografía, imágenes e iconografía definitivos. Refleja la identidad de marca de Metasoft aplicada a cada sección de la página.
 
 **Hero — Veyra**
 
@@ -400,7 +400,7 @@ Encabezada por la etiqueta "Benefits" y el título "The Veyra Advantage: Benefit
 
 **About Us — Veyra**
 
-La sección About Us presenta el título "NovaPeru Tech: Transforming Elder Care with Trust and Innovation" seguido de dos párrafos descriptivos y tres puntos destacados con íconos de check: Seamless Communication, Real-Time Insights y Enhanced Security. A la derecha se muestra un video embebido complementario.
+La sección About Us presenta el título "Metasoft": Transforming Elder Care with Trust and Innovation" seguido de dos párrafos descriptivos y tres puntos destacados con íconos de check: Seamless Communication, Real-Time Insights y Enhanced Security. A la derecha se muestra un video embebido complementario.
 
 ![Mock-up - About Us](../assets/img/chapter-V/mockup-about-us.png)
 
@@ -412,17 +412,21 @@ Encabezada por la etiqueta "Plans" y el título "Choose the Plan that Fits Your 
 
 **Testimonials y Footer — Veyra**
 
-La sección "What our users are saying" muestra tres tarjetas de testimonios con calificación de 5 estrellas en dorado, texto de reseña en cursiva y nombre del usuario. Debajo se presenta el banner "It's time to connect and care for your loved ones." con botón "Subscribe". El footer presenta sobre fondo azul marino oscuro el logotipo de Veyra, columnas de enlaces (About y Contact) y el copyright de NovaPerú Tech 2025.
+La sección "What our users are saying" muestra tres tarjetas de testimonios con calificación de 5 estrellas en dorado, texto de reseña en cursiva y nombre del usuario. Debajo se presenta el banner "It's time to connect and care for your loved ones." con botón "Subscribe". El footer presenta sobre fondo azul marino oscuro el logotipo de Veyra, columnas de enlaces (About y Contact) y el copyright de Metasoft 2025.
 
 ![Mock-up - Testimonials y Footer](../assets/img/chapter-V/mockup-testimonials-footer.png)
 
 **Our Team — Veyra**
 
-La sección del equipo presenta el título "Our Team" con los integrantes de NovaPeru Tech en tarjetas con foto de perfil circular, nombre, rol en cursiva azul y descripción: Renato Guillermo Calvo Yalan, Renzo Miguel Llerena Delgado, Oscar Javier Armas Sánchez, Vicente Quijandria Araneda, Dayro Richard Rios Piñan, Janover Gonzalo Saldaña Vela y Renzo Alonso Villafuerte Tapia.
+La sección del equipo presenta el título "Our Team" con los integrantes de Metasoft en tarjetas con foto de perfil circular, nombre, rol en cursiva azul y descripción: Renato Guillermo Calvo Yalan, Renzo Miguel Llerena Delgado, Oscar Javier Armas Sánchez, Vicente Quijandria Araneda, Dayro Richard Rios Piñan, Janover Gonzalo Saldaña Vela y Renzo Alonso Villafuerte Tapia.
 
 ![Mock-up - Our Team](../assets/img/chapter-V/mockup-our-team.png)
 
-### 5.3.3. Landing Page Mock-up Mobile Web Browser.
+### 5.3.4. Landing Page Wireframe Mobile Web Browser.
+
+
+
+### 5.3.4. Landing Page Mock-up Mobile Web Browser.
 
 El diseño responsive del landing page de Veyra se adapta completamente a dispositivos móviles, manteniendo la identidad visual de la marca y reorganizando los elementos en una sola columna para facilitar la navegación táctil.
 
@@ -452,7 +456,7 @@ El chip "Benefits" y el título "The Veyra Advantage: Benefits for a New Era of 
 
 **About Us — Mobile**
 
-El chip "About Us" y el título "NovaPeru Tech: Transforming Elder Care with Trust and Innovation" se presentan a ancho completo con el contenido textual centrado. Los tres puntos destacados con íconos de check azul se apilan verticalmente, seguidos del video embebido.
+El chip "About Us" y el título "Metasoft": Transforming Elder Care with Trust and Innovation" se presentan a ancho completo con el contenido textual centrado. Los tres puntos destacados con íconos de check azul se apilan verticalmente, seguidos del video embebido.
 
 ![Mock-up Mobile - About Us](../assets/img/chapter-V/mockup-mobile-about-us.png)
 
@@ -485,6 +489,9 @@ El banner "It's time to connect and care for your loved ones." se presenta con e
 El footer sobre fondo azul marino oscuro reorganiza el contenido en cuatro columnas compactas: logotipo de Veyra con tagline "Connecting families and caregivers" e íconos de redes sociales (Instagram, Facebook, LinkedIn); columna Platform con enlaces Home, Features, Benefits, About Us y Plans; columna Company con About Us, Help Center y Community; y columna Contact con email contacto@metasoft.pe, teléfono +1 (555) 482-9599 y ubicación UPC Lima – Perú.
 
 ![Mock-up Mobile - Footer](../assets/img/chapter-V/mockup-mobile-footer.png)
+
+### 5.3.3. Landing Page Wireframe Mobile Web Browser.
+
 
 ## 5.4. Applications UX/UI Design
 Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups de nuestra aplicación móvil y aplicación web de nuestro producto Veyra
