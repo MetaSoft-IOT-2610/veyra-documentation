@@ -297,7 +297,7 @@ Estilos Locales: Se enlaza la hoja de estilos public/assets/styles/style.css que
 Meta Tags de la Aplicación Web:
 
 Charset: Se define <meta charset="utf-8"> para la correcta interpretación de caracteres especiales en la interfaz administrativa y clínica.
-Título de la Aplicación: Se establece <title>FrontendNovaPeruTech</title> como identificador de la aplicación web durante el desarrollo, el cual será reemplazado por "Veyra" en producción.
+Título de la Aplicación: Se establece <title>FrontendMetasoft</title> como identificador de la aplicación web durante el desarrollo, el cual será reemplazado por "Veyra" en producción.
 Base URL: Se incluye <base href="/"> para definir la ruta raíz desde la cual se resuelven todas las rutas relativas de la aplicación.
 Viewport Responsivo: Se utiliza <meta name="viewport" content="width=device-width, initial-scale=1"> para garantizar la correcta visualización en distintos dispositivos.
 Favicon: Se enlaza <link rel="icon" type="image/x-icon" href="favicon.ico"> para representar la marca Veyra en la pestaña del navegador.
@@ -372,7 +372,7 @@ La sección de testimonios muestra tarjetas con foto de perfil circular y texto 
 
 ### 5.3.2. Landing Page Mock-up
 
-El mock-up del landing page de Veyra representa el diseño visual final con la paleta de colores, tipografía, imágenes e iconografía definitivos. Refleja la identidad de marca de NovaPeru Tech aplicada a cada sección de la página.
+El mock-up del landing page de Veyra representa el diseño visual final con la paleta de colores, tipografía, imágenes e iconografía definitivos. Refleja la identidad de marca de Metasoft aplicada a cada sección de la página.
 
 **Hero — Veyra**
 
@@ -400,7 +400,7 @@ Encabezada por la etiqueta "Benefits" y el título "The Veyra Advantage: Benefit
 
 **About Us — Veyra**
 
-La sección About Us presenta el título "NovaPeru Tech: Transforming Elder Care with Trust and Innovation" seguido de dos párrafos descriptivos y tres puntos destacados con íconos de check: Seamless Communication, Real-Time Insights y Enhanced Security. A la derecha se muestra un video embebido complementario.
+La sección About Us presenta el título "Metasoft": Transforming Elder Care with Trust and Innovation" seguido de dos párrafos descriptivos y tres puntos destacados con íconos de check: Seamless Communication, Real-Time Insights y Enhanced Security. A la derecha se muestra un video embebido complementario.
 
 ![Mock-up - About Us](../assets/img/chapter-V/mockup-about-us.png)
 
@@ -412,15 +412,134 @@ Encabezada por la etiqueta "Plans" y el título "Choose the Plan that Fits Your 
 
 **Testimonials y Footer — Veyra**
 
-La sección "What our users are saying" muestra tres tarjetas de testimonios con calificación de 5 estrellas en dorado, texto de reseña en cursiva y nombre del usuario. Debajo se presenta el banner "It's time to connect and care for your loved ones." con botón "Subscribe". El footer presenta sobre fondo azul marino oscuro el logotipo de Veyra, columnas de enlaces (About y Contact) y el copyright de NovaPerú Tech 2025.
+La sección "What our users are saying" muestra tres tarjetas de testimonios con calificación de 5 estrellas en dorado, texto de reseña en cursiva y nombre del usuario. Debajo se presenta el banner "It's time to connect and care for your loved ones." con botón "Subscribe". El footer presenta sobre fondo azul marino oscuro el logotipo de Veyra, columnas de enlaces (About y Contact) y el copyright de Metasoft 2025.
 
 ![Mock-up - Testimonials y Footer](../assets/img/chapter-V/mockup-testimonials-footer.png)
 
 **Our Team — Veyra**
 
-La sección del equipo presenta el título "Our Team" con los integrantes de NovaPeru Tech en tarjetas con foto de perfil circular, nombre, rol en cursiva azul y descripción: Renato Guillermo Calvo Yalan, Renzo Miguel Llerena Delgado, Oscar Javier Armas Sánchez, Vicente Quijandria Araneda, Dayro Richard Rios Piñan, Janover Gonzalo Saldaña Vela y Renzo Alonso Villafuerte Tapia.
+La sección del equipo presenta el título "Our Team" con los integrantes de Metasoft en tarjetas con foto de perfil circular, nombre, rol en cursiva azul y descripción: Renato Guillermo Calvo Yalan, Renzo Miguel Llerena Delgado, Oscar Javier Armas Sánchez, Vicente Quijandria Araneda, Dayro Richard Rios Piñan, Janover Gonzalo Saldaña Vela y Renzo Alonso Villafuerte Tapia.
 
 ![Mock-up - Our Team](../assets/img/chapter-V/mockup-our-team.png)
+
+### 5.3.3. Landing Page Wireframe Mobile Web Browser.
+
+El wireframe mobile del landing page de Veyra representa la estructura básica adaptada a dispositivos móviles, reorganizando los elementos en una sola columna para facilitar la navegación táctil. Se evidencia la aplicación de principios de diseño inclusivo y arquitectura de información optimizada para pantallas pequeñas.
+
+**Nav y Hero — Mobile**
+
+El navbar mobile muestra el logotipo de Veyra a la izquierda, con el toggle de idioma EN/ES y los enlaces de navegación simplificados a la derecha. El hero presenta el título principal, subtítulo y descripción apilados verticalmente con jerarquía tipográfica clara, seguidos del botón de llamado a la acción "Button" centrado y un placeholder de imagen a ancho completo.
+
+![Wireframe Mobile - Hero](../assets/img/chapter-V/wireframe-mobile-hero.png)
+
+**What We Offer — Mobile**
+
+Las tarjetas de servicios se reorganizan en una sola columna, cada una a ancho completo con placeholder de título y bloques de texto descriptivo apilados. El fondo oscuro de la sección contrasta con las tarjetas de contenido en blanco para facilitar la legibilidad.
+
+![Wireframe Mobile - What We Offer](../assets/img/chapter-V/wireframe-mobile-what-we-offer.png)
+
+**Features — Mobile**
+
+La sección Features presenta el título y descripción centrados verticalmente, seguidos de un placeholder de video embebido a ancho completo con dos botones de acción inferiores, optimizando el espacio vertical disponible en pantallas pequeñas.
+
+![Wireframe Mobile - Features](../assets/img/chapter-V/wireframe-mobile-features.png)
+
+**Plans — Mobile**
+
+Las tarjetas de planes se apilan verticalmente, cada una con título, descripción, precio, lista de características con pares etiqueta-campo y un botón de acción a ancho completo. La disposición en columna facilita la comparación secuencial de planes en mobile.
+
+![Wireframe Mobile - Plans](../assets/img/chapter-V/wireframe-mobile-plans.png)
+
+**Our Team — Mobile**
+
+Los integrantes del equipo se presentan en tarjetas horizontales apiladas verticalmente, cada una con avatar circular a la izquierda y bloques de texto de nombre y descripción a la derecha, optimizando el espacio en pantallas estrechas.
+
+![Wireframe Mobile - Our Team](../assets/img/chapter-V/wireframe-mobile-our-team.png)
+
+**Contact — Mobile**
+
+El formulario de contacto se presenta a ancho completo con título y subtítulo centrados, seguidos de pares etiqueta-campo de entrada apilados verticalmente: nombre, email, mensaje y un área de texto amplia. El botón de envío "Button" se ubica centrado al pie del formulario.
+
+![Wireframe Mobile - Contact](../assets/img/chapter-V/wireframe-mobile-contact.png)
+
+**About Us — Mobile**
+
+La sección About Us presenta el título centrado seguido de un placeholder de imagen representativa a ancho completo, evidenciando la reorganización vertical del contenido que en desktop se dispone en dos columnas.
+
+![Wireframe Mobile - About Us](../assets/img/chapter-V/wireframe-mobile-about-us.png)
+
+**Footer — Mobile**
+
+El footer mobile muestra el título de sección centrado, un placeholder de video o imagen principal a ancho completo, y debajo el footer con logotipo, íconos de redes sociales y columnas de enlaces reorganizadas en una cuadrícula compacta sobre fondo oscuro.
+
+![Wireframe Mobile - Footer](../assets/img/chapter-V/wireframe-mobile-footer.png)
+
+### 5.3.4. Landing Page Mock-up Mobile Web Browser.
+
+El diseño responsive del landing page de Veyra se adapta completamente a dispositivos móviles, manteniendo la identidad visual de la marca y reorganizando los elementos en una sola columna para facilitar la navegación táctil.
+
+**Hero — Mobile**
+
+El navbar mobile muestra el logotipo de Veyra a la izquierda, un selector de idioma EN y el ícono de menú hamburguesa a la derecha. El hero presenta el título "The Best Care is Always Connected" centrado en tipografía bold, el subtítulo y el botón "Start now →" apilados verticalmente, seguidos de la imagen representativa a ancho completo.
+
+![Mock-up Mobile - Hero](../assets/img/chapter-V/mockup-mobile-hero.png)
+
+**What We Offer — Mobile**
+
+Las cuatro tarjetas de servicios se reorganizan en una sola columna, cada una a ancho completo con ícono, título y descripción. La navegación sticky superior se mantiene visible durante el scroll.
+
+![Mock-up Mobile - What We Offer](../assets/img/chapter-V/mockup-mobile-what-we-offer.png)
+
+**Features — Mobile**
+
+La sección Features presenta el chip "Features" y el título centrados, seguidos del video embebido a ancho completo. Las características clave se muestran en acordeón desplegable debajo del video, optimizando el espacio vertical.
+
+![Mock-up Mobile - Features](../assets/img/chapter-V/mockup-mobile-features.png)
+
+**Benefits — Mobile**
+
+El chip "Benefits" y el título "The Veyra Advantage: Benefits for a New Era of Elder Care" se muestran centrados. Cada beneficio ocupa una tarjeta completa con imagen superior, título en negrita y descripción, apiladas verticalmente: Enhanced Communication, Streamlined Clinical Management, Improved Resident Well-being e Increased Peace of Mind.
+
+![Mock-up Mobile - Benefits](../assets/img/chapter-V/mockup-mobile-benefits.png)
+
+**About Us — Mobile**
+
+El chip "About Us" y el título "Metasoft": Transforming Elder Care with Trust and Innovation" se presentan a ancho completo con el contenido textual centrado. Los tres puntos destacados con íconos de check azul se apilan verticalmente, seguidos del video embebido.
+
+![Mock-up Mobile - About Us](../assets/img/chapter-V/mockup-mobile-about-us.png)
+
+**Our Team — Mobile**
+
+Los integrantes del equipo se presentan en tarjetas individuales a ancho completo, cada una con foto de perfil circular centrada, nombre, rol en verde-azulado y descripción. Las tarjetas se apilan verticalmente facilitando la lectura en pantallas pequeñas.
+
+![Mock-up Mobile - Our Team](../assets/img/chapter-V/mockup-mobile-our-team.png)
+
+**Plans — Mobile**
+
+El chip "Plans" y el título "Choose the Plan that Fits Your Needs" se muestran centrados, con el toggle Monthly/Annually a ancho completo. Las tarjetas de planes Family Plan ($30) y Nursing Home Plan ($300) se apilan verticalmente, cada una con precio destacado, botón de acción y lista de características con íconos de check.
+
+![Mock-up Mobile - Plans](../assets/img/chapter-V/mockup-mobile-plans.png)
+
+**Testimonials — Mobile**
+
+La sección "What our users are saying" presenta las tres tarjetas de testimonios apiladas verticalmente, cada una con calificación en estrellas doradas, texto en cursiva y nombre del usuario: Ana G. (5 estrellas), Carlos R. (5 estrellas) y Sofía L. (4.5 estrellas).
+
+![Mock-up Mobile - Testimonials](../assets/img/chapter-V/mockup-mobile-testimonials.png)
+
+**Call to Action — Mobile**
+
+El banner "It's time to connect and care for your loved ones." se presenta con el texto y el botón "Subscribe" apilados verticalmente a ancho completo sobre fondo azul claro.
+
+![Mock-up Mobile - CTA](../assets/img/chapter-V/mockup-mobile-cta.png)
+
+**Footer — Mobile**
+
+El footer sobre fondo azul marino oscuro reorganiza el contenido en cuatro columnas compactas: logotipo de Veyra con tagline "Connecting families and caregivers" e íconos de redes sociales (Instagram, Facebook, LinkedIn); columna Platform con enlaces Home, Features, Benefits, About Us y Plans; columna Company con About Us, Help Center y Community; y columna Contact con email contacto@metasoft.pe, teléfono +1 (555) 482-9599 y ubicación UPC Lima – Perú.
+
+![Mock-up Mobile - Footer](../assets/img/chapter-V/mockup-mobile-footer.png)
+
+### 5.3.3. Landing Page Wireframe Mobile Web Browser.
+
 
 ## 5.4. Applications UX/UI Design
 Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups de nuestra aplicación móvil y aplicación web de nuestro producto Veyra
