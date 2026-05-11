@@ -567,10 +567,8 @@ Tras la exploración inicial, el equipo ordenó cronológicamente los eventos de
 Con el fin de garantizar una comunicación fluida entre los desarrolladores, el personal médico y los familiares, se ha elaborado el siguiente glosario. Estos términos deben utilizarse de manera coherente en las reuniones de trabajo, el código fuente (clases, métodos, bases de datos) y la interfaz de usuario.
 
 
-- **Resident (Residente):** Persona adulta mayor admitida en el centro geriátrico que recibe atención médica y cuidados diarios continuos.
 - **Relative (Responsable):** Persona designada con autorización legal y financiera para acceder a la información del residente, recibir notificaciones y supervisar su cuidado.
 - **Admin (Administrador):** Responsable de la gestión del centro, incluyendo admisiones, facturación, asignación de habitaciones y programación del personal.
-- **Doctor (Médico):** Profesional de la salud que realiza evaluaciones iniciales, define planes de tratamiento y prescribe medicamentos.
 - **Nursing Home (Casa de Reposo):** Establecimiento de larga estadía diseñado para el cuidado integral de adultos mayores, ya sea de forma temporal o permanente.
 - **Healthcare Staff (Personal de Cuidado):** Personal de atención directa encargado de ejecutar el plan de cuidado, administrar medicamentos, registrar signos vitales y asistir en la higiene diaria.
 - **Medical Record (Historia Clínica):** Registro centralizado del historial de salud del residente, incluyendo diagnósticos, alergias y antecedentes médicos.
