@@ -286,6 +286,8 @@ Se desarolló la aplicación web de Veyra, implementando las funcionalidades bá
 
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review
 
+Para este sprint no se documentaron servicios específicos, ya que el enfoque principal estuvo en el desarrollo de la landing page y la aplicación web.
+
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review
 
 Para este sprint se realizó el despliegue de tres artefactos: Landing page, backend y frontend. La landing page se desplegó utilizando GitHub Pages, lo que permitió su acceso inmediato y facilitó la recopilación de feedback de los usuarios. El backend y el frontend se desplegaron utilizando servicios de hosting adecuados para cada uno, asegurando su disponibilidad y rendimiento para los usuarios finales.
