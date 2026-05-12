@@ -281,29 +281,40 @@ La arquitectura de la información de Veyra está diseñada para que cada usuari
 
 En esta sección se documentan las meta tags y elementos del <head> configurados tanto en la Landing Page como en la aplicación web de Veyra, los cuales son fundamentales para el correcto posicionamiento en buscadores, la compatibilidad con dispositivos y la experiencia visual consistente.
 
-Meta Tags de la Landing Page:
+- **Meta Tags Implementados en la Landing Page:** El `<head>` del `index.html` declara los siguientes elementos:
 
-Charset: Se utiliza <meta charset="UTF-8" /> para garantizar la correcta codificación de caracteres especiales en español (tildes, ñ) y símbolos.
-Compatibilidad con Internet Explorer: Se incluye <meta http-equiv="X-UA-Compatible" content="IE=edge" /> para que el navegador utilice la última versión de renderizado disponible.
-Viewport Responsivo: Se configura <meta name="viewport" content="width=device-width, initial-scale=1.0" /> para asegurar que la Landing Page se adapte correctamente a dispositivos móviles, tablets y escritorio.
-Título de la Página: Se define <title>Veyra</title> como el nombre identificador de la marca en la pestaña del navegador y en los resultados de búsqueda.
-Iconografía Externa: Se importa Font Awesome 5.15.3 desde el CDN de Cloudflare para acceder a la librería de iconos utilizada en toda la Landing Page.
-Tipografías de Google Fonts: Se preconectan los dominios de Google Fonts (fonts.googleapis.com y fonts.gstatic.com) para optimizar la carga, y se importan las familias tipográficas Instrument Serif, Jost, Konkhmer Sleokchher, Lexend, Manrope y Rubik, siendo esta última la tipografía principal definida en la sección 5.1.1.
-Estilos Locales: Se enlaza la hoja de estilos public/assets/styles/style.css que contiene las reglas CSS específicas de la Landing Page.
+    - **`<meta charset="UTF-8" />`:** Codificación universal de caracteres, indispensable para mostrar correctamente tildes, ñ y símbolos en español.
+    - **`<meta http-equiv="X-UA-Compatible" content="IE=edge" />`:** Fuerza a Internet Explorer a usar su motor de renderizado más reciente.
+    - **`<meta name="viewport" content="width=device-width, initial-scale=1.0" />`:** Garantiza el comportamiento responsive en móviles, tablets y escritorio.
+    - **`<title>Veyra</title>`:** Identificador de marca que aparece en la pestaña del navegador y en los resultados de los buscadores.
+    - **`<html lang="en">`:** Idioma por defecto del documento, base para que los motores de búsqueda y lectores de pantalla interpreten el contenido.
+    - **Font Awesome 5.15.3:** Stylesheet cargado desde el CDN de Cloudflare (`cdnjs.cloudflare.com`) para la iconografía.
+    - **Google Fonts:** Preconnect a `fonts.googleapis.com` y `fonts.gstatic.com` para optimizar el tiempo de carga, seguido del import de las familias Instrument Serif, Jost, Konkhmer Sleokchher, Lexend, Manrope y Rubik (esta última es la tipografía principal según la sección 5.1.1).
+    - **Stylesheet local:** `public/assets/styles/style.css` con las reglas CSS específicas de la Landing.
 
+- **Meta Tags Implementados en la Aplicación Web:** El `<head>` del `src/index.html` de la aplicación Angular declara los siguientes elementos:
 
-Meta Tags de la Aplicación Web:
+    - **`<meta charset="utf-8">`:** Codificación universal de caracteres.
+    - **`<title>FrontendNovaPeruTech</title>`:** Título actual del entorno de desarrollo; debe ser reemplazado por **Veyra** en producción.
+    - **`<base href="/">`:** Define la ruta raíz desde la cual el router de Angular resuelve las rutas relativas.
+    - **`<meta name="viewport" content="width=device-width, initial-scale=1">`:** Habilita el diseño responsive.
+    - **`<link rel="icon" type="image/x-icon" href="favicon.ico">`:** Favicon de la aplicación.
+    - **`<html lang="en">`:** Idioma por defecto del documento.
+    - **Google Fonts Roboto (300, 400, 500):** Tipografía complementaria utilizada en componentes específicos de la aplicación.
+    - **Material Icons:** Stylesheet de Google Fonts para la iconografía nativa de Angular Material.
 
-Charset: Se define <meta charset="utf-8"> para la correcta interpretación de caracteres especiales en la interfaz administrativa y clínica.
-Título de la Aplicación: Se establece <title>FrontendMetasoft</title> como identificador de la aplicación web durante el desarrollo, el cual será reemplazado por "Veyra" en producción.
-Base URL: Se incluye <base href="/"> para definir la ruta raíz desde la cual se resuelven todas las rutas relativas de la aplicación.
-Viewport Responsivo: Se utiliza <meta name="viewport" content="width=device-width, initial-scale=1"> para garantizar la correcta visualización en distintos dispositivos.
-Favicon: Se enlaza <link rel="icon" type="image/x-icon" href="favicon.ico"> para representar la marca Veyra en la pestaña del navegador.
-Tipografía Roboto: Se importa la familia Roboto desde Google Fonts en sus pesos 300, 400 y 500, utilizada como tipografía complementaria en componentes específicos de la aplicación.
-Iconografía Material: Se importa la librería Material Icons desde Google Fonts para mantener consistencia con los componentes UI estándar de la aplicación.
+- **Page Titles Dinámicos:** El router de Angular asigna un title específico a cada ruta con el patrón **`{Page} | Veyra`**, lo que permite que cada pantalla tenga su propio título en la pestaña del navegador. Ejemplos reales tomados del código: "Home | Veyra", "Sign In | Veyra", "Sign Up | Veyra", "Dashboard | Veyra", "Residents | Veyra", "Resident Detail | Veyra", "New Resident | Veyra", "Staff | Veyra", "Rooms | Veyra", "Devices | Veyra", "Medications | Veyra", "Contracts | Veyra", "Choose Subscription | Veyra", "Checkout | Veyra" y "Page Not Found | Veyra".
 
+- **Optimizaciones SEO Recomendadas:** Para mejorar el posicionamiento orgánico de la Landing Page y la presentación en redes sociales, se contempla incorporar progresivamente los siguientes elementos:
 
-Optimizaciones SEO Recomendadas: Para mejorar el posicionamiento orgánico de la Landing Page, se considera la incorporación progresiva de los siguientes meta tags: <meta name="description"> con una descripción atractiva de la propuesta de valor de Veyra, <meta name="keywords"> con términos como "casa de reposo", "monitoreo IoT", "adultos mayores" y "salud geriátrica", etiquetas Open Graph (og:title, og:description, og:image) para una correcta previsualización al compartir en redes sociales, etiquetas Twitter Cards para compartir en X (anteriormente Twitter), <link rel="canonical"> para evitar contenido duplicado, y <meta name="robots" content="index, follow"> para autorizar la indexación por motores de búsqueda.
+    - **`<meta name="description">`:** Descripción breve y atractiva (≤160 caracteres) de la propuesta de valor de Veyra, visible en los resultados de buscadores.
+    - **`<meta name="keywords">`:** Palabras clave del dominio: "casa de reposo", "monitoreo IoT", "adultos mayores", "salud geriátrica", "Veyra".
+    - **Open Graph (`og:title`, `og:description`, `og:image`, `og:url`, `og:type`):** Para que los enlaces compartidos en Facebook, WhatsApp y LinkedIn muestren previsualización con imagen y descripción.
+    - **Twitter Cards (`twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`):** Equivalente a Open Graph para X (Twitter).
+    - **`<link rel="canonical">`:** Indica la URL oficial de cada página para evitar penalizaciones por contenido duplicado.
+    - **`<meta name="robots" content="index, follow">`:** Autoriza la indexación por parte de los motores de búsqueda.
+    - **Favicon de la Landing Page:** Actualmente no está definido en el `index.html` de la Landing; agregarlo refuerza el reconocimiento de marca.
+    - **Título correcto de la aplicación web:** Reemplazar `FrontendNovaPeruTech` por `Veyra` en producción para mantener la consistencia con la marca.
 
 ### 5.2.4. Searching Systems
 
