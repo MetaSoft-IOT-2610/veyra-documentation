@@ -318,32 +318,61 @@ En esta sección se documentan las meta tags y elementos del <head> configurados
 
 ### 5.2.4. Searching Systems
 
-Barra de Búsqueda Global: En la aplicación web, el administrador, el médico y el personal asistencial cuentan con una barra de búsqueda persistente y prominente en el header, que permite localizar rápidamente residentes, miembros del personal o alertas. La búsqueda es predictiva y muestra sugerencias mientras el usuario escribe. La Landing Page no incluye barra de búsqueda al estar orientada a un recorrido lineal de descubrimiento.
-Búsqueda Contextual en Móvil: En la aplicación móvil, la búsqueda aparece dentro de cada módulo cuando es relevante. El familiar puede buscar dentro de su historial de signos vitales y notificaciones, mientras que el personal asistencial puede buscar entre los residentes que tiene asignados a su turno actual.
-Filtros y Facetas Específicos por Módulo:
+- **Búsqueda en la Landing Page:** La Landing Page no incluye barra de búsqueda. Al ser un sitio estático orientado al descubrimiento mediante scroll, la navegación se resuelve con anchors (`#home`, `#features`, `#benefits`, `#about`, `#plans`) y con el botón flotante de scroll-to-top.
 
-Residentes: filtro por estado (activo/inactivo), por habitación, por familiar vinculado, por personal asistencial asignado y por estado del dispositivo IoT (activo/sin datos).
-Signos Vitales: filtro por tipo (frecuencia cardíaca, temperatura, saturación, presión), por rango de fechas y por estado (normal/anómalo/crítico).
-Alertas: filtro por severidad (crítica/advertencia/informativa), por residente, por estado (activa/atendida/resuelta) y por rango de fechas.
-Historial Clínico: filtro por residente, por tipo de evento clínico, por personal que registró el evento y por rango de fechas.
-Personal y Familiares: filtro por rol (médico, asistencial, familiar), por turno y por estado (activo/inactivo).
+- **Búsqueda en la Aplicación Web:** Cuatro de los cinco módulos del sidenav implementan una barra de búsqueda construida con `<mat-form-field>` y `<mat-input>`, prefijada por el ícono `search` y con un botón `close` que aparece para limpiar el término ingresado:
 
+    - **Residents (`/nursing/residents`):** Barra de búsqueda con placeholder "Enter the name" que filtra el listado de residentes a partir del término ingresado contra el person profile asociado. El componente `PersonProfileDetail` emite el evento `idsFiltered` con los IDs coincidentes y el listado se redibuja en tiempo real con `computed()` de Angular Signals.
+    - **Staff (`/hcm/staff`):** Misma mecánica que Residents — search bar con prefijo `search`, filtrado por persona y botón de limpiar.
+    - **Rooms (`/nursing/rooms`):** Búsqueda con placeholder "Enter the number" que filtra el listado tabular por número de habitación.
+    - **Devices (`/nursing/devices`):** Búsqueda con placeholder "Enter the name" que filtra la tabla de dispositivos IoT por nombre.
+    - **Contracts (`/hcm/staff/:id/contracts`):** No incluye barra de búsqueda — la navegación se realiza únicamente con el ordenamiento por columnas.
 
-Búsqueda por Período Personalizado: En el historial de signos vitales y de eventos clínicos, el usuario puede definir un rango de fechas con un selector de calendario. Si el rango es inválido (fecha de inicio posterior a la fecha de fin), el sistema rechaza la consulta y muestra un mensaje explicativo.
-Resultados Relevantes según Rol: Los resultados se priorizan según el rol del usuario autenticado. Un médico ve primero a los residentes con alertas activas; un familiar ve primero al residente que tiene vinculado; el administrador ve primero los residentes activos de su institución; el personal asistencial ve primero los residentes asignados a su turno.
-Estados Vacíos Informativos: Cuando una búsqueda no produce resultados, el sistema muestra un mensaje claro acompañado de una sugerencia de acción (por ejemplo: "No se encontraron residentes con ese filtro. Restablecer filtros") para evitar que el usuario quede sin guía.
-Historial de Búsqueda: En la aplicación web del personal asistencial y del administrador, se conserva un historial de búsquedas frecuentes (últimos residentes consultados, últimas alertas revisadas) que acelera el acceso recurrente a la misma información durante el turno.
+- **Ordenamiento por Columnas:** Las tablas de **Rooms**, **Devices** y **Contracts** ofrecen ordenamiento al hacer clic en la cabecera. El estado se representa con tres íconos: `unfold_more` (sin ordenar), `arrow_drop_up` (ascendente) y `arrow_drop_down` (descendente). Las columnas ordenables reales son **Number** y **Status** en Rooms; **Device ID**, **Assigned By**, **Assigned At** y **Status** en Devices; y **Status**, **Start Date** y **End Date** en Contracts.
+
+- **Estados Vacíos:** Cuando una búsqueda o un listado no produce resultados, la aplicación muestra un mensaje traducido por `ngx-translate` dentro del bloque `@empty` del nuevo control de flujo de Angular. Ejemplos reales tomados de los archivos de traducción: **"No allergies recorded"**, **"No vital signs recorded"** y **"No devices available"**. Las claves usadas siguen el patrón `residents.error.no-residents`, `staff-management.error.no-staff`, `no-devices`, `no-allergies` y `no-vital-signs`.
+
+- **Búsqueda en la Aplicación Móvil:** La aplicación móvil prioriza la consulta rápida del residente vinculado o de los residentes asignados al turno, por lo que la búsqueda se ofrece de forma contextual dentro de cada módulo. Según las User Stories del Capítulo III, los principales escenarios implementados son:
+
+    - **Historial de Signos Vitales (US-15):** El familiar consulta el historial de signos vitales del residente con un filtro por rango de fechas. Por defecto se muestran los últimos 7 días en orden cronológico descendente. Si el familiar selecciona una fecha de inicio cronológicamente posterior a la de fin, el sistema rechaza el filtro y muestra el mensaje **"La fecha de inicio no puede ser posterior a la fecha de fin"**.
+    - **Historial Clínico (US-17, US-18):** El personal asistencial y el médico consultan los eventos clínicos cronológicos del residente, ordenados por fecha y hora, con el nombre del personal que registró cada evento.
+    - **Listado de Residentes Asignados (US-11):** El personal asistencial accede al panel de monitoreo con los residentes activos de su turno.
+
+- **Resultados y Selección:** En la aplicación web, los listados de **Residents** y **Staff** utilizan grillas de tarjetas que se filtran en tiempo real conforme el usuario escribe. La selección de una tarjeta se indica visualmente con un borde resaltado (`.selected`) y habilita el botón **Edit** de la barra de acciones inferior. Las tablas de **Rooms**, **Devices** y **Contracts** emplean checkboxes por fila y muestran el ícono `unfold_more` o sus variantes direccionales para indicar el estado de ordenamiento de cada columna.
 
 ### 5.2.5. Navigation Systems
 
-Navegación Global: En la Landing Page, una barra superior fija ofrece acceso a las secciones Hero, What We Offer, Features, Benefits, About Us, Plans y al CTA de registro, con menú hamburguesa en dispositivos móviles. En la aplicación web, una barra lateral (sidebar) persistente muestra los módulos principales según el rol del usuario. En la aplicación móvil, una bottom navigation bar de hasta cinco ítems da acceso a las secciones más usadas.
-Navegación Basada en Roles: El sistema de navegación se adapta dinámicamente al rol autenticado por el contexto IAM. El administrador ve módulos de gestión de residentes, personal, familiares y suscripción; el médico accede al dashboard clínico, los parámetros clínicos por residente, el historial y el monitoreo; el personal asistencial ve sus residentes asignados, los signos vitales y el registro de eventos clínicos; y el familiar accede únicamente al estado del residente vinculado, su historial y sus notificaciones. De esta forma, cada usuario solo visualiza las secciones para las que tiene permisos.
-Navegación Contextual: Dentro del perfil de un residente, los enlaces internos llevan al usuario hacia el panel de monitoreo, el historial clínico, los parámetros clínicos y los datos del familiar vinculado, sin necesidad de volver al menú principal. Las alertas críticas incluyen un enlace directo al perfil del residente afectado y a la pantalla de detalle de la alerta.
-Navegación Secundaria por Pestañas: El perfil del residente se organiza en pestañas (Datos Personales, Signos Vitales, Historial Clínico, Parámetros Clínicos, Familiares) que mantienen al usuario en la misma pantalla principal y le permiten cambiar de subsección sin perder el contexto.
-Breadcrumbs: En la aplicación web se muestran breadcrumbs en la parte superior del contenido (por ejemplo: Residentes > Juan Pérez > Historial Clínico) para que el usuario conozca su ubicación en la jerarquía y pueda regresar a niveles superiores con un solo clic.
-Navegación desde Notificaciones Push: Las notificaciones push de alertas críticas y otros avisos relevantes incluyen un deep link que abre la aplicación móvil directamente en la pantalla relevante (detalle de la alerta, perfil del residente), reduciendo el número de pasos necesarios para reaccionar ante un evento crítico.
-Navegación en el Dispositivo IoT: El dispositivo cuenta con una navegación física limitada mediante botones que permiten acceder al modo de configuración, mostrar el identificador del residente asignado, verificar el estado de conectividad y consultar el nivel de batería. Su pantalla está pensada para verificación rápida en campo y no para uso prolongado.
-Acceso Persistente a Notificaciones y Cuenta: En todas las aplicaciones, el ícono de notificaciones y el menú de cuenta del usuario están siempre visibles en el header (web) o en la bottom bar (móvil), de manera que el usuario pueda revisar avisos o cerrar sesión desde cualquier pantalla sin perder el contexto en que se encuentra.
+- **Navegación en la Landing Page:** La Landing Page utiliza un esquema de navegación por anchors dentro de una sola página (single-page scroll), con los siguientes elementos:
+
+    - **Header fijo:** Barra superior con el logo "Veyra" y un menú de cinco enlaces: **Home (`#home`)**, **Features (`#features`)**, **Benefits (`#benefits`)**, **About Us (`#about`)** y **Plans (`#plans`)**. Los enlaces hacen scroll suave hasta la sección correspondiente.
+    - **Botones de autenticación:** **Sign In** y **Sign Up** redirigen externamente a la aplicación web alojada en Azure Static Web Apps (`brave-river-060406e0f.3.azurestaticapps.net`).
+    - **Language Switcher:** Botón con ícono globe (`fa-globe`) y label EN/ES que conmuta el idioma del sitio aplicando las traducciones sobre los elementos con atributo `data-i18n`; la preferencia se persiste en `localStorage`.
+    - **Menú Hamburguesa (mobile):** En viewports pequeños, el ícono `fa-bars` despliega el menú colapsado; se cierra automáticamente al hacer scroll mediante `window.onscroll`.
+    - **Botón Scroll-to-Top:** Botón flotante con ícono `fa-chevron-up` que aparece al superar los 300 px de scroll y devuelve al usuario al inicio de la página con `behavior: 'smooth'`.
+    - **Acordeón en Features:** Solo un ítem se mantiene abierto a la vez; al expandir uno, los demás se contraen automáticamente.
+    - **Toggle Monthly / Annually:** En la sección Plans permite conmutar entre los precios mensuales y anuales sin recargar la página.
+    - **Drawers Legales:** Los enlaces **Terms of Service** y **Privacy Policy** del footer abren un drawer lateral con overlay oscuro que carga el contenido de `public/sections/tos.html` y `public/sections/policies.html` mediante `fetch`. El drawer se cierra con el botón X, con un clic en el overlay o con la tecla **Escape**.
+    - **Footer:** Replica los enlaces de navegación principal y agrega secciones de **Platform**, **Company**, **Contact** y enlaces externos (App Store, Google Play, redes sociales).
+
+- **Navegación en la Aplicación Web:** La aplicación web combina un toolbar superior con un sidenav lateral, ambos provistos por Angular Material dentro del componente `LayoutNursingHome`:
+
+    - **Top Toolbar:** Contiene el botón hamburguesa que hace toggle del sidenav (`<mat-icon>menu</mat-icon>`), el logo y título "Veyra", el componente `AuthenticationSection` (con los botones Sign-In, Create User y Create Admin si no hay sesión, o "Welcome, {username}" y "Sign-Out" si la sesión está activa) y el `LanguageSwitcher` EN/ES.
+    - **Sidenav Lateral:** Cinco ítems con ícono y label traducido — **Dashboard** (`/analytics/dashboard`, ícono `home`), **Devices** (`/nursing/devices`, ícono `assignment`), **Residents** (`/nursing/residents`, ícono `person`), **Staff** (`/hcm/staff`, ícono `group`) y **Rooms** (`/nursing/rooms`, ícono `meeting_room`). El ítem activo se resalta con un indicador visual y la navegación se ejecuta vía `Router.navigate([link])`.
+    - **Modo Responsive:** El `BreakpointObserver` observa el breakpoint `max-width: 768px`. En escritorio el sidenav está en modo `side` y abierto por defecto; en móvil cambia a modo `over` y permanece cerrado hasta que el usuario lo abre con el botón hamburguesa. Al navegar a una ruta en modo móvil, el sidenav se cierra automáticamente.
+    - **Tooltips:** Cada ícono del sidenav tiene un `matTooltip` que muestra el label del ítem al hacer hover en la posición derecha, lo cual mantiene la usabilidad incluso cuando el sidenav está colapsado.
+    - **Sidenav Footer:** Bloque inferior con ícono `code`, etiqueta **MetaSoft** y el año actual (`getCurrentYear()`) como información de copyright.
+    - **Page Titles Dinámicos:** El router de Angular setea el `<title>` del documento con el patrón `{Page} | Veyra` para cada ruta, facilitando la identificación de cada pestaña abierta en el navegador.
+    - **Navegación Interna en Detalles:** Las vistas de detalle (Resident Detail, Staff Member Detail) están construidas con **Material Cards apiladas** (perfil de la persona, legal guardian, main contact, medical record) y botones de acción explícitos que llevan a las subrutas (Medical Records, Medications, Allergies, Contracts, Assign Room).
+    - **Fallback Page Not Found:** El path comodín `**` carga el componente `PageNotFound`, que muestra el mensaje **"The path {invalid_path} does not exist"** y un botón **"Go Home"** que redirige a `/home`.
+
+- **Navegación en la Aplicación Móvil:** Conforme a los wireframes de la sección 5.4.1 y a las User Stories del Capítulo III, la aplicación móvil organiza la navegación según el rol del usuario:
+
+    - **Interfaz del Familiar:** El familiar entra al Home con el estado del residente vinculado (US-14) y desde allí puede navegar a Signos Vitales, Historial (US-15), Notificaciones y Perfil.
+    - **Interfaz del Personal de Cuidado:** El personal asistencial accede al listado de residentes asignados a su turno (US-11), al monitoreo de signos vitales en tiempo real (US-12), al registro de eventos clínicos (US-19) y a las notificaciones de alertas críticas.
+    - **Navegación desde Notificaciones Push:** Conforme a la User Story US-16, las notificaciones de alertas críticas incluyen un deep link que, al ser tocado por el familiar, abre la aplicación directamente en la pantalla de detalle de la alerta del residente afectado, sin pasar por el home.
+
+- **Persistencia de Sesión y Cuenta:** El header de cada plataforma mantiene siempre visible el acceso a la cuenta del usuario. En la Landing los botones **Sign In / Sign Up** apuntan a la app web; en la aplicación web el componente `AuthenticationSection` muestra **"Welcome, {username}"** con la opción de **Sign-Out** cuando la sesión está activa; y en la móvil el ícono de perfil queda accesible desde la bottom navigation bar.
+
 
 ## 5.3. Landing Page UI Design
 
