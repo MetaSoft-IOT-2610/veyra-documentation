@@ -255,9 +255,6 @@ Para el desarrollo de la landing page, se implementaron las secciones de "Home",
 Aplicación web:
 
 
-Backend:
-
-
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review
 
@@ -287,10 +284,6 @@ Se desarolló la aplicación web de Veyra, implementando las funcionalidades bá
 ![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-4.png)
 
 
-Backend:
-
-
-
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review
 
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review
@@ -308,7 +301,6 @@ Para deplegar con github pages, se creó un repositorio específico para la land
 El despliegue fue exitoso y la landing page está disponible para los usuarios.
 
 ![Landing Page Deployment](/assets/img/chapter-VI/deployment-evidence-landing-page-2.png)
-
 
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
