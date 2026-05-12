@@ -51,7 +51,7 @@
 
 <br>
 
-<p style="font-size: 12px; margin-bottom: 20px; text-align: center;"><strong>Abril, 2026</strong></p>
+<p style="font-size: 12px; margin-bottom: 20px; text-align: center;"><strong>Mayo, 2026</strong></p>
 
 </div>
 
@@ -59,33 +59,42 @@
 
 ## Report Version History
 
-| Version | Date       | Author                                  | Description                                                                                                          |
-|---------|-----------|------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| 1.0     | 03/04/2026 | Calvo Yálan, Renato Guillermo            | Se creó la estructura inicial del informe y se redactó la sección 1.1 Startup Profile.                              |
-| 1.1     | 03/04/2026 | Armas Sánchez, Oscar Javier              | Se agregó la sección 1.1.2 Perfiles de integrantes del equipo.                                                       |
-| 1.2     | 04/04/2026 | Llerena Delgado, Renzo Miguel            | Se desarrolló la sección 1.2.1 Antecedentes y problemática aplicando 5W's y 2H's.                                     |
-| 1.3     | 05/04/2026 | Quijandria Araneda, Vicente              | Se agregó la sección 1.2.2.1 Lean UX Problem Statements.                                                              |
-| 1.4     | 06/04/2026 | Rios Piñan, Dayro Richard                | Se desarrollaron las secciones 1.2.2.2 Lean UX Assumptions y 1.2.2.3 Lean UX Hypothesis Statements.                   |
-| 1.5     | 07/04/2026 | Saldaña Vela, Janover Gonzalo            | Se agregó la sección 1.2.2.4 Lean UX Canvas.                                                                          |
-| 1.6     | 08/04/2026 | Villafuerte Tapia, Renzo Alonso          | Se desarrolló la sección 1.3 Segmentos objetivo con sustento estadístico.                                             |
-| 1.7     | 09/04/2026 | Calvo Yálan, Renato Guillermo            | Se inició el Capítulo II con la sección 2.1 Competidores.                                                             |
-| 1.8     | 10/04/2026 | Armas Sánchez, Oscar Javier              | Se desarrolló la sección 2.1.1 Análisis competitivo.                                                                  |
-| 1.9     | 11/04/2026 | Llerena Delgado, Renzo Miguel            | Se agregó la sección 2.1.2 Estrategias y tácticas frente a competidores.                                              |
-| 1.10     | 12/04/2026 | Quijandria Araneda, Vicente              | Se desarrolló la sección 2.2.1 Diseño de entrevistas.                                                                 |
-| 1.11     | 13/04/2026 | Rios Piñan, Dayro Richard                | Se registraron las entrevistas en la sección 2.2.2 Registro de entrevistas.                                          |
-| 1.12     | 14/04/2026 | Saldaña Vela, Janover Gonzalo            | Se realizó el análisis de entrevistas en la sección 2.2.3.                                                            |
-| 1.13     | 15/04/2026 | Villafuerte Tapia, Renzo Alonso          | Se desarrollaron los User Personas en la sección 2.3.1.                                                               |
-| 1.14     | 16/04/2026 | Calvo Yálan, Renato Guillermo            | Se agregó la sección 2.3.2 User Task Matrix.                                                                          |
-| 1.15     | 17/04/2026 | Armas Sánchez, Oscar Javier              | Se desarrolló la sección 2.3.3 User Journey Mapping.                                                                  |
-| 1.16     | 18/04/2026 | Llerena Delgado, Renzo Miguel            | Se agregó la sección 2.3.4 Empathy Mapping.                                                                           |
-| 1.17     | 19/04/2026 | Quijandria Araneda, Vicente              | Se desarrolló la sección 2.4 Big Picture EventStorming.                                                               |
-| 1.18     | 20/04/2026 | Rios Piñan, Dayro Richard                | Se definió el Ubiquitous Language en la sección 2.5.                                                                  |
-| 1.19     | 21/04/2026 | Saldaña Vela, Janover Gonzalo            | Se inició el Capítulo III con la sección 3.1 User Stories.                                                            |
-| 1.20     | 22/04/2026 | Villafuerte Tapia, Renzo Alonso          | Se desarrolló la sección 3.2 Impact Mapping.                                                                          |
-| 1.21     | 23/04/2026 | Calvo Yálan, Renato Guillermo            | Se elaboró el Product Backlog en la sección 3.3.                                                                      |
-| 1.22     | 24/04/2026 | Armas Sánchez, Oscar Javier              | Se inició el Capítulo IV con la sección 4.1 Strategic-Level Domain-Driven Design.                                     |
-| 1.23     | 25/04/2026 | Llerena Delgado, Renzo Miguel            | Se desarrollaron las secciones de EventStorming y Candidate Context Discovery.                                       |
-| 1.24     | 26/04/2026 | Saldaña Vela, Janover Gonzalo            | Se avanzó la arquitectura de software (Context, Container y Deployment Diagrams) y revisión general del documento.  |
+| Version | Date       | Author                          | Description                                                                                                        |
+|---------|------------|---------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| 1.0     | 03/04/2026 | Calvo Yálan, Renato Guillermo   | Se creó la estructura inicial del informe y se redactó la sección 1.1 Startup Profile.                             |
+| 1.1     | 03/04/2026 | Armas Sánchez, Oscar Javier     | Se agregó la sección 1.1.2 Perfiles de integrantes del equipo.                                                     |
+| 1.2     | 04/04/2026 | Llerena Delgado, Renzo Miguel   | Se desarrolló la sección 1.2.1 Antecedentes y problemática aplicando 5W's y 2H's.                                  |
+| 1.3     | 05/04/2026 | Quijandria Araneda, Vicente     | Se agregó la sección 1.2.2.1 Lean UX Problem Statements.                                                           |
+| 1.4     | 06/04/2026 | Rios Piñan, Dayro Richard       | Se desarrollaron las secciones 1.2.2.2 Lean UX Assumptions y 1.2.2.3 Lean UX Hypothesis Statements.                |
+| 1.5     | 07/04/2026 | Saldaña Vela, Janover Gonzalo   | Se agregó la sección 1.2.2.4 Lean UX Canvas.                                                                       |
+| 1.6     | 08/04/2026 | Villafuerte Tapia, Renzo Alonso | Se desarrolló la sección 1.3 Segmentos objetivo con sustento estadístico.                                          |
+| 1.7     | 09/04/2026 | Calvo Yálan, Renato Guillermo   | Se inició el Capítulo II con la sección 2.1 Competidores.                                                          |
+| 1.8     | 10/04/2026 | Armas Sánchez, Oscar Javier     | Se desarrolló la sección 2.1.1 Análisis competitivo.                                                               |
+| 1.9     | 11/04/2026 | Llerena Delgado, Renzo Miguel   | Se agregó la sección 2.1.2 Estrategias y tácticas frente a competidores.                                           |
+| 1.10    | 12/04/2026 | Quijandria Araneda, Vicente     | Se desarrolló la sección 2.2.1 Diseño de entrevistas.                                                              |
+| 1.11    | 13/04/2026 | Rios Piñan, Dayro Richard       | Se registraron las entrevistas en la sección 2.2.2 Registro de entrevistas.                                        |
+| 1.12    | 14/04/2026 | Saldaña Vela, Janover Gonzalo   | Se realizó el análisis de entrevistas en la sección 2.2.3.                                                         |
+| 1.13    | 15/04/2026 | Villafuerte Tapia, Renzo Alonso | Se desarrollaron los User Personas en la sección 2.3.1.                                                            |
+| 1.14    | 16/04/2026 | Calvo Yálan, Renato Guillermo   | Se agregó la sección 2.3.2 User Task Matrix.                                                                       |
+| 1.15    | 17/04/2026 | Armas Sánchez, Oscar Javier     | Se desarrolló la sección 2.3.3 User Journey Mapping.                                                               |
+| 1.16    | 18/04/2026 | Llerena Delgado, Renzo Miguel   | Se agregó la sección 2.3.4 Empathy Mapping.                                                                        |
+| 1.17    | 19/04/2026 | Quijandria Araneda, Vicente     | Se desarrolló la sección 2.4 Big Picture EventStorming.                                                            |
+| 1.18    | 20/04/2026 | Rios Piñan, Dayro Richard       | Se definió el Ubiquitous Language en la sección 2.5.                                                               |
+| 1.19    | 21/04/2026 | Saldaña Vela, Janover Gonzalo   | Se inició el Capítulo III con la sección 3.1 User Stories.                                                         |
+| 1.20    | 22/04/2026 | Villafuerte Tapia, Renzo Alonso | Se desarrolló la sección 3.2 Impact Mapping.                                                                       |
+| 1.21    | 23/04/2026 | Calvo Yálan, Renato Guillermo   | Se elaboró el Product Backlog en la sección 3.3.                                                                   |
+| 1.22    | 24/04/2026 | Armas Sánchez, Oscar Javier     | Se inició el Capítulo IV con la sección 4.1 Strategic-Level Domain-Driven Design.                                  |
+| 1.23    | 25/04/2026 | Llerena Delgado, Renzo Miguel   | Se desarrollaron las secciones de EventStorming y Candidate Context Discovery.                                     |
+| 1.24    | 26/04/2026 | Saldaña Vela, Janover Gonzalo   | Se avanzó la arquitectura de software (Context, Container y Deployment Diagrams) y revisión general del documento. |
+| 2.0     |            |                                 |                                                                                                                    |
+| 2.1     |            |                                 |                                                                                                                    |
+| 2.2     |            |                                 |                                                                                                                    |
+| 2.3     |            |                                 |                                                                                                                    |
+| 2.4     |            |                                 |                                                                                                                    |
+| 2.5     |            |                                 |                                                                                                                    |
+| 2.6     |            |                                 |                                                                                                                    |
+| 2.7     |            |                                 |                                                                                                                    |
+
 ---
 
 ## Project Report Collaboration Insights
@@ -126,7 +135,7 @@ release-tb2
 
 **Reporte de colaboración de la entrega del AV1**:
 
-Durante la primera fase de elaboración del informe, el equipo  centró sus esfuerzos en la construcción de los fundamentos conceptuales, de investigación y diseño inicial del proyecto. Cada integrante asumió un rol activo en la redacción, modelado y documentación de secciones clave del reporte, asegurando una coherencia entre la teoría, la metodología y la propuesta tecnológica.
+Durante la primera fase de elaboración del informe, el equipo centró sus esfuerzos en la construcción de los fundamentos conceptuales, de investigación y diseño inicial del proyecto. Cada integrante asumió un rol activo en la redacción, modelado y documentación de secciones clave del reporte, asegurando una coherencia entre la teoría, la metodología y la propuesta tecnológica.
 
 
 Finalmente, estos gráficos representan la cantidad de commits realizados por cada miembro del equipo en el repositorio del proyecto. Cada barra representa a un miembro del equipo y la altura de la barra indica el número total de commits realizados por esa persona.
@@ -145,7 +154,27 @@ Este gráfico muestra la aplicación de GitFlow en el proyecto, evidenciando la 
 
 ![img.png](assets/img/introduction/network-graph-av1.png)
 
+**Reporte de colaboración de la entrega del TB1**:
+
+Durante la segunda fase de colaboración del informe, el equipo centró sus esfuerzos en corregir los errores encontrados en la entrega anterior, así como en completar y mejorar las secciones del informe que aún estaban en desarrollo. Se realizaron revisiones exhaustivas para garantizar la calidad y coherencia del contenido, y se avanzó significativamente en la elaboración de los capítulos restantes del reporte.
+
+En la siguiente imagen se muestra el número de commits realizados por cada miembro del equipo, lo que refleja la contribución individual al desarrollo del proyecto. Cada barra representa a un miembro del equipo y la altura de la barra indica el número total de commits realizados por esa persona.
+
+![img.png](assets/img/introduction/pulse-tb1.png)
+
+Aquí se muestra el gráfico de clones del repositorio, que indica la cantidad de veces que el repositorio ha sido clonado por los miembros del equipo. Cada punto en el gráfico representa un evento de clonación, y la altura de cada punto refleja la cantidad de clones realizados en ese momento específico.
+
+![img.png](assets/img/introduction/git-clones-tb1.png)
+
+**Ramificación del proyecto usando GitFlow:**
+
+Este gráfico muestra la aplicación de GitFlow en el proyecto, evidenciando la organización de ramas principales, de desarrollo, de funcionalidades y de releases utilizadas por el equipo durante el ciclo de trabajo.
+
+![img.png](assets/img/introduction/network-graph-tb1.png)
+
+
 ---
+
 ## Tabla de contenido
 
 - [Capítulo I: Introducción](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterI.md#cap%C3%ADtulo-i-introducci%C3%B3n)
@@ -285,7 +314,49 @@ Este gráfico muestra la aplicación de GitFlow en el proyecto, evidenciando la 
         - [4.2.10.6. Bounded Context Software Architecture Code Level Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#42106-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.10.6.1. Bounded Context Domain Layer Class Diagrams](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#421061-bounded-context-domain-layer-class-diagrams)
         - [4.2.10.6.2. Bounded Context Database Design Diagram](https://github.com/MetaSoft-IOT-2610/veyra-report/blob/main/docs/ChapterIV.md#421062-bounded-context-database-design-diagram)
+- [Capítulo V: Solution UI/UX Design]()
+    - [5.1. Style Guidelines.]()
+        - [5.1.1. General Style Guidelines.]()
+        - [5.1.2. Web, Mobile and IoT Style Guidelines.]()
+    - [5.2. Information Architecture.]()
+        - [5.2.1. Organization Systems.]()
+        - [5.2.2. Labeling Systems.]()
+        - [5.2.3. SEO Tags and Meta Tags.]()
+        - [5.2.4. Searching Systems.]()
+        - [5.2.5. Navigation Systems.]()
+    - [5.3. Landing Page UI Design.]()
+        - [5.3.1. Landing Page Wireframe.]()
+        - [5.3.2. Landing Page Mock-up.]()
+    - [5.4. Applications UX/UI Design.]()
+        - [5.4.1. Applications Wireframes.]()
+        - [5.4.2. Applications Wireflow Diagrams.]()
+        - [5.4.2. Applications Mock-ups.]()
+        - [5.4.3. Applications User Flow Diagrams.]()
+    - [5.5. Applications Prototyping.]()
+    - [5.6. IoT Device Design.]()
 
+- [Capítulo VI: Product Implementation, Validation & Deployment]()
+    - [6.1. Software Configuration Management.]()
+        - [6.1.1. Software Development Environment Configuration.]()
+        - [6.1.2. Source Code Management.]()
+        - [6.1.3. Source Code Style Guide & Conventions.]()
+        - [6.1.4. Software Deployment Configuration.]()
+    - [6.2. Landing Page, Services & Applications Implementation.]()
+        - [6.2.1. Sprint 1]()
+            - [6.2.1.1. Sprint Planning 1]()
+            - [6.2.1.2. Aspect Leaders and Collaborators.]()
+            - [6.2.1.3. Sprint Backlog 1]()
+            - [6.2.1.4. Development Evidence for Sprint Review.]()
+            - [6.2.1.5. Testing Suite Evidence for Sprint Review.]()
+            - [6.2.1.6. Execution Evidence for Sprint Review.]()
+            - [6.2.1.7. Services Documentation Evidence for Sprint Review.]()
+            - [6.2.1.8. Software Deployment Evidence for Sprint Review.]()
+            - [6.2.1.9. Team Collaboration Insights during Sprint.]()
+    - [6.3. Validation Interviews.]()
+        - [6.3.1. Diseño de Entrevistas.]()
+        - [6.3.2. Registro de Entrevistas.]()
+        - [6.3.3. Evaluaciones según heurísticas.]()
+    - [6.4. Video About-the-Product.]()
 - [Conclusiones](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#conclusiones)
     - [Conclusiones y recomendaciones](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#conclusiones-y-recomendaciones)
     - [Video About-the-Team](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#video-about-the-team)
@@ -303,7 +374,7 @@ establecen objetivos, planifican tareas y cumplen objetivos.
 
 En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET - EAC - Student Outcome 5.
 
-| Criterio específico                                                                                 | Acciones realizadas                                                                                                                                                                                                                                                                                                                                                                             | Conclusiones                                                                                                                                                                                                                              |
-|-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Trabaja en equipo para proporcionar liderazgo en forma conjunta**                                 | **Saldaña Vela, Janover Gonzalo – AV1:** Coordiné la arquitectura de software y realicé la revisión final del documento para asegurar la coherencia técnica.<br>**Rios Piñan, Dayro Richard - AV1:** Lideré la definición del lenguaje ubicuo y el registro de evidencias de investigación.<br>**Calvo Yálan, Renato Guillermo - AV1:** Lideré la estructuración inicial y la visión de negocio del startup.<br>**Villafuerte Tapia, Renzo Alonso - AV1:** Lideró el análisis estadístico de segmentos y el mapeo de impacto.<br>**Armas Sánchez, Oscar Javier - AV1:** Lideró el análisis competitivo y el diseño estratégico de dominio (Strategic DDD).<br>**Llerena Delgado, Renzo Miguel - AV1:** Lideró la investigación de antecedentes y las estrategias tácticas frente a la competencia.<br>**Quijandria Araneda, Vicente - AV1:** Lideró la definición de enunciados de problema y el diseño de la elicitación de requisitos. | El equipo demostró capacidad para distribuir el liderazgo entre sus integrantes de manera equitativa, donde cada uno asumió responsabilidades de guía en secciones clave. Esta dinámica de liderazgo compartido permitió avanzar de forma articulada y coherente hacia los objetivos del proyecto. |
-| **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.** | **Saldaña Vela, Janover Gonzalo – AV1:** Estableció metas claras por sección y realizó el seguimiento para asegurar la entrega en el plazo previsto.<br>**Rios Piñan, Dayro Richard - AV1:** Colaboró activamente en la formulación de hipótesis UX y el cumplimiento de hitos de documentación.<br>**Calvo Yálan, Renato Guillermo - AV1:** Planificó las tareas del product backlog, asegurando un flujo de trabajo ordenado para el equipo.<br>**Villafuerte Tapia, Renzo Alonso - AV1:** Fomentó un entorno inclusivo mediante el diseño de user personas representativas de diversos sectores.<br>**Armas Sánchez, Oscar Javier - AV1:** Organizó la documentación de perfiles del equipo y cumplió rigurosamente con los plazos del journey mapping.<br>**Llerena Delgado, Renzo Miguel - AV1:** Aseguró la alineación de objetivos mediante una investigación profunda del contexto y mapas de empatía.<br>**Quijandria Araneda, Vicente - AV1:** Contribuyó a la colaboración grupal en las sesiones de EventStorming y el cumplimiento de metas de diseño inicial. | El equipo logró establecer un ambiente de trabajo altamente colaborativo, planificando las tareas de forma ordenada y cumpliendo con el 100% de los entregables dentro de los plazos establecidos. La participación activa de los siete integrantes fue fundamental para el éxito de la entrega. |
+| Criterio específico                                                                                 | Acciones realizadas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Conclusiones                                                                                                                                                                                                                                                                                       |
+|-----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Trabaja en equipo para proporcionar liderazgo en forma conjunta**                                 | **Saldaña Vela, Janover Gonzalo – AV1:** Coordiné la arquitectura de software y realicé la revisión final del documento para asegurar la coherencia técnica.<br>**Rios Piñan, Dayro Richard - AV1:** Lideré la definición del lenguaje ubicuo y el registro de evidencias de investigación.<br>**Calvo Yálan, Renato Guillermo - AV1:** Lideré la estructuración inicial y la visión de negocio del startup.<br>**Villafuerte Tapia, Renzo Alonso - AV1:** Lideró el análisis estadístico de segmentos y el mapeo de impacto.<br>**Armas Sánchez, Oscar Javier - AV1:** Lideró el análisis competitivo y el diseño estratégico de dominio (Strategic DDD).<br>**Llerena Delgado, Renzo Miguel - AV1:** Lideró la investigación de antecedentes y las estrategias tácticas frente a la competencia.<br>**Quijandria Araneda, Vicente - AV1:** Lideró la definición de enunciados de problema y el diseño de la elicitación de requisitos.<br>**Calvo Yalan,Renato Guillermo-TB1:**<br>**Quijandria Araneda, Vicente - TB1:**<br>**Llerena Delgado, Renzo Miguel-TB1:**<br>**Armas Sánchez, Oscar Javier -TB1:**<br>**Saldaña Vela, Janover Gonzalo-TB1:**<br>**Rios Piñan, Dayro Richard - TB1:**<br>**Villafuerte Tapia, Renzo Alonso -TB1:**                                                                                                                                     | El equipo demostró capacidad para distribuir el liderazgo entre sus integrantes de manera equitativa, donde cada uno asumió responsabilidades de guía en secciones clave. Esta dinámica de liderazgo compartido permitió avanzar de forma articulada y coherente hacia los objetivos del proyecto. |
+| **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.** | **Saldaña Vela, Janover Gonzalo – AV1:** Estableció metas claras por sección y realizó el seguimiento para asegurar la entrega en el plazo previsto.<br>**Rios Piñan, Dayro Richard - AV1:** Colaboró activamente en la formulación de hipótesis UX y el cumplimiento de hitos de documentación.<br>**Calvo Yálan, Renato Guillermo - AV1:** Planificó las tareas del product backlog, asegurando un flujo de trabajo ordenado para el equipo.<br>**Villafuerte Tapia, Renzo Alonso - AV1:** Fomentó un entorno inclusivo mediante el diseño de user personas representativas de diversos sectores.<br>**Armas Sánchez, Oscar Javier - AV1:** Organizó la documentación de perfiles del equipo y cumplió rigurosamente con los plazos del journey mapping.<br>**Llerena Delgado, Renzo Miguel - AV1:** Aseguró la alineación de objetivos mediante una investigación profunda del contexto y mapas de empatía.<br>**Quijandria Araneda, Vicente - AV1:** Contribuyó a la colaboración grupal en las sesiones de EventStorming y el cumplimiento de metas de diseño inicial.<br>**Calvo Yalan,Renato Guillermo-TB1:**<br>**Quijandria Araneda, Vicente - TB1:**<br>**Llerena Delgado, Renzo Miguel-TB1:**<br>**Armas Sánchez, Oscar Javier -TB1:**<br>**Saldaña Vela, Janover Gonzalo-TB1:**<br>**Rios Piñan, Dayro Richard - TB1:**<br>**Villafuerte Tapia, Renzo Alonso -TB1:**  | El equipo logró establecer un ambiente de trabajo altamente colaborativo, planificando las tareas de forma ordenada y cumpliendo con el 100% de los entregables dentro de los plazos establecidos. La participación activa de los siete integrantes fue fundamental para el éxito de la entrega.   |
