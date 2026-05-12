@@ -164,12 +164,11 @@ En esta sección se declaran las creencias fundamentales del equipo sobre las qu
 **Business Assumptions**
 
 * Creemos que nuestros clientes necesitan una solución centralizada para gestionar medicamentos y el cuidado de los adultos mayores.
-* Estas necesidades se pueden resolver con un servicio digital que integre información clínica y operativa, facilitando el acceso remoto a datos relevantes para el seguimiento del cuidado.
+* Estas necesidades se podrán resolver con un servicio digital que integre información clínica y operativa, facilitando el acceso remoto a datos relevantes para el seguimiento del cuidado.
 * Nuestros clientes iniciales serán administradores de casas de reposo privadas y familiares de adultos mayores que buscan mejorar la comunicación y el seguimiento del cuidado.
-* El valor #1 que nuestros clientes quieren de nuestro servicio es la capacidad de acceder a la información del adulto mayor de manera rápida, confiable y en tiempo real, lo que les permitirá tomar decisiones informadas y mejorar la calidad del cuidado.
-* Nuestros clientes también pueden obtener estos beneficios adicionales como la reducción de errores en la gestión de información y medicamentos, una mejora en la comunicación entre el personal de cuidado y los familiares, y una mayor tranquilidad al contar con acceso constante a información actualizada sobre el estado del adulto mayor.  
-* Vamos a adquirir la mayoría de nuestros clientes a través de estrategias de marketing digital dirigidas a administradores de casas de reposo y familiares de adultos mayores, tales como publicidad en redes sociales y contenido educativo en blogs.
-* Haremos dinero a través de un modelo de suscripción mensual o anual para el uso de la plataforma.
+* Nuestros clientes también podrán obtener estos beneficios adicionales como la reducción de errores en la gestión de información y medicamentos, una mejora en la comunicación entre el personal de cuidado y los familiares, y una mayor tranquilidad al contar con acceso constante a información actualizada sobre el estado del adulto mayor.  
+* Creemos que vamos a adquirir la mayoría de nuestros clientes a través de estrategias de marketing digital dirigidas a administradores de casas de reposo y familiares de adultos mayores, tales como publicidad en redes sociales y contenido educativo en blogs.
+* Podremos hacer dinero a través de un modelo de suscripción mensual o anual para el uso de la plataforma.
 * Nuestra competencia principal en el mercado será cualquier otra plataforma digital que ofrezca servicios similares de gestión de información clínica y operativa para casas de reposo, así como métodos tradicionales como el uso de papel o sistemas no integrados.
 * Esperamos diferenciarnos mediante una propuesta de valor que centraliza la información, facilita el acceso remoto y mejora la comunicación entre los involucrados en el cuidado del adulto mayor.
 * Nuestro mayor riesgo del producto es la resistencia al cambio por parte de los usuarios, especialmente en un sector que ha dependido tradicionalmente de métodos manuales.
