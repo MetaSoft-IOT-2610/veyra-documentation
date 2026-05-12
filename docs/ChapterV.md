@@ -235,41 +235,33 @@ La arquitectura de la información de Veyra está diseñada para que cada usuari
 
 ### 5.2.1. Organization Systems
 
-Jerarquía de Contenidos: La información se estructura de lo general a lo específico. En la Landing Page partimos de un mensaje de impacto en la sección Hero, seguido de un resumen de los servicios y luego del detalle de funcionalidades, beneficios y planes de suscripción. En las aplicaciones web y móvil, el usuario parte de un Dashboard general adaptado a su rol y desciende progresivamente hacia el detalle de cada residente, signo vital, alerta o evento clínico.
-Secciones Principales de la Landing Page:
+- **Jerarquía de Contenidos:** La información se organiza de lo general a lo específico. En la **Landing Page**, el visitante recorre por scroll secciones que van desde el mensaje de impacto del Hero hasta los planes y el CTA final de suscripción. En la **aplicación web**, una vez autenticado, el usuario parte del Dashboard global y desciende a los listados de cada módulo (Residentes, Staff, Rooms, Devices) y, desde allí, a la vista de detalle de cada entidad y sus subrecursos. En la **aplicación móvil**, el flujo prioriza la consulta inmediata: el familiar o el personal de cuidado abre la app y aterriza directamente en el estado del residente, desde donde puede ramificar al historial o a las notificaciones.
+- **Secciones Principales de la Landing Page:** El sitio estático está dividido en las siguientes secciones, ordenadas según el flujo de scroll del usuario:
+    - **Hero (`#home`):** Mensaje principal "The Best Care is Always Connected" con el CTA "Start now →" que redirige a la app web.
+    - **What We Offer:** Cuatro tarjetas que presentan los servicios — Home Health Care, Pediatric Care, Companion Care y Conditions Treated.
+    - **Features (`#features`):** Acordeón interactivo con las funcionalidades clave (Seamless Communication, Real-Time Health Monitoring, Streamlined Clinical Management, Comprehensive Reporting & Analytics) acompañado de un video institucional embebido desde YouTube.
+    - **Benefits (`#benefits`):** Cuatro tarjetas con imagen que detallan los beneficios diferenciadores (Enhanced Communication, Streamlined Clinical Management, Improved Resident Well-being, Increased Peace of Mind).
+    - **About Us (`#about`):** Descripción de Metasoft y la misión de Veyra, con bullet points de los pilares (Seamless Communication, Real-Time Insights, Enhanced Security) y un video institucional.
+    - **Our Team:** Grilla con los siete integrantes del equipo de desarrollo, cada uno con foto, nombre, rol y descripción profesional.
+    - **Plans (`#plans`):** Toggle Monthly/Annually que conmuta entre dos planes — **Family Plan** y **Nursing Home Plan** — con su precio, descripción, CTA y lista de features.
+    - **Testimonials & CTA:** Sección combinada con reseñas de usuarios (rating + comentario + nombre) y un CTA final de "Subscribe".
 
-Hero: La promesa de Veyra como puente digital entre casas de reposo y familias.
-What We Offer: Visión general del monitoreo IoT y la gestión clínica integral.
-Features: Funcionalidades clave (monitoreo de signos vitales en tiempo real, alertas críticas, portal familiar e historial clínico).
-Benefits: Beneficios diferenciados para instituciones geriátricas y familias.
-About Us: Sobre Metasoft y la misión de Veyra.
-Our Team: Las personas detrás del proyecto.
-Plans: Planes de suscripción Familiar y Casa de Reposo en modalidad mensual y anual.
-Testimonials & CTA: Reseñas de usuarios y llamado a la acción para iniciar el registro.
+    - **Footer:** Marca, tagline, redes sociales (Instagram, Facebook, LinkedIn), botones de descarga (App Store, Google Play), navegación cruzada, datos de contacto y triggers de los drawers legales (Terms of Service y Privacy Policy).
+- **Secciones Principales de la Aplicación Web:** La aplicación está organizada por Bounded Context, con un layout principal (`LayoutNursingHome`) que envuelve los módulos operativos accesibles desde el sidenav lateral:
+    - **Home (pre-login, `/home`):** Pantalla de bienvenida con el mensaje principal y los accesos a Sign-In, Create User y Create Admin.
+    - **Identity & Access (`/iam/*`):** Formularios de Sign-In y Sign-Up del administrador.
+    - **Dashboard (`/analytics/dashboard`):** Tarjetas de KPIs (Total Hires, Total Terminations, Net Staff Change, Total Admissions, Active Residents) y gráficas filtrables por año.
+    - **Devices (`/nursing/devices`):** Listado tabular de dispositivos IoT con columnas ordenables (Device ID, Assigned By, Assigned At, Status) y búsqueda por nombre.
+    - **Residents (`/nursing/residents`):** Listado en grilla de tarjetas con búsqueda por persona, vista de detalle (`:id/show`), formularios de alta y edición, y subrutas para Medical Records, Medications, Allergies y asignación de Room.
+    - **Staff (`/hcm/staff`):** Listado en grilla de tarjetas con búsqueda por persona, vista de detalle, formularios de alta y edición, y subruta de Contracts (listado y creación).
+    - **Rooms (`/nursing/rooms`):** Listado tabular con búsqueda por número, tabla ordenable y formularios de alta/edición.
+    - **Subscriptions & Payments (`/payments/*`):** Flujo dedicado fuera del sidenav, con pantallas para elegir plan (`/choose`), ver detalle del plan (`/plans/family`, `/plans/nursing-home`) y checkout (`/checkout/:type/:cycle`).
+    - **Page Not Found:** Pantalla de fallback para rutas inválidas, con mensaje traducido y botón "Go Home".
+- **Secciones Principales de la Aplicación Móvil:** La aplicación móvil se organiza por rol, con dos interfaces diferenciadas:
+    - **Interfaz del Familiar:** Vista simplificada con el estado actual del residente, signos vitales recientes, historial filtrable por período, centro de notificaciones y configuración del perfil.
+    - **Interfaz del Personal de Cuidado:** Listado de residentes asignados al turno, monitoreo de signos vitales en tiempo real, registro de eventos clínicos y bandeja de notificaciones críticas (alertas de caídas, frecuencias fuera de rango).
+- **Agrupación de Contenidos:** Cada módulo de la aplicación web se agrupa por Bounded Context y respeta su lenguaje ubicuo: los residentes y sus subrecursos (medical records, medications, allergies, room assignments) viven bajo `nursing`, mientras que staff y contracts viven bajo `hcm`. Las vistas de detalle se construyen con Material Cards apiladas (perfil, contactos, datos clínicos), los listados emplean grillas de tarjetas o tablas ordenables con búsqueda integrada, y los estados vacíos se manejan con mensajes traducidos por `ngx-translate` (EN/ES).
 
-
-Secciones Principales de la Aplicación Web (Admin / Doctor / Healthcare Staff):
-
-Dashboard: Vista global de residentes, alertas activas y métricas operativas del día.
-Residentes: Listado y perfil detallado (datos personales, dispositivo IoT asignado, familiar vinculado, personal responsable).
-Monitoreo: Panel de signos vitales en tiempo real con los datos transmitidos por el dispositivo IoT.
-Historial Clínico: Eventos clínicos cronológicos registrados por turno.
-Parámetros Clínicos: Rangos de signos vitales definidos por el médico para cada residente, base para la generación de alertas personalizadas.
-Personal y Familiares: Gestión del personal asistencial, médicos, familiares y vinculaciones con residentes.
-Alertas: Bandeja de alertas críticas, advertencias e informativas, con su estado de atención.
-Suscripción y Pagos: Gestión del plan contratado y método de pago.
-
-
-Secciones Principales de la Aplicación Móvil (Familiar / Healthcare Staff):
-
-Home/Dashboard: Estado actual del residente con un mensaje claro y reconfortante para el familiar, o lista de residentes asignados al turno para el personal asistencial.
-Signos Vitales: Visualización rápida de los últimos valores y su tendencia reciente.
-Historial: Consulta del historial de signos vitales y eventos clínicos con filtro por período.
-Notificaciones: Centro unificado de alertas críticas y avisos.
-Perfil: Configuración de la cuenta y preferencias de notificación.
-
-
-Agrupación de Contenidos: Los contenidos se agrupan según los Bounded Contexts del sistema, lo que permite que cada módulo conserve la cohesión funcional de su dominio. Los signos vitales y alertas se presentan en tarjetas con codificación visual de severidad; los residentes aparecen en un listado con vista detallada en su perfil; y los eventos clínicos se organizan en un timeline cronológico ordenado de más reciente a más antiguo.
 
 ### 5.2.2. Labeling Systems
 
