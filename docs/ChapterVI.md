@@ -32,8 +32,8 @@ Se realizó el sprint planning con el objetivo de definir las tareas y objetivos
 | Sprint 0 Retrospective Summary  | N/A (primer entregable del proyecto)                                                                                                         |
 | Sprint Goal & User Stories      |         |
 | Sprint 1 Goal                   | Our focus is on delivering the first version of Veyra's landing page to the visitors, that clearly communicates the business value, the value proposition and service offerings to first-time visitors to the site. Also the first version of Veyra's web application with core features and views such as nursing, activities and communications <br> We believe it delivers a clear definition of Veyra and our goal and commitment with our customers, giving them the core features of Veyra's web application <br> This will be confirmed when visitors access to the landing page and web application to try the features added and implemented by the Veyra development team |
-| Sprint 1 Velocity               | Velocity                                                                                                                                                                                                                                                                                                  |
-| Sum of Story Points             |  Story Points.                                                                                                                                                                                                                                                                                             |
+| Sprint 1 Velocity               | 105 Velocity                                                                                                                                                                                                                                                                                                  |
+| Sum of Story Points             |  105 Story Points.                                                                                                                                                                                                                                                                                             |
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
 
@@ -275,6 +275,16 @@ Se desarrolló la landing page de VEYRA, la cual se publicó utilizando GitHub P
 ![Landing Page](/assets/img/chapter-VI/execution-evidence-landing-2.png)
 
 Aplicación web:
+
+Se desarolló la aplicación web de Veyra, implementando las funcionalidades básicas para la gestión de residentes, personal asistencial y dispositivos IoT, este último simulado con data ficticia. Se estableció una base sólida para la escalabilidad y mantenimiento del sistema en futuras iteraciones. Fue desplegado usando Cloudflare Pages, lo que permitió su acceso inmediato. 
+
+![web application execution](/assets/img/chapter-VI/execution-evidence-web-application.png)
+
+![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-2.png)
+
+![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-3.png)
+
+![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-4.png)
 
 
 Backend:
