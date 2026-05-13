@@ -708,16 +708,30 @@ El diseño móvil prioriza la inmediatez y la movilidad dentro de la casa de rep
 **Interfaz del Personal de Cuidado**: Una herramienta de trabajo con notificaciones críticas (Alertas de caídas, frecuencia cardíaca fuera de rango) que requieren acción inmediata.
 
 ### 5.4.2. Applications Wireflow Diagrams
-Nuestros flujos de tareas (TaskFlows) se dividen según el rol del usuario para garantizar que la información llegue a la persona correcta en el momento preciso:
+A continuación, presentamos los diagramas de flujo de nuestra plataforma web, diseñados para representar cómo responde el sistema a las interacciones de los usuarios. Cada diagrama refleja un objetivo del usuario vinculado a las distintas funcionalidades, con un único flujo que considera variaciones de acciones según los privilegios del rol (Administrador, Médico, Enfermera o Familiar). Antes de crear estos diagramas, establecimos flujos de tareas (Task Flows) para definir las rutas de navegación típicas en la aplicación.
 
+**TaskFlows**
+
+- Iniciar sesión en la plataforma
+- Registrar una nueva habitación (cuarto) en el sistema
+- Registrar un nuevo residente y asignar habitación
+- Conceder acceso al sistema (Personal médico o Familiar)
+- Registrar un nuevo dispositivo IoT en el inventario
+- Vincular un dispositivo IoT al perfil de un residente
+- Definir o actualizar parámetros clínicos de telemetría
+- Visualizar el monitoreo en vivo (Geolocalización y Signos Vitales)
+- Atender una alerta de emergencia del sistema
+- Programar una nueva actividad recreativa o terapéutica
 
 | User Goal                                                                                                                                                                                                                                                                                                        | WireFlow                                                                     |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| **UG01:** Registrar un nuevo residente en el sistema de la casa de reposo. Permite al personal administrativo ingresar los datos demográficos y médicos de un nuevo adulto mayor, creando su expediente digital centralizado.                                                                                    | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG1-flow.png) |
-| **UG02:** Conceder y gestionar accesos a la plataforma para el personal y familiares. Facilita al administrador la creación de credenciales de inicio de sesión y la asignación de roles y permisos específicos para médicos, personal de enfermería y familiares de los residentes.                             | ![alt text]()    |
-| **UG03:** Definir y actualizar los parámetros clínicos de alerta para cada residente. Permite al personal médico establecer los límites mínimos y máximos aceptables de signos vitales (telemetría), garantizando que el sistema genere alertas personalizadas basadas en la condición clínica de cada paciente. | ![alt text]()    |
-| **UG04:** Agendar y gestionar las actividades recreativas y terapéuticas. Proporciona al coordinador de actividades las herramientas para programar eventos diarios, estableciendo horarios, descripciones y categorías, asegurando una rutina activa y estructurada para los residentes.                        | ![alt text]()   |
-| **UG05:** Monitorear la ubicación en tiempo real y signos vitales mediante dispositivos IoT. Permite al personal de cuidado visualizar en un mapa interactivo la geolocalización de los residentes y consultar sus signos vitales en vivo, facilitando una respuesta rápida ante emergencias o posibles fugas.   | ![alt text]()    |
+| **UG01:** Registrar un nuevo residente en el sistema de la casa de reposo. Permite al personal administrativo ingresar los datos demográficos y médicos de un nuevo adulto mayor, asignándole una habitación y creando su expediente digital centralizado.                                                       | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG1-flow.png) |
+| **UG02:** Conceder y gestionar accesos a la plataforma para el personal y familiares. Facilita al administrador la creación de credenciales de inicio de sesión y la asignación de roles y permisos específicos para médicos, personal de enfermería y familiares de los residentes.                             | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG2-flow.png) |
+| **UG03:** Definir y actualizar los parámetros clínicos de alerta para cada residente. Permite al personal médico establecer los límites mínimos y máximos aceptables de signos vitales (telemetría), garantizando que el sistema genere alertas personalizadas basadas en la condición clínica de cada paciente. | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG3-flow.png) |
+| **UG04:** Agendar y gestionar las actividades recreativas y terapéuticas. Proporciona al coordinador de actividades las herramientas para programar eventos diarios, estableciendo horarios, descripciones y categorías, asegurando una rutina activa y estructurada para los residentes.                        | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG4-flow.png) |
+| **UG05:** Monitorear la ubicación en tiempo real y signos vitales mediante dispositivos IoT. Permite al personal de cuidado visualizar en un mapa interactivo la geolocalización de los residentes y consultar sus signos vitales en vivo, facilitando una respuesta rápida ante emergencias o posibles fugas.   | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG5-flow.png) |
+| **UG06:** Registrar y gestionar las habitaciones del centro. Permite al personal administrativo crear nuevos cuartos en el sistema, definiendo detalles clave para mantener un control organizado de la disponibilidad y el alojamiento de los residentes.                                                       | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG6-flow.png) |
+| **UG07:** Administrar el inventario de dispositivos IoT. Facilita al personal de TI o administradores registrar nuevos dispositivos de telemetría y geolocalización (sensores, pulseras) en el sistema para su posterior vinculación a los residentes.                                                         | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG7-flow.png) |
 
 ### 5.4.2. Applications Mock-ups
 **WEB APPLICATION MOCK-UPS**
