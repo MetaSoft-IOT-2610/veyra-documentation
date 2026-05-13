@@ -14,11 +14,11 @@
 
 ### 6.2.1. Sprint 1
 
-El primer sprint se centró en sentar las bases tecnológicas de VEYRA, logrando el desarrollo tanto del backend como de la interfaz web. Paralelamente, se puso en desarrollo la landing page, optimizada para la presentación del negocio y publicada mediante GitHub Pages para garantizar su accesibilidad inmediata.
+El primer sprint se centró en sentar las bases tecnológicas de VEYRA, logrando el desarrollo de la interfaz web y la landing page. 
 
 #### 6.2.1.1. Sprint Planning
 
-Se realizó el sprint planning con el objetivo de definir las tareas y objetivos para el primer sprint, enfocándonos en el desarrollo del backend, la interfaz web y la landing page. Durante la planificación, se asignaron responsabilidades a cada miembro del equipo y se estableció la meta del sprint.
+Se realizó el sprint planning con el objetivo de definir las tareas y objetivos para el primer sprint, enfocándonos en el desarrollo de la interfaz web y la landing page. Durante la planificación, se asignaron responsabilidades a cada miembro del equipo y se estableció la meta del sprint.
 
 | Sprint #                        | Sprint 1                                                                                                                                                                                                                                                                                                     |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -31,8 +31,8 @@ Se realizó el sprint planning con el objetivo de definir las tareas y objetivos
 | Sprint 0 Review Summary         | N/A (primer entregable del proyecto)                                                                                                              |
 | Sprint 0 Retrospective Summary  | N/A (primer entregable del proyecto)                                                                                                         |
 | Sprint Goal & User Stories      |         |
-| Sprint 1 Goal                   | Our focus is on delivering the first version of Veyra's landing page to the visitors, that clearly communicates the business value, the value proposition and service offerings to first-time visitors to the site. Also the first version of Veyra's web application with core features and views such as nursing, activities and communications <br> We believe it delivers a clear definition of Veyra and our goal and commitment with our customers, giving them the core features of Veyra's web application <br> This will be confirmed when visitors access to the landing page and web application to try the features added and implemented by the Veyra development team |
-| Sprint 1 Velocity               | 105 Velocity                                                                                                                                                                                                                                                                                                  |
+| Sprint 1 Goal                   | Our focus is on delivering the first version of Veyra's landing page to the visitors, that clearly communicates the business value, the value proposition and service offerings to first-time visitors to the site. Also the first version of Veyra's web application with core views such as nursing, activities and communications <br> We believe it delivers a clear definition of Veyra and our goal and commitment with our customers, giving them the core views of Veyra's web application <br> This will be confirmed when visitors access to the landing page and web application. |
+| Sprint 1 Velocity               | 23 Velocity                                                                                                                                                                                                                                                                                                  |
 | Sum of Story Points             |  105 Story Points.                                                                                                                                                                                                                                                                                             |
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
@@ -262,7 +262,7 @@ Aplicación web:
 
 Landing page:
 
-Se desarrolló la landing page de VEYRA, la cual se publicó utilizando GitHub Pages para garantizar su accesibilidad inmediata. Además, se avanzó en el desarrollo del backend y la interfaz web de la aplicación, sentando las bases tecnológicas para futuras iteraciones. Durante este sprint, se implementaron las funcionalidades básicas y se realizaron pruebas iniciales para asegurar la calidad del producto.
+Se desarrolló la landing page de VEYRA, la cual se publicó utilizando GitHub Pages para garantizar su accesibilidad inmediata.
 
 
 ![Landing Page](/assets/img/chapter-VI/execution-evidence-landing.png)
@@ -290,7 +290,7 @@ Para este sprint no se documentaron servicios específicos, ya que el enfoque pr
 
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review
 
-Para este sprint se realizó el despliegue de tres artefactos: Landing page, backend y frontend. La landing page se desplegó utilizando GitHub Pages, lo que permitió su acceso inmediato y facilitó la recopilación de feedback de los usuarios. El backend y el frontend se desplegaron utilizando servicios de hosting adecuados para cada uno, asegurando su disponibilidad y rendimiento para los usuarios finales.
+Para este sprint se realizó el despliegue de dos artefactos: Landing page y frontend. La landing page se desplegó utilizando GitHub Pages, lo que permitió su acceso inmediato y facilitó la recopilación de feedback de los usuarios. El frontend se desplegó usando cloudflare pages.
 
 
 Landing page:
