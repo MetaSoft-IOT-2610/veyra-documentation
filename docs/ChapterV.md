@@ -235,32 +235,128 @@ La arquitectura de la información de Veyra está diseñada para que cada usuari
 
 ### 5.2.1. Organization Systems
 
-- **Jerarquía de Contenidos:** La información se organiza de lo general a lo específico. En la **Landing Page**, el visitante recorre por scroll secciones que van desde el mensaje de impacto del Hero hasta los planes y el CTA final de suscripción. En la **aplicación web**, una vez autenticado, el usuario parte del Dashboard global y desciende a los listados de cada módulo (Residentes, Staff, Rooms, Devices) y, desde allí, a la vista de detalle de cada entidad y sus subrecursos. En la **aplicación móvil**, el flujo prioriza la consulta inmediata: el familiar o el personal de cuidado abre la app y aterriza directamente en el estado del residente, desde donde puede ramificar al historial o a las notificaciones.
-- **Secciones Principales de la Landing Page:** El sitio estático está dividido en las siguientes secciones, ordenadas según el flujo de scroll del usuario:
-    - **Hero (`#home`):** Mensaje principal "The Best Care is Always Connected" con el CTA "Start now →" que redirige a la app web.
-    - **What We Offer:** Cuatro tarjetas que presentan los servicios — Home Health Care, Pediatric Care, Companion Care y Conditions Treated.
-    - **Features (`#features`):** Acordeón interactivo con las funcionalidades clave (Seamless Communication, Real-Time Health Monitoring, Streamlined Clinical Management, Comprehensive Reporting & Analytics) acompañado de un video institucional embebido desde YouTube.
-    - **Benefits (`#benefits`):** Cuatro tarjetas con imagen que detallan los beneficios diferenciadores (Enhanced Communication, Streamlined Clinical Management, Improved Resident Well-being, Increased Peace of Mind).
-    - **About Us (`#about`):** Descripción de Metasoft y la misión de Veyra, con bullet points de los pilares (Seamless Communication, Real-Time Insights, Enhanced Security) y un video institucional.
-    - **Our Team:** Grilla con los siete integrantes del equipo de desarrollo, cada uno con foto, nombre, rol y descripción profesional.
-    - **Plans (`#plans`):** Toggle Monthly/Annually que conmuta entre dos planes — **Family Plan** y **Nursing Home Plan** — con su precio, descripción, CTA y lista de features.
-    - **Testimonials & CTA:** Sección combinada con reseñas de usuarios (rating + comentario + nombre) y un CTA final de "Subscribe".
+La organización jerárquica del Landing Page de "Veyra" ha sido diseñada con el propósito de guiar al usuario de manera lógica y efectiva desde su primer contacto con la solución hasta su conversión en cliente. Esta estructura responde a principios de arquitectura de la información que priorizan la claridad, la relevancia y la progresión natural del contenido, permitiendo que los usuarios comprendan de inmediato el valor del producto, cómo funciona, sus beneficios, y los pasos para adquirirlo.
 
-    - **Footer:** Marca, tagline, redes sociales (Instagram, Facebook, LinkedIn), botones de descarga (App Store, Google Play), navegación cruzada, datos de contacto y triggers de los drawers legales (Terms of Service y Privacy Policy).
-- **Secciones Principales de la Aplicación Web:** La aplicación está organizada por Bounded Context, con un layout principal (`LayoutNursingHome`) que envuelve los módulos operativos accesibles desde el sidenav lateral:
-    - **Home (pre-login, `/home`):** Pantalla de bienvenida con el mensaje principal y los accesos a Sign-In, Create User y Create Admin.
-    - **Identity & Access (`/iam/*`):** Formularios de Sign-In y Sign-Up del administrador.
-    - **Dashboard (`/analytics/dashboard`):** Tarjetas de KPIs (Total Hires, Total Terminations, Net Staff Change, Total Admissions, Active Residents) y gráficas filtrables por año.
-    - **Devices (`/nursing/devices`):** Listado tabular de dispositivos IoT con columnas ordenables (Device ID, Assigned By, Assigned At, Status) y búsqueda por nombre.
-    - **Residents (`/nursing/residents`):** Listado en grilla de tarjetas con búsqueda por persona, vista de detalle (`:id/show`), formularios de alta y edición, y subrutas para Medical Records, Medications, Allergies y asignación de Room.
-    - **Staff (`/hcm/staff`):** Listado en grilla de tarjetas con búsqueda por persona, vista de detalle, formularios de alta y edición, y subruta de Contracts (listado y creación).
-    - **Rooms (`/nursing/rooms`):** Listado tabular con búsqueda por número, tabla ordenable y formularios de alta/edición.
-    - **Subscriptions & Payments (`/payments/*`):** Flujo dedicado fuera del sidenav, con pantallas para elegir plan (`/choose`), ver detalle del plan (`/plans/family`, `/plans/nursing-home`) y checkout (`/checkout/:type/:cycle`).
-    - **Page Not Found:** Pantalla de fallback para rutas inválidas, con mensaje traducido y botón "Go Home".
-- **Secciones Principales de la Aplicación Móvil:** La aplicación móvil se organiza por rol, con dos interfaces diferenciadas:
-    - **Interfaz del Familiar:** Vista simplificada con el estado actual del residente, signos vitales recientes, historial filtrable por período, centro de notificaciones y configuración del perfil.
-    - **Interfaz del Personal de Cuidado:** Listado de residentes asignados al turno, monitoreo de signos vitales en tiempo real, registro de eventos clínicos y bandeja de notificaciones críticas (alertas de caídas, frecuencias fuera de rango).
-- **Agrupación de Contenidos:** Cada módulo de la aplicación web se agrupa por Bounded Context y respeta su lenguaje ubicuo: los residentes y sus subrecursos (medical records, medications, allergies, room assignments) viven bajo `nursing`, mientras que staff y contracts viven bajo `hcm`. Las vistas de detalle se construyen con Material Cards apiladas (perfil, contactos, datos clínicos), los listados emplean grillas de tarjetas o tablas ordenables con búsqueda integrada, y los estados vacíos se manejan con mensajes traducidos por `ngx-translate` (EN/ES).
+**Inicio**
+
+- **Propósito**: Captar la atención del visitante con un mensaje claro y directo.
+- **Contenido**: Nombre del producto, propuesta de valor destacada "The Best Care is Always Connected" y llamado a la acción (CTA) "Start now →".
+
+
+**Información explicativa**
+
+- **What We Offer:** Cuatro tarjetas que presentan los servicios principales — Home Health Care, Pediatric Care, Companion Care y Conditions Treated.
+- **Features:** Acordeón interactivo con las funcionalidades clave del sistema acompañado de un video institucional embebido.
+- **Benefits:** Cuatro tarjetas con imagen que detallan los beneficios diferenciadores para instituciones y familias.
+- **About Us:** Información sobre Metasoft y la misión de Veyra, complementada con un video institucional.
+- **Our Team:** Grilla con los integrantes del equipo de desarrollo, cada uno con foto, rol y descripción profesional.
+
+
+**Conversión**
+
+- **Plans:** Detalle de los distintos planes de suscripción disponibles — Family Plan y Nursing Home Plan — con toggle Monthly/Annually.
+- **Testimonials & CTA:** Reseñas de clientes que usaron la aplicación y CTA final "Subscribe" para iniciar la suscripción.
+
+<p align="center">
+  <img src="./../assets/img/chapter-V/arquitectura-jerarquica-landing.jpeg">
+</p>
+
+
+Además la arquitectura jerárquica en la interfaz de la aplicación web de "Veyra" ha sido diseñada para facilitar el acceso y gestión eficiente de las múltiples funcionalidades del sistema. Esta estructura permite una distribución lógica del contenido, reduciendo la carga cognitiva del usuario y mejorando su capacidad para encontrar rápidamente las herramientas que necesita.
+
+
+<p align="center">
+  <img src="./../assets/img/chapter-V/arquitectura-jerarquica-webapp.jpeg">
+</p>
+
+**Pantalla de inicio**
+
+Una vista de bienvenida pre-login con el mensaje principal de Veyra y los accesos a Sign-In, Create User y Create Admin. Tras autenticarse, el usuario aterriza en un Dashboard tipo analítico con KPIs operativos y gráficas filtrables por año.
+
+**Navegación principal**
+
+Sistema jerárquico accesible desde un menú lateral con iconografía clara. Incluye las siguientes pestañas:
+    
+- Dashboard
+- Devices
+- Residents
+- Staff
+- Rooms
+
+**Filtrado y organización avanzada**
+
+**a. Para el Administrador del Hogar de Reposo**
+
+- **Filtros por:** Nombre del residente, nombre del personal, número de habitación y nombre del dispositivo IoT.
+- **Funcionalidades destacadas:** Gestión de residentes, personal y habitaciones; asignación de dispositivos IoT; configuración inicial del hogar de reposo; administración del plan de suscripción.
+
+**b. Para Médicos y Personal Asistencial**
+
+- **Filtros por:** Nombre del residente asignado al turno.
+- **Funcionalidades destacadas:** Consulta de signos vitales en tiempo real, registro y consulta del historial clínico del residente, definición de parámetros clínicos personalizados.
+
+
+**Segmentación por audiencia**
+
+**a. Administrador del Hogar de Reposo**
+
+- Enfoque en la gestión operativa: registro de residentes, alta de personal, asignación de habitaciones y vinculación de familiares.
+- Visualización del dashboard analítico con KPIs (Total Hires, Total Terminations, Net Staff Change, Total Admissions, Active Residents) y administración del flujo de suscripción y pagos.
+
+**b. Médicos y Personal Asistencial**
+
+- Acceso al monitoreo clínico del residente, consulta del historial médico y registro de eventos clínicos por turno.
+- Definición de los parámetros clínicos de cada residente y reacción ante alertas críticas generadas por los dispositivos IoT.
+
+
+Por último, la arquitectura jerárquica de la aplicación móvil de "Veyra" prioriza la consulta rápida y la respuesta inmediata, organizándose alrededor del rol del usuario. Esta estructura permite que el familiar acceda con un solo gesto al estado de su ser querido y que el personal de cuidado reciba notificaciones críticas y registre intervenciones directamente desde el campo.
+
+
+<p align="center">
+  <img src="./../assets/img/chapter-V/arquitectura-jerarquica-webapp.jpeg">
+</p>
+
+**Pantalla de inicio**
+
+Para el familiar, una vista simplificada del estado actual del residente vinculado con un mensaje claro y reconfortante. Para el personal de cuidado, una lista de los residentes asignados al turno con las notificaciones críticas pendientes y accesos directos al monitoreo.
+
+**Navegación principal**
+
+Sistema jerárquico accesible desde una bottom navigation bar con iconografía clara. Incluye las siguientes pestañas:
+
+- Home
+- Signos Vitales
+- Historial
+- Notificaciones
+- Perfil
+
+**Filtrado y organización avanzada**
+
+**a. Para Familiares**
+
+- **Filtros por:** Rango de fechas en el historial de signos vitales del residente vinculado.
+- **Funcionalidades destacadas:** Consulta del estado actual del residente, recepción de notificaciones push con deep link al detalle de la alerta crítica, configuración de las preferencias de notificación.
+
+**b. Para Personal de Cuidado**
+
+- **Filtros por:** Residentes asignados al turno actual.
+- **Funcionalidades destacadas:** Monitoreo de signos vitales en tiempo real, registro de eventos clínicos en el historial del residente, atención inmediata de alertas críticas desde el móvil.
+
+
+**Segmentación por audiencia**
+
+**a. Familiares**
+
+- Acceso al estado actual del residente vinculado y visualización de signos vitales recientes (US-14).
+- Consulta del historial de signos vitales con filtro por período personalizado (US-15).
+- Recepción de notificaciones de alertas críticas con deep link al detalle del evento (US-16).
+
+**b. Personal de Cuidado**
+
+- Consulta del monitoreo de signos vitales en tiempo real de los residentes asignados a su turno (US-11, US-12).
+- Registro de eventos clínicos en el historial del residente para garantizar la continuidad del cuidado entre turnos (US-19).
+- Bandeja de alertas críticas con acciones rápidas para intervención inmediata en campo.
+
 
 
 ### 5.2.2. Labeling Systems
