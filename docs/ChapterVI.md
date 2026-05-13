@@ -258,6 +258,8 @@ Aplicación web:
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review
 
+Para este sprint no se desarrollaron pruebas unitarias ni de integración, ya que el enfoque principal estuvo en el desarrollo de la landing page y la aplicación web.
+
 #### 6.2.1.6. Execution Evidence for Sprint Review
 
 Landing page:
