@@ -714,9 +714,10 @@ A continuación, presentamos los diagramas de flujo de nuestra plataforma web, d
 
 - Iniciar sesión en la plataforma
 - Registrar una nueva habitación (cuarto) en el sistema
+- Registrar un nuevo personal
 - Registrar un nuevo residente y asignar habitación
 - Conceder acceso al sistema (Personal médico o Familiar)
-- Registrar un nuevo dispositivo IoT en el inventario
+- Registrar un nuevo dispositivo IoT
 - Vincular un dispositivo IoT al perfil de un residente
 - Definir o actualizar parámetros clínicos de telemetría
 - Visualizar el monitoreo en vivo (Geolocalización y Signos Vitales)
