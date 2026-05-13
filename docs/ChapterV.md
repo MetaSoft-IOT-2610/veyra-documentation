@@ -710,13 +710,15 @@ El diseño móvil prioriza la inmediatez y la movilidad dentro de la casa de rep
 ### 5.4.2. Applications Wireflow Diagrams
 Nuestros flujos de tareas (TaskFlows) se dividen según el rol del usuario para garantizar que la información llegue a la persona correcta en el momento preciso:
 
-**Flujo Administrativo**: Registro de un nuevo dispositivo IoT y asignación a la cama de un residente.
 
-**Flujo Médico**: Consulta del historial de eventos de las últimas 24 horas para ajustar tratamientos.
+| User Goal                                                                                                                                                                                                                                                                                                        | WireFlow                                                                     |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| **UG01:** Registrar un nuevo residente en el sistema de la casa de reposo. Permite al personal administrativo ingresar los datos demográficos y médicos de un nuevo adulto mayor, creando su expediente digital centralizado.                                                                                    | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG1-flow.png) |
+| **UG02:** Conceder y gestionar accesos a la plataforma para el personal y familiares. Facilita al administrador la creación de credenciales de inicio de sesión y la asignación de roles y permisos específicos para médicos, personal de enfermería y familiares de los residentes.                             | ![alt text]()    |
+| **UG03:** Definir y actualizar los parámetros clínicos de alerta para cada residente. Permite al personal médico establecer los límites mínimos y máximos aceptables de signos vitales (telemetría), garantizando que el sistema genere alertas personalizadas basadas en la condición clínica de cada paciente. | ![alt text]()    |
+| **UG04:** Agendar y gestionar las actividades recreativas y terapéuticas. Proporciona al coordinador de actividades las herramientas para programar eventos diarios, estableciendo horarios, descripciones y categorías, asegurando una rutina activa y estructurada para los residentes.                        | ![alt text]()   |
+| **UG05:** Monitorear la ubicación en tiempo real y signos vitales mediante dispositivos IoT. Permite al personal de cuidado visualizar en un mapa interactivo la geolocalización de los residentes y consultar sus signos vitales en vivo, facilitando una respuesta rápida ante emergencias o posibles fugas.   | ![alt text]()    |
 
-**Flujo de Asistencia**: Notificación de alerta enviada al personal de cuidado cuando un sensor detecta una anomalía.
-
-**Flujo Informativo**: Consulta del estado diario del residente por parte del familiar.
 ### 5.4.2. Applications Mock-ups
 **WEB APPLICATION MOCK-UPS**
 
