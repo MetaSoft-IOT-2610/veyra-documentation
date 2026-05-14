@@ -907,6 +907,34 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 ![Unhappy Path - Staff Access Error States](../assets/img/chapter-V/uf-staff-access-unhappy-path.png)
 
+#### User Flow 7: Definición y Actualización de Parámetros Clínicos (Clinical Parameters)
+
+* **User Persona:** Médico Tratante / Enfermera Jefe.
+* **User Goal:** Establecer y actualizar los límites mínimos y máximos aceptables de los signos vitales (telemetría) para un residente específico, asegurando que las alertas generadas por los dispositivos IoT sean precisas y personalizadas a su condición clínica.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Resident Record** y visualiza el directorio de pacientes (*Patient Directory*) en el panel izquierdo, ordenados por su estado de salud actual (Crítico, En Obs., Estable).
+2. Hace clic en la tarjeta de un residente específico (ej. María Ríos).
+3. El panel derecho, que inicialmente estaba vacío, se puebla con el expediente digital del paciente seleccionado.
+4. El usuario navega a la pestaña **Clinical Parameter**.
+5. Modifica los valores numéricos en los campos de límites de *Heart Rate* (bpm), *Oxygen Sat* (%) y/o *Blood Pressure* (mmHg) según el nuevo plan de tratamiento del paciente.
+6. Hace clic en el botón verde **Save Parameters**.
+7. El sistema valida los datos, actualiza las reglas del motor de alertas en la base de datos y muestra una notificación de éxito, manteniendo al usuario en la misma vista para continuar su trabajo.
+
+![Happy Path - Update Clinical Parameters](../assets/img/chapter-V/uf-clinical-parameters-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Incongruencia Lógica en los Umbrales (Mínimo > Máximo)**
+* **Condición:** El médico, por un error de tipeo, ingresa un valor mínimo que es superior al valor máximo (ej. Heart Rate: Mínimo 110, Máximo 90).
+* **Flujo de respuesta:** Al intentar guardar, el sistema intercepta la acción mediante una validación *Front-end*. El flujo se detiene y los campos en conflicto se resaltan en rojo con un mensaje *inline*: *"Error de rango: El límite mínimo no puede ser superior al límite máximo"*. Esto previene fallos lógicos graves en el algoritmo de disparo de emergencias.
+
+**Escenario B: Omisión de Valores de Monitoreo Crítico**
+* **Condición:** El usuario borra completamente el valor de un campo obligatorio (ej. deja en blanco el límite de *Oxygen Sat*) y presiona *Save Parameters*.
+* **Flujo de respuesta:** El sistema no permite dejar parámetros de soporte vital en blanco (valores nulos). El botón de guardado se deshabilita temporalmente o, al presionarlo, el campo vacío arroja una alerta: *"Este parámetro es obligatorio para mantener el monitoreo activo"*. El usuario debe ingresar un número válido para poder actualizar el perfil.
+
+![Unhappy Path - Clinical Parameters Error States](../assets/img/chapter-V/uf-clinical-parameters-unhappy-path.png)
+
 ## 5.5. Applications Prototyping
 
 ## 5.6. IoT Device Design
