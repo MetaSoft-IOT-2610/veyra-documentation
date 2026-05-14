@@ -694,6 +694,9 @@ A continuación, se presentan los wireframes estructurales de los módulos princ
 
 
 * **Estructura Móvil (Monitoreo para Familiares):** Wireframe que define la navegación inferior (Bottom Tab Bar) y la distribución de las tarjetas de información de gran tamaño para facilitar la lectura rápida en dispositivos móviles.
+* <p align="center">
+  <img src="../assets/img/chapter-V/veyra-wireframes/mobile-application/mobile-health-wireframes.png" alt="Mockup" width="1200px" height="auto"/>
+
 
 ### 5.4.2. Applications Wireflow Diagrams
 
