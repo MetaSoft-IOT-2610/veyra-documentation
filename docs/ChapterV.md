@@ -725,16 +725,16 @@ A continuación, presentamos los diagramas de flujo de nuestra plataforma web, d
 - Atender una alerta de emergencia del sistema
 - Programar una nueva actividad recreativa o terapéutica
 
-| User Goal                                                                                                                                                                                                                                                                                   | WireFlow                                                                           |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| **UG01:** Registrar un nuevo residente en el sistema de la casa de reposo. Permite al personal administrativo ingresar los datos demográficos y médicos de un nuevo adulto mayor, asignándole una habitación y creando su expediente digital centralizado.                                  | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG1-flow.png) |
-| **UG02:** Conceder y gestionar accesos a la plataforma para el personal y familiares. Facilita al administrador la creación de credenciales de inicio de sesión y la asignación de roles y permisos específicos para médicos, personal de enfermería y familiares de los residentes.        | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG2-flow.png)    |
+| User Goal                                                                                                                                                                                                                                                                                                        | WireFlow                                                                           |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| **UG01:** Registrar un nuevo residente en el sistema de la casa de reposo. Permite al personal administrativo ingresar los datos demográficos y médicos de un nuevo adulto mayor, asignándole una habitación y creando su expediente digital centralizado.                                                       | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG1-flow.png) |
+| **UG02:** Conceder y gestionar accesos a la plataforma para el personal y familiares. Facilita al administrador la creación de credenciales de inicio de sesión y la asignación de roles y permisos específicos para médicos, personal de enfermería y familiares de los residentes.                             | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG2-flow.png)    |
 | **UG03:** Definir y actualizar los parámetros clínicos de alerta para cada residente. Permite al personal médico establecer los límites mínimos y máximos aceptables de signos vitales (telemetría), garantizando que el sistema genere alertas personalizadas basadas en la condición clínica de cada paciente. | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG3-flow.png)    |
-| **UG04:** Agendar y gestionar las actividades recreativas y terapéuticas. Proporciona al coordinador de actividades las herramientas para programar eventos diarios, estableciendo horarios, descripciones y categorías, asegurando una rutina activa y estructurada para los residentes.   | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG4-flow.png)    |
-| **UG05:** Monitorear la ubicación en tiempo real y signos vitales mediante dispositivos IoT. Permite al personal de cuidado visualizar en un mapa interactivo la geolocalización de los residentes y consultar sus signos vitales en vivo, facilitando una respuesta rápida ante emergencias o posibles fugas. | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG5-flow.png)    |
-| **UG06:** Registrar y gestionar las habitaciones del centro. Permite al personal administrativo crear nuevos cuartos en el sistema, definiendo detalles clave para mantener un control organizado de la disponibilidad y el alojamiento de los residentes.                                  | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG6-flow.png)    |
-| **UG07:** Administrar el inventario de dispositivos IoT. Facilita a los administradores registrar nuevos dispositivos de telemetría y geolocalización en el sistema para su posterior vinculación a los residentes.                                                                         | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG7-flow.png)    |
-| **UG08:** Registrar y gestionar al personal de la casa de reposo. Permite al administrador ingresar la información profesional, turnos y datos de contacto de enfermeros, médicos y staff de apoyo para organizar la operatividad del centro.                                               | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG8-flow.png)    |
+| **UG04:** Agendar y gestionar las actividades recreativas y terapéuticas. Proporciona al coordinador de actividades las herramientas para programar eventos diarios, estableciendo horarios, descripciones y categorías, asegurando una rutina activa y estructurada para los residentes.                        | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG4-flow.png)    |
+| **UG05:** Monitorear la ubicación en tiempo real y signos vitales mediante dispositivos IoT. Permite al familiar visualizar en un mapa interactivo la geolocalización de los residentes y consultar sus signos vitales en vivo.                                                                                  | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG5-flow.png)    |
+| **UG06:** Registrar y gestionar las habitaciones del centro. Permite al personal administrativo crear nuevos cuartos en el sistema, definiendo detalles clave para mantener un control organizado de la disponibilidad y el alojamiento de los residentes.                                                       | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG6-flow.png)    |
+| **UG07:** Administrar el inventario de dispositivos IoT. Facilita a los administradores registrar nuevos dispositivos de telemetría y geolocalización en el sistema para su posterior vinculación a los residentes.                                                                                              | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG7-flow.png)    |
+| **UG08:** Registrar y gestionar al personal de la casa de reposo. Permite al administrador ingresar la información profesional, turnos y datos de contacto de enfermeros, médicos y staff de apoyo para organizar la operatividad del centro.                                                                    | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG8-flow.png)    |
 
 ### 5.4.2. Applications Mock-ups
 
@@ -934,6 +934,32 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 * **Flujo de respuesta:** El sistema no permite dejar parámetros de soporte vital en blanco (valores nulos). El botón de guardado se deshabilita temporalmente o, al presionarlo, el campo vacío arroja una alerta: *"Este parámetro es obligatorio para mantener el monitoreo activo"*. El usuario debe ingresar un número válido para poder actualizar el perfil.
 
 ![Unhappy Path - Clinical Parameters Error States](../assets/img/chapter-V/uf-clinical-parameters-unhappy-path.png)
+
+#### User Flow 8: Monitoreo Remoto por Familiares (Mobile App)
+
+* **User Persona:** Familiar / Contacto de Emergencia.
+* **User Goal:** Visualizar en tiempo real el estado de salud, signos vitales y ubicación GPS de su familiar alojado en la casa de reposo, utilizando la aplicación móvil para mantener la tranquilidad y el control a distancia.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario (familiar) abre la aplicación móvil de Veyra en su smartphone e inicia sesión.
+2. Toca la pestaña **Health** (ícono del maletín médico) en la barra de navegación inferior.
+3. El sistema carga el panel de resumen del residente asignado (ej. *Eleanor Vance*). El indicador principal muestra un estado positivo con un badge turquesa: **Status: Stable**.
+4. El usuario revisa las tarjetas de telemetría en vivo, comprobando que el ritmo cardíaco (72 BPM) y la saturación de oxígeno (95% SPO2) están dentro de los rangos normales.
+5. Hace *scroll* hacia la parte inferior de la pantalla y visualiza el mapa interactivo, confirmando la ubicación actual y segura del residente mediante los pines de geolocalización.
+
+![Happy Path - Relative Mobile Monitoring](../assets/img/chapter-V/uf-mobile-relative-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Pérdida de Conexión del Dispositivo IoT (Datos Offline)**
+* **Condición:** La pulsera inteligente del residente se queda sin batería o pierde la conexión a la red WiFi/Bluetooth de la casa de reposo, interrumpiendo la transmisión de telemetría.
+* **Flujo de respuesta:** El sistema previene que el familiar tome decisiones basadas en datos congelados. Las tarjetas de *Heart Rate* y *SPO2* se atenúan (color gris o estado *disabled*) y muestran un ícono de advertencia indicando: *"Dispositivo fuera de línea. Última actualización: hace 2 horas"*. El badge superior cambia a color gris con el texto **Status: Unknown**.
+
+**Escenario B: Detección de Anomalías Clínicas (Alerta Activa)**
+* **Condición:** La telemetría del residente detecta una caída en la saturación de oxígeno por debajo del límite seguro establecido previamente por el médico.
+* **Flujo de respuesta:** La aplicación cambia inmediatamente el estado superior a un badge rojo de alerta: **Status: Critical**. La tarjeta de *SPO2* altera su diseño, resaltando el número en rojo para captar la atención. Además, el sistema despliega un banner de acción rápida en la parte superior: *"Contactar al centro médico"*, permitiendo al familiar iniciar un chat directo con la enfermera de turno desde la aplicación.
+
+![Unhappy Path - Mobile Monitoring Alerts](../assets/img/chapter-V/uf-mobile-relative-unhappy-path.png)
 
 ## 5.5. Applications Prototyping
 
