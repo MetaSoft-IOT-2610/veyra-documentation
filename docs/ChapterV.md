@@ -514,27 +514,72 @@ Incluye una referencia al equipo responsable del diseño y desarrollo del produc
 
 ### 5.2.4. Searching Systems
 
-- **Búsqueda en la Landing Page:** La Landing Page no incluye barra de búsqueda. Al ser un sitio estático orientado al descubrimiento mediante scroll, la navegación se resuelve con anchors (`#home`, `#features`, `#benefits`, `#about`, `#plans`) y con el botón flotante de scroll-to-top.
+### 5.2.4. Searching Systems
 
-- **Búsqueda en la Aplicación Web:** Cuatro de los cinco módulos del sidenav implementan una barra de búsqueda construida con `<mat-form-field>` y `<mat-input>`, prefijada por el ícono `search` y con un botón `close` que aparece para limpiar el término ingresado:
+Con el objetivo de permitir que los usuarios encuentren rápidamente la información que necesitan dentro de cada plataforma de Veyra, se ha definido un sistema de búsqueda contextual y simple, ajustado al rol del usuario y al tipo de contenido manejado en cada vista. La búsqueda se complementa con filtros, ordenamientos y una codificación visual de estados para facilitar la interpretación de los resultados.
 
-    - **Residents (`/nursing/residents`):** Barra de búsqueda con placeholder "Enter the name" que filtra el listado de residentes a partir del término ingresado contra el person profile asociado. El componente `PersonProfileDetail` emite el evento `idsFiltered` con los IDs coincidentes y el listado se redibuja en tiempo real con `computed()` de Angular Signals.
-    - **Staff (`/hcm/staff`):** Misma mecánica que Residents — search bar con prefijo `search`, filtrado por persona y botón de limpiar.
-    - **Rooms (`/nursing/rooms`):** Búsqueda con placeholder "Enter the number" que filtra el listado tabular por número de habitación.
-    - **Devices (`/nursing/devices`):** Búsqueda con placeholder "Enter the name" que filtra la tabla de dispositivos IoT por nombre.
-    - **Contracts (`/hcm/staff/:id/contracts`):** No incluye barra de búsqueda — la navegación se realiza únicamente con el ordenamiento por columnas.
+**Aplicación Móvil**
 
-- **Ordenamiento por Columnas:** Las tablas de **Rooms**, **Devices** y **Contracts** ofrecen ordenamiento al hacer clic en la cabecera. El estado se representa con tres íconos: `unfold_more` (sin ordenar), `arrow_drop_up` (ascendente) y `arrow_drop_down` (descendente). Las columnas ordenables reales son **Number** y **Status** en Rooms; **Device ID**, **Assigned By**, **Assigned At** y **Status** en Devices; y **Status**, **Start Date** y **End Date** en Contracts.
+En la aplicación móvil, el sistema de búsqueda está pensado para ofrecer acceso rápido a la información relevante según el rol del usuario. Para el **familiar**, la búsqueda se aplica dentro del historial de signos vitales del residente vinculado mediante un selector de calendario que permite filtrar por rango de fechas personalizado (US-15). Para el **personal asistencial**, la búsqueda se aplica sobre el listado de residentes asignados al turno actual, permitiendo localizar rápidamente a uno específico para consultar sus signos vitales o registrar un evento clínico (US-11, US-19). Para el **administrador de la casa de reposo**, la búsqueda permite filtrar la bandeja de alertas y notificaciones críticas pendientes desde el dispositivo móvil.
 
-- **Estados Vacíos:** Cuando una búsqueda o un listado no produce resultados, la aplicación muestra un mensaje traducido por `ngx-translate` dentro del bloque `@empty` del nuevo control de flujo de Angular. Ejemplos reales tomados de los archivos de traducción: **"No allergies recorded"**, **"No vital signs recorded"** y **"No devices available"**. Las claves usadas siguen el patrón `residents.error.no-residents`, `staff-management.error.no-staff`, `no-devices`, `no-allergies` y `no-vital-signs`.
+<p align="center">
+  <img src="./../assets/img/chapter-V/search_patient.png">
+</p>
 
-- **Búsqueda en la Aplicación Móvil:** La aplicación móvil prioriza la consulta rápida del residente vinculado o de los residentes asignados al turno, por lo que la búsqueda se ofrece de forma contextual dentro de cada módulo. Según las User Stories del Capítulo III, los principales escenarios implementados son:
+**Resultados de búsqueda**
 
-    - **Historial de Signos Vitales (US-15):** El familiar consulta el historial de signos vitales del residente con un filtro por rango de fechas. Por defecto se muestran los últimos 7 días en orden cronológico descendente. Si el familiar selecciona una fecha de inicio cronológicamente posterior a la de fin, el sistema rechaza el filtro y muestra el mensaje **"La fecha de inicio no puede ser posterior a la fecha de fin"**.
-    - **Historial Clínico (US-17, US-18):** El personal asistencial y el médico consultan los eventos clínicos cronológicos del residente, ordenados por fecha y hora, con el nombre del personal que registró cada evento.
-    - **Listado de Residentes Asignados (US-11):** El personal asistencial accede al panel de monitoreo con los residentes activos de su turno.
+Los resultados se presentan en un formato visual basado en **Cards**, optimizado para la consulta rápida desde el dispositivo móvil. Cada Card incluye información clave como:
 
-- **Resultados y Selección:** En la aplicación web, los listados de **Residents** y **Staff** utilizan grillas de tarjetas que se filtran en tiempo real conforme el usuario escribe. La selección de una tarjeta se indica visualmente con un borde resaltado (`.selected`) y habilita el botón **Edit** de la barra de acciones inferior. Las tablas de **Rooms**, **Devices** y **Contracts** emplean checkboxes por fila y muestran el ícono `unfold_more` o sus variantes direccionales para indicar el estado de ordenamiento de cada columna.
+- Foto y nombre del residente
+- Estado actual del residente
+- Últimos valores de signos vitales (frecuencia cardíaca, saturación de oxígeno, temperatura, presión arterial)
+- Hora de la última actualización
+- Indicador visual de alertas críticas pendientes
+
+Se implementa una codificación por colores para facilitar la interpretación visual del estado del residente:
+
+- **Verde:** Indica que los signos vitales están dentro del rango aceptable y el residente se encuentra estable.
+- **Amarillo:** Indica advertencia, con uno o más signos vitales cercanos a los límites configurados.
+- **Rojo:** Indica alerta crítica, con uno o más signos vitales fuera del rango definido en los parámetros clínicos.
+
+---
+
+**Aplicación Web**
+
+En la aplicación web, el sistema de búsqueda está integrado de forma simple pero efectiva para que el administrador y el doctor puedan localizar rápidamente la información que necesitan. Cada módulo principal del sidenav incluye un campo de búsqueda ubicado en la parte superior de la vista, construido con `<mat-form-field>` y prefijo de ícono `search`, acompañado de un botón `close` para limpiar el término ingresado. El placeholder de cada campo se adapta al tipo de información que gestiona el módulo activo.
+
+En el módulo **Residents**, el campo presenta el placeholder genérico `Search` y filtra el listado de residentes a partir del nombre ingresado contra el person profile asociado:
+
+<p align="center">
+  <img src="./../assets/img/chapter-V/search_residents.png">
+</p>
+
+En el módulo **Devices**, el campo presenta el placeholder `Search device ID...` y filtra la lista de dispositivos IoT por su identificador único:
+
+<p align="center">
+  <img src="./../assets/img/chapter-V/search_devices.png">
+</p>
+
+**Resultados de búsqueda**
+
+Los resultados se presentan en dos formatos según el módulo, diseñados para mostrar la información de cada elemento de forma clara y fácil de escanear:
+
+- **Grilla de Cards (Residents y Staff):** Cada Card muestra la foto y el nombre de la persona, el estado actual (activo / inactivo) y los botones de acción contextual (Ver Detalle, Editar, Asignar Habitación, Ver Medicamentos, Agregar Contrato).
+- **Tabla ordenable (Rooms, Devices y Contracts):** Cada fila muestra los datos clave del registro y permite ordenar los resultados al hacer clic en la cabecera de cada columna, con íconos `unfold_more`, `arrow_drop_up` y `arrow_drop_down` para indicar el estado del orden.
+
+Se implementa una codificación por colores para facilitar la interpretación visual del estado dentro de los listados y tarjetas:
+
+- **Verde (`#4CAF50`):** Indica estado activo, confirmación exitosa o valores dentro del rango normal.
+- **Amarillo (`#FFC107`):** Indica advertencia o aviso importante que requiere atención del usuario.
+- **Rojo (`#F44336`):** Indica error, alerta crítica o valores fuera del rango aceptable.
+- **Gris:** Indica elementos inactivos, sin datos disponibles o no asignados.
+
+---
+
+**Landing Page**
+
+El Landing Page de Veyra no incluye un sistema de búsqueda integrado, dado que está diseñado como un sitio estático orientado al descubrimiento mediante scroll. La navegación entre secciones se resuelve con anchors del menú principal (`#home`, `#features`, `#benefits`, `#about`, `#plans`), el botón flotante de scroll-to-top que aparece tras 300 px de desplazamiento y el menú hamburguesa en dispositivos móviles, lo cual hace innecesario un campo de búsqueda dedicado.
+
 
 ### 5.2.5. Navigation Systems
 
