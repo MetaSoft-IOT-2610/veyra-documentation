@@ -136,7 +136,7 @@ Las directrices de estilo web de Veyra se centran en la simplicidad, la accesibi
 
 
 ### Mobile   Style Guidelines
- 
+
 ### Iot  Style Guidelines
 
 
@@ -212,7 +212,7 @@ La pulsera cuenta con un único LED RGB que comunica el estado del dispositivo m
 | Alerta crítica activa | Vibración corta repetida           |
 | Batería baja          | Dos pulsos cortos cada 60 segundos |
 
- 
+
 #### Botón Físico
 
 La pulsera incluye un único botón en el lateral del dispositivo, cuya función exclusiva es encender y apagar el dispositivo.
@@ -221,7 +221,7 @@ La pulsera incluye un único botón en el lateral del dispositivo, cuya función
 |----------------------------|----------------------------------------------------------------------------------|
 | Presión larga (3 segundos) | Enciende el dispositivo si está apagado / Apaga el dispositivo si está encendido |
 
-#### Pantalla 
+#### Pantalla
 
 En caso de incorporar una pantalla OLED de baja resolución, la información se presenta con la siguiente jerarquía:
 
@@ -276,7 +276,7 @@ Una vista de bienvenida pre-login con el mensaje principal de Veyra y los acceso
 **Navegación principal**
 
 Sistema jerárquico accesible desde un menú lateral con iconografía clara. Incluye las siguientes pestañas:
-    
+
 - Dashboard
 - Devices
 - Residents
@@ -780,60 +780,748 @@ Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups 
 
 ### 5.4.1. Applications Wireframes
 
-**WEB APPLICATION WIREFRAMES**
+**Aplicación de Principios de Diseño y Arquitectura de Información:**
+Para la conceptualización de estas pantallas (Wireframes), nos centramos en una Arquitectura de Información basada en el patrón de navegación en "F" (F-Pattern). Ubicamos el menú principal en una barra lateral anclada (Sidebar) para permitir al usuario acceder a los módulos principales (Dashboard, Devices, Residents) sin perder contexto. Aplicamos el principio de Proximidad de la Gestalt en los formularios de registro (ej. Staff y Relatives), agrupando lógicamente las etiquetas (labels) con sus respectivos campos de entrada. A nivel de diseño inclusivo, garantizamos que los componentes interactivos tengan un área de clic adecuada (Touch Targets) y establecemos una jerarquía tipográfica clara mediante diferentes pesos visuales.
 
-Se presenta el diseño visual y de interacción en formato de wireframes de nuestro producto digital.
+A continuación, se presentan los wireframes estructurales de los módulos principales que soportan las tareas críticas del sistema:
 
-Tenemos las pantallas generales que vendrían a ser el inicio sesión y registro.
-
-
-Iniciar sesión: En esta pantalla le mostramos al administrador de casa de reposo y al doctor los campos a llenar para ingresar con su cuenta en nuestra plataforma,
-
+* **Estructura Master-Detail (Panel de Residentes):** Wireframe que ilustra la división de la pantalla en dos columnas para visualizar la lista de pacientes y sus parámetros clínicos simultáneamente, reduciendo la carga cognitiva.
 <p align="center">
-  <img src="../assets/img/chapter-V/veyra-wireframes/web-application/Sign-in.png" alt="Wireframe" width="500px" height="auto"/>
-</p>
+  <img src="../assets/img/chapter-V/veyra-wireframes/web-application/web-clinical-parameters.png" alt="Mockup" width="1200px" height="auto"/>
 
-Registrar Admin: En esta pantalla le mostramos al administrador de casa de reposo los campos a llenar para crearse una cuenta en nuestra plataforma. Se usaron elementos como formas, textos y colores.
 
-<p align="center">
-  <img src="../assets/img/chapter-V/veyra-wireframes/web-application/create-admin.png" alt="Wireframe" width="500px" height="auto"/>
-</p>
+* **Estructura de Formularios y Modales (Gestión de Actividades e Inventario):** Wireframes que definen la disposición de los campos de entrada y los overlays (capas superpuestas) para evitar que el usuario abandone la pantalla principal al registrar nuevos datos.
 
-**MOBILE APPLICATION WIREFRAMES**
 
-El diseño móvil prioriza la inmediatez y la movilidad dentro de la casa de reposo.
+* **Estructura Móvil (Monitoreo para Familiares):** Wireframe que define la navegación inferior (Bottom Tab Bar) y la distribución de las tarjetas de información de gran tamaño para facilitar la lectura rápida en dispositivos móviles.
+* <p align="center">
+  <img src="../assets/img/chapter-V/veyra-wireframes/mobile-application/mobile-health-wireframes.png" alt="Mockup" width="1200px" height="auto"/>
 
-**Interfaz del Familiar**: Una vista simplificada y humana. Muestra el estado actual del residente ("Papá está descansando", "Signos estables") para brindar tranquilidad.
-
-**Interfaz del Personal de Cuidado**: Una herramienta de trabajo con notificaciones críticas (Alertas de caídas, frecuencia cardíaca fuera de rango) que requieren acción inmediata.
 
 ### 5.4.2. Applications Wireflow Diagrams
-Nuestros flujos de tareas (TaskFlows) se dividen según el rol del usuario para garantizar que la información llegue a la persona correcta en el momento preciso:
 
-**Flujo Administrativo**: Registro de un nuevo dispositivo IoT y asignación a la cama de un residente.
+A continuación, presentamos los diagramas de flujo de nuestra plataforma web, diseñados para representar cómo responde el sistema a las interacciones de los usuarios. Cada diagrama refleja un objetivo del usuario vinculado a las distintas funcionalidades, con un único flujo que considera variaciones de acciones según los privilegios del rol (Administrador, Médico, Enfermera o Familiar). Antes de crear estos diagramas, establecimos flujos de tareas (Task Flows) para definir las rutas de navegación típicas en la aplicación.
 
-**Flujo Médico**: Consulta del historial de eventos de las últimas 24 horas para ajustar tratamientos.
+**TaskFlows**
 
-**Flujo de Asistencia**: Notificación de alerta enviada al personal de cuidado cuando un sensor detecta una anomalía.
+- Iniciar sesión en la plataforma
+- Registrar una nueva habitación (cuarto) en el sistema
+- Registrar un nuevo personal
+- Registrar un nuevo residente y asignar habitación
+- Conceder acceso al sistema (Personal médico o Familiar)
+- Registrar un nuevo dispositivo IoT
+- Vincular un dispositivo IoT al perfil de un residente
+- Definir o actualizar parámetros clínicos de telemetría
+- Visualizar el monitoreo en vivo (Geolocalización y Signos Vitales)
+- Atender una alerta de emergencia del sistema
+- Programar una nueva actividad recreativa o terapéutica
 
-**Flujo Informativo**: Consulta del estado diario del residente por parte del familiar.
-### 5.4.2. Applications Mock-ups
-**WEB APPLICATION MOCK-UPS**
+| User Goal                                                                                                                                                                                                                                                                                                        | WireFlow                                                                              |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| **UG01:** Registrar un nuevo residente en el sistema de la casa de reposo. Permite al personal administrativo ingresar los datos demográficos y médicos de un nuevo adulto mayor, asignándole una habitación y creando su expediente digital centralizado.                                                       | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG1-flow.png)    |
+| **UG02:** Conceder y gestionar accesos a la plataforma para el personal y familiares. Facilita al administrador la creación de credenciales de inicio de sesión y la asignación de roles y permisos específicos para médicos, personal de enfermería y familiares de los residentes.                             | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG2-flow.png)    |
+| **UG03:** Definir y actualizar los parámetros clínicos de alerta para cada residente. Permite al personal médico establecer los límites mínimos y máximos aceptables de signos vitales (telemetría), garantizando que el sistema genere alertas personalizadas basadas en la condición clínica de cada paciente. | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG3-flow.png)    |
+| **UG04:** Agendar y gestionar las actividades recreativas y terapéuticas. Proporciona al coordinador de actividades las herramientas para programar eventos diarios, estableciendo horarios, descripciones y categorías, asegurando una rutina activa y estructurada para los residentes.                        | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG4-flow.png)    |
+| **UG05:** Monitorear la ubicación en tiempo real y signos vitales mediante dispositivos IoT. Permite al familiar visualizar en un mapa interactivo la geolocalización de los residentes y consultar sus signos vitales en vivo.                                                                                  | ![alt text](../assets/img/chapter-V/veyra-wireframes/mobile-application/UG5-flow.png) |
+| **UG06:** Registrar y gestionar las habitaciones del centro. Permite al personal administrativo crear nuevos cuartos en el sistema, definiendo detalles clave para mantener un control organizado de la disponibilidad y el alojamiento de los residentes.                                                       | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG6-flow.png)    |
+| **UG07:** Administrar el inventario de dispositivos IoT. Facilita a los administradores registrar nuevos dispositivos de telemetría y geolocalización en el sistema para su posterior vinculación a los residentes.                                                                                              | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG7-flow.png)    |
+| **UG08:** Registrar y gestionar al personal de la casa de reposo. Permite al administrador ingresar la información profesional, turnos y datos de contacto de enfermeros, médicos y staff de apoyo para organizar la operatividad del centro.                                                                    | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG8-flow.png)    |
 
-Se observa una interfaz con un Dashboard robusto. Para el Doctor, resaltan las tablas de telemetría (ej. ritmo cardíaco, saturación de oxigeno y estado de salud).
+### 5.4.3. Applications Mock-ups
 
+**Aplicación del Design System y Accesibilidad (UI States):**
+En esta etapa de alta fidelidad, materializamos el Design System de Veyra. Definimos un color primario Turquesa/Verde Agua (#72A99E) que transmite salud, calma y profesionalismo clínico, contrastando con fondos grises claros (#F3F4F6) para reducir la fatiga visual del personal que usa el sistema por largas horas.
+
+Para garantizar la **Visibilidad del Estado del Sistema** y la **Prevención de Errores** (Heurísticas de Nielsen), diseñamos múltiples estados para nuestros componentes (UI States):
+* **Estados de Éxito:** Uso de notificaciones tipo "Toast" en color verde y badges de estado activo.
+* **Estados de Error (Unhappy Paths):** Aplicación de bordes rojos, textos de ayuda *inline* y deshabilitación de botones primarios para evitar que el usuario envíe formularios incompletos (ej. al faltar un Device ID o ingresar rangos clínicos ilógicos).
+* **Estados Semánticos:** Uso de Amarillo para estados de "Observación" y Rojo para alertas críticas "Critical" o "Low Battery", siempre acompañados de texto e íconos para asegurar la accesibilidad a usuarios con daltonismo.
+
+A continuación, evidenciamos la aplicación gráfica de estos principios en los diferentes módulos del sistema:
+
+* **Módulo de Gestión de Personal y Familiares (Formularios y UI States):** Mock-ups de alta fidelidad que muestran el uso de validaciones en tiempo real y el diseño de campos de entrada con retroalimentación visual clara.
 <p align="center">
-  <img src="../assets/img/chapter-V/veyra-mockups/web-application/doctor-dashboard.png" alt="Mockup" width="500px" height="auto"/>
-</p>
+  <img src="../assets/img/chapter-V/veyra-mockups/web-application/web-staff-access.png" alt="Mockup" width="1200px" height="auto"/>
 
-**MOBILE APPLICATION MOCK-UPS**
-
-En la aplicación móvil, el familiar tiene una vista clara y reconfortante del estado de su ser querido, con enlaces rapidos para ver sus indicadores de salud.
+* **Módulo de Telemetría (Clinical Parameters):** Visualización del patrón Master-Detail aplicado con la paleta de colores final, destacando los selectores numéricos y los badges de estado del paciente.
 <p align="center">
-  <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/family-dashboard.png" alt="Mockup" width="200px" height="auto"/>
+  <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/mobile-vitals.png" alt="Mockup" width="800px" height="auto"/>
 
-### 5.4.3. Applications User Flow Diagrams
+
+
+* **Aplicación Móvil - Interfaz de Monitoreo:** Diseño final de la vista del familiar, mostrando jerarquía visual en los signos vitales (tipografía de gran tamaño) y el estado de alerta en caso de anomalías en la saturación de oxígeno o ritmo cardíaco.
+<p align="center">
+  <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/mobile-health-indicators.png" alt="Mockup" width="800px" height="auto"/>
+
+
+
+### 5.4.4. Applications User Flow Diagrams
+
+En esta sección presentamos los User Flows derivados de nuestros Wireflows, utilizando los Mock-ups de alta fidelidad. Cada flujo detalla la ruta esperada para completar el objetivo con éxito (Happy Path) y las rutas alternativas frente a posibles errores del usuario o del sistema (Unhappy Paths), aplicando principios de prevención de errores.
+
+#### User Flow 1: Registro y Vinculación de un Familiar (Relative)
+
+* **User Persona:** Administrador del Sistema.
+* **User Goal:** Registrar el perfil de un familiar, ingresar sus datos de contacto y vincularlo obligatoriamente a un residente específico para generarle su acceso seguro al portal de monitoreo.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Relatives** y hace clic en el botón primario `+ Add New`.
+2. El sistema muestra el formulario *Register Relative*. El usuario ingresa el nombre y correo personal válido.
+3. En la sección *Resident Association*, selecciona exitosamente al residente correspondiente de la lista desplegable.
+4. Al confirmar, el sistema envía el correo de invitación (*Secure Self-Setup*) y redirige a la vista principal.
+5. La pantalla se actualiza mostrando la nueva tarjeta (Card) del familiar registrado.
+
+![Happy Path - Register Relative](../assets/img/chapter-V/uf-relative-happy-path.png)
+
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Omisión de Vinculación de Residente (Error de Lógica de Negocio)**
+* **Condición:** El usuario llena los datos personales, pero olvida seleccionar a un residente en la sección *Resident Association*.
+* **Flujo de respuesta:** Al intentar guardar, el sistema previene el envío de datos incompletos (Validación Front-end). El flujo se detiene en la misma pantalla, resaltando el campo de vinculación en rojo con el mensaje de error: *"Es obligatorio vincular al familiar con un residente para restringir el acceso a los datos"*. El usuario debe corregirlo para continuar.
+
+![Unhappy Path - Error States](../assets/img/chapter-V/uf-relative-unhappy-path.png)
+
+#### User Flow 2: Registro de una Nueva Habitación (Rooms)
+
+* **User Persona:** Administrador del Sistema.
+* **User Goal:** Registrar una nueva habitación en el sistema, definiendo su número identificador, tipo y capacidad máxima para mantener actualizado el inventario de espacios disponibles en la casa de reposo.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Rooms** y visualiza la lista actual (o el estado vacío *No Rooms Registered*). Hace clic en el botón primario `+ Add New`.
+2. El sistema redirige a la vista del formulario *New Room* (Room Information).
+3. El usuario ingresa el identificador de la habitación (ej. R-002) y la capacidad máxima de residentes.
+4. Hace clic en el selector *Room Type*, desplegando las opciones, y selecciona la categoría correspondiente (ej. *Double*).
+5. Al hacer clic en el botón de confirmación (*Register Room*), el sistema valida la información, guarda el registro y redirige al usuario a la vista principal.
+6. La tabla de **Rooms** se actualiza y muestra la nueva habitación creada, calculando automáticamente su disponibilidad y estado actual (ej. *Available*).
+
+![Happy Path - Add New Room](../assets/img/chapter-V/uf-rooms-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Número de Habitación Duplicado (Conflicto de Datos)**
+* **Condición:** El usuario ingresa un identificador de habitación (Room Number) que ya existe físicamente en los registros del sistema (ej. intenta crear la "R-001" cuando ya está ocupada).
+* **Flujo de respuesta:** Al intentar guardar el registro, el sistema realiza una validación con la base de datos, detiene el flujo y muestra un mensaje de error tipo alerta o *inline*: *"Este número de habitación ya se encuentra registrado"*. El usuario debe ingresar un identificador único para poder continuar, previniendo inconsistencias en la asignación de pacientes.
+
+![Unhappy Path - Rooms Error States](../assets/img/chapter-V/uf-rooms-unhappy-path.png)
+
+#### User Flow 3: Registro de un Nuevo Personal (Staff Members)
+
+* **User Persona:** Administrador del Sistema.
+* **User Goal:** Registrar la información personal, de contacto y de emergencia de un nuevo empleado (enfermero, médico o staff de apoyo) para integrarlo a la operatividad de la casa de reposo.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Staff** y visualiza la vista principal (vacía en el primer uso). Hace clic en el botón primario `+ Add New`.
+2. El sistema muestra el formulario de registro detallado, dividido en secciones lógicas: *Personal Data*, *Identification Data*, *Contact Data* y *Location Data*.
+3. El usuario ingresa la información del empleado y hace *scroll* hacia la sección inferior de *Emergency Contacts*.
+4. Completa los datos del contacto principal de emergencia (Main Contact) y hace clic en el botón de confirmación/registro.
+5. El sistema procesa la información, la guarda en la base de datos y redirige automáticamente a la vista de lista de **Staff Members**.
+6. La pantalla se actualiza mostrando una tarjeta (Card) con el perfil resumido del nuevo empleado registrado exitosamente.
+
+![Happy Path - Add New Staff](../assets/img/chapter-V/uf-staff-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Formato Inválido en Contactos de Emergencia**
+* **Condición:** En la sección *Emergency Contacts*, el administrador ingresa texto alfabético en el campo destinado para el número de teléfono del familiar del empleado.
+* **Flujo de respuesta:** A través de validaciones *Front-end* en tiempo real, el sistema detecta la discrepancia de formato al momento de escribir o al cambiar de campo (*on blur*). Muestra una alerta debajo del input indicando *"Ingrese un número de teléfono válido"*, deshabilitando temporalmente el botón de guardado hasta que se ingrese el tipo de dato correcto.
+
+![Unhappy Path - Staff Error States](../assets/img/chapter-V/uf-staff-unhappy-path.png)
+
+#### User Flow 4: Administración de Inventario de Dispositivos IoT (Devices)
+
+* **User Persona:** Administrador del Sistema.
+* **User Goal:** Administrar el inventario de dispositivos (pulseras de signos vitales, geolocalizadores) registrando nuevo hardware o gestionando los existentes para su posterior vinculación a los residentes.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Devices** y visualiza la tabla principal *List of Devices* con el inventario actual y sus estados (*Active, Inactive, Low Battery*).
+2. Para añadir nuevo hardware, hace clic en el botón primario `+ Register Device`.
+3. El sistema despliega un modal superpuesto (*overlay*) solicitando la información básica del equipo.
+4. El usuario ingresa el identificador único físico (ej. BAND-008) y selecciona el tipo de dispositivo.
+5. Al hacer clic en guardar, el modal se cierra y la tabla se actualiza automáticamente mostrando el nuevo dispositivo en la primera fila con el estado predeterminado.
+6. *(Flujo de gestión secundario)*: Si el usuario desea encontrar un dispositivo específico, utiliza la barra de búsqueda superior (`Search device ID...`); la tabla filtra los resultados en tiempo real, permitiéndole usar las acciones rápidas de editar (lápiz) o eliminar (basurero).
+
+![Happy Path - Devices Inventory](../assets/img/chapter-V/uf-devices-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Intento de registro de un Device ID duplicado**
+* **Condición:** Al registrar un nuevo dispositivo, el usuario ingresa un código (ej. `BAND-001`) que ya está en uso dentro de la base de datos de Veyra.
+* **Flujo de respuesta:** El sistema aplica una validación *Back-end* y previene la creación. El botón de guardado se detiene y se muestra un mensaje de error *inline* en el modal: *"Este Device ID ya existe en el inventario. Verifique el equipo físico"*.
+
+**Escenario B: Eliminación de un dispositivo actualmente asignado**
+* **Condición:** El usuario hace clic en el ícono de eliminar (basurero) de un dispositivo que tiene el estado *ACTIVE* y está actualmente vinculado a un residente (ej. asignado por *Enf. Patricia Gómez*).
+* **Flujo de respuesta:** El sistema intercepta la acción para prevenir la pérdida de monitoreo en vivo. En lugar de borrarlo directamente, despliega una alerta crítica: *"Acción Denegada: Este dispositivo está actualmente asignado a un residente. Desvincúlelo desde el perfil del residente antes de eliminarlo del inventario"*. Esto protege la integridad lógica de la aplicación y la seguridad del paciente.
+
+![Unhappy Path - Devices Error States](../assets/img/chapter-V/uf-devices-unhappy-path.png)
+
+#### User Flow 5: Gestión de Actividades (Activities)
+
+* **User Persona:** Administrador / Personal Médico o de Enfermería.
+* **User Goal:** Agendar, visualizar en detalle y actualizar actividades (recreativas, médicas, físicas o sociales) para mantener una rutina estructurada y activa para los residentes de la casa de reposo.
+
+**🟢 Happy Path (Ruta Esperada: Crear y Editar)**
+1. El usuario ingresa al módulo **Activities** y visualiza la lista principal con los eventos programados y sus estados (ej. *Programada*, *En curso*).
+2. Para agendar un nuevo evento, hace clic en el botón `+ Add New`.
+3. El sistema despliega el modal *Add activity*. El usuario ingresa el nombre de la actividad (ej. "Morning Painting Workshop"), detalla los objetivos en la descripción, y establece la fecha y hora.
+4. Selecciona la categoría correspondiente mediante los *radio buttons* en forma de píldora (ej. *Recreational* o *Medical*).
+5. Hace clic en *Save activity*. El sistema registra el evento y la tabla principal se actualiza automáticamente.
+6. *(Flujo de consulta y edición)*: Si el usuario desea ver más información, hace clic en la fila de la actividad, abriendo el modal de *Activity details* (vista de solo lectura). Si detecta que necesita cambiar algo, presiona el botón *Edit activity*, el cual transiciona directamente al modal *Update activity*, pre-cargando los datos actuales para su modificación rápida.
+
+![Happy Path - Activities Management](../assets/img/chapter-V/uf-activities-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Programación en Fechas Pasadas o Conflictos de Horario**
+* **Condición:** Al momento de utilizar el selector de fecha y hora (*Date / Hour*) en el modal de *Add activity* o *Update activity*, el usuario selecciona por error una fecha anterior al día de hoy.
+* **Flujo de respuesta:** El sistema aplica una validación lógica (*Front-end* o *Back-end*). Al intentar guardar la actividad, la acción se bloquea. El campo de fecha se resalta en rojo y aparece un mensaje de error en línea (*inline error*): *"La fecha de la actividad no puede ser en el pasado"*. El usuario es obligado a seleccionar una fecha futura o actual para completar el registro.
+
+**Escenario B: Omisión de Datos Obligatorios**
+* **Condición:** El usuario ingresa rápidamente la fecha y la hora, pero olvida escribir el Nombre de la actividad (*Activity name*) o no selecciona ninguna de las 4 categorías disponibles.
+* **Flujo de respuesta:** El sistema previene la creación de eventos "vacíos" en el calendario. El botón principal (*Save activity* o *Update Activity*) se mantiene inactivo (estado *disabled*). Si se activa la validación al perder el foco (*on blur*), el campo faltante mostrará un texto de ayuda en rojo: *"Este campo es obligatorio"*, guiando al coordinador a completar toda la información necesaria para los residentes.
+
+![Unhappy Path - Activities Error States](../assets/img/chapter-V/uf-activities-unhappy-path.png)
+
+#### User Flow 6: Concesión y Gestión de Accesos (Staff Access)
+
+* **User Persona:** Administrador del Sistema.
+* **User Goal:** Generar credenciales de acceso a la plataforma para un empleado existente, asignándole un rol específico (ej. Enfermero, Doctor) que determinará sus permisos y restricciones dentro del sistema.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Staff** y visualiza la lista o tarjetas de los empleados registrados (ej. Juan Barrientos).
+2. Selecciona la opción para gestionar o conceder acceso al empleado correspondiente.
+3. El sistema redirige a la pantalla **Give Access to Staff Member**, mostrando un encabezado con la información contextual del empleado y su estado actual (ej. *Status: Pending Access*).
+4. El administrador configura la sección de *Account Credentials*, validando el correo institucional y asignando una contraseña temporal.
+5. En la sección *System Role & Permissions*, hace clic en el selector desplegable y asigna el rol correspondiente a las funciones del empleado (ej. selecciona *Nurse* o *Doctor*).
+6. Mantiene marcada la casilla *"Require password change on first login"* por políticas de seguridad.
+7. Al hacer clic en confirmar/guardar, el sistema procesa la solicitud, genera los permisos heredados del rol seleccionado y actualiza el estado del empleado, permitiéndole iniciar sesión en la plataforma.
+
+![Happy Path - Give Access to Staff](../assets/img/chapter-V/uf-staff-access-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Omisión de Asignación de Rol (Error de Permisos)**
+* **Condición:** El administrador completa correctamente el correo y la contraseña temporal, pero olvida seleccionar un rol (*Select Staff Role*) en el menú desplegable, dejándolo en blanco.
+* **Flujo de respuesta:** Al intentar guardar los cambios, el sistema previene la creación de un usuario sin privilegios definidos (*Validación Front-end*). El botón de guardado se bloquea temporalmente, el selector de rol se resalta en rojo y aparece un mensaje de error en línea: *"Debe seleccionar un rol para aplicar los permisos del sistema"*. El flujo no avanza hasta que se asigne un rol válido.
+
+**Escenario B: Formato de Correo Inválido o Contraseña Débil**
+* **Condición:** El usuario ingresa un correo sin el formato estándar (ej. `jbarrientos@example`) o ingresa una contraseña temporal demasiado corta (ej. `123`).
+* **Flujo de respuesta:** Al perder el foco del campo (*on blur*), el sistema valida las credenciales y detecta que no cumplen con las políticas de seguridad. Se despliega una alerta debajo del campo correspondiente indicando: *"Ingrese un correo válido"* o *"La contraseña debe tener al menos 8 caracteres"*, garantizando que las credenciales iniciales cumplan con los estándares de seguridad de Veyra antes de ser enviadas.
+
+![Unhappy Path - Staff Access Error States](../assets/img/chapter-V/uf-staff-access-unhappy-path.png)
+
+#### User Flow 7: Definición y Actualización de Parámetros Clínicos (Clinical Parameters)
+
+* **User Persona:** Médico Tratante / Enfermera Jefe.
+* **User Goal:** Establecer y actualizar los límites mínimos y máximos aceptables de los signos vitales (telemetría) para un residente específico, asegurando que las alertas generadas por los dispositivos IoT sean precisas y personalizadas a su condición clínica.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Resident Record** y visualiza el directorio de pacientes (*Patient Directory*) en el panel izquierdo, ordenados por su estado de salud actual (Crítico, En Obs., Estable).
+2. Hace clic en la tarjeta de un residente específico (ej. María Ríos).
+3. El panel derecho, que inicialmente estaba vacío, se puebla con el expediente digital del paciente seleccionado.
+4. El usuario navega a la pestaña **Clinical Parameter**.
+5. Modifica los valores numéricos en los campos de límites de *Heart Rate* (bpm), *Oxygen Sat* (%) y/o *Blood Pressure* (mmHg) según el nuevo plan de tratamiento del paciente.
+6. Hace clic en el botón verde **Save Parameters**.
+7. El sistema valida los datos, actualiza las reglas del motor de alertas en la base de datos y muestra una notificación de éxito, manteniendo al usuario en la misma vista para continuar su trabajo.
+
+![Happy Path - Update Clinical Parameters](../assets/img/chapter-V/uf-clinical-parameters-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Incongruencia Lógica en los Umbrales (Mínimo > Máximo)**
+* **Condición:** El médico, por un error de tipeo, ingresa un valor mínimo que es superior al valor máximo (ej. Heart Rate: Mínimo 110, Máximo 90).
+* **Flujo de respuesta:** Al intentar guardar, el sistema intercepta la acción mediante una validación *Front-end*. El flujo se detiene y los campos en conflicto se resaltan en rojo con un mensaje *inline*: *"Error de rango: El límite mínimo no puede ser superior al límite máximo"*. Esto previene fallos lógicos graves en el algoritmo de disparo de emergencias.
+
+**Escenario B: Omisión de Valores de Monitoreo Crítico**
+* **Condición:** El usuario borra completamente el valor de un campo obligatorio (ej. deja en blanco el límite de *Oxygen Sat*) y presiona *Save Parameters*.
+* **Flujo de respuesta:** El sistema no permite dejar parámetros de soporte vital en blanco (valores nulos). El botón de guardado se deshabilita temporalmente o, al presionarlo, el campo vacío arroja una alerta: *"Este parámetro es obligatorio para mantener el monitoreo activo"*. El usuario debe ingresar un número válido para poder actualizar el perfil.
+
+![Unhappy Path - Clinical Parameters Error States](../assets/img/chapter-V/uf-clinical-parameters-unhappy-path.png)
+
+#### User Flow 8: Monitoreo Remoto por Familiares (Mobile App)
+
+* **User Persona:** Familiar / Contacto de Emergencia.
+* **User Goal:** Visualizar en tiempo real el estado de salud, signos vitales y ubicación GPS de su familiar alojado en la casa de reposo, utilizando la aplicación móvil para mantener la tranquilidad y el control a distancia.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario (familiar) abre la aplicación móvil de Veyra en su smartphone e inicia sesión.
+2. Toca la pestaña **Health** (ícono del maletín médico) en la barra de navegación inferior.
+3. El sistema carga el panel de resumen del residente asignado (ej. *Eleanor Vance*). El indicador principal muestra un estado positivo con un badge turquesa: **Status: Stable**.
+4. El usuario revisa las tarjetas de telemetría en vivo, comprobando que el ritmo cardíaco (72 BPM) y la saturación de oxígeno (95% SPO2) están dentro de los rangos normales.
+5. Hace *scroll* hacia la parte inferior de la pantalla y visualiza el mapa interactivo, confirmando la ubicación actual y segura del residente mediante los pines de geolocalización.
+
+![Happy Path - Relative Mobile Monitoring](../assets/img/chapter-V/uf-mobile-relative-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Pérdida de Conexión del Dispositivo IoT (Datos Offline)**
+* **Condición:** La pulsera inteligente del residente se queda sin batería o pierde la conexión a la red WiFi/Bluetooth de la casa de reposo, interrumpiendo la transmisión de telemetría.
+* **Flujo de respuesta:** El sistema previene que el familiar tome decisiones basadas en datos congelados. Las tarjetas de *Heart Rate* y *SPO2* se atenúan (color gris o estado *disabled*) y muestran un ícono de advertencia indicando: *"Dispositivo fuera de línea. Última actualización: hace 2 horas"*. El badge superior cambia a color gris con el texto **Status: Unknown**.
+
+**Escenario B: Detección de Anomalías Clínicas (Alerta Activa)**
+* **Condición:** La telemetría del residente detecta una caída en la saturación de oxígeno por debajo del límite seguro establecido previamente por el médico.
+* **Flujo de respuesta:** La aplicación cambia inmediatamente el estado superior a un badge rojo de alerta: **Status: Critical**. La tarjeta de *SPO2* altera su diseño, resaltando el número en rojo para captar la atención. Además, el sistema despliega un banner de acción rápida en la parte superior: *"Contactar al centro médico"*, permitiendo al familiar iniciar un chat directo con la enfermera de turno desde la aplicación.
+
+![Unhappy Path - Mobile Monitoring Alerts](../assets/img/chapter-V/uf-mobile-relative-unhappy-path.png)
 
 ## 5.5. Applications Prototyping
 
 ## 5.6. IoT Device Design
+
+# Diseño IoT — Sistema de Monitoreo de Signos Vitales
+
+## Paso 1 — Definición de Requisitos del Sistema
+
+### Time delay
+
+El tiempo máximo tolerable para el dispositivo es de **3 segundos**. Esto se debe a que el dispositivo se encuentra monitoreando constantemente los signos vitales del residente, por lo que es necesario que la información se actualice en tiempo real para poder detectar cualquier cambio en el estado de salud del residente.
+
+### Suministro de energía
+
+Se usará una batería LiPo de dimensiones pequeñas:
+
+> **Baterías LiPo 502035 · 3.7 V · 300 mAh** — Batería de Polímero de Litio Recargable por micro USB.
+
+---
+
+## Paso 2 — Selección de la Tipología del Dispositivo IoT
+
+Se usará una **tipología tipo estrella**, ya que el dispositivo se conectará directamente a un gateway central que se encargará de enviar la información a la nube. Esto permite una comunicación eficiente y directa entre el dispositivo y el gateway, facilitando la gestión de los datos recopilados.
+
+---
+
+## Paso 3 — Definición de Requisitos de la Capa Física
+
+### Definición de los sensores
+
+El dispositivo contará con sensores de ritmo cardíaco, saturación de oxígeno y temperatura corporal. Estos sensores son fundamentales para monitorear la salud del residente y detectar cualquier cambio en su estado de salud.
+
+### Definición de los actuadores necesarios
+
+El dispositivo contará con 2 actuadores: un botón para encendido y apagado del dispositivo, y una pantalla AMOLED de 1.47 pulgadas para mostrar información relevante al usuario, como el estado de los signos vitales y batería.
+
+### Consumo energético
+
+El sensor de ritmo cardíaco consume aproximadamente **0.5 mA**, el sensor de saturación de oxígeno consume alrededor de **0.3 mA**, y el sensor de temperatura corporal consume aproximadamente **0.2 mA**. El consumo total de los sensores es de aproximadamente **1 mA**. El actuador del botón consume alrededor de **0.1 mA**, y la pantalla AMOLED consume aproximadamente **0.5 mA** cuando está encendida. En total, el consumo estimado del dispositivo es de aproximadamente **1.6 mA**.
+
+Los actuadores se controlarán mediante un microcontrolador que gestionará la energía y la comunicación con los sensores, asegurando un funcionamiento eficiente del dispositivo.
+
+### Precisión de los sensores
+
+La precisión de los sensores es crucial para garantizar la fiabilidad de los datos recopilados:
+
+| Sensor                       | Precisión |
+|------------------------------|-----------|
+| Ritmo cardíaco               | ±2 bpm    |
+| Saturación de oxígeno (SpO₂) | ±2 %      |
+| Temperatura corporal         | ±0.1 °C   |
+
+Estos niveles de precisión son adecuados para monitorear la salud del residente y detectar cualquier cambio significativo en su estado de salud.
+
+### Interfaces digitales
+
+Se usarán interfaces digitales como **aplicación web** y **aplicación móvil** para mostrar la información recopilada por los sensores, permitiendo a los usuarios acceder a los datos de manera fácil y rápida. La aplicación web estará diseñada para ser accesible desde cualquier dispositivo con conexión a internet, mientras que la aplicación móvil ofrecerá una experiencia optimizada para dispositivos móviles, con notificaciones en tiempo real sobre el estado de salud del residente.
+
+### Esfuerzo computacional y time-delay local
+
+El esfuerzo computacional requerido para procesar los datos de los sensores es relativamente bajo, ya que se trata principalmente de recopilar y transmitir datos a la nube para su análisis. El microcontrolador del dispositivo se encargará de gestionar la comunicación con los sensores y el envío de datos al gateway central, lo que permitirá un procesamiento eficiente y en tiempo real de la información recopilada.
+
+El time-delay requerido para el procesamiento de datos es de aproximadamente **600 ms** desde la recopilación de datos por parte de los sensores hasta la visualización de la información en las interfaces digitales. Esto garantiza que los usuarios reciban información actualizada y relevante sobre el estado de salud del residente en tiempo real, permitiendo una respuesta rápida ante cualquier cambio significativo en su condición.
+
+---
+
+## Paso 4 — Definición de Requisitos de la Capa de Intercambio
+
+### Tiempo de respuesta
+
+El tiempo de respuesta permitido para el envío o recepción de paquetes desde los nodos hacia el dispositivo es de aproximadamente **1 segundo**. Esto se debe a que el dispositivo se encuentra monitoreando constantemente los signos vitales del residente, por lo que es necesario que la información se actualice en tiempo real para poder detectar cualquier cambio en el estado de salud del residente. Un tiempo de respuesta de 1 segundo garantiza que los datos recopilados por los sensores se transmitan de manera eficiente y oportuna, permitiendo una respuesta rápida ante cualquier cambio significativo en la condición del residente.
+
+### Tipología de comunicación
+
+La tipología de comunicación será **inalámbrica**, utilizando tecnologías como Wi-Fi o Bluetooth para transmitir los datos recopilados por los sensores al gateway central. Esto permite una comunicación eficiente y sin restricciones de cables, facilitando la instalación y el uso del dispositivo en entornos de cuidado de adultos mayores.
+
+### Topología de red
+
+La topología de red será tipo **estrella**, donde el dispositivo se conectará directamente a un edge API que almacenará en local para después enviar la información a cloud. Esto permite una comunicación eficiente y directa entre el dispositivo y el edge, facilitando la gestión de los datos recopilados.
+
+### Distancias máximas de comunicación
+
+| Tramo                         | Distancia máxima |
+|-------------------------------|------------------|
+| Nodos ↔ edge API (interiores) | ~30 metros       |
+| Nodos ↔ microcontroladores    | ~2 metros        |
+| Microcontroladores ↔ edge API | ~30 metros       |
+
+La distancia máxima de comunicación entre los nodos y el edge API es de aproximadamente 30 metros en interiores, lo que es adecuado para entornos de cuidado de adultos mayores donde el dispositivo se utilizará principalmente en habitaciones o áreas cercanas al gateway central. Esta distancia permite una comunicación confiable y estable entre el dispositivo y el edge.
+
+La distancia máxima entre los microcontroladores y el edge API es de aproximadamente 30 metros, lo que permite una comunicación eficiente y estable entre el dispositivo y el gateway central en entornos de cuidado de adultos mayores. Esta distancia es adecuada para garantizar que los datos recopilados por los sensores se transmitan de manera oportuna y confiable al edge API para su procesamiento y análisis.
+
+### Consumo energético de la capa de intercambio
+
+El consumo energético de la capa de intercambio es relativamente bajo, ya que se trata principalmente de transmitir datos a través de una conexión inalámbrica. El dispositivo utilizará tecnologías de comunicación eficientes en términos de energía, como Wi-Fi o **Bluetooth Low Energy (BLE)**, para minimizar el consumo energético durante la transmisión de datos. Además, el dispositivo estará diseñado para optimizar el uso de energía, utilizando modos de bajo consumo cuando no esté transmitiendo datos y activándose solo cuando sea necesario para enviar información relevante sobre el estado de salud del residente.
+
+### Encriptación de datos
+
+Los datos van a ser encriptados utilizando protocolos de seguridad estándar como **TLS** para garantizar la confidencialidad e integridad de la información transmitida entre el dispositivo y el edge API. Esto es especialmente importante en entornos de cuidado de adultos mayores, donde la privacidad y seguridad de los datos de salud es una prioridad. La encriptación de los datos garantiza que solo las partes autorizadas puedan acceder a la información recopilada por los sensores, protegiendo la privacidad.
+
+---
+
+## Paso 5 — Definición de Requisitos de la Capa de Información
+
+### Usuarios finales y servicios requeridos
+
+| Usuario              | Servicio necesario                                                                               |
+|----------------------|--------------------------------------------------------------------------------------------------|
+| Personal asistencial | Monitoreo en tiempo real · Alertas de signos vitales fuera de rango                              |
+| Doctor               | Configurar umbral de signos vitales · Monitoreo en tiempo real de los signos vitales             |
+| Familiar responsable | Notificaciones de alertas críticas · Monitorear en tiempo real los signos vitales de su familiar |
+| Administrador        | Gestión de dispositivos y usuarios                                                               |
+
+### Información procesada por servicio
+
+- **Monitoreo en tiempo real:** frecuencia cardíaca (bpm), SpO₂ (%), temperatura corporal (°C), nivel de batería del dispositivo, timestamp de cada medición.
+- **Sistema de alertas:** comparación de valores medidos contra umbrales configurables (ej. FC < 50 bpm o > 120 bpm, SpO₂ < 90%, temperatura > 38.5 °C). Generación de alerta con nivel de severidad (leve, moderado, crítico).
+- **Historial y tendencias:** almacenamiento de series temporales de signos vitales, generación de gráficas de evolución por período (hora, día, semana).
+
+### Distribución del procesamiento
+
+| Función                                                  | Ubicación |
+|----------------------------------------------------------|-----------|
+| Visualización local en pantalla AMOLED                   | Nodo      |
+| Detección preliminar de anomalías                        | Edge API  |
+| Almacenamiento de datos temporal antes de enviar a cloud | Edge API  |
+| Generación de alertas y notificaciones push              | Cloud     |
+| Almacenamiento persistente del historial clínico         | Cloud     |
+
+### Tiempos de procesamiento estimados
+
+| Etapa                                               | Tiempo estimado |
+|-----------------------------------------------------|-----------------|
+| Transmisión nodo → edge (BLE)                       | ~200 ms         |
+| Procesamiento en edge (validación + reenvío)        | ~150 ms         |
+| Transmisión edge → cloud (Wi-Fi/LTE)                | ~400 ms         |
+| Procesamiento en cloud (detección + almacenamiento) | ~550 ms         |
+
+---
+
+## Paso 6 — Definición de Requisitos de la Capa de Servicios de Aplicación
+
+### Interfaz por tipo de usuario
+
+| Interfaz | Usuario                           |
+|----------|-----------------------------------|
+| Web      | Doctor · Administrador            |
+| Móvil    | Personal asistencial · Familiares |
+| AMOLED   | Personal asistencial              |
+
+### Peso computacional
+
+| Interfaz | Peso computacional |
+|---|---|
+| Web | Bajo–medio · Muestra datos paginados desde API REST |
+| Móvil | Bajo · Consume endpoints REST ya procesados por cloud |
+| AMOLED | Muy bajo · Solo renderiza texto e íconos simples en el microcontrolador |
+
+### Plataformas de implementación
+
+| Plataforma | Implementación |
+|---|---|
+| Web | Navegadores modernos · TypeScript + Angular · Backend Java + Spring Boot |
+| Móvil | Flutter · Base de datos local · Backend Java + Spring Boot |
+| AMOLED | Renderizado directo sobre driver de pantalla AMOLED desde el microcontrolador |
+
+---
+
+## Paso 7 — Selección de las Arquitecturas de las Capas de Intercambio de Datos e Integración de la Información
+
+### Comparativa de tecnologías inalámbricas
+
+| Criterio | BLE 5.0 | Wi-Fi |
+|---|---|---|
+| Consumo en TX | ~7 mA | ~80–150 mA |
+| Alcance indoor | ~40 m | ~50 m |
+| Latencia típica | 100–300 ms | 50–200 ms |
+| Complejidad de implementación | Baja | Media–Alta |
+
+### Protocolo de mensajería edge → cloud: MQTT sobre TLS
+
+- Protocolo liviano, diseñado para IoT con ancho de banda limitado.
+- Soporta QoS nivel 1 (entrega garantizada al menos una vez).
+- Latencia típica: 100–400 ms sobre conexión Wi-Fi estable.
+- Alternativa evaluada y descartada: **HTTP/REST** (mayor overhead, no óptimo para streams continuos).
+
+### Enfoque híbrido de procesamiento
+
+Para el procesamiento de la información se usará un enfoque híbrido:
+
+- **Edge API:** servidor ligero (Raspberry Pi o gateway equivalente) que ejecuta un broker MQTT local, valida rangos de datos y almacena en buffer ante caídas de internet.
+- **Cloud:** plataforma como AWS IoT Core o similar, con base de datos de series temporales (InfluxDB o TimestreamDB) y motor de reglas para generación de alertas.
+
+> **Time-delay total verificado:** 100 + 250 + 150 + 450 + 500 ms ≈ **1.45 s**
+
+---
+
+## Paso 8 — Selección de Sensores y Actuadores
+
+### Sensores seleccionados
+
+| Sensor                       | Medición                                                                                         | Precisión                                                       | Consumo en operación | Interfaz                                                  | Voltaje de operación                                      |
+|------------------------------|--------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|----------------------|-----------------------------------------------------------|-----------------------------------------------------------|
+| MAX30102                     | Frecuencia cardíaca y saturación de oxígeno en un solo módulo                                    | FC: ±2 bpm · SpO₂: ±2%                                          | ~0.6 mA              | Compatible con la mayoría de microcontroladores embebidos | 1.8 V (lógica) / 3.3 V (LEDs) — compatible con LiPo 3.7 V |
+| MLX90614ESF-DCI (GY-906-DCI) | Temperatura corporal sin contacto mediante radiación infrarroja · medición puntual con FOV de 5° | ±0.5 °C en rango general / ±0.2 °C en rango corporal (36–39 °C) | ~1.5 mA              | Comparte bus con MAX30102 sin conflicto de direcciones    | 3.3 V — compatible con LiPo 3.7 V mediante regulador      |
+
+### Actuadores seleccionados
+
+| Actuador                                  | Resolución                     | Consumo |
+|-------------------------------------------|--------------------------------|---------|
+| Pantalla AMOLED 1.47" — ST7789 controller | 172×320 píxeles · color 16-bit | ~0.5 mA |
+| Botón táctil de membrana                  | —                              | ~0.1 mA |
+
+---
+
+## Paso 9 — Selección del Microcontrolador y Transceivers de Radio
+
+### ESP32-C3 — Especificaciones
+
+| Característica                 | Valor                                               |
+|--------------------------------|-----------------------------------------------------|
+| Arquitectura                   | RISC-V 32-bit · 160 MHz                             |
+| RAM / Flash                    | 400 KB / 4 MB                                       |
+| BLE                            | 5.0 integrado                                       |
+| Wi-Fi                          | 802.11 b/g/n integrado (usado en edge, no en nodo)  |
+| Interfaces                     | SPI · I²C · UART · GPIO                             |
+| Consumo en operación           | ~22 mA                                              |
+| Consumo en modo sleep profundo | ~5 µA                                               |
+| Voltaje de operación           | 3.0–3.6 V — compatible con LiPo 3.7 V con regulador |
+| Factor de forma                | Ultra compacto — apto para wearables                |
+
+### Justificación
+
+El ESP32-C3 integra BLE 5.0, tiene bajo consumo, periféricos I²C y SPI necesarios para conectar el MAX30102, el MLX90614 y la pantalla AMOLED, y su tamaño compacto lo hace adecuado para un dispositivo wearable. No requiere transceiver de radio externo, lo que simplifica el diseño.
+
+### Ahorro energético
+
+- El microcontrolador activará los sensores cada **5 segundos** (ciclo de muestreo).
+- Entre ciclos entra en **Light Sleep (~0.8 mA)**, reduciendo el consumo promedio significativamente.
+- El módulo BLE opera en modo **advertise/connect** solo durante la transmisión activa.
+
+---
+
+## Paso 10 — Definición del Procesamiento de Datos en Cada Nodo y en la Nube
+
+### En el nodo (ESP32-C3)
+
+1. **Lectura de sensores (cada 5 s):** solicita medición a MAX30102 vía I²C y a MLX90614 vía I²C.
+2. **Promediado móvil:** promedia las últimas 4 lecturas de cada sensor para suavizar ruido (ventana deslizante simple).
+3. **Validación de rango físico:** descarta lecturas fuera de rangos fisiológicos posibles (FC: 20–250 bpm · SpO₂: 50–100% · Temp: 30–45 °C).
+4. **Empaquetado de datos:** estructura JSON ligera con timestamp.
+5. **Transmisión BLE:** envía el paquete al edge API mediante perfil BLE GATT personalizado.
+6. **Renderizado en pantalla:** actualiza la pantalla AMOLED con los valores actuales y estado del sistema.
+
+### En el Edge API
+
+1. **Validación de integridad:** verifica que el JSON esté completo y los campos tengan el tipo correcto.
+2. **Detección de alertas preliminares:** compara valores contra umbrales predefinidos y genera flag de alerta si corresponde.
+3. **Buffer de persistencia local:** almacena en SQL Server los últimos 500 registros por si hay pérdida de conectividad cloud.
+
+### En la nube
+
+1. **Ingesta de mensajes MQTT:** AWS IoT Core recibe y enruta los mensajes.
+2. **Almacenamiento en serie temporal:** InfluxDB o AWS Timestream almacena cada punto de dato con timestamp.
+3. **Motor de reglas y alertas:** evalúa condiciones configuradas por doctor o administrador (umbrales por paciente) y genera alertas.
+4. **Cálculo de tendencias:** promedio móvil de largo plazo (hora, día), detección de degradación progresiva de signos.
+5. **API REST:** expone endpoints seguros (JWT + HTTPS) para las aplicaciones web y móvil.
+
+---
+
+## Paso 11 — Análisis del Tiempo de Procesamiento
+
+| Algoritmo                         | Complejidad | Tiempo estimado |
+|-----------------------------------|-------------|-----------------|
+| Lectura de sensores I²C           | O(1)        | ~50 ms          |
+| Renderizado pantalla AMOLED       | O(n)        | ~40 ms          |
+| Detección de alertas preliminares | O(1)        | ~5 ms           |
+| Entrega notificación push         | —           | ~200–300 ms     |
+| Almacenamiento cloud              | O(1)        | ~100 ms         |
+| Empaquetado JSON                  | O(1)        | ~5 ms           |
+| Alertas                           | O(n)        | ~200 ms         |
+
+---
+
+## Paso 12 — Definición de la Interfaz Gráfica de Usuario
+
+### Pantalla AMOLED del dispositivo wearable
+
+Diseño minimalista de alta legibilidad orientado a lectura rápida:
+
+- Fondo negro (aprovecha AMOLED para ahorro energético).
+- Tipografía grande y clara para cada signo vital.
+- Íconos de color: verde = normal · amarillo = precaución · rojo = alerta.
+- Indicador de batería y estado de conexión BLE en esquina superior.
+
+### Aplicación web — Dashboard principal
+
+_Personal asistencial · Médicos · Administrador_
+
+- **Paleta de colores:** fondo claro/oscuro (modo adaptativo), verde para normal, amarillo para precaución, rojo para alerta crítica.
+- **Gráficas:** líneas temporales interactivas (zoom, hover con valor exacto) con librería Chart.js o Recharts.
+- **Navegación:** lista de residentes en sidebar izquierdo, vista detallada por residente seleccionado.
+- **Responsivo:** adaptado para tablets (uso en campo por enfermería) y escritorio (médicos y administradores).
+
+### Aplicación móvil
+
+_Familiar · Personal asistencial · Administrador_
+
+- Diseño de tarjeta única, información esencial visible sin scroll.
+- Notificaciones push con vibración al generarse una alerta crítica.
+- Colores semáforo coherentes con la web app para consistencia visual.
+- Acceso con autenticación segura (JWT + biometría del dispositivo).
+
+# Diseño de Solución IoT: Dispositivo de Localización GPS para Adultos Mayores 
+
+## Paso 1 — Definición de los Requisitos del Sistema
+
+### Restricción de time-delay
+El time-delay máximo tolerable para el flujo completo desde la adquisición del dato hasta su visualización en la pantalla es de **30 segundos**. Este margen es suficiente para el rastreo de personas, permitiendo una respuesta oportuna sin saturar  la red.
+
+### Suministro de energía
+El dispositivo opera exclusivamente con una batería LiPo 603450 (3.7 V, 1100 mAh). La autonomía mínima aceptable es de **3 a 5 días**. Con esta capacidad, el consumo promedio máximo permitido es de **15.3 mA**, considerando un uso continuo y sin recargas frecuentes, lo que es adecuado para un dispositivo de localización que debe ser confiable durante varios días sin intervención.
+
+---
+
+## Paso 2 — Selección de la Tipología del Sistema IoT
+Se ha seleccionado una **tipología de conexión directa a la nube**. Esto significa que el dispositivo funciona de forma independiente, como si fuera un teléfono móvil:
+
+* **Nodo (tracker):** Es el rastreador que obtiene su ubicación por satélite (GPS) y la envía por sí mismo usando la red de datos celular.
+* **Plataforma en la nube:** Actúa como el cerebro central que recibe los datos y los organiza para que puedan ser consultados desde cualquier parte.
+
+Esta elección es clave porque permite que el rastreo sea total: el dispositivo no necesita estar cerca de una base o router Wi-Fi para funcionar; solo necesita cobertura celular.
+
+Esta tipología elimina la necesidad de gateways locales, permitiendo que el seguimiento funcione en cualquier lugar con cobertura celular.
+
+---
+
+## Paso 3 — Definición de los Requisitos de la Capa Física
+
+### Sensores
+1.  **Módulo GNSS:** Obtiene las coordenadas geográficas (latitud y longitud).
+2.  **Acelerómetro MEMS:** Detecta movimiento para reducir el envío de datos cuando la persona está en reposo, optimizando la batería.
+
+### Actuadores
+**Ninguno.** El hardware no tiene componentes de salida (luces o sonidos) para mantener la discreción absoluta.
+
+Consumo y precisión: El sistema debe consumir menos de 15.3 mA promedio. La precisión de la ubicación debe estar en un rango de 2 a 5 metros en exteriores.
+
+Interfaces y procesamiento: Se utilizarán interfaces UART para el GPS y el módem, e I2C para el acelerómetro. El microcontrolador tiene permitido un tiempo de procesamiento local máximo de 500 ms para no comprometer el delay global.
+
+---
+
+## Paso 4 — Definición de los Requisitos de la Capa de Intercambio
+
+**Comunicación:** Inalámbrica mediante la red celular LTE-M (Cat-M1). Se elige esta tecnología por su bajo consumo y su capacidad de mantener la conexión mientras el usuario se desplaza.
+
+**Topología y distancia:** Topología directa al servidor. La distancia de comunicación está limitada únicamente por la cobertura de las antenas celulares 
+
+**Consumo y encriptación:** Las transmisiones serán ráfagas cortas de energía. Los datos se protegerán mediante TLS 1.3, asegurando que la ubicación del adulto mayor viaje de forma privada y encriptada.
+
+---
+
+## Paso 5 — Definición de los Requisitos de la Capa de Integración de Información
+
+Usuarios: Familiar, Personal Asistencial y Administrador.
+
+Servicios: Mapa de ubicación en tiempo real.
+
+* **Información procesada:** Coordenadas filtradas y traducción de coordenadas a direcciones físicas (geocodificación).
+
+* **Distribución del procesamiento:** Filtrar coordenadas inválidas para asegurar la calidad del dato.
+
+    * **Cloud:** Recibe los datos crudos, traduce las coordenadas a direcciones para poder almacenar.
+
+* **Tiempo de procesamiento:** El procesamiento en la nube debe resolverse en menos de **300 ms**.
+---
+
+## Paso 6 — Definición de los Requisitos de la Capa de Servicio de Aplicación
+
+
+App Móvil (Familiar/Personal/Admin): Mapa con la posición del residente actualizada automáticamente e indicador de batería.
+
+Plataforma Web (Administrador): Visualización simultánea de múltiples residentes.
+
+Peso computacional: Bajo en todos los niveles; la complejidad de los mapas es gestionada por servicios externos (Google Maps).
+
+---
+
+## Paso 7 — Selección de las Arquitecturas de las Capas de Intercambio e Integración
+
+
+Arquitectura de Intercambio: Se selecciona MQTT sobre TLS 1.3. Este protocolo es óptimo para el backend monolítico, permitiendo gestionar conexiones persistentes con un retardo de comunicación de apenas 2-4 segundos.
+
+Arquitectura de Integración: Se selecciona una Arquitectura Monolítica para el backend .
+
+Análisis de Time-delay: Al ser un monolito, se eliminan las latencias de red entre servicios (inter-service communication), permitiendo que la recepción del dato, la lógica de geocodificación y el guardado en la base de datos ocurran en un mismo proceso. Esto garantiza un tiempo de integración de ~150-200 ms, cumpliendo con los requisitos del paso 5.
+
+---
+
+## Paso 8 — Selección de Sensores y Actuadores
+
+Sensor GNSS: u-blox ZOE-M8B, seleccionado por su precisión de < 2.5m y su tamaño minúsculo.
+
+Sensor de Movimiento: LIS2DW12, elegido por su consumo de 0.38 µA en modo de espera.
+
+Actuadores: No se seleccionan para cumplir el requisito de dispositivo pasivo.
+
+---
+
+## Paso 9 — Selección del Microcontrolador y Transceptores de Radio
+
+Hemos elegido el microcontrolador y los módulos de comunicación inalámbrica concretos para cada nodo, considerando su consumo de energía, capacidad de procesamiento y periféricos disponibles.
+
+Selección: Nordic Semiconductor nRF9160 (SiP).
+
+Justificación: Integra procesador ARM Cortex-M33 y módem LTE-M en un único encapsulado. Posee la capacidad de procesamiento para gestionar el cifrado TLS 1.3 y los periféricos UART/I2C definidos en el paso 3.
+
+---
+
+## Paso 10 — Definición del Procesamiento de Datos en el Nodo y en la Nube
+
+Aquí se define qué procesamiento se hará directamente en el dispositivo IoT y qué procesamiento se realizará en el cloud/backend.
+
+En el Nodo:
+Se realizará el filtrado de tramas NMEA para descartar coordenadas con baja precisión (por ejemplo, cuando el HDOP sea alto). Además, el dispositivo manejará procesos básicos de optimización de energía para reducir el consumo durante su funcionamiento.
+
+En Cloud (Backend Monolítico):
+Se realizará la geocodificación inversa para convertir coordenadas en direcciones entendibles, el almacenamiento de la información en una base de datos MongoDB y el procesamiento de datos enviados por los dispositivos para su visualización y monitoreo dentro de la plataforma
+
+---
+
+## Paso 11 — Análisis del Tiempo de Procesamiento
+
+En este paso se analiza qué tan pesado es el procesamiento de cada algoritmo definido anteriormente y cuánto tiempo tarda cada parte del sistema en ejecutarse, para verificar que el tiempo total de respuesta cumple con el requisito definido en el Paso 1.
+
+Desglose estimado del tiempo:
+
+Procesamiento en el nodo IoT (filtrado y validación de datos): ~15 ms.
+Captura y obtención de señal GPS: ~15 s.
+Latencia de red LTE-M para el envío de datos: ~4 s.
+Procesamiento en el Backend Monolítico: ~200 ms.
+
+Tiempo total estimado:
+El sistema tendría un tiempo aproximado de respuesta de ~20 segundos desde la captura hasta el almacenamiento y visualización de la información.
+
+Verificación:
+El tiempo total cumple con el requisito máximo de 30 segundos establecido anteriormente, por lo que el sistema puede operar dentro del límite esperado.
+
+---
+
+## Paso 12 — Definición de la Interfaz Gráfica de Usuario
+
+#### A. Interfaz de Software (App y Web)
+* **App Móvil (Familiar/Asistencial):** Centrada en un mapa limpio de Google Maps. Un marcador con la foto del residente indica su posición. En la parte inferior, una tarjeta muestra la dirección exacta, la hora de la última sincronización y un indicador de batería dinámico.
+* **Plataforma Web (Administrador):**  Dentro de la lista de residentes hay una opción para ver el mapa de cada residente.
+
+#### B. Diseño Físico del Dispositivo 
+* **Aspecto:** Disco circular de 35mm en policarbonato mate, sin botones ni luces para garantizar la pasividad del sistema.
+* **Ergonomía:** Bordes redondeados y grosor mínimo (10mm) para ocultarse fácilmente en costuras o bolsillos internos.
+* **Carga:** Interfaz de carga magnética en la base para asegurar protección IP67 (resistente a salpicaduras y polvo).
+* **Uso:** Se integra mediante clips de silicona o bolsillos ocultos en la vestimenta, cumpliendo con el requisito de ser un dispositivo "invisible" para el residente pero rastreable para el administrador.
