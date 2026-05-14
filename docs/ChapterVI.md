@@ -116,6 +116,149 @@ Se refiere a textos escritos o ilustraciones que acompañan al software de compu
 
 ### 6.1.2. Source Code Management
 
+A continuación, se describe la gestión del código fuente, también conocida por las siglas SCM (Source Code Management). Su función principal es rastrear los cambios que realizará el equipo durante el desarrollo de su proyecto en el repositorio de código fuente. Se utilizará como un sistema de control de versiones que lepermitirá realizar un seguimiento de los cambios realizados por miembros o desarrolladores individuales del proyecto. Además, es importante tener en cuenta que usaremos GitHub como nuestro sistema de control de versiones.
+
+1. [ ] URL de la organización: MetaSoft-IOT-2610 - https://github.com/MetaSoft-IOT-2610
+
+2. [ ] URL del repositorio de la Landing Page: veyra-landing-page - https://github.com/MetaSoft-IOT-2610/veyra-landing-page
+
+3. [ ] URL del repositorio del Front-End: veyra-web-app - https://github.com/SV51-MetaSoft-App-Web/veyra-web-app
+
+4. [ ] URL del repositorio del Back-End: veyra-backend - https://github.com/MetaSoft-IOT-2610/veyra-backend
+
+**GitFlow**
+
+GitFlow es un modelo alternativo para la creación de ramas en Git que se ha convertido en una herramienta esencial para muchos desarrolladores en los últimos años. Este flujo de trabajo de control de versiones, desarrollado y popularizado por Vicent Driessen, desempeña un papel crucial en la gestión de las versiones de un código, facilitando la creación ordenada de nuevas características (Features) y correcciones de problemas urgentes (Hotfixes).
+
+![GitFlow](/assets/img/chapter-VI/GitFlow.png)
+
+Como se mencionó previamente, GitFlow opera con ramas o "branches". A continuación, se detallan las ramas que se utilizarán en el flujo de trabajo de nuestro proyecto.
+
+* **Main Branches:**
+    * **Main:** Esta es la rama principal desde la cual se ramifican todas las demás. Contendrá la versión más reciente junto con las versiones anteriores creadas por los desarrolladores. Aquí se mantendrá el historial oficial de las versiones publicadas.
+    * **Develop:** Esta rama puede ser creada a partir de la rama principal (Main) y contendrá todas las características (Features) estables. A través de esta rama, el equipo podrá integrar las funcionalidades de manera efectiva.
+
+* **Support Branches**
+A diferencia de las ramas principales, estas ramas secundarias tienen una vida útil limitada, ya que se eliminan al fusionarse con sus ramas primarias.
+    * **Feature:**
+        * Se ramifica de: develop
+        * Debe fusionarse de nuevo en: develop
+        * Se utilizan para desarrollar las nuevas funciones que se integrarán en la próxima versión. Es importante destacar que esta rama existe únicamente mientras está en proceso de desarrollo. Sin embargo, una vez que el desarrollador haya completado esa función, se fusionará nuevamente con la rama "develop".
+
+* **Convenciones para nombrar los Features:**
+    * **Feture Branch:** feature/name
+    **Example:**
+        1. feature/welcome
+        2. feature/about
+        3. feture/myfeture
+    * **Conventional Commits**
+    El commit debe seguir la siguiente estructura:
+    **\<type> [optional scope]: \<description>**
+    **[optional body]**
+    **[optional footer(s)]**
+        * **Type:**
+            1. **feat:** Cuando se agrega un nuevo feature.
+            2. **fix:** Cuando corriges un error.
+            3. **build:** Cuando afectan los componentes de compilación como la herramienta de compilación, las dependencias o la versión del proyecto.
+            4. **chore:** Modificaciones privadas del código.
+            5. **docs:** Commits que afectan solo a la documentación.
+            6. **refactor:** Commits que reescriben o reestructuran el código, pero no cambia el comportamiento.
+            7. **perf:** Commits especiales que mejoran el rendimiento.
+            8. **style:** Commits que no afectan el programa (espacios en blanco, formato, puntos o comas faltantes).
+            9. **test:** Commits que agregan pruebas.
+        * **Scope**
+        Ofrece información contextual adicional. Aunque es opcional, es beneficioso incluirlo para proporcionar a los desarrolladores una descripción más detallada del commit.
+        **\<description>**
+        Es una parte obligatoria del formato de los commits. Siempre debemos usar lenguaje en modo imperativo y evitar escribir en mayúsculas
+        **[optional body]**
+        El cuerpo es opcional y, cuando se utiliza, debe explicar la motivación detrás del cambio y contrastarlo con el comportamiento anterior. Es ideal para mencionar identificadores de problemas y sus relaciones.
+        **[optional footer(s)]**
+        Esta sección es opcional y puede incluir información sobre cambios significativos. Puede hacer referencia al problema por su identificación y, en esta sección, se incluyen los cambios importantes precedidos por "BREAKING CHANGES:" seguido de uno o dos saltos de línea.
+        **Ejemplos:**
+            1. feat(welcome): add welcome section
+            2. build(release): bump version to 1.0.0
+            3. style: remove empty line
+            4. feat(sign up): add the button to sign up
+            5. feat!: email the costumer when product is shipped
+            6. feat: remove ticket list endpoint
+            refers to JIRA-1337
+            BREAKING CHANGES: ticket enpoints no longer supports list all entites.
+
+Como se mencionó previamente, la gestión de nuestro código fuente se llevará a cabo mediante GitHub. Todos los IDEs utilizados en el proyecto — Visual Studio Code, WebStorm, IntelliJ IDEA, PyCharm y CLion — cuentan con soporte nativo para Git y deben vincularse al repositorio de la organización. La configuración del controlador de versiones se realiza una sola vez por IDE y es equivalente en todos ellos: se activa la integración con Git, se asocia la cuenta de GitHub y se establecen las credenciales del usuario. Los pasos que se detallan a continuación están ilustrados con WebStorm, pero el procedimiento es análogo en los demás entornos de desarrollo del equipo.
+
+* **Activar el controlador de versiones del IDE**
+Dado que utilizaremos GitHub para gestionar nuestro código, la opción que debe estar 
+habilitada o seleccionada es aquella que indique que el sistema de control se realizará
+mediante Git. Para hacer esto, siga los siguientes pasos:
+
+  1. Diríjase a la pestaña "VCS" en WebStorm.
+  2. Luego, seleccione la opción "Enable Version Control Integration".
+
+
+![activar-el-controlador-de-versiones-1.png](/assets/img/chapter-VI/activar-el-controlador-de-versiones-1.png)
+
+Ahora se debe seleccionar el sistema de control a través de Git y, por último aceptar los cambios.
+
+![activar-el-controlador-de-versiones-2.png](/assets/img/chapter-VI/activar-el-controlador-de-versiones-2.png)
+
+* **Aregar una cuenta de GitHub, siga estos pasos:**
+  1. Diríjase a la sección de configuración en su aplicación.
+  2. Dentro de la pestaña 'File', busque y seleccione la opción 'Settings'.
+  3. En la configuración, busque la sección de version control.
+  4. Agregue su cuenta de GitHub para obtener acceso a los repositorios.
+
+
+![aregar-una-cuenta-de-GitHub-1.png](/assets/img/chapter-VI/aregar-una-cuenta-de-GitHub-1.png)
+
+![aregar-una-cuenta-de-GitHub-2.png](/assets/img/chapter-VI/aregar-una-cuenta-de-GitHub-2.png)
+
+* **Configurar el nombre de usuario de Git:** Una vez que hayas establecido el sistema de control de versiones que se vinculará con tu IDE, deberás ingresar la cuenta que utilizarás. Para hacerlo, sigue estos pasos:
+  1. Realiza un commit en tu proyecto. Durante este proceso, se te solicitará que ingreses tu nombre de usuario de Git.
+  2. Después de haberlo añadido, todos los cambios se guardarán en el repositorio especificado en esa plataforma, siempre y cuando des la orden correspondiente.
+  3. Para configurar tu nombre de usuario de Git, primero selecciona la opción 'commit' que se encuentra dentro de la pestaña 'Git'.
+
+
+![configurar-el-nombre-de-usuario-de-Git-1.png](/assets/img/chapter-VI/configurar-el-nombre-de-usuario-de-Git-1.png)
+
+
+* **Guardar el progreso en GitHub:** Con todo configurado en WebStorm, ahora puedes subir tu código a GitHub sin problemas. Simplemente dirígete a la opción 'GitHub' que se encuentra en la pestaña 'Git' y comparte el proyecto.
+
+
+![guardar-el-progreso-en-GitHub-1.png](/assets/img/chapter-VI/guardar-el-progreso-en-GitHub-1.png)
+
+
+![guardar-el-progreso-en-GitHub-2.png](/assets/img/chapter-VI/guardar-el-progreso-en-GitHub-2.png)
+
+* **Configurar la propiedad del repositorio en GitHub:** Ahora, solo necesitas configurar la ubicación del repositorio. El código ya debería estar guardado en GitHub, pero solo estará presente en tu propia cuenta. Para cambiar la propiedad y transferirla a la organización deseada, sigue estos pasos:
+  1. Ingresa al repositorio creado en GitHub.
+  2. Selecciona la pestaña 'settings'
+  3. Dirigite al apartado de 'DangerZone'
+  4. Luego da click en 'transfer'
+  5. Finalmente elegimos el nuevo lugar para guardar el repositorio.
+
+
+![configurar-la-propiedad-del-repositorio-en-GitHub-1.png](/assets/img/chapter-VI/configurar-la-propiedad-del-repositorio-en-GitHub-1.png)
+
+![configurar-la-propiedad-del-repositorio-en-GitHub-2.png](/assets/img/chapter-VI/configurar-la-propiedad-del-repositorio-en-GitHub-2.png)
+
+![configurar-la-propiedad-del-repositorio-en-GitHub-3.png](/assets/img/chapter-VI/configurar-la-propiedad-del-repositorio-en-GitHub-3.png)
+
+![configurar-la-propiedad-del-repositorio-en-GitHub-4.png](/assets/img/chapter-VI/configurar-la-propiedad-del-repositorio-en-GitHub-4.png)
+
+
+* **Configurar control remoto en Git:** Por último, dado que el repositorio ahora está bajo la propiedad de la empresa y depende de ella, es necesario acceder al control remoto del código. Para hacerlo, simplemente ingresa al repositorio creado y copia la URL del repositorio.
+
+![configurar-control-remoto-en-Git-1.png](/assets/img/chapter-VI/configurar-control-remoto-en-Git-1.png)
+
+Ahora, en el IDE, dirígete a la pestaña 'Git' y elige la opción 'Manage Remotes'.
+
+![configurar-control-remoto-en-Git-2.png](/assets/img/chapter-VI/configurar-control-remoto-en-Git-2.png)
+
+Finalmente, como último paso, debes pegar el enlace copiado en el campo de dirección que solicita el IDE para el control remoto en Git.
+
+![configurar-control-remoto-en-Git-3.png](/assets/img/chapter-VI/configurar-control-remoto-en-Git-3.png)
+
+Si has seguido correctamente todos los pasos y directrices mencionados, entonces has completado la configuración con éxito. Ahora, solo necesitas realizar un commit y los cambios que hayas efectuado se guardarán en el repositorio de GitHub, ya sea que hayas realizado modificaciones en el código, creado nuevas ramas u otras acciones.
 
 
 
