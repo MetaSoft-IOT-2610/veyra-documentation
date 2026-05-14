@@ -733,16 +733,20 @@ Para garantizar la **Visibilidad del Estado del Sistema** y la **Prevención de 
 A continuación, evidenciamos la aplicación gráfica de estos principios en los diferentes módulos del sistema:
 
 * **Módulo de Gestión de Personal y Familiares (Formularios y UI States):** Mock-ups de alta fidelidad que muestran el uso de validaciones en tiempo real y el diseño de campos de entrada con retroalimentación visual clara.
-  *(Aquí pones una imagen del Mockup a color de la pantalla "Give Access to Staff" o el "Register Relative", de preferencia mostrando el estado de error rojo que armamos)*
+<p align="center">
+  <img src="../assets/img/chapter-V/veyra-mockups/web-application/web-staff-access.png" alt="Mockup" width="200px" height="auto"/>
 
 * **Módulo de Telemetría (Clinical Parameters):** Visualización del patrón Master-Detail aplicado con la paleta de colores final, destacando los selectores numéricos y los badges de estado del paciente.
-  *(Aquí pones la imagen del Mockup a color de los Clinical Parameters)*
+<p align="center">
+  <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/mobile-vitals.png" alt="Mockup" width="200px" height="auto"/>
+
+
 
 * **Aplicación Móvil - Interfaz de Monitoreo:** Diseño final de la vista del familiar, mostrando jerarquía visual en los signos vitales (tipografía de gran tamaño) y el estado de alerta en caso de anomalías en la saturación de oxígeno o ritmo cardíaco.
-  *(Aquí pones la imagen del Mockup a color de la aplicación móvil)*
-
 <p align="center">
-  <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/family-dashboard.png" alt="Mockup" width="200px" height="auto"/>
+  <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/mobile-health-indicators.png" alt="Mockup" width="200px" height="auto"/>
+
+
 
 ### 5.4.4. Applications User Flow Diagrams
 
