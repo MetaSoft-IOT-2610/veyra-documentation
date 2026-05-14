@@ -414,42 +414,103 @@ El sistema de etiquetado de "Veyra" ha sido diseñado para ser claro, directo y 
 
 ### 5.2.3. SEO Tags and Meta Tags
 
-En esta sección se documentan las meta tags y elementos del <head> configurados tanto en la Landing Page como en la aplicación web de Veyra, los cuales son fundamentales para el correcto posicionamiento en buscadores, la compatibilidad con dispositivos y la experiencia visual consistente.
+Con el objetivo de mejorar la visibilidad de "Veyra" en los motores de búsqueda y facilitar su descubrimiento por administradores de casas de reposo, médicos, personal asistencial y familiares que buscan soluciones digitales para el cuidado del adulto mayor, se ha establecido una estrategia SEO que incluye el uso adecuado de etiquetas HTML y elementos ASO para los principales elementos informativos de la aplicación móvil, la aplicación web y el Landing Page.
 
-- **Meta Tags Implementados en la Landing Page:** El `<head>` del `index.html` declara los siguientes elementos:
+**ASO (App Store Optimization) Elements**
 
-    - **`<meta charset="UTF-8" />`:** Codificación universal de caracteres, indispensable para mostrar correctamente tildes, ñ y símbolos en español.
-    - **`<meta http-equiv="X-UA-Compatible" content="IE=edge" />`:** Fuerza a Internet Explorer a usar su motor de renderizado más reciente.
-    - **`<meta name="viewport" content="width=device-width, initial-scale=1.0" />`:** Garantiza el comportamiento responsive en móviles, tablets y escritorio.
-    - **`<title>Veyra</title>`:** Identificador de marca que aparece en la pestaña del navegador y en los resultados de los buscadores.
-    - **`<html lang="en">`:** Idioma por defecto del documento, base para que los motores de búsqueda y lectores de pantalla interpreten el contenido.
-    - **Font Awesome 5.15.3:** Stylesheet cargado desde el CDN de Cloudflare (`cdnjs.cloudflare.com`) para la iconografía.
-    - **Google Fonts:** Preconnect a `fonts.googleapis.com` y `fonts.gstatic.com` para optimizar el tiempo de carga, seguido del import de las familias Instrument Serif, Jost, Konkhmer Sleokchher, Lexend, Manrope y Rubik (esta última es la tipografía principal según la sección 5.1.1).
-    - **Stylesheet local:** `public/assets/styles/style.css` con las reglas CSS específicas de la Landing.
+Para la aplicación móvil de Veyra, distribuida a través de Google Play Store y Apple App Store, se definen los ASO (App Store Optimization) elements como App Title, App Subtitle, App Keywords, Short Description y Long Description.
 
-- **Meta Tags Implementados en la Aplicación Web:** El `<head>` del `src/index.html` de la aplicación Angular declara los siguientes elementos:
+**Google Play Store / App Store**
 
-    - **`<meta charset="utf-8">`:** Codificación universal de caracteres.
-    - **`<title>FrontendNovaPeruTech</title>`:** Título actual del entorno de desarrollo; debe ser reemplazado por **Veyra** en producción.
-    - **`<base href="/">`:** Define la ruta raíz desde la cual el router de Angular resuelve las rutas relativas.
-    - **`<meta name="viewport" content="width=device-width, initial-scale=1">`:** Habilita el diseño responsive.
-    - **`<link rel="icon" type="image/x-icon" href="favicon.ico">`:** Favicon de la aplicación.
-    - **`<html lang="en">`:** Idioma por defecto del documento.
-    - **Google Fonts Roboto (300, 400, 500):** Tipografía complementaria utilizada en componentes específicos de la aplicación.
-    - **Material Icons:** Stylesheet de Google Fonts para la iconografía nativa de Angular Material.
+- **App Title:**  
+    `Veyra – Cuidado Conectado`
 
-- **Page Titles Dinámicos:** El router de Angular asigna un title específico a cada ruta con el patrón **`{Page} | Veyra`**, lo que permite que cada pantalla tenga su propio título en la pestaña del navegador. Ejemplos reales tomados del código: "Home | Veyra", "Sign In | Veyra", "Sign Up | Veyra", "Dashboard | Veyra", "Residents | Veyra", "Resident Detail | Veyra", "New Resident | Veyra", "Staff | Veyra", "Rooms | Veyra", "Devices | Veyra", "Medications | Veyra", "Contracts | Veyra", "Choose Subscription | Veyra", "Checkout | Veyra" y "Page Not Found | Veyra".
+Título directo de 25 caracteres que incluye la marca y la propuesta de valor principal de la app.
 
-- **Optimizaciones SEO Recomendadas:** Para mejorar el posicionamiento orgánico de la Landing Page y la presentación en redes sociales, se contempla incorporar progresivamente los siguientes elementos:
+- **App Subtitle:**  
+    `Monitoreo de adultos mayores`
 
-    - **`<meta name="description">`:** Descripción breve y atractiva (≤160 caracteres) de la propuesta de valor de Veyra, visible en los resultados de buscadores.
-    - **`<meta name="keywords">`:** Palabras clave del dominio: "casa de reposo", "monitoreo IoT", "adultos mayores", "salud geriátrica", "Veyra".
-    - **Open Graph (`og:title`, `og:description`, `og:image`, `og:url`, `og:type`):** Para que los enlaces compartidos en Facebook, WhatsApp y LinkedIn muestren previsualización con imagen y descripción.
-    - **Twitter Cards (`twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`):** Equivalente a Open Graph para X (Twitter).
-    - **`<link rel="canonical">`:** Indica la URL oficial de cada página para evitar penalizaciones por contenido duplicado.
-    - **`<meta name="robots" content="index, follow">`:** Autoriza la indexación por parte de los motores de búsqueda.
-    - **Favicon de la Landing Page:** Actualmente no está definido en el `index.html` de la Landing; agregarlo refuerza el reconocimiento de marca.
-    - **Título correcto de la aplicación web:** Reemplazar `FrontendNovaPeruTech` por `Veyra` en producción para mantener la consistencia con la marca.
+Subtítulo complementario de 28 caracteres que especifica el público objetivo y el foco funcional de la aplicación.
+
+- **App Keywords:** (Apple App Store)  
+    `casa,reposo,adulto,mayor,monitoreo,signos,vitales,iot,salud,familia,alerta,cuidado,residente,veyra`
+
+Palabras clave separadas por comas, optimizadas para búsquedas relevantes en la App Store de iOS, cubriendo público objetivo, funcionalidades y dominio clínico.
+
+- **Short Description:** (Google Play Store – 80 caracteres)  
+    `Monitorea la salud de tus seres queridos con alertas en tiempo real desde Veyra`
+
+Descripción breve que destaca el beneficio principal dentro del límite de caracteres.
+
+> Transforma el cuidado de tus seres queridos con Veyra, la aplicación móvil que te permite:  
+> ✓ Monitorear los signos vitales del residente en tiempo real  
+> ✓ Recibir alertas críticas con notificaciones push inmediatas  
+> ✓ Consultar el historial clínico con filtro por período  
+> ✓ Mantener contacto continuo con la casa de reposo  
+> ✓ Acceder al estado del adulto mayor desde cualquier lugar  
+> 
+> CARACTERÍSTICAS PRINCIPALES:  
+> - Dashboard simplificado para familiares con el estado actual del residente  
+> - Monitoreo continuo de frecuencia cardíaca, temperatura, saturación y presión arterial  
+> - Alertas configurables con deep link al detalle del evento  
+> - Historial cronológico de signos vitales y eventos clínicos  
+> - Interfaz adaptada por rol (familiar, personal asistencial y administrador)  
+> - Sincronización con dispositivos IoT del hogar de reposo  
+> 
+> Ideal para familiares de adultos mayores, personal asistencial de casas de reposo y administradores que buscan una solución integral para el monitoreo y cuidado del adulto mayor.  
+> 
+> Descarga Veyra y mantén siempre cerca a tus seres queridos, sin importar la distancia.
+
+---
+
+**Aplicación Web**
+
+Para la aplicación web desarrollada en Angular, se definieron etiquetas SEO específicas para el panel principal de administración, con el fin de reforzar su posicionamiento y mejorar la experiencia de búsqueda dentro del ecosistema digital de Veyra.
+
+- **Title:**  
+    `<title>Panel de Administración – Veyra | Gestiona residentes, personal y dispositivos IoT</title>`
+
+Este título complementa el nombre de la aplicación con una invitación clara a la acción, enfocada en las principales tareas que el administrador puede realizar desde el panel de control.
+
+- **Meta Description:**  
+    `<meta name="description" content="Plataforma web de Veyra para administradores y médicos de casas de reposo. Gestiona residentes, personal, habitaciones y dispositivos IoT. Monitorea signos vitales en tiempo real, consulta historiales clínicos y administra el cuidado integral del adulto mayor desde un solo panel.">`
+
+La descripción presenta de manera clara las funciones principales del panel y resalta su utilidad como centro operativo de la plataforma para personal institucional.
+
+- **Meta Keywords:**  
+    `<meta name="keywords" content="gestión de casa de reposo, monitoreo IoT, signos vitales, historial clínico, residentes, personal asistencial, alertas médicas, dashboard geriátrico, plataforma Veyra">`
+
+Estas palabras clave están orientadas al contexto de uso de la aplicación web y reflejan acciones concretas relacionadas con la gestión clínica y operativa del hogar de reposo.
+
+- **Meta Author:**  
+    `<meta name="author" content="Equipo Metasoft – Desarrollo Web 2026">`
+
+Este atributo incorpora la referencia al equipo responsable y al año de desarrollo, reforzando la actualidad y vigencia del sistema.
+
+---
+
+**Landing Page**
+
+- **Title:**  
+    `<title>Veyra – The Best Care is Always Connected</title>`
+
+Una frase concisa que refleja la propuesta de valor de la plataforma y contiene palabras clave como "care" y "connected", términos asociados al cuidado del adulto mayor y la conexión familiar.
+
+- **Meta Description:**  
+    `<meta name="description" content="Veyra es una plataforma digital de cuidado conectado para casas de reposo y familias. Monitorea signos vitales en tiempo real con dispositivos IoT, accede al historial clínico de tus seres queridos y mantén la tranquilidad de saber cómo se encuentran sin importar la distancia.">`
+
+Esta descripción amplía la explicación del producto, destacando sus beneficios clave y diferenciadores, a la vez que integra términos como "plataforma digital", "monitoreo en tiempo real", "dispositivos IoT" e "historial clínico".
+
+- **Meta Keywords:**  
+    `<meta name="keywords" content="casa de reposo, monitoreo IoT, adultos mayores, signos vitales, salud geriátrica, alerta médica, cuidado familiar, plataforma digital de salud, Veyra, Metasoft">`
+
+Un conjunto seleccionado de palabras y frases clave que abarca tanto el público objetivo (casas de reposo, familias) como las funcionalidades (monitoreo IoT, alertas médicas, signos vitales).
+
+- **Meta Author:**  
+    `<meta name="author" content="Equipo Metasoft – Diseño UX/UI y Desarrollo Web 2026">`
+
+Incluye una referencia al equipo responsable del diseño y desarrollo del producto, lo cual apoya en términos de confianza y atribución de contenido.
+
 
 ### 5.2.4. Searching Systems
 
