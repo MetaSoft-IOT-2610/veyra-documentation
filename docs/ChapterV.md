@@ -802,7 +802,28 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 ![Unhappy Path - Rooms Error States](../assets/img/chapter-V/uf-rooms-unhappy-path.png)
 
+#### User Flow 3: Registro de un Nuevo Personal (Staff Members)
 
+* **User Persona:** Administrador del Sistema / Recursos Humanos.
+* **User Goal:** Registrar la información personal, de contacto y de emergencia de un nuevo empleado (enfermero, médico o staff de apoyo) para integrarlo a la operatividad de la casa de reposo.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Staff** y visualiza la vista principal (vacía en el primer uso). Hace clic en el botón primario `+ Add New`.
+2. El sistema muestra el formulario de registro detallado, dividido en secciones lógicas: *Personal Data*, *Identification Data*, *Contact Data* y *Location Data*.
+3. El usuario ingresa la información del empleado y hace *scroll* hacia la sección inferior de *Emergency Contacts*.
+4. Completa los datos del contacto principal de emergencia (Main Contact) y hace clic en el botón de confirmación/registro.
+5. El sistema procesa la información, la guarda en la base de datos y redirige automáticamente a la vista de lista de **Staff Members**.
+6. La pantalla se actualiza mostrando una tarjeta (Card) con el perfil resumido del nuevo empleado registrado exitosamente.
+
+![Happy Path - Add New Staff](../assets/img/chapter-V/uf-staff-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Formato Inválido en Contactos de Emergencia**
+* **Condición:** En la sección *Emergency Contacts*, el administrador ingresa texto alfabético en el campo destinado para el número de teléfono del familiar del empleado.
+* **Flujo de respuesta:** A través de validaciones *Front-end* en tiempo real, el sistema detecta la discrepancia de formato al momento de escribir o al cambiar de campo (*on blur*). Muestra una alerta debajo del input indicando *"Ingrese un número de teléfono válido"*, deshabilitando temporalmente el botón de guardado hasta que se ingrese el tipo de dato correcto.
+
+![Unhappy Path - Staff Error States](../assets/img/chapter-V/uf-staff-unhappy-path.png)
 
 ## 5.5. Applications Prototyping
 
