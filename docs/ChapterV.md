@@ -1377,6 +1377,58 @@ _Familiar · Personal asistencial · Administrador_
 - Colores semáforo coherentes con la web app para consistencia visual.
 - Acceso con autenticación segura (JWT + biometría del dispositivo).
 
+
+
+![veyra-prototype-device-one](../assets/img/chapter-V/veyra-prototype-device-one.svg)
+
+Para el prototipo físico del dispositivo de monitoreo, se utilizó Cirkit Designer
+como herramienta de diseño de circuitos. El objetivo fue representar de forma
+fiel los componentes seleccionados en etapas anteriores y documentar
+las conexiones entre ellos.
+
+El circuito gira en torno al **ESP32-C3 Super Mini**, que cumple el rol
+de microcontrolador principal. Se eligió este modelo porque integra
+BLE 5.0 de forma nativa, tiene un tamaño muy reducido y opera a 3.3V,
+lo que lo hace compatible con todos los sensores sin necesidad
+de conversores de nivel.
+
+Para la medición de signos vitales se incorporaron dos sensores:
+
+El **MAX30102** se encarga de medir la frecuencia cardíaca y el SpO₂.
+Funciona por I²C y se conecta a GPIO8 (SDA) y GPIO9 (SCL),
+con dirección 0x57. Es un sensor bastante compacto y de bajo consumo,
+lo que lo hace ideal para un wearable.
+
+El **GY906 (MLX90614)** mide la temperatura corporal sin contacto
+usando radiación infrarroja. Comparte el mismo bus I²C con el MAX30102,
+usando GPIO8 y GPIO9, pero con dirección 0x5A, por lo que
+no hay conflicto entre ambos. Su precisión de ±0.2°C
+en el rango corporal lo hace adecuado para este contexto.
+
+La pantalla **TFT ST7789 de 1.69"** muestra los valores medidos
+en tiempo real. Se comunica por SPI usando GPIO4, GPIO6, GPIO2,
+GPIO3 y GPIO5. El pin BLK se conecta directo a 3V3
+para mantener la retroiluminación siempre activa.
+
+Finalmente, se incluyó un **botón táctil de 3 pines** conectado a GPIO1.
+Tiene pull-up integrado, así que no necesita resistencia externa.
+Sirve para que el usuario pueda encender o apagar la pantalla
+según lo necesite.
+
+Toda la alimentación se distribuye desde el pin 3V3 del ESP32-C3,
+con una batería LiPo 502035 de 3.7V y 300mAh como fuente.
+El consumo total estimado ronda los 1.6mA en operación normal.
+
+#### Tabla de conexiones
+
+| Componente | Pin componente                              | Pin ESP32-C3                                            |
+|------------|---------------------------------------------|---------------------------------------------------------|
+| MAX30102   | VIN / GND / SDA / SCL                       | 3V3 / GND / GPIO8 / GPIO9                               |
+| GY906      | VIN / GND / SDA / SCL                       | 3V3 / GND / GPIO8 / GPIO9                               |
+| TFT ST7789 | VCC / GND / SCL / SDA / DC / RES / CS / BLK | 3V3 / GND / GPIO4 / GPIO6 / GPIO2 / GPIO3 / GPIO5 / 3V3 |
+| Botón      | VCC / GND / SIG                             | 3V3 / GND / GPIO1                                       |
+
+
 # Diseño de Solución IoT: Dispositivo de Localización GPS para Adultos Mayores 
 
 ## Paso 1 — Definición de los Requisitos del Sistema
