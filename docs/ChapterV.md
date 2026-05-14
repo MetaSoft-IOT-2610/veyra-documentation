@@ -725,16 +725,16 @@ A continuación, presentamos los diagramas de flujo de nuestra plataforma web, d
 - Atender una alerta de emergencia del sistema
 - Programar una nueva actividad recreativa o terapéutica
 
-| User Goal                                                                                                                                                                                                                                                                                                        | WireFlow                                                                           |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| **UG01:** Registrar un nuevo residente en el sistema de la casa de reposo. Permite al personal administrativo ingresar los datos demográficos y médicos de un nuevo adulto mayor, asignándole una habitación y creando su expediente digital centralizado.                                                       | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG1-flow.png) |
-| **UG02:** Conceder y gestionar accesos a la plataforma para el personal y familiares. Facilita al administrador la creación de credenciales de inicio de sesión y la asignación de roles y permisos específicos para médicos, personal de enfermería y familiares de los residentes.                             | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG2-flow.png)    |
+| User Goal                                                                                                                                                                                                                                                                                   | WireFlow                                                                           |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| **UG01:** Registrar un nuevo residente en el sistema de la casa de reposo. Permite al personal administrativo ingresar los datos demográficos y médicos de un nuevo adulto mayor, asignándole una habitación y creando su expediente digital centralizado.                                  | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG1-flow.png) |
+| **UG02:** Conceder y gestionar accesos a la plataforma para el personal y familiares. Facilita al administrador la creación de credenciales de inicio de sesión y la asignación de roles y permisos específicos para médicos, personal de enfermería y familiares de los residentes.        | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG2-flow.png)    |
 | **UG03:** Definir y actualizar los parámetros clínicos de alerta para cada residente. Permite al personal médico establecer los límites mínimos y máximos aceptables de signos vitales (telemetría), garantizando que el sistema genere alertas personalizadas basadas en la condición clínica de cada paciente. | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG3-flow.png)    |
-| **UG04:** Agendar y gestionar las actividades recreativas y terapéuticas. Proporciona al coordinador de actividades las herramientas para programar eventos diarios, estableciendo horarios, descripciones y categorías, asegurando una rutina activa y estructurada para los residentes.                        | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG4-flow.png)    |
-| **UG05:** Monitorear la ubicación en tiempo real y signos vitales mediante dispositivos IoT. Permite al personal de cuidado visualizar en un mapa interactivo la geolocalización de los residentes y consultar sus signos vitales en vivo, facilitando una respuesta rápida ante emergencias o posibles fugas.   | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG5-flow.png)    |
-| **UG06:** Registrar y gestionar las habitaciones del centro. Permite al personal administrativo crear nuevos cuartos en el sistema, definiendo detalles clave para mantener un control organizado de la disponibilidad y el alojamiento de los residentes.                                                       | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG6-flow.png)    |
-| **UG07:** Administrar el inventario de dispositivos IoT. Facilita al personal de TI o administradores registrar nuevos dispositivos de telemetría y geolocalización (sensores, pulseras) en el sistema para su posterior vinculación a los residentes.                                                         | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG7-flow.png)    |
-| **UG08:** Registrar y gestionar al personal de la casa de reposo. Permite al administrador ingresar la información profesional, turnos y datos de contacto de enfermeros, médicos y staff de apoyo para organizar la operatividad del centro.                                                               | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG8-flow.png)    |
+| **UG04:** Agendar y gestionar las actividades recreativas y terapéuticas. Proporciona al coordinador de actividades las herramientas para programar eventos diarios, estableciendo horarios, descripciones y categorías, asegurando una rutina activa y estructurada para los residentes.   | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG4-flow.png)    |
+| **UG05:** Monitorear la ubicación en tiempo real y signos vitales mediante dispositivos IoT. Permite al personal de cuidado visualizar en un mapa interactivo la geolocalización de los residentes y consultar sus signos vitales en vivo, facilitando una respuesta rápida ante emergencias o posibles fugas. | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG5-flow.png)    |
+| **UG06:** Registrar y gestionar las habitaciones del centro. Permite al personal administrativo crear nuevos cuartos en el sistema, definiendo detalles clave para mantener un control organizado de la disponibilidad y el alojamiento de los residentes.                                  | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG6-flow.png)    |
+| **UG07:** Administrar el inventario de dispositivos IoT. Facilita a los administradores registrar nuevos dispositivos de telemetría y geolocalización en el sistema para su posterior vinculación a los residentes.                                                                         | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG7-flow.png)    |
+| **UG08:** Registrar y gestionar al personal de la casa de reposo. Permite al administrador ingresar la información profesional, turnos y datos de contacto de enfermeros, médicos y staff de apoyo para organizar la operatividad del centro.                                               | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG8-flow.png)    |
 
 ### 5.4.2. Applications Mock-ups
 
@@ -824,6 +824,33 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 * **Flujo de respuesta:** A través de validaciones *Front-end* en tiempo real, el sistema detecta la discrepancia de formato al momento de escribir o al cambiar de campo (*on blur*). Muestra una alerta debajo del input indicando *"Ingrese un número de teléfono válido"*, deshabilitando temporalmente el botón de guardado hasta que se ingrese el tipo de dato correcto.
 
 ![Unhappy Path - Staff Error States](../assets/img/chapter-V/uf-staff-unhappy-path.png)
+
+#### User Flow 4: Administración de Inventario de Dispositivos IoT (Devices)
+
+* **User Persona:** Administrador del Sistema / Personal de TI.
+* **User Goal:** Administrar el inventario de dispositivos (pulseras de signos vitales, geolocalizadores) registrando nuevo hardware o gestionando los existentes para su posterior vinculación a los residentes.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Devices** y visualiza la tabla principal *List of Devices* con el inventario actual y sus estados (*Active, Inactive, Low Battery*).
+2. Para añadir nuevo hardware, hace clic en el botón primario `+ Register Device`.
+3. El sistema despliega un modal superpuesto (*overlay*) solicitando la información básica del equipo.
+4. El usuario ingresa el identificador único físico (ej. BAND-008) y selecciona el tipo de dispositivo.
+5. Al hacer clic en guardar, el modal se cierra y la tabla se actualiza automáticamente mostrando el nuevo dispositivo en la primera fila con el estado predeterminado.
+6. *(Flujo de gestión secundario)*: Si el usuario desea encontrar un dispositivo específico, utiliza la barra de búsqueda superior (`Search device ID...`); la tabla filtra los resultados en tiempo real, permitiéndole usar las acciones rápidas de editar (lápiz) o eliminar (basurero).
+
+![Happy Path - Devices Inventory](../assets/img/chapter-V/uf-devices-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Intento de registro de un Device ID duplicado**
+* **Condición:** Al registrar un nuevo dispositivo, el usuario ingresa un código (ej. `BAND-001`) que ya está en uso dentro de la base de datos de Veyra.
+* **Flujo de respuesta:** El sistema aplica una validación *Back-end* y previene la creación. El botón de guardado se detiene y se muestra un mensaje de error *inline* en el modal: *"Este Device ID ya existe en el inventario. Verifique el equipo físico"*.
+
+**Escenario B: Eliminación de un dispositivo actualmente asignado**
+* **Condición:** El usuario hace clic en el ícono de eliminar (basurero) de un dispositivo que tiene el estado *ACTIVE* y está actualmente vinculado a un residente (ej. asignado por *Enf. Patricia Gómez*).
+* **Flujo de respuesta:** El sistema intercepta la acción para prevenir la pérdida de monitoreo en vivo. En lugar de borrarlo directamente, despliega una alerta crítica: *"Acción Denegada: Este dispositivo está actualmente asignado a un residente. Desvincúlelo desde el perfil del residente antes de eliminarlo del inventario"*. Esto protege la integridad lógica de la aplicación y la seguridad del paciente.
+
+![Unhappy Path - Devices Error States](../assets/img/chapter-V/uf-devices-unhappy-path.png)
 
 ## 5.5. Applications Prototyping
 
