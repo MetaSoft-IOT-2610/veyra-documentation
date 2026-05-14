@@ -583,36 +583,55 @@ El Landing Page de Veyra no incluye un sistema de búsqueda integrado, dado que 
 
 ### 5.2.5. Navigation Systems
 
-- **Navegación en la Landing Page:** La Landing Page utiliza un esquema de navegación por anchors dentro de una sola página (single-page scroll), con los siguientes elementos:
+Con el objetivo de que cada usuario encuentre con facilidad las funcionalidades que necesita según su rol, "Veyra" implementa sistemas de navegación adaptados a cada una de sus plataformas. La navegación es persistente, consistente y respeta la jerarquía de la información definida en los puntos anteriores, permitiendo al usuario ubicarse en todo momento dentro del producto.
 
-    - **Header fijo:** Barra superior con el logo "Veyra" y un menú de cinco enlaces: **Home (`#home`)**, **Features (`#features`)**, **Benefits (`#benefits`)**, **About Us (`#about`)** y **Plans (`#plans`)**. Los enlaces hacen scroll suave hasta la sección correspondiente.
-    - **Botones de autenticación:** **Sign In** y **Sign Up** redirigen externamente a la aplicación web alojada en Azure Static Web Apps (`brave-river-060406e0f.3.azurestaticapps.net`).
-    - **Language Switcher:** Botón con ícono globe (`fa-globe`) y label EN/ES que conmuta el idioma del sitio aplicando las traducciones sobre los elementos con atributo `data-i18n`; la preferencia se persiste en `localStorage`.
-    - **Menú Hamburguesa (mobile):** En viewports pequeños, el ícono `fa-bars` despliega el menú colapsado; se cierra automáticamente al hacer scroll mediante `window.onscroll`.
-    - **Botón Scroll-to-Top:** Botón flotante con ícono `fa-chevron-up` que aparece al superar los 300 px de scroll y devuelve al usuario al inicio de la página con `behavior: 'smooth'`.
-    - **Acordeón en Features:** Solo un ítem se mantiene abierto a la vez; al expandir uno, los demás se contraen automáticamente.
-    - **Toggle Monthly / Annually:** En la sección Plans permite conmutar entre los precios mensuales y anuales sin recargar la página.
-    - **Drawers Legales:** Los enlaces **Terms of Service** y **Privacy Policy** del footer abren un drawer lateral con overlay oscuro que carga el contenido de `public/sections/tos.html` y `public/sections/policies.html` mediante `fetch`. El drawer se cierra con el botón X, con un clic en el overlay o con la tecla **Escape**.
-    - **Footer:** Replica los enlaces de navegación principal y agrega secciones de **Platform**, **Company**, **Contact** y enlaces externos (App Store, Google Play, redes sociales).
+**Aplicación Móvil**
 
-- **Navegación en la Aplicación Web:** La aplicación web combina un toolbar superior con un sidenav lateral, ambos provistos por Angular Material dentro del componente `LayoutNursingHome`:
+En la aplicación móvil, la navegación principal se ofrece a través de una **bottom navigation bar** fija en la parte inferior de la pantalla. Está compuesta por cinco accesos rápidos con ícono y etiqueta, diseñados para que el familiar, el personal asistencial y el administrador de la casa de reposo puedan llegar a las funciones más usadas en un solo gesto. El ítem activo se resalta visualmente con el color primario de la marca y un fondo diferenciado.
 
-    - **Top Toolbar:** Contiene el botón hamburguesa que hace toggle del sidenav (`<mat-icon>menu</mat-icon>`), el logo y título "Veyra", el componente `AuthenticationSection` (con los botones Sign-In, Create User y Create Admin si no hay sesión, o "Welcome, {username}" y "Sign-Out" si la sesión está activa) y el `LanguageSwitcher` EN/ES.
-    - **Sidenav Lateral:** Cinco ítems con ícono y label traducido — **Dashboard** (`/analytics/dashboard`, ícono `home`), **Devices** (`/nursing/devices`, ícono `assignment`), **Residents** (`/nursing/residents`, ícono `person`), **Staff** (`/hcm/staff`, ícono `group`) y **Rooms** (`/nursing/rooms`, ícono `meeting_room`). El ítem activo se resalta con un indicador visual y la navegación se ejecuta vía `Router.navigate([link])`.
-    - **Modo Responsive:** El `BreakpointObserver` observa el breakpoint `max-width: 768px`. En escritorio el sidenav está en modo `side` y abierto por defecto; en móvil cambia a modo `over` y permanece cerrado hasta que el usuario lo abre con el botón hamburguesa. Al navegar a una ruta en modo móvil, el sidenav se cierra automáticamente.
-    - **Tooltips:** Cada ícono del sidenav tiene un `matTooltip` que muestra el label del ítem al hacer hover en la posición derecha, lo cual mantiene la usabilidad incluso cuando el sidenav está colapsado.
-    - **Sidenav Footer:** Bloque inferior con ícono `code`, etiqueta **MetaSoft** y el año actual (`getCurrentYear()`) como información de copyright.
-    - **Page Titles Dinámicos:** El router de Angular setea el `<title>` del documento con el patrón `{Page} | Veyra` para cada ruta, facilitando la identificación de cada pestaña abierta en el navegador.
-    - **Navegación Interna en Detalles:** Las vistas de detalle (Resident Detail, Staff Member Detail) están construidas con **Material Cards apiladas** (perfil de la persona, legal guardian, main contact, medical record) y botones de acción explícitos que llevan a las subrutas (Medical Records, Medications, Allergies, Contracts, Assign Room).
-    - **Fallback Page Not Found:** El path comodín `**` carga el componente `PageNotFound`, que muestra el mensaje **"The path {invalid_path} does not exist"** y un botón **"Go Home"** que redirige a `/home`.
+<p align="center">
+  <img src="./../assets/img/chapter-V/nav_mobile.png">
+</p>
 
-- **Navegación en la Aplicación Móvil:** Conforme a los wireframes de la sección 5.4.1 y a las User Stories del Capítulo III, la aplicación móvil organiza la navegación según el rol del usuario:
+Los accesos disponibles en la bottom navigation bar son:
 
-    - **Interfaz del Familiar:** El familiar entra al Home con el estado del residente vinculado (US-14) y desde allí puede navegar a Signos Vitales, Historial (US-15), Notificaciones y Perfil.
-    - **Interfaz del Personal de Cuidado:** El personal asistencial accede al listado de residentes asignados a su turno (US-11), al monitoreo de signos vitales en tiempo real (US-12), al registro de eventos clínicos (US-19) y a las notificaciones de alertas críticas.
-    - **Navegación desde Notificaciones Push:** Conforme a la User Story US-16, las notificaciones de alertas críticas incluyen un deep link que, al ser tocado por el familiar, abre la aplicación directamente en la pantalla de detalle de la alerta del residente afectado, sin pasar por el home.
+- **Home**: Pantalla principal del usuario. Para el familiar muestra el estado actual del residente vinculado; para el personal asistencial, la lista de residentes asignados al turno; para el administrador, un resumen operativo del hogar de reposo.
+- **Health**: Acceso a la sección de signos vitales y monitoreo en tiempo real del residente (frecuencia cardíaca, temperatura, saturación de oxígeno y presión arterial).
+- **Calendar**: Visualización de eventos programados — visitas familiares, turnos del personal asistencial y recordatorios operativos del administrador.
+- **Chat**: Canal de comunicación entre la casa de reposo y los familiares, y entre el personal asistencial y la administración para coordinar el cuidado.
+- **Dashboard**: Vista de métricas y KPIs operativos, utilizada principalmente por el administrador para supervisión remota desde el dispositivo móvil.
 
-- **Persistencia de Sesión y Cuenta:** El header de cada plataforma mantiene siempre visible el acceso a la cuenta del usuario. En la Landing los botones **Sign In / Sign Up** apuntan a la app web; en la aplicación web el componente `AuthenticationSection` muestra **"Welcome, {username}"** con la opción de **Sign-Out** cuando la sesión está activa; y en la móvil el ícono de perfil queda accesible desde la bottom navigation bar.
+---
+
+**Aplicación Web**
+
+En la aplicación web, la navegación principal se ofrece mediante un **sidenav lateral** persistente que acompaña al usuario en todas las vistas operativas. El sidenav está construido con Angular Material (`<mat-sidenav>`), se comporta de manera responsive (modo `side` en escritorio y `over` en móvil bajo el breakpoint de 768 px) y se complementa con un **toolbar superior** que contiene el botón hamburguesa, el logo de Veyra, los botones de autenticación y el selector de idioma EN/ES. El sidenav está dirigido al administrador de la casa de reposo y al doctor, quienes comparten el mismo layout pero acceden a las secciones más relevantes según su rol.
+
+<p align="center">
+  <img src="./../assets/img/chapter-V/nav_web.png">
+</p>
+
+Los accesos disponibles en el sidenav son:
+
+- **Dashboard**: Panel analítico con KPIs operativos (Total Hires, Total Terminations, Net Staff Change, Total Admissions, Active Residents) y gráficas filtrables por año, usado por el administrador para la supervisión global.
+- **Devices**: Listado y gestión de los dispositivos IoT asignados a cada residente, con búsqueda por Device ID y ordenamiento por columnas.
+- **Residents**: Listado y gestión de los residentes del hogar de reposo, junto con sus subrecursos clínicos (historial médico, medicamentos, alergias y asignación de habitación). Es el punto de entrada al monitoreo clínico para el doctor.
+- **Staff**: Listado y gestión del personal asistencial y médicos, con sus contratos y estados de contratación.
+- **Rooms**: Administración de las habitaciones del hogar de reposo y de sus asignaciones a residentes.
+- **Activities**: Registro y consulta de las actividades diarias de cuidado del residente (alimentación, higiene, movilidad, hidratación, recreación).
+- **Relatives**: Gestión de los familiares de los residentes y de sus vinculaciones con cada residente.
+
+El sidenav incluye además un pie con la marca **MetaSoft** y el año de copyright, junto con un encabezado superior etiquetado como **Care Management** que identifica el ámbito funcional de la plataforma.
+
+---
+
+**Landing Page**
+
+En el Landing Page, la navegación principal se ofrece a través de un **header fijo en la parte superior** que acompaña al visitante durante todo el scroll. El header contiene el logo de Veyra, un menú de cinco accesos a las secciones del sitio y dos botones de autenticación que redirigen a la aplicación web. En dispositivos móviles, el menú se colapsa en un ícono hamburguesa que despliega los enlaces, y se cierra automáticamente al hacer scroll.
+
+<p align="center">
+  <img src="./../assets/img/chapter-V/nav_landing.png">
+</p>
 
 
 ## 5.3. Landing Page UI Design
