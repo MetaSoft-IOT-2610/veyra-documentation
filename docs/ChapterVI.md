@@ -902,7 +902,7 @@ Slecciona ¿Busca implementar Pages? Comenzar.
 
 ![cloudflare-pages-7.png](/assets/img/chapter-VI/cloudflare-pages-7.png)
 
-1. Para redirigir todas las rutas al `index.html` (necesario para el router de Angular), crear un archivo `_redirects` en la carpeta `public/` del proyecto:
+**Enrutamiento SPA:** Cloudflare Pages detecta automáticamente aplicaciones de página única. Si el proyecto no incluye un archivo `404.html` en la raíz del output, Pages redirige todas las rutas al `index.html` sin configuración adicional, permitiendo que el router de Angular maneje la navegación del lado del cliente. Como alternativa explícita, se puede crear un archivo `_redirects` en la carpeta `public/` del proyecto:
 
    ```
    /* /index.html 200
@@ -911,6 +911,8 @@ Slecciona ¿Busca implementar Pages? Comenzar.
 <!-- TODO: Imagen — Captura de la aplicación web desplegada correctamente en el navegador, mostrando la URL de Cloudflare Pages y la vista principal de la app -->
 
 **Despliegues automáticos:** Cada push a `main` ejecuta el pipeline de build de Angular y publica el resultado automáticamente. Los pull requests generan previews independientes.
+
+**Referencia oficial:** https://developers.cloudflare.com/pages/framework-guides/deploy-an-angular-site/
 
 ---
 
@@ -956,9 +958,18 @@ Los servicios backend de VEYRA están desarrollados con **Java / Spring Boot** y
    | Runtime stack | Java 21 |
    | Startup command | `java -jar /home/site/wwwroot/veyra-backend.jar` |
 
+   Al guardar, Azure genera automáticamente el archivo `.github/workflows/azure-deploy.yml` en el repositorio y descarga el **Publish Profile** del App Service.
+
 <!-- TODO: Imagen — Captura del panel "Deployment Center" del App Service en Azure con la configuración de GitHub Actions completada -->
 
-4. Configurar las variables de entorno en **Configuration → Application settings**:
+4. Agregar el **Publish Profile** como secret en el repositorio de GitHub. Este paso es requerido por el workflow de GitHub Actions para autenticar el despliegue:
+   - En el portal de Azure, ir a **App Service → Overview → Get publish profile** y descargar el archivo `.PublishSettings`.
+   - En GitHub, ir a **Settings → Secrets and variables → Actions → New repository secret**.
+   - Crear el secret con el nombre `AZURE_WEBAPP_PUBLISH_PROFILE` y pegar el contenido del archivo descargado como valor.
+
+<!-- TODO: Imagen — Captura de la sección "Actions secrets" en GitHub mostrando el secret `AZURE_WEBAPP_PUBLISH_PROFILE` creado correctamente -->
+
+5. Configurar las variables de entorno en **Configuration → Application settings**:
 
    | Variable | Descripción |
    |---|---|
@@ -971,13 +982,15 @@ Los servicios backend de VEYRA están desarrollados con **Java / Spring Boot** y
 
 <!-- TODO: Imagen — Captura del panel "Application settings" del App Service mostrando las variables de entorno configuradas (con los valores sensibles ocultos) -->
 
-5. Guardar la configuración. Azure App Service reiniciará la instancia automáticamente.
+6. Guardar la configuración. Azure App Service reiniciará la instancia automáticamente.
 
-6. Verificar el estado del servicio en **App Service → Overview → URL** y confirmar que el endpoint `/actuator/health` responde con `{"status":"UP"}`.
+7. Verificar el estado del servicio en **App Service → Overview → URL** y confirmar que el endpoint `/actuator/health` responde con `{"status":"UP"}`.
 
 <!-- TODO: Imagen — Captura del navegador o de Postman mostrando la respuesta del endpoint `/actuator/health` con el cuerpo `{"status":"UP"}` -->
 
 **Pipeline de CI/CD:** El archivo `.github/workflows/azure-deploy.yml` en el repositorio ejecuta automáticamente el build y el despliegue en Azure App Service ante cada push a `main`.
+
+**Referencia oficial:** https://docs.github.com/en/actions/deployment/deploying-to-your-cloud-provider/deploying-to-azure/deploying-java-to-azure-app-service
 
 <!-- TODO: Imagen — Captura del tab "Actions" en GitHub mostrando el workflow `azure-deploy.yml` ejecutado exitosamente con todos los pasos en verde -->
 
@@ -1039,6 +1052,10 @@ La aplicación móvil está desarrollada con **Flutter** y distribuida a través
 <!-- TODO: Imagen — Captura de Firebase App Distribution en la consola mostrando el release publicado con el número de versión, release notes y la lista de testers notificados -->
 
 **Variables de entorno del build:** El archivo `lib/config/env.dart` carga la URL de la API y las claves de Firebase desde el fichero `.env` (no versionado). En el pipeline de CI se inyectan como secrets del repositorio.
+
+**Referencia oficial (Android):** https://firebase.google.com/docs/app-distribution/android/distribute-cli
+
+**Referencia oficial (iOS):** https://firebase.google.com/docs/app-distribution/ios/distribute-cli
 
 ---
 
