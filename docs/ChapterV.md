@@ -856,214 +856,311 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 ## 5.6. IoT Device Design
 
-###  vital signs device
+# Diseño IoT — Sistema de Monitoreo de Signos Vitales
 
-**1** Definición de requisitos del sistema:
-time delay: El tiempo maximo torelable para el dispositivo es de 3 segundos, esto se debe a que el dispositivo se encuentra monitoreando constantemente los signos vitales del residente, por lo que es necesario que la información se actualice en tiempo real para poder detectar cualquier cambio en el estado de salud del residente.
-     **Suministro de energía:** Vamos a usar una batería lipo de dimensiones pequeñas.
-Baterías Lipo de Tamaño Pequeño 502035 3.7V 300mAh Batería de Polímero de Litio Recargable por micro USB.
+## Paso 1 — Definición de Requisitos del Sistema
 
-**2** Selección de la tipología del dispositivo iot: Se usará una tipología tipo estrella, ya que el dispositivo se conectará directamente a un gateway central que se encargará de enviar la información a la nube. Esto permite una comunicación eficiente y directa entre el dispositivo y el gateway, facilitando la gestión de los datos recopilados.
+### Time delay
 
-**3** Definicion de requisitos de la capa fisica:
-Definición de los sensores: El dispositivo contará con sensores de ritmo cardíaco, saturación de oxígeno y temperatura corporal. Estos sensores son fundamentales para monitorear la salud del residente y detectar cualquier cambio en su estado de salud.
-       Definición de los actuadores necesarios:El disoositivo contará con 2 actuadores, un botón para encendido y apagado del dispositivo, y un una pantalla AMOLED de 1.47 pulgadas para mostrar información relevante al usuario, como el estado de los signos vitales y batería.
-      El sensor de ritmo cardiaco consume aproximadamente 0.5 mA, el sensor de saturación de oxígeno consume alrededor de 0.3 mA, y el sensor de temperatura corporal consume aproximadamente 0.2 mA. El consumo total de los sensores es de aproximadamente 1 mA. El actuador del botón consume alrededor de 0.1 mA, y la pantalla AMOLED consume aproximadamente 0.5 mA cuando está encendida. En total, el consumo estimado del dispositivo es de aproximadamente 1.6 mA.
-      Los actuadores se controlarán mediante un microcontrolador que gestionará la energía y la comunicación con los sensores, asegurando un funcionamiento eficiente del dispositivo.
-     La precisión de los sensores es crucial para garantizar la fiabilidad de los datos recopilados. El sensor de ritmo cardíaco tiene una precisión de ±2 bpm, el sensor de saturación de oxígeno tiene una precisión de ±2%, y el sensor de temperatura corporal tiene una precisión de ±0.1°C. Estos niveles de precisión son adecuados para monitorear la salud del residente y detectar cualquier cambio significativo en su estado de salud.
-     Usaremos interfaces digitales como aplicación web y móvil para mostrar la información recopilada por los sensores, permitiendo a los usuarios acceder a los datos de manera fácil y rápida. La aplicación web estará diseñada para ser accesible desde cualquier dispositivo con conexión a internet, mientras que la aplicación móvil ofrecerá una experiencia optimizada para dispositivos móviles, con notificaciones en tiempo real sobre el estado de salud del residente.
+El tiempo máximo tolerable para el dispositivo es de **3 segundos**. Esto se debe a que el dispositivo se encuentra monitoreando constantemente los signos vitales del residente, por lo que es necesario que la información se actualice en tiempo real para poder detectar cualquier cambio en el estado de salud del residente.
+
+### Suministro de energía
+
+Se usará una batería LiPo de dimensiones pequeñas:
+
+> **Baterías LiPo 502035 · 3.7 V · 300 mAh** — Batería de Polímero de Litio Recargable por micro USB.
+
+---
+
+## Paso 2 — Selección de la Tipología del Dispositivo IoT
+
+Se usará una **tipología tipo estrella**, ya que el dispositivo se conectará directamente a un gateway central que se encargará de enviar la información a la nube. Esto permite una comunicación eficiente y directa entre el dispositivo y el gateway, facilitando la gestión de los datos recopilados.
+
+---
+
+## Paso 3 — Definición de Requisitos de la Capa Física
+
+### Definición de los sensores
+
+El dispositivo contará con sensores de ritmo cardíaco, saturación de oxígeno y temperatura corporal. Estos sensores son fundamentales para monitorear la salud del residente y detectar cualquier cambio en su estado de salud.
+
+### Definición de los actuadores necesarios
+
+El dispositivo contará con 2 actuadores: un botón para encendido y apagado del dispositivo, y una pantalla AMOLED de 1.47 pulgadas para mostrar información relevante al usuario, como el estado de los signos vitales y batería.
+
+### Consumo energético
+
+El sensor de ritmo cardíaco consume aproximadamente **0.5 mA**, el sensor de saturación de oxígeno consume alrededor de **0.3 mA**, y el sensor de temperatura corporal consume aproximadamente **0.2 mA**. El consumo total de los sensores es de aproximadamente **1 mA**. El actuador del botón consume alrededor de **0.1 mA**, y la pantalla AMOLED consume aproximadamente **0.5 mA** cuando está encendida. En total, el consumo estimado del dispositivo es de aproximadamente **1.6 mA**.
+
+Los actuadores se controlarán mediante un microcontrolador que gestionará la energía y la comunicación con los sensores, asegurando un funcionamiento eficiente del dispositivo.
+
+### Precisión de los sensores
+
+La precisión de los sensores es crucial para garantizar la fiabilidad de los datos recopilados:
+
+| Sensor                       | Precisión |
+|------------------------------|-----------|
+| Ritmo cardíaco               | ±2 bpm    |
+| Saturación de oxígeno (SpO₂) | ±2 %      |
+| Temperatura corporal         | ±0.1 °C   |
+
+Estos niveles de precisión son adecuados para monitorear la salud del residente y detectar cualquier cambio significativo en su estado de salud.
+
+### Interfaces digitales
+
+Se usarán interfaces digitales como **aplicación web** y **aplicación móvil** para mostrar la información recopilada por los sensores, permitiendo a los usuarios acceder a los datos de manera fácil y rápida. La aplicación web estará diseñada para ser accesible desde cualquier dispositivo con conexión a internet, mientras que la aplicación móvil ofrecerá una experiencia optimizada para dispositivos móviles, con notificaciones en tiempo real sobre el estado de salud del residente.
+
+### Esfuerzo computacional y time-delay local
+
 El esfuerzo computacional requerido para procesar los datos de los sensores es relativamente bajo, ya que se trata principalmente de recopilar y transmitir datos a la nube para su análisis. El microcontrolador del dispositivo se encargará de gestionar la comunicación con los sensores y el envío de datos al gateway central, lo que permitirá un procesamiento eficiente y en tiempo real de la información recopilada.
-el time-delay requerido para el procesamiento de datos es de aproximadamente 600ms desde la recopilación de datos por parte de los sensores hasta la visualización de la información en las interfaces digitales. Esto garantiza que los usuarios reciban información actualizada y relevante sobre el estado de salud del residente en tiempo real, permitiendo una respuesta rápida ante cualquier cambio significativo en su condición.
 
-**4** Definición de requisitos de la capa de intercambio:
+El time-delay requerido para el procesamiento de datos es de aproximadamente **600 ms** desde la recopilación de datos por parte de los sensores hasta la visualización de la información en las interfaces digitales. Esto garantiza que los usuarios reciban información actualizada y relevante sobre el estado de salud del residente en tiempo real, permitiendo una respuesta rápida ante cualquier cambio significativo en su condición.
 
-El tiempo de respuesta permitido para el envío o recepción de paquetes desde los nodos hacia el dispositivo es de aproximadamente 1 segundo. Esto se debe a que el dispositivo se encuentra monitoreando constantemente los signos vitales del residente, por lo que es necesario que la información se actualice en tiempo real para poder detectar cualquier cambio en el estado de salud del residente. Un tiempo de respuesta de 1 segundo garantiza que los datos recopilados por los sensores se transmitan de manera eficiente y oportuna, permitiendo una respuesta rápida ante cualquier cambio significativo en la condición del residente.
-La tipología de comunicación será inalámbrica, utilizando tecnologías como Wi-Fi o Bluetooth para transmitir los datos recopilados por los sensores al gateway central. Esto permite una comunicación eficiente y sin restricciones de cables, facilitando la instalación y el uso del dispositivo en entornos de cuidado de adultos mayores.
-La topología de red será tipo estrella, donde el dispositivo se conectará directamente a un edge API que almacenera en local para despúes enviar la información a cloud. Esto permite una comunicación eficiente y directa entre el dispositivo y el edge, facilitando la gestión de los datos recopilados.
-La distancia máxima de comunicación entre los nodos y el edge API es de aproximadamente 30 metros en interiores, lo que es adecuado para entornos de cuidado de adultos mayores donde el dispositivo se utilizará principalmente en habitaciones o áreas cercanas al gateway central. Esta distancia permite una comunicación confiable y estable entre el dispositivo y el edge. 
-La distancia máxima entre los nodos y los microcontroladores es de aproximadamente 2 metros.
+---
+
+## Paso 4 — Definición de Requisitos de la Capa de Intercambio
+
+### Tiempo de respuesta
+
+El tiempo de respuesta permitido para el envío o recepción de paquetes desde los nodos hacia el dispositivo es de aproximadamente **1 segundo**. Esto se debe a que el dispositivo se encuentra monitoreando constantemente los signos vitales del residente, por lo que es necesario que la información se actualice en tiempo real para poder detectar cualquier cambio en el estado de salud del residente. Un tiempo de respuesta de 1 segundo garantiza que los datos recopilados por los sensores se transmitan de manera eficiente y oportuna, permitiendo una respuesta rápida ante cualquier cambio significativo en la condición del residente.
+
+### Tipología de comunicación
+
+La tipología de comunicación será **inalámbrica**, utilizando tecnologías como Wi-Fi o Bluetooth para transmitir los datos recopilados por los sensores al gateway central. Esto permite una comunicación eficiente y sin restricciones de cables, facilitando la instalación y el uso del dispositivo en entornos de cuidado de adultos mayores.
+
+### Topología de red
+
+La topología de red será tipo **estrella**, donde el dispositivo se conectará directamente a un edge API que almacenará en local para después enviar la información a cloud. Esto permite una comunicación eficiente y directa entre el dispositivo y el edge, facilitando la gestión de los datos recopilados.
+
+### Distancias máximas de comunicación
+
+| Tramo                         | Distancia máxima |
+|-------------------------------|------------------|
+| Nodos ↔ edge API (interiores) | ~30 metros       |
+| Nodos ↔ microcontroladores    | ~2 metros        |
+| Microcontroladores ↔ edge API | ~30 metros       |
+
+La distancia máxima de comunicación entre los nodos y el edge API es de aproximadamente 30 metros en interiores, lo que es adecuado para entornos de cuidado de adultos mayores donde el dispositivo se utilizará principalmente en habitaciones o áreas cercanas al gateway central. Esta distancia permite una comunicación confiable y estable entre el dispositivo y el edge.
+
 La distancia máxima entre los microcontroladores y el edge API es de aproximadamente 30 metros, lo que permite una comunicación eficiente y estable entre el dispositivo y el gateway central en entornos de cuidado de adultos mayores. Esta distancia es adecuada para garantizar que los datos recopilados por los sensores se transmitan de manera oportuna y confiable al edge API para su procesamiento y análisis.
-El consumo energético de la capa de intercambio es relativamente bajo, ya que se trata principalmente de transmitir datos a través de una conexión inalámbrica. El dispositivo utilizará tecnologías de comunicación eficientes en términos de energía, como Wi-Fi o Bluetooth Low Energy (BLE), para minimizar el consumo energético durante la transmisión de datos. Además, el dispositivo estará diseñado para optimizar el uso de energía, utilizando modos de bajo consumo cuando no esté transmitiendo datos y activándose solo cuando sea necesario para enviar información relevante sobre el estado de salud del residente.
-Los datos van a ser encriptados utilizando protocolos de seguridad estándar como TLS para garantizar la confidencialidad e integridad de la información transmitida entre el dispositivo y el edge API. Esto es especialmente importante en entornos de cuidado de adultos mayores, donde la privacidad y seguridad de los datos de salud es una prioridad. La encriptación de los datos garantiza que solo las partes autorizadas puedan acceder a la información recopilada por los sensores, protegiendo la privacidad.
 
-**5**Definición de requisitos de la capa de información: 
-Nuestros usuarios finales y servicios requeridos son:
+### Consumo energético de la capa de intercambio
 
-| Usuario              | Servicio necesario                                                                               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+El consumo energético de la capa de intercambio es relativamente bajo, ya que se trata principalmente de transmitir datos a través de una conexión inalámbrica. El dispositivo utilizará tecnologías de comunicación eficientes en términos de energía, como Wi-Fi o **Bluetooth Low Energy (BLE)**, para minimizar el consumo energético durante la transmisión de datos. Además, el dispositivo estará diseñado para optimizar el uso de energía, utilizando modos de bajo consumo cuando no esté transmitiendo datos y activándose solo cuando sea necesario para enviar información relevante sobre el estado de salud del residente.
+
+### Encriptación de datos
+
+Los datos van a ser encriptados utilizando protocolos de seguridad estándar como **TLS** para garantizar la confidencialidad e integridad de la información transmitida entre el dispositivo y el edge API. Esto es especialmente importante en entornos de cuidado de adultos mayores, donde la privacidad y seguridad de los datos de salud es una prioridad. La encriptación de los datos garantiza que solo las partes autorizadas puedan acceder a la información recopilada por los sensores, protegiendo la privacidad.
+
+---
+
+## Paso 5 — Definición de Requisitos de la Capa de Información
+
+### Usuarios finales y servicios requeridos
+
+| Usuario              | Servicio necesario                                                                               |
 |----------------------|--------------------------------------------------------------------------------------------------|
-| Personal asistencial | Monitoreo en tiempo real, alertas de signos vitales fuera de rango                               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-| Doctor               | configurar umbral de signos vitales monitorial en tiempo real los signos vitales                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-| Familiar responsable | Notificaciones de alertas critícas y monitorear en tiempo real los signos vitales de su familiar |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-| Administrador        | Gestión de dispositivos , usuario                                                                |  
+| Personal asistencial | Monitoreo en tiempo real · Alertas de signos vitales fuera de rango                              |
+| Doctor               | Configurar umbral de signos vitales · Monitoreo en tiempo real de los signos vitales             |
+| Familiar responsable | Notificaciones de alertas críticas · Monitorear en tiempo real los signos vitales de su familiar |
+| Administrador        | Gestión de dispositivos y usuarios                                                               |
 
-**Información procesada por servicio**
-Monitoreo en tiempo real: frecuencia cardíaca (bpm), SpO₂ (%), temperatura corporal (°C), nivel de batería del dispositivo, timestamp de cada medición.
-Sistema de alertas: comparación de valores medidos contra umbrales configurables (ej. FC < 50 bpm o > 120 bpm, SpO₂ < 90%, temperatura > 38.5°C). Generación de alerta con nivel de severidad (leve, moderado, crítico).
-Historial y tendencias: almacenamiento de series temporales de signos vitales, generación de gráficas de evolución por período (hora, día, semana).
-**Distribución del procesamiento**
+### Información procesada por servicio
 
-| Tema                                                     | ubicación |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+- **Monitoreo en tiempo real:** frecuencia cardíaca (bpm), SpO₂ (%), temperatura corporal (°C), nivel de batería del dispositivo, timestamp de cada medición.
+- **Sistema de alertas:** comparación de valores medidos contra umbrales configurables (ej. FC < 50 bpm o > 120 bpm, SpO₂ < 90%, temperatura > 38.5 °C). Generación de alerta con nivel de severidad (leve, moderado, crítico).
+- **Historial y tendencias:** almacenamiento de series temporales de signos vitales, generación de gráficas de evolución por período (hora, día, semana).
+
+### Distribución del procesamiento
+
+| Función                                                  | Ubicación |
 |----------------------------------------------------------|-----------|
-| Visualización local en pantalla AMOLED                   | Nodo      | 
+| Visualización local en pantalla AMOLED                   | Nodo      |
 | Detección preliminar de anomalías                        | Edge API  |
-| Almacenamiento de datos temporal antes de envíar a cloud | Edge API  |
+| Almacenamiento de datos temporal antes de enviar a cloud | Edge API  |
 | Generación de alertas y notificaciones push              | Cloud     |
-| Almacenamiento persistente del historial clínico         | cloud     |
+| Almacenamiento persistente del historial clínico         | Cloud     |
 
-**TIepo de procesamiento estimados**
+### Tiempos de procesamiento estimados
 
-Transmisión nodo → edge (BLE): ~200 ms
-Procesamiento en edge (validación + reenvío): ~150 ms
-Transmisión edge → cloud (Wi-Fi/LTE): ~400 ms
-Procesamiento en cloud (detección, almacenamiento): ~550 ms
+| Etapa                                               | Tiempo estimado |
+|-----------------------------------------------------|-----------------|
+| Transmisión nodo → edge (BLE)                       | ~200 ms         |
+| Procesamiento en edge (validación + reenvío)        | ~150 ms         |
+| Transmisión edge → cloud (Wi-Fi/LTE)                | ~400 ms         |
+| Procesamiento en cloud (detección + almacenamiento) | ~550 ms         |
 
-**6 Definición de requisitos de la capa de servicios de aplicación**
+---
 
-**Interfaz por tipo de usuario**
+## Paso 6 — Definición de Requisitos de la Capa de Servicios de Aplicación
 
- | Interfaz | usuario                            |
- |----------|------------------------------------|
- | web      | doctor y administrador             |
- | móvil    | personal asistencial  y familiares |
- | AMOLED   | personal asistencial               |
+### Interfaz por tipo de usuario
 
-**Peso computacional**
+| Interfaz | Usuario                           |
+|----------|-----------------------------------|
+| Web      | Doctor · Administrador            |
+| Móvil    | Personal asistencial · Familiares |
+| AMOLED   | Personal asistencial              |
 
-| Interfaz | peso computacional                                                                  |
-|----------|-------------------------------------------------------------------------------------|
-| web      | bajo medio  muestra datos paginados desde api rest                                  |
-| móvil    | bajo consume endpoints rest ya procesados por cloud                                 |
-| AMOLED   | muy bajo debido a que solo renderiza texto  e iconos simples en el microcontrolador |
+### Peso computacional
 
-**Plataformas de implementación**
+| Interfaz | Peso computacional |
+|---|---|
+| Web | Bajo–medio · Muestra datos paginados desde API REST |
+| Móvil | Bajo · Consume endpoints REST ya procesados por cloud |
+| AMOLED | Muy bajo · Solo renderiza texto e íconos simples en el microcontrolador |
 
-| Plataforma | implementación                                                                          |
- |------------|-----------------------------------------------------------------------------------------|
-| web        | navegadores modernos y de tecnología typescript+ angular con backend java + spring boot |
-| móvil      | FLutter base de datos local y backend java + spring boot                                |
-| AMOLED     | renderizado directo sobre driver de pantalla AMOLED desde el microcontrolador           |
+### Plataformas de implementación
 
-**7 Selección de las arquitecturas de las capas de intercambio de datos e integración de la información**
+| Plataforma | Implementación |
+|---|---|
+| Web | Navegadores modernos · TypeScript + Angular · Backend Java + Spring Boot |
+| Móvil | Flutter · Base de datos local · Backend Java + Spring Boot |
+| AMOLED | Renderizado directo sobre driver de pantalla AMOLED desde el microcontrolador |
 
-| Criterio                      | BLE 5.0    | Wi-Fi      |
-|-------------------------------|------------|------------|
-| Consumo en TX                 | ~7 mA      | ~80–150 mA |
-| Alcance indoor                | ~40 m      | ~50 m      |
-| Latencia típica               | 100–300 ms | 50–200 ms  |
-| Complejidad de implementación | Baja       | Media-Alta |
+---
 
+## Paso 7 — Selección de las Arquitecturas de las Capas de Intercambio de Datos e Integración de la Información
 
-MQTT sobre TLS como protocolo de mensajería edge → cloud:
+### Comparativa de tecnologías inalámbricas
 
-Protocolo liviano, diseñado para IoT con ancho de banda limitado.
-Soporta QoS nivel 1 (entrega garantizada al menos una vez).
-Latencia típica: 100–400 ms sobre conexión Wi-Fi estable.
-Alternativa evaluada y descartada: HTTP/REST (mayor overhead, no óptimo para streams continuos).
+| Criterio | BLE 5.0 | Wi-Fi |
+|---|---|---|
+| Consumo en TX | ~7 mA | ~80–150 mA |
+| Alcance indoor | ~40 m | ~50 m |
+| Latencia típica | 100–300 ms | 50–200 ms |
+| Complejidad de implementación | Baja | Media–Alta |
+
+### Protocolo de mensajería edge → cloud: MQTT sobre TLS
+
+- Protocolo liviano, diseñado para IoT con ancho de banda limitado.
+- Soporta QoS nivel 1 (entrega garantizada al menos una vez).
+- Latencia típica: 100–400 ms sobre conexión Wi-Fi estable.
+- Alternativa evaluada y descartada: **HTTP/REST** (mayor overhead, no óptimo para streams continuos).
+
+### Enfoque híbrido de procesamiento
 
 Para el procesamiento de la información se usará un enfoque híbrido:
 
-Edge API: servidor ligero (Raspberry Pi o gateway equivalente) que ejecuta un broker MQTT local, valida rangos de datos y almacena en buffer ante caídas de internet.
-Cloud: plataforma como AWS IoT Core o similar, con base de datos de series temporales (InfluxDB o TimestreamDB) y motor de reglas para generación de alertas.
-Time-delay total verificado: 100 + 250 + 150 + 450 + 500 ms ≈ 1.45 s
+- **Edge API:** servidor ligero (Raspberry Pi o gateway equivalente) que ejecuta un broker MQTT local, valida rangos de datos y almacena en buffer ante caídas de internet.
+- **Cloud:** plataforma como AWS IoT Core o similar, con base de datos de series temporales (InfluxDB o TimestreamDB) y motor de reglas para generación de alertas.
 
-**8 Selección de sensores y actuadores**
+> **Time-delay total verificado:** 100 + 250 + 150 + 450 + 500 ms ≈ **1.45 s**
 
-### Sensores seleccionados 
-| Sensor                                                         | Medición                                                                                         | Precisión                                                     | Consumo en operación | Interfaz FC                                                | Voltaje de operación                                       |
-|----------------------------------------------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------------|----------------------|------------------------------------------------------------|------------------------------------------------------------|
-| Sensor de ritmo cardíaco y SpO₂: MAX30102                      | frecuencia cardíaca y saturación de oxígeno en un solo módulo                                    | Precisión FC: ±2 bpm y Precisión SpO₂: ±2%                    | ~0.6 mA              | Compatible con la mayoría de microcontroladores embebidos. | 1.8 V (lógica) / 3.3 V (LEDs) — compatible con LiPo 3.7 V. |                      
-| Sensor de temperatura infrarrojo MLX90614ESF-DCI (GY-906-DCI)  | Temperatura corporal sin contacto mediante radiación infrarroja, medición puntual con FOV de 5°  | ±0.5°C en rango general / ±0.2°C en rango corporal (36–39°C)  | ~1.5 mA              | Comparte bus con MAX30102 sin conflicto de direcciones     | 3.3 V — compatible con LiPo 3.7 V mediante regulador       |
+---
+
+## Paso 8 — Selección de Sensores y Actuadores
+
+### Sensores seleccionados
+
+| Sensor                       | Medición                                                                                         | Precisión                                                       | Consumo en operación | Interfaz                                                  | Voltaje de operación                                      |
+|------------------------------|--------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|----------------------|-----------------------------------------------------------|-----------------------------------------------------------|
+| MAX30102                     | Frecuencia cardíaca y saturación de oxígeno en un solo módulo                                    | FC: ±2 bpm · SpO₂: ±2%                                          | ~0.6 mA              | Compatible con la mayoría de microcontroladores embebidos | 1.8 V (lógica) / 3.3 V (LEDs) — compatible con LiPo 3.7 V |
+| MLX90614ESF-DCI (GY-906-DCI) | Temperatura corporal sin contacto mediante radiación infrarroja · medición puntual con FOV de 5° | ±0.5 °C en rango general / ±0.2 °C en rango corporal (36–39 °C) | ~1.5 mA              | Comparte bus con MAX30102 sin conflicto de direcciones    | 3.3 V — compatible con LiPo 3.7 V mediante regulador      |
 
 ### Actuadores seleccionados
-| Actuador                                  | Resolución                      | Consumo |                                                                                   
-|-------------------------------------------|---------------------------------|---------|
-| Pantalla AMOLED 1.47" — ST7789 controller | 172×320 píxeles, color 16-bit.  | ~0.5 mA | 
-| Botón táctil de membrana                  |                                 | 0.1 mA  |                       
 
+| Actuador                                  | Resolución                     | Consumo |
+|-------------------------------------------|--------------------------------|---------|
+| Pantalla AMOLED 1.47" — ST7789 controller | 172×320 píxeles · color 16-bit | ~0.5 mA |
+| Botón táctil de membrana                  | —                              | ~0.1 mA |
 
-**9 Selección del microcontrolador y transceivers de radio**
+---
+
+## Paso 9 — Selección del Microcontrolador y Transceivers de Radio
+
+### ESP32-C3 — Especificaciones
 
 | Característica                 | Valor                                               |
 |--------------------------------|-----------------------------------------------------|
-| Arquitectura                   | RISC-V 32-bit, 160 MHz                              |
+| Arquitectura                   | RISC-V 32-bit · 160 MHz                             |
 | RAM / Flash                    | 400 KB / 4 MB                                       |
 | BLE                            | 5.0 integrado                                       |
 | Wi-Fi                          | 802.11 b/g/n integrado (usado en edge, no en nodo)  |
-| Interfaces                     | SPI, I²C, UART, GPIO                                |
+| Interfaces                     | SPI · I²C · UART · GPIO                             |
 | Consumo en operación           | ~22 mA                                              |
 | Consumo en modo sleep profundo | ~5 µA                                               |
 | Voltaje de operación           | 3.0–3.6 V — compatible con LiPo 3.7 V con regulador |
 | Factor de forma                | Ultra compacto — apto para wearables                |
 
-### Justificación:
+### Justificación
 
 El ESP32-C3 integra BLE 5.0, tiene bajo consumo, periféricos I²C y SPI necesarios para conectar el MAX30102, el MLX90614 y la pantalla AMOLED, y su tamaño compacto lo hace adecuado para un dispositivo wearable. No requiere transceiver de radio externo, lo que simplifica el diseño.
 
-Ahorro energético:
-El microcontrolador activará los sensores cada 5 segundos (ciclo de muestreo).
-Entre ciclos entra en Light Sleep (~0.8 mA), reduciendo el consumo promedio significativamente.
-El módulo BLE opera en modo advertise/connect solo durante la transmisión activa. 
+### Ahorro energético
 
-**10 Definición del procesamiento de datos en cada nodo y en la nube**
+- El microcontrolador activará los sensores cada **5 segundos** (ciclo de muestreo).
+- Entre ciclos entra en **Light Sleep (~0.8 mA)**, reduciendo el consumo promedio significativamente.
+- El módulo BLE opera en modo **advertise/connect** solo durante la transmisión activa.
 
-En el nodo (ESP32-C3):
+---
 
-Lectura de sensores (cada 5 s): solicita medición a MAX30102 vía I²C y a MLX90614 vía I²C.
-Promediado móvil: promedia las últimas 4 lecturas de cada sensor para suavizar ruido (ventana deslizante simple).
-Validación de rango físico: descarta lecturas fuera de rangos fisiológicos posibles (FC: 20–250 bpm, SpO₂: 50–100%, Temp: 30–45°C).
-Empaquetado de datos: estructura JSON ligera con timestamp
-Transmisión BLE: envía el paquete al edge API mediante perfil BLE GATT personalizado.
-Renderizado en pantalla: actualiza la pantalla AMOLED con los valores actuales y estado del sistema.
+## Paso 10 — Definición del Procesamiento de Datos en Cada Nodo y en la Nube
 
-En el Edge API 
+### En el nodo (ESP32-C3)
 
-Validación de integridad: verifica que el JSON esté completo y los campos tengan el tipo correcto.
-Detección de alertas preliminares: compara valores contra umbrales predefinidos y genera flag de alerta si corresponde.
-Buffer de persistencia local: almacena en SQLSERVER los últimos 500 registros por si hay pérdida de conectividad cloud.
+1. **Lectura de sensores (cada 5 s):** solicita medición a MAX30102 vía I²C y a MLX90614 vía I²C.
+2. **Promediado móvil:** promedia las últimas 4 lecturas de cada sensor para suavizar ruido (ventana deslizante simple).
+3. **Validación de rango físico:** descarta lecturas fuera de rangos fisiológicos posibles (FC: 20–250 bpm · SpO₂: 50–100% · Temp: 30–45 °C).
+4. **Empaquetado de datos:** estructura JSON ligera con timestamp.
+5. **Transmisión BLE:** envía el paquete al edge API mediante perfil BLE GATT personalizado.
+6. **Renderizado en pantalla:** actualiza la pantalla AMOLED con los valores actuales y estado del sistema.
 
+### En el Edge API
 
-En la nube
+1. **Validación de integridad:** verifica que el JSON esté completo y los campos tengan el tipo correcto.
+2. **Detección de alertas preliminares:** compara valores contra umbrales predefinidos y genera flag de alerta si corresponde.
+3. **Buffer de persistencia local:** almacena en SQL Server los últimos 500 registros por si hay pérdida de conectividad cloud.
 
-Ingesta de mensajes MQTT: AWS IoT Core recibe y enruta los mensajes.
-Almacenamiento en serie temporal: InfluxDB o AWS Timestream almacena cada punto de dato con timestamp.
-Motor de reglas y alertas: evalúa condiciones configuradas por doctor o administrador (umbrales por paciente) y genera alertas.
-Cálculo de tendencias: promedio móvil de largo plazo (hora, día), detección de degradación progresiva de signos.
-API REST: expone endpoints seguros (JWT + HTTPS) para las aplicaciones web y móvil.
+### En la nube
 
+1. **Ingesta de mensajes MQTT:** AWS IoT Core recibe y enruta los mensajes.
+2. **Almacenamiento en serie temporal:** InfluxDB o AWS Timestream almacena cada punto de dato con timestamp.
+3. **Motor de reglas y alertas:** evalúa condiciones configuradas por doctor o administrador (umbrales por paciente) y genera alertas.
+4. **Cálculo de tendencias:** promedio móvil de largo plazo (hora, día), detección de degradación progresiva de signos.
+5. **API REST:** expone endpoints seguros (JWT + HTTPS) para las aplicaciones web y móvil.
 
-**11 Análisis del tiempo de procesamiento**
+---
 
-| Algoritmo                         | Complejidad | Tiempo estimado | 
+## Paso 11 — Análisis del Tiempo de Procesamiento
+
+| Algoritmo                         | Complejidad | Tiempo estimado |
 |-----------------------------------|-------------|-----------------|
-| Lectura de sensores I²C           | 0(1)        | ~50 ms          |
-| Renderizado pantalla AMOLED       | O           | ~40 ms          |
+| Lectura de sensores I²C           | O(1)        | ~50 ms          |
+| Renderizado pantalla AMOLED       | O(n)        | ~40 ms          |
 | Detección de alertas preliminares | O(1)        | ~5 ms           |
-| Entrega notificación push         | -           | ~200–300 ms     |
-| almacenamiento cloud              | 0(1)        | ~100 ms         |
+| Entrega notificación push         | —           | ~200–300 ms     |
+| Almacenamiento cloud              | O(1)        | ~100 ms         |
 | Empaquetado JSON                  | O(1)        | ~5 ms           |
-| alertas                           | O           | ~200 ms         |
+| Alertas                           | O(n)        | ~200 ms         |
 
+---
 
-Paso 12 — Definición de la interfaz gráfica de usuario
+## Paso 12 — Definición de la Interfaz Gráfica de Usuario
 
-Pantalla AMOLED del dispositivo wearable
+### Pantalla AMOLED del dispositivo wearable
+
 Diseño minimalista de alta legibilidad orientado a lectura rápida:
 
-Fondo negro (aprovecha AMOLED para ahorro energético).
-Tipografía grande y clara para cada signo vital.
-Íconos de color: verde = normal, amarillo = precaución, rojo = alerta.
-Indicador de batería y estado de conexión BLE en esquina superior.
+- Fondo negro (aprovecha AMOLED para ahorro energético).
+- Tipografía grande y clara para cada signo vital.
+- Íconos de color: verde = normal · amarillo = precaución · rojo = alerta.
+- Indicador de batería y estado de conexión BLE en esquina superior.
 
-Aplicación web — Dashboard principal (personal asistencial / médicos / administrador)
+### Aplicación web — Dashboard principal
 
-Paleta de colores: fondo claro/oscuro (modo adaptativo), verde para normal, amarillo para precaución, rojo para alerta crítica.
-Gráficas: líneas temporales interactivas (zoom, hover con valor exacto) con librería Chart.js o Recharts.
-Navegación: lista de residentes en sidebar izquierdo, vista detallada por residente seleccionado.
-Responsivo: adaptado para tablets (uso en campo por enfermería) y escritorio (médicos y administradores).
+_Personal asistencial · Médicos · Administrador_
 
-Aplicación móvil — (Vista del familiar / personal asistencial / administrador)
+- **Paleta de colores:** fondo claro/oscuro (modo adaptativo), verde para normal, amarillo para precaución, rojo para alerta crítica.
+- **Gráficas:** líneas temporales interactivas (zoom, hover con valor exacto) con librería Chart.js o Recharts.
+- **Navegación:** lista de residentes en sidebar izquierdo, vista detallada por residente seleccionado.
+- **Responsivo:** adaptado para tablets (uso en campo por enfermería) y escritorio (médicos y administradores).
 
-Diseño de tarjeta única, información esencial visible sin scroll.
-Notificaciones push con vibración al generarse una alerta crítica.
-Colores semáforo coherentes con la web app para consistencia visual.
-Acceso con autenticación segura (JWT + biometría del dispositivo).
+### Aplicación móvil
+
+_Familiar · Personal asistencial · Administrador_
+
+- Diseño de tarjeta única, información esencial visible sin scroll.
+- Notificaciones push con vibración al generarse una alerta crítica.
+- Colores semáforo coherentes con la web app para consistencia visual.
+- Acceso con autenticación segura (JWT + biometría del dispositivo).
