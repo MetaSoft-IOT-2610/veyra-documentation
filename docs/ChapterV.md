@@ -724,15 +724,15 @@ A continuación, presentamos los diagramas de flujo de nuestra plataforma web, d
 - Atender una alerta de emergencia del sistema
 - Programar una nueva actividad recreativa o terapéutica
 
-| User Goal                                                                                                                                                                                                                                                                                                        | WireFlow                                                                     |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| **UG01:** Registrar un nuevo residente en el sistema de la casa de reposo. Permite al personal administrativo ingresar los datos demográficos y médicos de un nuevo adulto mayor, asignándole una habitación y creando su expediente digital centralizado.                                                       | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG1-flow.png) |
-| **UG02:** Conceder y gestionar accesos a la plataforma para el personal y familiares. Facilita al administrador la creación de credenciales de inicio de sesión y la asignación de roles y permisos específicos para médicos, personal de enfermería y familiares de los residentes.                             | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG2-flow.png) |
-| **UG03:** Definir y actualizar los parámetros clínicos de alerta para cada residente. Permite al personal médico establecer los límites mínimos y máximos aceptables de signos vitales (telemetría), garantizando que el sistema genere alertas personalizadas basadas en la condición clínica de cada paciente. | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG3-flow.png) |
-| **UG04:** Agendar y gestionar las actividades recreativas y terapéuticas. Proporciona al coordinador de actividades las herramientas para programar eventos diarios, estableciendo horarios, descripciones y categorías, asegurando una rutina activa y estructurada para los residentes.                        | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG4-flow.png) |
-| **UG05:** Monitorear la ubicación en tiempo real y signos vitales mediante dispositivos IoT. Permite al personal de cuidado visualizar en un mapa interactivo la geolocalización de los residentes y consultar sus signos vitales en vivo, facilitando una respuesta rápida ante emergencias o posibles fugas.   | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG5-flow.png) |
-| **UG06:** Registrar y gestionar las habitaciones del centro. Permite al personal administrativo crear nuevos cuartos en el sistema, definiendo detalles clave para mantener un control organizado de la disponibilidad y el alojamiento de los residentes.                                                       | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG6-flow.png) |
-| **UG07:** Administrar el inventario de dispositivos IoT. Facilita al personal de TI o administradores registrar nuevos dispositivos de telemetría y geolocalización (sensores, pulseras) en el sistema para su posterior vinculación a los residentes.                                                         | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG7-flow.png) |
+| User Goal                                                                                                                                                                                                                                                                                                        | WireFlow                                                                           |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| **UG01:** Registrar un nuevo residente en el sistema de la casa de reposo. Permite al personal administrativo ingresar los datos demográficos y médicos de un nuevo adulto mayor, asignándole una habitación y creando su expediente digital centralizado.                                                       | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG1-flow.png) |
+| **UG02:** Conceder y gestionar accesos a la plataforma para el personal y familiares. Facilita al administrador la creación de credenciales de inicio de sesión y la asignación de roles y permisos específicos para médicos, personal de enfermería y familiares de los residentes.                             | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG2-flow.png)    |
+| **UG03:** Definir y actualizar los parámetros clínicos de alerta para cada residente. Permite al personal médico establecer los límites mínimos y máximos aceptables de signos vitales (telemetría), garantizando que el sistema genere alertas personalizadas basadas en la condición clínica de cada paciente. | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG3-flow.png)    |
+| **UG04:** Agendar y gestionar las actividades recreativas y terapéuticas. Proporciona al coordinador de actividades las herramientas para programar eventos diarios, estableciendo horarios, descripciones y categorías, asegurando una rutina activa y estructurada para los residentes.                        | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG4-flow.png)    |
+| **UG05:** Monitorear la ubicación en tiempo real y signos vitales mediante dispositivos IoT. Permite al personal de cuidado visualizar en un mapa interactivo la geolocalización de los residentes y consultar sus signos vitales en vivo, facilitando una respuesta rápida ante emergencias o posibles fugas.   | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG5-flow.png)    |
+| **UG06:** Registrar y gestionar las habitaciones del centro. Permite al personal administrativo crear nuevos cuartos en el sistema, definiendo detalles clave para mantener un control organizado de la disponibilidad y el alojamiento de los residentes.                                                       | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG6-flow.png)    |
+| **UG07:** Administrar el inventario de dispositivos IoT. Facilita al personal de TI o administradores registrar nuevos dispositivos de telemetría y geolocalización (sensores, pulseras) en el sistema para su posterior vinculación a los residentes.                                                         | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG7-flow.png)    |
 
 ### 5.4.2. Applications Mock-ups
 **WEB APPLICATION MOCK-UPS**
@@ -750,6 +750,33 @@ En la aplicación móvil, el familiar tiene una vista clara y reconfortante del 
   <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/family-dashboard.png" alt="Mockup" width="200px" height="auto"/>
 
 ### 5.4.3. Applications User Flow Diagrams
+
+### 5.4.4. Applications User Flow Diagrams
+
+En esta sección presentamos los User Flows derivados de nuestros Wireflows, utilizando los Mock-ups de alta fidelidad. Cada flujo detalla la ruta esperada para completar el objetivo con éxito (Happy Path) y las rutas alternativas frente a posibles errores del usuario o del sistema (Unhappy Paths), aplicando principios de prevención de errores.
+
+#### User Flow 1: Registro y Vinculación de un Familiar (Relative)
+
+* **User Persona:** Administrador del Sistema / Staff de Recepción.
+* **User Goal:** Registrar el perfil de un familiar, ingresar sus datos de contacto y vincularlo obligatoriamente a un residente específico para generarle su acceso seguro al portal de monitoreo.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Relatives** y hace clic en el botón primario `+ Add New`.
+2. El sistema muestra el formulario *Register Relative*. El usuario ingresa el nombre y correo personal válido.
+3. En la sección *Resident Association*, selecciona exitosamente al residente correspondiente de la lista desplegable.
+4. Al confirmar, el sistema envía el correo de invitación (*Secure Self-Setup*) y redirige a la vista principal.
+5. La pantalla se actualiza mostrando la nueva tarjeta (Card) del familiar registrado.
+
+![Happy Path - Register Relative](../assets/img/chapter-V/uf-relative-happy-path.png)
+
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Omisión de Vinculación de Residente (Error de Lógica de Negocio)**
+* **Condición:** El usuario llena los datos personales, pero olvida seleccionar a un residente en la sección *Resident Association*.
+* **Flujo de respuesta:** Al intentar guardar, el sistema previene el envío de datos incompletos (Validación Front-end). El flujo se detiene en la misma pantalla, resaltando el campo de vinculación en rojo con el mensaje de error: *"Es obligatorio vincular al familiar con un residente para restringir el acceso a los datos"*. El usuario debe corregirlo para continuar.
+
+![Unhappy Path - Error States](../assets/img/chapter-V/uf-relative-unhappy-path.png)
 
 ## 5.5. Applications Prototyping
 
