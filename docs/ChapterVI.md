@@ -837,6 +837,273 @@ Scenario: No alert is triggered within normal range
 
 ### 6.1.4. Software Deployment Configuration
 
+En esta sección se especifica la configuración de despliegue de cada uno de los productos digitales que componen la solución VEYRA. Se describen los entornos de infraestructura, las plataformas utilizadas y los pasos necesarios para publicar satisfactoriamente cada artefacto a partir de los repositorios de código fuente.
+
+#### Deployment Diagram — C4 Model
+
+El siguiente diagrama de despliegue (nivel 4 del modelo C4) muestra la infraestructura de producción de la plataforma VEYRA, incluyendo los entornos de nube, los dispositivos del entorno del hogar de reposo y los canales de comunicación entre componentes.
+
+![Software Architecture Deployment Diagram](/assets/img/chapter-VI/Software-Architecture-Deployment-Diagrams.png)
+
+La infraestructura de producción se organiza en cuatro entornos principales:
+
+| Entorno | Plataforma | Artefactos desplegados |
+|---|---|---|
+| **Cloudflare** | Cloudflare Pages | Landing Page, Web Application (Angular SPA) |
+| **Azure App Service Plan** | Azure App Service Instance | Veyra API Application (Spring Boot) |
+| **Azure Database Services** | Azure Database for MySQL · Azure Cosmos DB | MySQL Database · MongoDB Database |
+| **Mobile Device** | Firebase App Distribution | Veyra Mobile App (Flutter) |
+| **Nursing Home Environment** | Edge Server on-premise | Veyra Edge Application · Embedded Apps IoT |
+
+---
+
+#### 6.1.4.1. Landing Page — Cloudflare Pages
+
+La Landing Page es un sitio estático desarrollado con HTML, CSS y JavaScript, desplegado en **Cloudflare Pages** directamente desde el repositorio de GitHub.
+
+**Repositorio:** https://github.com/MetaSoft-IOT-2610/veyra-landing-page
+
+**Pasos de despliegue:**
+
+1. Ingresar al dashboard de Cloudflare en https://dash.cloudflare.com a la seccion de DESARROLLO y selecciona *computo/workers & pages*.
+
+![cloudflare-pages-1.png](/assets/img/chapter-VI/cloudflare-pages-1.png)
+
+2. Selecciona *Crear un proyecto / aplicacion* y luego *Conectar a Git*.
+
+Slecciona ¿Busca implementar Pages? Comenzar.
+
+![cloudflare-pages-2.png](/assets/img/chapter-VI/cloudflare-pages-2.png)
+
+3. Autorizar el acceso a la organización `MetaSoft-IOT-2610` en GitHub y seleccionar el repositorio `veyra-landing-page`.
+
+![cloudflare-pages-3.png](/assets/img/chapter-VI/cloudflare-pages-3.png)
+
+4. Importamos repositorio de git hub para el despliegue de la landing page.
+
+![cloudflare-pages-4.png](/assets/img/chapter-VI/cloudflare-pages-4.png)
+
+5. Selccionamos el repositorio de git hub y configuramos el proyecto:
+
+![cloudflare-pages-5.png](/assets/img/chapter-VI/cloudflare-pages-5.png)
+
+6. Configuramos el proyecto con los siguientes parámetros:
+   | Campo | Valor |
+   |---|---|
+   | Project name | `veyra-landing-page` |
+   | Production branch | `main` |
+   | Build command | *(dejar vacío — sitio estático)* |
+   | Build output directory | `/` |
+   | Root directory | `/` |
+
+![cloudflare-pages-6.png](/assets/img/chapter-VI/cloudflare-pages-6.png)
+
+7. Hacer clic en **Save and Deploy**. Cloudflare Pages construirá y publicará el sitio automáticamente.
+
+![cloudflare-pages-7.png](/assets/img/chapter-VI/cloudflare-pages-7.png)
+
+1. Para redirigir todas las rutas al `index.html` (necesario para el router de Angular), crear un archivo `_redirects` en la carpeta `public/` del proyecto:
+
+   ```
+   /* /index.html 200
+   ```
+
+<!-- TODO: Imagen — Captura de la aplicación web desplegada correctamente en el navegador, mostrando la URL de Cloudflare Pages y la vista principal de la app -->
+
+**Despliegues automáticos:** Cada push a `main` ejecuta el pipeline de build de Angular y publica el resultado automáticamente. Los pull requests generan previews independientes.
+
+---
+
+#### 6.1.4.3. Backend API (Spring Boot) — Azure App Service
+
+Los servicios backend de VEYRA están desarrollados con **Java / Spring Boot** y desplegados en **Azure App Service** bajo un plan de servicio compartido.
+
+**Repositorio:** https://github.com/MetaSoft-IOT-2610/veyra-backend
+
+**Infraestructura:**
+
+| Recurso Azure | Tipo | Propósito |
+|---|---|---|
+| App Service Plan | B2 (Linux) | Plan de compute para la instancia |
+| App Service Instance | Java 21 on Linux | Ejecuta el JAR de la aplicación |
+| Azure Database for MySQL Flexible Server | MySQL 8.0 | Almacena datos relacionales (residentes, personal, tratamientos) |
+| Azure Cosmos DB (MongoDB API) | MongoDB | Almacena datos de series temporales IoT (signos vitales, alertas) |
+
+**Pasos de despliegue:**
+
+1. Compilar el artefacto desde la raíz del repositorio:
+
+   ```bash
+   ./mvnw clean package -DskipTests
+   ```
+
+   El JAR resultante se genera en `target/veyra-backend-*.jar`.
+
+<!-- TODO: Imagen — Captura del terminal mostrando la salida de `mvnw clean package` con el mensaje "BUILD SUCCESS" y la ruta del JAR generado -->
+
+2. En el portal de Azure (https://portal.azure.com), navegar al recurso **App Service → veyra-api**.
+
+<!-- TODO: Imagen — Captura del panel de Overview del App Service en el portal de Azure mostrando el nombre del servicio, el plan, el estado "Running" y la URL pública -->
+
+3. En **Deployment Center**, conectar el repositorio de GitHub y configurar el pipeline de GitHub Actions:
+
+   | Campo | Valor |
+   |---|---|
+   | Source | GitHub |
+   | Organization | MetaSoft-IOT-2610 |
+   | Repository | veyra-backend |
+   | Branch | `main` |
+   | Runtime stack | Java 21 |
+   | Startup command | `java -jar /home/site/wwwroot/veyra-backend.jar` |
+
+<!-- TODO: Imagen — Captura del panel "Deployment Center" del App Service en Azure con la configuración de GitHub Actions completada -->
+
+4. Configurar las variables de entorno en **Configuration → Application settings**:
+
+   | Variable | Descripción |
+   |---|---|
+   | `SPRING_DATASOURCE_URL` | JDBC URL de Azure MySQL Flexible Server |
+   | `SPRING_DATASOURCE_USERNAME` | Usuario de la base de datos |
+   | `SPRING_DATASOURCE_PASSWORD` | Contraseña (almacenar en Azure Key Vault) |
+   | `SPRING_DATA_MONGODB_URI` | Connection string de Azure Cosmos DB |
+   | `JWT_SECRET` | Clave secreta para firma de tokens JWT |
+   | `CORS_ALLOWED_ORIGINS` | Orígenes permitidos (dominio de Cloudflare Pages) |
+
+<!-- TODO: Imagen — Captura del panel "Application settings" del App Service mostrando las variables de entorno configuradas (con los valores sensibles ocultos) -->
+
+5. Guardar la configuración. Azure App Service reiniciará la instancia automáticamente.
+
+6. Verificar el estado del servicio en **App Service → Overview → URL** y confirmar que el endpoint `/actuator/health` responde con `{"status":"UP"}`.
+
+<!-- TODO: Imagen — Captura del navegador o de Postman mostrando la respuesta del endpoint `/actuator/health` con el cuerpo `{"status":"UP"}` -->
+
+**Pipeline de CI/CD:** El archivo `.github/workflows/azure-deploy.yml` en el repositorio ejecuta automáticamente el build y el despliegue en Azure App Service ante cada push a `main`.
+
+<!-- TODO: Imagen — Captura del tab "Actions" en GitHub mostrando el workflow `azure-deploy.yml` ejecutado exitosamente con todos los pasos en verde -->
+
+---
+
+#### 6.1.4.4. Mobile Application (Flutter) — Firebase App Distribution
+
+La aplicación móvil está desarrollada con **Flutter** y distribuida a través de **Firebase App Distribution** para pruebas internas y usuarios beta, previamente a su publicación en las tiendas.
+
+**Repositorio:** https://github.com/MetaSoft-IOT-2610/veyra-mobile
+
+**Pasos de despliegue:**
+
+1. Configurar el proyecto en Firebase Console (https://console.firebase.google.com):
+   - Crear o seleccionar el proyecto `veyra-platform`.
+   - Navegar a **App Distribution** y registrar las aplicaciones Android e iOS.
+
+<!-- TODO: Imagen — Captura de Firebase Console mostrando la sección "App Distribution" con la app de Android y/o iOS ya registrada y el listado de grupos de testers -->
+
+2. Desde la raíz del repositorio, generar el APK (Android) o el IPA (iOS):
+
+   ```bash
+   # Android
+   flutter build apk --release
+
+   # iOS (requiere macOS y certificado de distribución)
+   flutter build ipa --release
+   ```
+
+<!-- TODO: Imagen — Captura del terminal mostrando la salida exitosa de `flutter build apk --release` con la ruta del APK generado -->
+
+3. Instalar y configurar la CLI de Firebase:
+
+   ```bash
+   npm install -g firebase-tools
+   firebase login
+   ```
+
+4. Distribuir el artefacto a los testers registrados:
+
+   ```bash
+   # Android
+   firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
+     --app <FIREBASE_APP_ID_ANDROID> \
+     --groups "internal-testers" \
+     --release-notes "Sprint 1 - Core views release"
+
+   # iOS
+   firebase appdistribution:distribute build/ios/ipa/veyra.ipa \
+     --app <FIREBASE_APP_ID_IOS> \
+     --groups "internal-testers" \
+     --release-notes "Sprint 1 - Core views release"
+   ```
+
+<!-- TODO: Imagen — Captura del terminal mostrando la respuesta exitosa del comando `firebase appdistribution:distribute` con el mensaje de distribución completada -->
+
+5. Los testers recibirán un correo electrónico con el enlace de descarga e instalación.
+
+<!-- TODO: Imagen — Captura de Firebase App Distribution en la consola mostrando el release publicado con el número de versión, release notes y la lista de testers notificados -->
+
+**Variables de entorno del build:** El archivo `lib/config/env.dart` carga la URL de la API y las claves de Firebase desde el fichero `.env` (no versionado). En el pipeline de CI se inyectan como secrets del repositorio.
+
+---
+
+#### 6.1.4.5. Aplicaciones Embebidas e IoT — Edge Server (Nursing Home)
+
+Los dispositivos IoT del entorno del hogar de reposo ejecutan dos aplicaciones embebidas desarrolladas en **C++**: la **Vital Signs Embedded App** (dispositivo de signos vitales) y la **GPS Embedded App** (rastreador GPS). Ambos dispositivos se comunican con el **Veyra Edge Application** alojado en un servidor Edge on-premise dentro del hogar de reposo. El Edge Application utiliza una base de datos **SQLite Edge** local para buffering offline y sincronización con la nube.
+
+**Pasos de despliegue del firmware (dispositivos IoT):**
+
+1. Desde el directorio del proyecto embebido, compilar el firmware con CMake:
+
+   ```bash
+   mkdir build && cd build
+   cmake .. -DCMAKE_BUILD_TYPE=Release
+   make -j4
+   ```
+
+<!-- TODO: Imagen — Captura del terminal mostrando la salida de compilación de CMake/make con el mensaje de build exitoso y la ruta del binario `.bin` generado -->
+
+2. Flashear el binario al microcontrolador mediante el programador correspondiente (ST-Link, J-Link o esptool según el hardware):
+
+   ```bash
+   # Ejemplo para ESP32 con esptool
+   esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash 0x0 firmware.bin
+   ```
+
+<!-- TODO: Imagen — Captura del terminal durante el proceso de flash mostrando el progreso de escritura y el mensaje "Hash of data verified" o equivalente que confirma el éxito -->
+
+3. Verificar la conexión del dispositivo al Edge Server mediante los logs de la consola serie.
+
+<!-- TODO: Imagen — Captura del monitor serie (PuTTY, minicom o Arduino IDE) mostrando los logs de arranque del firmware y la confirmación de conexión exitosa al Edge Server -->
+
+**Pasos de despliegue de la Veyra Edge Application:**
+
+1. En el servidor Edge (Linux on-premise), clonar el repositorio:
+
+   ```bash
+   git clone https://github.com/MetaSoft-IOT-2610/veyra-edge.git
+   cd veyra-edge
+   ```
+
+2. Configurar las variables de entorno en el archivo `.env`:
+
+   | Variable | Descripción |
+   |---|---|
+   | `EDGE_DEVICE_PORT` | Puerto serie o red del dispositivo IoT |
+   | `API_SYNC_URL` | URL de la API de Azure para sincronización |
+   | `SQLITE_DB_PATH` | Ruta local de la base de datos SQLite |
+
+3. Instalar dependencias e iniciar el servicio:
+
+   ```bash
+   pip install -r requirements.txt
+   python main.py
+   ```
+
+4. Registrar el proceso como servicio del sistema para reinicio automático:
+
+   ```bash
+   sudo systemctl enable veyra-edge.service
+   sudo systemctl start veyra-edge.service
+   ```
+
+<!-- TODO: Imagen — Captura del terminal mostrando la salida de `sudo systemctl status veyra-edge.service` con el estado "active (running)" confirmando que el servicio Edge está operativo -->
+
 ## 6.2. Landing Page, Services & Applications Implementation
 
 ### 6.2.1. Sprint 1
