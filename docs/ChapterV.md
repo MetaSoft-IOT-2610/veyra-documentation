@@ -879,6 +879,34 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 ![Unhappy Path - Activities Error States](../assets/img/chapter-V/uf-activities-unhappy-path.png)
 
+#### User Flow 6: Concesión y Gestión de Accesos (Staff Access)
+
+* **User Persona:** Administrador del Sistema.
+* **User Goal:** Generar credenciales de acceso a la plataforma para un empleado existente, asignándole un rol específico (ej. Enfermero, Doctor) que determinará sus permisos y restricciones dentro del sistema.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Staff** y visualiza la lista o tarjetas de los empleados registrados (ej. Juan Barrientos).
+2. Selecciona la opción para gestionar o conceder acceso al empleado correspondiente.
+3. El sistema redirige a la pantalla **Give Access to Staff Member**, mostrando un encabezado con la información contextual del empleado y su estado actual (ej. *Status: Pending Access*).
+4. El administrador configura la sección de *Account Credentials*, validando el correo institucional y asignando una contraseña temporal.
+5. En la sección *System Role & Permissions*, hace clic en el selector desplegable y asigna el rol correspondiente a las funciones del empleado (ej. selecciona *Nurse* o *Doctor*).
+6. Mantiene marcada la casilla *"Require password change on first login"* por políticas de seguridad.
+7. Al hacer clic en confirmar/guardar, el sistema procesa la solicitud, genera los permisos heredados del rol seleccionado y actualiza el estado del empleado, permitiéndole iniciar sesión en la plataforma.
+
+![Happy Path - Give Access to Staff](../assets/img/chapter-V/uf-staff-access-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Omisión de Asignación de Rol (Error de Permisos)**
+* **Condición:** El administrador completa correctamente el correo y la contraseña temporal, pero olvida seleccionar un rol (*Select Staff Role*) en el menú desplegable, dejándolo en blanco.
+* **Flujo de respuesta:** Al intentar guardar los cambios, el sistema previene la creación de un usuario sin privilegios definidos (*Validación Front-end*). El botón de guardado se bloquea temporalmente, el selector de rol se resalta en rojo y aparece un mensaje de error en línea: *"Debe seleccionar un rol para aplicar los permisos del sistema"*. El flujo no avanza hasta que se asigne un rol válido.
+
+**Escenario B: Formato de Correo Inválido o Contraseña Débil**
+* **Condición:** El usuario ingresa un correo sin el formato estándar (ej. `jbarrientos@example`) o ingresa una contraseña temporal demasiado corta (ej. `123`).
+* **Flujo de respuesta:** Al perder el foco del campo (*on blur*), el sistema valida las credenciales y detecta que no cumplen con las políticas de seguridad. Se despliega una alerta debajo del campo correspondiente indicando: *"Ingrese un correo válido"* o *"La contraseña debe tener al menos 8 caracteres"*, garantizando que las credenciales iniciales cumplan con los estándares de seguridad de Veyra antes de ser enviadas.
+
+![Unhappy Path - Staff Access Error States](../assets/img/chapter-V/uf-staff-access-unhappy-path.png)
+
 ## 5.5. Applications Prototyping
 
 ## 5.6. IoT Device Design
