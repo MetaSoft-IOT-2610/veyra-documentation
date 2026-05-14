@@ -135,7 +135,7 @@ GitFlow es un modelo alternativo para la creación de ramas en Git que se ha con
 Como se mencionó previamente, GitFlow opera con ramas o "branches". A continuación, se detallan las ramas que se utilizarán en el flujo de trabajo de nuestro proyecto.
 
 * **Main Branches:**
-    * **Main:** Esta es la rama principal desde la cual se ramifican todas las demás. Contendrá la versión más reciente junto con las versiones anteriores creadas por los desarrolladores. Aquí se mantendrá el historial oficial de las versiones publicadas.
+    * **Main/Master:** Esta es la rama principal desde la cual se ramifican todas las demás. Contendrá la versión más reciente junto con las versiones anteriores creadas por los desarrolladores. Aquí se mantendrá el historial oficial de las versiones publicadas.
     * **Develop:** Esta rama puede ser creada a partir de la rama principal (Main) y contendrá todas las características (Features) estables. A través de esta rama, el equipo podrá integrar las funcionalidades de manera efectiva.
 
 * **Support Branches**
@@ -261,10 +261,579 @@ Finalmente, como último paso, debes pegar el enlace copiado en el campo de dire
 Si has seguido correctamente todos los pasos y directrices mencionados, entonces has completado la configuración con éxito. Ahora, solo necesitas realizar un commit y los cambios que hayas efectuado se guardarán en el repositorio de GitHub, ya sea que hayas realizado modificaciones en el código, creado nuevas ramas u otras acciones.
 
 
-
-
-
 ### 6.1.3. Source Code Style Guide & Conventions
+
+En esta sección, se presentarán las pautas, convenciones, estilos y principios que se aplicarán a cada uno de los lenguajes utilizados en la creación de nuestra aplicación. La observancia de este conjunto de directrices reviste una importancia fundamental, ya que tiene el propósito de mantener la calidad estructural del software, mejorar la legibilidad del código fuente y simplificar el mantenimiento del mismo.
+
+Dado que en este proyecto se emplearán varios lenguajes — **HTML** y **CSS** para el marcado y estilo de la interfaz web, **TypeScript** para el desarrollo frontend, **Java** para los servicios backend, **C++** para el firmware de los dispositivos IoT, **Python** para el procesamiento de datos e integración de sensores, y **Flutter/Dart** para la aplicación móvil — así como **Gherkin** para los archivos `.feature` de pruebas, a continuación se detallan las reglas y convenciones que el equipo adoptará. Para todos los lenguajes se aplica **nomenclatura en inglés**.
+
+
+**Nomenclatura General**
+
+Para los nombres de variables, objetos, elementos y funciones que se utilicen en el proyecto, se emplearán términos en inglés que estén relacionados con lo que representan. Cada lenguaje impone su propia convención de capitalización, que se detalla en la sección correspondiente. Como referencia general, se siguen las recomendaciones de Google Style Guides (https://google.github.io/styleguide/).
+
+```
+// CSS class names: lowercase with hyphens
+.gallery {}
+.video-player {}
+.login-form {}
+```
+
+**Sangría**
+
+Para HTML y CSS se aplica un espaciado de **2 espacios** por nivel de indentación. Para TypeScript y Java se aplican **2 espacios** (Google Style Guide). Para Python se usan **4 espacios** (PEP 8). Para C++ se usan **2 espacios** (Google C++ Style Guide). Para Dart/Flutter se usan **2 espacios** (Effective Dart). En ningún caso se utiliza la tecla "Tabulación".
+
+``` html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Title</title>
+  </head>
+  <body>
+    <h1>Main Heading</h1>
+    <p>Paragraph content inside the document body.</p>
+  </body>
+</html>
+```
+
+**Especificaciones generales**
+
+A continuación, detallaremos las reglas específicas necesarias para comprender el código de nuestra aplicación en cada lenguaje.
+
+**HTML:**
+
+HTML, acrónimo de HyperText Markup Language en inglés, es un lenguaje de marcado que se utiliza para definir la estructura de una página web. También incluye funcionalidades que permiten controlar el comportamiento de diferentes elementos del contenido de la página, como cambiar el tamaño del texto o aplicar formato cursiva, entre otros. En nuestro proyecto, emplearemos HTML5. Las convenciones adoptadas siguen la **Google HTML/CSS Style Guide** (https://google.github.io/styleguide/htmlcssguide.html) y la **W3Schools HTML Style Guide** (https://www.w3schools.com/html/html5_syntax.asp).
+
+* **Declare Document Type**
+  La declaración del tipo de documento debe realizarse en la primera línea del código. Según las recomendaciones de la Google HTML/CSS Style Guide, se prefiere la sintaxis de HTML5 para todos los documentos HTML. Para declararla, simplemente copia lo siguiente:
+
+``` html
+<!DOCTYPE html>
+```
+
+* **Blank Lines**
+  Cada vez que comiences un nuevo bloque, lista o tabla de gran longitud, es recomendable dejar una línea en blanco después del elemento anterior para mejorar la legibilidad y la presentación del código, de acuerdo con la W3Schools HTML Style Guide:
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Animales Exóticos</title>
+</head>
+<body>
+<h1>Lemur de Madagascar</h1>
+<p>El lémur de Madagascar es un primate endémico de la isla de Madagascar en el Océano Índico.</p>
+
+<h1>Pangolín</h1>
+<p>El pangolín es un mamífero cubierto de escamas que se encuentra en regiones de África y Asia.</p>
+
+<h1>Ocelote</h1>
+<p>El ocelote es un felino salvaje que habita en América del Sur y Central, conocido por su pelaje moteado.</p>
+</body>
+</html>
+```
+
+Esta práctica de dejar una línea en blanco mejora la estructura y legibilidad del código HTML.
+
+* **Quote attribute Values**
+  Para los valores de los atributos, es común utilizar comillas dobles alrededor de ellos, aunque esta característica no sea obligatoria. Según la W3Schools HTML Style Guide, esto mejora la legibilidad del código y es una práctica común entre los desarrolladores. Aquí tienes un ejemplo:
+
+``` html
+<table class="striped">
+```
+
+Este enfoque de usar comillas dobles alrededor de los valores de los atributos es ampliamente aceptado y recomendado en la comunidad de desarrollo web.
+
+* **Never Skip the \<title> Element**
+  El elemento `<title>` permite que las páginas aparezcan en la lista de resultados al realizar búsquedas en un navegador web. Además, este elemento es responsable de proporcionar el nombre de la página cuando se agrega a marcadores o favoritos. A continuación, se muestra un ejemplo de su uso:
+
+``` html
+<title>Guía de Estilo HTML y Convenciones de Codificación</title>
+```
+
+Este elemento es esencial para mejorar la identificación y accesibilidad de una página web.
+
+* **HTML Line-Wrapping**
+  A pesar de que en un documento HTML no exista un límite estricto en la cantidad de palabras por línea, no se recomienda generar líneas de código excesivamente largas. De hecho, hacerlo dificulta la legibilidad del código. Para continuar en la siguiente línea, se deben utilizar al menos cuatro espacios para distinguir elementos secundarios. Aquí tienes un ejemplo basado en la Google HTML/CSS Style Guide:
+
+``` html
+<button mat-icon-button color='primary' class="menu-button"
+(click)="openMenu()">
+<mat-icon>menu</mat-icon>
+</button>
+```
+
+Este estilo de formateo ayuda a mantener un código más legible y facilita la identificación de los elementos y su jerarquía en la estructura del documento HTML.
+
+**CSS:**
+
+CSS, conocido por sus siglas en inglés, Cascading Style Sheets (Hojas de Estilo en Cascada), es un lenguaje que se enfoca en definir y mejorar la presentación de un documento basado en HTML. Las convenciones adoptadas siguen la **Google HTML/CSS Style Guide** (https://google.github.io/styleguide/htmlcssguide.html).
+
+* **Shorthand Properties**
+  Se recomienda utilizar abreviaturas de propiedades y declarar los campos de los elementos en la menor cantidad de líneas posible, según la Google HTML/CSS Style Guide. Esto aumenta la eficiencia del código y lo hace más legible. Además, se debe evitar agregar unidades después del valor cero. Aquí tienes un ejemplo:
+
+``` css
+border-top: 0;
+font: 100%/1.6 palatino, georgia, serif;
+padding: 0 1em 0;
+```
+
+Siguiendo estas recomendaciones, se puede lograr un código CSS más conciso y fácil de entender.
+
+* **Declaration Stops**
+  Es importante incluir un punto y coma al final de cada declaración en CSS, al igual que en la mayoría de los lenguajes de programación. Siguiendo la Google HTML/CSS Style Guide, esta práctica contribuye a mantener la coherencia en el código. A continuación, se muestra un ejemplo:
+
+``` css
+html {
+  background: #fff;
+  color: #404;
+}
+```
+
+El uso consistente de puntos y comas al final de las declaraciones CSS ayuda a prevenir errores y mejora la claridad del código.
+
+* **Property Name Stops**
+  Es necesario incluir un espacio entre los dos puntos que siguen al nombre de una propiedad y el valor correspondiente. Siempre se debe colocar un solo espacio después de los dos puntos, pero no antes. A continuación, se muestra un ejemplo siguiendo la Google HTML/CSS Style Guide:
+
+``` css
+html {
+  background: #fff;
+  color: #404;
+}
+```
+
+Mantener esta consistencia en la colocación de espacios ayuda a que el código CSS sea más legible y fácil de entender.
+
+* **Declaration Block Separation**
+  Es esencial utilizar un espacio separador después del nombre de un selector de elemento y antes de la llave que inicia un bloque de declaración CSS. Además, la llave de apertura del bloque debe estar en la misma línea que el selector. Aquí tienes un ejemplo siguiendo la Google HTML/CSS Style Guide:
+
+``` css
+html {
+  background: #fff;
+  color: #404;
+}
+```
+
+El cumplimiento de estas directrices ayuda a mantener la consistencia y la legibilidad en el código CSS.
+
+* **CSS quotation Marks**
+  No se deben utilizar comillas dobles (`"`) en el código CSS; en su lugar, se permiten y deben emplearse comillas simples (`'`) únicamente para selectores de atributos y valores de propiedades.
+  Ejemplo conforme a la Google HTML/CSS Style Guide:
+
+``` css
+html {
+  font-family: 'open sans', arial, sans-serif;
+}
+```
+
+Este ejemplo demuestra el uso de comillas simples para encerrar el valor del atributo `font-family` en CSS, lo cual es una práctica común y aceptada.
+
+**TypeScript:**
+
+TypeScript es un superconjunto tipado de JavaScript desarrollado por Microsoft. En este proyecto se utiliza para el desarrollo del frontend de la aplicación web. Las convenciones adoptadas siguen la **Google TypeScript Style Guide** (https://google.github.io/styleguide/tsguide.html).
+
+* **Naming Conventions**
+  - Variables y funciones: `lowerCamelCase`
+  - Clases e interfaces: `UpperCamelCase`
+  - Constantes y valores de enum: `CONSTANT_CASE`
+  - Archivos: `lower-kebab-case.ts`
+
+```typescript
+// Variables and functions: lowerCamelCase
+let residentAge: number = 75;
+function calculateBmi(weight: number, height: number): number {
+  return weight / (height * height);
+}
+
+// Classes: UpperCamelCase
+class VitalSignsMonitor {
+  private heartRate: number = 0;
+
+  getHeartRate(): number {
+    return this.heartRate;
+  }
+}
+
+// Constants: CONSTANT_CASE
+const MAX_ALERT_THRESHOLD = 120;
+```
+
+* **Type Annotations**
+  Siempre se debe especificar el tipo de retorno de las funciones y el tipo de las variables cuando no puede inferirse automáticamente.
+
+```typescript
+function getResidentById(id: string): Resident | undefined {
+  return residents.find(r => r.id === id);
+}
+```
+
+* **Imports**
+  Se prefieren las importaciones con nombre (`import { Something }`) sobre las importaciones por defecto. Se usan rutas absolutas con alias de módulo.
+
+```typescript
+import { ResidentService } from '@/services/resident.service';
+import { VitalSign } from '@/models/vital-sign.model';
+```
+
+* **Semicolons and Quotes**
+  Se utilizan punto y coma al final de cada instrucción y comillas simples para strings.
+
+```typescript
+const patientName: string = 'John Doe';
+const isActive: boolean = true;
+```
+
+* **Control Structures**
+  Las llaves son obligatorias en todas las estructuras de control, incluso para bloques de una sola línea.
+
+```typescript
+if (heartRate > MAX_ALERT_THRESHOLD) {
+  triggerAlert(heartRate);
+}
+```
+
+**Java:**
+
+Java es el lenguaje utilizado para el desarrollo de los servicios backend y las APIs REST de la plataforma. Las convenciones adoptadas siguen la **Google Java Style Guide** (https://google.github.io/styleguide/javaguide.html).
+
+* **Naming Conventions**
+  - Clases e interfaces: `UpperCamelCase`
+  - Métodos y variables: `lowerCamelCase`
+  - Constantes: `UPPER_SNAKE_CASE`
+  - Paquetes: todo en minúsculas sin separadores
+
+```java
+// Package: lowercase
+package com.veyra.nursing.service;
+
+// Class: UpperCamelCase
+public class ResidentService {
+
+  // Constant: UPPER_SNAKE_CASE
+  private static final int MAX_RESIDENTS = 500;
+
+  // Method and variable: lowerCamelCase
+  public Resident findResidentById(String residentId) {
+    return residentRepository.findById(residentId).orElse(null);
+  }
+}
+```
+
+* **Indentation and Braces**
+  Sangría de 2 espacios. La llave de apertura va al final de la misma línea. No se omiten las llaves aunque el bloque sea de una sola instrucción.
+
+```java
+if (resident.isActive()) {
+  monitorVitalSigns(resident);
+} else {
+  archiveRecord(resident.getId());
+}
+```
+
+* **Javadoc**
+  Todos los métodos públicos y clases públicas deben tener Javadoc que explique su propósito.
+
+```java
+/**
+ * Registers a new resident in the system.
+ *
+ * @param resident the resident entity to register
+ * @return the persisted resident with its generated ID
+ */
+public Resident registerResident(Resident resident) {
+  return residentRepository.save(resident);
+}
+```
+
+* **Import Organization**
+  No se usan importaciones con comodín (`import java.util.*`). Se listan las importaciones de manera explícita, ordenadas: clases de terceros primero, luego clases estándar de Java.
+
+```java
+import org.springframework.stereotype.Service;
+import java.util.List;
+import java.util.Optional;
+```
+
+**C++:**
+
+C++ es el lenguaje utilizado para el desarrollo del firmware de los dispositivos IoT encargados de la captura de signos vitales. Las convenciones adoptadas siguen la **Google C++ Style Guide** (https://google.github.io/styleguide/cppguide.html).
+
+* **Naming Conventions**
+  - Clases y structs: `UpperCamelCase`
+  - Variables y funciones: `snake_case`
+  - Constantes y macros: `kConstantName` o `MACRO_NAME`
+  - Archivos: `lower_snake_case.cc` / `lower_snake_case.h`
+
+```cpp
+// Class: UpperCamelCase
+class VitalSensorReader {
+ public:
+  // Function: snake_case
+  float read_heart_rate();
+
+ private:
+  // Variable: snake_case
+  int sample_rate_;
+};
+
+// Constant: kCamelCase
+const int kMaxSamplesPerSecond = 100;
+```
+
+* **Indentation**
+  Sangría de 2 espacios. Sin tabulaciones.
+
+```cpp
+void VitalSensorReader::transmit_data(const SensorPacket& packet) {
+  if (packet.is_valid()) {
+    serial_port_.write(packet.serialize());
+  }
+}
+```
+
+* **Header Files**
+  Todos los archivos de cabecera deben incluir un guard de inclusión usando `#pragma once` o una macro de guarda.
+
+```cpp
+#pragma once
+
+#include <cstdint>
+
+class HeartRateSensor {
+ public:
+  uint16_t read();
+};
+```
+
+* **References and Pointers**
+  Los parámetros de entrada se pasan por referencia `const`; los de salida, por puntero.
+
+```cpp
+void process_reading(const SensorData& input, AlertPayload* output);
+```
+
+* **Comments**
+  Los comentarios de una línea usan `//`. Los bloques de documentación siguen el estilo Doxygen.
+
+```cpp
+// Reads raw ADC value from the pulse oximeter sensor.
+uint16_t read_spo2_raw();
+
+/**
+ * @brief Converts raw ADC reading to SpO2 percentage.
+ * @param raw_value Raw ADC value from sensor.
+ * @return SpO2 percentage (0–100).
+ */
+float convert_to_spo2(uint16_t raw_value);
+```
+
+**Python:**
+
+Python es el lenguaje utilizado para el procesamiento de datos de sensores e integración con los servicios IoT. Las convenciones adoptadas siguen **PEP 8 – Style Guide for Python Code** (https://www.python.org/dev/peps/pep-0008/).
+
+* **Naming Conventions**
+  - Variables y funciones: `snake_case`
+  - Clases: `CapWords` (UpperCamelCase)
+  - Constantes: `UPPER_SNAKE_CASE`
+  - Módulos y paquetes: `lowercase` o `lower_with_underscores`
+
+```python
+# Variables and functions: snake_case
+resident_id = "RES-001"
+
+def calculate_average_heart_rate(readings: list[int]) -> float:
+    return sum(readings) / len(readings)
+
+# Classes: CapWords
+class SensorDataProcessor:
+    MAX_BUFFER_SIZE = 256  # Constant: UPPER_SNAKE_CASE
+
+    def process(self, raw_data: bytes) -> dict:
+        pass
+```
+
+* **Indentation**
+  Siempre 4 espacios por nivel. Nunca tabulaciones.
+
+```python
+def send_alert(patient_id: str, alert_type: str) -> bool:
+    if not patient_id:
+        raise ValueError("patient_id cannot be empty")
+    return notification_service.send(patient_id, alert_type)
+```
+
+* **Maximum Line Length**
+  Las líneas no deben superar los **79 caracteres** (líneas de código) ni los **72 caracteres** (comentarios y docstrings).
+
+```python
+# Correct line wrapping using implicit continuation
+result = (
+    first_value
+    + second_value
+    + third_value
+)
+```
+
+* **Imports**
+  Las importaciones deben estar al principio del archivo, separadas en grupos: librería estándar, librerías de terceros y módulos locales.
+
+```python
+import json
+import os
+
+import paho.mqtt.client as mqtt
+
+from veyra.sensors import HeartRateSensor
+```
+
+* **Docstrings**
+  Todas las funciones, clases y módulos públicos deben tener docstrings siguiendo el estilo PEP 257.
+
+```python
+def parse_vital_signs(payload: bytes) -> dict:
+    """Parse a raw sensor payload into a vital signs dictionary.
+
+    Args:
+        payload: Raw bytes received from the IoT device.
+
+    Returns:
+        A dictionary with keys 'heart_rate', 'spo2', and 'temperature'.
+    """
+    pass
+```
+
+**Flutter/Dart:**
+
+Flutter (con Dart como lenguaje) es el framework utilizado para el desarrollo de la aplicación móvil. Las convenciones adoptadas siguen **Effective Dart: Style** (https://dart.dev/effective-dart/style) y la **Flutter Style Guide** (https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo).
+
+* **Naming Conventions**
+  - Tipos (clases, enums, typedefs, extensiones): `UpperCamelCase`
+  - Variables, parámetros y funciones: `lowerCamelCase`
+  - Constantes y valores de enum: `lowerCamelCase`
+  - Archivos y paquetes: `lowercase_with_underscores`
+
+```dart
+// File: vital_signs_screen.dart
+
+// Class: UpperCamelCase
+class VitalSignsScreen extends StatefulWidget {
+  const VitalSignsScreen({super.key, required this.residentId});
+
+  // Variable: lowerCamelCase
+  final String residentId;
+
+  @override
+  State<VitalSignsScreen> createState() => _VitalSignsScreenState();
+}
+
+// Enum: UpperCamelCase, values: lowerCamelCase
+enum AlertSeverity { low, medium, high, critical }
+```
+
+* **Formatting**
+  Todo el código Dart se formatea con `dart format`. La longitud máxima de línea es de **80 caracteres**. Se utilizan comas al final de listas de argumentos/parámetros cuando cada elemento ocupa su propia línea (trailing commas).
+
+```dart
+// Trailing comma enables dart format to expand the list
+Widget build(BuildContext context) {
+  return Column(
+    children: [
+      ResidentCard(resident: resident),
+      VitalSignsChart(data: vitalData),
+      AlertBanner(severity: AlertSeverity.high),
+    ],
+  );
+}
+```
+
+* **String Literals**
+  Se prefieren las comillas simples para strings. Se usa interpolación de strings con `$variable` o `${expression}`.
+
+```dart
+final greeting = 'Welcome, $residentName';
+final route = '/residents/${resident.id}/vitals';
+```
+
+* **Constructors**
+  Los constructores van primero en la definición de la clase, antes de los demás métodos. Se prefiere `const` para widgets que no cambian.
+
+```dart
+class AlertBanner extends StatelessWidget {
+  const AlertBanner({super.key, required this.severity});
+
+  final AlertSeverity severity;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: _getColor(severity),
+      child: const Text('Alert'),
+    );
+  }
+}
+```
+
+* **Null Safety**
+  Se aprovecha el sistema de null safety de Dart. Se usa `?` para tipos que pueden ser nulos y el operador `??` para valores por defecto.
+
+```dart
+String getResidentName(Resident? resident) {
+  return resident?.fullName ?? 'Unknown Resident';
+}
+```
+
+**Gherkin:**
+
+Gherkin es un Lenguaje Específico de Dominio (DSL) utilizado para escribir los casos de prueba en archivos `.feature`. Las convenciones adoptadas siguen **Gherkin Conventions for Readable Specifications** (https://cucumber.io/docs/gherkin/). Todos los bloques y nombres de escenario se escriben en inglés.
+
+* **Discernible Given-When-Then Blocks**
+  Se aplica sangría a los pasos del escenario. Los pasos con `And` llevan sangría adicional para mantener la alineación visual con el bloque al que pertenecen.
+
+``` gherkin
+Scenario: Nurse receives critical heart rate alert
+  Given the resident "Carlos Ruiz" has a configured threshold of 100 bpm
+  When the IoT device reports a heart rate of 130 bpm
+  Then a critical alert is triggered
+  And the nursing dashboard displays the alert in red
+  And a push notification is sent to the assigned nurse
+```
+
+* **Step with Tables**
+  Cuando un paso requiere múltiples valores de entrada, se usa una tabla de datos precedida por dos puntos.
+
+``` gherkin
+Then the system records the following vital signs:
+  | Sign        | Value | Unit |
+  | Heart Rate  | 130   | bpm  |
+  | SpO2        | 94    | %    |
+  | Temperature | 38.5  | °C   |
+```
+
+* **Reducing Noise**
+  Los valores que no son relevantes para el escenario se reemplazan por valores por defecto entre comillas simples, para mantener el escenario conciso.
+
+``` gherkin
+Given the resident has a 'standard' monitoring profile
+When a reading is received
+Then the system processes it normally
+```
+
+* **Scenarios Separator**
+  Entre escenarios se inserta una línea en blanco y, opcionalmente, un comentario separador para facilitar la lectura visual del archivo.
+
+``` gherkin
+Scenario: Alert is triggered when heart rate exceeds threshold
+  Given the threshold is set to 100 bpm
+  When the sensor reports 115 bpm
+  Then an alert is created with severity "high"
+
+# --------------------------
+
+Scenario: No alert is triggered within normal range
+  Given the threshold is set to 100 bpm
+  When the sensor reports 78 bpm
+  Then no alert is created
+```
 
 ### 6.1.4. Software Deployment Configuration
 
