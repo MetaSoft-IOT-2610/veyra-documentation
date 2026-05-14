@@ -708,6 +708,7 @@ El diseño móvil prioriza la inmediatez y la movilidad dentro de la casa de rep
 **Interfaz del Personal de Cuidado**: Una herramienta de trabajo con notificaciones críticas (Alertas de caídas, frecuencia cardíaca fuera de rango) que requieren acción inmediata.
 
 ### 5.4.2. Applications Wireflow Diagrams
+
 A continuación, presentamos los diagramas de flujo de nuestra plataforma web, diseñados para representar cómo responde el sistema a las interacciones de los usuarios. Cada diagrama refleja un objetivo del usuario vinculado a las distintas funcionalidades, con un único flujo que considera variaciones de acciones según los privilegios del rol (Administrador, Médico, Enfermera o Familiar). Antes de crear estos diagramas, establecimos flujos de tareas (Task Flows) para definir las rutas de navegación típicas en la aplicación.
 
 **TaskFlows**
@@ -733,8 +734,10 @@ A continuación, presentamos los diagramas de flujo de nuestra plataforma web, d
 | **UG05:** Monitorear la ubicación en tiempo real y signos vitales mediante dispositivos IoT. Permite al personal de cuidado visualizar en un mapa interactivo la geolocalización de los residentes y consultar sus signos vitales en vivo, facilitando una respuesta rápida ante emergencias o posibles fugas.   | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG5-flow.png)    |
 | **UG06:** Registrar y gestionar las habitaciones del centro. Permite al personal administrativo crear nuevos cuartos en el sistema, definiendo detalles clave para mantener un control organizado de la disponibilidad y el alojamiento de los residentes.                                                       | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG6-flow.png)    |
 | **UG07:** Administrar el inventario de dispositivos IoT. Facilita al personal de TI o administradores registrar nuevos dispositivos de telemetría y geolocalización (sensores, pulseras) en el sistema para su posterior vinculación a los residentes.                                                         | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG7-flow.png)    |
+| **UG08:** Registrar y gestionar al personal de la casa de reposo. Permite al administrador ingresar la información profesional, turnos y datos de contacto de enfermeros, médicos y staff de apoyo para organizar la operatividad del centro.                                                               | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG8-flow.png)    |
 
 ### 5.4.2. Applications Mock-ups
+
 **WEB APPLICATION MOCK-UPS**
 
 Se observa una interfaz con un Dashboard robusto. Para el Doctor, resaltan las tablas de telemetría (ej. ritmo cardíaco, saturación de oxigeno y estado de salud).
