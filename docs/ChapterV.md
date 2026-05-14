@@ -686,8 +686,12 @@ Para la conceptualización de estas pantallas (Wireframes), nos centramos en una
 A continuación, se presentan los wireframes estructurales de los módulos principales que soportan las tareas críticas del sistema:
 
 * **Estructura Master-Detail (Panel de Residentes):** Wireframe que ilustra la división de la pantalla en dos columnas para visualizar la lista de pacientes y sus parámetros clínicos simultáneamente, reduciendo la carga cognitiva.
+<p align="center">
+  <img src="../assets/img/chapter-V/veyra-wireframes/web-application/web-clinical-parameters.png" alt="Mockup" width="1200px" height="auto"/>
+
 
 * **Estructura de Formularios y Modales (Gestión de Actividades e Inventario):** Wireframes que definen la disposición de los campos de entrada y los overlays (capas superpuestas) para evitar que el usuario abandone la pantalla principal al registrar nuevos datos.
+
 
 * **Estructura Móvil (Monitoreo para Familiares):** Wireframe que define la navegación inferior (Bottom Tab Bar) y la distribución de las tarjetas de información de gran tamaño para facilitar la lectura rápida en dispositivos móviles.
 
@@ -734,17 +738,17 @@ A continuación, evidenciamos la aplicación gráfica de estos principios en los
 
 * **Módulo de Gestión de Personal y Familiares (Formularios y UI States):** Mock-ups de alta fidelidad que muestran el uso de validaciones en tiempo real y el diseño de campos de entrada con retroalimentación visual clara.
 <p align="center">
-  <img src="../assets/img/chapter-V/veyra-mockups/web-application/web-staff-access.png" alt="Mockup" width="200px" height="auto"/>
+  <img src="../assets/img/chapter-V/veyra-mockups/web-application/web-staff-access.png" alt="Mockup" width="1200px" height="auto"/>
 
 * **Módulo de Telemetría (Clinical Parameters):** Visualización del patrón Master-Detail aplicado con la paleta de colores final, destacando los selectores numéricos y los badges de estado del paciente.
 <p align="center">
-  <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/mobile-vitals.png" alt="Mockup" width="200px" height="auto"/>
+  <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/mobile-vitals.png" alt="Mockup" width="800px" height="auto"/>
 
 
 
 * **Aplicación Móvil - Interfaz de Monitoreo:** Diseño final de la vista del familiar, mostrando jerarquía visual en los signos vitales (tipografía de gran tamaño) y el estado de alerta en caso de anomalías en la saturación de oxígeno o ritmo cardíaco.
 <p align="center">
-  <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/mobile-health-indicators.png" alt="Mockup" width="200px" height="auto"/>
+  <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/mobile-health-indicators.png" alt="Mockup" width="800px" height="auto"/>
 
 
 
