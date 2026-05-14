@@ -758,7 +758,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 #### User Flow 1: Registro y Vinculación de un Familiar (Relative)
 
-* **User Persona:** Administrador del Sistema / Staff de Recepción.
+* **User Persona:** Administrador del Sistema.
 * **User Goal:** Registrar el perfil de un familiar, ingresar sus datos de contacto y vincularlo obligatoriamente a un residente específico para generarle su acceso seguro al portal de monitoreo.
 
 **🟢 Happy Path (Ruta Esperada)**
@@ -781,7 +781,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 #### User Flow 2: Registro de una Nueva Habitación (Rooms)
 
-* **User Persona:** Administrador del Sistema / Staff de Operaciones.
+* **User Persona:** Administrador del Sistema.
 * **User Goal:** Registrar una nueva habitación en el sistema, definiendo su número identificador, tipo y capacidad máxima para mantener actualizado el inventario de espacios disponibles en la casa de reposo.
 
 **🟢 Happy Path (Ruta Esperada)**
@@ -804,7 +804,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 #### User Flow 3: Registro de un Nuevo Personal (Staff Members)
 
-* **User Persona:** Administrador del Sistema / Recursos Humanos.
+* **User Persona:** Administrador del Sistema.
 * **User Goal:** Registrar la información personal, de contacto y de emergencia de un nuevo empleado (enfermero, médico o staff de apoyo) para integrarlo a la operatividad de la casa de reposo.
 
 **🟢 Happy Path (Ruta Esperada)**
@@ -827,7 +827,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 #### User Flow 4: Administración de Inventario de Dispositivos IoT (Devices)
 
-* **User Persona:** Administrador del Sistema / Personal de TI.
+* **User Persona:** Administrador del Sistema.
 * **User Goal:** Administrar el inventario de dispositivos (pulseras de signos vitales, geolocalizadores) registrando nuevo hardware o gestionando los existentes para su posterior vinculación a los residentes.
 
 **🟢 Happy Path (Ruta Esperada)**
@@ -851,6 +851,33 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 * **Flujo de respuesta:** El sistema intercepta la acción para prevenir la pérdida de monitoreo en vivo. En lugar de borrarlo directamente, despliega una alerta crítica: *"Acción Denegada: Este dispositivo está actualmente asignado a un residente. Desvincúlelo desde el perfil del residente antes de eliminarlo del inventario"*. Esto protege la integridad lógica de la aplicación y la seguridad del paciente.
 
 ![Unhappy Path - Devices Error States](../assets/img/chapter-V/uf-devices-unhappy-path.png)
+
+#### User Flow 5: Gestión de Actividades (Activities)
+
+* **User Persona:** Administrador / Personal Médico o de Enfermería.
+* **User Goal:** Agendar, visualizar en detalle y actualizar actividades (recreativas, médicas, físicas o sociales) para mantener una rutina estructurada y activa para los residentes de la casa de reposo.
+
+**🟢 Happy Path (Ruta Esperada: Crear y Editar)**
+1. El usuario ingresa al módulo **Activities** y visualiza la lista principal con los eventos programados y sus estados (ej. *Programada*, *En curso*).
+2. Para agendar un nuevo evento, hace clic en el botón `+ Add New`.
+3. El sistema despliega el modal *Add activity*. El usuario ingresa el nombre de la actividad (ej. "Morning Painting Workshop"), detalla los objetivos en la descripción, y establece la fecha y hora.
+4. Selecciona la categoría correspondiente mediante los *radio buttons* en forma de píldora (ej. *Recreational* o *Medical*).
+5. Hace clic en *Save activity*. El sistema registra el evento y la tabla principal se actualiza automáticamente.
+6. *(Flujo de consulta y edición)*: Si el usuario desea ver más información, hace clic en la fila de la actividad, abriendo el modal de *Activity details* (vista de solo lectura). Si detecta que necesita cambiar algo, presiona el botón *Edit activity*, el cual transiciona directamente al modal *Update activity*, pre-cargando los datos actuales para su modificación rápida.
+
+![Happy Path - Activities Management](../assets/img/chapter-V/uf-activities-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Programación en Fechas Pasadas o Conflictos de Horario**
+* **Condición:** Al momento de utilizar el selector de fecha y hora (*Date / Hour*) en el modal de *Add activity* o *Update activity*, el usuario selecciona por error una fecha anterior al día de hoy.
+* **Flujo de respuesta:** El sistema aplica una validación lógica (*Front-end* o *Back-end*). Al intentar guardar la actividad, la acción se bloquea. El campo de fecha se resalta en rojo y aparece un mensaje de error en línea (*inline error*): *"La fecha de la actividad no puede ser en el pasado"*. El usuario es obligado a seleccionar una fecha futura o actual para completar el registro.
+
+**Escenario B: Omisión de Datos Obligatorios**
+* **Condición:** El usuario ingresa rápidamente la fecha y la hora, pero olvida escribir el Nombre de la actividad (*Activity name*) o no selecciona ninguna de las 4 categorías disponibles.
+* **Flujo de respuesta:** El sistema previene la creación de eventos "vacíos" en el calendario. El botón principal (*Save activity* o *Update Activity*) se mantiene inactivo (estado *disabled*). Si se activa la validación al perder el foco (*on blur*), el campo faltante mostrará un texto de ayuda en rojo: *"Este campo es obligatorio"*, guiando al coordinador a completar toda la información necesaria para los residentes.
+
+![Unhappy Path - Activities Error States](../assets/img/chapter-V/uf-activities-unhappy-path.png)
 
 ## 5.5. Applications Prototyping
 
