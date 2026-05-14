@@ -136,7 +136,7 @@ Las directrices de estilo web de Veyra se centran en la simplicidad, la accesibi
 
 
 ### Mobile   Style Guidelines
- 
+
 ### Iot  Style Guidelines
 
 
@@ -212,7 +212,7 @@ La pulsera cuenta con un único LED RGB que comunica el estado del dispositivo m
 | Alerta crítica activa | Vibración corta repetida           |
 | Batería baja          | Dos pulsos cortos cada 60 segundos |
 
- 
+
 #### Botón Físico
 
 La pulsera incluye un único botón en el lateral del dispositivo, cuya función exclusiva es encender y apagar el dispositivo.
@@ -221,7 +221,7 @@ La pulsera incluye un único botón en el lateral del dispositivo, cuya función
 |----------------------------|----------------------------------------------------------------------------------|
 | Presión larga (3 segundos) | Enciende el dispositivo si está apagado / Apaga el dispositivo si está encendido |
 
-#### Pantalla 
+#### Pantalla
 
 En caso de incorporar una pantalla OLED de baja resolución, la información se presenta con la siguiente jerarquía:
 
@@ -276,7 +276,7 @@ Una vista de bienvenida pre-login con el mensaje principal de Veyra y los acceso
 **Navegación principal**
 
 Sistema jerárquico accesible desde un menú lateral con iconografía clara. Incluye las siguientes pestañas:
-    
+
 - Dashboard
 - Devices
 - Residents
@@ -1273,3 +1273,152 @@ _Familiar · Personal asistencial · Administrador_
 - Notificaciones push con vibración al generarse una alerta crítica.
 - Colores semáforo coherentes con la web app para consistencia visual.
 - Acceso con autenticación segura (JWT + biometría del dispositivo).
+
+# Diseño de Solución IoT: Dispositivo de Localización GPS para Adultos Mayores 
+
+## Paso 1 — Definición de los Requisitos del Sistema
+
+### Restricción de time-delay
+El time-delay máximo tolerable para el flujo completo desde la adquisición del dato hasta su visualización en la pantalla es de **30 segundos**. Este margen es suficiente para el rastreo de personas, permitiendo una respuesta oportuna sin saturar  la red.
+
+### Suministro de energía
+El dispositivo opera exclusivamente con una batería LiPo 603450 (3.7 V, 1100 mAh). La autonomía mínima aceptable es de **3 a 5 días**. Con esta capacidad, el consumo promedio máximo permitido es de **15.3 mA**, considerando un uso continuo y sin recargas frecuentes, lo que es adecuado para un dispositivo de localización que debe ser confiable durante varios días sin intervención.
+
+---
+
+## Paso 2 — Selección de la Tipología del Sistema IoT
+Se ha seleccionado una **tipología de conexión directa a la nube**. Esto significa que el dispositivo funciona de forma independiente, como si fuera un teléfono móvil:
+
+* **Nodo (tracker):** Es el rastreador que obtiene su ubicación por satélite (GPS) y la envía por sí mismo usando la red de datos celular.
+* **Plataforma en la nube:** Actúa como el cerebro central que recibe los datos y los organiza para que puedan ser consultados desde cualquier parte.
+
+Esta elección es clave porque permite que el rastreo sea total: el dispositivo no necesita estar cerca de una base o router Wi-Fi para funcionar; solo necesita cobertura celular.
+
+Esta tipología elimina la necesidad de gateways locales, permitiendo que el seguimiento funcione en cualquier lugar con cobertura celular.
+
+---
+
+## Paso 3 — Definición de los Requisitos de la Capa Física
+
+### Sensores
+1.  **Módulo GNSS:** Obtiene las coordenadas geográficas (latitud y longitud).
+2.  **Acelerómetro MEMS:** Detecta movimiento para reducir el envío de datos cuando la persona está en reposo, optimizando la batería.
+
+### Actuadores
+**Ninguno.** El hardware no tiene componentes de salida (luces o sonidos) para mantener la discreción absoluta.
+
+Consumo y precisión: El sistema debe consumir menos de 15.3 mA promedio. La precisión de la ubicación debe estar en un rango de 2 a 5 metros en exteriores.
+
+Interfaces y procesamiento: Se utilizarán interfaces UART para el GPS y el módem, e I2C para el acelerómetro. El microcontrolador tiene permitido un tiempo de procesamiento local máximo de 500 ms para no comprometer el delay global.
+
+---
+
+## Paso 4 — Definición de los Requisitos de la Capa de Intercambio
+
+**Comunicación:** Inalámbrica mediante la red celular LTE-M (Cat-M1). Se elige esta tecnología por su bajo consumo y su capacidad de mantener la conexión mientras el usuario se desplaza.
+
+**Topología y distancia:** Topología directa al servidor. La distancia de comunicación está limitada únicamente por la cobertura de las antenas celulares 
+
+**Consumo y encriptación:** Las transmisiones serán ráfagas cortas de energía. Los datos se protegerán mediante TLS 1.3, asegurando que la ubicación del adulto mayor viaje de forma privada y encriptada.
+
+---
+
+## Paso 5 — Definición de los Requisitos de la Capa de Integración de Información
+
+Usuarios: Familiar, Personal Asistencial y Administrador.
+
+Servicios: Mapa de ubicación en tiempo real.
+
+* **Información procesada:** Coordenadas filtradas y traducción de coordenadas a direcciones físicas (geocodificación).
+
+* **Distribución del procesamiento:** Filtrar coordenadas inválidas para asegurar la calidad del dato.
+
+    * **Cloud:** Recibe los datos crudos, traduce las coordenadas a direcciones para poder almacenar.
+
+* **Tiempo de procesamiento:** El procesamiento en la nube debe resolverse en menos de **300 ms**.
+---
+
+## Paso 6 — Definición de los Requisitos de la Capa de Servicio de Aplicación
+
+
+App Móvil (Familiar/Personal/Admin): Mapa con la posición del residente actualizada automáticamente e indicador de batería.
+
+Plataforma Web (Administrador): Visualización simultánea de múltiples residentes.
+
+Peso computacional: Bajo en todos los niveles; la complejidad de los mapas es gestionada por servicios externos (Google Maps).
+
+---
+
+## Paso 7 — Selección de las Arquitecturas de las Capas de Intercambio e Integración
+
+
+Arquitectura de Intercambio: Se selecciona MQTT sobre TLS 1.3. Este protocolo es óptimo para el backend monolítico, permitiendo gestionar conexiones persistentes con un retardo de comunicación de apenas 2-4 segundos.
+
+Arquitectura de Integración: Se selecciona una Arquitectura Monolítica para el backend .
+
+Análisis de Time-delay: Al ser un monolito, se eliminan las latencias de red entre servicios (inter-service communication), permitiendo que la recepción del dato, la lógica de geocodificación y el guardado en la base de datos ocurran en un mismo proceso. Esto garantiza un tiempo de integración de ~150-200 ms, cumpliendo con los requisitos del paso 5.
+
+---
+
+## Paso 8 — Selección de Sensores y Actuadores
+
+Sensor GNSS: u-blox ZOE-M8B, seleccionado por su precisión de < 2.5m y su tamaño minúsculo.
+
+Sensor de Movimiento: LIS2DW12, elegido por su consumo de 0.38 µA en modo de espera.
+
+Actuadores: No se seleccionan para cumplir el requisito de dispositivo pasivo.
+
+---
+
+## Paso 9 — Selección del Microcontrolador y Transceptores de Radio
+
+Hemos elegido el microcontrolador y los módulos de comunicación inalámbrica concretos para cada nodo, considerando su consumo de energía, capacidad de procesamiento y periféricos disponibles.
+
+Selección: Nordic Semiconductor nRF9160 (SiP).
+
+Justificación: Integra procesador ARM Cortex-M33 y módem LTE-M en un único encapsulado. Posee la capacidad de procesamiento para gestionar el cifrado TLS 1.3 y los periféricos UART/I2C definidos en el paso 3.
+
+---
+
+## Paso 10 — Definición del Procesamiento de Datos en el Nodo y en la Nube
+
+Aquí se define qué procesamiento se hará directamente en el dispositivo IoT y qué procesamiento se realizará en el cloud/backend.
+
+En el Nodo:
+Se realizará el filtrado de tramas NMEA para descartar coordenadas con baja precisión (por ejemplo, cuando el HDOP sea alto). Además, el dispositivo manejará procesos básicos de optimización de energía para reducir el consumo durante su funcionamiento.
+
+En Cloud (Backend Monolítico):
+Se realizará la geocodificación inversa para convertir coordenadas en direcciones entendibles, el almacenamiento de la información en una base de datos MongoDB y el procesamiento de datos enviados por los dispositivos para su visualización y monitoreo dentro de la plataforma
+
+---
+
+## Paso 11 — Análisis del Tiempo de Procesamiento
+
+En este paso se analiza qué tan pesado es el procesamiento de cada algoritmo definido anteriormente y cuánto tiempo tarda cada parte del sistema en ejecutarse, para verificar que el tiempo total de respuesta cumple con el requisito definido en el Paso 1.
+
+Desglose estimado del tiempo:
+
+Procesamiento en el nodo IoT (filtrado y validación de datos): ~15 ms.
+Captura y obtención de señal GPS: ~15 s.
+Latencia de red LTE-M para el envío de datos: ~4 s.
+Procesamiento en el Backend Monolítico: ~200 ms.
+
+Tiempo total estimado:
+El sistema tendría un tiempo aproximado de respuesta de ~20 segundos desde la captura hasta el almacenamiento y visualización de la información.
+
+Verificación:
+El tiempo total cumple con el requisito máximo de 30 segundos establecido anteriormente, por lo que el sistema puede operar dentro del límite esperado.
+
+---
+
+## Paso 12 — Definición de la Interfaz Gráfica de Usuario
+
+#### A. Interfaz de Software (App y Web)
+* **App Móvil (Familiar/Asistencial):** Centrada en un mapa limpio de Google Maps. Un marcador con la foto del residente indica su posición. En la parte inferior, una tarjeta muestra la dirección exacta, la hora de la última sincronización y un indicador de batería dinámico.
+* **Plataforma Web (Administrador):**  Dentro de la lista de residentes hay una opción para ver el mapa de cada residente.
+
+#### B. Diseño Físico del Dispositivo 
+* **Aspecto:** Disco circular de 35mm en policarbonato mate, sin botones ni luces para garantizar la pasividad del sistema.
+* **Ergonomía:** Bordes redondeados y grosor mínimo (10mm) para ocultarse fácilmente en costuras o bolsillos internos.
+* **Carga:** Interfaz de carga magnética en la base para asegurar protección IP67 (resistente a salpicaduras y polvo).
+* **Uso:** Se integra mediante clips de silicona o bolsillos ocultos en la vestimenta, cumpliendo con el requisito de ser un dispositivo "invisible" para el residente pero rastreable para el administrador.
