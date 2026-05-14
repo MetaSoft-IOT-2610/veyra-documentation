@@ -754,8 +754,6 @@ En la aplicación móvil, el familiar tiene una vista clara y reconfortante del 
 
 ### 5.4.3. Applications User Flow Diagrams
 
-### 5.4.4. Applications User Flow Diagrams
-
 En esta sección presentamos los User Flows derivados de nuestros Wireflows, utilizando los Mock-ups de alta fidelidad. Cada flujo detalla la ruta esperada para completar el objetivo con éxito (Happy Path) y las rutas alternativas frente a posibles errores del usuario o del sistema (Unhappy Paths), aplicando principios de prevención de errores.
 
 #### User Flow 1: Registro y Vinculación de un Familiar (Relative)
