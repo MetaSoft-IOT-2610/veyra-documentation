@@ -231,7 +231,6 @@ En caso de incorporar una pantalla OLED de baja resolución, la información se 
 
 ## 5.2. Information Architecture
 
-La arquitectura de la información de Veyra está diseñada para que cada usuario —administrador, médico, personal asistencial o familiar— acceda con el menor número de pasos posible a los datos relevantes para su rol, ya sea desde la Landing Page, la aplicación web, la aplicación móvil o la pantalla del dispositivo IoT. La estructura responde a los Bounded Contexts identificados en el Capítulo IV (IAM, Profiles, Tracking, Health, HCM, Communication, Subscriptions & Payments) y al lenguaje ubicuo definido en el Capítulo II.
 
 ### 5.2.1. Organization Systems
 
@@ -511,8 +510,6 @@ Un conjunto seleccionado de palabras y frases clave que abarca tanto el público
 
 Incluye una referencia al equipo responsable del diseño y desarrollo del producto, lo cual apoya en términos de confianza y atribución de contenido.
 
-
-### 5.2.4. Searching Systems
 
 ### 5.2.4. Searching Systems
 
