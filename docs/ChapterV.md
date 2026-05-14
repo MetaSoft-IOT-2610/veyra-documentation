@@ -1127,6 +1127,37 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 ## 5.5. Applications Prototyping
 
+Esta sección presenta los prototipos de interfaz de usuario desarrollados para MetaSoft en sus versiones Desktop Web Browser y Mobile Web Browser. Estos prototipos permiten evidenciar la simulación de los principales flujos de interacción y navegación definidos previamente en los User Flow Diagrams, mostrando cómo el usuario recorre la aplicación, accede a las funcionalidades principales y completa las acciones más relevantes dentro del sistema.
+
+Las decisiones de interacción fueron planteadas considerando criterios de claridad, consistencia y facilidad de uso. Por ello, los prototipos priorizan una navegación simple, botones de acción visibles, pantallas organizadas y una estructura visual coherente entre ambas versiones. Asimismo, la propuesta mantiene relación con la arquitectura de información, ya que las pantallas se organizan según los módulos principales de MetaSoft y siguen una secuencia lógica acorde con los flujos de usuario definidos.
+
+### 5.5.1. Desktop Web Browser Prototype
+
+El prototipo Desktop Web Browser de MetaSoft representa la versión diseñada para usuarios que acceden a la aplicación desde una computadora o pantalla de mayor tamaño. Esta versión aprovecha el espacio disponible para presentar la información de manera más amplia y ordenada, permitiendo que el usuario identifique con facilidad los módulos principales, revise información relevante y ejecute acciones dentro del sistema.
+
+La navegación en la versión desktop se relaciona directamente con los User Flow Diagrams, ya que cada pantalla responde a una etapa del recorrido del usuario. A través del prototipo, se simulan interacciones como el acceso a la plataforma, la navegación entre secciones, la consulta de información, el uso de formularios, la revisión de detalles y la confirmación de acciones. Además, el diseño utiliza menús, tarjetas, botones y vistas organizadas para mantener una experiencia clara y consistente.
+
+Screenshot from the demonstration video:
+
+![Desktop Web Browser Prototype](/assets/img/chapter-V/applications-prototyping-desktop-web-browser.png)
+
+Video demonstration link:
+
+[Insertar aquí el enlace de Microsoft Stream/Clipchamp del prototipo Desktop Web Browser]
+
+### 5.5.2. Mobile Web Browser Prototype
+
+El prototipo Mobile Web Browser de MetaSoft representa la versión adaptada para usuarios que acceden desde un navegador móvil. Esta versión mantiene la misma lógica funcional del prototipo desktop, pero reorganiza los elementos en una estructura vertical, compacta y adecuada para pantallas pequeñas.
+
+La navegación móvil conserva la relación con los User Flow Diagrams, ya que permite recorrer los mismos flujos principales desde un dispositivo móvil. Sin embargo, la interfaz prioriza botones accesibles, contenido resumido y pantallas organizadas de forma progresiva para evitar la sobrecarga visual. A través del prototipo, se simulan interacciones como la navegación entre pantallas, la selección de opciones, la visualización de información, el llenado de formularios y la confirmación de acciones.
+
+Screenshot from the demonstration video:
+
+![Mobile Web Browser Prototype](/assets/img/chapter-V/applications-prototyping-mobile-web-browser.png)
+
+Video demonstration link:
+
+[Insertar aquí el enlace de Microsoft Stream/Clipchamp del prototipo Mobile Web Browser]
 ## 5.6. IoT Device Design
 
 # Diseño IoT — Sistema de Monitoreo de Signos Vitales
