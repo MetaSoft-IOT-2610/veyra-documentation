@@ -779,6 +779,31 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 ![Unhappy Path - Error States](../assets/img/chapter-V/uf-relative-unhappy-path.png)
 
+#### User Flow 2: Registro de una Nueva Habitación (Rooms)
+
+* **User Persona:** Administrador del Sistema / Staff de Operaciones.
+* **User Goal:** Registrar una nueva habitación en el sistema, definiendo su número identificador, tipo y capacidad máxima para mantener actualizado el inventario de espacios disponibles en la casa de reposo.
+
+**🟢 Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Rooms** y visualiza la lista actual (o el estado vacío *No Rooms Registered*). Hace clic en el botón primario `+ Add New`.
+2. El sistema redirige a la vista del formulario *New Room* (Room Information).
+3. El usuario ingresa el identificador de la habitación (ej. R-002) y la capacidad máxima de residentes.
+4. Hace clic en el selector *Room Type*, desplegando las opciones, y selecciona la categoría correspondiente (ej. *Double*).
+5. Al hacer clic en el botón de confirmación (*Register Room*), el sistema valida la información, guarda el registro y redirige al usuario a la vista principal.
+6. La tabla de **Rooms** se actualiza y muestra la nueva habitación creada, calculando automáticamente su disponibilidad y estado actual (ej. *Available*).
+
+![Happy Path - Add New Room](../assets/img/chapter-V/uf-rooms-happy-path.png)
+
+**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Número de Habitación Duplicado (Conflicto de Datos)**
+* **Condición:** El usuario ingresa un identificador de habitación (Room Number) que ya existe físicamente en los registros del sistema (ej. intenta crear la "R-001" cuando ya está ocupada).
+* **Flujo de respuesta:** Al intentar guardar el registro, el sistema realiza una validación con la base de datos, detiene el flujo y muestra un mensaje de error tipo alerta o *inline*: *"Este número de habitación ya se encuentra registrado"*. El usuario debe ingresar un identificador único para poder continuar, previniendo inconsistencias en la asignación de pacientes.
+
+![Unhappy Path - Rooms Error States](../assets/img/chapter-V/uf-rooms-unhappy-path.png)
+
+
+
 ## 5.5. Applications Prototyping
 
 ## 5.6. IoT Device Design
