@@ -680,32 +680,16 @@ Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups 
 
 ### 5.4.1. Applications Wireframes
 
-**WEB APPLICATION WIREFRAMES**
+**Aplicación de Principios de Diseño y Arquitectura de Información:**
+Para la conceptualización de estas pantallas (Wireframes), nos centramos en una Arquitectura de Información basada en el patrón de navegación en "F" (F-Pattern). Ubicamos el menú principal en una barra lateral anclada (Sidebar) para permitir al usuario acceder a los módulos principales (Dashboard, Devices, Residents) sin perder contexto. Aplicamos el principio de Proximidad de la Gestalt en los formularios de registro (ej. Staff y Relatives), agrupando lógicamente las etiquetas (labels) con sus respectivos campos de entrada. A nivel de diseño inclusivo, garantizamos que los componentes interactivos tengan un área de clic adecuada (Touch Targets) y establecemos una jerarquía tipográfica clara mediante diferentes pesos visuales.
 
-Se presenta el diseño visual y de interacción en formato de wireframes de nuestro producto digital.
+A continuación, se presentan los wireframes estructurales de los módulos principales que soportan las tareas críticas del sistema:
 
-Tenemos las pantallas generales que vendrían a ser el inicio sesión y registro.
+* **Estructura Master-Detail (Panel de Residentes):** Wireframe que ilustra la división de la pantalla en dos columnas para visualizar la lista de pacientes y sus parámetros clínicos simultáneamente, reduciendo la carga cognitiva.
 
+* **Estructura de Formularios y Modales (Gestión de Actividades e Inventario):** Wireframes que definen la disposición de los campos de entrada y los overlays (capas superpuestas) para evitar que el usuario abandone la pantalla principal al registrar nuevos datos.
 
-Iniciar sesión: En esta pantalla le mostramos al administrador de casa de reposo y al doctor los campos a llenar para ingresar con su cuenta en nuestra plataforma,
-
-<p align="center">
-  <img src="../assets/img/chapter-V/veyra-wireframes/web-application/Sign-in.png" alt="Wireframe" width="500px" height="auto"/>
-</p>
-
-Registrar Admin: En esta pantalla le mostramos al administrador de casa de reposo los campos a llenar para crearse una cuenta en nuestra plataforma. Se usaron elementos como formas, textos y colores.
-
-<p align="center">
-  <img src="../assets/img/chapter-V/veyra-wireframes/web-application/create-admin.png" alt="Wireframe" width="500px" height="auto"/>
-</p>
-
-**MOBILE APPLICATION WIREFRAMES**
-
-El diseño móvil prioriza la inmediatez y la movilidad dentro de la casa de reposo.
-
-**Interfaz del Familiar**: Una vista simplificada y humana. Muestra el estado actual del residente ("Papá está descansando", "Signos estables") para brindar tranquilidad.
-
-**Interfaz del Personal de Cuidado**: Una herramienta de trabajo con notificaciones críticas (Alertas de caídas, frecuencia cardíaca fuera de rango) que requieren acción inmediata.
+* **Estructura Móvil (Monitoreo para Familiares):** Wireframe que define la navegación inferior (Bottom Tab Bar) y la distribución de las tarjetas de información de gran tamaño para facilitar la lectura rápida en dispositivos móviles.
 
 ### 5.4.2. Applications Wireflow Diagrams
 
@@ -736,23 +720,31 @@ A continuación, presentamos los diagramas de flujo de nuestra plataforma web, d
 | **UG07:** Administrar el inventario de dispositivos IoT. Facilita a los administradores registrar nuevos dispositivos de telemetría y geolocalización en el sistema para su posterior vinculación a los residentes.                                                                                              | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG7-flow.png)    |
 | **UG08:** Registrar y gestionar al personal de la casa de reposo. Permite al administrador ingresar la información profesional, turnos y datos de contacto de enfermeros, médicos y staff de apoyo para organizar la operatividad del centro.                                                                    | ![alt text](assets/img/chapter-V/veyra-wireframes/web-application/UG8-flow.png)    |
 
-### 5.4.2. Applications Mock-ups
+### 5.4.3. Applications Mock-ups
 
-**WEB APPLICATION MOCK-UPS**
+**Aplicación del Design System y Accesibilidad (UI States):**
+En esta etapa de alta fidelidad, materializamos el Design System de Veyra. Definimos un color primario Turquesa/Verde Agua (#72A99E) que transmite salud, calma y profesionalismo clínico, contrastando con fondos grises claros (#F3F4F6) para reducir la fatiga visual del personal que usa el sistema por largas horas.
 
-Se observa una interfaz con un Dashboard robusto. Para el Doctor, resaltan las tablas de telemetría (ej. ritmo cardíaco, saturación de oxigeno y estado de salud).
+Para garantizar la **Visibilidad del Estado del Sistema** y la **Prevención de Errores** (Heurísticas de Nielsen), diseñamos múltiples estados para nuestros componentes (UI States):
+* **Estados de Éxito:** Uso de notificaciones tipo "Toast" en color verde y badges de estado activo.
+* **Estados de Error (Unhappy Paths):** Aplicación de bordes rojos, textos de ayuda *inline* y deshabilitación de botones primarios para evitar que el usuario envíe formularios incompletos (ej. al faltar un Device ID o ingresar rangos clínicos ilógicos).
+* **Estados Semánticos:** Uso de Amarillo para estados de "Observación" y Rojo para alertas críticas "Critical" o "Low Battery", siempre acompañados de texto e íconos para asegurar la accesibilidad a usuarios con daltonismo.
 
-<p align="center">
-  <img src="../assets/img/chapter-V/veyra-mockups/web-application/doctor-dashboard.png" alt="Mockup" width="500px" height="auto"/>
-</p>
+A continuación, evidenciamos la aplicación gráfica de estos principios en los diferentes módulos del sistema:
 
-**MOBILE APPLICATION MOCK-UPS**
+* **Módulo de Gestión de Personal y Familiares (Formularios y UI States):** Mock-ups de alta fidelidad que muestran el uso de validaciones en tiempo real y el diseño de campos de entrada con retroalimentación visual clara.
+  *(Aquí pones una imagen del Mockup a color de la pantalla "Give Access to Staff" o el "Register Relative", de preferencia mostrando el estado de error rojo que armamos)*
 
-En la aplicación móvil, el familiar tiene una vista clara y reconfortante del estado de su ser querido, con enlaces rapidos para ver sus indicadores de salud.
+* **Módulo de Telemetría (Clinical Parameters):** Visualización del patrón Master-Detail aplicado con la paleta de colores final, destacando los selectores numéricos y los badges de estado del paciente.
+  *(Aquí pones la imagen del Mockup a color de los Clinical Parameters)*
+
+* **Aplicación Móvil - Interfaz de Monitoreo:** Diseño final de la vista del familiar, mostrando jerarquía visual en los signos vitales (tipografía de gran tamaño) y el estado de alerta en caso de anomalías en la saturación de oxígeno o ritmo cardíaco.
+  *(Aquí pones la imagen del Mockup a color de la aplicación móvil)*
+
 <p align="center">
   <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/family-dashboard.png" alt="Mockup" width="200px" height="auto"/>
 
-### 5.4.3. Applications User Flow Diagrams
+### 5.4.4. Applications User Flow Diagrams
 
 En esta sección presentamos los User Flows derivados de nuestros Wireflows, utilizando los Mock-ups de alta fidelidad. Cada flujo detalla la ruta esperada para completar el objetivo con éxito (Happy Path) y las rutas alternativas frente a posibles errores del usuario o del sistema (Unhappy Paths), aplicando principios de prevención de errores.
 
