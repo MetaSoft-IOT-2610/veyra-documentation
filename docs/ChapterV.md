@@ -285,28 +285,30 @@ Sistema jerárquico accesible desde un menú lateral con iconografía clara. Inc
 
 **Filtrado y organización avanzada**
 
-**a. Para el Administrador del Hogar de Reposo**
+**a. Para el Administrador de la casa de reposo**
 
 - **Filtros por:** Nombre del residente, nombre del personal, número de habitación y nombre del dispositivo IoT.
 - **Funcionalidades destacadas:** Gestión de residentes, personal y habitaciones; asignación de dispositivos IoT; configuración inicial del hogar de reposo; administración del plan de suscripción.
 
-**b. Para Médicos y Personal Asistencial**
+**b. Para el Doctor**
 
-- **Filtros por:** Nombre del residente asignado al turno.
-- **Funcionalidades destacadas:** Consulta de signos vitales en tiempo real, registro y consulta del historial clínico del residente, definición de parámetros clínicos personalizados.
+- **Filtros por:** Nombre del residente a evaluar y rango de fechas en el historial clínico.
+- **Funcionalidades destacadas:** Consulta de signos vitales en tiempo real, revisión del historial clínico del residente y definición de parámetros clínicos personalizados para que el sistema genere alertas adecuadas a la condición de cada paciente.
+
 
 
 **Segmentación por audiencia**
 
-**a. Administrador del Hogar de Reposo**
+**a. Administrador de la casa de reposo**
 
 - Enfoque en la gestión operativa: registro de residentes, alta de personal, asignación de habitaciones y vinculación de familiares.
 - Visualización del dashboard analítico con KPIs (Total Hires, Total Terminations, Net Staff Change, Total Admissions, Active Residents) y administración del flujo de suscripción y pagos.
 
-**b. Médicos y Personal Asistencial**
+**b. Doctor**
 
-- Acceso al monitoreo clínico del residente, consulta del historial médico y registro de eventos clínicos por turno.
-- Definición de los parámetros clínicos de cada residente y reacción ante alertas críticas generadas por los dispositivos IoT.
+- Acceso al monitoreo clínico del residente y consulta del historial médico para fundamentar las decisiones de tratamiento.
+- Definición de los parámetros clínicos (rangos aceptables de signos vitales) de cada residente para que el sistema genere alertas personalizadas según su condición (US-20, US-21, US-22).
+
 
 
 Por último, la arquitectura jerárquica de la aplicación móvil de "Veyra" prioriza la consulta rápida y la respuesta inmediata, organizándose alrededor del rol del usuario. Esta estructura permite que el familiar acceda con un solo gesto al estado de su ser querido y que el personal de cuidado reciba notificaciones críticas y registre intervenciones directamente desde el campo.
@@ -332,30 +334,41 @@ Sistema jerárquico accesible desde una bottom navigation bar con iconografía c
 
 **Filtrado y organización avanzada**
 
-**a. Para Familiares**
+**a. Para el Personal Asistencial**
+
+- **Filtros por:** Residentes asignados al turno actual y eventos clínicos por tipo.
+- **Funcionalidades destacadas:** Monitoreo de signos vitales en tiempo real de los residentes asignados, registro de eventos clínicos durante el turno y atención inmediata de alertas críticas desde el móvil.
+
+**b. Para el Administrador de la casa de reposo**
+
+- **Filtros por:** Alertas críticas activas, residentes con eventos recientes y notificaciones pendientes.
+- **Funcionalidades destacadas:** Supervisión rápida del estado del hogar de reposo desde el campo, recepción de notificaciones críticas y consulta de la actividad del personal en turno.
+
+**c. Para el Familiar**
 
 - **Filtros por:** Rango de fechas en el historial de signos vitales del residente vinculado.
-- **Funcionalidades destacadas:** Consulta del estado actual del residente, recepción de notificaciones push con deep link al detalle de la alerta crítica, configuración de las preferencias de notificación.
-
-**b. Para Personal de Cuidado**
-
-- **Filtros por:** Residentes asignados al turno actual.
-- **Funcionalidades destacadas:** Monitoreo de signos vitales en tiempo real, registro de eventos clínicos en el historial del residente, atención inmediata de alertas críticas desde el móvil.
+- **Funcionalidades destacadas:** Consulta del estado actual del residente, recepción de notificaciones push con deep link al detalle de la alerta crítica y configuración de las preferencias de notificación.
 
 
 **Segmentación por audiencia**
 
-**a. Familiares**
+**a. Personal Asistencial**
+
+- Consulta del monitoreo de signos vitales en tiempo real de los residentes asignados a su turno (US-11, US-12).
+- Registro de eventos clínicos en el historial del residente para garantizar la continuidad del cuidado entre turnos (US-19).
+- Bandeja de alertas críticas con acciones rápidas para intervención inmediata en campo.
+
+**b. Administrador de la casa de reposo**
+
+- Supervisión remota del estado operativo del hogar de reposo desde el dispositivo móvil.
+- Recepción de notificaciones críticas y consulta rápida de alertas pendientes para coordinar la respuesta del personal.
+
+**c. Familiar**
 
 - Acceso al estado actual del residente vinculado y visualización de signos vitales recientes (US-14).
 - Consulta del historial de signos vitales con filtro por período personalizado (US-15).
 - Recepción de notificaciones de alertas críticas con deep link al detalle del evento (US-16).
 
-**b. Personal de Cuidado**
-
-- Consulta del monitoreo de signos vitales en tiempo real de los residentes asignados a su turno (US-11, US-12).
-- Registro de eventos clínicos en el historial del residente para garantizar la continuidad del cuidado entre turnos (US-19).
-- Bandeja de alertas críticas con acciones rápidas para intervención inmediata en campo.
 
 
 
