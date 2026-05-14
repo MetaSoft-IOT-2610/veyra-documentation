@@ -374,17 +374,43 @@ Sistema jerárquico accesible desde una bottom navigation bar con iconografía c
 
 ### 5.2.2. Labeling Systems
 
-- **Nomenclatura:** Las etiquetas visibles se construyen a partir del **Ubiquitous Language** definido en el Capítulo II. En el sidenav de la aplicación web los términos coinciden con los conceptos del dominio: **Dashboard**, **Devices**, **Residents**, **Staff** y **Rooms**. Los botones siguen una forma imperativa y corta: "Sign-In", "Create User", "Create Admin", "Sign-Out", "Add", "Edit", "Details", "Go Back", "View Medications" y "Assign Room". En la Landing Page se reutilizan los mismos conceptos en inglés ("Home", "Features", "Benefits", "About Us", "Plans") y los CTAs son orientados a la acción ("Start now →", "Get Family Plan", "Get Nursing Home Plan", "Subscribe").
+El sistema de etiquetado de "Veyra" ha sido diseñado para ser claro, directo y fácil de entender, usando palabras clave con un número mínimo de términos sin perder precisión clínica. Las etiquetas evitan tecnicismos innecesarios y buscan reducir la carga cognitiva del usuario, adaptando el lenguaje al rol que las consume.
 
-- **Consistencia entre Plataformas:** La aplicación web utiliza **`ngx-translate`** con las claves de traducción centralizadas en `public/i18n/en.json` y `public/i18n/es.json`, lo que garantiza que la misma clave (por ejemplo `nav.resident`, `nav.staff`, `residents.list.title`) renderice la misma etiqueta en cada pantalla donde aparece. La Landing Page replica el patrón con el atributo `data-i18n` y los archivos `translations/en.js` y `translations/es.js`. El nombre de marca **Veyra** aparece idéntico en el `<title>` del documento, en la cabecera del toolbar, en el footer del sidenav y como sufijo de cada page title (`{Page} | Veyra`).
+**Principios:**
 
-- **Lenguaje Adaptativo por Rol:** Las etiquetas se ajustan al rol que las consume. La aplicación web — usada hoy por el administrador del hogar de reposo — emplea terminología operativa y clínica (**Resident**, **Staff**, **Contract**, **Medical Record**, **Allergy**, **Vital Sign**, **Medication**, **Room**, **Device**). La aplicación móvil para familiares utiliza un lenguaje cercano centrado en el residente vinculado (estado, signos vitales recientes, última actualización), mientras que la versión para personal de cuidado usa términos clínicos directos (turno asignado, alerta crítica, evento clínico).
+- **Consistencia**: Se usan las mismas etiquetas en botones, menús y mensajes relacionados (por ejemplo: "Registrar Residente", "Asignar Habitación", "Ver Detalle", "Sign-In", "Sign-Out").
+- **Simplicidad**: Se evita el uso de jergas técnicas o frases largas. Ejemplos: "Signos vitales", "Alerta crítica", "Historial clínico", "Plan Familiar".
+- **Bilingüismo**: La plataforma soporta inglés y español mediante `ngx-translate` en la aplicación web y atributos `data-i18n` en el Landing Page, permitiendo al usuario alternar de idioma sin perder el contexto.
 
-- **Iconografía:** La aplicación web se apoya en la librería **Material Icons** de Google Fonts. Los íconos principales del sidenav son `home` (Dashboard), `assignment` (Devices), `person` (Residents), `group` (Staff) y `meeting_room` (Rooms). Otros íconos recurrentes son `search` (búsqueda), `close` (limpiar), `add` (crear), `edit` (editar), `menu` (toggle sidenav), `local_hospital` (logo Care Management), `account_balance` (legal guardian), `contact_emergency` (main contact) y `folder_shared` (records). La Landing Page utiliza **Font Awesome 5.15.3** con íconos como `fa-house-user`, `fa-hospital-user`, `fa-user-md`, `fa-globe` (cambio de idioma), `fa-bars` (menú hamburguesa), `fa-chevron-down` (acordeón), `fa-check` (listas de features), `fa-chevron-up` (scroll-to-top) y los íconos sociales (`fa-instagram`, `fa-facebook-f`, `fa-linkedin-in`).
+**Etiquetado en la Aplicación Móvil:**
 
-- **Codificación de Estados por Color:** Siguiendo la paleta funcional definida en la sección 5.1.1, se reservan colores específicos para comunicar el estado del sistema: **verde (`#4CAF50`)** para confirmaciones y estados normales, **amarillo (`#FFC107`)** para advertencias, **rojo (`#F44336`)** para errores y alertas críticas, y **gris** para elementos inactivos o sin datos disponibles. Esta codificación se aplica en botones, badges, mensajes `<mat-error>`, tarjetas de KPI del dashboard y estados de los formularios.
+- **Inicio**: Pantalla principal donde el familiar accede al estado del residente vinculado o el personal asistencial visualiza los residentes asignados al turno.
+- **Signos Vitales**: Sección donde se consultan los valores actuales de frecuencia cardíaca, temperatura, saturación de oxígeno y presión arterial del residente.
+- **Historial**: Permite consultar el historial cronológico de signos vitales y eventos clínicos del residente con filtro por período personalizado.
+- **Notificaciones**: Centro unificado de alertas críticas, avisos de cambios en el estado del residente y deep links al detalle del evento.
+- **Perfil**: Acceso a la información personal del usuario, configuración de preferencias de notificación y opción para cerrar sesión.
 
-- **Bilingüismo (EN/ES):** Toda la plataforma soporta inglés y español como idiomas oficiales. En la Landing Page el switch se realiza con un botón globe-icon que invoca `setLanguage()` sobre los elementos con `data-i18n`; la preferencia se guarda en `localStorage` para conservarse entre sesiones. En la aplicación web el componente `LanguageSwitcher` expone un `MatButtonToggleGroup` con las opciones EN/ES que llama a `TranslateService.use(language)` y actualiza todas las claves de traducción visibles en pantalla.
+**Etiquetado en la Aplicación Web:**
+
+- **Dashboard**: Panel principal donde se visualizan los KPIs operativos (Total Hires, Total Terminations, Net Staff Change, Total Admissions, Active Residents) y las gráficas filtrables por año.
+- **Devices**: Sección de gestión de los dispositivos IoT del hogar de reposo, con listado tabular, búsqueda por nombre y ordenamiento por columnas (Device ID, Assigned By, Assigned At, Status).
+- **Residents**: Sección donde se registran, consultan y editan los residentes admitidos, junto con sus subrecursos (historial médico, medicamentos, alergias y asignación de habitación).
+- **Staff**: Sección de gestión del personal asistencial y médicos, incluyendo alta, edición, vista de detalle y administración de contratos.
+- **Rooms**: Sección donde se administran las habitaciones del hogar de reposo, con búsqueda por número y ordenamiento por columnas.
+- **Suscripción y Pagos**: Flujo dedicado para elegir el plan (Family Plan o Nursing Home Plan), revisar sus detalles y procesar el checkout.
+- **Autenticación**: Acceso a Sign-In, Create User y Create Admin desde el toolbar superior, junto con la opción de Sign-Out cuando la sesión está activa.
+
+**Etiquetado en el Landing Page:**
+
+- **Home**: Primera sección que el visitante ve al entrar. Resume qué es Veyra con el mensaje "The Best Care is Always Connected" y capta la atención con el CTA "Start now →".
+- **What We Offer**: Presenta los servicios principales que ofrece Veyra — Home Health Care, Pediatric Care, Companion Care y Conditions Treated.
+- **Features**: Acordeón interactivo con las funcionalidades clave de la plataforma (Seamless Communication, Real-Time Health Monitoring, Streamlined Clinical Management, Comprehensive Reporting & Analytics) acompañado de un video institucional.
+- **Benefits**: Resalta los beneficios diferenciadores de Veyra para instituciones geriátricas y familias (Enhanced Communication, Streamlined Clinical Management, Improved Resident Well-being, Increased Peace of Mind).
+- **About Us**: Información sobre Metasoft y la misión de Veyra, complementada con un video institucional que refuerza la propuesta de valor.
+- **Our Team**: Presenta a los integrantes del equipo de desarrollo con foto, rol y descripción profesional, generando confianza en el visitante.
+- **Plans**: Presenta los planes de suscripción disponibles (Family Plan y Nursing Home Plan) con toggle Monthly/Annually, precio, descripción y CTAs específicos.
+- **Testimonials & CTA**: Incluye reseñas reales de usuarios y un CTA final "Subscribe" para iniciar el proceso de suscripción.
+
 
 ### 5.2.3. SEO Tags and Meta Tags
 
