@@ -1,1811 +1,1770 @@
-# Capítulo V: Product Implementation, Validation & Deployment
+# Capítulo V: Solution UI/UX Design
 
-## 5.1. Software Configuration Management
+## 5.1. Style Guidelines
 
-En esta sección se describen las decisiones, convenciones y principios adoptados por el equipo para garantizar la coherencia, trazabilidad y control de versiones durante el ciclo de vida del desarrollo de la solución Veyra. Se establecen los lineamientos para la configuración del entorno de desarrollo, gestión del código fuente, convenciones de estilo y configuración de despliegue.
+### 5.1.1. General Style Guidelines
+El diseño visual de la plataforma **Veyra** se inclina hacia una estética moderna, limpia y amigable, en línea con nuestro compromiso de ofrecer soluciones de cuidado que transmitan confianza, claridad y facilidad de uso. Nuestro objetivo es crear una experiencia digital que sea tanto eficiente como reconfortante para las familias y las instituciones de cuidado.
 
-### 5.1.1. Software Development Environment Configuration
+En este capítulo, detallaremos cada uno de los elementos visuales y de estilo que guían el desarrollo de la aplicación Veyra, siempre siguiendo los principios de Diseño de Experiencia de Usuario (UX) e Interfaz de Usuario (UI) para garantizar la máxima usabilidad y accesibilidad.
 
-En esta sección se especifican los productos de software utilizados durante el ciclo de vida del proyecto, incluyendo el nombre de cada herramienta, su propósito técnico específico dentro del proyecto Veyra, y la ruta de referencia (para software SaaS) o ruta de descarga (para productos de instalación local). Las herramientas se organizan según las siguientes disciplinas:
+**Branding**
 
-1. Project Management
-2. Requirements Management
-3. Product UX/UI Design
-4. Software Development
-5. Software Testing
-6. Software Documentation
+El logo principal de nuestra plataforma es *Veyra*, un nombre que evoca cercanía y visión en el cuidado. Nuestro propósito es ser un puente digital para el cuidado de los adultos mayores, ofreciendo una solución integral para gestores de cuidado y familias. El branding se enfoca en transmitir innovación, soporte y confiabilidad, valores esenciales para quienes confían en nosotros el bienestar de sus seres queridos.
+<br>
 
-#### Project Management
+<p align="center">
+  <img src="../assets/img/chapter-V/Veyra-logo.png" alt="Veyra-Logo" width="350px" height="auto"/>
+</p>
 
-Esta disciplina se centra en la planificación, seguimiento y control de las actividades del proyecto, asegurando el cumplimiento de los objetivos dentro del tiempo y recurso establecidos
+**Typography**
 
-- **Jira:** Plataforma de gestión de proyectos ágiles utilizada para la administración del Product Backlog, planificación de Sprints, asignación de User Stories y Tasks a los miembros del equipo, y seguimiento del progreso mediante tableros Scrum con estados To-Do, In-Process, To-Review y Done.  
-  **Ruta de referencia:** https://www.atlassian.com/software/jira
+La tipografía empleada en Veyra será **Rubik**, con sus variantes Regular, Medium, SemiBold y Bold. La elección de Jost se basa en su estética moderna y profesional, que se equilibra con una excelente legibilidad en diversas resoluciones y dispositivos (móviles, tabletas, ordenadores). Además, su disponibilidad a través de Google Fonts asegura una carga eficiente y consistente.
 
-#### Requirements Management:
+La jerarquía tipográfica se establece de la siguiente manera para garantizar claridad y ritmo visual:
 
-Este proceso se enfoca en la documentación, verificación y seguimiento de los requisitos del proyecto, asegurando que las necesidades de los stakeholders sean satisfechas.
+- **Títulos principales (H1/Sección heading):** 4rem (aprox. 64px) en escritorio, 2.8rem (aprox. 45px) en móvil.
 
-- **Trello:** Plataforma de gestión visual basada en tableros, listas y tarjetas, utilizada para la organización del Sprint Backlog, gestión de User Stories por estado (To-Do, In-Progress, Done) y colaboración del equipo en la priorización de requisitos del proyecto Veyra.  
-  **Ruta de referencia:** https://trello.com
+- **Subtítulos (H2/Sub-headings):** 2.8rem (aprox. 45px) en escritorio, 2.2rem (aprox. 35px) en móvil.
 
-#### Product UX/UI Design
+- **Títulos de componentes (H3/H4):** 2rem (aprox. 32px) a 2.2rem (aprox. 35px).
 
-El diseño de la experiencia de usuario y la interfaz de usuario para Veyra contempla un modelo de sitio web responsivo, compatible con navegadores de escritorio y dispositivos móviles. Se utilizan las siguientes herramientas.
+- **Cuerpo del texto (p):** 1.6rem (aprox. 16px) con un interlineado de 1.6.
 
-1. **UXPressia:** Plataforma para la elaboración de User Personas, Empathy Maps, Customer Journey Maps e Impact Maps de los segmentos objetivos del proyecto Veyra (Administradores de casas de reposo y Familiares de adultos mayores).  
-   **Ruta de referencia:** https://uxpressia.com/
+- **Botones y etiquetas (span):** 1.4rem (aprox. 14px) a 1.8rem (aprox. 18px).
 
-2. **Miro:** Pizarra digital colaborativa utilizada para sesiones de Big Picture EventStorming y Design-Level EventStorming, facilitando la identificación de Bounded Contexts, Events, Commands y Aggregates del dominio Veyra.  
-   **Ruta de referencia:** https://miro.com/es/
+<p align="center">
+  <img src="../assets/img/chapter-V/typografy-Veyra.png" alt="Primary Color Palette" width="500px" height="auto"/>
+</p>
 
-3. **Figma:** Herramienta de diseño colaborativo para la creación de Wireframes, Mock-ups y Prototipos interactivos de la Landing Page y Web Applications de Veyra, aplicando el Design System basado en Material Design.  
-   **Ruta de referencia:** https://www.figma.com/es-es/
+Esta distribución garantiza un contraste óptimo entre el texto y el fondo, superando un ratio mínimo de 4.5:1 según las WCAG 2.1 AA para una accesibilidad superior.
 
-4. **LucidChart:** Aplicación de diagramación colaborativa para la creación de Wireflows, User Flows, diagramas UML (Class Diagrams) y Database Diagrams de la arquitectura de Veyra.  
-   **Ruta de referencia:** https://www.lucidchart.com/pages/es
+<br>
 
-5. **Overflow:** Herramienta para la elaboración de User Flow Diagrams detallados, ilustrando las rutas de navegación (happy paths y unhappy paths) de los usuarios en las aplicaciones web de Veyra.  
-   **Ruta de referencia:** https://overflow.io/
+**Colors**
 
-#### Software Development:
+Nuestra paleta de colores ha sido cuidadosamente seleccionada para evocar sensaciones de calma, profesionalismo y confianza. Se ha distribuido en tres categorías principales:
 
-El desarrollo de software del proyecto Veyra abarca la implementación del Langin Page, Frontend Web Application y Backend Web Services. Se utilizan las siguientes herramientas y tecnologías.
+**Paleta principal**: Colores que definen la identidad de Veyra y se usan en elementos clave.
+* **Primario (Azul claro):** var(--primary-color) (referencia principal).
+* **Secundario (Azul Profundo):** var(--secondary-color) (para texto principal y elementos interactivos).
+* **Terciario (Gris Oscuro):** var(--tertiary-color) (para texto secundario y detalles).
+* **Fondo Claro:** var(--bg-light) (fondos de secciones).
+* **Fondo Blanco:** var(--white) (fondos de tarjetas y elementos principales).
 
-1. **GitHub:** Sistema de control de versiones distribuido y plataforma de hosting para repositorios de código fuente. Gestión de la organización NovaPeru-Tech, implementación de GitFlow Workflow, Conventional Commits y Semantic Versioning.  
-   **Ruta de referencia:** https://github.com  
-   **Organización del proyecto:** https://github.com/NovaPeru-Tech
+**Paleta de Soporte**: Colores complementarios que añaden profundidad y contraste.
+* **Gris Neutro:** Para bordes sutiles, líneas divisorias y fondos de alternancia.
 
-2. **WebStorm:** Entorno de desarrollo integrado (IDE) de JetBrains para la implementación del Frontend utilizando Angular Framework, HTML5, CSS3, JavaScript y TypeScript. Incluye integración con GitHub para control de versiones.  
-   **Ruta de descarga:** https://www.jetbrains.com/webstorm/  
-   **Licencia de estudiante:** https://www.jetbrains.com/community/education/
+**Colores Funcionales**: Reservados para comunicar estados específicos al usuario.
+* **Éxito:** Verde (#4CAF50) para confirmaciones y acciones exitosas.
+* **Error:** Rojo (#F44336) para alertas y mensajes de error.
+* **Advertencia:** Amarillo (#FFC107) para notificaciones y avisos importantes.
 
-3. **IntelliJ IDEA:** Entorno de desarrollo integrado (IDE) de JetBrains para la implementación del Backend con Spring Boot Framework y Java. Incluye integración con Azure para despliegue de Web Services.  
-   **Ruta de descarga:** https://www.jetbrains.com/idea/  
-   **Licencia de estudiante:** https://www.jetbrains.com/community/education/
 
-4. **Angular Framework:** Framework de desarrollo para Frontend Web Applications. Construcción de componentes reutilizables, gestión de estado mediante Services y RxJS, enrutamiento entre vistas y consumo de API REST.  
-   **Ruta de referencia:** https://angular.io/
+<p align="center">
+  <img src="../assets/img/chapter-V/Color Pallete.png" alt="Primary Color Palette" width="800px" height="auto"/>
+</p>
 
-5. **Angular Material:** Biblioteca de componentes UI basada en Material Design para Angular. Proporciona componentes pre-construidos (buttons, forms, tables, dialogs) que garantizan consistencia visual en la interfaz de VEYRA.  
-   **Ruta de referencia:** https://material.angular.io/
+Esta combinación cromática refleja los valores de nuestra marca y busca transmitir al público una imagen de profesionalismo, seguridad y calidez en el cuidado de adultos mayores.
+<br>
 
-6. **Spring Boot Framework:** Framework para desarrollo de Web Services RESTful del Backend de VEYRA. Implementación de lógica de negocio, persistencia de datos con JPA/Hibernate, y documentación de API con OpenAPI/Swagger.  
-   **Ruta de referencia:** https://spring.io/projects/spring-boot
+**Spacing**
 
-7. **HTML5, CSS3, JavaScript:** Tecnologías fundamentales para la implementación de la Landing Page y estructura base de las Web Applications.  
-   **Referencias:**
-    - HTML5: https://html.spec.whatwg.org/
-    - CSS3: https://www.w3.org/Style/CSS/
-    - JavaScript: https://developer.mozilla.org/es/docs/Web/JavaScript
+El espaciado en Veyra sigue un sistema de espaciado modular y consistente para garantizar un ritmo visual armonioso y una jerarquía clara en toda la interfaz. La consistencia en el espaciado ayuda a reducir la carga cognitiva del usuario y mejora la legibilidad.
 
-8. **TypeScript:** Lenguaje de programación tipado para desarrollo de Frontend Web Applications con Angular. Proporciona tipado estático, detección temprana de errores y mejor soporte de IDE.  
-   **Ruta de referencia:** https://www.typescriptlang.org/
+* **Espaciado Básico:** Usamos un espaciado base de 0.5rem (8px) para elementos pequeños como iconos, botones y texto. Este valor es la unidad mínima y se multiplica para crear espacios más grandes.
 
-9. **Java:** Lenguaje de programación para el desarrollo del Backend con Spring Boot. Se utiliza Java 17 para compatibilidad con Azure App Service.  
-   **Ruta de referencia:** https://openjdk.org/
+* **Margen Interno (Padding) Generoso:** Las secciones principales de la página utilizan un padding vertical de 6rem (96px) para crear pausas visuales claras. Los contenedores de tarjetas o elementos secundarios usan padding más pequeños, como 2.5rem (40px), para agrupar el contenido de forma lógica.
 
-#### Software Testing:
+* **Espacio entre Elementos:** El espaciado entre elementos relacionados, como las tarjetas de planes o los miembros del equipo, varía entre 1.5rem (24px) y 3rem (48px). Esto mantiene una densidad de información adecuada sin abrumar visualmente al usuario.
 
-Las pruebas de software permiten evaluar y verificar que los productos desarrollados cumplen con los requisitos especificados y funcionan correctamente.
+* **Line Height del Texto:** El interlineado del texto (line-height) está configurado en 1.6, lo que facilita la lectura de párrafos largos y evita que las líneas se sientan demasiado juntas.
 
-- **Lenguaje Gherkin:** Lenguaje de dominio específico (DSL) para la redacción de Acceptance Criteria de User Stories en formato estructurado Given-When-Then. Permite definir escenarios de prueba legibles por stakeholders y ejecutables por herramientas de automatización. Los keywords principales son: Feature, Scenario, Given, When, Then, And, But.  
-  **Ruta de referencia:** https://cucumber.io/docs/gherkin/
+<br>
 
-#### Software Documentation
+**Tono de Comunicación**
 
-La documentación de software permite explicar el funcionamiento, uso y arquitectura de los productos desarrollados, facilitando su mantenimiento y evolución.
+La voz y el tono de Veyra están diseñados para ser tan confiables y amigables como nuestra plataforma. Nuestro objetivo es conectar con familias e instituciones de cuidado de manera empática y profesional.
 
-- **OpenAPI Specification / Swagger:** Estándar para la documentación interactiva y machine-readable de los Web Services RESTful del Backend de Veyra. Especificación de endpoints, parámetros, request/response bodies, códigos de estado HTTP y ejemplos de uso.  
-  **Ruta de referencia:** https://swagger.io/  
-  **URL de documentación desplegada:** https://veyrav01.azurewebsites.net/swagger-ui/index.html
+* **Tono: Amigable y empático,** con un toque de profesionalismo. Buscamos proyectar cercanía y comprensión de las necesidades de nuestros usuarios (familias), mientras mantenemos la autoridad y la seriedad que esperan las instituciones de cuidado.
 
-- **Markdown:** Lenguaje de marcado ligero para la elaboración del Project Report en el repositorio GitHub. Permite estructurar documentación con formato consistente y compatible con control de versiones.  
-  **Ruta de referencia:** https://www.markdownguide.org/
+* **Actitud: Confiable y serena.** El 90% de nuestra comunicación es tranquilizadora y segura, mientras que el 10% restante es entusiasta, especialmente en los llamados a la acción (CTAs) para motivar al usuario.
+
+* **Lenguaje: Claro y directo.** Evitamos la jerga técnica innecesaria. Nos enfocamos en los beneficios que Veyra aporta a la vida diaria de las familias y los gestores de cuidado, hablando en términos de paz mental, eficiencia y conexión.
+
+* **Voz: Experta y cálida.** Posicionamos a Veyra como una solución líder en tecnología de cuidado, pero siempre con un enfoque humano y comprensivo.
+
+Este enfoque comunicacional busca generar confianza y lealtad, asegurando a las familias que están tomando la mejor decisión para sus seres queridos, y a las instituciones, que están optimizando sus procesos con una herramienta de vanguardia.
+
+
+### 5.1.2. Web, Mobile and IoT Style Guidelines
+
+
+### Web  Style Guidelines
+
+Las directrices de estilo web de Veyra se centran en la simplicidad, la accesibilidad y la modernidad. Nuestro objetivo es crear una experiencia visual que refleje la misión de nuestra plataforma: conectar y simplificar el cuidado de los adultos mayores con un diseño limpio e intuitivo.
+
+**1) Layout**
+
+* **Sistema de Grid:** Utilizamos un diseño de cuadrícula flexible para garantizar que el contenido de Veyra se vea bien en cualquier dispositivo. Este enfoque permite que las tarjetas de servicios y planes se ajusten dinámicamente, manteniendo el orden y la coherencia visual.
+* **Headers y Footers:** El encabezado (header) es fijo en la parte superior, proporcionando acceso constante a la navegación principal y los botones de acción (Sign In, Sign Up). El pie de página (footer) es completo y funcional, con enlaces esenciales que complementan la experiencia del usuario.
+* **Cards:** Las tarjetas son un componente central en nuestro diseño. Se usan para destacar los servicios, beneficios y testimonios. Tienen bordes redondeados y sombras suaves para darles una apariencia moderna y hacer que el contenido se sienta "elevado" y fácil de leer.
+
+**2) Responsive Design**
+
+* **Desktop:** La navegación principal es visible en la barra superior junto a los botones de inicio de sesión. El contenido se presenta en múltiples columnas para un uso eficiente del espacio de la pantalla.
+* **Tablet:** El menú de navegación se oculta en un botón de hamburguesa para maximizar el espacio. Los elementos de la cuadrícula se adaptan a un diseño de dos columnas. Los botones y formularios se expanden para ser fáciles de tocar.
+* **Mobile:** La experiencia está optimizada para la visualización en una sola columna. La navegación se realiza a través de un menú desplegable, y todos los elementos interactivos, como botones y campos de entrada, son grandes y claros, ideales para pantallas táctiles.
+
+**3) Interaction Design**
+
+* **Botones:** Nuestros botones son llamativos y fáciles de hacer clic, con efectos visuales sutiles al pasar el cursor para confirmar la interactividad. El botón principal de llamado a la acción (Start now →) destaca claramente del resto.
+
+* **Formularios:** El formulario de contacto en el pie de página es sencillo y directo. Los campos son claros y están bien espaciados para evitar errores del usuario.
+
+**4) Images and Icons**
+
+* **Imágenes:** Se utilizan fotografías de alta calidad que evocan calidez, conexión y cuidado. Las imágenes de personas mayores y familias interactuando refuerzan el mensaje de Veyra. Las imágenes están optimizadas para una carga rápida.
+
+* **Íconos:** Empleamos un conjunto de íconos de estilo lineal y minimalista. Estos iconos se utilizan para representar servicios y características, ofreciendo una guía visual rápida y coherente en toda la página.
+
+**5) Repositorio Central**
+
+* **Organización:** El proyecto sigue una estructura de archivos lógica. Los estilos están en la carpeta assets/style.css, y los archivos JavaScript en assets/scripts. Todos los activos visuales (imágenes, logos) se encuentran centralizados en assets/images y assets/logos, respectivamente.
+
+* **Versionado:** Usamos un sistema de control de versiones como Git para gestionar los cambios en los archivos de estilo y contenido. Esto asegura que todos los colaboradores trabajen en la versión más reciente del proyecto.
+
+
+### Mobile   Style Guidelines
+
+**1) Layout y Grid**
+
+* **Orientación:** La aplicación está optimizada para uso en modo vertical (portrait). Las vistas críticas de monitoreo funcionan también en landscape, ajustando el mapa o los gráficos de signos vitales a pantalla completa.
+* **Columna única:** Todo el contenido se presenta en una sola columna, con un padding horizontal fijo de **16 dp** a cada lado, siguiendo las directrices de Material Design 3.
+* **Área táctil mínima:** Todos los elementos interactivos (botones, ítems de lista, íconos de acción) tienen un área táctil mínima de **48 × 48 dp**, garantizando accesibilidad para el Personal Asistencial que opera con guantes o en movimiento.
+* **Cards de signos vitales:** Altura fija de 80 dp mínimo por card, con el valor numérico del signo vital en tipografía grande (H2 mobile) para lectura de un vistazo. Un borde lateral de 4 dp ancho en el color de estado (verde/amarillo/rojo) identifica visualmente la condición del residente sin necesitar leer el número.
+  **2) Navegación — Bottom Navigation Bar**
+
+| Destino       | Ícono Material   | Descripción de uso por rol                                                                           |
+|---------------|------------------|------------------------------------------------------------------------------------------------------|
+| **Home**      | `home`           | Familiar: estado del residente vinculado. Staff: lista de residentes del turno. Admin: resumen KPIs. |
+| **Health**    | `monitor_heart`  | Signos vitales en tiempo real (frecuencia cardíaca, temperatura, SpO2, presión arterial).            |
+| **Calendar**  | `calendar_month` | Visitas programadas (Familiar), turnos (Staff), agenda operativa (Admin).                            |
+| **Chat**      | `chat`           | Canal de comunicación casa de reposo ↔ familiar y staff ↔ administración.                            |
+| **Dashboard** | `bar_chart`      | Métricas y KPIs operativos. Usado principalmente por el Administrador desde el móvil.                |
+
+**3) Tipografía Mobile**
+
+| Elemento                    | Tamaño | Peso     | Uso                                        |
+|-----------------------------|--------|----------|--------------------------------------------|
+| H1 — Título de pantalla     | 22 sp  | Bold     | Nombre de la sección activa                |
+| H2 — Título de card         | 18 sp  | SemiBold | Nombre del residente, valor de signo vital |
+| H3 — Subtítulo / Etiqueta   | 16 sp  | Medium   | Nombre del parámetro (Heart Rate, Temp)    |
+| Body — Texto de contenido   | 14 sp  | Regular  | Descripciones, timestamps, notas           |
+| Caption — Metadatos         | 12 sp  | Regular  | Hora de última actualización, Device ID    |
+| Button label                | 14 sp  | Medium   | Etiquetas de botones de acción             |
+
+* Interlineado: **1.5** para cuerpo de texto y **1.2** para encabezados.
+  **4) Colores en contexto móvil**
+
+* **Fondo de pantalla:** `#F3F4F6` (gris claro) — reduce la fatiga visual en turnos prolongados.
+* **Fondo de card:** `#FFFFFF` con sombra `elevation: 1` (shadow: 0 1px 3px rgba(0,0,0,0.12)).
+* **Color de estado en cards:** Borde lateral izquierdo de 4 dp de ancho en el color semántico correspondiente (verde/amarillo/rojo), acompañado siempre de un ícono y texto de estado para garantizar accesibilidad ante daltonismo.
+  **5) Componentes principales**
+
+* **Vital Signs Card:** Presenta el nombre del parámetro, el valor numérico actual (tipografía H2 bold), la unidad de medida y el timestamp de la última lectura. El borde lateral codifica el estado. Un ícono `trending_up` / `trending_down` / `trending_flat` complementa el color para usuarios con visión reducida.
+* **Alert Banner:** Aparece en la parte superior de la pantalla activa como un banner a ancho completo en rojo (#F44336) con texto blanco. Incluye el nombre del residente, el parámetro fuera de rango y un botón `Ver detalle` que abre el deep link al historial clínico. Persiste hasta que el usuario lo descarta explícitamente o el valor vuelve al rango normal.
+* **Resident List Item:** Card compacta (height 72 dp) con foto circular del residente (40 dp de diámetro), nombre, estado actual en badge y hora de la última lectura. El borde lateral codifica el estado de alerta. Tap en la card navega al detalle del residente.
+* **Search Bar:** Campo de búsqueda a ancho completo posicionado debajo del toolbar, con ícono `search` como prefijo y botón `close` para limpiar. El placeholder se adapta al módulo activo. El filtrado ocurre en tiempo real a partir del segundo carácter ingresado.
+* **Floating Action Button (FAB):** Botón circular primario (56 dp de diámetro) en el extremo inferior derecho de las vistas de lista que requieren creación de registros. Ícono `add` en blanco sobre fondo de color primario. Se oculta al hacer scroll hacia abajo y reaparece al hacer scroll hacia arriba.
+* **Empty State:** Cuando una lista no tiene resultados, se muestra una ilustración centrada con un ícono de 80 dp, un texto descriptivo en H3 y, cuando aplica, un botón de acción secundaria.
+  **6) Interaction Design**
+
+* **Pull-to-refresh:** Disponible en todas las vistas de lista y en la pantalla de signos vitales. El indicador de carga circular usa el color primario de la marca.
+* **Swipe actions:** En la vista de notificaciones, el gesto de swipe hacia la izquierda sobre un ítem revela el botón `Marcar como leído` (color primario). El swipe a la derecha descarta la notificación si no es de tipo alerta crítica.
+* **Deep links desde push notifications:** Las notificaciones push de alertas críticas incluyen un deep link que abre la app directamente en la pantalla de signos vitales del residente afectado, sin pasar por la pantalla de inicio.
+* **Transiciones:** Las navegaciones entre pantallas usan `slide` horizontal (Material shared element transition). Las cards de signos vitales usan `fade` al actualizarse en tiempo real para no distraer al usuario durante la lectura.
+* **Retroalimentación háptica:** Se activa vibración corta (50 ms) al confirmar una acción destructiva (por ejemplo, descartar una alerta). Se activa vibración larga (200 ms) al recibir una alerta crítica nueva en primer plano, consistente con el patrón del Smart Wristband.
+  **7) Variaciones por rol**
+
+| Elemento             | Familiar                                         | Personal Asistencial                                  | Administrador                                         |
+|----------------------|--------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------|
+| Home screen          | Dashboard simplificado de 1 residente vinculado  | Lista de residentes del turno con alertas pendientes  | Resumen KPIs (residentes activos, alertas, ocupación) |
+| Health tab           | Signos vitales del residente vinculado           | Selector de residente + signos vitales en tiempo real | Vista de alertas críticas activas en el hogar         |
+| Dashboard tab        | Historial gráfico de los últimos 7 días          | Registro de eventos clínicos del turno actual         | KPIs operativos + gráficas de tendencia               |
+| Notificaciones       | Alertas del residente vinculado + avisos         | Alertas críticas de todos los residentes asignados    | Alertas críticas + novedades operativas del hogar     |
+| Acciones disponibles | Solo consulta; sin escritura sobre el expediente | Registro de eventos clínicos; atención de alertas     | Gestión operativa completa desde el móvil             |
+
+**8) Accesibilidad**
+
+* **Contraste de texto:** Ratio mínimo 4.5:1 sobre cualquier fondo (WCAG 2.1 AA), idéntico al estándar de la aplicación web.
+* **Descriptores de accesibilidad:** Todos los íconos y botones incluyen atributo `contentDescription` para lectores de pantalla (TalkBack en Android, VoiceOver en iOS). Los valores de signos vitales incluyen el nombre del parámetro y la unidad como parte del descriptor (e.g., "Frecuencia cardíaca: 78 latidos por minuto, estado normal").
+* **Tamaño de fuente dinámico:** La interfaz respeta la configuración de tamaño de fuente del sistema operativo hasta `sp × 1.3`. Por encima de este factor, el layout cambia a columna única con scroll para preservar la legibilidad.
+* **Color nunca como único indicador:** Todo indicador de estado basado en color está siempre acompañado de un ícono diferenciado y/o texto de estado. Esto garantiza accesibilidad para usuarios con daltonismo, siguiendo el mismo principio aplicado en el diseño de los LEDs de los dispositivos IoT.
+  **9) Consistencia cross-platform con los dispositivos IoT**
+
+| Estado del sistema      | LED Smart Wristband / Badge     | Interfaz Móvil                                      |
+|-------------------------|---------------------------------|-----------------------------------------------------|
+| Operación normal        | Verde — pulso lento             | Borde card verde + badge "Normal"                   |
+| Alerta crítica activa   | Rojo — parpadeo rápido          | Borde card rojo + Alert Banner + vibración larga    |
+| Dispositivo apagado     | Rojo — sólido fijo              | Badge gris "Disconnected" + ícono `signal_wifi_off` |
+| En proceso de carga     | Azul — pulso suave              | Badge azul "Charging" en la vista de Devices        |
+| Carga completa          | Verde — sólido 5 s, luego apaga | Badge verde "Ready" en la vista de Devices          |
+| Batería baja            | (vibración en wristband)        | Ícono `battery_low` en la card del residente        |
+
+
+### Iot  Style Guidelines
+
+
+### Introducción
+
+Los dispositivos IoT de **Veyra** son el punto de contacto físico más crítico del sistema: son los únicos componentes que interactúan directamente con el **Residente** en el entorno de la casa de reposo. A diferencia de las interfaces web y móvil, estos dispositivos operan en segundo plano de forma continua, sin requerir atención activa del usuario. Por esta razón, sus lineamientos de diseño deben garantizar que **cualquier información visual sea comprensible en menos de dos segundos**, sin conocimientos técnicos previos.
+
+Estos lineamientos aplican a los dos dispositivos que conforman la capa Embedded de Veyra:
+
+- **Pulsera Inteligente** (*Smart Wristband*): dispositivo tipo wristband que monitorea signos vitales biométricos del Residente.
+- **Escarapela Inteligente** (*Smart Badge*): dispositivo colgante que realiza seguimiento de ubicación del Residente dentro o fuera de la instalación.
+
+Ambos dispositivos deben ser coherentes entre sí y con el resto de la plataforma Veyra (landing page, aplicación web, aplicación móvil) en términos de lenguaje visual, codificación de color y terminología del Ubiquitous Language.
 
 ---
 
-### 5.1.2. Source Code Management
+### Principios de Diseño para Dispositivos IoT
 
-En esta sección se establecen los medios y esquemas de organización aplicados para el seguimiento de modificaciones del código fuente. Se utiliza GitHub como plataforma y sistema de control de versiones distribuido.
+Los siguientes principios rigen todas las decisiones de diseño de los dispositivos físicos de Veyra:
 
-#### Repositorios del Proyecto
+1. **Invisibilidad funcional**: el dispositivo no debe requerir atención del Residente durante la operación normal. Funciona en silencio y solo se manifiesta visualmente cuando existe un estado relevante que comunicar.
 
-| Producto                   | URL del Repositorio                                            |
-|----------------------------|----------------------------------------------------------------|
-| Organización NovaPeru-Tech | https://github.com/NovaPeru-Tech                               |
-| Landing Page               | https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage     |
-| Frontend Web Application   | https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend         |
-| Backend Web Services       | https://github.com/NovaPeru-Tech/NovaPeruTech-Backend          |
-| Project Report             | https://github.com/NovaPe ru-Tech/NovaPeru-Tech-Project-Report |
+2. **Legibilidad inmediata**: cualquier indicador de estado debe ser interpretable rapido por el Healthcare Staff, incluso en condiciones de baja iluminación (turnos nocturnos).
 
-#### GitFlow Workflow
+3. **Consistencia cross-platform**: la codificación de colores, los iconos y la terminología son idénticos entre el dispositivo físico, la aplicación móvil y el dashboard web. Un estado que aparece como rojo en el dispositivo, también aparece como rojo en la app.
 
-Se implementa GitFlow como modelo de flujo de trabajo para el control de versiones, estableciendo una estructura de ramas que facilita el desarrollo paralelo y la gestión de releases.
+4. **Mínima fricción operativa**: el Healthcare Staff trabaja bajo alta presión de tiempo. Las interacciones físicas con el dispositivo deben requerir el menor número posible de acciones. Se prioriza la automatización por sobre la interacción manual.
 
-**Ramas Principales:**
+5. **Diseño inclusivo**: los indicadores visuales no dependen únicamente del color. Se complementan con formas diferenciadas, frecuencias de parpadeo distintas y, cuando aplica, retroalimentación háptica, para garantizar accesibilidad ante daltonismo o condiciones de visión reducida.
 
-- **main:** Rama principal que contiene el historial oficial de versiones estables listas para producción. Solo recibe merges de release branches y hotfix branches.
-- **develop:** Rama de integración donde se consolidan los features completados y probados. Sirve como base para la creación de release branches.
-
-**Ramas de Soporte:**
-
-- **feature/\<feature-name\>:** Ramas creadas a partir de develop para implementar nuevas funcionalidades. Se fusionan de vuelta a develop una vez completadas y revisadas.
-- **release/\<version\>:** Ramas creadas a partir de develop para preparar una nueva versión de producción. Permiten correcciones menores y ajustes antes del merge a main.
-- **hotfix/\<issue\>:** Ramas creadas a partir de main para correcciones urgentes en producción. Se fusionan tanto a main como a develop.
-
-#### Convenciones de Nomenclatura para Ramas
-
-| Tipo de Rama | Formato                                           | Ejemplo                                 |
-|--------------|---------------------------------------------------|-----------------------------------------|
-| Feature      | `feature/<bounded-context>-<feature-description>` | `feature/residents-add-medical-history` |
-| Release      | `release/<major.minor.patch>`                     | `release/1.0.0`                         |
-| Hotfix       | `hotfix/<issue-description>`                      | `hotfix/fix-login-validation`           |
-
-#### Conventional Commits
-
-Se aplica la especificación Conventional Commits para los mensajes de commit, siguiendo la estructura:
-
-```
-<type>[optional scope]: <description>
-
-[optional body]
-
-[optional footer(s)]
-```
-
-**Tipos de Commit:**
-
-| Tipo       | Descripción                                                   |
-|------------|---------------------------------------------------------------|
-| `feat`     | Nueva funcionalidad para el usuario                           |
-| `fix`      | Corrección de un bug                                          |
-| `docs`     | Cambios en documentación                                      |
-| `style`    | Cambios de formato (espacios, comas, etc.) sin afectar lógica |
-| `refactor` | Refactorización de código sin cambiar funcionalidad           |
-| `perf`     | Mejoras de rendimiento                                        |
-| `test`     | Adición o corrección de pruebas                               |
-| `build`    | Cambios en sistema de build o dependencias externas           |
-| `chore`    | Tareas de mantenimiento sin afectar código de producción      |
-
-**Ejemplos de Commits:**
-
-```
-feat(residents): add medical history registration form
-fix(auth): resolve token expiration validation issue
-docs(readme): update deployment instructions
-build(deps): upgrade Angular to version 17
-chore(config): update environment variables for production
-```
-
-#### Semantic Versioning
-
-Se aplica Semantic Versioning 2.0.0 para el versionado de releases, siguiendo el formato `MAJOR.MINOR.PATCH`:
-
-- **MAJOR:** Cambios incompatibles con versiones anteriores (breaking changes)
-- **MINOR:** Nuevas funcionalidades compatibles con versiones anteriores
-- **PATCH:** Correcciones de bugs compatibles con versiones anteriores
-
-**Ejemplo de evolución de versiones:**
-
-- `1.0.0` → Primera versión estable
-- `1.1.0` → Nueva funcionalidad agregada
-- `1.1.1` → Corrección de bug
-- `2.0.0` → Cambio incompatible en API
-
-#### Configuración de GitHub en WebStorm
-
-Instrucciones para vincular WebStorm con GitHub:
-
-1. Abrir WebStorm y navegar a **VCS > Enable Version Control Integration**, seleccionar Git.
-2. Ir a **File > Settings > Version Control > GitHub** y agregar la cuenta de GitHub.
-3. Configurar el nombre de usuario en **File > Settings > Version Control > Git**.
-4. Para conectar con el repositorio remoto: **Git > Manage Remotes** y agregar la URL del repositorio.
-5. Realizar commits con **Ctrl+K** y push con **Ctrl+Shift+K**.
-
-### 5.1.3. Source Code Style Guide & Conventions
-
-En esta sección se establecen las convenciones de estilo y nomenclatura adoptadas para los lenguajes utilizados en el proyecto Veyra: HTML, CSS, JavaScript, TypeScript, Java y Gherkin. Se aplica nomenclatura en inglés para todos los elementos del código, siguiendo el Ubiquitous Language definido para el dominio.
-
-#### Referencias de Guías de Estilo Adoptadas
-
-| Lenguaje/Tecnología | Guía de Estilo                                                                                                      |
-|---------------------|---------------------------------------------------------------------------------------------------------------------|
-| HTML/CSS            | [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)                                |
-| JavaScript          | [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)                                   |
-| TypeScript          | [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html)                                   |
-| Angular             | [Angular Coding Style Guide](https://angular.io/guide/styleguide)                                                   |
-| Java                | [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)                                       |
-| Spring Boot         | [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html) |
-| Gherkin             | [Gherkin Reference](https://cucumber.io/docs/gherkin/reference/)                                                    |
-
-#### Nomenclatura General
-
-Se utiliza nomenclatura en inglés para todos los elementos del código, relacionada con la entidad que representan dentro del dominio del negocio.
-
-| Elemento                        | Convención           | Ejemplo                                    |
-|---------------------------------|----------------------|--------------------------------------------|
-| Clases (Java/TypeScript)        | PascalCase           | `ResidentService`, `MedicationController`  |
-| Interfaces (TypeScript)         | PascalCase           | `IResidentRepository`, `Resident`          |
-| Métodos/Funciones               | camelCase            | `getResidentById()`, `createMedication()`  |
-| Variables                       | camelCase            | `residentName`, `medicationList`           |
-| Constantes                      | SCREAMING_SNAKE_CASE | `MAX_RESIDENTS`, `API_BASE_URL`            |
-| Archivos de componentes Angular | kebab-case           | `resident-list.component.ts`               |
-| Clases CSS                      | kebab-case           | `.resident-card`, `.medication-form`       |
-| Endpoints REST                  | kebab-case (plural)  | `/api/v1/residents`, `/api/v1/medications` |
-
-#### Sangría
-
-Se aplica un espaciado de dos espacios para la indentación en todos los archivos HTML, CSS, JavaScript y TypeScript.
-
-**Ejemplo HTML:**
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>VEYRA - Nursing Home Management</title>
-  </head>
-  <body>
-    <header>
-      <h1>Welcome to VEYRA</h1>
-    </header>
-    <main>
-      <p>Comprehensive care management platform.</p>
-    </main>
-  </body>
-</html>
-```
-
-#### Convenciones por Lenguaje
-
-##### HTML
-
-- Declarar `<!DOCTYPE html>` en la primera línea.
-- Utilizar minúsculas para nombres de elementos y atributos.
-- Utilizar comillas dobles para valores de atributos: `<div class="container">`
-- Incluir atributos `alt` en todas las imágenes para accesibilidad.
-- No omitir elementos `<title>` y meta tags.
-- Usar líneas en blanco para separar bloques de código extensos.
-
-##### CSS
-
-- Utilizar shorthand properties cuando sea posible: `margin: 10px 20px;`
-- Terminar todas las declaraciones con punto y coma.
-- Un espacio después de los dos puntos en propiedades: `color: #333;`
-- Usar comillas simples para valores de font-family: `font-family: 'Open Sans', sans-serif;`
-- Organizar propiedades alfabéticamente dentro de cada selector.
-
-##### JavaScript / TypeScript
-
-- Usar `const` y `let` en lugar de `var`.
-- Espacios alrededor de operadores: `const result = a + b;`
-- Punto y coma al final de instrucciones.
-- Llaves de apertura en la misma línea de la declaración.
-- Usar arrow functions para callbacks: `items.map(item => item.name)`
-
-**Ejemplo TypeScript:**
-
-```typescript
-export class ResidentService {
-  private residents: Resident[] = [];
-
-  getResidentById(id: number): Resident | undefined {
-    return this.residents.find(resident => resident.id === id);
-  }
-
-  createResident(resident: Resident): void {
-    this.residents.push(resident);
-  }
-}
-```
-
-##### Java
-
-- Seguir convenciones de nomenclatura de Spring Boot.
-- Documentar clases y métodos públicos con Javadoc.
-- Organizar imports alfabéticamente, separando imports de java.*, javax.*, org.*, com.*
-- Máximo 120 caracteres por línea.
-- Usar anotaciones de Spring en líneas separadas.
-
-**Ejemplo Java:**
-
-```java
-@RestController
-@RequestMapping("/api/v1/residents")
-public class ResidentController {
-
-    private final ResidentService residentService;
-
-    public ResidentController(ResidentService residentService) {
-        this.residentService = residentService;
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Resident> getResidentById(@PathVariable Long id) {
-        return residentService.findById(id)
-            .map(ResponseEntity::ok)
-            .orElse(ResponseEntity.notFound().build());
-    }
-}
-```
-
-##### Gherkin
-
-- Escribir escenarios en inglés.
-- Un escenario por comportamiento específico.
-- Mantener pasos atómicos y reutilizables.
-- Usar indentación de dos espacios para los pasos.
-
-**Ejemplo Gherkin:**
-
-```gherkin
-Feature: Resident Management
-
-  Scenario: Successfully register a new resident
-    Given the administrator is authenticated
-    And the administrator is on the resident registration form
-    When the administrator enters valid resident information
-    And clicks the "Register" button
-    Then the system should display a success message
-    And the new resident should appear in the residents list
-
-  Scenario: Attempt to register resident with missing required fields
-    Given the administrator is authenticated
-    And the administrator is on the resident registration form
-    When the administrator submits the form with empty required fields
-    Then the system should display validation error messages
-    And the resident should not be registered
-```
+6. **Resiliencia ante desconectividad**: el dispositivo comunica visualmente su estado de sincronización. El Healthcare Staff debe poder saber si el dispositivo está transmitiendo datos en tiempo real o en modo offline, sin consultar la aplicación.
 
 ---
 
-### 5.1.4. Software Deployment Configuration
+### Dispositivo 1 — Pulsera Inteligente (*Smart Wristband*)
 
-En esta sección se especifica la configuración de despliegue para cada uno de los producto digitales de la solución Veyra: Landing Page, Frontend Web Application y Backend Web Services.
+### Descripción General
 
-#### Landing Page - GitHub Pages
+| Atributo                    | Detalle                                                                                                      |
+|-----------------------------|--------------------------------------------------------------------------------------------------------------|
+| Tipo                        | Wristband (pulsera de muñeca)                                                                                |
+| Usuario portador            | Residente adulto mayor                                                                                       |
+| Operador principal          | Healthcare Staff (configura, asigna y supervisa)                                                             |
+| Función principal           | Monitoreo continuo de signos vitales (frecuencia cardíaca, temperatura corporal, saturación de oxígeno SpO2) |
+| Modo de operación           | Pasivo y continuo — no requiere acción del Residente                                                         |
+| Evento disparador de alerta | Valores fuera de los Parámetros Clínicos definidos por el Doctor para ese Residente                          |
 
-La Landing Page se despliega mediante GitHub Pages directamente desde el repositorio, aprovechando el hosting gratuito para sitios estáticos.
+#### Diseño Físico
 
-**Pasos de configuración:**
+- **Forma**: correa suave y ergonómica, adaptable a muñecas de distintos tamaños. El perfil debe ser bajo para no interferir con el descanso ni las actividades diarias del Residente.
+- **Material**: silicona médica hipoalergénica, resistente al agua y a desinfectantes de uso clínico estándar.
+- **Peso**: el dispositivo debe ser lo suficientemente liviano para no ser percibido por el Residente durante el sueño.
+- **Cierre**: hebilla de liberación rápida para facilitar la colocación y el retiro por parte del Healthcare Staff.
+- **Identificación del Residente**: el interior de la correa incluye espacio para una etiqueta impresa con el nombre del Residente y su número de cama, facilitando la identificación física en caso de ser encontrada fuera de su lugar.
 
-1. Acceder al repositorio `NovaPeru-Tech-LandingPage` en GitHub.
-2. Navegar a **Settings > Pages** en el menú lateral.
-3. En la sección "Source", seleccionar la rama `main` y carpeta `/ (root)`.
-4. Hacer clic en **Save** y esperar la generación del sitio (1-2 minutos).
-5. Verificar el despliegue accediendo a la URL generada.
+#### Indicador LED de Estado
 
-**URL de despliegue:** https://novaperu-tech.github.io/NovaPeru-Tech-LandingPage/
+La pulsera cuenta con un único LED RGB que comunica el estado del dispositivo mediante la combinación de color y patrón de parpadeo. Este indicador está ubicado en la cara superior del dispositivo, visible con un vistazo rápido.
 
-#### Frontend Web Application - Vercel
+| Estado del Sistema                        | Color LED | Patrón                                      | Descripción                                                                   |
+|-------------------------------------------|-----------|---------------------------------------------|-------------------------------------------------------------------------------|
+| **Dispositivo activo / operación normal** | Verde     | Pulso lento                                 | Signos vitales dentro de los Parámetros Clínicos.                             |
+| **Dispositivo apagado / inactivo**        | Rojo      | Sólido fijo                                 | El dispositivo no está operativo. Requiere intervención del Healthcare Staff. |
+| **Alerta crítica — valor fuera de rango** | Rojo      | Parpadeo rápido                             | Signo vital fuera de lo normal.                                               |
+| **En proceso de carga**                   | Azul      | Pulso suave y continuo                      | El dispositivo está conectado a la fuente de carga.                           |
+| **Carga completa**                        |  Verde    | Sólido fijo durante 5 segundos, luego apaga | La carga ha finalizado. Listo para su uso.                                    |
 
-El Frontend desarrollado con Angular se despliega en Vercel, plataforma que ofrece hosting optimizado para aplicaciones frontend con CDN global y despliegue automático.
 
-**Pasos de configuración:**
+#### Retroalimentación Háptica
 
-1. Crear cuenta en [Vercel](https://vercel.com) y vincular con GitHub.
-2. Importar el repositorio `NovaPeruTech-Frontend` desde GitHub.
-3. Configurar el proyecto:
-    - **Framework Preset:** Angular
-    - **Build Command:** `ng build --configuration production`
-    - **Output Directory:** `dist/nova-peru-tech-frontend`
-4. Configurar variables de entorno:
-    - `API_BASE_URL`: URL del Backend API
-5. Habilitar despliegue automático en cada push a la rama `main`.
-6. Hacer clic en **Deploy** y esperar la compilación.
+| Evento                | Patrón de Vibración                |
+|-----------------------|------------------------------------|
+| Alerta crítica activa | Vibración corta repetida           |
+| Batería baja          | Dos pulsos cortos cada 60 segundos |
 
-**URL de despliegue:** https://nova-peru-tech-frontend-v1-2w9r.vercel.app/home
 
-#### Backend Web Services - Azure App Service
+#### Botón Físico
 
-El Backend desarrollado con Spring Boot se despliega en Azure App Service, servicio de plataforma como servicio (PaaS) que facilita el hosting de aplicaciones web Java.
+La pulsera incluye un único botón en el lateral del dispositivo, cuya función exclusiva es encender y apagar el dispositivo.
 
-**Pasos de configuración:**
+| Acción                     | Resultado                                                                        |
+|----------------------------|----------------------------------------------------------------------------------|
+| Presión larga (3 segundos) | Enciende el dispositivo si está apagado / Apaga el dispositivo si está encendido |
 
-**1. Creación del Azure App Service:**
+#### Pantalla
 
-1. Acceder al [Portal de Azure](https://portal.azure.com).
-2. Crear un nuevo recurso: **App Service**.
-3. Configurar:
-    - **Runtime stack:** Java 17
-    - **Operating System:** Linux
-    - **Region:** East US (o región más cercana)
-    - **App Service Plan:** Seleccionar o crear plan según necesidades
+En caso de incorporar una pantalla OLED de baja resolución, la información se presenta con la siguiente jerarquía:
 
-**2. Configuración de Base de Datos (Azure SQL Database):**
+<p align="center">
+  <img src="../assets/img/chapter-V/pulsera.png" alt="pulsera-veyra" width="750px" height="auto"/>
+</p>
 
-1. Crear instancia de Azure SQL Database o MySQL.
-2. Configurar reglas de firewall para permitir conexiones desde App Service.
-3. Obtener cadena de conexión JDBC.
+## 5.2. Information Architecture
 
-**3. Configuración de Variables de Entorno:**
 
-En **App Service > Configuration > Application settings**, agregar:
+### 5.2.1. Organization Systems
 
-| Variable                     | Descripción                                |
-|------------------------------|--------------------------------------------|
-| `SPRING_DATASOURCE_URL`      | Cadena de conexión JDBC a la base de datos |
-| `SPRING_DATASOURCE_USERNAME` | Usuario de la base de datos                |
-| `SPRING_DATASOURCE_PASSWORD` | Contraseña de la base de datos             |
-| `SPRING_PROFILES_ACTIVE`     | `prod`                                     |
+La organización jerárquica del Landing Page de "Veyra" ha sido diseñada con el propósito de guiar al usuario de manera lógica y efectiva desde su primer contacto con la solución hasta su conversión en cliente. Esta estructura responde a principios de arquitectura de la información que priorizan la claridad, la relevancia y la progresión natural del contenido, permitiendo que los usuarios comprendan de inmediato el valor del producto, cómo funciona, sus beneficios, y los pasos para adquirirlo.
 
-**4. Despliegue desde IntelliJ IDEA:**
+**Inicio**
 
-1. Instalar el plugin **Azure Toolkit for IntelliJ**.
-2. Autenticarse con la cuenta de Azure.
-3. Clic derecho en el proyecto > **Azure > Deploy to Azure Web Apps**.
-4. Seleccionar el App Service de destino.
-5. Ejecutar el despliegue y verificar en los logs.
+- **Propósito**: Captar la atención del visitante con un mensaje claro y directo.
+- **Contenido**: Nombre del producto, propuesta de valor destacada "The Best Care is Always Connected" y llamado a la acción (CTA) "Start now →".
 
-**URLs de despliegue:**
 
-- **API Base URL:** https://veyrav01.azurewebsites.net
-- **Documentación Swagger UI:** https://veyrav01.azurewebsites.net/swagger-ui/index.html
-- 
-## 5.2. Landing Page, Services & Applications Implementation
+**Información explicativa**
 
-### 5.2.1. Sprint 1
+- **What We Offer:** Cuatro tarjetas que presentan los servicios principales — Home Health Care, Pediatric Care, Companion Care y Conditions Treated.
+- **Features:** Acordeón interactivo con las funcionalidades clave del sistema acompañado de un video institucional embebido.
+- **Benefits:** Cuatro tarjetas con imagen que detallan los beneficios diferenciadores para instituciones y familias.
+- **About Us:** Información sobre Metasoft y la misión de Veyra, complementada con un video institucional.
+- **Our Team:** Grilla con los integrantes del equipo de desarrollo, cada uno con foto, rol y descripción profesional.
 
-Durante el Sprint 1, el equipo se enfocó en el desarrollo e implementación de la Landing Page de VEYRA, incluyendo todas las secciones de presentación del negocio con soporte bilingüe (español/inglés) y despliegue mediante GitHub Pages.
 
-**Repositorio:** https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage
+**Conversión**
 
-**Landing Page Desplegada:** https://novaperu-tech.github.io/NovaPeru-Tech-LandingPage/
+- **Plans:** Detalle de los distintos planes de suscripción disponibles — Family Plan y Nursing Home Plan — con toggle Monthly/Annually.
+- **Testimonials & CTA:** Reseñas de clientes que usaron la aplicación y CTA final "Subscribe" para iniciar la suscripción.
 
-#### 5.2.1.1. Sprint Planning
+<p align="center">
+  <img src="./../assets/img/chapter-V/arquitectura-jerarquica-landing.jpeg">
+</p>
 
-| Sprint Planning Sprint 1           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Sprint Planning Background**     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Date                               | 14/09/2025                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Time                               | 10:00 p.m.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Location                           | Discord                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Prepared By                        | Renato Calvo Yalan                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| Attendees (to planning meeting)    | Calvo Yalan, Renato Guillermo<br>Armas Sánchez, Oscar Javier<br>Ramirez Carrasco, Ariana Lizeth<br>Roman Lopez, Miguel Angel Junior<br>Ruiz Madrid, Billy Jake                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| **Sprint 0 Review Summary**        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|                                    | N/A (Este es el primer sprint del proyecto)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| **Sprint 0 Retrospective Summary** |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|                                    | N/A (Este es el primer sprint del proyecto)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| **Sprint Goal & User Stories**     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|                                    | **Sprint 1 Goal (Outcome–Impact–Customer–Confirmation):**<br><br>*Our focus is on delivering the first bilingual marketing Landing Page of VEYRA that clearly communicates the value proposition and service offering to first-time visitors.*<br><br>*We believe it delivers a clear and trustworthy first impression for Nursing Home Administrators and Family Members, helping them quickly understand what VEYRA does and how to contact the team.*<br><br>*This will be confirmed when users from both segments can navigate through all core sections (Hero, Services, Pricing, About Us, Team, Contact) in Spanish and English and can reach the Contact section in no more than three clicks from the home view.* |
-| Sprint 1 Velocity                  | 13 Story Points                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Sum of Story Points                | 13 SP (≈ 53 horas estimadas)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-
-#### 5.2.1.2. Aspect Leaders and Collaborators
-
-En esta sección se presenta la matriz **Leadership-and-Collaboration Matrix (LACX)** correspondiente al Sprint 1. Su propósito es identificar claramente los aspectos principales del sprint y asignar responsabilidades de liderazgo (**L**) y colaboración (**C**) para fortalecer la comunicación, coordinación y trazabilidad del trabajo dentro del equipo.
-
-Estos aspectos se derivan directamente de los objetivos definidos en el Sprint 1 Goal, asegurando cobertura total de los entregables planificados.
-
-- **Landing Page Development & Deployment:** Diseño, estructura, contenido y funcionalidad de la página principal del proyecto, incluyendo su despliegue.
-- **Report Module Implementation:** Desarrollo y presentación del módulo que permitirá crear, visualizar y exportar el reporte requerido.
-
-| Team Member (Last Name, First Name) | Aspect: Landing Page | Aspect: Report Module |
-|-------------------------------------|----------------------|-----------------------|
-| Calvo Yalan, Renato Guillermo       | L                    | C                     |
-| Armas Sánchez, Oscar Javier         | C                    | L                     |
-| Ramirez Carrasco, Ariana Lizeth     | C                    | C                     |
-| Roman Lopez, Miguel Angel Junior    | C                    | C                     |
-| Ruiz Madrid, Billy Jake             | C                    | C                     |
-
-- **L** = Líder del aspecto
-- **C** = Colaborador en el aspecto
-
-Esta organización de roles está alineada con la posterior asignación de tareas del Sprint Backlog, permitiendo que cada líder supervise la ejecución de su aspecto con apoyo de sus colaboradores. Con ello, se garantiza una gestión más eficiente del progreso y una mejor sincronización entre los miembros del equipo.
-
-### 5.2.1.3. Sprint Backlog 1
-
-El Sprint Backlog 1 reúne las historias de usuario y tareas necesarias para implementar la primera versión de la landing page, incluyendo el menú de navegación, la visualización de planes, la sección de creadores, redes sociales, el formulario de contacto y el cambio de idioma.
-
-Todas las tareas son monitoreadas y actualizadas mediante **Jira Software**.
-
-![Sprint 1 Board Screenshot](../assets/img/chapter-V/sprints/sprint-backlog-I/sprint-table/sprint1-board.jpg)
-
-*Figura: Tablero del Sprint 1 en Jira Software (Proyecto VEYRA)*
 
+Además la arquitectura jerárquica en la interfaz de la aplicación web de "Veyra" ha sido diseñada para facilitar el acceso y gestión eficiente de las múltiples funcionalidades del sistema. Esta estructura permite una distribución lógica del contenido, reduciendo la carga cognitiva del usuario y mejorando su capacidad para encontrar rápidamente las herramientas que necesita.
 
-A continuación, la estructura de la tabla de control de estado para el Sprint:
-**Sprint # | Sprint 1**
 
-| **User Story Id** | **User Story Title**              | **Work-Item Id** | **Work-Item Title**                  | **Description**                                                        | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
-|-------------------|-----------------------------------|------------------|--------------------------------------|------------------------------------------------------------------------|------------------------|-----------------|----------------------------------------------------|
-| US-001            | Menú de navegación                | T001             | Definir estructura del menú          | Definir la estructura del menú de navegación para la landing page.     | 2h                     | Billy Ruiz      | To-do                                              |
-| US-001            | Menú de navegación                | T002             | Implementar menú en HTML             | Implementar el menú de navegación utilizando HTML.                     | 3h                     | Billy Ruiz      | To-do                                              |
-| US-001            | Menú de navegación                | T003             | Estilos del menú                     | Aplicar estilos CSS al menú de navegación.                             | 2h                     | Billy Ruiz      | To-do                                              |
-| US-001            | Menú de navegación                | T004             | Pruebas de navegación                | Realizar pruebas de navegación del menú.                               | 2h                     | Billy Ruiz      | To-do                                              |
-| US-002            | Visualización de planes           | T005             | Diseñar estructura de planes         | Diseñar la estructura de la sección de planes.                         | 3h                     | Renato Calvo    | To-do                                              |
-| US-002            | Visualización de planes           | T006             | Implementar sección de planes        | Implementar la sección de planes en la landing page.                   | 4h                     | Renato Calvo    | To-do                                              |
-| US-002            | Visualización de planes           | T007             | Pruebas de planes                    | Realizar pruebas de carga y visualización de los planes.               | 2h                     | Renato Calvo    | To-do                                              |
-| US-003            | Selección de plan en Landing Page | T008             | Diseñar formulario de confirmación   | Diseñar el formulario de confirmación de selección de plan.            | 3h                     | Billy Ruiz      | To-do                                              |
-| US-003            | Selección de plan en Landing Page | T009             | Implementar selección y confirmación | Implementar la lógica de selección y confirmación del plan.            | 4h                     | Billy Ruiz      | To-do                                              |
-| US-003            | Selección de plan en Landing Page | T010             | Pruebas de validación                | Realizar pruebas de validación del flujo de selección.                 | 2h                     | Billy Ruiz      | To-do                                              |
-| US-004            | Visualización de creadores        | T011             | Definir información de creadores     | Definir la información a mostrar de los creadores/equipo.              | 2h                     | Miguel Román    | To-do                                              |
-| US-004            | Visualización de creadores        | T012             | Implementar sección del equipo       | Implementar la sección del equipo/creadores.                           | 3h                     | Miguel Román    | To-do                                              |
-| US-004            | Visualización de creadores        | T013             | Pruebas de visualización             | Realizar pruebas de visualización de la sección del equipo.            | 2h                     | Miguel Román    | To-do                                              |
-| US-005            | Redes sociales                    | T014             | Implementar íconos de redes sociales | Implementar los íconos de redes sociales en la landing page.           | 2h                     | Oscar Armas     | To-do                                              |
-| US-005            | Redes sociales                    | T015             | Pruebas de enlaces sociales          | Realizar pruebas de los enlaces hacia redes sociales.                  | 1h                     | Oscar Armas     | To-do                                              |
-| US-006            | Formulario de contacto            | T016             | Diseñar formulario de contacto       | Diseñar el formulario de contacto.                                     | 2h                     | Ariana Ramirez  | To-do                                              |
-| US-006            | Formulario de contacto            | T017             | Implementar formulario               | Implementar el formulario de contacto en la landing page.              | 3h                     | Ariana Ramirez  | To-do                                              |
-| US-006            | Formulario de contacto            | T018             | Pruebas de envío                     | Realizar pruebas de envío y funcionamiento del formulario.             | 2h                     | Ariana Ramirez  | To-do                                              |
-| US-007            | Cambio de idioma                  | T019             | Implementar botón de idioma          | Implementar el botón o selector de cambio de idioma.                   | 3h                     | Billy Ruiz      | To-do                                              |
-| US-007            | Cambio de idioma                  | T020             | Definir textos traducidos            | Definir y registrar los textos traducidos para los idiomas soportados. | 4h                     | Billy Ruiz      | To-do                                              |
-| US-007            | Cambio de idioma                  | T021             | Pruebas de funcionalidad             | Realizar pruebas de funcionamiento del cambio de idioma.               | 2h                     | Billy Ruiz      | To-do                                              |
+<p align="center">
+  <img src="./../assets/img/chapter-V/arquitectura-jerarquica-webapp.jpeg">
+</p>
 
+**Pantalla de inicio**
 
-El seguimiento y la actualización del Sprint Backlog se realizan en **Jira Software** mediante el tablero Scrum del proyecto, donde se registran los estados de cada tarea (To-do, In-Process, To-Review, Done). Durante las reuniones diarias (**Daily Scrum**), el equipo revisa el avance, actualiza el estado de las tareas y gestiona posibles bloqueos.
+Una vista de bienvenida pre-login con el mensaje principal de Veyra y los accesos a Sign-In, Create User y Create Admin. Tras autenticarse, el usuario aterriza en un Dashboard tipo analítico con KPIs operativos y gráficas filtrables por año.
 
-#### 5.2.1.4. Development Evidence for Sprint Review
+**Navegación principal**
 
-En esta sección se explican y presentan los avances en la implementación logrados durante el Sprint 1
-en relación con el producto de la solución incluido en su alcance: la **Landing Page** pública de VEYRA.
-A lo largo de este sprint se construyó la primera versión navegable del sitio, incluyendo las secciones
-Home/Hero, Services, Features, About the App, Pricing, Testimonials, About the Team y Contact, con sus
-estilos CSS y ajustes de responsive.
+Sistema jerárquico accesible desde un menú lateral con iconografía clara. Incluye las siguientes pestañas:
 
-La tabla siguiente resume los commits más relevantes realizados en el repositorio de la Landing Page,
-indicando la rama, el identificador del commit, el mensaje asociado y una breve explicación del cambio
-introducido en la implementación.
+- Dashboard
+- Devices
+- Residents
+- Staff
+- Rooms
 
-| Repository                                                 | Branch | Commit Id                                | Commit Message                                      | Commit Message Body                                                                                                                          | Committed on (Date) |
-|------------------------------------------------------------|--------|------------------------------------------|-----------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
-| https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage | main   | 5499fe0fb5d24b7e18b29f76616d3751d1b05056 | Initial commit                                      | Commit inicial del repositorio, creando la estructura base del proyecto de Landing Page y la configuración de dependencias.                  | 10-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage | main   | 741b864bf4d3adb5c285c2b57266cc2eef9aad35 | chore: add hero and home section                    | Implementa la sección Hero/Home con el mensaje principal de VEYRA y el llamado a la acción para los usuarios.                                | 12-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage | main   | 84569edd53373a0dda20fae41a127d0a6573953f | chore: add home and services section styling        | Aplica estilos CSS a las secciones Home y Services, mejorando la disposición del contenido y la legibilidad.                                 | 13-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage | main   | 66d1d439ba86f7a9f2be00a27b65f59550b595f7 | feat(section): add features section with CSS        | Agrega la sección de Features con estilos, mostrando las funcionalidades destacadas de la plataforma VEYRA.                                  | 14-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage | main   | e3f8b84b35396c70673120464c4eebc57a843fd3 | chore: add features section                         | Refina el contenido y la estructura HTML de la sección de Features para resaltar mejor los beneficios del producto.                          | 15-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage | main   | cfe8b66050e1c25e4b62a06c413192ef09406a45 | chore: add about us section and benefits            | Incorpora la sección About Us/About the App con los beneficios principales para los usuarios de casas de reposo.                             | 16-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage | main   | fe01ab208e248862dd8f260f18750bed27d0d528 | chore: add team section                             | Incluye la sección About the Team con información de los integrantes del equipo de desarrollo.                                               | 17-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage | main   | f3da531e6de86e8d2737d29d0586d7947f8eb0e9 | feat(section): add pricing section with CSS         | Crea la sección de Pricing con tarjetas de planes y estilos CSS para comunicar los niveles de servicio.                                      | 18-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage | main   | ca8bf2e835f2ad94d068573c5fc7533e38c68f04 | chore: add hero section styling                     | Ajusta la apariencia de la sección Hero agregando estilos adicionales para mejorar el impacto visual.                                        | 19-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage | main   | ea08eae9d315d89fa351c5abf6bfd4cda57fd278 | chore: add responsive styling improvements          | Realiza mejoras de estilos responsivos para que la Landing Page se visualice correctamente en distintos tamaños de pantalla.                 | 20-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage | main   | dcd349d3cb0a5f40146aac3fd9edf1684b39d308 | fix: update asset paths to include public directory | Corrige las rutas de los recursos estáticos (imágenes y otros assets) apuntando al directorio público para evitar errores 404 en despliegue. | 21-09-2025          |
+**Filtrado y organización avanzada**
 
+**a. Para el Administrador de la casa de reposo**
 
-<div style="page-break-after: always;"></div>
+- **Filtros por:** Nombre del residente, nombre del personal, número de habitación y nombre del dispositivo IoT.
+- **Funcionalidades destacadas:** Gestión de residentes, personal y habitaciones; asignación de dispositivos IoT; configuración inicial del hogar de reposo; administración del plan de suscripción.
 
-#### 5.2.1.5. Execution Evidence for Sprint Review
-En esta sección se explican y presentan los avances en la implementación logrados durante el Sprint 1
-en relación con el producto de la solución incluido en su alcance: la **Landing Page** pública de VEYRA.
-A lo largo de este sprint se construyó la primera versión navegable del sitio, incluyendo las secciones
-Home/Hero, Services, Features, About the App, Pricing, Testimonials, About the Team y Contact, con sus
-estilos CSS y ajustes de responsividad.
+**b. Para el Doctor**
 
-La tabla siguiente resume los commits más relevantes realizados en el repositorio de la Landing Page,
-indicando la rama, el identificador del commit, el mensaje asociado y una breve explicación del cambio
-introducido en la implementación.
+- **Filtros por:** Nombre del residente a evaluar y rango de fechas en el historial clínico.
+- **Funcionalidades destacadas:** Consulta de signos vitales en tiempo real, revisión del historial clínico del residente y definición de parámetros clínicos personalizados para que el sistema genere alertas adecuadas a la condición de cada paciente.
 
-##### Video de demostración de la Landing Page:
 
-**URL YouTube:** [[https://youtu.be/OhyEBPV4FuI](https://youtu.be/OhyEBPV4FuI)]
-**Duración:** [00:04:32]
 
-##### Capturas de las principales secciones:
+**Segmentación por audiencia**
 
-**Encabezado y menú de navegación:**
-![header landing page](/assets/img/chapter-V/sprints/sprint-backlog-I/execution-evidence-for-sprint-review/header-landing-page.png)
+**a. Administrador de la casa de reposo**
 
-**Sección Hero:**
-![hero landing page](../assets/img/chapter-V/sprints/sprint-backlog-I/execution-evidence-for-sprint-review/hero-landing-page.png)
+- Enfoque en la gestión operativa: registro de residentes, alta de personal, asignación de habitaciones y vinculación de familiares.
+- Visualización del dashboard analítico con KPIs (Total Hires, Total Terminations, Net Staff Change, Total Admissions, Active Residents) y administración del flujo de suscripción y pagos.
 
-**Sección Services:**
-![services landing page](../assets/img/chapter-V/sprints/sprint-backlog-I/execution-evidence-for-sprint-review/services-landing-page.png)
+**b. Doctor**
 
-**Sección Pricing:**
-![plans landing page](../assets/img/chapter-V/sprints/sprint-backlog-I/execution-evidence-for-sprint-review/plans-landing-page.png)
+- Acceso al monitoreo clínico del residente y consulta del historial médico para fundamentar las decisiones de tratamiento.
+- Definición de los parámetros clínicos (rangos aceptables de signos vitales) de cada residente para que el sistema genere alertas personalizadas según su condición (US-20, US-21, US-22).
 
-**Sección About the App:**
-![about the app landing page](/assets/img/chapter-V/sprints/sprint-backlog-I/execution-evidence-for-sprint-review/about-the-app-landing-page.png)
 
-**Sección Testimonials:**
-![testimonials landing page](/assets/img/chapter-V/sprints/sprint-backlog-I/execution-evidence-for-sprint-review/testimonials-landing-page.png)
 
-**Sección About the Team:**
-![about the team landing page](/assets/img/chapter-V/sprints/sprint-backlog-I/execution-evidence-for-sprint-review/about-the-team-landing-page.png)
+Por último, la arquitectura jerárquica de la aplicación móvil de "Veyra" prioriza la consulta rápida y la respuesta inmediata, organizándose alrededor del rol del usuario. Esta estructura permite que el familiar acceda con un solo gesto al estado de su ser querido y que el personal de cuidado reciba notificaciones críticas y registre intervenciones directamente desde el campo.
 
-**Sección Contact:**
-![contact landing page](/assets/img/chapter-V/sprints/sprint-backlog-I/execution-evidence-for-sprint-review/contact-landing-page.png)
 
-**Footer:**
-![footer landing page](/assets/img/chapter-V/sprints/sprint-backlog-I/execution-evidence-for-sprint-review/footer-landing-page.png)
+<p align="center">
+  <img src="./../assets/img/chapter-V/arquitectura-jerarquica-webapp.jpeg">
+</p>
 
-#### 5.2.1.6. Services Documentation Evidence for Sprint Review
+**Pantalla de inicio**
 
-En el Sprint 1, el equipo diseñó, programó y desplegó la Landing Page de VEYRA. Esta es una página web estática,
-por lo que no hay Web Services disponibles en este sprint.
+Para el familiar, una vista simplificada del estado actual del residente vinculado con un mensaje claro y reconfortante. Para el personal de cuidado, una lista de los residentes asignados al turno con las notificaciones críticas pendientes y accesos directos al monitoreo.
 
-| End Point | Funciones                                                                |
-|-----------|--------------------------------------------------------------------------|
-| N/A       | No hay Web Services implementados en el Sprint 1 (Landing Page estático) |
+**Navegación principal**
 
-#### 5.2.1.7. Software Deployment Evidence for Sprint Review
+Sistema jerárquico accesible desde una bottom navigation bar con iconografía clara. Incluye las siguientes pestañas:
 
-[Landing Page NovaPeru-Tech](https://novaperu-tech.github.io/NovaPeru-Tech-LandingPage/) —
-[https://novaperu-tech.github.io/NovaPeru-Tech-LandingPage/](https://novaperu-tech.github.io/NovaPeru-Tech-LandingPage/)
+- Home
+- Signos Vitales
+- Historial
+- Notificaciones
+- Perfil
+
+**Filtrado y organización avanzada**
+
+**a. Para el Personal Asistencial**
+
+- **Filtros por:** Residentes asignados al turno actual y eventos clínicos por tipo.
+- **Funcionalidades destacadas:** Monitoreo de signos vitales en tiempo real de los residentes asignados, registro de eventos clínicos durante el turno y atención inmediata de alertas críticas desde el móvil.
+
+**b. Para el Administrador de la casa de reposo**
+
+- **Filtros por:** Alertas críticas activas, residentes con eventos recientes y notificaciones pendientes.
+- **Funcionalidades destacadas:** Supervisión rápida del estado del hogar de reposo desde el campo, recepción de notificaciones críticas y consulta de la actividad del personal en turno.
+
+**c. Para el Familiar**
+
+- **Filtros por:** Rango de fechas en el historial de signos vitales del residente vinculado.
+- **Funcionalidades destacadas:** Consulta del estado actual del residente, recepción de notificaciones push con deep link al detalle de la alerta crítica y configuración de las preferencias de notificación.
+
+
+**Segmentación por audiencia**
+
+**a. Personal Asistencial**
+
+- Consulta del monitoreo de signos vitales en tiempo real de los residentes asignados a su turno (US-11, US-12).
+- Registro de eventos clínicos en el historial del residente para garantizar la continuidad del cuidado entre turnos (US-19).
+- Bandeja de alertas críticas con acciones rápidas para intervención inmediata en campo.
+
+**b. Administrador de la casa de reposo**
+
+- Supervisión remota del estado operativo del hogar de reposo desde el dispositivo móvil.
+- Recepción de notificaciones críticas y consulta rápida de alertas pendientes para coordinar la respuesta del personal.
+
+**c. Familiar**
+
+- Acceso al estado actual del residente vinculado y visualización de signos vitales recientes (US-14).
+- Consulta del historial de signos vitales con filtro por período personalizado (US-15).
+- Recepción de notificaciones de alertas críticas con deep link al detalle del evento (US-16).
+
+
+
+
+### 5.2.2. Labeling Systems
+
+El sistema de etiquetado de "Veyra" ha sido diseñado para ser claro, directo y fácil de entender, usando palabras clave con un número mínimo de términos sin perder precisión clínica. Las etiquetas evitan tecnicismos innecesarios y buscan reducir la carga cognitiva del usuario, adaptando el lenguaje al rol que las consume.
+
+**Principios:**
+
+- **Consistencia**: Se usan las mismas etiquetas en botones, menús y mensajes relacionados (por ejemplo: "Registrar Residente", "Asignar Habitación", "Ver Detalle", "Sign-In", "Sign-Out").
+- **Simplicidad**: Se evita el uso de jergas técnicas o frases largas. Ejemplos: "Signos vitales", "Alerta crítica", "Historial clínico", "Plan Familiar".
+- **Bilingüismo**: La plataforma soporta inglés y español mediante `ngx-translate` en la aplicación web y atributos `data-i18n` en el Landing Page, permitiendo al usuario alternar de idioma sin perder el contexto.
+
+**Etiquetado en la Aplicación Móvil:**
+
+- **Inicio**: Pantalla principal donde el familiar accede al estado del residente vinculado o el personal asistencial visualiza los residentes asignados al turno.
+- **Signos Vitales**: Sección donde se consultan los valores actuales de frecuencia cardíaca, temperatura, saturación de oxígeno y presión arterial del residente.
+- **Historial**: Permite consultar el historial cronológico de signos vitales y eventos clínicos del residente con filtro por período personalizado.
+- **Notificaciones**: Centro unificado de alertas críticas, avisos de cambios en el estado del residente y deep links al detalle del evento.
+- **Perfil**: Acceso a la información personal del usuario, configuración de preferencias de notificación y opción para cerrar sesión.
+
+**Etiquetado en la Aplicación Web:**
+
+- **Dashboard**: Panel principal donde se visualizan los KPIs operativos (Total Hires, Total Terminations, Net Staff Change, Total Admissions, Active Residents) y las gráficas filtrables por año.
+- **Devices**: Sección de gestión de los dispositivos IoT del hogar de reposo, con listado tabular, búsqueda por nombre y ordenamiento por columnas (Device ID, Assigned By, Assigned At, Status).
+- **Residents**: Sección donde se registran, consultan y editan los residentes admitidos, junto con sus subrecursos (historial médico, medicamentos, alergias y asignación de habitación).
+- **Staff**: Sección de gestión del personal asistencial y médicos, incluyendo alta, edición, vista de detalle y administración de contratos.
+- **Rooms**: Sección donde se administran las habitaciones del hogar de reposo, con búsqueda por número y ordenamiento por columnas.
+- **Suscripción y Pagos**: Flujo dedicado para elegir el plan (Family Plan o Nursing Home Plan), revisar sus detalles y procesar el checkout.
+- **Autenticación**: Acceso a Sign-In, Create User y Create Admin desde el toolbar superior, junto con la opción de Sign-Out cuando la sesión está activa.
+
+**Etiquetado en el Landing Page:**
+
+- **Home**: Primera sección que el visitante ve al entrar. Resume qué es Veyra con el mensaje "The Best Care is Always Connected" y capta la atención con el CTA "Start now →".
+- **What We Offer**: Presenta los servicios principales que ofrece Veyra — Home Health Care, Pediatric Care, Companion Care y Conditions Treated.
+- **Features**: Acordeón interactivo con las funcionalidades clave de la plataforma (Seamless Communication, Real-Time Health Monitoring, Streamlined Clinical Management, Comprehensive Reporting & Analytics) acompañado de un video institucional.
+- **Benefits**: Resalta los beneficios diferenciadores de Veyra para instituciones geriátricas y familias (Enhanced Communication, Streamlined Clinical Management, Improved Resident Well-being, Increased Peace of Mind).
+- **About Us**: Información sobre Metasoft y la misión de Veyra, complementada con un video institucional que refuerza la propuesta de valor.
+- **Our Team**: Presenta a los integrantes del equipo de desarrollo con foto, rol y descripción profesional, generando confianza en el visitante.
+- **Plans**: Presenta los planes de suscripción disponibles (Family Plan y Nursing Home Plan) con toggle Monthly/Annually, precio, descripción y CTAs específicos.
+- **Testimonials & CTA**: Incluye reseñas reales de usuarios y un CTA final "Subscribe" para iniciar el proceso de suscripción.
+
+
+### 5.2.3. SEO Tags and Meta Tags
+
+Con el objetivo de mejorar la visibilidad de "Veyra" en los motores de búsqueda y facilitar su descubrimiento por administradores de casas de reposo, médicos, personal asistencial y familiares que buscan soluciones digitales para el cuidado del adulto mayor, se ha establecido una estrategia SEO que incluye el uso adecuado de etiquetas HTML y elementos ASO para los principales elementos informativos de la aplicación móvil, la aplicación web y el Landing Page.
+
+**ASO (App Store Optimization) Elements**
+
+Para la aplicación móvil de Veyra, distribuida a través de Google Play Store y Apple App Store, se definen los ASO (App Store Optimization) elements como App Title, App Subtitle, App Keywords, Short Description y Long Description.
+
+**Google Play Store / App Store**
+
+- **App Title:**  
+    `Veyra – Cuidado Conectado`
+
+Título directo de 25 caracteres que incluye la marca y la propuesta de valor principal de la app.
+
+- **App Subtitle:**  
+    `Monitoreo de adultos mayores`
+
+Subtítulo complementario de 28 caracteres que especifica el público objetivo y el foco funcional de la aplicación.
+
+- **App Keywords:** (Apple App Store)  
+    `casa,reposo,adulto,mayor,monitoreo,signos,vitales,iot,salud,familia,alerta,cuidado,residente,veyra`
+
+Palabras clave separadas por comas, optimizadas para búsquedas relevantes en la App Store de iOS, cubriendo público objetivo, funcionalidades y dominio clínico.
+
+- **Short Description:** (Google Play Store – 80 caracteres)  
+    `Monitorea la salud de tus seres queridos con alertas en tiempo real desde Veyra`
+
+Descripción breve que destaca el beneficio principal dentro del límite de caracteres.
+
+> Transforma el cuidado de tus seres queridos con Veyra, la aplicación móvil que te permite:  
+> ✓ Monitorear los signos vitales del residente en tiempo real  
+> ✓ Recibir alertas críticas con notificaciones push inmediatas  
+> ✓ Consultar el historial clínico con filtro por período  
+> ✓ Mantener contacto continuo con la casa de reposo  
+> ✓ Acceder al estado del adulto mayor desde cualquier lugar  
+> 
+> CARACTERÍSTICAS PRINCIPALES:  
+> - Dashboard simplificado para familiares con el estado actual del residente  
+> - Monitoreo continuo de frecuencia cardíaca, temperatura, saturación y presión arterial  
+> - Alertas configurables con deep link al detalle del evento  
+> - Historial cronológico de signos vitales y eventos clínicos  
+> - Interfaz adaptada por rol (familiar, personal asistencial y administrador)  
+> - Sincronización con dispositivos IoT del hogar de reposo  
+> 
+> Ideal para familiares de adultos mayores, personal asistencial de casas de reposo y administradores que buscan una solución integral para el monitoreo y cuidado del adulto mayor.  
+> 
+> Descarga Veyra y mantén siempre cerca a tus seres queridos, sin importar la distancia.
 
 ---
 
-#### 5.2.1.8. Team Collaboration Insights during Sprint
+**Aplicación Web**
 
-Durante el Sprint 1, los analíticos de colaboración de GitHub muestran una participación activa y continua de todos los miembros del equipo sobre el repositorio de la Landing Page. En el panel de Overview se observa un flujo constante de commits distribuidos a lo largo de los días del sprint, lo que evidencia que las tareas de implementación de las distintas secciones (hero, servicios, planes, equipo, testimonios, contacto y footer) se desarrollaron de manera incremental y coordinada. Cada integrante realizó aportes directos al código, ya sea mediante la creación de nuevas secciones, ajustes de estilos responsivos o correcciones derivadas de las revisiones entre pares, asegurando así que el entregable del sprint se construyera de forma colaborativa y no centralizada en una sola persona.
+Para la aplicación web desarrollada en Angular, se definieron etiquetas SEO específicas para el panel principal de administración, con el fin de reforzar su posicionamiento y mejorar la experiencia de búsqueda dentro del ecosistema digital de Veyra.
 
-![overview-spring1.png](../assets/img/chapter-V/sprints/sprint-backlog-I/team-collaboration-insights-during-sprint/overview-spring1.png)
+- **Title:**  
+    `<title>Panel de Administración – Veyra | Gestiona residentes, personal y dispositivos IoT</title>`
 
-El Network Graph refleja esta dinámica mediante la presencia de ramas que nacen desde main y regresan a ella una vez integradas, siguiendo el flujo definido por GitFlow. Esta visualización confirma que las contribuciones individuales se alinearon con el marco de trabajo acordado: se desarrollaron cambios en ramas aisladas, se realizaron pruebas locales y posteriormente se integraron al tronco principal, lo que redujo conflictos y facilitó el seguimiento de la trazabilidad de cada cambio. De este modo, la colaboración no solo se dio a nivel de cantidad de commits, sino también en la forma de trabajo estructurada y compatible con las prácticas ágiles del equipo.
+Este título complementa el nombre de la aplicación con una invitación clara a la acción, enfocada en las principales tareas que el administrador puede realizar desde el panel de control.
 
-![network-graph-sprint1.png](../assets/img/chapter-V/sprints/sprint-backlog-I/team-collaboration-insights-during-sprint/network-graph-sprint1.png)
+- **Meta Description:**  
+    `<meta name="description" content="Plataforma web de Veyra para administradores y médicos de casas de reposo. Gestiona residentes, personal, habitaciones y dispositivos IoT. Monitorea signos vitales en tiempo real, consulta historiales clínicos y administra el cuidado integral del adulto mayor desde un solo panel.">`
 
-Finalmente, el gráfico de Visitors evidencia que, conforme avanzaba el desarrollo y se consolidaban las funcionalidades de la Landing Page, el repositorio comenzó a recibir visitas y visualizaciones, lo que sugiere interés progresivo en el producto por parte de stakeholders y del propio equipo durante las actividades de revisión y validación. En conjunto, estos analíticos de colaboración y actividad en GitHub demuestran que todos los integrantes tuvieron participación efectiva en la implementación del producto del Sprint (Landing Page) y sientan la base para replicar este mismo patrón de trabajo en los siguientes sprints, donde se abordarán la Web Application y los Web Services.
+La descripción presenta de manera clara las funciones principales del panel y resalta su utilidad como centro operativo de la plataforma para personal institucional.
 
-![visitors-sprint1.png](../assets/img/chapter-V/sprints/sprint-backlog-I/team-collaboration-insights-during-sprint/visitors-sprint1.png)
+- **Meta Keywords:**  
+    `<meta name="keywords" content="gestión de casa de reposo, monitoreo IoT, signos vitales, historial clínico, residentes, personal asistencial, alertas médicas, dashboard geriátrico, plataforma Veyra">`
 
-### 5.2.2. Sprint 2
+Estas palabras clave están orientadas al contexto de uso de la aplicación web y reflejan acciones concretas relacionadas con la gestión clínica y operativa del hogar de reposo.
 
-Durante el Sprint 2, el equipo se enfocó en el desarrollo del módulo frontend de gestión de tareas,
-miembros y grupos de la aplicación web VEYRA. Este sprint se centró en integrar componentes con el
-backend mediante servicios REST, crear flujos de navegación funcionales entre vistas y aplicar mejoras
-en la interfaz visual con Angular y Angular Material.
+- **Meta Author:**  
+    `<meta name="author" content="Equipo Metasoft – Desarrollo Web 2026">`
 
-**Repositorio Frontend:** [https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend](https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend)
-
-**Backend API (Local):** [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
-
-#### 5.2.2.1. Sprint Planning 2
-
-**Sprint Planning Sprint 2**
-
-| Field                           | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Sprint Planning Background      | **Sprint Planning Background**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Date                            | 28/09/2025                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Time                            | 09:30 p.m.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Location                        | Discord                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| Prepared By                     | Oscar Javier Armas Sánchez                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Attendees (to planning meeting) | Calvo Yalan, Renato Guillermo<br>Armas Sánchez, Oscar Javier<br>Ramirez Carrasco, Ariana Lizeth<br>Roman Lopez, Miguel Angel Junior<br>Ruiz Madrid, Billy Jake                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Sprint 1 Review Summary         | Se completó el desarrollo y despliegue de la Landing Page, incluyendo todas las secciones planificadas y la funcionalidad de cambio de idioma. Quedaron pendientes pequeños ajustes visuales en la sección de "Planes" y optimizaciones de carga, los cuales se trasladarán al Sprint 2 para su refinamiento.                                                                                                                                                                                                                                                                                                                                                        |
-| Sprint 1 Retrospective Summary  | El equipo identificó la necesidad de mejorar la comunicación diaria y la asignación de sub-tareas en Jira para evitar solapamientos. Se acordó utilizar etiquetas más claras por responsable y realizar revisiones de código colaborativas al cierre de cada día.                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Sprint Goal & User Stories      | **Sprint 2 Goal (Outcome–Impact–Customer–Confirmation):**  <br><br>*Our focus is on enabling administrators to manage tasks, members, and groups from a unified web interface connected to VEYRA’s backend services.*  <br><br>*We believe it delivers better visibility and coordination of daily activities to Nursing Home Administrators and internal staff, by centralizing operational information in a single place.*  <br><br>*This will be confirmed when an administrator can create, update, and view tasks linked to members and groups, and filter them by status from the web application, with data persisted and retrieved through the backend API.* |
-| Sprint 2 Velocity               | 16 Story Points                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| Sum of Story Points             | 16 SP (≈ 64 horas estimadas)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-
-
-#### 5.2.2.2. Aspect Leaders and Collaborators
-
-Para el Sprint 2 se presenta la matriz **Leadership-and-Collaboration Matrix (LACX)**, donde se definen los roles de liderazgo (**L**) y colaboración (**C**) por aspecto técnico y funcional del desarrollo frontend basado en Angular.
-
-Estos aspectos se derivan directamente de los objetivos establecidos en el *Sprint 2 Goal*, garantizando que cada componente clave del módulo frontend cuente con un responsable principal y con el apoyo colaborativo necesario para su implementación efectiva.
-
-- **Integración Frontend–Backend:** Consumo de endpoints, configuración de servicios HTTP y validación de la conexión con la API local.
-- **Gestión de Tareas (UI):** Desarrollo de componentes Angular para la visualización, filtrado y navegación entre tareas.
-- **Gestión de Miembros y Grupos:** Creación de componentes de detalle y listado de miembros y grupos asociados al proyecto.
-
-| Team Member (Last Name, First Name) | Aspect: API Integration | Aspect: Task UI | Aspect: Members & Groups |
-|-------------------------------------|-------------------------|-----------------|--------------------------|
-| Armas Sánchez, Oscar Javier         | L                       | C               | C                        |
-| Calvo Yalan, Renato Guillermo       | C                       | L               | C                        |
-| Ramirez Carrasco, Ariana Lizeth     | C                       | C               | L                        |
-| Roman Lopez, Miguel Angel Junior    | C                       | C               | C                        |
-| Ruiz Madrid, Billy Jake             | C                       | C               | C                        |
-
-- **L** = Líder del aspecto
-- **C** = Colaborador en el aspecto
-
-La asignación de roles busca optimizar la ejecución del sprint, favoreciendo la especialización técnica y la cooperación entre los miembros. Cada líder coordina las tareas relacionadas con su aspecto a través de **Jira Software**, supervisando avances, revisiones de código y validaciones funcionales con sus colaboradores.
-
-### 5.2.2.3. Sprint Backlog 2
-
-El siguiente Sprint Backlog presenta las historias de usuario y tareas planificadas para el **Sprint 2**, orientado a la implementación del frontend en Angular y Angular Material, la integración con el backend, la mejora de la experiencia de usuario y la consistencia visual de la landing page.
-
-Todas las tareas son monitoreadas y actualizadas mediante **Jira Software**.
-
-![Sprint 2 Board Screenshot](../assets/img/chapter-V/sprints/sprint-backlog-II/sprint-table/sprint2-board.jpg)
-
-*Figura: Tablero del Sprint 2 en Jira Software (Proyecto VEYRA)*
-
-![Sprint 2 Board Screenshot](../assets/img/chapter-V/sprints/sprint-backlog-II/sprint-table/sprint2-board-2.jpg)
-
-*Figura: Tablero del Sprint 2 en Jira Software (Proyecto VEYRA)*
-
-
-A continuación, la estructura de la tabla de control de estado para el Sprint:
-
-| Sprint #       | Sprint 2                          |                      |                                                     |                                                                                 |                        |                 |                                                    |
-|----------------|-----------------------------------|----------------------|-----------------------------------------------------|---------------------------------------------------------------------------------|------------------------|-----------------|----------------------------------------------------|
-| **User Story** |                                   | **Work-Item / Task** |                                                     |                                                                                 |                        |                 |                                                    |
-| **Id**         | **Title**                         | **Id**               | **Title**                                           | **Description**                                                                 | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
-| US-01          | Menú de navegación                | T022                 | Definir estructura del menú para frontend           | Definir la estructura del menú de navegación en Angular para la landing page.   | 2h                     | [Asignado]      | To-do                                              |
-| US-01          | Menú de navegación                | T023                 | Implementar menú en Angular y Angular Material      | Implementar el menú de navegación utilizando Angular y Angular Material.        | 3h                     | [Asignado]      | To-do                                              |
-| US-01          | Menú de navegación                | T024                 | Añadir navegación dinámica y pruebas                | Añadir navegación dinámica entre secciones y ejecutar pruebas básicas del menú. | 2h                     | [Asignado]      | In-Process                                         |
-| US-02          | Visualización de Planes           | T025                 | Crear componentes para mostrar planes               | Crear componentes de Angular para visualizar los planes disponibles.            | 3h                     | [Asignado]      | To-do                                              |
-| US-02          | Visualización de Planes           | T026                 | Integrar datos de planes desde backend              | Integrar los datos de planes consumiendo los servicios del backend.             | 4h                     | [Asignado]      | In-Process                                         |
-| US-02          | Visualización de Planes           | T027                 | Pruebas funcionales y de UI                         | Realizar pruebas funcionales y de interfaz sobre la visualización de planes.    | 2h                     | [Asignado]      | To-do                                              |
-| US-03          | Selección de Plan en Landing Page | T028                 | Implementar formulario de selección y validación    | Implementar el formulario de selección de plan con validaciones en Angular.     | 3h                     | [Asignado]      | To-do                                              |
-| US-03          | Selección de Plan en Landing Page | T029                 | Manejar envío y confirmación de plan                | Implementar la lógica de envío y confirmación del plan seleccionado.            | 4h                     | [Asignado]      | To-do                                              |
-| US-03          | Selección de Plan en Landing Page | T030                 | Validar interacción usuario y feedback visual       | Probar la interacción del usuario y el feedback visual al seleccionar un plan.  | 2h                     | [Asignado]      | To-do                                              |
-| US-04          | Visualización de creadores        | T031                 | Diseñar componente para mostrar equipo              | Diseñar el componente para mostrar la información del equipo/creadores.         | 2h                     | [Asignado]      | To-do                                              |
-| US-04          | Visualización de creadores        | T032                 | Integrar datos y pruebas                            | Integrar datos del equipo y realizar pruebas de visualización.                  | 3h                     | [Asignado]      | To-do                                              |
-| US-04          | Visualización de creadores        | T033                 | Ajustar estilos para responsividad                  | Ajustar estilos para asegurar que la sección del equipo sea responsive.         | 2h                     | [Asignado]      | To-do                                              |
-| US-05          | Redes sociales                    | T034                 | Incorporar íconos sociales en header y footer       | Incorporar íconos de redes sociales en el header y footer de la landing page.   | 2h                     | [Asignado]      | To-do                                              |
-| US-05          | Redes sociales                    | T035                 | Configurar enlaces y pruebas                        | Configurar los enlaces a redes sociales y realizar pruebas de navegación.       | 1h                     | [Asignado]      | To-do                                              |
-| US-06          | Formulario de contacto            | T036                 | Crear formulario con validación Angular             | Crear el formulario de contacto con validaciones en Angular.                    | 2h                     | [Asignado]      | To-do                                              |
-| US-06          | Formulario de contacto            | T037                 | Integrar envío y confirmación                       | Integrar el envío de datos y mensajes de confirmación del formulario.           | 3h                     | [Asignado]      | To-do                                              |
-| US-06          | Formulario de contacto            | T038                 | Test de funcionalidad y usabilidad                  | Realizar pruebas de funcionamiento y usabilidad del formulario de contacto.     | 2h                     | [Asignado]      | To-do                                              |
-| US-07          | Cambio de idioma                  | T039                 | Añadir selector de idioma en menú                   | Añadir un selector de idioma en el menú principal.                              | 3h                     | [Asignado]      | To-do                                              |
-| US-07          | Cambio de idioma                  | T040                 | Configurar textos traducidos en frontend            | Configurar y gestionar los textos traducidos en el frontend.                    | 4h                     | [Asignado]      | In-Process                                         |
-| US-07          | Cambio de idioma                  | T041                 | Validar cambio dinámico y pruebas                   | Probar el cambio dinámico de idioma y validar su comportamiento.                | 2h                     | [Asignado]      | To-do                                              |
-| US-40          | Menú de navegación consistente    | T042                 | Asegurar estilo uniforme en todas las páginas       | Asegurar que el menú mantenga un estilo uniforme en todas las páginas.          | 2h                     | [Asignado]      | To-do                                              |
-| US-40          | Menú de navegación consistente    | T043                 | Ajustar comportamiento de menú en rutas             | Ajustar el comportamiento del menú al navegar entre diferentes rutas.           | 2h                     | [Asignado]      | To-do                                              |
-| US-41          | Paleta de colores y tipografía    | T044                 | Aplicar esquema de colores accesible                | Aplicar un esquema de colores accesible conforme a buenas prácticas de UX.      | 2h                     | [Asignado]      | To-do                                              |
-| US-41          | Paleta de colores y tipografía    | T045                 | Configurar tipografía coherente en estilos globales | Configurar tipografías coherentes en los estilos globales del proyecto.         | 2h                     | [Asignado]      | To-do                                              |
-| US-42          | Diseño de formularios usables     | T046                 | Crear formularios con validación clara              | Diseñar formularios con validación clara y mensajes comprensibles.              | 3h                     | [Asignado]      | To-do                                              |
-| US-42          | Diseño de formularios usables     | T047                 | Pruebas de usabilidad y accesibilidad               | Realizar pruebas de usabilidad y accesibilidad en los formularios.              | 2h                     | [Asignado]      | To-do                                              |
-| US-43          | Patrones de diseño coherentes     | T048                 | Definir y aplicar patrones UI comunes               | Definir y aplicar patrones de interfaz reutilizables en el frontend.            | 2h                     | [Asignado]      | To-do                                              |
-| US-43          | Patrones de diseño coherentes     | T049                 | Revisar consistencia en todos los componentes       | Revisar la consistencia visual y de interacción en todos los componentes.       | 2h                     | [Asignado]      | To-do                                              |
-| US-44          | Manejo de errores comprensible    | T050                 | Implementar mensajes de error amigables             | Implementar mensajes de error claros y amigables para el usuario.               | 3h                     | [Asignado]      | To-do                                              |
-| US-44          | Manejo de errores comprensible    | T051                 | Pruebas de errores y soluciones claras              | Probar escenarios de error y validar que las soluciones mostradas sean claras.  | 2h                     | [Asignado]      | To-do                                              |
-
-El seguimiento y la actualización del Sprint Backlog se realizan en **Jira Software** mediante el tablero Scrum del proyecto, donde se registran los estados de cada tarea (**To-do, In-Process, To-Review, Done**). Durante las reuniones diarias (**Daily Scrum**), el equipo actualiza el progreso y revisa posibles bloqueos para garantizar el cumplimiento.
-
-#### 5.2.2.4. Development Evidence for Sprint Review
-
-| Repository                                             | Branch  | Commit Id | Commit Message                                                | Committed on (Date) |
-|--------------------------------------------------------|---------|-----------|---------------------------------------------------------------|---------------------|
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend | main    | d2e8b00   | feat(jam): add JAM module scaffolding                         | 29-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend | main    | ff01fea   | feat: add SignIn component with validation                    | 29-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend | main    | fa75547   | feat: add Familiar and SignUpFamiliar components              | 29-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend | main    | ec5cece   | feat: add Welcome component with greeting                     | 29-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend | main    | 0fbc1ac   | feat: add AuthenticationSection component                     | 29-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend | main    | b8cb684   | feat: add Administrator and SignUpAdministrator components    | 29-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend | main    | 4e12667   | feat(i18n): add English and Spanish language support          | 29-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend | main    | 9763508   | feat: add language switcher and layout components             | 29-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend | main    | 4ccacbc   | chore: default Angular setup                                  | 28-09-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend | develop | 5f14512   | feat(env): update API base URL for development and production | 10-10-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend | develop | 2886e0b   | feat(firebase): update hosting configuration                  | 10-10-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend | develop | 251c8a9   | feat(env): add employee endpoint to development               | 10-10-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend | develop | ee86134   | feat(firebase): configure Firebase hosting                    | 10-10-2025          |
-
-#### 5.2.2.5. Execution Evidence for Sprint Review
-
-Durante el Sprint 2, se logró implementar completamente el módulo de gestión de tareas con integración a la API Backend. El frontend permite listar, filtrar y navegar entre tareas por miembro y estado, así como visualizar detalles asociados. Además, se mejoró la navegación y el diseño visual adaptando elementos con Angular Material.
-
-##### Video de demostración de funcionalidad:
-
-**URL YouTube:** https://youtu.be/CEzlIzeI3Cc  
-**Duración:** [10:23:00]
-
-##### Capturas de pantalla principales:
-
-**Módulo de Residentes - Nueva entrada:**
-
-<img src="../assets/img/chapter-V/sprints/sprint-backlog-II/execution-evidence-for-sprint-review/New-Resident1.jpg" alt="New-Resident1">
-
-<img src="../assets/img/chapter-V/sprints/sprint-backlog-II/execution-evidence-for-sprint-review/New-Resident2.jpg" alt="New-Resident2">
-
-**Módulo de Residentes - Listado:**
-
-<img src="../assets/img/chapter-V/sprints/sprint-backlog-II/execution-evidence-for-sprint-review/Resident-List.jpg" alt="Resident-List">
-
-**Módulo de Residentes - Detalle:**
-
-<img src="../assets/img/chapter-V/sprints/sprint-backlog-II/execution-evidence-for-sprint-review/Resident.jpg" alt="Resident">
-
-**Módulo de Medicamentos - Listado:**
-
-<img src="../assets/img/chapter-V/sprints/sprint-backlog-II/execution-evidence-for-sprint-review/Medication-List.jpg" alt="Medication-List">
-
-**Módulo de Medicamentos - Detalle:**
-
-<img src="../assets/img/chapter-V/sprints/sprint-backlog-II/execution-evidence-for-sprint-review/Medication.jpg" alt="Medication">
-
-#### 5.2.2.6. Services Documentation Evidence for Sprint Review
-
-En el Sprint 2, el equipo diseñó, programó e integró el módulo frontend con la API Backend de VEYRA. Se estableció la comunicación con éxito entre el Frontend y los servicios REST proporcionados por el Backend, implementando las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para las principales entidades. La documentación del servicio se presenta a continuación, cumpliendo con los lineamientos de especificación de Endpoints, verbos HTTP, sintaxis de llamada y explicación del response.
-
-| End Point Base                               | Método HTTP | Acción Implementada (Funciones)                              | Sintaxis de Llamada (Ejemplo y Parámetros)                              | Explicación del Response                                                                |
-|----------------------------------------------|-------------|--------------------------------------------------------------|-------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| **http://localhost:8080/api/v1/residents**   | **GET**     | Obtener el listado completo de residentes.                   | `GET /api/v1/residents`                                                 | `200 OK`: Retorna un array JSON con la lista de objetos Residentes.                     |
-| **http://localhost:8080/api/v1/residents**   | **GET**     | Obtener el detalle de un residente por su ID.                | `GET /api/v1/residents/{id}` (Ej: `/api/v1/residents/123`)              | `200 OK`: Retorna el objeto Residente solicitado. `404 Not Found` si el ID no existe.   |
-| **http://localhost:8080/api/v1/residents**   | **POST**    | Crear un nuevo residente.                                    | `POST /api/v1/residents` (Requiere Objeto Residente en el Body)         | `201 Created`: Retorna el objeto Residente creado, incluyendo el ID asignado.           |
-| **http://localhost:8080/api/v1/residents**   | **PUT**     | Actualizar completamente un residente existente por su ID.   | `PUT /api/v1/residents/{id}` (Requiere Objeto Residente en el Body)     | `200 OK`: Retorna el objeto Residente actualizado.                                      |
-| **http://localhost:8080/api/v1/residents**   | **DELETE**  | Eliminar un residente por su ID.                             | `DELETE /api/v1/residents/{id}`                                         | `204 No Content`: Indica la eliminación exitosa.                                        |
-| **http://localhost:8080/api/v1/medications** | **GET**     | Obtener el listado completo de medicamentos.                 | `GET /api/v1/medications`                                               | `200 OK`: Retorna un array JSON con la lista de objetos Medicamentos.                   |
-| **http://localhost:8080/api/v1/medications** | **GET**     | Obtener el detalle de un medicamento por su ID.              | `GET /api/v1/medications/{id}` (Ej: `/api/v1/medications/456`)          | `200 OK`: Retorna el objeto Medicamento solicitado. `404 Not Found` si el ID no existe. |
-| **http://localhost:8080/api/v1/medications** | **POST**    | Crear un nuevo medicamento.                                  | `POST /api/v1/medications` (Requiere Objeto Medicamento en el Body)     | `201 Created`: Retorna el objeto Medicamento creado, incluyendo el ID asignado.         |
-| **http://localhost:8080/api/v1/medications** | **PUT**     | Actualizar completamente un medicamento existente por su ID. | `PUT /api/v1/medications/{id}` (Requiere Objeto Medicamento en el Body) | `200 OK`: Retorna el objeto Medicamento actualizado.                                    |
-| **http://localhost:8080/api/v1/medications** | **DELETE**  | Eliminar un medicamento por su ID.                           | `DELETE /api/v1/medications/{id}`                                       | `204 No Content`: Indica la eliminación exitosa.                                        |
-| **http://localhost:8080/api/v1/staff**       | **GET**     | Obtener el listado completo de empleados.                    | `GET /api/v1/staff`                                                     | `200 OK`: Retorna un array JSON con la lista de objetos Empleados.                      |
-| **http://localhost:8080/api/v1/staff**       | **GET**     | Obtener el detalle de un empleado por su ID.                 | `GET /api/v1/staff/{id}` (Ej: `/api/v1/staff/789`)                      | `200 OK`: Retorna el objeto Empleado solicitado. `404 Not Found` si el ID no existe.    |
-| **http://localhost:8080/api/v1/staff**       | **POST**    | Crear un nuevo empleado.                                     | `POST /api/v1/staff` (Requiere Objeto Empleado en el Body)              | `201 Created`: Retorna el objeto Empleado creado, incluyendo el ID asignado.            |
-| **http://localhost:8080/api/v1/staff**       | **PUT**     | Actualizar completamente un empleado.                        | `PUT /api/v1/staff/{id}` (Requiere Objeto Empleado en el Body)          | `200 OK`: Retorna el objeto Empleado actualizado.                                       |
-| **http://localhost:8080/api/v1/staff**       | **DELETE**  | Eliminar un empleado.                                        | `DELETE /api/v1/staff/{id}`                                             | `204 No Content`: Indica la eliminación exitosa.                                        |
-
-#### 5.2.2.7. Software Deployment Evidence for Sprint Review
-
-[Frontend NovaPeru-Tech](https://nova-peru-tech-frontend-v1-2w9r.vercel.app/home) — https://nova-peru-tech-frontend-v1-2w9r.vercel.app/home
-
-#### 5.2.2.8. Team Collaboration Insights during Sprint
-
-Durante el Sprint 2, los analíticos de colaboración del repositorio NovaPeruTech-Frontend evidencian una participación constante de todos los integrantes del equipo sobre el código de la aplicación web VEYRA. A lo largo del sprint se registran commits frecuentes asociados a la implementación de los módulos de gestión de tareas, miembros y grupos, así como a la integración con los servicios REST del backend y a las mejoras visuales con Angular y Angular Material. Esta actividad distribuida confirma que la construcción de la Web Application se realizó de forma incremental, respetando las responsabilidades definidas en el Sprint 2 Goal y la matriz LACX (API Integration, Task UI, Members & Groups), y evitando la concentración del desarrollo en un solo miembro.
-
-<img src="../assets/img/chapter-V/sprints/sprint-backlog-II/team-collaboration-insights-during-sprint/overview-sprint2.jpg" alt="overview-sprint2">
-
-El Network Graph correspondiente al Sprint 2 muestra un uso activo del flujo de trabajo basado en GitFlow, con ramas de características (features) creadas para la integración Frontend–Backend, la interfaz de gestión de tareas y los componentes de miembros y grupos, que luego son fusionadas a la rama principal tras las respectivas revisiones de código. Este patrón de ramas y merges refleja que los líderes de cada aspecto coordinaron el trabajo con sus colaboradores, alineados con las prácticas definidas para el proyecto (feature branches, revisiones colaborativas y consolidación en main/develop), reforzando la trazabilidad y la calidad del código entregado durante el sprint.
-
-<img src="../assets/img/chapter-V/sprints/sprint-backlog-II/team-collaboration-insights-during-sprint/network-graph-sprint2.jpg" alt="network-graph-sprint2">
-
-Finalmente, el gráfico de Visitors del repositorio frontend muestra un incremento de visitas y vistas de página conforme se acercan las fechas de integración y despliegue del producto, lo que sugiere que el equipo utilizó activamente el repositorio como punto central para revisar avances, validar funcionalidades y preparar el Sprint Review. En conjunto, estos analíticos de overview, network graph y visitors demuestran que, durante el Sprint 2, todos los miembros del equipo participaron efectivamente en la implementación del producto web (Web Application) y en su integración con los Web Services, cumpliendo con el principio de que cada integrante contribuya a los distintos productos definidos en el proyecto (Landing Page, Web Applications, Web Services) según el alcance de cada sprint.
-
-<img src="../assets/img/chapter-V/sprints/sprint-backlog-II/team-collaboration-insights-during-sprint/visitors-sprint2.jpg" alt="visitors-sprint2">
-
-### 5.2.3. Sprint 3
-
-En esta sección se registra y explica el avance logrado durante el Sprint 3 tanto en términos de producto como de trabajo colaborativo del equipo VEYRA. A lo largo de este sprint se consolidó la primera versión operativa del entorno productivo: se implementó y desplegó la capa de persistencia y lógica de negocio en el Backend con Java Spring Boot, se conectó el Frontend Angular desarrollado en sprints previos y se habilitó la documentación de servicios para soportar la Sprint Review.
-
-Las subsecciones que siguen detallan este avance desde diferentes ángulos: **Sprint Planning 3**, **Aspect Leaders and Collaborators**, **Sprint Backlog 3**, **Development Evidence for Sprint Review**, **Execution Evidence for Sprint Review**, **Services Documentation Evidence for Sprint Review** y **Team Collaboration Insights during Sprint**, mostrando cómo cada integrante contribuyó a los productos de la solución (Web Application y Web Services) y al cumplimiento del objetivo del Sprint 3.
-
-**Repositorio Frontend:** https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend
-
-**Repositorio Backend:** https://github.com/NovaPeru-Tech/NovaPeruTech-Backend
-
-**Backend API (Producción):** https://veyrav01.azurewebsites.net/swagger-ui/index.html#/
-
-#### 5.2.3.1. Sprint Planning 3
-
-| Sprint Planning Sprint 3           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Sprint Planning Background**     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| Date                               | 10/11/2025                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| Time                               | 10:00 p.m.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| Location                           | Discord                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Prepared By                        | Ariana Lizeth Ramirez Carrasco                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| Attendees (to planning meeting)    | Calvo Yalan, Renato Guillermo<br>Armas Sánchez, Oscar Javier<br>Ramirez Carrasco, Ariana Lizeth<br>Roman Lopez, Miguel Angel Junior<br>Ruiz Madrid, Billy Jake<br>Quiroz Caceres, Adrian Alonso                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| **Sprint 2 Review Summary**        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|                                    | Se completó el desarrollo del Frontend para los módulos de Tareas, Miembros y Grupos. La interfaz está lista para el usuario y se integró satisfactoriamente con los servicios mockeados. Quedó pendiente la implementación del sistema de autenticación y la configuración de las variables de entorno para el despliegue final.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| **Sprint 2 Retrospective Summary** |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|                                    | Se mejoró la comunicación, pero se identificó la necesidad de estandarizar la nomenclatura de los servicios y DTOs en el Backend, lo cual se abordará antes de iniciar la programación. El equipo acordó asignar un "guardián de la calidad" (Quality Keeper) rotativo para el Backend en cada sprint.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Sprint Goal & User Stories**     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|                                    | **Sprint 3 Goal (Outcome–Impact–Customer–Confirmation):**<br><br>*Our focus is on delivering a live VEYRA production environment where authenticated users can sign up, sign in, and manage core nursing-home data (residents, staff, rooms and medications) through the deployed web application connected to the backend.*<br><br>*We believe it delivers a realistic, reliable and secure experience to Nursing Home Administrators and Family Members, allowing them to access updated information about residents' care and activities from anywhere and at any time.*<br><br>*This will be confirmed when the production URL is publicly accessible, at least one test administrator can register and log in, and can successfully perform end-to-end CRUD operations on key entities (for example residents, staff and medications) using the deployed frontend connected to the Azure-hosted backend during the Sprint Review.* |
-| Sprint 3 Velocity                  | 18 Story Points                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| Sum of Story Points                | 18 SP (≈ 72 horas estimadas)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-
-#### 5.2.3.2. Aspect Leaders and Collaborators
-
-Para el Sprint 3 se presenta la matriz **Leadership-and-Collaboration Matrix (LACX)**, donde se definen los roles de liderazgo (**L**) y colaboración (**C**) por aspecto clave del desarrollo.
-
-Los aspectos clave se centran en el despliegue y la implementación del Backend, que son la prioridad de este sprint. El nuevo participante (Adrian Alonso Quiroz Caceres) se integra en el rol de colaboración dentro del equipo.
-
-- **DevOps & Deployment:** Configuración de variables de entorno, pipeline CI/CD y monitoreo del frontend desplegado.
-- **Backend Core (CRUD Operations):** Implementación de la arquitectura MVC/Capas para la gestión de datos (Java Spring Boot, JPA).
-- **Authentication & Security:** Desarrollo de los endpoints de registro/login, JWT generation y configuración de seguridad.
-
-| Team Member (Last Name, First Name) | Aspect: DevOps & Deploy | Aspect: Backend Core | Aspect: Auth & Security |
-|-------------------------------------|-------------------------|----------------------|-------------------------|
-| Armas Sánchez, Oscar Javier         | L                       | C                    | C                       |
-| Calvo Yalan, Renato Guillermo       | C                       | L                    | C                       |
-| Ramirez Carrasco, Ariana Lizeth     | C                       | C                    | L                       |
-| Roman Lopez, Miguel Angel Junior    | C                       | C                    | C                       |
-| Ruiz Madrid, Billy Jake             | C                       | C                    | C                       |
-| Quiroz Caceres, Adrian Alonso       | C                       | C                    | C                       |
-
-- **L** = Líder del aspecto
-- **C** = Colaborador en el aspecto
-
-Esta organización de roles garantiza que los aspectos críticos de despliegue y backend sean cubiertos con especialización, mientras se mantiene la flexibilidad para que todos colaboren según sea necesario.
-### 5.2.3.3. Sprint Backlog 3  
-
-### 5.2.3.3. Sprint Backlog 3
-
-El Sprint Backlog 3 incluye las historias de usuario y tareas planificadas para el despliegue del frontend en **Vercel** y del backend en **Azure App Service**, con énfasis en la implementación de operaciones **CRUD** y el sistema de autenticación (login/registro).
-
-Todas las tareas son monitoreadas y actualizadas mediante **Jira Software**.
-
-![Sprint 3 Board Screenshot](../assets/img/chapter-V/sprints/sprint-backlog-III/sprint-table/sprint3-board.jpg)
-*Figura: Tablero del Sprint 3 en Jira Software (Proyecto VEYRA)*
-
-![Sprint 3 Board Screenshot](../assets/img/chapter-V/sprints/sprint-backlog-III/sprint-table/sprint3-board-2.jpg)
-*Figura: Tablero del Sprint 3 en Jira Software (Proyecto VEYRA)*
-
-![Sprint 3 Board Screenshot](../assets/img/chapter-V/sprints/sprint-backlog-III/sprint-table/sprint3-board-3.jpg)
-*Figura: Tablero del Sprint 3 en Jira Software (Proyecto VEYRA)*
-
-A continuación, la tabla de control de estado para el Sprint 3:
-
-| Sprint #       | Sprint 3                                   |                      |                                 |                                                                              |                        |                 |                                                    |
-|----------------|--------------------------------------------|----------------------|---------------------------------|------------------------------------------------------------------------------|------------------------|-----------------|----------------------------------------------------|
-| **User Story** |                                            | **Work-Item / Task** |                                 |                                                                              |                        |                 |                                                    |
-| **Id**         | **Title**                                  | **Id**               | **Title**                       | **Description**                                                              | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
-| US-015         | Despliegue Frontend en Vercel              | T043                 | Configurar proyecto en Vercel   | Configurar el proyecto del frontend en la plataforma Vercel.                 | 2h                     | [Asignado]      | Done                                               |
-| US-015         | Despliegue Frontend en Vercel              | T044                 | Configurar build pipeline       | Configurar el pipeline de build y despliegue automático en Vercel.           | 2h                     | [Asignado]      | Done                                               |
-| US-015         | Despliegue Frontend en Vercel              | T045                 | Validar despliegue y DNS        | Validar el despliegue del frontend, dominio y configuración DNS.             | 1h                     | [Asignado]      | Done                                               |
-| US-016         | Implementación Backend CRUD - Residentes   | T046                 | Crear Entity y Repository       | Crear la entidad y el repositorio para la gestión de residentes.             | 3h                     | [Asignado]      | Done                                               |
-| US-016         | Implementación Backend CRUD - Residentes   | T047                 | Implementar Service layer       | Implementar la capa de servicios para operaciones CRUD de residentes.        | 3h                     | [Asignado]      | Done                                               |
-| US-016         | Implementación Backend CRUD - Residentes   | T048                 | Crear Controller y endpoints    | Crear el controlador y endpoints REST para residentes.                       | 3h                     | [Asignado]      | Done                                               |
-| US-016         | Implementación Backend CRUD - Residentes   | T049                 | Pruebas unitarias               | Desarrollar y ejecutar pruebas unitarias para los endpoints de residentes.   | 2h                     | [Asignado]      | Done                                               |
-| US-017         | Implementación Backend CRUD - Medicamentos | T050                 | Crear Entity y Repository       | Crear la entidad y el repositorio para la gestión de medicamentos.           | 3h                     | [Asignado]      | Done                                               |
-| US-017         | Implementación Backend CRUD - Medicamentos | T051                 | Implementar Service layer       | Implementar la capa de servicios para operaciones CRUD de medicamentos.      | 3h                     | [Asignado]      | Done                                               |
-| US-017         | Implementación Backend CRUD - Medicamentos | T052                 | Crear Controller y endpoints    | Crear el controlador y endpoints REST para medicamentos.                     | 3h                     | [Asignado]      | Done                                               |
-| US-017         | Implementación Backend CRUD - Medicamentos | T053                 | Pruebas unitarias               | Desarrollar y ejecutar pruebas unitarias para los endpoints de medicamentos. | 2h                     | [Asignado]      | Done                                               |
-| US-018         | Implementación Backend CRUD - Empleados    | T054                 | Crear Entity y Repository       | Crear la entidad y el repositorio para la gestión de empleados.              | 3h                     | [Asignado]      | Done                                               |
-| US-018         | Implementación Backend CRUD - Empleados    | T055                 | Implementar Service layer       | Implementar la capa de servicios para operaciones CRUD de empleados.         | 3h                     | [Asignado]      | Done                                               |
-| US-018         | Implementación Backend CRUD - Empleados    | T056                 | Crear Controller y endpoints    | Crear el controlador y endpoints REST para empleados.                        | 3h                     | [Asignado]      | Done                                               |
-| US-018         | Implementación Backend CRUD - Empleados    | T057                 | Pruebas unitarias               | Desarrollar y ejecutar pruebas unitarias para los endpoints de empleados.    | 2h                     | [Asignado]      | Done                                               |
-| US-019         | Sistema de Autenticación (Login/Registro)  | T058                 | Implementar generación de JWT   | Implementar la generación y validación de tokens JWT para autenticación.     | 3h                     | [Asignado]      | Done                                               |
-| US-019         | Sistema de Autenticación (Login/Registro)  | T059                 | Crear endpoint de registro      | Crear el endpoint para registro de usuarios.                                 | 3h                     | [Asignado]      | Done                                               |
-| US-019         | Sistema de Autenticación (Login/Registro)  | T060                 | Crear endpoint de login         | Crear el endpoint para inicio de sesión de usuarios.                         | 3h                     | [Asignado]      | Done                                               |
-| US-019         | Sistema de Autenticación (Login/Registro)  | T061                 | Configurar Spring Security      | Configurar Spring Security para proteger los endpoints del backend.          | 2h                     | [Asignado]      | Done                                               |
-| US-020         | Despliegue Backend en Azure App Service    | T062                 | Crear Azure App Service         | Crear el recurso de Azure App Service para el backend.                       | 2h                     | [Asignado]      | Done                                               |
-| US-020         | Despliegue Backend en Azure App Service    | T063                 | Configurar Azure SQL Database   | Configurar la base de datos Azure SQL para la aplicación.                    | 2h                     | [Asignado]      | Done                                               |
-| US-020         | Despliegue Backend en Azure App Service    | T064                 | Configurar variables de entorno | Configurar variables de entorno y cadenas de conexión en Azure.              | 1h                     | [Asignado]      | Done                                               |
-| US-020         | Despliegue Backend en Azure App Service    | T065                 | Validar despliegue y acceso     | Validar el despliegue del backend y el acceso a los servicios.               | 1h                     | [Asignado]      | Done                                               |
-
-El seguimiento y la actualización del Sprint Backlog se realizan en **Jira Software** mediante el tablero Scrum del proyecto, donde se registran los estados de cada tarea (**To-do, In-Process, To-Review, Done**). Durante las reuniones diarias (**Daily Scrum**), el equipo actualiza el progreso y revisa posibles bloqueos para garantizar el cumplimiento de los objetivos del **Sprint 3**.
-
-#### 5.2.3.4. Development Evidence for Sprint Review
-
-| Repository                                            | Branch | Commit Id | Commit Message                                                | Committed on (Date) |
-|-------------------------------------------------------|--------|-----------|---------------------------------------------------------------|---------------------|
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Backend | main   | 3a8c12f   | feat(init): initialize Spring Boot project scaffolding        | 02-11-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Backend | main   | 7b2e45c   | feat(entities): add Resident entity with JPA annotations      | 03-11-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Backend | main   | 9d6f89e   | feat(repository): add ResidentRepository interface            | 03-11-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Backend | main   | 1c4d67a   | feat(service): implement ResidentService with CRUD operations | 04-11-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Backend | main   | 8e5a23b   | feat(controller): add ResidentController with REST endpoints  | 04-11-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Backend | main   | 5f3c90d   | feat(medication): add Medication entity and CRUD operations   | 05-11-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Backend | main   | 2a7b18f   | feat(employee): add Employee entity and CRUD operations       | 05-11-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Backend | main   | c8e3a19   | feat(auth): implement JWT token generation and validation     | 06-11-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Backend | main   | 4f9d52e   | feat(auth): add authentication endpoints (login/register)     | 06-11-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Backend | main   | 6a2c71b   | feat(security): configure Spring Security with JWT filters    | 07-11-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Backend | main   | 9e4f63c   | feat(docs): add Swagger/OpenAPI documentation                 | 07-11-2025          |
-| https://github.com/NovaPeru-Tech/NovaPeruTech-Backend | main   | 3d8f94c   | chore(deploy): configure Azure deployment pipeline            | 08-11-2025          |
-
-#### 5.2.3.5. Execution Evidence for Sprint Review
-
-Durante el Sprint 3, se completó exitosamente la implementación del Backend con Spring Boot, incluyendo todos los módulos de gestión de residentes, medicamentos, empleados y sistema de autenticación. Se logró el despliegue en Azure App Service con base de datos en Azure SQL Database.
-
-##### Video de demostración de los Endpoints:
-
-**URL Microsoft Stream / YouTube:** [Incluir URL del video de demostración del Sprint 3]  
-**Duración:** [HH:MM:SS]
-
-##### Capturas de pantalla - Swagger UI del Backend:
-
-**Endpoints de Medications:**
-
-![swagger-medications-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-III/execution-evidence-for-sprint-review/swagger-medications-endpoints.jpg)
-
-**Endpoints de Person profiles:**
-
-![swagger-person-profiles-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-III/execution-evidence-for-sprint-review/swagger-person-profiles-endpoints.jpg)
-
-**Endpoints de Nursing Homes:**
-
-![swagger-nursing-homes-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-III/execution-evidence-for-sprint-review/swagger-nursing-homes-endpoints.jpg)
-
-**Endpoints de Staff:**
-
-![swagger-staff-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-III/execution-evidence-for-sprint-review/swagger-staff-endpoints.jpg)
-
-**Endpoints de Roles:**
-
-![swagger-roles-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-III/execution-evidence-for-sprint-review/swagger-roles-endpoints.jpg)
-
-**Endpoints de Autenticación:**
-
-![swagger-auth-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-III/execution-evidence-for-sprint-review/swagger-auth-endpoints.jpg)
-
-**Endpoints de Measurements:**
-
-![swagger-measurements-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-III/execution-evidence-for-sprint-review/swagger-measurements-endpoints.jpg)
-
-**Endpoints de Activities:**
-
-![swagger-activities-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-III/execution-evidence-for-sprint-review/swagger-activities-endpoints.jpg)
-
-**Endpoints de Business Profiles:**
-
-![swagger-business-profiles-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-III/execution-evidence-for-sprint-review/swagger-business-profiles-endpoints.jpg)
-
-**Endpoints de Residentes:**
-
-![swagger-residents-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-III/execution-evidence-for-sprint-review/swagger-residents-endpoints1.jpg)
-
-**Endpoints de Administrators:**
-
-![swagger-administrators-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-III/execution-evidence-for-sprint-review/swagger-administrators-endpoints.jpg)
-
-**Endpoints de Users:**
-
-![swagger-user-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-III/execution-evidence-for-sprint-review/swagger-user-endpoints.jpg)
-
-#### 5.2.3.6. Services Documentation Evidence for Sprint Review
-
-Durante el Sprint 3, se implementó la capa de servicios REST del Backend de VEYRA, con documentación completa en Swagger/OpenAPI. Todos los endpoints están disponibles y descritos en el documento `/v3/api-docs` del entorno de producción de NovaPeruTech, incluyendo parámetros, códigos de respuesta y modelos de datos.
-
-La tabla siguiente resume los principales endpoints expuestos, organizados por recurso y operación, indicando el verbo HTTP, la acción implementada, la sintaxis de la llamada y el tipo de respuesta que devuelve el servicio.
-
-| End Point Base                | Método HTTP | Acción Implementada                                     | Sintaxis de Llamada                                                        | Explicación del Response                                                                           |
-|-------------------------------|-------------|---------------------------------------------------------|----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| **/api/v1/medications**       | **GET**     | Obtener medicamento por ID.                             | `GET /api/v1/medications/{medicationId}`                                   | `200 OK`: Objeto `MedicationResource` con la información del medicamento.                          |
-| **/api/v1/person-profiles**   | **GET**     | Obtener listado de perfiles de persona.                 | `GET /api/v1/person-profiles`                                              | `200 OK`: Array JSON de `PersonProfileResource`.                                                   |
-| **/api/v1/person-profiles**   | **GET**     | Obtener perfil de persona por ID.                       | `GET /api/v1/person-profiles/{personProfileId}`                            | `200 OK`: Objeto `PersonProfileResource` o `404 Not Found` si no existe.                           |
-| **/api/v1/person-profiles**   | **POST**    | Crear un nuevo perfil de persona.                       | `POST /api/v1/person-profiles`                                             | `201 Created`: Objeto creado con sus datos normalizados.                                           |
-| **/api/v1/person-profiles**   | **PUT**     | Actualizar un perfil de persona.                        | `PUT /api/v1/person-profiles/{personProfileId}`                            | `200 OK`: Objeto actualizado o `404 Not Found`.                                                    |
-| **/api/v1/person-profiles**   | **DELETE**  | Eliminar un perfil de persona.                          | `DELETE /api/v1/person-profiles/{personProfileId}`                         | `204 No Content`: Eliminación exitosa.                                                             |
-| **/api/v1/nursing-homes**     | **GET**     | Listar todas las casas de reposo.                       | `GET /api/v1/nursing-homes`                                                | `200 OK`: Array de `NursingHomeResource`.                                                          |
-| **/api/v1/nursing-homes**     | **GET**     | Obtener casa de reposo por ID.                          | `GET /api/v1/nursing-homes/{nursingHomeId}`                                | `200 OK`: `NursingHomeResource` o `404 Not Found`.                                                 |
-| **/api/v1/nursing-homes**     | **GET**     | Listar staff de una casa de reposo.                     | `GET /api/v1/nursing-homes/{nursingHomeId}/staff`                          | `200 OK`: Array de `StaffResource`.                                                                |
-| **/api/v1/nursing-homes**     | **POST**    | Registrar nuevo miembro de staff en una casa de reposo. | `POST /api/v1/nursing-homes/{nursingHomeId}/staff`                         | `201 Created`: `StaffResource` creado.                                                             |
-| **/api/v1/nursing-homes**     | **GET**     | Listar habitaciones de una casa de reposo.              | `GET /api/v1/nursing-homes/{nursingHomeId}/rooms`                          | `200 OK`: Array de `RoomResource`.                                                                 |
-| **/api/v1/nursing-homes**     | **POST**    | Agregar nueva habitación a una casa de reposo.          | `POST /api/v1/nursing-homes/{nursingHomeId}/rooms`                         | `201 Created`: `RoomResource` creada.                                                              |
-| **/api/v1/nursing-homes**     | **POST**    | Asignar residente a una habitación.                     | `POST /api/v1/nursing-homes/{nursingHomeId}/rooms/{residentId}`            | `200 OK`: `AssignedRoomForResidentResource` con la asignación.                                     |
-| **/api/v1/nursing-homes**     | **GET**     | Listar habitaciones por estado.                         | `GET /api/v1/nursing-homes/{nursingHomeId}/rooms/{roomStatus}`             | `200 OK`: Array de habitaciones filtradas por estado.                                              |
-| **/api/v1/nursing-homes**     | **GET**     | Listar residentes de una casa de reposo.                | `GET /api/v1/nursing-homes/{nursingHomeId}/residents`                      | `200 OK`: Array de `ResidentResource`.                                                             |
-| **/api/v1/nursing-homes**     | **POST**    | Registrar nuevo residente en una casa de reposo.        | `POST /api/v1/nursing-homes/{nursingHomeId}/residents`                     | `201 Created`: `ResidentResource` creado.                                                          |
-| **/api/v1/nursing-homes**     | **GET**     | Obtener analíticas de terminaciones de staff.           | `GET /api/v1/nursing-homes/{nursingHomeId}/analytics/staff-terminations`   | `200 OK`: Lista de `MetricResource` con estadísticas de terminaciones.                             |
-| **/api/v1/nursing-homes**     | **GET**     | Obtener analíticas de contrataciones de staff.          | `GET /api/v1/nursing-homes/{nursingHomeId}/analytics/staff-hires`          | `200 OK`: Lista de métricas de contrataciones.                                                     |
-| **/api/v1/nursing-homes**     | **GET**     | Obtener analíticas de admisiones de residentes.         | `GET /api/v1/nursing-homes/{nursingHomeId}/analytics/residents-admissions` | `200 OK`: Lista de métricas de admisiones.                                                         |
-| **/api/v1/nursing-homes**     | **GET**     | Listar actividades de una casa de reposo.               | `GET /api/v1/nursing-homes/{nursingHomeId}/activities`                     | `200 OK`: Array de `ActivityResource`.                                                             |
-| **/api/v1/nursing-homes**     | **POST**    | Registrar nueva actividad en una casa de reposo.        | `POST /api/v1/nursing-homes/{nursingHomeId}/activities`                    | `201 Created`: `ActivityResource` creada.                                                          |
-| **/api/v1/staff**             | **PUT**     | Actualizar datos de un miembro del staff.               | `PUT /api/v1/staff/{staffMemberId}`                                        | `200 OK`: `StaffResource` actualizado.                                                             |
-| **/api/v1/staff**             | **GET**     | Listar contratos de un miembro del staff.               | `GET /api/v1/staff/{staffMemberId}/contracts`                              | `200 OK`: Array de `ContractResource`.                                                             |
-| **/api/v1/staff**             | **POST**    | Registrar nuevo contrato para un miembro del staff.     | `POST /api/v1/staff/{staffMemberId}/contracts`                             | `201 Created`: `ContractResource` creado.                                                          |
-| **/api/v1/staff**             | **GET**     | Obtener contrato específico por ID.                     | `GET /api/v1/staff/{staffMemberId}/contracts/{contractId}`                 | `200 OK`: `ContractResource` o `404 Not Found`.                                                    |
-| **/api/v1/staff**             | **PATCH**   | Actualizar estado de un contrato.                       | `PATCH /api/v1/staff/{staffMemberId}/contracts/{contractId}`               | `200 OK`: Contrato actualizado; `400` si la transición es inválida.                                |
-| **/api/v1/staff**             | **GET**     | Obtener contrato activo de un miembro del staff.        | `GET /api/v1/staff/{staffMemberId}/contracts/active`                       | `200 OK`: `ContractResource` activo o `404 Not Found`.                                             |
-| **/api/v1/roles**             | **GET**     | Listar todos los roles del sistema.                     | `GET /api/v1/roles`                                                        | `200 OK`: Array de `RoleResource`.                                                                 |
-| **/api/v1/authentication**    | **POST**    | Registro de nuevo usuario (sign-up).                    | `POST /api/v1/authentication/sign-up`                                      | `201 Created`: `AuthenticatedUserResource` con datos y token.                                      |
-| **/api/v1/authentication**    | **POST**    | Inicio de sesión (sign-in).                             | `POST /api/v1/authentication/sign-in`                                      | `200 OK`: `AuthenticatedUserResource` con token JWT; `401 Unauthorized` en credenciales inválidas. |
-| **/api/v1/measurements**      | **GET**     | Obtener listado de mediciones registradas.              | `GET /api/v1/measurements`                                                 | `200 OK`: Array de `MeasurementResource` utilizado para monitoreo de salud.                        |
-| **/api/v1/business-profiles** | **GET**     | Listar todos los perfiles de negocio.                   | `GET /api/v1/business-profiles`                                            | `200 OK`: Array de `BusinessProfileResource`.                                                      |
-| **/api/v1/business-profiles** | **POST**    | Registrar nuevo perfil de negocio.                      | `POST /api/v1/business-profiles`                                           | `201 Created`: `BusinessProfileResource` creado.                                                   |
-| **/api/v1/business-profiles** | **GET**     | Obtener perfil de negocio por ID.                       | `GET /api/v1/business-profiles/{businessId}`                               | `200 OK`: Perfil de negocio o `404 Not Found`.                                                     |
-| **/api/v1/residents**         | **GET**     | Obtener residente por ID.                               | `GET /api/v1/residents/{residentId}`                                       | `200 OK`: `ResidentResource` o `404 Not Found`.                                                    |
-| **/api/v1/residents**         | **PUT**     | Actualizar datos de un residente.                       | `PUT /api/v1/residents/{residentId}`                                       | `200 OK`: Residente actualizado.                                                                   |
-| **/api/v1/residents**         | **DELETE**  | Eliminar residente.                                     | `DELETE /api/v1/residents/{residentId}`                                    | `204 No Content`: Eliminación exitosa.                                                             |
-| **/api/v1/residents**         | **GET**     | Listar alergias de un residente.                        | `GET /api/v1/residents/{residentId}/allergies`                             | `200 OK`: Array de `AllergyResource`.                                                              |
-| **/api/v1/residents**         | **POST**    | Registrar nueva alergia para un residente.              | `POST /api/v1/residents/{residentId}/allergies`                            | `201 Created`: `AllergyResource` creada.                                                           |
-| **/api/v1/residents**         | **GET**     | Listar medicamentos asignados a un residente.           | `GET /api/v1/residents/{residentId}/medications`                           | `200 OK`: Array de `MedicationResource`.                                                           |
-| **/api/v1/residents**         | **POST**    | Registrar un nuevo medicamento para un residente.       | `POST /api/v1/residents/{residentId}/medications`                          | `201 Created`: Asociación residente–medicamento creada.                                            |
-| **/api/v1/administrators**    | **POST**    | Crear administrador del sistema.                        | `POST /api/v1/administrators`                                              | `201 Created`: `AdministratorResource` registrado.                                                 |
-| **/api/v1/administrators**    | **POST**    | Crear casa de reposo asociada a un administrador.       | `POST /api/v1/administrators/{administratorId}/nursing-homes`              | `201 Created`: `NursingHomeResource` vinculada al administrador.                                   |
-| **/api/v1/users**             | **GET**     | Listar todos los usuarios.                              | `GET /api/v1/users`                                                        | `200 OK`: Array de `UserResource`.                                                                 |
-| **/api/v1/users**             | **GET**     | Obtener usuario por ID.                                 | `GET /api/v1/users/{userId}`                                               | `200 OK`: `UserResource` o `404 Not Found`.                                                        |
-
-Adicionalmente, la especificación OpenAPI incluye los esquemas de datos utilizados por la API, tales como `StaffResource`, `ResidentResource`, `PersonProfileResource`, `AllergyResource`, `ContractResource`, `MedicationResource`, `RoomResource`, `ActivityResource`, `BusinessProfileResource`, `UserResource`, `AdministratorResource`, `NursingHomeResource`, `MetricResource`, `MeasurementResource`, `RoleResource`, `SignUpResource`, `SignInResource` y `AuthenticatedUserResource`, entre otros, que describen la estructura de los *request* y *response* intercambiados entre el Frontend y el Backend.
-
-#### 5.2.3.7. Software Deployment Evidence for Sprint Review
-
-Durante el Sprint 3 se consolidó el *deployment* de la solución VEYRA en entornos cloud, abarcando la Web Application (Frontend Angular) y los Web Services (Backend con API REST y documentación Swagger). Las actividades incluyeron la creación y configuración de proyectos en Vercel y Azure App Service, la definición de variables de entorno para separar los ambientes de desarrollo y producción, y la integración del flujo de despliegue continuo basado en los repositorios de GitHub del equipo.
-
-De esta manera, el producto quedó accesible desde una URL pública para los usuarios administradores de casas de reposo y se habilitó, además, la documentación interactiva de la API para facilitar las pruebas funcionales y la validación técnica durante la revisión del Sprint.
+Este atributo incorpora la referencia al equipo responsable y al año de desarrollo, reforzando la actualidad y vigencia del sistema.
 
 ---
 
-##### 1) Despliegue de la Web Application (Frontend) en Vercel
+**Landing Page**
 
-Para la Web Application se configuró un proyecto en Vercel enlazado al repositorio *NovaPeruTech-Frontend*. Se definió el comando de build de Angular y la carpeta de salida de artefactos (`dist`), y se registró la variable de entorno con la `BASE_API_URL` apuntando al backend en producción. Con esto, cada vez que se realiza un merge a la rama principal, Vercel ejecuta automáticamente el pipeline de compilación y despliegue.
+- **Title:**  
+    `<title>Veyra – The Best Care is Always Connected</title>`
 
-**Frontend desplegado:** https://nova-peru-tech-frontend-v1-2w9r.vercel.app/home
+Una frase concisa que refleja la propuesta de valor de la plataforma y contiene palabras clave como "care" y "connected", términos asociados al cuidado del adulto mayor y la conexión familiar.
 
-![Panel de despliegue del Frontend en Vercel](../assets/img/chapter-V/sprints/sprint-backlog-III/software-deployment-evidence-for-sprint-review/deployment-frontend-sprint3.png.jpg)
-*Figura: Panel de despliegue de la Web Application de VEYRA en Vercel.*
+- **Meta Description:**  
+    `<meta name="description" content="Veyra es una plataforma digital de cuidado conectado para casas de reposo y familias. Monitorea signos vitales en tiempo real con dispositivos IoT, accede al historial clínico de tus seres queridos y mantén la tranquilidad de saber cómo se encuentran sin importar la distancia.">`
+
+Esta descripción amplía la explicación del producto, destacando sus beneficios clave y diferenciadores, a la vez que integra términos como "plataforma digital", "monitoreo en tiempo real", "dispositivos IoT" e "historial clínico".
+
+- **Meta Keywords:**  
+    `<meta name="keywords" content="casa de reposo, monitoreo IoT, adultos mayores, signos vitales, salud geriátrica, alerta médica, cuidado familiar, plataforma digital de salud, Veyra, Metasoft">`
+
+Un conjunto seleccionado de palabras y frases clave que abarca tanto el público objetivo (casas de reposo, familias) como las funcionalidades (monitoreo IoT, alertas médicas, signos vitales).
+
+- **Meta Author:**  
+    `<meta name="author" content="Equipo Metasoft – Diseño UX/UI y Desarrollo Web 2026">`
+
+Incluye una referencia al equipo responsable del diseño y desarrollo del producto, lo cual apoya en términos de confianza y atribución de contenido.
+
+
+### 5.2.4. Searching Systems
+
+Con el objetivo de permitir que los usuarios encuentren rápidamente la información que necesitan dentro de cada plataforma de Veyra, se ha definido un sistema de búsqueda contextual y simple, ajustado al rol del usuario y al tipo de contenido manejado en cada vista. La búsqueda se complementa con filtros, ordenamientos y una codificación visual de estados para facilitar la interpretación de los resultados.
+
+**Aplicación Móvil**
+
+En la aplicación móvil, el sistema de búsqueda está pensado para ofrecer acceso rápido a la información relevante según el rol del usuario. Para el **familiar**, la búsqueda se aplica dentro del historial de signos vitales del residente vinculado mediante un selector de calendario que permite filtrar por rango de fechas personalizado (US-15). Para el **personal asistencial**, la búsqueda se aplica sobre el listado de residentes asignados al turno actual, permitiendo localizar rápidamente a uno específico para consultar sus signos vitales o registrar un evento clínico (US-11, US-19). Para el **administrador de la casa de reposo**, la búsqueda permite filtrar la bandeja de alertas y notificaciones críticas pendientes desde el dispositivo móvil.
+
+<p align="center">
+  <img src="./../assets/img/chapter-V/search_patient.png">
+</p>
+
+**Resultados de búsqueda**
+
+Los resultados se presentan en un formato visual basado en **Cards**, optimizado para la consulta rápida desde el dispositivo móvil. Cada Card incluye información clave como:
+
+- Foto y nombre del residente
+- Estado actual del residente
+- Últimos valores de signos vitales (frecuencia cardíaca, saturación de oxígeno, temperatura, presión arterial)
+- Hora de la última actualización
+- Indicador visual de alertas críticas pendientes
+
+Se implementa una codificación por colores para facilitar la interpretación visual del estado del residente:
+
+- **Verde:** Indica que los signos vitales están dentro del rango aceptable y el residente se encuentra estable.
+- **Amarillo:** Indica advertencia, con uno o más signos vitales cercanos a los límites configurados.
+- **Rojo:** Indica alerta crítica, con uno o más signos vitales fuera del rango definido en los parámetros clínicos.
 
 ---
 
-##### 2) Despliegue de los Web Services (Backend) en Azure App Service
+**Aplicación Web**
 
-El backend de VEYRA se desplegó en Azure App Service utilizando el proyecto *veyrav01*. Para ello se creó un recurso de App Service, se configuró el entorno de ejecución de Spring Boot y se definieron las variables de entorno necesarias (cadena de conexión a la base de datos, perfil `prod` y claves de seguridad). Azure se integró con el repositorio *NovaPeruTech-BackEnd* para automatizar el despliegue cada vez que se actualiza la rama principal.
+En la aplicación web, el sistema de búsqueda está integrado de forma simple pero efectiva para que el administrador y el doctor puedan localizar rápidamente la información que necesitan. Cada módulo principal del sidenav incluye un campo de búsqueda ubicado en la parte superior de la vista, construido con `<mat-form-field>` y prefijo de ícono `search`, acompañado de un botón `close` para limpiar el término ingresado. El placeholder de cada campo se adapta al tipo de información que gestiona el módulo activo.
 
-**Backend desplegado:** https://veyrav01.azurewebsites.net
+En el módulo **Residents**, el campo presenta el placeholder genérico `Search` y filtra el listado de residentes a partir del nombre ingresado contra el person profile asociado:
 
-![Panel de despliegue del Backend en Azure App Service](../assets/img/chapter-V/sprints/sprint-backlog-III/software-deployment-evidence-for-sprint-review/deployment-backend-sprint3.jpg)
-*Figura: Vista del recurso de Azure App Service con el backend VEYRA desplegado.*
+<p align="center">
+  <img src="./../assets/img/chapter-V/search_residents.png">
+</p>
+
+En el módulo **Devices**, el campo presenta el placeholder `Search device ID...` y filtra la lista de dispositivos IoT por su identificador único:
+
+<p align="center">
+  <img src="./../assets/img/chapter-V/search_devices.png">
+</p>
+
+**Resultados de búsqueda**
+
+Los resultados se presentan en dos formatos según el módulo, diseñados para mostrar la información de cada elemento de forma clara y fácil de escanear:
+
+- **Grilla de Cards (Residents y Staff):** Cada Card muestra la foto y el nombre de la persona, el estado actual (activo / inactivo) y los botones de acción contextual (Ver Detalle, Editar, Asignar Habitación, Ver Medicamentos, Agregar Contrato).
+- **Tabla ordenable (Rooms, Devices y Contracts):** Cada fila muestra los datos clave del registro y permite ordenar los resultados al hacer clic en la cabecera de cada columna, con íconos `unfold_more`, `arrow_drop_up` y `arrow_drop_down` para indicar el estado del orden.
+
+Se implementa una codificación por colores para facilitar la interpretación visual del estado dentro de los listados y tarjetas:
+
+- **Verde (`#4CAF50`):** Indica estado activo, confirmación exitosa o valores dentro del rango normal.
+- **Amarillo (`#FFC107`):** Indica advertencia o aviso importante que requiere atención del usuario.
+- **Rojo (`#F44336`):** Indica error, alerta crítica o valores fuera del rango aceptable.
+- **Gris:** Indica elementos inactivos, sin datos disponibles o no asignados.
 
 ---
 
-##### 3) Publicación de la documentación de la API (Swagger UI)
+**Landing Page**
 
-Como parte del proceso de deployment, se habilitó la documentación de los Web Services mediante Swagger UI en el mismo App Service de Azure. Esto permite a los miembros del equipo y a los stakeholders explorar todos los endpoints REST (creación, consulta, actualización y eliminación de recursos como residentes, personal, casas de reposo, actividades y métricas de salud), así como probarlos en tiempo real contra el entorno de producción.
+El Landing Page de Veyra no incluye un sistema de búsqueda integrado, dado que está diseñado como un sitio estático orientado al descubrimiento mediante scroll. La navegación entre secciones se resuelve con anchors del menú principal (`#home`, `#features`, `#benefits`, `#about`, `#plans`), el botón flotante de scroll-to-top que aparece tras 300 px de desplazamiento y el menú hamburguesa en dispositivos móviles, lo cual hace innecesario un campo de búsqueda dedicado.
 
-**API Documentation (Swagger UI):** https://veyrav01.azurewebsites.net/swagger-ui/index.html
 
-![Swagger UI con la documentación de la API de VEYRA](../assets/img/chapter-V/sprints/sprint-backlog-III/software-deployment-evidence-for-sprint-review/deployment-swagger-sprint3.jpg)
-*Figura: Documentación interactiva de los Web Services de VEYRA mediante Swagger UI.*
+### 5.2.5. Navigation Systems
 
-#### 5.2.3.8. Team Collaboration Insights during Sprint
+Con el objetivo de que cada usuario encuentre con facilidad las funcionalidades que necesita según su rol, "Veyra" implementa sistemas de navegación adaptados a cada una de sus plataformas. La navegación es persistente, consistente y respeta la jerarquía de la información definida en los puntos anteriores, permitiendo al usuario ubicarse en todo momento dentro del producto.
 
-Durante el Sprint 3, los analíticos de colaboración de los repositorios NovaPeruTech-Frontend y NovaPeruTech-Backend evidencian una participación activa y distribuida de todos los integrantes del equipo sobre los dos productos principales del proyecto: la Web Application (Frontend) y los Web Services (Backend). El gráfico de Overview muestra un volumen sostenido de commits a lo largo del sprint, asociado a la implementación de la capa de persistencia, la lógica de negocio en Spring Boot y los ajustes finales de integración y despliegue del Frontend. Esto refleja que las tareas no se concentraron en una sola persona, sino que cada miembro asumió responsabilidades específicas (servicios, entidades, controladores, componentes de UI, integración con la API en producción) y realizó aportes continuos hasta completar el objetivo del sprint, alineado con el enfoque en Backend y despliegue descrito en la sección de Sprint 3.
+**Aplicación Móvil**
 
-![overview-sprint3](../assets/img/chapter-V/sprints/sprint-backlog-III/team-collaboration-insights-during-sprint/overview-sprint3.jpg)
+En la aplicación móvil, la navegación principal se ofrece a través de una **bottom navigation bar** fija en la parte inferior de la pantalla. Está compuesta por cinco accesos rápidos con ícono y etiqueta, diseñados para que el familiar, el personal asistencial y el administrador de la casa de reposo puedan llegar a las funciones más usadas en un solo gesto. El ítem activo se resalta visualmente con el color primario de la marca y un fondo diferenciado.
 
-El Network Graph de ambos repositorios refuerza esta visión de trabajo colaborativo mediante la presencia de múltiples ramas de tipo feature/ que parten de develop o main y luego son fusionadas una vez completadas, siguiendo el GitFlow definido para el proyecto. Se observan ciclos de creación de ramas, desarrollo de funcionalidades (endpoints REST, servicios de negocio, integración del Frontend con la API de Azure) y merges controlados, lo que confirma que la coordinación entre líderes y colaboradores permitió avanzar en paralelo sin perder trazabilidad ni calidad del código.
+<p align="center">
+  <img src="./../assets/img/chapter-V/nav_mobile.png">
+</p>
 
-![network-graph-sprint3](../assets/img/chapter-V/sprints/sprint-backlog-III/team-collaboration-insights-during-sprint/network-graph-sprint3.jpg)
+Los accesos disponibles en la bottom navigation bar son:
 
-Finalmente, el gráfico de Visitors muestra actividad de consulta sobre los repositorios a medida que se acercan las fechas de pruebas e integración con el entorno de producción (https://veyrav01.azurewebsites.net/swagger-ui/index.html#/), indicando que el equipo utilizó GitHub como punto central para revisar avances, validar el comportamiento de la API desplegada y preparar el Sprint Review. En conjunto, estos analíticos de Overview, Network Graph y Visitors demuestran que, durante el Sprint 3, todos los miembros del equipo participaron efectivamente en la implementación y despliegue de los Web Services y la Web Application, cumpliendo con el principio establecido de involucrar a todos los integrantes en los productos clave del proyecto (Landing Page, Web Applications y Web Services) a lo largo de los sprints.
-
-![contributors-sprint3](../assets/img/chapter-V/sprints/sprint-backlog-III/team-collaboration-insights-during-sprint/contributors-sprint3.jpg)
-
-### 5.2.4. Sprint 4
-
-Durante el Sprint 4, el equipo se enfocó en la estabilización final del producto (Release Candidate), priorizando la corrección de los errores de severidad alta detectados durante las entrevistas de validación y la evaluación heurística. Se realizaron optimizaciones de rendimiento en el Backend y se unificó la localización (idioma) en el Frontend para garantizar una experiencia de usuario consistente en el lanzamiento final.
-
-**Repositorio Frontend:** https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend
-
-**Repositorio Backend:** https://github.com/NovaPeru-Tech/NovaPeruTech-Backend
-
-**Backend API (Producción):** https://veyrav01.azurewebsites.net/swagger-ui/index.html#/
-
-#### 5.2.4.1. Sprint Planning 4
-
-| Sprint Planning Sprint 4           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Sprint Planning Background**     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Date                               | 04/12/2025                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Time                               | 09:00 a.m.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Location                           | Discord                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| Prepared By                        | Ruiz Madrid, Billy Jake                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| Attendees (to planning meeting)    | Calvo Yalan, Renato Guillermo<br>Armas Sánchez, Oscar Javier<br>Ramirez Carrasco, Ariana Lizeth<br>Roman Lopez, Miguel Angel Junior<br>Ruiz Madrid, Billy Jake<br>Quiroz Caceres, Adrian Alonso                                                                                                                                                                                                                                                                                                                                                                                                       |
-| **Sprint 3 Review Summary**        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|                                    | Se logró el despliegue exitoso del Backend en Azure y la integración base con el Frontend. Sin embargo, las pruebas de usuario revelaron inconsistencias críticas en el idioma (mezcla de inglés/español) y errores técnicos visibles ("Fetch Error") en el módulo de habitaciones que deben ser resueltos antes del lanzamiento.                                                                                                                                                                                                                                                                     |
-| **Sprint 3 Retrospective Summary** |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|                                    | El equipo notó que la calidad del código UI bajó por la prisa del despliegue. Se acordó dedicar este último sprint exclusivamente a "Bug Fixing" y "Polishing" (pulido), deteniendo el desarrollo de nuevas funcionalidades complejas (Code Freeze).                                                                                                                                                                                                                                                                                                                                                  |
-| **Sprint Goal & User Stories**     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|                                    | **Sprint 4 Goal (Outcome–Impact–Customer–Confirmation):**<br><br>*Our focus is on delivering a polished, production-ready version of VEYRA by resolving all critical technical and usability issues identified during validation.*<br><br>*We believe it delivers a professional and trustworthy experience to our end users, eliminating confusion caused by technical errors or mixed languages in the interface.*<br><br>*This will be confirmed when the "Get entities" error is correctly handled, all UI labels are 100% in Spanish, and no Severity 3 or 4 issues remain open in the backlog.* |
-| Sprint 4 Velocity                  | 31 Story Points                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Sum of Story Points                | 31 SP (≈ 56 horas estimadas)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-
-#### 5.2.4.2. Aspect Leaders and Collaborators
-
-Para el Sprint 4 se presenta la matriz **Leadership-and-Collaboration Matrix (LACX)**, donde se definen los roles de liderazgo (**L**) y colaboración (**C**) por aspecto clave del desarrollo.
-
-Los aspectos clave se centran en el despliegue y la implementación del Backend, que son la prioridad de este sprint.
-
-- **DevOps & Deployment:** Configuración de variables de entorno, pipeline CI/CD y monitoreo del frontend desplegado.
-- **Backend Core (CRUD Operations):** Implementación de la arquitectura MVC/Capas para la gestión de datos (Java Spring Boot, JPA).
-- **Authentication & Security:** Desarrollo de los endpoints de registro/login, JWT generation y configuración de seguridad.
-
-| Team Member (Last Name, First Name) | Aspect: DevOps & Deploy | Aspect: Backend Core | Aspect: Auth & Security |
-|-------------------------------------|-------------------------|----------------------|-------------------------|
-| Armas Sánchez, Oscar Javier         | C                       | C                    | C                       |
-| Calvo Yalan, Renato Guillermo       | C                       | L                    | C                       |
-| Ramirez Carrasco, Ariana Lizeth     | C                       | C                    | C                       |
-| Roman Lopez, Miguel Angel Junior    | C                       | C                    | C                       |
-| Ruiz Madrid, Billy Jake             | C                       | C                    | L                       |
-| Quiroz Caceres, Adrian Alonso       | L                       | C                    | C                       |
-
-- **L** = Líder del aspecto
-- **C** = Colaborador en el aspecto
-
-Esta organización de roles garantiza que los aspectos críticos de despliegue y backend sean cubiertos con especialización, mientras se mantiene la flexibilidad para que todos colaboren según sea necesario.
-
-### 5.2.4.3. Sprint Backlog 4
-
-El objetivo principal del Sprint 4 fue realizar actividades de hardening sobre VEYRA antes del despliegue final: corrección de bugs, ajustes de usabilidad y configuración de entorno de producción. En este Sprint se priorizaron refinamientos sobre las historias de usuario US07 (Cambio de idioma), US12 (Registro de residentes), US24 (Registro de medicamentos en inventario), US29 (Registro de personal) y US42 (Diseño de formularios usables) definidas en el Capítulo III, además de una tarea operacional de configuración de entorno.
-
-![Sprint 4 Board Screenshot](../assets/img/chapter-V/sprints/sprint-backlog-IV/sprint-table/sprint4-board.png)
-*Figura: Tablero del Sprint 4 en Jira Software (Proyecto VEYRA)*
-
-**URL del Board:** https://ruizbilly320.atlassian.net/jira/software/projects/VEYRA/boards/34/backlog
-
-| Sprint #       |                                        | Sprint 4             |                                                  |                                                                                                                                                                                                                      |                        |                          |                                                    |
-|----------------|----------------------------------------|----------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|--------------------------|----------------------------------------------------|
-| **User Story** |                                        | **Work-Item / Task** |                                                  |                                                                                                                                                                                                                      |                        |                          |                                                    |
-| **Id**         | **Title**                              | **Id**               | **Title**                                        | **Description**                                                                                                                                                                                                      | **Estimation (Hours)** | **Assigned To**          | **Status (To-do / In-Process / To-Review / Done)** |
-| US07           | Cambio de idioma                       | T066                 | Estandarizar etiquetas a español                 | Reemplazar etiquetas hardcodeadas en inglés por claves i18n en español en formularios y navegación para garantizar que la Landing Page y el módulo web reflejen correctamente la historia US07.                      | 3h                     | Ramirez Carrasco, Ariana | Done                                               |
-| US07           | Cambio de idioma                       | T067                 | Validar archivos de traducción                   | Revisar los archivos de traducciones para asegurar que todas las vistas de la plataforma tengan textos consistentes en ambos idiomas y sin claves huérfanas.                                                         | 1h                     | Ruiz Madrid, Billy       | Done                                               |
-| US12           | Registro de residentes                 | T068                 | Corregir ruta de lista de residentes             | Ajustar la ruta y navegación de la vista de residentes para evitar errores al listar perfiles, garantizando que el flujo de registro y consulta de residentes funcione de extremo a extremo.                         | 3h                     | Quiroz Caceres, Adrian   | Done                                               |
-| US12           | Registro de residentes                 | T069                 | Implementar asignación de habitación             | Incorporar la asignación de habitación en el flujo de registro del residente y mostrar el número de habitación en la lista, cerrando la brecha entre el registro de residentes y la gestión de habitaciones.         | 4h                     | Renato Cárdenas Yalan    | Done                                               |
-| US24           | Registro de medicamentos en inventario | T070                 | Mejorar formulario de medicamentos               | Refactorizar el formulario de medicamentos (layout y validaciones) para evitar registros con valores por defecto no deseados y mejorar la claridad de campos críticos como dosis, lote y fecha de vencimiento.       | 3h                     | Ramirez Carrasco, Ariana | Done                                               |
-| US42           | Diseño de formularios usables          | T071                 | Implementar interceptor global de errores        | Configurar un interceptor HTTP para centralizar el manejo de errores 4xx/5xx en los formularios principales (residentes, medicamentos y personal), evitando mensajes técnicos y mejorando la experiencia de usuario. | 4h                     | Renato Cárdenas Yalan    | Done                                               |
-| US42           | Diseño de formularios usables          | T072                 | Agregar notificaciones visuales                  | Integrar componentes de notificación (Toastr) para mostrar mensajes de éxito y error en la interacción con la aplicación web, alineados con los criterios de aceptación de formularios claros y manejables.          | 2h                     | Roman Lopez, Miguel      | Done                                               |
-| US29           | Registro de personal                   | T073                 | Extender formulario de registro de administrador | Actualizar el formulario de registro para permitir la creación de cuentas de administrador de casa de reposo, diferenciando los flujos de alta para usuarios estándar y personal administrativo.                     | 3h                     | Ruiz Madrid, Billy       | Done                                               |
-| Task-OPS-01    | Configuración de entorno de producción | T074                 | Actualizar base URL y endpoints                  | Actualizar la base URL del proveedor de plataforma y registrar el endpoint de administradores en los archivos de configuración de entorno para apuntar a la API de producción.                                       | 2h                     | Racso24k                 | Done                                               |
-
-#### 5.2.4.4. Development Evidence for Sprint Review
-
-Durante el Sprint 4, la actividad de desarrollo se enfocó en el hardening de VEYRA: estabilización de módulos existentes, corrección de bugs críticos y pulido de experiencia de usuario antes del despliegue final a producción. Los cambios priorizados se alinean principalmente con las historias de usuario orientadas a transparencia de información clínica (US08, US13, US14, US24–US28, US45–US47), gestión de residentes y personal (US12, US29–US32) y mejora de la experiencia de navegación y paneles de control (US37, US40–US42).
-
-A continuación, se muestran los commits más relevantes en los repositorios Frontend y Backend que evidencian este trabajo de estabilización y cierre del incremento funcional del producto:
-
-| Repository            | Branch           | Commit Id | Commit Message                                                                                                           | Commit Message Body                                                                                                                                                                                                                                          | Committed on (Date) |
-|-----------------------|------------------|-----------|--------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
-| NovaPeruTech-Frontend | feature/analytic | [HASH]    | feat(analytics): add analytics dashboard with responsive design and metrics visualization                                | Se implementó el dashboard de analítica para el administrador de la casa de reposo con visualizaciones responsivas de métricas de residentes, personal e inventario, aportando evidencia directa de las historias de transparencia y control de gestión.     | 30-11-2025          |
-| NovaPeruTech-Frontend | feature/analytic | [HASH]    | feat(analytics): add lazy-loaded route for analytics dashboard                                                           | Se configuró una ruta lazy-loaded para el módulo de Analytics, reduciendo el tiempo de carga inicial de la aplicación y alineándose con los objetivos de optimización del Sprint 4.                                                                          | 30-11-2025          |
-| NovaPeruTech-Frontend | feature/analytic | [HASH]    | feat(analytics): clean up analytics dashboard by removing unused styles and components                                   | Se eliminó código muerto (estilos y componentes no utilizados) y se simplificó la estructura del dashboard, disminuyendo deuda técnica y mejorando mantenibilidad del módulo de reportes.                                                                    | 01-12-2025          |
-| NovaPeruTech-Frontend | feature/nursing  | [HASH]    | feat(nursing): enhance room form layout and styling                                                                      | Se refactorizó el formulario de habitaciones (layout, estilos y campos) para corregir problemas de usabilidad e inconsistencias visuales detectadas en validación, cerrando el bug crítico asociado al módulo de habitaciones.                               | 01-12-2025          |
-| NovaPeruTech-BackEnd  | feature/analytic | [HASH]    | feat(analytics): implement resource, controller and assembler                                                            | Se implementaron recursos, controlador REST y ensambladores para exponer estadísticas generales, de residentes e inventario, permitiendo al frontend consumir métricas consolidadas desde el módulo de Analytics.                                            | 23-11-2025          |
-| NovaPeruTech-BackEnd  | feature/tracking | [HASH]    | feat(tracking): add MeasurementResource, MeasurementResourceFromEntityAssembler, and MeasurementsController for REST API | Se expusieron endpoints REST para la lectura de mediciones, incluyendo recursos, ensambladores y controlador, habilitando el consumo de telemetría de salud y soporte a las historias de monitoreo y seguimiento (US45–US47).                                | 23-11-2025          |
-| NovaPeruTech-BackEnd  | feature/health   | [HASH]    | feat(health): add aggregates for sign vitales and allergies                                                              | Se modelaron agregados de dominio para signos vitales y alergias, base del historial clínico estructurado del residente y del servicio de comparación de salud, fortaleciendo los requisitos de historial médico y seguimiento de estado (US08, US13, US46). | 01-12-2025          |
-| NovaPeruTech-BackEnd  | feature/nursing  | [HASH]    | feat(nursing): implement resources and transforms                                                                        | Se añadieron recursos y transformadores para residentes, familiares y asignación de habitaciones, integrando la lógica de negocio del módulo Nursing con las vistas del administrador y resolviendo inconsistencias identificadas en QA.                     | 04-12-2025          |
-
-#### 5.2.4.5. Execution Evidence for Sprint Review
-
-Durante el Sprint 4, el equipo enfocó sus esfuerzos en la ampliación y documentación de los servicios del Backend, incorporando endpoints para la gestión de pagos y suscripciones, así como ajustes en los recursos de usuarios. Se añadieron y refinaron las operaciones de *Payments*, *Subscriptions* y *Users* en la API REST, asegurando que cada endpoint cuente con ejemplos de request/response claros y consistentes en Swagger UI. A continuación se presentan capturas de los principales grupos de endpoints añadidos y actualizados.
-
-##### Video de demostración:
-
-**URL YouTube:** []  
-**Duración:** [00:00:00]
-
-A continuación se presentan las capturas del Swagger UI donde se evidencian los endpoints implementados y ajustados durante el Sprint 4 para la gestión de **pagos**, **suscripciones** y **usuarios**. Estos servicios forman parte del flujo de suscripción y cobranza de la plataforma.
-
-**Endpoints de Payments:**
-
-![swagger-payments-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-IV/execution-evidence-for-sprint-review/swagger-payments-endpoints.jpg)
-
-En esta sección se documenta el endpoint `GET /api/v1/payments/{paymentId}`, utilizado para obtener el detalle de un pago específico por su identificador. Él response devuelve un objeto `PaymentResource` con información como monto, moneda, estado y fecha de procesamiento, lo que permite trazar y auditar transacciones individuales.
-
-**Endpoints de Subscriptions:**
-
-![swagger-subscriptions-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-IV/execution-evidence-for-sprint-review/swagger-subscriptions-endpoints.jpg)
-
-Aquí se muestran los endpoints para gestionar los pagos asociados a una suscripción: `GET /api/v1/subscriptions/{subscriptionId}/payments` para listar todos los pagos de una suscripción, y `POST /api/v1/subscriptions/{subscriptionId}/payments` para procesar un nuevo pago. Ambos endpoints incluyen parámetros de ruta para el `subscriptionId` y devuelven respuestas tipadas que permiten al frontend mostrar el historial de pagos o registrar nuevos cobros de forma consistente.
-
-**Endpoints de Users actualizados:**
-
-![swagger-user1-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-IV/execution-evidence-for-sprint-review/swagger-user1-endpoints.jpg)
-
-Esta captura resume los endpoints disponibles para la gestión de usuarios y sus suscripciones. Entre ellos se encuentran: `GET /api/v1/users` (listado de usuarios), `GET /api/v1/users/{userId}` (detalle de usuario), así como operaciones sobre suscripciones: `GET /api/v1/users/{userId}/subscriptions` para obtener todas las suscripciones de un usuario, `POST /api/v1/users/{userId}/subscriptions` para crear una nueva, `PUT /api/v1/users/{userId}/subscriptions/{subscriptionId}` para actualizarla, `POST /api/v1/users/{userId}/subscriptions/{subscriptionId}/cancel` para cancelarla y `GET /api/v1/users/{userId}/subscriptions/active` para recuperar la suscripción activa. Estos endpoints consolidan el ciclo de vida de la suscripción desde la perspectiva del usuario final.
-
-#### 5.2.4.6. Services Documentation Evidence for Sprint Review
-#### 5.2.4.6. Services Documentation Evidence for Sprint Review
-
-Durante el Sprint 4, el foco en Servicios se centró en extender y documentar los endpoints relacionados con el ciclo de facturación de VEYRA: pagos individuales, suscripciones y la gestión de suscripciones por usuario. Se actualizaron las definiciones OpenAPI en Swagger, asegurando descripciones consistentes, ejemplos de request/response y mensajes de error claros para los recursos **Payments**, **Subscriptions** y **Users**. De esta forma, el frontend puede consultar y administrar el estado de las suscripciones y sus pagos de manera confiable.
-
-La siguiente tabla resume los principales endpoints documentados o ajustados durante este Sprint, detallando las acciones soportadas, el verbo HTTP, la sintaxis de llamada y ejemplos de request/response utilizando la documentación generada por Swagger UI.
-
-| Endpoint                                                     | HTTP Verb | Acción / Funcionalidad                              | Parámetros y Ejemplo de Request                                                                                          | Ejemplo y Explicación de Response                                                                                                                                                                                                      | Link a Documentación                                                                               |
-|--------------------------------------------------------------|-----------|-----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| /api/v1/payments/{paymentId}                                 | GET       | Obtener el detalle de un pago por su identificador. | Path param:<br>`paymentId: 120`<br>Ejemplo:<br>`GET /api/v1/payments/120`                                                | `200 OK`<br>`{ "id": 120, "amount": 49.90, "currency": "USD", "status": "COMPLETED", "processedAt": "2025-11-10T09:30:00Z" }`<br>Devuelve la información detallada del pago, permitiendo trazar y auditar una transacción específica.  | [Swagger – Payments](https://veyrav01.azurewebsites.net/swagger-ui/index.html#/Payments)           |
-| /api/v1/subscriptions/{subscriptionId}/payments              | GET       | Listar todos los pagos asociados a una suscripción. | Path param:<br>`subscriptionId: 10`<br>Ejemplo:<br>`GET /api/v1/subscriptions/10/payments`                               | `200 OK`<br>`[{ "id": 120, "amount": 49.90, "status": "COMPLETED" }, ...]`<br>Devuelve el historial de pagos de una suscripción, útil para mostrar en el panel de administración o para conciliación.                                  | [Swagger – Subscriptions](https://veyrav01.azurewebsites.net/swagger-ui/index.html#/Subscriptions) |
-| /api/v1/subscriptions/{subscriptionId}/payments              | POST      | Procesar un nuevo pago para una suscripción.        | Path param:<br>`subscriptionId: 10`<br>Body (JSON):<br>`{ "amount": 49.90, "currency": "USD", "paymentMethod": "CARD" }` | `201 Created`<br>`{ "id": 121, "amount": 49.90, "status": "PENDING", "subscriptionId": 10 }`<br>Registra un nuevo pago y devuelve el recurso creado, que luego será actualizado cuando el procesador de pagos confirme la transacción. | [Swagger – Subscriptions](https://veyrav01.azurewebsites.net/swagger-ui/index.html#/Subscriptions) |
-| /api/v1/users/{userId}/subscriptions                         | GET       | Obtener todas las suscripciones de un usuario.      | Path param:<br>`userId: 5`<br>Ejemplo:<br>`GET /api/v1/users/5/subscriptions`                                            | `200 OK`<br>`[{ "id": 10, "plan": "STANDARD", "status": "ACTIVE" }, ...]`<br>Permite conocer el historial de suscripciones de un usuario y su estado actual.                                                                           | [Swagger – Users](https://veyrav01.azurewebsites.net/swagger-ui/index.html#/Users)                 |
-| /api/v1/users/{userId}/subscriptions/{subscriptionId}        | PUT       | Actualizar los datos de una suscripción de usuario. | Path params:<br>`userId: 5, subscriptionId: 10`<br>Body (JSON):<br>`{ "plan": "PREMIUM", "status": "ACTIVE" }`           | `200 OK`<br>`{ "id": 10, "plan": "PREMIUM", "status": "ACTIVE" }`<br>Devuelve la suscripción actualizada, reflejando cambios de plan o estado.                                                                                         | [Swagger – Users](https://veyrav01.azurewebsites.net/swagger-ui/index.html#/Users)                 |
-| /api/v1/users/{userId}/subscriptions/{subscriptionId}/cancel | POST      | Cancelar una suscripción de un usuario.             | Path params:<br>`userId: 5, subscriptionId: 10`<br>Ejemplo:<br>`POST /api/v1/users/5/subscriptions/10/cancel`            | `200 OK`<br>`{ "id": 10, "plan": "STANDARD", "status": "CANCELLED" }`<br>Cambia el estado de la suscripción a CANCELLED y la excluye de futuros ciclos de cobro.                                                                       | [Swagger – Users](https://veyrav01.azurewebsites.net/swagger-ui/index.html#/Users)                 |
-| /api/v1/users/{userId}/subscriptions/active                  | GET       | Obtener la suscripción activa de un usuario.        | Path param:<br>`userId: 5`<br>Ejemplo:<br>`GET /api/v1/users/5/subscriptions/active`                                     | `200 OK`<br>`{ "id": 10, "plan": "STANDARD", "status": "ACTIVE" }`<br>Devuelve la suscripción que actualmente se encuentra activa para el usuario.                                                                                     | [Swagger – Users](https://veyrav01.azurewebsites.net/swagger-ui/index.html#/Users)                 |
-
-Adicionalmente, se ajustaron descripciones, códigos de respuesta y ejemplos en los recursos relacionados, garantizando que la documentación de la API de facturación sea consistente y pueda ser consumida fácilmente por otros equipos (frontend, integraciones externas, QA).
-
-**Repositorio Web Services (Backend):** https://github.com/NovaPeru-Tech/NovaPeruTech-Backend
-
-Los cambios de documentación de este Sprint se agrupan en commits etiquetados como `feat(payments-docs)` y `feat(subscriptions-docs)`, donde se actualizó el archivo OpenAPI y se sincronizaron los modelos de respuesta con las entidades de dominio (Payments, Subscriptions y Users).
-
-**Capturas de interacción con la documentación (Swagger UI):**
-
-*Swagger UI – Endpoints de Payments:*
-
-![swagger-payments-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-IV/execution-evidence-for-sprint-review/swagger-payments-endpoints.jpg)
-
-*Swagger UI – Endpoints de Subscriptions:*
-
-![swagger-subscriptions-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-IV/execution-evidence-for-sprint-review/swagger-subscriptions-endpoints.jpg)
-
-*Swagger UI – Endpoints de Users y suscripciones de usuario:*
-
-![swagger-user1-endpoints](../assets/img/chapter-V/sprints/sprint-backlog-IV/execution-evidence-for-sprint-review/swagger-user1-endpoints.jpg)
-
-#### 5.2.4.7. Software Deployment Evidence for Sprint Review
-
-En el Sprint 4, las actividades de Deployment se centraron en mantener estable el entorno productivo de VEYRA mientras se aplicaban correcciones de errores y mejoras de usabilidad. Se realizaron despliegues incrementales tanto del Frontend (Vercel) como del Backend (Azure App Service), verificando que las nuevas versiones solucionaran los problemas reportados sin introducir regresiones.
-
-Las principales acciones de Deployment realizadas fueron:
-
-- Actualización del Frontend Angular en Vercel con textos unificados al español y manejo de errores mejorado.
-- Redeployment del Backend en Azure App Service luego de corregir mensajes de error y validar los endpoints críticos.
-- Verificación de conectividad entre Frontend y Backend en el entorno productivo, confirmando que las llamadas a los servicios ya no generan *Fetch Error*.
-- Pruebas de smoke (login, navegación, CRUD básico de residentes y habitaciones) después de cada despliegue.
-
-**URLs de despliegue utilizados en el Sprint Review:**
-
-- **Frontend Web Application (Producción):**  
-  [URL Frontend en Vercel Sprint 4]
-- **Backend API (Producción – Azure App Service):**  
-  https://veyrav01.azurewebsites.net/swagger-ui/index.html#/
-
-**Capturas del proceso de despliegue:**
-
-*Haga clic en el botón para iniciar la configuración del nuevo proyecto:*
-
-![Historial de despliegues Vercel Sprint 4](../assets/img/chapter-V/sprints/sprint-backlog-IV/software-deployment-evidence-for-sprint-review/Captura%20de%20pantalla%201.png)
-
-*En la interfaz de configuración, seleccione la opción para conectar o vincular su repositorio de GitHub. Será dirigido a la autenticación de GitHub. Una vez autorizado, deberá seleccionar el repositorio específico que contiene el código fuente del frontend.*
-
-![Azure App Service Sprint 4](../assets/img/chapter-V/sprints/sprint-backlog-IV/software-deployment-evidence-for-sprint-review/Captura%20de%20pantalla%202.png)
-
-*Tómese un momento para verificar el resumen de la configuración en la pantalla de revisión final para confirmar que los datos de GitHub y los parámetros sean correctos.*
-
-![Frontend conectado al Backend sin errores Sprint 4](../assets/img/chapter-V/sprints/sprint-backlog-IV/software-deployment-evidence-for-sprint-review/Captura%20de%20pantalla%203.png)
-
-*La plataforma comenzará el proceso de construcción y despliegue. Una vez que el proceso se complete exitosamente, la aplicación de frontend estará desplegada y lista para ser accesible a través de la URL proporcionada.*
-
-![Frontend conectado al Backend sin errores Sprint 4](../assets/img/chapter-V/sprints/sprint-backlog-IV/software-deployment-evidence-for-sprint-review/Captura%20de%20pantalla%204.png)
-
-*Al ingresar a esta URL completa, obtendremos la vista de la documentación de Swagger, lo que nos permite verificar que el backend está activo, funcional y listo para recibir peticiones a sus endpoints.*
-
-![Frontend conectado al Backend sin errores Sprint 4](../assets/img/chapter-V/sprints/sprint-backlog-IV/software-deployment-evidence-for-sprint-review/Captura%20de%20pantalla%205.png)
-
-#### 5.2.4.8. Team Collaboration Insights during Sprint
-
-Durante el Sprint 4, el equipo adoptó explícitamente una estrategia de *Bug Fixing & Polishing Sprint*, deteniendo el desarrollo de nuevas funcionalidades complejas (*code freeze*) para concentrarse en estabilidad, correcciones y pulido visual. Esto se reflejó en la colaboración: los commits se orientaron a refactors pequeños, ajustes de UI, manejo de errores y mejoras en documentación.
-
-A nivel de coordinación, las reuniones de *Daily Scrum* se utilizaron para priorizar los bugs abiertos en Jira, revisar el estado de los errores de severidad 3 y 4, y decidir qué issues debían resolverse antes del corte de Sprint. Además, se reforzó el rol de *Quality Keeper* para revisar *pull requests* críticos y asegurar que las correcciones no introdujeran regresiones.
-
-**Evidencia de colaboración en GitHub:**
-
-- Commits de corrección de errores y mejoras de UI distribuidos entre todos los miembros del equipo.
-- Pull requests revisados por al menos un compañero antes de integración a la rama principal.
-- Actividad concentrada en las ramas principales de Frontend y Backend durante la primera semana de diciembre.
-
-*GitHub Insights – Commits por día durante el Sprint 4:*
-
-![GitHub commits Sprint 4](../assets/img/chapter-V/sprints/sprint-backlog-IV/team-collaboration-insights-during-sprint/imagecommitbackeed.png)
-
-![GitHub commits Sprint 4](../assets/img/chapter-V/sprints/sprint-backlog-IV/team-collaboration-insights-during-sprint/imagecommitfronted.png)
-
-*GitHub Network Graph – Flujo de ramas y fusiones durante el Sprint 4:*
-
-![GitHub network Sprint 4](../assets/img/chapter-V/sprints/sprint-backlog-IV/team-collaboration-insights-during-sprint/networkgrafich-1.png)
-
-![GitHub network Sprint 4](../assets/img/chapter-V/sprints/sprint-backlog-IV/team-collaboration-insights-during-sprint/networkgrafich-2.png)
-
-![GitHub network Sprint 4](../assets/img/chapter-V/sprints/sprint-backlog-IV/team-collaboration-insights-during-sprint/networkgrafich-3.png)
-
-![GitHub network Sprint 4](../assets/img/chapter-V/sprints/sprint-backlog-IV/team-collaboration-insights-during-sprint/networkgrafich-4.png)
-
-![GitHub network Sprint 4](../assets/img/chapter-V/sprints/sprint-backlog-IV/team-collaboration-insights-during-sprint/networkgrafich-5.png)
-
-En conjunto, estas evidencias muestran que todos los integrantes participaron en la estabilización de VEYRA y que la colaboración se orientó a dejar una versión consistente y lista para producción al cierre del Sprint 4.
-
-## 5.3. Validation Interviews
-
-### 5.3.1. Diseño de Entrevistas
-
-Las entrevistas de validación con usuarios finales son esenciales para recopilar retroalimentación sobre la solución VEYRA. Estas entrevistas se diseñaron para validar si la aplicación cumple con los requisitos del usuario, identifica problemas de usabilidad y recopila sugerencias de mejora.
-
-Se ejecutaron entrevistas con representantes de ambos segmentos objetivos del proyecto: **Administradores de casas de reposo** y **Familiares de adultos mayores**.
-
-#### Preguntas para el Segmento: Administrador de Casa de Reposo
-
-1. ¿Cuáles son los principales desafíos que enfrenta en la gestión de su casa de reposo?
-2. ¿Cómo actualmente gestiona la información de los residentes y su medicación?
-3. ¿Qué funcionalidades considera más importantes en una aplicación de gestión?
-4. ¿Cuál es su experiencia previa con aplicaciones o sistemas de software?
-5. ¿Qué tan fácil le resulta usar interfaces digitales?
-6. ¿Cuáles serían los beneficios principales que busca obtener de VEYRA?
-7. ¿Qué aspecto de la interfaz le parece más confuso o difícil de entender?
-8. ¿Cuán probable es que recomendara esta aplicación a otros administradores?
-9. ¿Qué mejoras sugiere para la próxima versión?
-
-#### Preguntas para el Segmento: Familiar de Adulto Mayor
-
-1. ¿Con qué frecuencia desearía recibir actualizaciones sobre el estado de su familiar?
-2. ¿Qué información le gustaría tener acceso a través de la aplicación?
-3. ¿Qué tan cómodo se siente usando aplicaciones móviles?
-4. ¿Cuáles son sus preocupaciones principales respecto a la privacidad de los datos?
-5. ¿Cómo válida actualmente si el cuidado recibido es de calidad?
-6. ¿Qué funcionalidades considera esenciales en VEYRA?
-7. ¿Cómo describiría su experiencia general con la interfaz de la aplicación?
-8. ¿Qué aspectos de la aplicación le generan dudas o desconfianza?
-9. ¿Qué cambios recomendaría antes de usar la aplicación regularmente?
-
-### 5.3.2. Registro de Entrevistas
-
-Las entrevistas de validación se llevaron a cabo con usuarios de ambos segmentos objetivos. A continuación se presenta el registro detallado de las entrevistas realizadas, incluyendo información del entrevistado, capturas de video y análisis de respuestas.
-
-#### Entrevista 1 - Administrador de Casa de Reposo (Segmento 1)
-
-|                          |                                            |
-|--------------------------|--------------------------------------------|
-| **Nombre Completo**      | María Elena Gutiérrez Rodríguez            |
-| **Edad**                 | 52 años                                    |
-| **Distrito**             | San Isidro, Lima                           |
-| **Ocupación**            | Administradora de Casa de Reposo           |
-| **Fecha de Entrevista**  | 15/11/2025                                 |
-| **Duración**             | 22 minutos                                 |
-| **URL Microsoft Stream** | [Incluir URL del video de la entrevista 1] |
-| **Timing**               | 00:00 - 22:00                              |
-
-**Screenshot del video:**
-
-![Interview Administrator 1](../images/interview-administrator-1.jpg)
-
-**Resumen de Respuestas:**
-
-María Elena expresó que los principales desafíos en su gestión diaria incluyen el control de medicamentos de múltiples residentes, la coordinación con familiares y el mantenimiento de registros organizados. Actualmente, utiliza un sistema de hojas de cálculo manuales, lo cual requiere mucho tiempo y es propenso a errores. Considera que la aplicación VEYRA sería tremendamente beneficiosa para automatizar estos procesos.
-
-Tiene experiencia intermedia con software empresarial. Le resultó intuitiva la navegación principal de VEYRA, aunque sugiere mejorar la visualización de la sección de medicamentos con más iconografía y colores. Valora especialmente la funcionalidad de registro de medicación y las notificaciones a familiares.
-
-Calificó la aplicación como "muy prometedora" e indicó una alta probabilidad de adoptarla para su institución. Recomendó agregar reportes mensuales en PDF descargables y mejorar la compatibilidad móvil para acceso desde dispositivos personales.
+- **Home**: Pantalla principal del usuario. Para el familiar muestra el estado actual del residente vinculado; para el personal asistencial, la lista de residentes asignados al turno; para el administrador, un resumen operativo del hogar de reposo.
+- **Health**: Acceso a la sección de signos vitales y monitoreo en tiempo real del residente (frecuencia cardíaca, temperatura, saturación de oxígeno y presión arterial).
+- **Calendar**: Visualización de eventos programados — visitas familiares, turnos del personal asistencial y recordatorios operativos del administrador.
+- **Chat**: Canal de comunicación entre la casa de reposo y los familiares, y entre el personal asistencial y la administración para coordinar el cuidado.
+- **Dashboard**: Vista de métricas y KPIs operativos, utilizada principalmente por el administrador para supervisión remota desde el dispositivo móvil.
 
 ---
 
-#### Entrevista 2 - Administrador de Casa de Reposo (Segmento 1)
+**Aplicación Web**
 
-|                          |                                            |
-|--------------------------|--------------------------------------------|
-| **Nombre Completo**      | Carlos Eduardo Morales Sánchez             |
-| **Edad**                 | 48 años                                    |
-| **Distrito**             | Miraflores, Lima                           |
-| **Ocupación**            | Gerente de Operaciones - Casa de Reposo    |
-| **Fecha de Entrevista**  | 16/11/2025                                 |
-| **Duración**             | 18 minutos                                 |
-| **URL Microsoft Stream** | [Incluir URL del video de la entrevista 2] |
-| **Timing**               | 22:00 - 40:00                              |
+En la aplicación web, la navegación principal se ofrece mediante un **sidenav lateral** persistente que acompaña al usuario en todas las vistas operativas. El sidenav está construido con Angular Material (`<mat-sidenav>`), se comporta de manera responsive (modo `side` en escritorio y `over` en móvil bajo el breakpoint de 768 px) y se complementa con un **toolbar superior** que contiene el botón hamburguesa, el logo de Veyra, los botones de autenticación y el selector de idioma EN/ES. El sidenav está dirigido al administrador de la casa de reposo y al doctor, quienes comparten el mismo layout pero acceden a las secciones más relevantes según su rol.
 
-**Screenshot del video:**
+<p align="center">
+  <img src="./../assets/img/chapter-V/nav_web.png">
+</p>
 
-![Interview Administrator 2](../images/interview-administrator-2.jpg)
+Los accesos disponibles en el sidenav son:
 
-**Resumen de Respuestas:**
+- **Dashboard**: Panel analítico con KPIs operativos (Total Hires, Total Terminations, Net Staff Change, Total Admissions, Active Residents) y gráficas filtrables por año, usado por el administrador para la supervisión global.
+- **Devices**: Listado y gestión de los dispositivos IoT asignados a cada residente, con búsqueda por Device ID y ordenamiento por columnas.
+- **Residents**: Listado y gestión de los residentes del hogar de reposo, junto con sus subrecursos clínicos (historial médico, medicamentos, alergias y asignación de habitación). Es el punto de entrada al monitoreo clínico para el doctor.
+- **Staff**: Listado y gestión del personal asistencial y médicos, con sus contratos y estados de contratación.
+- **Rooms**: Administración de las habitaciones del hogar de reposo y de sus asignaciones a residentes.
+- **Activities**: Registro y consulta de las actividades diarias de cuidado del residente (alimentación, higiene, movilidad, hidratación, recreación).
+- **Relatives**: Gestión de los familiares de los residentes y de sus vinculaciones con cada residente.
 
-Carlos indicó que el mayor desafío es mantener comunicación efectiva entre el personal y los familiares. Resaltó la importancia de tener un registro claro de cambios en la medicación y el estado de salud de los residentes. Tiene buena experiencia con tecnología empresarial.
-
-La interfaz de VEYRA le pareció clara y bien organizada. Sin embargo, señaló la necesidad de mejorar el sistema de reportes y agregar más opciones de filtrado en la sección de residentes. Le gustó especialmente la funcionalidad de historial de medicamentos.
-
-Sugiere integrar un módulo de facturación en versiones futuras y mejorar la documentación de uso. Indicó que implementaría VEYRA en su institución si se realizan estos ajustes.
+El sidenav incluye además un pie con la marca **MetaSoft** y el año de copyright, junto con un encabezado superior etiquetado como **Care Management** que identifica el ámbito funcional de la plataforma.
 
 ---
 
-#### Entrevista 3 - Familiar de Adulto Mayor (Segmento 2)
+**Landing Page**
 
-|                          |                                            |
-|--------------------------|--------------------------------------------|
-| **Nombre Completo**      | Ana Rosa Figueroa Díaz                     |
-| **Edad**                 | 38 años                                    |
-| **Distrito**             | Surco, Lima                                |
-| **Ocupación**            | Profesional / Familiar de Residente        |
-| **Fecha de Entrevista**  | 17/11/2025                                 |
-| **Duración**             | 19 minutos                                 |
-| **URL Microsoft Stream** | [Incluir URL del video de la entrevista 3] |
-| **Timing**               | 40:00 - 59:00                              |
+En el Landing Page, la navegación principal se ofrece a través de un **header fijo en la parte superior** que acompaña al visitante durante todo el scroll. El header contiene el logo de Veyra, un menú de cinco accesos a las secciones del sitio y dos botones de autenticación que redirigen a la aplicación web. En dispositivos móviles, el menú se colapsa en un ícono hamburguesa que despliega los enlaces, y se cierra automáticamente al hacer scroll.
 
-**Screenshot del video:**
+<p align="center">
+  <img src="./../assets/img/chapter-V/nav_landing.png">
+</p>
 
-![Interview Familiar 1](../images/interview-familiar-1.jpg)
 
-**Resumen de Respuestas:**
+## 5.3. Landing Page UI Design
 
-Ana Rosa expresó su preocupación principal sobre la calidad del cuidado recibido por su madre en la casa de reposo. Desearía tener acceso a información diaria sobre el estado de salud, medicamentos administrados y actividades realizadas.
+El landing page juega un papel esencial en atraer la atención de los visitantes y guiarlos hacia acciones concretas, como inscribirse, adquirir un producto o informarse sobre un servicio. En este apartado, se tratará el diseño de la interfaz de usuario del landing page, enfocándose en los elementos clave que optimizan la experiencia del usuario, creando una página interactiva y fácil de usar.
 
-Tiene experiencia básica con aplicaciones móviles. La interfaz de VEYRA le pareció amigable, aunque expresó preocupación sobre la privacidad de los datos. Valora especialmente la funcionalidad de notificaciones y el acceso al historial de medicamentos.
+### 5.3.1. Landing Page Wireframe
 
-Sugiere mejorar la sección de reportes de salud y agregar gráficos visuales sobre el progreso de la medicación. Indicó que usaría VEYRA regularmente para monitorear a su madre.
+El wireframe del landing page de Veyra representa la estructura visual básica y el esquema de distribución de los elementos principales de la página, sin aplicar colores ni estilos definitivos. Actúa como guía inicial para asegurar una disposición clara y coherente antes del diseño final.
+
+El wireframe incluye las siguientes secciones:
+
+**Nav y Hero:**
+
+La sección de navegación incluye el logotipo de Veyra en la parte superior izquierda, junto con los enlaces de menú principales (Home, Benefits, Features, About Us, Plans) y los botones de acción "Sign In" y "Sign Up". La sección Hero presenta el título principal y subtítulo de la plataforma a la izquierda, un espacio reservado para imagen representativa a la derecha, y un botón de llamado a la acción destacado ("Start now").
+
+![Wireframe - Nav y Hero](../assets/img/chapter-V/wireframe-hero-navbar.png)
+
+**Benefits (Beneficios):**
+
+Esta sección muestra un título centrado seguido de una cuadrícula de 2x2 con cuatro tarjetas de contenido. Cada tarjeta contiene un placeholder de título y bloques de texto descriptivo, representando los beneficios clave de la plataforma para el cuidado del adulto mayor.
+
+![Wireframe - Benefits](../assets/img/chapter-V/wireframe-features-plans.png)
+
+**Features y Plans:**
+
+La sección Features presenta un layout de dos columnas: a la izquierda un bloque de contenido con título y descripción; a la derecha un componente de video embebido. La sección de Planes muestra tres tarjetas de precios en disposición horizontal, cada una con título del plan, lista de características y un botón de acción.
+
+![Wireframe - Features y Plans](../assets/img/chapter-V/wireframe-testimonials-contact.png)
+
+**Testimonials, Contact y Footer:**
+
+La sección de testimonios muestra tarjetas con foto de perfil circular y texto de reseña. El formulario de contacto presenta campos de entrada y un botón de envío. El footer incluye el logotipo, columnas de enlaces y datos de contacto sobre un fondo oscuro.
+
+![Wireframe - Testimonials, Contact y Footer](../assets/img/chapter-V/wireframe-footer-video.png)
+
+### 5.3.2. Landing Page Mock-up
+
+El mock-up del landing page de Veyra representa el diseño visual final con la paleta de colores, tipografía, imágenes e iconografía definitivos. Refleja la identidad de marca de Metasoft aplicada a cada sección de la página.
+
+**Hero — Veyra**
+
+El hero presenta el navbar con el logotipo de Veyra en azul-verde, los enlaces de navegación en gris oscuro y los botones "Sign In" y "Sign Up" diferenciados. El fondo es de tonos azul claro con una curva decorativa ondulada. El titular principal reza **"The Best Care is Always Connected"** acompañado del subtítulo "Veyra keeps you close to your loved ones' health and well-being, no matter the distance." A la derecha se muestra una fotografía de un cuidador con un adulto mayor en silla de ruedas. El CTA principal es el botón "Start now →" en azul-verde.
+
+![Mock-up - Hero](../assets/img/chapter-V/mockup-hero.png)
+
+**What We Offer — Veyra**
+
+Esta sección presenta el título "What we offer" centrado con una línea decorativa inferior. Se despliega una cuadrícula 2x2 con cuatro tarjetas de servicios, cada una con un ícono representativo, título en azul oscuro y descripción: Home Health Care, Pediatric Care, Companion Care y Conditions Treated.
+
+![Mock-up - What We Offer](../assets/img/chapter-V/mockup-what-we-offer.png)
+
+**Features — Veyra**
+
+La sección Features muestra la etiqueta "Features" en un chip verde-azulado y el título "Key Features of Our Platform". A la izquierda se presenta un video embebido de YouTube; a la derecha, un listado desplegable con acordeón interactivo: Seamless Communication, Real-Time Health Monitoring, Streamlined Clinical Management y Comprehensive Reporting & Analytics.
+
+![Mock-up - Features](../assets/img/chapter-V/mockup-features.png)
+
+**Benefits — Veyra**
+
+Encabezada por la etiqueta "Benefits" y el título "The Veyra Advantage: Benefits for a New Era of Elder Care", presenta cuatro tarjetas en cuadrícula 2x2 con imagen fotográfica, título en negrita y descripción: Enhanced Communication, Streamlined Clinical Management, Improved Resident Well-being e Increased Peace of Mind.
+
+![Mock-up - Benefits](../assets/img/chapter-V/mockup-benefits.png)
+
+**About Us — Veyra**
+
+La sección About Us presenta el título "Metasoft": Transforming Elder Care with Trust and Innovation" seguido de dos párrafos descriptivos y tres puntos destacados con íconos de check: Seamless Communication, Real-Time Insights y Enhanced Security. A la derecha se muestra un video embebido complementario.
+
+![Mock-up - About Us](../assets/img/chapter-V/mockup-about-us.png)
+
+**Plans — Veyra**
+
+Encabezada por la etiqueta "Plans" y el título "Choose the Plan that Fits Your Needs", muestra un toggle Monthly/Annually y dos tarjetas: **Family Plan ($30/mes)** para familias que desean supervisar el cuidado en casa, y **Nursing Home Plan ($300/mes)** como solución completa para instituciones de cuidado.
+
+![Mock-up - Plans](../assets/img/chapter-V/mockup-plans.png)
+
+**Testimonials y Footer — Veyra**
+
+La sección "What our users are saying" muestra tres tarjetas de testimonios con calificación de 5 estrellas en dorado, texto de reseña en cursiva y nombre del usuario. Debajo se presenta el banner "It's time to connect and care for your loved ones." con botón "Subscribe". El footer presenta sobre fondo azul marino oscuro el logotipo de Veyra, columnas de enlaces (About y Contact) y el copyright de Metasoft 2025.
+
+![Mock-up - Testimonials y Footer](../assets/img/chapter-V/mockup-testimonials-footer.png)
+
+**Our Team — Veyra**
+
+La sección del equipo presenta el título "Our Team" con los integrantes de Metasoft en tarjetas con foto de perfil circular, nombre, rol en cursiva azul y descripción: Renato Guillermo Calvo Yalan, Renzo Miguel Llerena Delgado, Oscar Javier Armas Sánchez, Vicente Quijandria Araneda, Dayro Richard Rios Piñan, Janover Gonzalo Saldaña Vela y Renzo Alonso Villafuerte Tapia.
+
+![Mock-up - Our Team](../assets/img/chapter-V/mockup-our-team.png)
+
+### 5.3.3. Landing Page Wireframe Mobile Web Browser.
+
+El wireframe mobile del landing page de Veyra representa la estructura básica adaptada a dispositivos móviles, reorganizando los elementos en una sola columna para facilitar la navegación táctil. Se evidencia la aplicación de principios de diseño inclusivo y arquitectura de información optimizada para pantallas pequeñas.
+
+**Nav y Hero — Mobile**
+
+El navbar mobile muestra el logotipo de Veyra a la izquierda, con el toggle de idioma EN/ES y los enlaces de navegación simplificados a la derecha. El hero presenta el título principal, subtítulo y descripción apilados verticalmente con jerarquía tipográfica clara, seguidos del botón de llamado a la acción "Button" centrado y un placeholder de imagen a ancho completo.
+
+![Wireframe Mobile - Hero](../assets/img/chapter-V/wireframe-mobile-hero.png)
+
+**What We Offer — Mobile**
+
+Las tarjetas de servicios se reorganizan en una sola columna, cada una a ancho completo con placeholder de título y bloques de texto descriptivo apilados. El fondo oscuro de la sección contrasta con las tarjetas de contenido en blanco para facilitar la legibilidad.
+
+![Wireframe Mobile - What We Offer](../assets/img/chapter-V/wireframe-mobile-what-we-offer.png)
+
+**Features — Mobile**
+
+La sección Features presenta el título y descripción centrados verticalmente, seguidos de un placeholder de video embebido a ancho completo con dos botones de acción inferiores, optimizando el espacio vertical disponible en pantallas pequeñas.
+
+![Wireframe Mobile - Features](../assets/img/chapter-V/wireframe-mobile-features.png)
+
+**Plans — Mobile**
+
+Las tarjetas de planes se apilan verticalmente, cada una con título, descripción, precio, lista de características con pares etiqueta-campo y un botón de acción a ancho completo. La disposición en columna facilita la comparación secuencial de planes en mobile.
+
+![Wireframe Mobile - Plans](../assets/img/chapter-V/wireframe-mobile-plans.png)
+
+**Our Team — Mobile**
+
+Los integrantes del equipo se presentan en tarjetas horizontales apiladas verticalmente, cada una con avatar circular a la izquierda y bloques de texto de nombre y descripción a la derecha, optimizando el espacio en pantallas estrechas.
+
+![Wireframe Mobile - Our Team](../assets/img/chapter-V/wireframe-mobile-our-team.png)
+
+**Contact — Mobile**
+
+El formulario de contacto se presenta a ancho completo con título y subtítulo centrados, seguidos de pares etiqueta-campo de entrada apilados verticalmente: nombre, email, mensaje y un área de texto amplia. El botón de envío "Button" se ubica centrado al pie del formulario.
+
+![Wireframe Mobile - Contact](../assets/img/chapter-V/wireframe-mobile-contact.png)
+
+**About Us — Mobile**
+
+La sección About Us presenta el título centrado seguido de un placeholder de imagen representativa a ancho completo, evidenciando la reorganización vertical del contenido que en desktop se dispone en dos columnas.
+
+![Wireframe Mobile - About Us](../assets/img/chapter-V/wireframe-mobile-about-us.png)
+
+**Footer — Mobile**
+
+El footer mobile muestra el título de sección centrado, un placeholder de video o imagen principal a ancho completo, y debajo el footer con logotipo, íconos de redes sociales y columnas de enlaces reorganizadas en una cuadrícula compacta sobre fondo oscuro.
+
+![Wireframe Mobile - Footer](../assets/img/chapter-V/wireframe-mobile-footer.png)
+
+### 5.3.4. Landing Page Mock-up Mobile Web Browser.
+
+El diseño responsive del landing page de Veyra se adapta completamente a dispositivos móviles, manteniendo la identidad visual de la marca y reorganizando los elementos en una sola columna para facilitar la navegación táctil.
+
+**Hero — Mobile**
+
+El navbar mobile muestra el logotipo de Veyra a la izquierda, un selector de idioma EN y el ícono de menú hamburguesa a la derecha. El hero presenta el título "The Best Care is Always Connected" centrado en tipografía bold, el subtítulo y el botón "Start now →" apilados verticalmente, seguidos de la imagen representativa a ancho completo.
+
+![Mock-up Mobile - Hero](../assets/img/chapter-V/mockup-mobile-hero.png)
+
+**What We Offer — Mobile**
+
+Las cuatro tarjetas de servicios se reorganizan en una sola columna, cada una a ancho completo con ícono, título y descripción. La navegación sticky superior se mantiene visible durante el scroll.
+
+![Mock-up Mobile - What We Offer](../assets/img/chapter-V/mockup-mobile-what-we-offer.png)
+
+**Features — Mobile**
+
+La sección Features presenta el chip "Features" y el título centrados, seguidos del video embebido a ancho completo. Las características clave se muestran en acordeón desplegable debajo del video, optimizando el espacio vertical.
+
+![Mock-up Mobile - Features](../assets/img/chapter-V/mockup-mobile-features.png)
+
+**Benefits — Mobile**
+
+El chip "Benefits" y el título "The Veyra Advantage: Benefits for a New Era of Elder Care" se muestran centrados. Cada beneficio ocupa una tarjeta completa con imagen superior, título en negrita y descripción, apiladas verticalmente: Enhanced Communication, Streamlined Clinical Management, Improved Resident Well-being e Increased Peace of Mind.
+
+![Mock-up Mobile - Benefits](../assets/img/chapter-V/mockup-mobile-benefits.png)
+
+**About Us — Mobile**
+
+El chip "About Us" y el título "Metasoft": Transforming Elder Care with Trust and Innovation" se presentan a ancho completo con el contenido textual centrado. Los tres puntos destacados con íconos de check azul se apilan verticalmente, seguidos del video embebido.
+
+![Mock-up Mobile - About Us](../assets/img/chapter-V/mockup-mobile-about-us.png)
+
+**Our Team — Mobile**
+
+Los integrantes del equipo se presentan en tarjetas individuales a ancho completo, cada una con foto de perfil circular centrada, nombre, rol en verde-azulado y descripción. Las tarjetas se apilan verticalmente facilitando la lectura en pantallas pequeñas.
+
+![Mock-up Mobile - Our Team](../assets/img/chapter-V/mockup-mobile-our-team.png)
+
+**Plans — Mobile**
+
+El chip "Plans" y el título "Choose the Plan that Fits Your Needs" se muestran centrados, con el toggle Monthly/Annually a ancho completo. Las tarjetas de planes Family Plan ($30) y Nursing Home Plan ($300) se apilan verticalmente, cada una con precio destacado, botón de acción y lista de características con íconos de check.
+
+![Mock-up Mobile - Plans](../assets/img/chapter-V/mockup-mobile-plans.png)
+
+**Testimonials — Mobile**
+
+La sección "What our users are saying" presenta las tres tarjetas de testimonios apiladas verticalmente, cada una con calificación en estrellas doradas, texto en cursiva y nombre del usuario: Ana G. (5 estrellas), Carlos R. (5 estrellas) y Sofía L. (4.5 estrellas).
+
+![Mock-up Mobile - Testimonials](../assets/img/chapter-V/mockup-mobile-testimonials.png)
+
+**Call to Action — Mobile**
+
+El banner "It's time to connect and care for your loved ones." se presenta con el texto y el botón "Subscribe" apilados verticalmente a ancho completo sobre fondo azul claro.
+
+![Mock-up Mobile - CTA](../assets/img/chapter-V/mockup-mobile-cta.png)
+
+**Footer — Mobile**
+
+El footer sobre fondo azul marino oscuro reorganiza el contenido en cuatro columnas compactas: logotipo de Veyra con tagline "Connecting families and caregivers" e íconos de redes sociales (Instagram, Facebook, LinkedIn); columna Platform con enlaces Home, Features, Benefits, About Us y Plans; columna Company con About Us, Help Center y Community; y columna Contact con email contacto@metasoft.pe, teléfono +1 (555) 482-9599 y ubicación UPC Lima – Perú.
+
+![Mock-up Mobile - Footer](../assets/img/chapter-V/mockup-mobile-footer.png)
+
+### 5.3.3. Landing Page Wireframe Mobile Web Browser.
+
+
+## 5.4. Applications UX/UI Design
+Para esta parte como grupo explicaremos nuestros diseños Wireframes y Mock-ups de nuestra aplicación móvil y aplicación web de nuestro producto Veyra
+
+### 5.4.1. Applications Wireframes
+
+**Aplicación de Principios de Diseño y Arquitectura de Información:**
+Para la conceptualización de estas pantallas (Wireframes), nos centramos en una Arquitectura de Información basada en el patrón de navegación en "F" (F-Pattern). Ubicamos el menú principal en una barra lateral anclada (Sidebar) para permitir al usuario acceder a los módulos principales (Dashboard, Devices, Residents) sin perder contexto. Aplicamos el principio de Proximidad de la Gestalt en los formularios de registro (ej. Staff y Relatives), agrupando lógicamente las etiquetas (labels) con sus respectivos campos de entrada. A nivel de diseño inclusivo, garantizamos que los componentes interactivos tengan un área de clic adecuada (Touch Targets) y establecemos una jerarquía tipográfica clara mediante diferentes pesos visuales.
+
+A continuación, se presentan los wireframes estructurales de los módulos principales que soportan las tareas críticas del sistema:
+
+* **Estructura Master-Detail (Panel de Residentes):** Wireframe que ilustra la división de la pantalla en dos columnas para visualizar la lista de pacientes y sus parámetros clínicos simultáneamente, reduciendo la carga cognitiva.
+<p align="center">
+  <img src="../assets/img/chapter-V/veyra-wireframes/web-application/web-clinical-parameters.png" alt="Wireframes" width="1200px" height="auto"/>
+
+
+* **Estructura de Formularios y Modales (Gestión de Actividades e Inventario):** Wireframes que definen la disposición de los campos de entrada y los overlays (capas superpuestas) para evitar que el usuario abandone la pantalla principal al registrar nuevos datos.
+<p align="center">
+  <img src="../assets/img/chapter-V/veyra-wireframes/web-application/devices-wireframes.png" alt="Wireframes" width="1200px" height="auto"/>
+
+
+* **Estructura Móvil (Monitoreo para Familiares):** Wireframe que define la navegación inferior (Bottom Tab Bar) y la distribución de las tarjetas de información de gran tamaño para facilitar la lectura rápida en dispositivos móviles.
+* <p align="center">
+  <img src="../assets/img/chapter-V/veyra-wireframes/mobile-application/mobile-health-wireframes.png" alt="Wireframes" width="1200px" height="auto"/>
+
+
+### 5.4.2. Applications Wireflow Diagrams
+
+A continuación, presentamos los diagramas de flujo de nuestra plataforma web, diseñados para representar cómo responde el sistema a las interacciones de los usuarios. Cada diagrama refleja un objetivo del usuario vinculado a las distintas funcionalidades, con un único flujo que considera variaciones de acciones según los privilegios del rol (Administrador, Médico, Enfermera o Familiar). Antes de crear estos diagramas, establecimos flujos de tareas (Task Flows) para definir las rutas de navegación típicas en la aplicación.
+
+**TaskFlows**
+
+- Iniciar sesión en la plataforma
+- Registrar una nueva habitación (cuarto) en el sistema
+- Registrar un nuevo personal
+- Registrar un nuevo residente y asignar habitación
+- Conceder acceso al sistema (Personal médico o Familiar)
+- Registrar un nuevo dispositivo IoT
+- Vincular un dispositivo IoT al perfil de un residente
+- Definir o actualizar parámetros clínicos de telemetría
+- Visualizar el monitoreo en vivo (Geolocalización y Signos Vitales)
+- Atender una alerta de emergencia del sistema
+- Programar una nueva actividad recreativa o terapéutica
+
+| User Goal                                                                                                                                                                                                                                                                                                        | WireFlow                                                                              |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| **UG01:** Registrar un nuevo residente en el sistema de la casa de reposo. Permite al personal administrativo ingresar los datos demográficos y médicos de un nuevo adulto mayor, asignándole una habitación y creando su expediente digital centralizado.                                                       | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG1-flow.png)    |
+| **UG02:** Conceder y gestionar accesos a la plataforma para el personal y familiares. Facilita al administrador la creación de credenciales de inicio de sesión y la asignación de roles y permisos específicos para médicos, personal de enfermería y familiares de los residentes.                             | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG2-flow.png)    |
+| **UG03:** Definir y actualizar los parámetros clínicos de alerta para cada residente. Permite al personal médico establecer los límites mínimos y máximos aceptables de signos vitales (telemetría), garantizando que el sistema genere alertas personalizadas basadas en la condición clínica de cada paciente. | ![alt text](../assets/img/chapter-V/veyra-wireframes/mobile-application/UG3-flow.png) |
+| **UG04:** Agendar y gestionar las actividades recreativas y terapéuticas. Proporciona al coordinador de actividades las herramientas para programar eventos diarios, estableciendo horarios, descripciones y categorías, asegurando una rutina activa y estructurada para los residentes.                        | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG4-flow.png)    |
+| **UG05:** Monitorear la ubicación en tiempo real y signos vitales mediante dispositivos IoT. Permite al familiar visualizar en un mapa interactivo la geolocalización de los residentes y consultar sus signos vitales en vivo.                                                                                  | ![alt text](../assets/img/chapter-V/veyra-wireframes/mobile-application/UG5-flow.png) |
+| **UG06:** Registrar y gestionar las habitaciones del centro. Permite al personal administrativo crear nuevos cuartos en el sistema, definiendo detalles clave para mantener un control organizado de la disponibilidad y el alojamiento de los residentes.                                                       | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG6-flow.png)    |
+| **UG07:** Administrar el inventario de dispositivos IoT. Facilita a los administradores registrar nuevos dispositivos de telemetría y geolocalización en el sistema para su posterior vinculación a los residentes.                                                                                              | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG7-flow.png)    |
+| **UG08:** Registrar y gestionar al personal de la casa de reposo. Permite al administrador ingresar la información profesional, turnos y datos de contacto de enfermeros, médicos y staff de apoyo para organizar la operatividad del centro.                                                                    | ![alt text](../assets/img/chapter-V/veyra-wireframes/web-application/UG8-flow.png)    |
+
+### 5.4.3. Applications Mock-ups
+
+**Aplicación del Design System y Accesibilidad (UI States):**
+En esta etapa de alta fidelidad, materializamos el Design System de Veyra. Definimos un color primario Turquesa/Verde Agua (#72A99E) que transmite salud, calma y profesionalismo clínico, contrastando con fondos grises claros (#F3F4F6) para reducir la fatiga visual del personal que usa el sistema por largas horas.
+
+Para garantizar la **Visibilidad del Estado del Sistema** y la **Prevención de Errores** (Heurísticas de Nielsen), diseñamos múltiples estados para nuestros componentes (UI States):
+* **Estados de Éxito:** Uso de notificaciones tipo "Toast" en color verde y badges de estado activo.
+* **Estados de Error (Unhappy Paths):** Aplicación de bordes rojos, textos de ayuda *inline* y deshabilitación de botones primarios para evitar que el usuario envíe formularios incompletos (ej. al faltar un Device ID o ingresar rangos clínicos ilógicos).
+* **Estados Semánticos:** Uso de Amarillo para estados de "Observación" y Rojo para alertas críticas "Critical" o "Low Battery", siempre acompañados de texto e íconos para asegurar la accesibilidad a usuarios con daltonismo.
+
+A continuación, evidenciamos la aplicación gráfica de estos principios en los diferentes módulos del sistema:
+
+* **Módulo de Gestión de Personal y Familiares (Formularios y UI States):** Mock-ups de alta fidelidad que muestran el uso de validaciones en tiempo real y el diseño de campos de entrada con retroalimentación visual clara.
+<p align="center">
+  <img src="../assets/img/chapter-V/veyra-mockups/web-application/web-staff-access.png" alt="Mockup" width="1200px" height="auto"/>
+
+* **Módulo de Telemetría (Clinical Parameters):** Visualización del patrón Master-Detail aplicado con la paleta de colores final, destacando los selectores numéricos y los badges de estado del paciente.
+<p align="center">
+  <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/mobile-vitals.png" alt="Mockup" width="800px" height="auto"/>
+
+
+
+* **Aplicación Móvil - Interfaz de Monitoreo:** Diseño final de la vista del familiar, mostrando jerarquía visual en los signos vitales (tipografía de gran tamaño) y el estado de alerta en caso de anomalías en la saturación de oxígeno o ritmo cardíaco.
+<p align="center">
+  <img src="../assets/img/chapter-V/veyra-mockups/mobile-application/mobile-health-indicators.png" alt="Mockup" width="800px" height="auto"/>
+
+
+
+### 5.4.4. Applications User Flow Diagrams
+
+En esta sección presentamos los User Flows derivados de nuestros Wireflows, utilizando los Mock-ups de alta fidelidad. Cada flujo detalla la ruta esperada para completar el objetivo con éxito (Happy Path) y las rutas alternativas frente a posibles errores del usuario o del sistema (Unhappy Paths), aplicando principios de prevención de errores.
+
+#### User Flow 1: Registro y Vinculación de un Familiar (Relative)
+
+* **User Persona:** Administrador del Sistema.
+* **User Goal:** Registrar el perfil de un familiar, ingresar sus datos de contacto y vincularlo obligatoriamente a un residente específico para generarle su acceso seguro al portal de monitoreo.
+
+**Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Relatives** y hace clic en el botón primario `+ Add New`.
+2. El sistema muestra el formulario *Register Relative*. El usuario ingresa el nombre y correo personal válido.
+3. En la sección *Resident Association*, selecciona exitosamente al residente correspondiente de la lista desplegable.
+4. Al confirmar, el sistema envía el correo de invitación (*Secure Self-Setup*) y redirige a la vista principal.
+5. La pantalla se actualiza mostrando la nueva tarjeta (Card) del familiar registrado.
+
+![Happy Path - Register Relative](../assets/img/chapter-V/uf-relative-happy-path.png)
+
+
+**Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Omisión de Vinculación de Residente (Error de Lógica de Negocio)**
+* **Condición:** El usuario llena los datos personales, pero olvida seleccionar a un residente en la sección *Resident Association*.
+* **Flujo de respuesta:** Al intentar guardar, el sistema previene el envío de datos incompletos (Validación Front-end). El flujo se detiene en la misma pantalla, resaltando el campo de vinculación en rojo con el mensaje de error: *"Es obligatorio vincular al familiar con un residente para restringir el acceso a los datos"*. El usuario debe corregirlo para continuar.
+
+![Unhappy Path - Error States](../assets/img/chapter-V/uf-relative-unhappy-path.png)
+
+#### User Flow 2: Registro de una Nueva Habitación (Rooms)
+
+* **User Persona:** Administrador del Sistema.
+* **User Goal:** Registrar una nueva habitación en el sistema, definiendo su número identificador, tipo y capacidad máxima para mantener actualizado el inventario de espacios disponibles en la casa de reposo.
+
+**Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Rooms** y visualiza la lista actual (o el estado vacío *No Rooms Registered*). Hace clic en el botón primario `+ Add New`.
+2. El sistema redirige a la vista del formulario *New Room* (Room Information).
+3. El usuario ingresa el identificador de la habitación (ej. R-002) y la capacidad máxima de residentes.
+4. Hace clic en el selector *Room Type*, desplegando las opciones, y selecciona la categoría correspondiente (ej. *Double*).
+5. Al hacer clic en el botón de confirmación (*Register Room*), el sistema valida la información, guarda el registro y redirige al usuario a la vista principal.
+6. La tabla de **Rooms** se actualiza y muestra la nueva habitación creada, calculando automáticamente su disponibilidad y estado actual (ej. *Available*).
+
+![Happy Path - Add New Room](../assets/img/chapter-V/uf-rooms-happy-path.png)
+
+**Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Número de Habitación Duplicado (Conflicto de Datos)**
+* **Condición:** El usuario ingresa un identificador de habitación (Room Number) que ya existe físicamente en los registros del sistema (ej. intenta crear la "R-001" cuando ya está ocupada).
+* **Flujo de respuesta:** Al intentar guardar el registro, el sistema realiza una validación con la base de datos, detiene el flujo y muestra un mensaje de error tipo alerta o *inline*: *"Este número de habitación ya se encuentra registrado"*. El usuario debe ingresar un identificador único para poder continuar, previniendo inconsistencias en la asignación de pacientes.
+
+![Unhappy Path - Rooms Error States](../assets/img/chapter-V/uf-rooms-unhappy-path.png)
+
+#### User Flow 3: Registro de un Nuevo Personal (Staff Members)
+
+* **User Persona:** Administrador del Sistema.
+* **User Goal:** Registrar la información personal, de contacto y de emergencia de un nuevo empleado (enfermero, médico o staff de apoyo) para integrarlo a la operatividad de la casa de reposo.
+
+**Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Staff** y visualiza la vista principal (vacía en el primer uso). Hace clic en el botón primario `+ Add New`.
+2. El sistema muestra el formulario de registro detallado, dividido en secciones lógicas: *Personal Data*, *Identification Data*, *Contact Data* y *Location Data*.
+3. El usuario ingresa la información del empleado y hace *scroll* hacia la sección inferior de *Emergency Contacts*.
+4. Completa los datos del contacto principal de emergencia (Main Contact) y hace clic en el botón de confirmación/registro.
+5. El sistema procesa la información, la guarda en la base de datos y redirige automáticamente a la vista de lista de **Staff Members**.
+6. La pantalla se actualiza mostrando una tarjeta (Card) con el perfil resumido del nuevo empleado registrado exitosamente.
+
+![Happy Path - Add New Staff](../assets/img/chapter-V/uf-staff-happy-path.png)
+
+**Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Formato Inválido en Contactos de Emergencia**
+* **Condición:** En la sección *Emergency Contacts*, el administrador ingresa texto alfabético en el campo destinado para el número de teléfono del familiar del empleado.
+* **Flujo de respuesta:** A través de validaciones *Front-end* en tiempo real, el sistema detecta la discrepancia de formato al momento de escribir o al cambiar de campo (*on blur*). Muestra una alerta debajo del input indicando *"Ingrese un número de teléfono válido"*, deshabilitando temporalmente el botón de guardado hasta que se ingrese el tipo de dato correcto.
+
+![Unhappy Path - Staff Error States](../assets/img/chapter-V/uf-staff-unhappy-path.png)
+
+#### User Flow 4: Administración de Inventario de Dispositivos IoT (Devices)
+
+* **User Persona:** Administrador del Sistema.
+* **User Goal:** Administrar el inventario de dispositivos (pulseras de signos vitales, geolocalizadores) registrando nuevo hardware o gestionando los existentes para su posterior vinculación a los residentes.
+
+**Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Devices** y visualiza la tabla principal *List of Devices* con el inventario actual y sus estados (*Active, Inactive, Low Battery*).
+2. Para añadir nuevo hardware, hace clic en el botón primario `+ Register Device`.
+3. El sistema despliega un modal superpuesto (*overlay*) solicitando la información básica del equipo.
+4. El usuario ingresa el identificador único físico (ej. BAND-008) y selecciona el tipo de dispositivo.
+5. Al hacer clic en guardar, el modal se cierra y la tabla se actualiza automáticamente mostrando el nuevo dispositivo en la primera fila con el estado predeterminado.
+6. *(Flujo de gestión secundario)*: Si el usuario desea encontrar un dispositivo específico, utiliza la barra de búsqueda superior (`Search device ID...`); la tabla filtra los resultados en tiempo real, permitiéndole usar las acciones rápidas de editar (lápiz) o eliminar (basurero).
+
+![Happy Path - Devices Inventory](../assets/img/chapter-V/uf-devices-happy-path.png)
+
+**Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Intento de registro de un Device ID duplicado**
+* **Condición:** Al registrar un nuevo dispositivo, el usuario ingresa un código (ej. `BAND-001`) que ya está en uso dentro de la base de datos de Veyra.
+* **Flujo de respuesta:** El sistema aplica una validación *Back-end* y previene la creación. El botón de guardado se detiene y se muestra un mensaje de error *inline* en el modal: *"Este Device ID ya existe en el inventario. Verifique el equipo físico"*.
+
+**Escenario B: Eliminación de un dispositivo actualmente asignado**
+* **Condición:** El usuario hace clic en el ícono de eliminar (basurero) de un dispositivo que tiene el estado *ACTIVE* y está actualmente vinculado a un residente (ej. asignado por *Enf. Patricia Gómez*).
+* **Flujo de respuesta:** El sistema intercepta la acción para prevenir la pérdida de monitoreo en vivo. En lugar de borrarlo directamente, despliega una alerta crítica: *"Acción Denegada: Este dispositivo está actualmente asignado a un residente. Desvincúlelo desde el perfil del residente antes de eliminarlo del inventario"*. Esto protege la integridad lógica de la aplicación y la seguridad del paciente.
+
+![Unhappy Path - Devices Error States](../assets/img/chapter-V/uf-devices-unhappy-path.png)
+
+#### User Flow 5: Gestión de Actividades (Activities)
+
+* **User Persona:** Administrador / Personal Médico o de Enfermería.
+* **User Goal:** Agendar, visualizar en detalle y actualizar actividades (recreativas, médicas, físicas o sociales) para mantener una rutina estructurada y activa para los residentes de la casa de reposo.
+
+** Happy Path (Ruta Esperada: Crear y Editar)**
+1. El usuario ingresa al módulo **Activities** y visualiza la lista principal con los eventos programados y sus estados (ej. *Programada*, *En curso*).
+2. Para agendar un nuevo evento, hace clic en el botón `+ Add New`.
+3. El sistema despliega el modal *Add activity*. El usuario ingresa el nombre de la actividad (ej. "Morning Painting Workshop"), detalla los objetivos en la descripción, y establece la fecha y hora.
+4. Selecciona la categoría correspondiente mediante los *radio buttons* en forma de píldora (ej. *Recreational* o *Medical*).
+5. Hace clic en *Save activity*. El sistema registra el evento y la tabla principal se actualiza automáticamente.
+6. *(Flujo de consulta y edición)*: Si el usuario desea ver más información, hace clic en la fila de la actividad, abriendo el modal de *Activity details* (vista de solo lectura). Si detecta que necesita cambiar algo, presiona el botón *Edit activity*, el cual transiciona directamente al modal *Update activity*, pre-cargando los datos actuales para su modificación rápida.
+
+![Happy Path - Activities Management](../assets/img/chapter-V/uf-activities-happy-path.png)
+
+** Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Programación en Fechas Pasadas o Conflictos de Horario**
+* **Condición:** Al momento de utilizar el selector de fecha y hora (*Date / Hour*) en el modal de *Add activity* o *Update activity*, el usuario selecciona por error una fecha anterior al día de hoy.
+* **Flujo de respuesta:** El sistema aplica una validación lógica (*Front-end* o *Back-end*). Al intentar guardar la actividad, la acción se bloquea. El campo de fecha se resalta en rojo y aparece un mensaje de error en línea (*inline error*): *"La fecha de la actividad no puede ser en el pasado"*. El usuario es obligado a seleccionar una fecha futura o actual para completar el registro.
+
+**Escenario B: Omisión de Datos Obligatorios**
+* **Condición:** El usuario ingresa rápidamente la fecha y la hora, pero olvida escribir el Nombre de la actividad (*Activity name*) o no selecciona ninguna de las 4 categorías disponibles.
+* **Flujo de respuesta:** El sistema previene la creación de eventos "vacíos" en el calendario. El botón principal (*Save activity* o *Update Activity*) se mantiene inactivo (estado *disabled*). Si se activa la validación al perder el foco (*on blur*), el campo faltante mostrará un texto de ayuda en rojo: *"Este campo es obligatorio"*, guiando al coordinador a completar toda la información necesaria para los residentes.
+
+![Unhappy Path - Activities Error States](../assets/img/chapter-V/uf-activities-unhappy-path.png)
+
+#### User Flow 6: Concesión y Gestión de Accesos (Staff Access)
+
+* **User Persona:** Administrador del Sistema.
+* **User Goal:** Generar credenciales de acceso a la plataforma para un empleado existente, asignándole un rol específico (ej. Enfermero, Doctor) que determinará sus permisos y restricciones dentro del sistema.
+
+** Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Staff** y visualiza la lista o tarjetas de los empleados registrados (ej. Juan Barrientos).
+2. Selecciona la opción para gestionar o conceder acceso al empleado correspondiente.
+3. El sistema redirige a la pantalla **Give Access to Staff Member**, mostrando un encabezado con la información contextual del empleado y su estado actual (ej. *Status: Pending Access*).
+4. El administrador configura la sección de *Account Credentials*, validando el correo institucional y asignando una contraseña temporal.
+5. En la sección *System Role & Permissions*, hace clic en el selector desplegable y asigna el rol correspondiente a las funciones del empleado (ej. selecciona *Nurse* o *Doctor*).
+6. Mantiene marcada la casilla *"Require password change on first login"* por políticas de seguridad.
+7. Al hacer clic en confirmar/guardar, el sistema procesa la solicitud, genera los permisos heredados del rol seleccionado y actualiza el estado del empleado, permitiéndole iniciar sesión en la plataforma.
+
+![Happy Path - Give Access to Staff](../assets/img/chapter-V/uf-staff-access-happy-path.png)
+
+** Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Omisión de Asignación de Rol (Error de Permisos)**
+* **Condición:** El administrador completa correctamente el correo y la contraseña temporal, pero olvida seleccionar un rol (*Select Staff Role*) en el menú desplegable, dejándolo en blanco.
+* **Flujo de respuesta:** Al intentar guardar los cambios, el sistema previene la creación de un usuario sin privilegios definidos (*Validación Front-end*). El botón de guardado se bloquea temporalmente, el selector de rol se resalta en rojo y aparece un mensaje de error en línea: *"Debe seleccionar un rol para aplicar los permisos del sistema"*. El flujo no avanza hasta que se asigne un rol válido.
+
+**Escenario B: Formato de Correo Inválido o Contraseña Débil**
+* **Condición:** El usuario ingresa un correo sin el formato estándar (ej. `jbarrientos@example`) o ingresa una contraseña temporal demasiado corta (ej. `123`).
+* **Flujo de respuesta:** Al perder el foco del campo (*on blur*), el sistema valida las credenciales y detecta que no cumplen con las políticas de seguridad. Se despliega una alerta debajo del campo correspondiente indicando: *"Ingrese un correo válido"* o *"La contraseña debe tener al menos 8 caracteres"*, garantizando que las credenciales iniciales cumplan con los estándares de seguridad de Veyra antes de ser enviadas.
+
+![Unhappy Path - Staff Access Error States](../assets/img/chapter-V/uf-staff-access-unhappy-path.png)
+
+#### User Flow 7: Definición y Actualización de Parámetros Clínicos (Clinical Parameters)
+
+* **User Persona:** Médico Tratante / Enfermera Jefe.
+* **User Goal:** Establecer y actualizar los límites mínimos y máximos aceptables de los signos vitales (telemetría) para un residente específico, asegurando que las alertas generadas por los dispositivos IoT sean precisas y personalizadas a su condición clínica.
+
+**Happy Path (Ruta Esperada)**
+1. El usuario ingresa al módulo **Resident Record** y visualiza el directorio de pacientes (*Patient Directory*) en el panel izquierdo, ordenados por su estado de salud actual (Crítico, En Obs., Estable).
+2. Hace clic en la tarjeta de un residente específico (ej. María Ríos).
+3. El panel derecho, que inicialmente estaba vacío, se puebla con el expediente digital del paciente seleccionado.
+4. El usuario navega a la pestaña **Clinical Parameter**.
+5. Modifica los valores numéricos en los campos de límites de *Heart Rate* (bpm), *Oxygen Sat* (%) y/o *Blood Pressure* (mmHg) según el nuevo plan de tratamiento del paciente.
+6. Hace clic en el botón verde **Save Parameters**.
+7. El sistema valida los datos, actualiza las reglas del motor de alertas en la base de datos y muestra una notificación de éxito, manteniendo al usuario en la misma vista para continuar su trabajo.
+
+![Happy Path - Update Clinical Parameters](../assets/img/chapter-V/uf-clinical-parameters-happy-path.png)
+
+**Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Incongruencia Lógica en los Umbrales (Mínimo > Máximo)**
+* **Condición:** El médico, por un error de tipeo, ingresa un valor mínimo que es superior al valor máximo (ej. Heart Rate: Mínimo 110, Máximo 90).
+* **Flujo de respuesta:** Al intentar guardar, el sistema intercepta la acción mediante una validación *Front-end*. El flujo se detiene y los campos en conflicto se resaltan en rojo con un mensaje *inline*: *"Error de rango: El límite mínimo no puede ser superior al límite máximo"*. Esto previene fallos lógicos graves en el algoritmo de disparo de emergencias.
+
+**Escenario B: Omisión de Valores de Monitoreo Crítico**
+* **Condición:** El usuario borra completamente el valor de un campo obligatorio (ej. deja en blanco el límite de *Oxygen Sat*) y presiona *Save Parameters*.
+* **Flujo de respuesta:** El sistema no permite dejar parámetros de soporte vital en blanco (valores nulos). El botón de guardado se deshabilita temporalmente o, al presionarlo, el campo vacío arroja una alerta: *"Este parámetro es obligatorio para mantener el monitoreo activo"*. El usuario debe ingresar un número válido para poder actualizar el perfil.
+
+![Unhappy Path - Clinical Parameters Error States](../assets/img/chapter-V/uf-clinical-parameters-unhappy-path.png)
+
+#### User Flow 8: Monitoreo Remoto por Familiares (Mobile App)
+
+* **User Persona:** Familiar / Contacto de Emergencia.
+* **User Goal:** Visualizar en tiempo real el estado de salud, signos vitales y ubicación GPS de su familiar alojado en la casa de reposo, utilizando la aplicación móvil para mantener la tranquilidad y el control a distancia.
+
+** Happy Path (Ruta Esperada)**
+1. El usuario (familiar) abre la aplicación móvil de Veyra en su smartphone e inicia sesión.
+2. Toca la pestaña **Health** (ícono del maletín médico) en la barra de navegación inferior.
+3. El sistema carga el panel de resumen del residente asignado (ej. *Eleanor Vance*). El indicador principal muestra un estado positivo con un badge turquesa: **Status: Stable**.
+4. El usuario revisa las tarjetas de telemetría en vivo, comprobando que el ritmo cardíaco (72 BPM) y la saturación de oxígeno (95% SPO2) están dentro de los rangos normales.
+5. Hace *scroll* hacia la parte inferior de la pantalla y visualiza el mapa interactivo, confirmando la ubicación actual y segura del residente mediante los pines de geolocalización.
+
+![Happy Path - Relative Mobile Monitoring](../assets/img/chapter-V/uf-mobile-relative-happy-path.png)
+
+** Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+
+**Escenario A: Pérdida de Conexión del Dispositivo IoT (Datos Offline)**
+* **Condición:** La pulsera inteligente del residente se queda sin batería o pierde la conexión a la red WiFi/Bluetooth de la casa de reposo, interrumpiendo la transmisión de telemetría.
+* **Flujo de respuesta:** El sistema previene que el familiar tome decisiones basadas en datos congelados. Las tarjetas de *Heart Rate* y *SPO2* se atenúan (color gris o estado *disabled*) y muestran un ícono de advertencia indicando: *"Dispositivo fuera de línea. Última actualización: hace 2 horas"*. El badge superior cambia a color gris con el texto **Status: Unknown**.
+
+**Escenario B: Detección de Anomalías Clínicas (Alerta Activa)**
+* **Condición:** La telemetría del residente detecta una caída en la saturación de oxígeno por debajo del límite seguro establecido previamente por el médico.
+* **Flujo de respuesta:** La aplicación cambia inmediatamente el estado superior a un badge rojo de alerta: **Status: Critical**. La tarjeta de *SPO2* altera su diseño, resaltando el número en rojo para captar la atención. Además, el sistema despliega un banner de acción rápida en la parte superior: *"Contactar al centro médico"*, permitiendo al familiar iniciar un chat directo con la enfermera de turno desde la aplicación.
+
+![Unhappy Path - Mobile Monitoring Alerts](../assets/img/chapter-V/uf-mobile-relative-unhappy-path.png)
+
+## 5.5. Applications Prototyping
+
+Esta sección presenta los prototipos de interfaz de usuario desarrollados para MetaSoft en sus versiones Desktop Web Browser y Mobile Web Browser. Estos prototipos permiten evidenciar la simulación de los principales flujos de interacción y navegación definidos previamente en los User Flow Diagrams, mostrando cómo el usuario recorre la aplicación, accede a las funcionalidades principales y completa las acciones más relevantes dentro del sistema.
+
+Las decisiones de interacción fueron planteadas considerando criterios de claridad, consistencia y facilidad de uso. Por ello, los prototipos priorizan una navegación simple, botones de acción visibles, pantallas organizadas y una estructura visual coherente entre ambas versiones. Asimismo, la propuesta mantiene relación con la arquitectura de información, ya que las pantallas se organizan según los módulos principales de MetaSoft y siguen una secuencia lógica acorde con los flujos de usuario definidos.
+
+### 5.5.1. Desktop Web Browser Prototype
+
+El prototipo Desktop Web Browser de MetaSoft representa la versión diseñada para usuarios que acceden a la aplicación desde una computadora o pantalla de mayor tamaño. Esta versión aprovecha el espacio disponible para presentar la información de manera más amplia y ordenada, permitiendo que el usuario identifique con facilidad los módulos principales, revise información relevante y ejecute acciones dentro del sistema.
+
+La navegación en la versión desktop se relaciona directamente con los User Flow Diagrams, ya que cada pantalla responde a una etapa del recorrido del usuario. A través del prototipo, se simulan interacciones como el acceso a la plataforma, la navegación entre secciones, la consulta de información, el uso de formularios, la revisión de detalles y la confirmación de acciones. Además, el diseño utiliza menús, tarjetas, botones y vistas organizadas para mantener una experiencia clara y consistente.
+
+Screenshot from the demonstration video:
+
+![Desktop Web Browser Prototype](/assets/img/chapter-V/applications-prototyping-desktop-web-browser.png)
+
+Video demonstration link:
+
+[https://bit.ly/3R9ced0](https://bit.ly/3R9ced0)
+
+### 5.5.2. Mobile Web Browser Prototype
+
+El prototipo Mobile Web Browser de MetaSoft representa la versión adaptada para usuarios que acceden desde un navegador móvil. Esta versión mantiene la misma lógica funcional del prototipo desktop, pero reorganiza los elementos en una estructura vertical, compacta y adecuada para pantallas pequeñas.
+
+La navegación móvil conserva la relación con los User Flow Diagrams, ya que permite recorrer los mismos flujos principales desde un dispositivo móvil. Sin embargo, la interfaz prioriza botones accesibles, contenido resumido y pantallas organizadas de forma progresiva para evitar la sobrecarga visual. A través del prototipo, se simulan interacciones como la navegación entre pantallas, la selección de opciones, la visualización de información, el llenado de formularios y la confirmación de acciones.
+
+Screenshot from the demonstration video:
+
+![Mobile Web Browser Prototype](/assets/img/chapter-V/applications-prototyping-mobile-web-browser.png)
+
+Video demonstration link:
+
+[https://bit.ly/4uHjnjc](https://bit.ly/4uHjnjc)
+## 5.6. IoT Device Design
+
+# Diseño IoT — Sistema de Monitoreo de Signos Vitales
+
+## Paso 1 — Definición de Requisitos del Sistema
+
+### Time delay
+
+El tiempo máximo tolerable para el dispositivo es de **3 segundos**. Esto se debe a que el dispositivo se encuentra monitoreando constantemente los signos vitales del residente, por lo que es necesario que la información se actualice en tiempo real para poder detectar cualquier cambio en el estado de salud del residente.
+
+### Suministro de energía
+
+Se usará una batería LiPo de dimensiones pequeñas:
+
+> **Baterías LiPo 502035 · 3.7 V · 300 mAh** — Batería de Polímero de Litio Recargable por micro USB.
 
 ---
 
-#### Entrevista 4 - Familiar de Adulto Mayor (Segmento 2)
+## Paso 2 — Selección de la Tipología del Dispositivo IoT
 
-|                          |                                            |
-|--------------------------|--------------------------------------------|
-| **Nombre Completo**      | Roberto Javier Fernández Acosta            |
-| **Edad**                 | 55 años                                    |
-| **Distrito**             | La Molina, Lima                            |
-| **Ocupación**            | Ingeniero / Familiar de Residente          |
-| **Fecha de Entrevista**  | 18/11/2025                                 |
-| **Duración**             | 20 minutos                                 |
-| **URL Microsoft Stream** | [Incluir URL del video de la entrevista 4] |
-| **Timing**               | 59:00 - 79:00                              |
-
-**Screenshot del video:**
-
-![Interview Familiar 2](../images/interview-familiar-2.jpg)
-
-**Resumen de Respuestas:**
-
-Roberto tiene amplia experiencia con aplicaciones web y móviles. Expresó que su preocupación principal es garantizar que su padre reciba la medicación correcta en los horarios adecuados. Valora la transparencia en la comunicación con la casa de reposo.
-
-La interfaz de VEYRA le pareció intuitiva. Como ingeniero, apreciò la arquitectura técnica de la aplicación y sugirió mejoras en la seguridad y cifrado de datos. Le gustaría poder generar reportes personalizados y configurar alertas para cambios en la medicación.
-
-Indicó alta probabilidad de usar VEYRA y recomendó mejorar la documentación técnica y agregar opciones de exportación de datos en múltiples formatos.
-
-### 5.3.3. Evaluaciones según heurísticas.
-
-## UX Heuristics & Principles Evaluation
-### Usability – Inclusive Design – Information Architecture
-
-**CARRERA:** Ingeniería de Software
-
-**CURSO:** Desarrollo de Aplicaciones Open Source
-
-**NRC:** 7338
-
-**PROFESOR:** Ángel Augusto Velasquez Nuñez
-
-**AUDITOR:** El equipo de Veyra
-
-**CLIENTE(S):** Administradores de Casas de Reposo y Familiares
-
-**TAREAS A EVALUAR:**
-
-El alcance de esta evaluación incluye la revisión de las siguientes tareas:
-
-- Revisión de la consistencia de lenguaje (Inglés/Español)
-- Validación de los flujos de registro y acceso
-- Comprobar si el diseño transmite confianza y profesionalismo
-- Validar si la información presentada resulta atractiva y relevante
-- Evaluar la gestión de errores en vistas de tabla
-- Revisión de la usabilidad de formularios de inventario
-- Evaluación de la carga de información crítica (habitaciones)
-- Revisión de la claridad de los botones de acción (CTAs)
-
-**ESCALA DE SEVERIDAD:**
-
-Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
-
-| Nivel | Descripción                                                                                                                                                                                          |
-|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1     | Problema superficial: puede ser fácilmente superado por el usuario ó ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo.                         |
-| 2     | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja para resolverlo de cara al siguiente release. |
-| 3     | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta.                                      |
-| 4     | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento.                                    |
-
-**TABLA RESUMEN:**
-
-| #  | Problema                                                                                                                                                            | Escala de severidad | Heurística/Principio violada(o)                                    |
-|----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|--------------------------------------------------------------------|
-| 1  | Los mensajes de confirmación de carga no siempre aparecen, dejando al usuario con duda sobre si la acción se completó.                                              | 2                   | Usability: Visibility of system status                             |
-| 2  | Jerga técnica en la sección de reportes ("Fetch entities", "Null Pointer") confunde a los usuarios administradores sin perfil técnico.                              | 2                   | Usability: Match between system and the real world                 |
-| 3  | No hay opción de deshacer cambios inmediatamente después de registrar un medicamento erróneo en el inventario.                                                      | 3                   | Usability: User control and freedom                                |
-| 4  | Iconografía inconsistente entre la sección de "Residentes" y "Personal" para acciones similares (editar/borrar).                                                    | 1                   | Usability: Consistency and standards                               |
-| 5  | No hay una ventana de confirmación (modal) al presionar el botón de eliminar un perfil de residente, lo que puede causar pérdida de datos accidental.               | 3                   | Usability: Error prevention                                        |
-| 6  | El menú desplegable de "Tipos de Medicamentos" tiene muchas opciones sin agrupar, obligando al usuario a recordar nombres exactos en lugar de reconocer categorías. | 2                   | Usability: Recognition rather than recall                          |
-| 7  | No existen atajos de teclado para acciones frecuentes como "Guardar" o "Nuevo Registro", reduciendo la eficiencia para usuarios expertos.                           | 2                   | Usability: Flexibility and efficiency of use                       |
-| 8  | Demasiada información y columnas irrelevantes en la vista principal del dashboard dificultan la lectura rápida de métricas clave.                                   | 2                   | Usability: Aesthetic and minimalist design                         |
-| 9  | Falta documentación en pantalla (tooltips) para explicar campos complejos como "Dosificación por intervalo".                                                        | 3                   | Usability: Help and documentation                                  |
-| 10 | Los mensajes de error en el login (ej: "Error 401") no sugieren si el problema fue la contraseña o el usuario, impidiendo la recuperación rápida.                   | 2                   | Usability: Help users recognize, diagnose, and recover from errors |
-
-#### Descripción Detallada de Problemas Críticos
-
-**Problema 1: Confusión de rol en formulario de registro y mezcla de idiomas.**
-
-**Severidad: 3**
-
-**Heurística/Principio violada(o):** Usability: Visibility of system status y Consistency and standards.
-
-**Problema:** El contexto de la navegación lateral indica "Staff", pero el botón de acción dice "Register Resident" (Registrar Residente), confundiendo al usuario sobre qué rol está registrando. Además, el formulario utiliza una mezcla de inglés y español para las etiquetas de los campos (`dni*`, `birthdate*`, `phone number*`).
-
-![image of problem 1](../assets/img/chapter-V/evaluations-according-to-heuristics/problem1.png)
-
-**Recomendación:** Corregir la consistencia del sistema. Si la sección es "Staff", el botón debe ser "Register Staff" o "Registrar Personal". Estandarizar el idioma de todos los campos a español para mantener la coherencia lingüística en la interfaz y mejorar la experiencia del usuario.
+Se usará una **tipología tipo estrella**, ya que el dispositivo se conectará directamente a un gateway central que se encargará de enviar la información a la nube. Esto permite una comunicación eficiente y directa entre el dispositivo y el gateway, facilitando la gestión de los datos recopilados.
 
 ---
 
-**Problema 2: Error de carga de datos críticos de Habitaciones.**
+## Paso 3 — Definición de Requisitos de la Capa Física
 
-**Severidad: 4**
+### Definición de los sensores
 
-**Heurística/Principio violada(o):** Usability: Help users recognize, diagnose, and recover from errors.
+El dispositivo contará con sensores de ritmo cardíaco, saturación de oxígeno y temperatura corporal. Estos sensores son fundamentales para monitorear la salud del residente y detectar cualquier cambio en su estado de salud.
 
-**Problema:** La vista de "Rooms" (Habitaciones) muestra un error técnico grave: "Resource not found: Failed to fetch entities", que impide la carga de información fundamental. El mensaje técnico no es útil para el usuario, no explica qué sucedió y no ofrece una solución. Adicionalmente, los encabezados de la tabla presentan inconsistencia lingüística.
+### Definición de los actuadores necesarios
 
-![image of problem 2](../assets/img/chapter-V/evaluations-according-to-heuristics/problem2.png)
+El dispositivo contará con 2 actuadores: un botón para encendido y apagado del dispositivo, y una pantalla AMOLED de 1.47 pulgadas para mostrar información relevante al usuario, como el estado de los signos vitales y batería.
 
-**Recomendación:** Reemplazar el error técnico por un mensaje amigable y orientador, como "No se pudieron cargar las habitaciones. Por favor, intente recargar la página o contacte a soporte." Asegurar que las columnas de la tabla tengan una nomenclatura consistente (ej. "Número", "Tipo", "Estado").
+### Consumo energético
 
----
+El sensor de ritmo cardíaco consume aproximadamente **0.5 mA**, el sensor de saturación de oxígeno consume alrededor de **0.3 mA**, y el sensor de temperatura corporal consume aproximadamente **0.2 mA**. El consumo total de los sensores es de aproximadamente **1 mA**. El actuador del botón consume alrededor de **0.1 mA**, y la pantalla AMOLED consume aproximadamente **0.5 mA** cuando está encendida. En total, el consumo estimado del dispositivo es de aproximadamente **1.6 mA**.
 
-**Problema 3: Botón de acción con etiqueta de código en inventario.**
+Los actuadores se controlarán mediante un microcontrolador que gestionará la energía y la comunicación con los sensores, asegurando un funcionamiento eficiente del dispositivo.
 
-**Severidad: 3**
+### Precisión de los sensores
 
-**Heurística/Principio violada(o):** Usability: Match between system and the real world y Consistency and standards.
+La precisión de los sensores es crucial para garantizar la fiabilidad de los datos recopilados:
 
-**Problema:** El botón de acción principal al final del formulario de inventario muestra la etiqueta de código "medication.add". Este error impide la usabilidad, rompe la confianza y es una inconsistencia grave. También persiste la mezcla de idiomas en los botones, como "Cancel".
+| Sensor                       | Precisión |
+|------------------------------|-----------|
+| Ritmo cardíaco               | ±2 bpm    |
+| Saturación de oxígeno (SpO₂) | ±2 %      |
+| Temperatura corporal         | ±0.1 °C   |
 
-![image of problem 3](../assets/img/chapter-V/evaluations-according-to-heuristics/problem3.png)
+Estos niveles de precisión son adecuados para monitorear la salud del residente y detectar cualquier cambio significativo en su estado de salud.
 
-**Recomendación:** Corregir la etiqueta del botón de acción principal a un texto claro y legible, como "Añadir Medicamento" o "Guardar". Estandarizar el idioma de todos los botones de acción a español (ej. "Cancelar").
+### Interfaces digitales
 
----
+Se usarán interfaces digitales como **aplicación web** y **aplicación móvil** para mostrar la información recopilada por los sensores, permitiendo a los usuarios acceder a los datos de manera fácil y rápida. La aplicación web estará diseñada para ser accesible desde cualquier dispositivo con conexión a internet, mientras que la aplicación móvil ofrecerá una experiencia optimizada para dispositivos móviles, con notificaciones en tiempo real sobre el estado de salud del residente.
 
-**Problema 4: Llamadas a la acción (CTAs) con etiquetas de desarrollo en Login.**
+### Esfuerzo computacional y time-delay local
 
-**Severidad: 4**
+El esfuerzo computacional requerido para procesar los datos de los sensores es relativamente bajo, ya que se trata principalmente de recopilar y transmitir datos a la nube para su análisis. El microcontrolador del dispositivo se encargará de gestionar la comunicación con los sensores y el envío de datos al gateway central, lo que permitirá un procesamiento eficiente y en tiempo real de la información recopilada.
 
-**Heurística/Principio violada(o):** Usability: Match between system and the real world y Aesthetic and minimalist design.
-
-**Problema:** La página de inicio de sesión muestra etiquetas de código como `auth.already-have-account`, `-> auth.sign-in` y `AUTH.OR-CREATE-ACCOUNT` en lugar del texto destinado al usuario. Esto es un error de alto impacto que impide la tarea fundamental de acceso al sistema y afecta la credibilidad.
-
-![image of problem 4](../assets/img/chapter-V/evaluations-according-to-heuristics/problem4.png)
-
-**Recomendación:** Corregir las etiquetas de localización/texto a frases amigables y claras, como "¿Ya tienes una cuenta?", el botón debe decir "Iniciar Sesión", y el separador "O crear una cuenta".
+El time-delay requerido para el procesamiento de datos es de aproximadamente **600 ms** desde la recopilación de datos por parte de los sensores hasta la visualización de la información en las interfaces digitales. Esto garantiza que los usuarios reciban información actualizada y relevante sobre el estado de salud del residente en tiempo real, permitiendo una respuesta rápida ante cualquier cambio significativo en su condición.
 
 ---
 
-**Problema 5: "0" como valor inicial y mezcla de idiomas en Inventario.**
+## Paso 4 — Definición de Requisitos de la Capa de Intercambio
 
-**Severidad: 2**
+### Tiempo de respuesta
 
-**Heurística/Principio violada(o):** Usability: Error Prevention y Consistency and standards.
+El tiempo de respuesta permitido para el envío o recepción de paquetes desde los nodos hacia el dispositivo es de aproximadamente **1 segundo**. Esto se debe a que el dispositivo se encuentra monitoreando constantemente los signos vitales del residente, por lo que es necesario que la información se actualice en tiempo real para poder detectar cualquier cambio en el estado de salud del residente. Un tiempo de respuesta de 1 segundo garantiza que los datos recopilados por los sensores se transmitan de manera eficiente y oportuna, permitiendo una respuesta rápida ante cualquier cambio significativo en la condición del residente.
 
-**Problema:** El uso del valor "0" como valor inicial en campos de entrada numérica (`Quantity*`, `Unit Cost*`, etc.) puede confundir al usuario, quien podría no borrarlo o pensar que es un placeholder. La inconsistencia en los títulos de las secciones (`Stock Status`, `Value`) en inglés es un problema constante.
+### Tipología de comunicación
 
-![image of problem 5](../assets/img/chapter-V/evaluations-according-to-heuristics/problem5.png)
+La tipología de comunicación será **inalámbrica**, utilizando tecnologías como Wi-Fi o Bluetooth para transmitir los datos recopilados por los sensores al gateway central. Esto permite una comunicación eficiente y sin restricciones de cables, facilitando la instalación y el uso del dispositivo en entornos de cuidado de adultos mayores.
 
-**Recomendación:** Asegurarse de que los campos de entrada de datos estén vacíos o utilicen un placeholder de texto para evitar confusiones. Estandarizar la nomenclatura de las secciones a español (ej. "Estado de Stock" y "Valoración").
+### Topología de red
 
----
+La topología de red será tipo **estrella**, donde el dispositivo se conectará directamente a un edge API que almacenará en local para después enviar la información a cloud. Esto permite una comunicación eficiente y directa entre el dispositivo y el edge, facilitando la gestión de los datos recopilados.
 
-## 5.4. Video About-the-Product
-El video "About the Product" presenta de manera clara y atractiva la propuesta de valor de VEYRA, los problemas que resuelve y cómo funciona la solución para ambos segmentos objetivos.
+### Distancias máximas de comunicación
 
-#### Información General del Video
+| Tramo                         | Distancia máxima |
+|-------------------------------|------------------|
+| Nodos ↔ edge API (interiores) | ~30 metros       |
+| Nodos ↔ microcontroladores    | ~2 metros        |
+| Microcontroladores ↔ edge API | ~30 metros       |
 
-|                          |                                                        |
-|--------------------------|--------------------------------------------------------|
-| **Título del Video**     | VEYRA: Comprehensive Care Management for Nursing Homes |
-| **Duración**             | 2 minutos 0 segundos                                   |
-| **Fecha de Grabación**   | 19/11/2025                                             |
-| **URL YouTube**          | https://youtu.be/DCPqVW0C2Po                           |
-| **URL Microsoft Stream** | https://shorturl.at/W0vMy                              |
+La distancia máxima de comunicación entre los nodos y el edge API es de aproximadamente 30 metros en interiores, lo que es adecuado para entornos de cuidado de adultos mayores donde el dispositivo se utilizará principalmente en habitaciones o áreas cercanas al gateway central. Esta distancia permite una comunicación confiable y estable entre el dispositivo y el edge.
 
-**Screenshot del video:**
+La distancia máxima entre los microcontroladores y el edge API es de aproximadamente 30 metros, lo que permite una comunicación eficiente y estable entre el dispositivo y el gateway central en entornos de cuidado de adultos mayores. Esta distancia es adecuada para garantizar que los datos recopilados por los sensores se transmitan de manera oportuna y confiable al edge API para su procesamiento y análisis.
 
-![About the Product Video](../assets/img/chapter-V/about-the-product/AboutTheProduct-image.png)
+### Consumo energético de la capa de intercambio
 
-#### Contenido del Video
+El consumo energético de la capa de intercambio es relativamente bajo, ya que se trata principalmente de transmitir datos a través de una conexión inalámbrica. El dispositivo utilizará tecnologías de comunicación eficientes en términos de energía, como Wi-Fi o **Bluetooth Low Energy (BLE)**, para minimizar el consumo energético durante la transmisión de datos. Además, el dispositivo estará diseñado para optimizar el uso de energía, utilizando modos de bajo consumo cuando no esté transmitiendo datos y activándose solo cuando sea necesario para enviar información relevante sobre el estado de salud del residente.
 
-El video está estructurado en las siguientes secciones:
+### Encriptación de datos
 
-1. **Introducción (0:00 - 0:30):** Presentación del problema - Complejidad en la gestión de casas de reposo y preocupaciones de familiares sobre el cuidado de sus seres queridos.
-2. **Propuesta de Solución (0:30 - 1:45):** Presentación de VEYRA como la solución integral para la gestión de residentes, medicamentos, empleados y comunicación con familiares.
-3. **Funcionalidades Principales (1:45 - 3:15):** Demostración de las características clave:
-   - Gestión de residentes y datos de salud
-   - Control de medicamentos y recordatorios
-   - Portal para familiares
-   - Generación de reportes
-4. **Beneficios (3:15 - 4:00):** Énfasis en beneficios para ambos segmentos - Eficiencia operacional, transparencia y tranquilidad para familiares.
-5. **Llamada a la Acción (4:00 - 4:32):** Invitación a visitar la Landing Page y conocer más sobre VEYRA.
-
-#### Inscripción en Landing Page
-
-El video "About the Product" está embebido en la Landing Page en la sección de "Acerca del Producto", permitiendo que visitantes del sitio vean una introducción visual de VEYRA antes de registrarse o solicitar más información.
-
-**URL de la Landing Page donde está el video:** https://novaperu-tech.github.io/NovaPeru-Tech-LandingPage
+Los datos van a ser encriptados utilizando protocolos de seguridad estándar como **TLS** para garantizar la confidencialidad e integridad de la información transmitida entre el dispositivo y el edge API. Esto es especialmente importante en entornos de cuidado de adultos mayores, donde la privacidad y seguridad de los datos de salud es una prioridad. La encriptación de los datos garantiza que solo las partes autorizadas puedan acceder a la información recopilada por los sensores, protegiendo la privacidad.
 
 ---
 
-## Conclusiones
+## Paso 5 — Definición de Requisitos de la Capa de Información
 
-### Conclusiones y recomendaciones
+### Usuarios finales y servicios requeridos
 
-Al finalizar el ciclo de desarrollo y validación de la solución **Veyra**, el equipo ha llegado a las siguientes conclusiones, contrastando los resultados obtenidos con los planteamientos iniciales del proceso Lean UX:
+| Usuario              | Servicio necesario                                                                               |
+|----------------------|--------------------------------------------------------------------------------------------------|
+| Personal asistencial | Monitoreo en tiempo real · Alertas de signos vitales fuera de rango                              |
+| Doctor               | Configurar umbral de signos vitales · Monitoreo en tiempo real de los signos vitales             |
+| Familiar responsable | Notificaciones de alertas críticas · Monitorear en tiempo real los signos vitales de su familiar |
+| Administrador        | Gestión de dispositivos y usuarios                                                               |
 
-**1. Validación de Problem Statements y Supuestos (Assumptions):**
+### Información procesada por servicio
 
-Inicialmente, se estableció como *Problem Statement* que los administradores de casas de reposo sufrían de ineficiencia operativa debido a la gestión manual. Tras las pruebas de validación, se confirmó que la digitalización de expedientes y el control de inventarios reducen significativamente la carga administrativa, validando nuestra suposición de que el mercado objetivo está dispuesto a migrar a soluciones digitales si estas son intuitivas. Sin embargo, el supuesto sobre la baja alfabetización digital de los familiares fue desafiado; las entrevistas demostraron que este segmento demanda una alta interactividad y notificaciones en tiempo real, lo que nos obligó a priorizar la experiencia móvil.
+- **Monitoreo en tiempo real:** frecuencia cardíaca (bpm), SpO₂ (%), temperatura corporal (°C), nivel de batería del dispositivo, timestamp de cada medición.
+- **Sistema de alertas:** comparación de valores medidos contra umbrales configurables (ej. FC < 50 bpm o > 120 bpm, SpO₂ < 90%, temperatura > 38.5 °C). Generación de alerta con nivel de severidad (leve, moderado, crítico).
+- **Historial y tendencias:** almacenamiento de series temporales de signos vitales, generación de gráficas de evolución por período (hora, día, semana).
 
-**2. Contrastación de Hipótesis (Hypothesis Statements):**
+### Distribución del procesamiento
 
-- **Hipótesis de Valor para Administradores:** Se planteó que "Si proporcionamos un dashboard centralizado, los administradores podrán reducir errores de medicación". Los resultados del Sprint 3 y las pruebas de usabilidad confirmaron esta hipótesis, ya que las alertas de inventario y horarios fueron las funcionalidades mejor valoradas.
-- **Hipótesis de Valor para Familiares:** Creíamos que "El acceso a un reporte semanal aumentaría la confianza". La validación indicó que el reporte semanal es insuficiente; los usuarios requieren actualizaciones diarias o en tiempo real (IoT), lo que valida la necesidad de integrar las bandas de monitoreo como característica *core* y no opcional.
+| Función                                                  | Ubicación |
+|----------------------------------------------------------|-----------|
+| Visualización local en pantalla AMOLED                   | Nodo      |
+| Detección preliminar de anomalías                        | Edge API  |
+| Almacenamiento de datos temporal antes de enviar a cloud | Edge API  |
+| Generación de alertas y notificaciones push              | Cloud     |
+| Almacenamiento persistente del historial clínico         | Cloud     |
 
-**3. Cumplimiento de Criterios de Éxito:**
+### Tiempos de procesamiento estimados
 
-Se logró desplegar la solución en un entorno productivo (Azure y Vercel) cumpliendo con los criterios de aceptación técnicos. Sin embargo, las métricas de éxito relacionadas con la "Autonomía del usuario" mostraron que ciertas funciones avanzadas (como la configuración de alertas IoT) requieren una curva de aprendizaje mayor a la esperada, sugiriendo la necesidad de mejorar el *onboarding*.
-
-**Recomendaciones (Roadmap):**
-
-Basados en los hallazgos y limitaciones actuales, se recomienda para las siguientes etapas del proyecto:
-
-- **Implementación de Facturación Electrónica:** Durante las entrevistas, el 60% de los administradores solicitó la integración con SUNAT para emitir comprobantes directamente desde la plataforma.
-- **Desarrollo de Aplicación Nativa Móvil:** Dado el alto uso de dispositivos móviles por parte de los familiares, se recomienda migrar el módulo de familiares a una app nativa (React Native/Flutter) para mejorar la gestión de notificaciones push.
-- **Refinamiento del Módulo IoT:** Ampliar la compatibilidad de las bandas de monitoreo para incluir dispositivos de terceros genéricos, reduciendo la barrera de entrada de hardware para las casas de reposo.
-
-## Video About-the-Team
-
-El video "About the Team" presenta al equipo de desarrollo de NovaPeru-Tech, destacando las habilidades, roles y contribuciones de cada miembro en el proyecto VEYRA. Este video complementa la documentación del proyecto mostrando el lado humano detrás del desarrollo de la solución.
-
-#### Información General del Video
-
-|                          |                                           |
-|--------------------------|-------------------------------------------|
-| **Título del Video**     | NovaPeru-Tech: Meet the Team Behind VEYRA |
-| **Duración**             | 8 minutos 59 segundos                     |
-| **Fecha de Grabación**   | 19/11/2015                                |
-| **URL YouTube**          | https://youtu.be/-tBBZ8lwbts              |
-| **URL Microsoft Stream** | https://shorturl.at/jAp77                 |
-
-**Screenshot del video:**
-
-![Veyra About the Team](../assets/img/chapter-V/about-the-team/AboutTheTeam-image.png)
-
-#### Contenido del Video
-
-El video incluye presentaciones individuales de cada miembro del equipo, destacando:
-
-- Nombre completo y rol en el proyecto
-- Responsabilidades principales durante el desarrollo
-- Tecnologías y herramientas utilizadas
-- Aprendizajes clave del proyecto VEYRA
-- Expectativas para futuras iteraciones
-
-#### Miembros del Equipo
-
-| Nombre Completo                  | Rol Principal                  | Contribuciones Destacadas                                   |
-|----------------------------------|--------------------------------|-------------------------------------------------------------|
-| Calvo Yalan, Renato Guillermo    | Backend and Frontend Developer | Implementación de servicios REST, arquitectura del Backend  |
-| Armas Sánchez, Oscar Javier      | Backend and Frontend Developer | Configuración de Azure, Vercel y GitHub Pages               |
-| Ramirez Carrasco, Ariana Lizeth  | Backend and Frontend Developer | Diseño de interfaces, implementación de componentes Angular |
-| Roman Lopez, Miguel Angel Junior | Backend and Frontend Developer | Desarrollo de vistas, integración con API Backend           |
-| Ruiz Madrid, Billy Jake          | Backend and Frontend Developer | Diseño de diagramas C4, Frontend, Backend y DataBase        |
-| Quiroz Caceres, Adrian Alonso    | Backend and Frontend Developer | Implementación de arquitectura del Frontend                 |
+| Etapa                                               | Tiempo estimado |
+|-----------------------------------------------------|-----------------|
+| Transmisión nodo → edge (BLE)                       | ~200 ms         |
+| Procesamiento en edge (validación + reenvío)        | ~150 ms         |
+| Transmisión edge → cloud (Wi-Fi/LTE)                | ~400 ms         |
+| Procesamiento en cloud (detección + almacenamiento) | ~550 ms         |
 
 ---
 
-## Bibliografía
+## Paso 6 — Definición de Requisitos de la Capa de Servicios de Aplicación
 
-- Adzic, G. (s.f.). *Impact Mapping*. Recuperado de https://www.impactmapping.org/
-- Angular. (s.f.). *Angular Coding Style Guide*. Recuperado de https://angular.io/guide/styleguide
-- Brandolini, A. (s.f.). *Introducing EventStorming*. Recuperado de https://www.eventstorming.com/
-- CareerFoundry. (s.f.). *What are User Flows in User Experience (UX) Design?*. Recuperado de https://careerfoundry.com/en/blog/ux-design/what-are-user-flows/
-- Cohn, M. (s.f.). *User Stories*. Mountain Goat Software. Recuperado de https://www.mountaingoatsoftware.com/agile/user-stories
-- Cone, M. (s.f.). *The Markdown Guide*. Recuperado de https://www.markdownguide.org/
-- Conventional Commits. (s.f.). *Conventional Commits*. Recuperado de https://www.conventionalcommits.org/
-- Cucumber. (s.f.). *Gherkin Reference*. Recuperado de https://cucumber.io/docs/gherkin/reference/
-- Driessen, V. (2010). *A successful Git branching model*. nvie.com. Recuperado de https://nvie.com/posts/a-successful-git-branching-model/
-- DZone. (s.f.). *Acceptance Criteria in Scrum: Explanation, Examples, and Template*. Recuperado de https://dzone.com/articles/acceptance-criteria-in-software-explanation-exampl
-- Evans, E. (2004). *Domain-Driven Design: Tackling Complexity in the Heart of Software*. Addison-Wesley Professional. Recuperado de https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/
-- Fowler, M. (2006). *Ubiquitous Language*. Recuperado de https://martinfowler.com/bliki/UbiquitousLanguage.html
-- Google. (s.f.). *Google HTML/CSS Style Guide*. Recuperado de https://google.github.io/styleguide/htmlcssguide.html
-- Google. (s.f.). *Google JavaScript Style Guide*. Recuperado de https://google.github.io/styleguide/jsguide.html
-- Google. (s.f.). *Google TypeScript Style Guide*. Recuperado de https://google.github.io/styleguide/tsguide.html
-- Google. (s.f.). *Google Java Style Guide*. Recuperado de https://google.github.io/styleguide/javaguide.html
-- Gothelf, J., & Seiden, J. (2021). *Lean UX: Designing Great Products with Agile Teams* (3rd ed.). O'Reilly Media. Recuperado de https://www.oreilly.com/library/view/lean-ux-2nd/9781491953594/
-- HubSpot. (s.f.). *Full List of Meta Tags, Why They Matter for SEO & How to Write Them*. Recuperado de https://blog.hubspot.com/marketing/meta-tags
-- IBM Design. (s.f.). *Empathy Map*. Enterprise Design Thinking. Recuperado de https://www.ibm.com/design/thinking/page/toolkit/activity/empathy-map
-- IBM Design. (s.f.). *As-is Scenario Map*. Enterprise Design Thinking. Recuperado de https://www.ibm.com/design/thinking/page/toolkit/activity/as-is-scenario-map
-- Martin, R. C. (2017). *Clean Architecture: A Craftsman's Guide to Software Structure and Design*. Prentice Hall. Recuperado de https://www.oreilly.com/library/view/clean-architecture-a/9780134494272/
-- Mendel, J. (s.f.). *Seriously, what's your (startup's) problem?*. Medium. Recuperado de https://medium.com/@jakemendel/seriously-whats-your-startup-s-problem-b3a884c54ab4
-- Nielsen Norman Group. (1994). *10 Usability Heuristics for User Interface Design*. Recuperado de https://www.nngroup.com/articles/ten-usability-heuristics/
-- Nielsen Norman Group. (2016). *The Four Dimensions of Tone of Voice*. Recuperado de https://www.nngroup.com/articles/tone-of-voice-dimensions/
-- Preston-Werner, T. (s.f.). *Semantic Versioning 2.0.0*. Recuperado de https://semver.org/
-- Progressa Lean. (s.f.). *5W+2H - Técnica de análisis de problemas*. Recuperado de https://www.progressalean.com/5w2h-tecnica-de-analisis-de-problemas/
-- Refactoring.Guru. (s.f.). *Design Patterns*. Recuperado de https://refactoring.guru/es/design-patterns
-- Spring. (s.f.). *Spring Boot Reference Documentation*. Recuperado de https://docs.spring.io/spring-boot/docs/current/reference/html/
-- UXPressia. (s.f.). *User vs. Buyer Persona: Differences and free template*. Recuperado de https://uxpressia.com/blog/user-persona-vs-buyer-persona-difference
-- Vernon, V. (2016). *Domain-Driven Design Distilled*. Addison-Wesley Professional. Recuperado de https://www.oreilly.com/library/view/domain-driven-design-distilled/9780134434964/
-- Vernon, V. (s.f.). *Domain-Driven Design Reference*. Recuperado de https://domainlanguage.com/ddd/reference/
+### Interfaz por tipo de usuario
+
+| Interfaz | Usuario                           |
+|----------|-----------------------------------|
+| Web      | Doctor · Administrador            |
+| Móvil    | Personal asistencial · Familiares |
+| AMOLED   | Personal asistencial              |
+
+### Peso computacional
+
+| Interfaz | Peso computacional |
+|---|---|
+| Web | Bajo–medio · Muestra datos paginados desde API REST |
+| Móvil | Bajo · Consume endpoints REST ya procesados por cloud |
+| AMOLED | Muy bajo · Solo renderiza texto e íconos simples en el microcontrolador |
+
+### Plataformas de implementación
+
+| Plataforma | Implementación |
+|---|---|
+| Web | Navegadores modernos · TypeScript + Angular · Backend Java + Spring Boot |
+| Móvil | Flutter · Base de datos local · Backend Java + Spring Boot |
+| AMOLED | Renderizado directo sobre driver de pantalla AMOLED desde el microcontrolador |
 
 ---
 
-## Anexos
+## Paso 7 — Selección de las Arquitecturas de las Capas de Intercambio de Datos e Integración de la Información
 
-#### Anexo A: Enlaces de Despliegue y Repositorios
+### Comparativa de tecnologías inalámbricas
 
-A continuación se listan los enlaces a los entornos de producción y los repositorios de código fuente utilizados durante todo el ciclo de vida del proyecto.
+| Criterio | BLE 5.0 | Wi-Fi |
+|---|---|---|
+| Consumo en TX | ~7 mA | ~80–150 mA |
+| Alcance indoor | ~40 m | ~50 m |
+| Latencia típica | 100–300 ms | 50–200 ms |
+| Complejidad de implementación | Baja | Media–Alta |
 
-| Recurso                                    | URL                                                           |
-|--------------------------------------------|---------------------------------------------------------------|
-| **Landing Page (GitHub Pages)**            | https://novaperu-tech.github.io/NovaPeru-Tech-LandingPage/    |
-| **Frontend Web Application (Vercel Prod)** | https://nova-peru-tech-frontend-v1-2w9r.vercel.app            |
-| **Backend API Services (Azure Prod)**      | https://veyrav01.azurewebsites.net                            |
-| **API Documentation (Swagger UI)**         | https://veyrav01.azurewebsites.net/swagger-ui/index.html      |
-| **Repositorio Landing Page**               | https://github.com/NovaPeru-Tech/NovaPeru-Tech-LandingPage    |
-| **Repositorio Frontend**                   | https://github.com/NovaPeru-Tech/NovaPeruTech-Frontend        |
-| **Repositorio Backend**                    | https://github.com/NovaPeru-Tech/NovaPeruTech-Backend         |
-| **Repositorio Project Report**             | https://github.com/NovaPeru-Tech/NovaPeru-Tech-Project-Report |
+### Protocolo de mensajería edge → cloud: MQTT sobre TLS
 
-#### Anexo B: Videos de Exposiciones
+- Protocolo liviano, diseñado para IoT con ancho de banda limitado.
+- Soporta QoS nivel 1 (entrega garantizada al menos una vez).
+- Latencia típica: 100–400 ms sobre conexión Wi-Fi estable.
+- Alternativa evaluada y descartada: **HTTP/REST** (mayor overhead, no óptimo para streams continuos).
 
-Registro histórico de todas las exposiciones y videos promocionales presentados durante el ciclo académico 202520.
+### Enfoque híbrido de procesamiento
 
-| Entrega / Hito                               | Plataforma       | URL                          |
-|----------------------------------------------|------------------|------------------------------|
-| **Video de Exposición TB1 (Sprint 1)**       | YouTube          | https://youtu.be/PONdZOKZofI |
-| **Video de Exposición TB1 (Sprint 1)**       | Microsoft Stream | http://bit.ly/4h2grbc        |
-| **Video de Exposición TP1 (Sprint 2)**       | YouTube          | https://youtu.be/_7f8dKl5zGs |
-| **Video de Exposición TP1 (Sprint 2)**       | Microsoft Stream | https://shorturl.at/UfvsR    |
-| **Video de Exposición TB2 (Sprint 3)**       | YouTube          | https://youtu.be/Ju2k-SoNUYo |
-| **Video de Exposición TB2 (Sprint 3)**       | Microsoft Stream | [INSERTAR URL REAL AQUÍ]     |
-| **Video de Exposición Final TF1 (Sprint 4)** | YouTube          | [INSERTAR URL REAL AQUÍ]     |
-| **Video de Exposición Final TF1 (Sprint 4)** | Microsoft Stream | [INSERTAR URL REAL AQUÍ]     |
+Para el procesamiento de la información se usará un enfoque híbrido:
 
-#### Anexo C: Videos del Proyecto
+- **Edge API:** servidor ligero (Raspberry Pi o gateway equivalente) que ejecuta un broker MQTT local, valida rangos de datos y almacena en buffer ante caídas de internet.
+- **Cloud:** plataforma como AWS IoT Core o similar, con base de datos de series temporales (InfluxDB o TimestreamDB) y motor de reglas para generación de alertas.
 
-|                               | Plataforma       | URL                          |
-|-------------------------------|------------------|------------------------------|
-| **Video "About the Product"** | YouTube          | https://youtu.be/DCPqVW0C2Po |
-| **Video "About the Product"** | Microsoft Stream | https://shorturl.at/W0vMy    |
-| **Video "About the Team"**    | YouTube          | https://youtu.be/-tBBZ8lwbts |
-| **Video "About the Team"**    | Microsoft Stream | https://shorturl.at/jAp77    |
+> **Time-delay total verificado:** 100 + 250 + 150 + 450 + 500 ms ≈ **1.45 s**
+
+---
+
+## Paso 8 — Selección de Sensores y Actuadores
+
+### Sensores seleccionados
+
+| Sensor                       | Medición                                                                                         | Precisión                                                       | Consumo en operación | Interfaz                                                  | Voltaje de operación                                      |
+|------------------------------|--------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|----------------------|-----------------------------------------------------------|-----------------------------------------------------------|
+| MAX30102                     | Frecuencia cardíaca y saturación de oxígeno en un solo módulo                                    | FC: ±2 bpm · SpO₂: ±2%                                          | ~0.6 mA              | Compatible con la mayoría de microcontroladores embebidos | 1.8 V (lógica) / 3.3 V (LEDs) — compatible con LiPo 3.7 V |
+| MLX90614ESF-DCI (GY-906-DCI) | Temperatura corporal sin contacto mediante radiación infrarroja · medición puntual con FOV de 5° | ±0.5 °C en rango general / ±0.2 °C en rango corporal (36–39 °C) | ~1.5 mA              | Comparte bus con MAX30102 sin conflicto de direcciones    | 3.3 V — compatible con LiPo 3.7 V mediante regulador      |
+
+### Actuadores seleccionados
+
+| Actuador                                  | Resolución                     | Consumo |
+|-------------------------------------------|--------------------------------|---------|
+| Pantalla AMOLED 1.47" — ST7789 controller | 172×320 píxeles · color 16-bit | ~0.5 mA |
+| Botón táctil de membrana                  | —                              | ~0.1 mA |
+
+---
+
+## Paso 9 — Selección del Microcontrolador y Transceivers de Radio
+
+### ESP32-C3 — Especificaciones
+
+| Característica                 | Valor                                               |
+|--------------------------------|-----------------------------------------------------|
+| Arquitectura                   | RISC-V 32-bit · 160 MHz                             |
+| RAM / Flash                    | 400 KB / 4 MB                                       |
+| BLE                            | 5.0 integrado                                       |
+| Wi-Fi                          | 802.11 b/g/n integrado (usado en edge, no en nodo)  |
+| Interfaces                     | SPI · I²C · UART · GPIO                             |
+| Consumo en operación           | ~22 mA                                              |
+| Consumo en modo sleep profundo | ~5 µA                                               |
+| Voltaje de operación           | 3.0–3.6 V — compatible con LiPo 3.7 V con regulador |
+| Factor de forma                | Ultra compacto — apto para wearables                |
+
+### Justificación
+
+El ESP32-C3 integra BLE 5.0, tiene bajo consumo, periféricos I²C y SPI necesarios para conectar el MAX30102, el MLX90614 y la pantalla AMOLED, y su tamaño compacto lo hace adecuado para un dispositivo wearable. No requiere transceiver de radio externo, lo que simplifica el diseño.
+
+### Ahorro energético
+
+- El microcontrolador activará los sensores cada **5 segundos** (ciclo de muestreo).
+- Entre ciclos entra en **Light Sleep (~0.8 mA)**, reduciendo el consumo promedio significativamente.
+- El módulo BLE opera en modo **advertise/connect** solo durante la transmisión activa.
+
+---
+
+## Paso 10 — Definición del Procesamiento de Datos en Cada Nodo y en la Nube
+
+### En el nodo (ESP32-C3)
+
+1. **Lectura de sensores (cada 5 s):** solicita medición a MAX30102 vía I²C y a MLX90614 vía I²C.
+2. **Promediado móvil:** promedia las últimas 4 lecturas de cada sensor para suavizar ruido (ventana deslizante simple).
+3. **Validación de rango físico:** descarta lecturas fuera de rangos fisiológicos posibles (FC: 20–250 bpm · SpO₂: 50–100% · Temp: 30–45 °C).
+4. **Empaquetado de datos:** estructura JSON ligera con timestamp.
+5. **Transmisión BLE:** envía el paquete al edge API mediante perfil BLE GATT personalizado.
+6. **Renderizado en pantalla:** actualiza la pantalla AMOLED con los valores actuales y estado del sistema.
+
+### En el Edge API
+
+1. **Validación de integridad:** verifica que el JSON esté completo y los campos tengan el tipo correcto.
+2. **Detección de alertas preliminares:** compara valores contra umbrales predefinidos y genera flag de alerta si corresponde.
+3. **Buffer de persistencia local:** almacena en SQL Server los últimos 500 registros por si hay pérdida de conectividad cloud.
+
+### En la nube
+
+1. **Ingesta de mensajes MQTT:** AWS IoT Core recibe y enruta los mensajes.
+2. **Almacenamiento en serie temporal:** InfluxDB o AWS Timestream almacena cada punto de dato con timestamp.
+3. **Motor de reglas y alertas:** evalúa condiciones configuradas por doctor o administrador (umbrales por paciente) y genera alertas.
+4. **Cálculo de tendencias:** promedio móvil de largo plazo (hora, día), detección de degradación progresiva de signos.
+5. **API REST:** expone endpoints seguros (JWT + HTTPS) para las aplicaciones web y móvil.
+
+---
+
+## Paso 11 — Análisis del Tiempo de Procesamiento
+
+| Algoritmo                         | Complejidad | Tiempo estimado |
+|-----------------------------------|-------------|-----------------|
+| Lectura de sensores I²C           | O(1)        | ~50 ms          |
+| Renderizado pantalla AMOLED       | O(n)        | ~40 ms          |
+| Detección de alertas preliminares | O(1)        | ~5 ms           |
+| Entrega notificación push         | —           | ~200–300 ms     |
+| Almacenamiento cloud              | O(1)        | ~100 ms         |
+| Empaquetado JSON                  | O(1)        | ~5 ms           |
+| Alertas                           | O(n)        | ~200 ms         |
+
+---
+
+## Paso 12 — Definición de la Interfaz Gráfica de Usuario
+
+### Pantalla AMOLED del dispositivo wearable
+
+Diseño minimalista de alta legibilidad orientado a lectura rápida:
+
+- Fondo negro (aprovecha AMOLED para ahorro energético).
+- Tipografía grande y clara para cada signo vital.
+- Íconos de color: verde = normal · amarillo = precaución · rojo = alerta.
+- Indicador de batería y estado de conexión BLE en esquina superior.
+
+### Aplicación web — Dashboard principal
+
+_Personal asistencial · Médicos · Administrador_
+
+- **Paleta de colores:** fondo claro/oscuro (modo adaptativo), verde para normal, amarillo para precaución, rojo para alerta crítica.
+- **Gráficas:** líneas temporales interactivas (zoom, hover con valor exacto) con librería Chart.js o Recharts.
+- **Navegación:** lista de residentes en sidebar izquierdo, vista detallada por residente seleccionado.
+- **Responsivo:** adaptado para tablets (uso en campo por enfermería) y escritorio (médicos y administradores).
+
+### Aplicación móvil
+
+_Familiar · Personal asistencial · Administrador_
+
+- Diseño de tarjeta única, información esencial visible sin scroll.
+- Notificaciones push con vibración al generarse una alerta crítica.
+- Colores semáforo coherentes con la web app para consistencia visual.
+- Acceso con autenticación segura (JWT + biometría del dispositivo).
+
+
+
+![veyra-prototype-device-one](../assets/img/chapter-V/veyra-prototype-device-one.svg)
+
+Para el prototipo físico del dispositivo de monitoreo, se utilizó Cirkit Designer
+como herramienta de diseño de circuitos. El objetivo fue representar de forma
+fiel los componentes seleccionados en etapas anteriores y documentar
+las conexiones entre ellos.
+
+El circuito gira en torno al **ESP32-C3 Super Mini**, que cumple el rol
+de microcontrolador principal. Se eligió este modelo porque integra
+BLE 5.0 de forma nativa, tiene un tamaño muy reducido y opera a 3.3V,
+lo que lo hace compatible con todos los sensores sin necesidad
+de conversores de nivel.
+
+Para la medición de signos vitales se incorporaron dos sensores:
+
+El **MAX30102** se encarga de medir la frecuencia cardíaca y el SpO₂.
+Funciona por I²C y se conecta a GPIO8 (SDA) y GPIO9 (SCL),
+con dirección 0x57. Es un sensor bastante compacto y de bajo consumo,
+lo que lo hace ideal para un wearable.
+
+El **GY906 (MLX90614)** mide la temperatura corporal sin contacto
+usando radiación infrarroja. Comparte el mismo bus I²C con el MAX30102,
+usando GPIO8 y GPIO9, pero con dirección 0x5A, por lo que
+no hay conflicto entre ambos. Su precisión de ±0.2°C
+en el rango corporal lo hace adecuado para este contexto.
+
+La pantalla **TFT ST7789 de 1.69"** muestra los valores medidos
+en tiempo real. Se comunica por SPI usando GPIO4, GPIO6, GPIO2,
+GPIO3 y GPIO5. El pin BLK se conecta directo a 3V3
+para mantener la retroiluminación siempre activa.
+
+Finalmente, se incluyó un **botón táctil de 3 pines** conectado a GPIO1.
+Tiene pull-up integrado, así que no necesita resistencia externa.
+Sirve para que el usuario pueda encender o apagar la pantalla
+según lo necesite.
+
+Toda la alimentación se distribuye desde el pin 3V3 del ESP32-C3,
+con una batería LiPo 502035 de 3.7V y 300mAh como fuente.
+El consumo total estimado ronda los 1.6mA en operación normal.
+
+#### Tabla de conexiones
+
+| Componente | Pin componente                              | Pin ESP32-C3                                            |
+|------------|---------------------------------------------|---------------------------------------------------------|
+| MAX30102   | VIN / GND / SDA / SCL                       | 3V3 / GND / GPIO8 / GPIO9                               |
+| GY906      | VIN / GND / SDA / SCL                       | 3V3 / GND / GPIO8 / GPIO9                               |
+| TFT ST7789 | VCC / GND / SCL / SDA / DC / RES / CS / BLK | 3V3 / GND / GPIO4 / GPIO6 / GPIO2 / GPIO3 / GPIO5 / 3V3 |
+| Botón      | VCC / GND / SIG                             | 3V3 / GND / GPIO1                                       |
+
+
+# Diseño de Solución IoT: Dispositivo de Localización GPS para Adultos Mayores 
+
+## Paso 1 — Definición de los Requisitos del Sistema
+
+### Restricción de time-delay
+El time-delay máximo tolerable para el flujo completo desde la adquisición del dato hasta su visualización en la pantalla es de **30 segundos**. Este margen es suficiente para el rastreo de personas, permitiendo una respuesta oportuna sin saturar  la red.
+
+### Suministro de energía
+El dispositivo opera exclusivamente con una batería LiPo 603450 (3.7 V, 1100 mAh). La autonomía mínima aceptable es de **3 a 5 días**. Con esta capacidad, el consumo promedio máximo permitido es de **15.3 mA**, considerando un uso continuo y sin recargas frecuentes, lo que es adecuado para un dispositivo de localización que debe ser confiable durante varios días sin intervención.
+
+---
+
+## Paso 2 — Selección de la Tipología del Sistema IoT
+Se ha seleccionado una **tipología de conexión directa a la nube**. Esto significa que el dispositivo funciona de forma independiente, como si fuera un teléfono móvil:
+
+* **Nodo (tracker):** Es el rastreador que obtiene su ubicación por satélite (GPS) y la envía por sí mismo usando la red de datos celular.
+* **Plataforma en la nube:** Actúa como el cerebro central que recibe los datos y los organiza para que puedan ser consultados desde cualquier parte.
+
+Esta elección es clave porque permite que el rastreo sea total: el dispositivo no necesita estar cerca de una base o router Wi-Fi para funcionar; solo necesita cobertura celular.
+
+Esta tipología elimina la necesidad de gateways locales, permitiendo que el seguimiento funcione en cualquier lugar con cobertura celular.
+
+---
+
+## Paso 3 — Definición de los Requisitos de la Capa Física
+
+### Sensores
+1.  **Módulo GNSS:** Obtiene las coordenadas geográficas (latitud y longitud).
+2.  **Acelerómetro MEMS:** Detecta movimiento para reducir el envío de datos cuando la persona está en reposo, optimizando la batería.
+
+### Actuadores
+**Ninguno.** El hardware no tiene componentes de salida (luces o sonidos) para mantener la discreción absoluta.
+
+Consumo y precisión: El sistema debe consumir menos de 15.3 mA promedio. La precisión de la ubicación debe estar en un rango de 2 a 5 metros en exteriores.
+
+Interfaces y procesamiento: Se utilizarán interfaces UART para el GPS y el módem, e I2C para el acelerómetro. El microcontrolador tiene permitido un tiempo de procesamiento local máximo de 500 ms para no comprometer el delay global.
+
+---
+
+## Paso 4 — Definición de los Requisitos de la Capa de Intercambio
+
+**Comunicación:** Inalámbrica mediante la red celular LTE-M (Cat-M1). Se elige esta tecnología por su bajo consumo y su capacidad de mantener la conexión mientras el usuario se desplaza.
+
+**Topología y distancia:** Topología directa al servidor. La distancia de comunicación está limitada únicamente por la cobertura de las antenas celulares 
+
+**Consumo y encriptación:** Las transmisiones serán ráfagas cortas de energía. Los datos se protegerán mediante TLS 1.3, asegurando que la ubicación del adulto mayor viaje de forma privada y encriptada.
+
+---
+
+## Paso 5 — Definición de los Requisitos de la Capa de Integración de Información
+
+Usuarios: Familiar, Personal Asistencial y Administrador.
+
+Servicios: Mapa de ubicación en tiempo real.
+
+* **Información procesada:** Coordenadas filtradas y traducción de coordenadas a direcciones físicas (geocodificación).
+
+* **Distribución del procesamiento:** Filtrar coordenadas inválidas para asegurar la calidad del dato.
+
+    * **Cloud:** Recibe los datos crudos, traduce las coordenadas a direcciones para poder almacenar.
+
+* **Tiempo de procesamiento:** El procesamiento en la nube debe resolverse en menos de **300 ms**.
+---
+
+## Paso 6 — Definición de los Requisitos de la Capa de Servicio de Aplicación
+
+
+App Móvil (Familiar/Personal/Admin): Mapa con la posición del residente actualizada automáticamente e indicador de batería.
+
+Plataforma Web (Administrador): Visualización simultánea de múltiples residentes.
+
+Peso computacional: Bajo en todos los niveles; la complejidad de los mapas es gestionada por servicios externos (Google Maps).
+
+---
+
+## Paso 7 — Selección de las Arquitecturas de las Capas de Intercambio e Integración
+
+
+Arquitectura de Intercambio: Se selecciona MQTT sobre TLS 1.3. Este protocolo es óptimo para el backend monolítico, permitiendo gestionar conexiones persistentes con un retardo de comunicación de apenas 2-4 segundos.
+
+Arquitectura de Integración: Se selecciona una Arquitectura Monolítica para el backend .
+
+Análisis de Time-delay: Al ser un monolito, se eliminan las latencias de red entre servicios (inter-service communication), permitiendo que la recepción del dato, la lógica de geocodificación y el guardado en la base de datos ocurran en un mismo proceso. Esto garantiza un tiempo de integración de ~150-200 ms, cumpliendo con los requisitos del paso 5.
+
+---
+
+## Paso 8 — Selección de Sensores y Actuadores
+
+Sensor GNSS: u-blox ZOE-M8B, seleccionado por su precisión de < 2.5m y su tamaño minúsculo.
+
+Sensor de Movimiento: LIS2DW12, elegido por su consumo de 0.38 µA en modo de espera.
+
+Actuadores: No se seleccionan para cumplir el requisito de dispositivo pasivo.
+
+---
+
+## Paso 9 — Selección del Microcontrolador y Transceptores de Radio
+
+Hemos elegido el microcontrolador y los módulos de comunicación inalámbrica concretos para cada nodo, considerando su consumo de energía, capacidad de procesamiento y periféricos disponibles.
+
+Selección: Nordic Semiconductor nRF9160 (SiP).
+
+Justificación: Integra procesador ARM Cortex-M33 y módem LTE-M en un único encapsulado. Posee la capacidad de procesamiento para gestionar el cifrado TLS 1.3 y los periféricos UART/I2C definidos en el paso 3.
+
+---
+
+## Paso 10 — Definición del Procesamiento de Datos en el Nodo y en la Nube
+
+Aquí se define qué procesamiento se hará directamente en el dispositivo IoT y qué procesamiento se realizará en el cloud/backend.
+
+En el Nodo:
+Se realizará el filtrado de tramas NMEA para descartar coordenadas con baja precisión (por ejemplo, cuando el HDOP sea alto). Además, el dispositivo manejará procesos básicos de optimización de energía para reducir el consumo durante su funcionamiento.
+
+En Cloud (Backend Monolítico):
+Se realizará la geocodificación inversa para convertir coordenadas en direcciones entendibles, el almacenamiento de la información en una base de datos MongoDB y el procesamiento de datos enviados por los dispositivos para su visualización y monitoreo dentro de la plataforma
+
+---
+
+## Paso 11 — Análisis del Tiempo de Procesamiento
+
+En este paso se analiza qué tan pesado es el procesamiento de cada algoritmo definido anteriormente y cuánto tiempo tarda cada parte del sistema en ejecutarse, para verificar que el tiempo total de respuesta cumple con el requisito definido en el Paso 1.
+
+Desglose estimado del tiempo:
+
+Procesamiento en el nodo IoT (filtrado y validación de datos): ~15 ms.
+Captura y obtención de señal GPS: ~15 s.
+Latencia de red LTE-M para el envío de datos: ~4 s.
+Procesamiento en el Backend Monolítico: ~200 ms.
+
+Tiempo total estimado:
+El sistema tendría un tiempo aproximado de respuesta de ~20 segundos desde la captura hasta el almacenamiento y visualización de la información.
+
+Verificación:
+El tiempo total cumple con el requisito máximo de 30 segundos establecido anteriormente, por lo que el sistema puede operar dentro del límite esperado.
+
+---
+
+## Paso 12 — Definición de la Interfaz Gráfica de Usuario
+
+#### A. Interfaz de Software (App y Web)
+* **App Móvil (Familiar/Asistencial):** Centrada en un mapa limpio de Google Maps. Un marcador con la foto del residente indica su posición. En la parte inferior, una tarjeta muestra la dirección exacta, la hora de la última sincronización y un indicador de batería dinámico.
+* **Plataforma Web (Administrador):**  Dentro de la lista de residentes hay una opción para ver el mapa de cada residente.
+
+#### B. Diseño Físico del Dispositivo 
+* **Aspecto:** Disco circular de 35mm en policarbonato mate, sin botones ni luces para garantizar la pasividad del sistema.
+* **Ergonomía:** Bordes redondeados y grosor mínimo (10mm) para ocultarse fácilmente en costuras o bolsillos internos.
+* **Carga:** Interfaz de carga magnética en la base para asegurar protección IP67 (resistente a salpicaduras y polvo).
+* **Uso:** Se integra mediante clips de silicona o bolsillos ocultos en la vestimenta, cumpliendo con el requisito de ser un dispositivo "invisible" para el residente pero rastreable para el administrador.
+
+![veyra-prototype-device-two](../assets/img/chapter-V/device-2.png)
+
+
+
+Para el prototipo físico del dispositivo de localización GPS, se utilizó Cirkit Designer como herramienta de diseño de circuitos. El objetivo fue representar de forma fiel los componentes disponibles para el prototipado y documentar las conexiones entre ellos.
+
+El circuito gira en torno al **ESP32 WROOM-32**, que cumple el rol de microcontrolador principal. Se eligió este módulo porque integra Wi-Fi y Bluetooth de forma nativa, dispone de múltiples buses UART e I2C, y su regulador interno convierte los 3.7V de la batería a 3.3V para alimentar los sensores sin necesidad de componentes adicionales.
+
+Para la localización se incorporó el módulo **GY-GPS6MU2 (u-blox NEO-6M)**. Se comunica con el microcontrolador mediante UART2 a 9600 bps, con las líneas cruzadas: TX del GPS conectado a GPIO16 (RX2 del ESP32) y RX del GPS conectado a GPIO17 (TX2 del ESP32). Procesa las sentencias NMEA GPRMC y GPGGA para entregar coordenadas con una precisión aproximada de 2.5 metros en exteriores.
+
+Para la detección de movimiento se incluyó el **MPU-6050**, un acelerómetro de 6 ejes que se comunica por I2C con dirección 0x68. Se conecta al bus SDA/SCL del ESP32 y permite identificar cuando el residente está en reposo para reducir la frecuencia de envío de datos y extender la autonomía de la batería.
+
+La alimentación proviene de una batería **LP401730 de 3.7V y 150mAh**. Es importante destacar que esta capacidad solo permite entre 3 y 6 horas de operación continua en el prototipo; para el producto final se requiere la batería LiPo 603450 de 1100mAh especificada en el diseño, que es la que garantiza la autonomía de 3 a 5 días.
+
+#### Tabla de conexiones
+
+| Componente   | Pin componente        | Pin ESP32                               |
+|--------------|-----------------------|-----------------------------------------|
+| GY-GPS6MU2   | VCC / GND / TX / RX   | 3V3 / GND / GPIO16 (RX2) / GPIO17 (TX2) |
+| MPU-6050     | VCC / GND / SDA / SCL | 3V3 / GND / SDA / SCL                   |
+| Batería LiPo | BAT+ / BAT-           | VIN / GND                               |
