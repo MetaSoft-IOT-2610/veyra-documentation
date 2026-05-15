@@ -136,6 +136,82 @@ Las directrices de estilo web de Veyra se centran en la simplicidad, la accesibi
 
 ### Mobile   Style Guidelines
 
+**1) Layout y Grid**
+
+* **Orientación:** La aplicación está optimizada para uso en modo vertical (portrait). Las vistas críticas de monitoreo funcionan también en landscape, ajustando el mapa o los gráficos de signos vitales a pantalla completa.
+* **Columna única:** Todo el contenido se presenta en una sola columna, con un padding horizontal fijo de **16 dp** a cada lado, siguiendo las directrices de Material Design 3.
+* **Área táctil mínima:** Todos los elementos interactivos (botones, ítems de lista, íconos de acción) tienen un área táctil mínima de **48 × 48 dp**, garantizando accesibilidad para el Personal Asistencial que opera con guantes o en movimiento.
+* **Cards de signos vitales:** Altura fija de 80 dp mínimo por card, con el valor numérico del signo vital en tipografía grande (H2 mobile) para lectura de un vistazo. Un borde lateral de 4 dp ancho en el color de estado (verde/amarillo/rojo) identifica visualmente la condición del residente sin necesitar leer el número.
+  **2) Navegación — Bottom Navigation Bar**
+
+| Destino       | Ícono Material   | Descripción de uso por rol                                                                           |
+|---------------|------------------|------------------------------------------------------------------------------------------------------|
+| **Home**      | `home`           | Familiar: estado del residente vinculado. Staff: lista de residentes del turno. Admin: resumen KPIs. |
+| **Health**    | `monitor_heart`  | Signos vitales en tiempo real (frecuencia cardíaca, temperatura, SpO2, presión arterial).            |
+| **Calendar**  | `calendar_month` | Visitas programadas (Familiar), turnos (Staff), agenda operativa (Admin).                            |
+| **Chat**      | `chat`           | Canal de comunicación casa de reposo ↔ familiar y staff ↔ administración.                            |
+| **Dashboard** | `bar_chart`      | Métricas y KPIs operativos. Usado principalmente por el Administrador desde el móvil.                |
+
+**3) Tipografía Mobile**
+
+| Elemento                    | Tamaño | Peso     | Uso                                        |
+|-----------------------------|--------|----------|--------------------------------------------|
+| H1 — Título de pantalla     | 22 sp  | Bold     | Nombre de la sección activa                |
+| H2 — Título de card         | 18 sp  | SemiBold | Nombre del residente, valor de signo vital |
+| H3 — Subtítulo / Etiqueta   | 16 sp  | Medium   | Nombre del parámetro (Heart Rate, Temp)    |
+| Body — Texto de contenido   | 14 sp  | Regular  | Descripciones, timestamps, notas           |
+| Caption — Metadatos         | 12 sp  | Regular  | Hora de última actualización, Device ID    |
+| Button label                | 14 sp  | Medium   | Etiquetas de botones de acción             |
+
+* Interlineado: **1.5** para cuerpo de texto y **1.2** para encabezados.
+  **4) Colores en contexto móvil**
+
+* **Fondo de pantalla:** `#F3F4F6` (gris claro) — reduce la fatiga visual en turnos prolongados.
+* **Fondo de card:** `#FFFFFF` con sombra `elevation: 1` (shadow: 0 1px 3px rgba(0,0,0,0.12)).
+* **Color de estado en cards:** Borde lateral izquierdo de 4 dp de ancho en el color semántico correspondiente (verde/amarillo/rojo), acompañado siempre de un ícono y texto de estado para garantizar accesibilidad ante daltonismo.
+  **5) Componentes principales**
+
+* **Vital Signs Card:** Presenta el nombre del parámetro, el valor numérico actual (tipografía H2 bold), la unidad de medida y el timestamp de la última lectura. El borde lateral codifica el estado. Un ícono `trending_up` / `trending_down` / `trending_flat` complementa el color para usuarios con visión reducida.
+* **Alert Banner:** Aparece en la parte superior de la pantalla activa como un banner a ancho completo en rojo (#F44336) con texto blanco. Incluye el nombre del residente, el parámetro fuera de rango y un botón `Ver detalle` que abre el deep link al historial clínico. Persiste hasta que el usuario lo descarta explícitamente o el valor vuelve al rango normal.
+* **Resident List Item:** Card compacta (height 72 dp) con foto circular del residente (40 dp de diámetro), nombre, estado actual en badge y hora de la última lectura. El borde lateral codifica el estado de alerta. Tap en la card navega al detalle del residente.
+* **Search Bar:** Campo de búsqueda a ancho completo posicionado debajo del toolbar, con ícono `search` como prefijo y botón `close` para limpiar. El placeholder se adapta al módulo activo. El filtrado ocurre en tiempo real a partir del segundo carácter ingresado.
+* **Floating Action Button (FAB):** Botón circular primario (56 dp de diámetro) en el extremo inferior derecho de las vistas de lista que requieren creación de registros. Ícono `add` en blanco sobre fondo de color primario. Se oculta al hacer scroll hacia abajo y reaparece al hacer scroll hacia arriba.
+* **Empty State:** Cuando una lista no tiene resultados, se muestra una ilustración centrada con un ícono de 80 dp, un texto descriptivo en H3 y, cuando aplica, un botón de acción secundaria.
+  **6) Interaction Design**
+
+* **Pull-to-refresh:** Disponible en todas las vistas de lista y en la pantalla de signos vitales. El indicador de carga circular usa el color primario de la marca.
+* **Swipe actions:** En la vista de notificaciones, el gesto de swipe hacia la izquierda sobre un ítem revela el botón `Marcar como leído` (color primario). El swipe a la derecha descarta la notificación si no es de tipo alerta crítica.
+* **Deep links desde push notifications:** Las notificaciones push de alertas críticas incluyen un deep link que abre la app directamente en la pantalla de signos vitales del residente afectado, sin pasar por la pantalla de inicio.
+* **Transiciones:** Las navegaciones entre pantallas usan `slide` horizontal (Material shared element transition). Las cards de signos vitales usan `fade` al actualizarse en tiempo real para no distraer al usuario durante la lectura.
+* **Retroalimentación háptica:** Se activa vibración corta (50 ms) al confirmar una acción destructiva (por ejemplo, descartar una alerta). Se activa vibración larga (200 ms) al recibir una alerta crítica nueva en primer plano, consistente con el patrón del Smart Wristband.
+  **7) Variaciones por rol**
+
+| Elemento             | Familiar                                         | Personal Asistencial                                  | Administrador                                         |
+|----------------------|--------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------|
+| Home screen          | Dashboard simplificado de 1 residente vinculado  | Lista de residentes del turno con alertas pendientes  | Resumen KPIs (residentes activos, alertas, ocupación) |
+| Health tab           | Signos vitales del residente vinculado           | Selector de residente + signos vitales en tiempo real | Vista de alertas críticas activas en el hogar         |
+| Dashboard tab        | Historial gráfico de los últimos 7 días          | Registro de eventos clínicos del turno actual         | KPIs operativos + gráficas de tendencia               |
+| Notificaciones       | Alertas del residente vinculado + avisos         | Alertas críticas de todos los residentes asignados    | Alertas críticas + novedades operativas del hogar     |
+| Acciones disponibles | Solo consulta; sin escritura sobre el expediente | Registro de eventos clínicos; atención de alertas     | Gestión operativa completa desde el móvil             |
+
+**8) Accesibilidad**
+
+* **Contraste de texto:** Ratio mínimo 4.5:1 sobre cualquier fondo (WCAG 2.1 AA), idéntico al estándar de la aplicación web.
+* **Descriptores de accesibilidad:** Todos los íconos y botones incluyen atributo `contentDescription` para lectores de pantalla (TalkBack en Android, VoiceOver en iOS). Los valores de signos vitales incluyen el nombre del parámetro y la unidad como parte del descriptor (e.g., "Frecuencia cardíaca: 78 latidos por minuto, estado normal").
+* **Tamaño de fuente dinámico:** La interfaz respeta la configuración de tamaño de fuente del sistema operativo hasta `sp × 1.3`. Por encima de este factor, el layout cambia a columna única con scroll para preservar la legibilidad.
+* **Color nunca como único indicador:** Todo indicador de estado basado en color está siempre acompañado de un ícono diferenciado y/o texto de estado. Esto garantiza accesibilidad para usuarios con daltonismo, siguiendo el mismo principio aplicado en el diseño de los LEDs de los dispositivos IoT.
+  **9) Consistencia cross-platform con los dispositivos IoT**
+
+| Estado del sistema      | LED Smart Wristband / Badge     | Interfaz Móvil                                      |
+|-------------------------|---------------------------------|-----------------------------------------------------|
+| Operación normal        | Verde — pulso lento             | Borde card verde + badge "Normal"                   |
+| Alerta crítica activa   | Rojo — parpadeo rápido          | Borde card rojo + Alert Banner + vibración larga    |
+| Dispositivo apagado     | Rojo — sólido fijo              | Badge gris "Disconnected" + ícono `signal_wifi_off` |
+| En proceso de carga     | Azul — pulso suave              | Badge azul "Charging" en la vista de Devices        |
+| Carga completa          | Verde — sólido 5 s, luego apaga | Badge verde "Ready" en la vista de Devices          |
+| Batería baja            | (vibración en wristband)        | Ícono `battery_low` en la card del residente        |
+
+
 ### Iot  Style Guidelines
 
 
@@ -195,13 +271,13 @@ Los siguientes principios rigen todas las decisiones de diseño de los dispositi
 
 La pulsera cuenta con un único LED RGB que comunica el estado del dispositivo mediante la combinación de color y patrón de parpadeo. Este indicador está ubicado en la cara superior del dispositivo, visible con un vistazo rápido.
 
-| Estado del Sistema                        | Color LED    | Patrón                                      | Descripción                                                                   |
-|-------------------------------------------|--------------|---------------------------------------------|-------------------------------------------------------------------------------|
-| **Dispositivo activo / operación normal** | 🟢 Verde     | Pulso lento                                 | Signos vitales dentro de los Parámetros Clínicos.                             |
-| **Dispositivo apagado / inactivo**        | 🔴 Rojo      | Sólido fijo                                 | El dispositivo no está operativo. Requiere intervención del Healthcare Staff. |
-| **Alerta crítica — valor fuera de rango** | 🔴 Rojo      | Parpadeo rápido                             | Signo vital fuera de lo normal.                                               |
-| **En proceso de carga**                   | 🔵 Azul      | Pulso suave y continuo                      | El dispositivo está conectado a la fuente de carga.                           |
-| **Carga completa**                        | 🟢 Verde     | Sólido fijo durante 5 segundos, luego apaga | La carga ha finalizado. Listo para su uso.                                    |
+| Estado del Sistema                        | Color LED | Patrón                                      | Descripción                                                                   |
+|-------------------------------------------|-----------|---------------------------------------------|-------------------------------------------------------------------------------|
+| **Dispositivo activo / operación normal** | Verde     | Pulso lento                                 | Signos vitales dentro de los Parámetros Clínicos.                             |
+| **Dispositivo apagado / inactivo**        | Rojo      | Sólido fijo                                 | El dispositivo no está operativo. Requiere intervención del Healthcare Staff. |
+| **Alerta crítica — valor fuera de rango** | Rojo      | Parpadeo rápido                             | Signo vital fuera de lo normal.                                               |
+| **En proceso de carga**                   | Azul      | Pulso suave y continuo                      | El dispositivo está conectado a la fuente de carga.                           |
+| **Carga completa**                        |  Verde    | Sólido fijo durante 5 segundos, luego apaga | La carga ha finalizado. Listo para su uso.                                    |
 
 
 #### Retroalimentación Háptica
