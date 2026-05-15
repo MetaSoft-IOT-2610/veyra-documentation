@@ -289,7 +289,7 @@ En este apartado documentamos los resultados de las sesiones de campo. Aquí se 
   <tr><td>Edad</td><td>59 años</td></tr>
   <tr><td>Rol</td><td>Gerente administrativo del Centro Residencial Virgen de la Medalla Milagrosa</td></tr>
   <tr><td>Evidencia</td><td><img src="../assets/img/chapter-II/interview-segment-one-01-milagros-caycho-mata.png" alt="Entrevista - Milagros Caycho Mata" width="420"/></td></tr>
-  <tr><td>Link</td><td><a href="https://shorturl.at/vQBoO">Link Entrevistas</a> — https://shorturl.at/vQBoO</td></tr>
+  <tr><td>Link</td><td>https://shorturl.at/vQBoO</td></tr>
   <tr><td>Timing donde inicia la entrevista</td><td>00:00 min</td></tr>
   <tr><td>Duración de la entrevista</td><td>03:33 min</td></tr>
   <tr><td>Resumen</td><td>Profesional de perfil metódico, organizado y con liderazgo colaborativo, enfocado en la mejora continua e innovación gradual (rasgos alineados con su rol de coordinación asistencial y administrativa en 26 años de experiencia en el centro residencial "La Virgen de la Medalla Milagrosa"). Su comunicación es serena y reflexiva, con alta empatía hacia los adultos mayores y el personal a su cargo. Sus principales desafíos son la duplicidad de registros físicos y digitales, la fragmentación de la información y la dificultad para mantener la trazabilidad clínica por residente.<br><br><b>Comportamiento y Necesidades:</b> Busca una herramienta que centralice la información de los residentes y mejore la comunicación con los familiares. Valora el vínculo emocional entre residente y familia, por lo que promueve activamente las visitas presenciales. Demostró capacidad de adaptación ante situaciones críticas, habiendo implementado por iniciativa propia la comunicación por videollamada durante la pandemia. Considera vital contar con un sistema integral que elimine la duplicidad de registros y permita mantener una trazabilidad clínica clara por residente.<br><br><b>Tecnología, Marcas y Canales:</b> Usuaria con alfabetización digital intermedia: domina herramientas básicas de oficina y mensajería, pero reconoce que la adopción de un sistema especializado sigue siendo un desafío. Gestiona la información de residentes a través de una base de datos local, expedientes físicos y planillas en Microsoft Excel. Utiliza una computadora de escritorio para tareas administrativas y un smartphone para mensajería. Su navegador habitual es Google Chrome. Los canales de comunicación con las familias son llamadas telefónicas, WhatsApp y videollamadas, especialmente con familiares en el extranjero. Sus herramientas de referencia son los servicios de Microsoft y WhatsApp.</td></tr>
@@ -302,7 +302,7 @@ En este apartado documentamos los resultados de las sesiones de campo. Aquí se 
   <tr><td>Edad</td><td>54 años</td></tr>
   <tr><td>Rol</td><td>Gerente general de la Casa de Reposo Abuelitos Felices</td></tr>
   <tr><td>Evidencia</td><td><img src="../assets/img/chapter-II/interview-segment-one-02-oscar-navarrete-mendoza.png" alt="Entrevista - Oscar Navarrete Mendoza" width="420"/></td></tr>
-  <tr><td>Link</td><td><a href="https://shorturl.at/vQBoO">Link Entrevistas</a> — https://shorturl.at/vQBoO</td></tr>
+  <tr><td>Link</td><td>https://shorturl.at/vQBoO</td></tr>
   <tr><td>Timing donde inicia la entrevista</td><td>03:33 min</td></tr>
   <tr><td>Duración</td><td>04:58 min</td></tr>
   <tr><td>Resumen</td><td>Gerente general de perfil metódico, disciplinado y orientado al control y la eficiencia (rasgos alineados con su rol administrativo de 21 años en una residencia geriátrica). Se autodefine como "de cuadros y procesos", lo que refleja su estilo de gestión basado en la planificación sistemática. Su principal desafío es la falta de digitalización clínica, la dependencia del personal técnico y la dificultad para estandarizar la comunicación con los familiares de los residentes.<br><br><b>Comportamiento y Necesidades:</b> Busca una plataforma de gestión digital sencilla y funcional, adaptada al contexto de residencias geriátricas, que no exija conocimientos técnicos avanzados y que permita acceso rápido a información relevante de cada residente. Valora la trazabilidad, la inmediatez y la transparencia en la comunicación con los familiares. Aunque reconoce resistencia ante nuevas plataformas, muestra disposición activa a digitalizar los expedientes médicos para mejorar el orden y la accesibilidad.<br><br><b>Tecnología, Marcas y Canales:</b> Usuario experimentado de Microsoft Excel para la gestión financiera, de inventarios y pagos. Utiliza laptop personal y smartphone Android como dispositivos principales, y los navegadores Microsoft Edge y Google Chrome. Las historias clínicas se gestionan íntegramente en formato físico. Su canal principal de comunicación con familares es WhatsApp, organizando grupos individuales por residente. Su marca de referencia es Microsoft por su estabilidad, y toma como referente institucional los sistemas del MINSA, aunque los considera demasiado complejos para el entorno residencial.</td></tr>
@@ -316,7 +316,7 @@ En este apartado documentamos los resultados de las sesiones de campo. Aquí se 
   <tr><td>Rol</td><td>Gerente general de casa de reposo</td></tr>
   <tr><td>Distrito</td><td>San borja</td></tr>
   <tr><td>Evidencia</td><td><img src="../assets/img/chapter-II/interview-segment-one-03-jose-gonzales.png" alt="Entrevista - Jose Gonzales" width="420"/></td></tr>
-  <tr><td>Link</td><td><a href="https://shorturl.at/vQBoO">Link Entrevistas</a> — https://shorturl.at/vQBoO</td></tr>
+  <tr><td>Link</td><td>https://shorturl.at/vQBoO</td></tr>
   <tr><td>Timing donde inicia la entrevista</td><td>08:32 min</td></tr>
   <tr><td>Duración de la entrevista</td><td>05:00 min</td></tr>
   <tr><td>Resumen</td><td>Gerente con un estilo de trabajo ordenado y enfocado en que las cosas funcionen bien, algo que se nota después de siete años al frente de una residencia para adultos mayores. Sus principales dolores de cabeza son no contar con herramientas digitales para el área clínica, depender demasiado del personal técnico y no tener una forma clara y uniforme de mantener al tanto a las familias de los residentes.<br><br><b>Comportamiento y Necesidades:</b> Busca algo sencillo y funcional, pensado para el día a día de una residencia geriátrica, que cualquier persona pueda usar sin necesidad de ser experto en tecnología y que permita consultar rápidamente la información de cada residente. Le importa mucho poder rastrear lo que pasa, tener respuestas rápidas y que la comunicación con las familias sea clara y transparente. Tiene ganas de digitalizar los expedientes clínicos y información del personal para que todo esté mejor organizado y sea más fácil de consultar.<br><br><b>Tecnología, Marcas y Canales:</b> Usa Microsoft Excel con fluidez para llevar las finanzas, el inventario y los pagos. Su herramienta de trabajo diaria es su laptop personal junto a su celular Honor, y navega principalmente desde Chrome. Todo lo clínico todavía se maneja en papel. Para hablar con las familias usa WhatsApp.</td></tr>
@@ -331,7 +331,7 @@ En este apartado documentamos los resultados de las sesiones de campo. Aquí se 
   <tr><td>Edad</td><td>25 años</td></tr>
   <tr><td>Distrito</td><td>Chorrillos</td></tr>
   <tr><td>Evidencia</td><td><img src="../assets/img/chapter-II/interview-segment-two-01-jose-carlos-vargas-enriquez.png" alt="Entrevista - Jose Carlos Vargas Enriquez" width="420"/></td></tr>
-  <tr><td>Link</td><td><a href="https://shorturl.at/vQBoO">Link Entrevistas</a> — https://shorturl.at/vQBoO</td></tr>
+  <tr><td>Link</td><td>https://shorturl.at/vQBoO</td></tr>
   <tr><td>Timing donde inicia la entrevista</td><td>13:32 min</td></tr>
   <tr><td>Duración de la entrevista</td><td>03:32 min</td></tr>
   <tr><td>Resumen</td><td>Joven de perfil analítico, protector y orientado a la eficiencia (rasgos influenciados por su ocupación como Ingeniero de Software en el sector bancario). Su principal frustración es la incertidumbre y la falta de inmediatez en la comunicación tradicional (llamadas) con la casa de reposo de su abuelo.<br><br><b>Comportamiento y Necesidades:</b> Desea tener control y visibilidad sobre el estado de salud, medicaciones y reportes médicos semanales. Valora la rapidez y exige que la información médica tenga un respaldo profesional constante para sentir confianza.<br><br><b>Tecnología, Marcas y Canales:</b> Es un usuario altamente digital. Su ecosistema de hardware principal se basa en PC de escritorio y smartphone. A nivel de software e influencias de marca, prefiere navegadores orientados a la privacidad y rendimiento (Brave, Chrome) y exige que los canales de interacción para urgencias sean directos y de uso diario, eligiendo WhatsApp o notificaciones push de una App nativa por encima de medios tradicionales como el SMS o el correo electrónico.</td></tr>
@@ -344,10 +344,14 @@ En este apartado documentamos los resultados de las sesiones de campo. Aquí se 
   <tr><td>Edad</td><td>54</td></tr>
   <tr><td>Distrito</td><td>Villa el Salvador</td></tr>
   <tr><td>Evidencia</td><td><img src="../assets/img/chapter-II/interview-segment-two-02-richard-rios-saandoval.png" alt="Entrevista - Richard Rios Saandoval" width="420"/></td></tr>
-  <tr><td>Link</td><td><a href="https://shorturl.at/vQBoO">Link Entrevistas</a> — https://shorturl.at/vQBoO</td></tr>
+  <tr><td>Link</td><td>https://shorturl.at/vQBoO</td></tr>
   <tr><td>Timing donde inicia la entrevista</td><td>17:04 min</td></tr>
   <tr><td>Duración de la entrevista</td><td>3:51 min</td></tr>
-  <tr><td>Resumen</td><td>Señor tecnológico y analítico que busca seguridad para su padre. Su mayor frustración es la comunicación lenta e incierta con la casa de reposo, lo que le genera desconfianza.<br><br><b>Comportamiento y Necesidades</b> Exige control y visibilidad inmediata de medicinas, salud y reportes semanales. Necesita respuestas rápidas y profesionales para sentirse tranquilo.<br><br><b>Tecnología, Marcas y Canales</b> Usuario digital avanzado. Prefiere WhatsApp y Apps nativas con notificaciones directas, priorizando la rapidez (Chrome) sobre llamadas o correos.</td></tr>
+  <tr><td>Resumen</td><td> Richard es un usuario con un perfil tecnológico y analítico que reside en Villa El Salvador y gestiona un negocio independiente. Su principal motivación es garantizar la seguridad y el bienestar de sus padres, quienes se encuentran actualmente en una casa de reposo. Se caracteriza por ser un usuario exigente que busca fiabilidad en la información, ya que la comunicación lenta e incierta por parte de la institución le genera una profunda desconfianza e inseguridad.<br><br>
+  <b>Comportamiento y necesidades:</b>
+  Debido a sus responsabilidades laborales, este usuario tiene una necesidad crítica de rapidez y eficiencia en la entrega de información. Exige tener un control total y una visibilidad inmediata sobre la administración de medicinas, el estado de salud general y la recepción de reportes periódicos para sentirse tranquilo. Considera fundamental que las notificaciones de la casa de reposo sean instantáneas, ya que actualmente suelen tardar demasiado, y prefiere que cualquier comunicación importante se realice directamente a su dispositivo móvil.<br><br>
+  <b>Tecnología, marcas y canales:</b>
+  Es un usuario digital avanzado que utiliza principalmente un celular Samsung y una laptop para sus actividades diarias. Actualmente se comunica con la casa de reposo a través de WhatsApp y correo electrónico, pero considera que una aplicación móvil dedicada al monitoreo del adulto mayor sería la solución ideal para consultar información de manera frecuente. Prioriza el uso de canales directos y aplicaciones nativas que ofrezcan notificaciones en tiempo real, prefiriendo la agilidad de herramientas como Chrome y apps sobre los métodos de comunicación tradicionales.</td></tr>
 </table>
 
 <table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse;">
@@ -357,10 +361,14 @@ En este apartado documentamos los resultados de las sesiones de campo. Aquí se 
   <tr><td>Edad</td><td>57</td></tr>
   <tr><td>Distrito</td><td>Miraflores</td></tr>
   <tr><td>Evidencia</td><td><img src="../assets/img/chapter-II/interview-segment-two-04-alejandra-schmidt-braickling.png" alt="Entrevista - Alejandra Schmidt Braickling" width="420"/></td></tr>
-  <tr><td>Link</td><td><a href="https://shorturl.at/vQBoO">Link Entrevistas</a> — https://shorturl.at/vQBoO</td></tr>
+  <tr><td>Link</td><td>https://shorturl.at/vQBoO</td></tr>
   <tr><td>Timing donde inicia la entrevista</td><td>20:56 min</td></tr>
   <tr><td>Duración de la entrevista</td><td>3:00 min</td></tr>
-  <tr><td>Resumen</td><td>Ama de casa frustrada por depender de su hermano para recibir información sobre su madre en la casa de reposo.<br><br><b>Comportamiento y Necesidades</b> Desea acceso directo e inmediato al estado de salud y a las rutinas diarias de su madre para sentir mayor tranquilidad y confianza en el servicio.<br><br><b>Tecnología, Marcas y Canales</b> Usuaria de smartphone Samsung y laptop; considera fantásticas las plataformas o apps de salud, pero prefiere explícitamente llamadas o WhatsApp para recibir notificaciones importantes o de urgencia.</td></tr>
+  <tr><td>Resumen</td><td>Se trata de una ama de casa cuya principal frustración es la falta de autonomía informativa respecto al cuidado de su madre. Actualmente, se encuentra en una posición de dependencia, ya que debe recurrir a su hermano para conocer cualquier detalle sobre la situación en la casa de reposo, lo que genera una barrera en su tranquilidad personal. Busca eliminar intermediarios para establecer un vínculo directo con la institución, transformando esa incertidumbre en una relación de confianza basada en la transparencia y el flujo constante de datos.<br><br>
+  <b>Comportamiento y necesidades:</b>
+  Su prioridad absoluta es el acceso inmediato y sin filtros al estado de salud físico y emocional de su madre. Más allá de los reportes médicos, tiene un interés profundo en conocer las rutinas diarias, como la alimentación, las actividades recreativas y las horas de descanso, ya que estos pequeños detalles son los que realmente le brindan paz mental. Necesita sentir que tiene el control de la situación desde su hogar, exigiendo un servicio que sea proactivo en la entrega de información para no tener que estar solicitándola constantemente a terceros.<br><br>
+  <b>Tecnología, marcas y canales:</b>
+  Es una usuaria familiarizada con el entorno digital, utilizando habitualmente un smartphone Samsung y una laptop para sus gestiones cotidianas. Aunque tiene una opinión muy positiva sobre las plataformas y aplicaciones especializadas en salud, considerándolas herramientas "fantásticas" para el seguimiento, su comportamiento ante situaciones críticas es más tradicional. Prefiere explícitamente que las notificaciones de urgencia o avisos importantes se realicen mediante llamadas telefónicas o WhatsApp, priorizando la calidez y la inmediatez de estos canales sobre las notificaciones pasivas de una aplicación.</td></tr>
 </table>
 
 ### 2.2.3. Análisis de entrevistas
@@ -447,12 +455,12 @@ A partir del análisis de entrevistas y la recolección de información sobre la
 **1) Segmento 1: Administradores de casas de reposo**
 
 
-![User Persona 1](../assets/img/chapter-II/persona-roberto-sanchez-uxpressia.png)
+<img src="../assets/img/chapter-II/persona-roberto-sanchez-uxpressia.jpeg" alt="User Persona 1" width="640">
 
 **2) Segmento 2: Familiares de adultos mayores**
 
 
-![User Persona 2](../assets/img/chapter-II/persona-carlos-andrade-uxpressia.png)
+<img src="../assets/img/chapter-II/persona-carlos-andrade-uxpressia.jpeg" alt="User Persona 2" width="640">
 
 ### 2.3.2. User Task Matrix
 
@@ -552,17 +560,15 @@ El objetivo principal fue representar los acontecimientos reales del negocio, de
 
 Tras la exploración inicial, el equipo ordenó cronológicamente los eventos de dominio, agrupándolos en flujos lógicos que reflejan la operación diaria de la casa de reposo (ej. Pre-admisión, Evaluación Clínica, Gestión de Medicación). En esta fase, se introdujeron los Actores (Admin, Doctor, Nurse, Relative) para mapear claramente las interacciones y responsabilidades. Además, el análisis iterativo permitió identificar Hotspots (puntos críticos o dudas del negocio, señalados mediante rombos morados), revelando escenarios excepcionales o reglas por definir, tales como admisiones de emergencia sin familiares presentes, ausencias imprevistas del personal o el rechazo constante de medicación vital. Esta estructura permite visualizar no solo el "camino feliz", sino la complejidad real a resolver mediante soluciones digitales.
 
-![bigpicture](../assets/img/chapter-II/event-storming-step2-overview.jpg)
+![bigpicture](../assets/img/chapter-II/big-picture-step2-part1-overview.png)
+![bigpicture](../assets/img/chapter-II/big-picture-step2-part2-overview.png)
+![bigpicture](../assets/img/chapter-II/big-picture-step2-part3-overview.png)
 
 ## 2.5 Ubiquitous Language
 
-To ensure seamless communication among developers, medical staff, and family members, the following glossary has been established. These terms must be used consistently across business meetings, source code (classes, methods, databases), and the user interface.
+Con el fin de garantizar una comunicación fluida entre los desarrolladores, el personal médico y los familiares, se ha elaborado el siguiente glosario. Estos términos deben utilizarse de manera coherente en las reuniones de trabajo, el código fuente (clases, métodos, bases de datos) y la interfaz de usuario.
 
 
-- **Resident (Residente):** Persona adulta mayor admitida en el centro geriátrico que recibe atención médica y cuidados diarios continuos.
-- **Relative (Responsable):** Persona designada con autorización legal y financiera para acceder a la información del residente, recibir notificaciones y supervisar su cuidado.
-- **Admin (Administrador):** Responsable de la gestión del centro, incluyendo admisiones, facturación, asignación de habitaciones y programación del personal.
-- **Doctor (Médico):** Profesional de la salud que realiza evaluaciones iniciales, define planes de tratamiento y prescribe medicamentos.
 - **Nursing Home (Casa de Reposo):** Establecimiento de larga estadía diseñado para el cuidado integral de adultos mayores, ya sea de forma temporal o permanente.
 - **Healthcare Staff (Personal de Cuidado):** Personal de atención directa encargado de ejecutar el plan de cuidado, administrar medicamentos, registrar signos vitales y asistir en la higiene diaria.
 - **Medical Record (Historia Clínica):** Registro centralizado del historial de salud del residente, incluyendo diagnósticos, alergias y antecedentes médicos.
@@ -578,8 +584,3 @@ To ensure seamless communication among developers, medical staff, and family mem
 - **Visit Restriction (Restricción de Visitas):** Medida temporal que limita el acceso de visitas al residente por razones médicas o administrativas.
 - **Hotspot (Punto Crítico):** Situación especial del proceso que requiere reglas de negocio específicas.
 
-
-### Expected Benefits
-* **Elimination of ambiguities:** Developers and medical staff use the exact same names for the same concepts.
-* **Technical consistency:** The data model and codebase accurately reflect the geriatric domain.
-* **Easier onboarding:** New team members quickly grasp the business logic and flows through the glossary.

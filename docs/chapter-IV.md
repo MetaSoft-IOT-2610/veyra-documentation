@@ -164,16 +164,16 @@ Paso 8: Bounded Contexts
 
 Finalmente, definimos los Bounded Contexts que agrupan los flujos relacionados en contextos delimitados con responsabilidades claras. Cada Bounded Context representa un subdominio independiente con su propio lenguaje ubicuo.
 
-| Bounded Context   |Descripción                                                                 |
-|-------------------|-----------------------------------------------------------------------------|
-| **BC: IAM**      | Gestiona la identidad, autenticación y asignación de roles de los usuarios. |
-| **BC: Profiles**| Gestiona la creación, actualización y desactivación de perfiles.         |
-| **BC: Payments**  | Gestiona planes de suscripción, pagos y cancelaciones.              |
+| Bounded Context    | Descripción                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| **BC: IAM**        | Gestiona la identidad, autenticación y asignación de roles de los usuarios. |
+| **BC: Profiles**   | Gestiona la creación, actualización y desactivación de perfiles.            |
+| **BC: Payments**   | Gestiona planes de suscripción, pagos y cancelaciones.                      |
 | **BC: Tracking**   | Gestiona la evaluación clínica inicial del residente.                       |
-| **BC: Nursing** | Gestiona el plan de cuidado y tratamiento del residente.                    |
-| **BC: HCM**    | Gestiona la contratación y asignación del personal.                         |
-| **BC: Activities**| Gestiona las actividades diarias del residente.                             |
-| **BC: Health**    | Gestiona monitoreo de signos vitales y alertas críticas.                    |
+| **BC: Nursing**    | Gestiona el plan de cuidado y tratamiento del residente.                    |
+| **BC: HCM**        | Gestiona la contratación y asignación del personal.                         |
+| **BC: Activities** | Gestiona las actividades diarias del residente.                             |
+| **BC: Health**     | Gestiona monitoreo de signos vitales y alertas críticas.                    |
 
 
 
@@ -356,12 +356,12 @@ Durante la fase de modelado basada en el dominio, hemos logrado identificar los 
 
 ### Resumen de patrones aplicados
 
-| Patrón | Relaciones |
-|---|---|
-| *Customer/Supplier* | Subscriptions → IAM, Profiles → Subscriptions, Tracking → Nursing, HCM → Nursing |
-| *Conformist* | IAM → Profiles, IAM → Tracking |
-| *Published Language* | Tracking → Communication, Communication → Activities, Health → Nursing |
-| *Anti-Corruption Layer* | Activities → Health |
+| Patrón                  | Relaciones                                                                       |
+|-------------------------|----------------------------------------------------------------------------------|
+| *Customer/Supplier*     | Subscriptions → IAM, Profiles → Subscriptions, Tracking → Nursing, HCM → Nursing |
+| *Conformist*            | IAM → Profiles, IAM → Tracking                                                   |
+| *Published Language*    | Tracking → Communication, Communication → Activities, Health → Nursing           |
+| *Anti-Corruption Layer* | Activities → Health                                                              |
 
 ![Diagrama de context mapping](../assets/img/chapter-IV/context-mapping.png)
 
@@ -1785,7 +1785,7 @@ agnóstica de frameworks externos.
   * `complete(): Activity`
 * **Relaciones:** Referencia a `LogMeal`, `LogBath` y `UpdateRiskProfile` por
   residentId. Administrado a través de `IActivityRepository`.
-  **`LogMeal`**
+  **`LogMeal`** 
 * **Tipo DDD:** Aggregate Root
 * **Propósito:** Representa el registro de una comida provista al residente,
   incluyendo la asistencia de alimentación cuando aplica. Garantiza que toda
