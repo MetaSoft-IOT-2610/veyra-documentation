@@ -1365,7 +1365,32 @@ Para el desarrollo de la landing page, se implementaron las secciones de "Home",
 
 Aplicación web:
 
-
+| Repository          | Branch             | Commit Id         | Commit Message                                                              | Commit Message Body | Commited on (Date) |
+|--------------------|--------------------|-------------------|------------------------------------------------------------------------------|---------------------|--------------------|
+| veyra-web-app | feature/nursing    | b217f97…ef92914   | feat(environment): update API base URLs and add fake API URL for development | —                   | 15/05/2026         |
+| veyra-web-app | develop            | 986abba…c7f4cc5   | feat(activities, alerts): add routing, translations, and mock server         | —                   | 15/05/2026         |
+| veyra-web-app | feature/payments   | 1e548d7…e6c03f3   | feat(payments): implement payment confirmation page with success message      | —                   | 15/05/2026         |
+| veyra-web-app | feature/health     | 986abba           | Merge remote-tracking branch 'origin/feature/shared' into develop            | —                   | 15/05/2026         |
+| veyra-web-app | feature/healt      | —                 | Deleted branch                                                               | —                   | 15/05/2026         |
+| veyra-web-app | feature/healt      | 986abba           | Merge remote-tracking branch 'origin/feature/shared' into develop            | —                   | 15/05/2026         |
+| veyra-web-app | develop            | 3c4ab10…986abba   | Merge remote-tracking branch 'origin/feature/shared' into develop            | —                   | 15/05/2026         |
+| veyra-web-app | feature/shared     | 23b0efd…08c2c94   | feat(iam): implement default user session for development                    | —                   | 15/05/2026         |
+| veyra-web-app | feature/payments   | c613846…1e548d7   | feat(payments): enhance checkout layout and add back button                  | —                   | 15/05/2026         |
+| veyra-web-app | feature/shared     | 21e71ed…23b0efd   | refactor(layout): enhance footer design and improve session state            | —                   | 15/05/2026         |
+| veyra-web-app | feature/shared     | dda9040…21e71ed   | feat(iam): implement session management improvements                         | —                   | 15/05/2026         |
+| veyra-web-app | feature/shared     | dab0fa6…dda9040   | chore: update Angular dependencies and refactor layout components            | —                   | 15/05/2026         |
+| veyra-web-app | feature/nursing    | c613846…b217f97   | feat(relatives): add CreateRelativeCommandApiEndpoint                        | —                   | 14/05/2026         |
+| veyra-web-app | develop            | 2dc80f0…3c4ab10   | Feature/activities                                                           | Pull request merge  | 13/05/2026         |
+| veyra-web-app | feature/activities | 70e3b6c…cdb05eb   | feat(activities): enhance ActivitiesStore with computed signals              | —                   | 13/05/2026         |
+| veyra-web-app | feature/activities | 842e939…70e3b6c   | feat(activities): implement translation for activity list and detail         | —                   | 13/05/2026         |
+| veyra-web-app | feature/activities | 2dc80f0…842e939   | feat(activities): update environment configuration for activities API         | —                   | 13/05/2026         |
+| veyra-web-app | feature/activities | 2dc80f0           | Merge pull request #1 from MetaSoft-IOT-2610/feature/shared                  | —                   | 09/05/2026         |
+| veyra-web-app | feature/analytics  | 2dc80f0           | Merge pull request #1 from MetaSoft-IOT-2610/feature/shared                  | —                   | 08/05/2026         |
+| veyra-web-app | feature/analytics  | —                 | Deleted branch                                                               | —                   | 08/05/2026         |
+| veyra-web-app | feature/analytics  | c613846…9998bf1   | docs(analytics): add backend specification for analytics BC                  | —                   | 07/05/2026         |
+| veyra-web-app | develop            | c613846…2dc80f0   | Merge pull request #1 from MetaSoft-IOT-2610/feature/shared                  | Pull request merge  | 02/04/2026         |
+| veyra-web-app | feature/shared     | c613846…dab0fa6   | feat(shared): update startup name in toolbar                                 | —                   | 02/04/2026         |
+| veyra-web-app | feature/docs       | c613846           | first commit                                                                 | —                   | 02/04/2026         |
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review
 
@@ -1377,10 +1402,11 @@ Landing page:
 
 Se desarrolló la landing page de VEYRA, la cual se publicó utilizando GitHub Pages para garantizar su accesibilidad inmediata.
 
+Hero section:
 
 ![Landing Page](/assets/img/chapter-VI/execution-evidence-landing.png)
 
-<br>
+Benefits section:
 
 ![Landing Page](/assets/img/chapter-VI/execution-evidence-landing-2.png)
 
@@ -1388,11 +1414,19 @@ Aplicación web:
 
 Se desarolló la aplicación web de Veyra, implementando las funcionalidades básicas para la gestión de residentes, personal asistencial y dispositivos IoT, este último simulado con data ficticia. Se estableció una base sólida para la escalabilidad y mantenimiento del sistema en futuras iteraciones. Fue desplegado usando Cloudflare Pages, lo que permitió su acceso inmediato. 
 
+Vista del dashboard de la aplicación web:
+
 ![web application execution](/assets/img/chapter-VI/execution-evidence-web-application.png)
+
+Vista de los IOT devices (simulacion):
 
 ![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-2.png)
 
+vista de los residentes:
+
 ![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-3.png)
+
+Vista de los cuartos:
 
 ![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-4.png)
 
