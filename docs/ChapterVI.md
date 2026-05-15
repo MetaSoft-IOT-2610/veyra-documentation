@@ -1454,6 +1454,16 @@ El despliegue fue exitoso y la landing page está disponible para los usuarios.
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
 
+Durante el desarrollo de este sprint, se usó github insights para analizar la colaboración del equipo. Se observó una alta participación de todos los miembros en las tareas asignadas, con un enfoque colaborativo en la revisión de código y la integración de funcionalidades. La comunicación efectiva a través de pull requests y comentarios contribuyó a mantener un flujo de trabajo ágil y a resolver rápidamente cualquier impedimento que surgió durante el desarrollo.
+
+Landing Page: Para esta entrega, las modificaciones de la landing page fueron pocas ya que se enfocó en el desarrollo de la aplicación web, sin embargo, se realizaron algunos ajustes menores en el contenido y diseño para mejorar la claridad y atractivo de la página. La colaboración en este aspecto fue fluida, con revisiones rápidas y feedback constructivo entre los miembros del equipo.
+
+![GitHub Insights](/assets/img/chapter-VI/insights-landing.png)
+
+
+Aplicación web:
+
+
 ## 6.3. Validation Interviews
 
 ### 6.3.1. Diseño de Entrevistas
