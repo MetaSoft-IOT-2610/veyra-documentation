@@ -22,7 +22,7 @@ Registro histórico de todas las exposiciones y videos promocionales presentados
 | Entrega / Hito              | Plataforma        | URL                                                |
 |-----------------------------|-------------------|----------------------------------------------------|
 | **Video de Exposición AV1** | Microsoft Stream  | [https://bit.ly/42zMn04 ](https://bit.ly/42zMn04 ) |
-| **Video de Exposición TB1** | Microsoft Stream  |                                                    | 
+| **Video de Exposición TB1** | Microsoft Stream  | [https://bit.ly/4nvJhnt](https://bit.ly/4nvJhnt)   | 
 
 #### Anexo C: Videos del Proyecto
 
