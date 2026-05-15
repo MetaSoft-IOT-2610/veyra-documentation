@@ -1143,7 +1143,7 @@ Screenshot from the demonstration video:
 
 Video demonstration link:
 
-[Insertar aquí el enlace de Microsoft Stream/Clipchamp del prototipo Desktop Web Browser]
+[MetaSoft - Applications Prototyping - Desktop Web Browser](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310670_upc_edu_pe/IQCi4_NrtS_8ToNfohMpLbiwAegOmeIt3cHkBVTHOTf8hTQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=INwnxq)
 
 ### 5.5.2. Mobile Web Browser Prototype
 
@@ -1157,7 +1157,7 @@ Screenshot from the demonstration video:
 
 Video demonstration link:
 
-[Insertar aquí el enlace de Microsoft Stream/Clipchamp del prototipo Mobile Web Browser]
+[MetaSoft - Applications Prototyping - Mobile Web Browser](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310670_upc_edu_pe/IQDxT8-0MdfLRoPnfEZIupldAQ5gBs4Q1WFt0Ue7YQdDbB8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ecyQz8)
 ## 5.6. IoT Device Design
 
 # Diseño IoT — Sistema de Monitoreo de Signos Vitales
