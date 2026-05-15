@@ -98,7 +98,6 @@ Este enfoque comunicacional busca generar confianza y lealtad, asegurando a las 
 
 ### 5.1.2. Web, Mobile and IoT Style Guidelines
 
-### General Style Guidelines
 
 ### Web  Style Guidelines
 
@@ -927,7 +926,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 * **User Persona:** Administrador del Sistema.
 * **User Goal:** Registrar el perfil de un familiar, ingresar sus datos de contacto y vincularlo obligatoriamente a un residente específico para generarle su acceso seguro al portal de monitoreo.
 
-**🟢 Happy Path (Ruta Esperada)**
+**Happy Path (Ruta Esperada)**
 1. El usuario ingresa al módulo **Relatives** y hace clic en el botón primario `+ Add New`.
 2. El sistema muestra el formulario *Register Relative*. El usuario ingresa el nombre y correo personal válido.
 3. En la sección *Resident Association*, selecciona exitosamente al residente correspondiente de la lista desplegable.
@@ -937,7 +936,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 ![Happy Path - Register Relative](../assets/img/chapter-V/uf-relative-happy-path.png)
 
 
-**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+**Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
 
 **Escenario A: Omisión de Vinculación de Residente (Error de Lógica de Negocio)**
 * **Condición:** El usuario llena los datos personales, pero olvida seleccionar a un residente en la sección *Resident Association*.
@@ -950,7 +949,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 * **User Persona:** Administrador del Sistema.
 * **User Goal:** Registrar una nueva habitación en el sistema, definiendo su número identificador, tipo y capacidad máxima para mantener actualizado el inventario de espacios disponibles en la casa de reposo.
 
-**🟢 Happy Path (Ruta Esperada)**
+**Happy Path (Ruta Esperada)**
 1. El usuario ingresa al módulo **Rooms** y visualiza la lista actual (o el estado vacío *No Rooms Registered*). Hace clic en el botón primario `+ Add New`.
 2. El sistema redirige a la vista del formulario *New Room* (Room Information).
 3. El usuario ingresa el identificador de la habitación (ej. R-002) y la capacidad máxima de residentes.
@@ -960,7 +959,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 ![Happy Path - Add New Room](../assets/img/chapter-V/uf-rooms-happy-path.png)
 
-**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+**Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
 
 **Escenario A: Número de Habitación Duplicado (Conflicto de Datos)**
 * **Condición:** El usuario ingresa un identificador de habitación (Room Number) que ya existe físicamente en los registros del sistema (ej. intenta crear la "R-001" cuando ya está ocupada).
@@ -973,7 +972,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 * **User Persona:** Administrador del Sistema.
 * **User Goal:** Registrar la información personal, de contacto y de emergencia de un nuevo empleado (enfermero, médico o staff de apoyo) para integrarlo a la operatividad de la casa de reposo.
 
-**🟢 Happy Path (Ruta Esperada)**
+**Happy Path (Ruta Esperada)**
 1. El usuario ingresa al módulo **Staff** y visualiza la vista principal (vacía en el primer uso). Hace clic en el botón primario `+ Add New`.
 2. El sistema muestra el formulario de registro detallado, dividido en secciones lógicas: *Personal Data*, *Identification Data*, *Contact Data* y *Location Data*.
 3. El usuario ingresa la información del empleado y hace *scroll* hacia la sección inferior de *Emergency Contacts*.
@@ -983,7 +982,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 ![Happy Path - Add New Staff](../assets/img/chapter-V/uf-staff-happy-path.png)
 
-**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+**Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
 
 **Escenario A: Formato Inválido en Contactos de Emergencia**
 * **Condición:** En la sección *Emergency Contacts*, el administrador ingresa texto alfabético en el campo destinado para el número de teléfono del familiar del empleado.
@@ -996,7 +995,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 * **User Persona:** Administrador del Sistema.
 * **User Goal:** Administrar el inventario de dispositivos (pulseras de signos vitales, geolocalizadores) registrando nuevo hardware o gestionando los existentes para su posterior vinculación a los residentes.
 
-**🟢 Happy Path (Ruta Esperada)**
+**Happy Path (Ruta Esperada)**
 1. El usuario ingresa al módulo **Devices** y visualiza la tabla principal *List of Devices* con el inventario actual y sus estados (*Active, Inactive, Low Battery*).
 2. Para añadir nuevo hardware, hace clic en el botón primario `+ Register Device`.
 3. El sistema despliega un modal superpuesto (*overlay*) solicitando la información básica del equipo.
@@ -1006,7 +1005,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 ![Happy Path - Devices Inventory](../assets/img/chapter-V/uf-devices-happy-path.png)
 
-**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+**Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
 
 **Escenario A: Intento de registro de un Device ID duplicado**
 * **Condición:** Al registrar un nuevo dispositivo, el usuario ingresa un código (ej. `BAND-001`) que ya está en uso dentro de la base de datos de Veyra.
@@ -1023,7 +1022,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 * **User Persona:** Administrador / Personal Médico o de Enfermería.
 * **User Goal:** Agendar, visualizar en detalle y actualizar actividades (recreativas, médicas, físicas o sociales) para mantener una rutina estructurada y activa para los residentes de la casa de reposo.
 
-**🟢 Happy Path (Ruta Esperada: Crear y Editar)**
+** Happy Path (Ruta Esperada: Crear y Editar)**
 1. El usuario ingresa al módulo **Activities** y visualiza la lista principal con los eventos programados y sus estados (ej. *Programada*, *En curso*).
 2. Para agendar un nuevo evento, hace clic en el botón `+ Add New`.
 3. El sistema despliega el modal *Add activity*. El usuario ingresa el nombre de la actividad (ej. "Morning Painting Workshop"), detalla los objetivos en la descripción, y establece la fecha y hora.
@@ -1033,7 +1032,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 ![Happy Path - Activities Management](../assets/img/chapter-V/uf-activities-happy-path.png)
 
-**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+** Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
 
 **Escenario A: Programación en Fechas Pasadas o Conflictos de Horario**
 * **Condición:** Al momento de utilizar el selector de fecha y hora (*Date / Hour*) en el modal de *Add activity* o *Update activity*, el usuario selecciona por error una fecha anterior al día de hoy.
@@ -1050,7 +1049,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 * **User Persona:** Administrador del Sistema.
 * **User Goal:** Generar credenciales de acceso a la plataforma para un empleado existente, asignándole un rol específico (ej. Enfermero, Doctor) que determinará sus permisos y restricciones dentro del sistema.
 
-**🟢 Happy Path (Ruta Esperada)**
+** Happy Path (Ruta Esperada)**
 1. El usuario ingresa al módulo **Staff** y visualiza la lista o tarjetas de los empleados registrados (ej. Juan Barrientos).
 2. Selecciona la opción para gestionar o conceder acceso al empleado correspondiente.
 3. El sistema redirige a la pantalla **Give Access to Staff Member**, mostrando un encabezado con la información contextual del empleado y su estado actual (ej. *Status: Pending Access*).
@@ -1061,7 +1060,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 ![Happy Path - Give Access to Staff](../assets/img/chapter-V/uf-staff-access-happy-path.png)
 
-**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+** Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
 
 **Escenario A: Omisión de Asignación de Rol (Error de Permisos)**
 * **Condición:** El administrador completa correctamente el correo y la contraseña temporal, pero olvida seleccionar un rol (*Select Staff Role*) en el menú desplegable, dejándolo en blanco.
@@ -1078,7 +1077,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 * **User Persona:** Médico Tratante / Enfermera Jefe.
 * **User Goal:** Establecer y actualizar los límites mínimos y máximos aceptables de los signos vitales (telemetría) para un residente específico, asegurando que las alertas generadas por los dispositivos IoT sean precisas y personalizadas a su condición clínica.
 
-**🟢 Happy Path (Ruta Esperada)**
+**Happy Path (Ruta Esperada)**
 1. El usuario ingresa al módulo **Resident Record** y visualiza el directorio de pacientes (*Patient Directory*) en el panel izquierdo, ordenados por su estado de salud actual (Crítico, En Obs., Estable).
 2. Hace clic en la tarjeta de un residente específico (ej. María Ríos).
 3. El panel derecho, que inicialmente estaba vacío, se puebla con el expediente digital del paciente seleccionado.
@@ -1089,7 +1088,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 ![Happy Path - Update Clinical Parameters](../assets/img/chapter-V/uf-clinical-parameters-happy-path.png)
 
-**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+**Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
 
 **Escenario A: Incongruencia Lógica en los Umbrales (Mínimo > Máximo)**
 * **Condición:** El médico, por un error de tipeo, ingresa un valor mínimo que es superior al valor máximo (ej. Heart Rate: Mínimo 110, Máximo 90).
@@ -1106,7 +1105,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 * **User Persona:** Familiar / Contacto de Emergencia.
 * **User Goal:** Visualizar en tiempo real el estado de salud, signos vitales y ubicación GPS de su familiar alojado en la casa de reposo, utilizando la aplicación móvil para mantener la tranquilidad y el control a distancia.
 
-**🟢 Happy Path (Ruta Esperada)**
+** Happy Path (Ruta Esperada)**
 1. El usuario (familiar) abre la aplicación móvil de Veyra en su smartphone e inicia sesión.
 2. Toca la pestaña **Health** (ícono del maletín médico) en la barra de navegación inferior.
 3. El sistema carga el panel de resumen del residente asignado (ej. *Eleanor Vance*). El indicador principal muestra un estado positivo con un badge turquesa: **Status: Stable**.
@@ -1115,7 +1114,7 @@ En esta sección presentamos los User Flows derivados de nuestros Wireflows, uti
 
 ![Happy Path - Relative Mobile Monitoring](../assets/img/chapter-V/uf-mobile-relative-happy-path.png)
 
-**🔴 Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
+** Unhappy Paths (Rutas Alternativas / Manejo de Errores)**
 
 **Escenario A: Pérdida de Conexión del Dispositivo IoT (Datos Offline)**
 * **Condición:** La pulsera inteligente del residente se queda sin batería o pierde la conexión a la red WiFi/Bluetooth de la casa de reposo, interrumpiendo la transmisión de telemetría.
@@ -1671,3 +1670,25 @@ El tiempo total cumple con el requisito máximo de 30 segundos establecido anter
 * **Ergonomía:** Bordes redondeados y grosor mínimo (10mm) para ocultarse fácilmente en costuras o bolsillos internos.
 * **Carga:** Interfaz de carga magnética en la base para asegurar protección IP67 (resistente a salpicaduras y polvo).
 * **Uso:** Se integra mediante clips de silicona o bolsillos ocultos en la vestimenta, cumpliendo con el requisito de ser un dispositivo "invisible" para el residente pero rastreable para el administrador.
+
+![veyra-prototype-device-two](../assets/img/chapter-V/device-2.png)
+
+
+
+Para el prototipo físico del dispositivo de localización GPS, se utilizó Cirkit Designer como herramienta de diseño de circuitos. El objetivo fue representar de forma fiel los componentes disponibles para el prototipado y documentar las conexiones entre ellos.
+
+El circuito gira en torno al **ESP32 WROOM-32**, que cumple el rol de microcontrolador principal. Se eligió este módulo porque integra Wi-Fi y Bluetooth de forma nativa, dispone de múltiples buses UART e I2C, y su regulador interno convierte los 3.7V de la batería a 3.3V para alimentar los sensores sin necesidad de componentes adicionales.
+
+Para la localización se incorporó el módulo **GY-GPS6MU2 (u-blox NEO-6M)**. Se comunica con el microcontrolador mediante UART2 a 9600 bps, con las líneas cruzadas: TX del GPS conectado a GPIO16 (RX2 del ESP32) y RX del GPS conectado a GPIO17 (TX2 del ESP32). Procesa las sentencias NMEA GPRMC y GPGGA para entregar coordenadas con una precisión aproximada de 2.5 metros en exteriores.
+
+Para la detección de movimiento se incluyó el **MPU-6050**, un acelerómetro de 6 ejes que se comunica por I2C con dirección 0x68. Se conecta al bus SDA/SCL del ESP32 y permite identificar cuando el residente está en reposo para reducir la frecuencia de envío de datos y extender la autonomía de la batería.
+
+La alimentación proviene de una batería **LP401730 de 3.7V y 150mAh**. Es importante destacar que esta capacidad solo permite entre 3 y 6 horas de operación continua en el prototipo; para el producto final se requiere la batería LiPo 603450 de 1100mAh especificada en el diseño, que es la que garantiza la autonomía de 3 a 5 días.
+
+#### Tabla de conexiones
+
+| Componente   | Pin componente        | Pin ESP32                               |
+|--------------|-----------------------|-----------------------------------------|
+| GY-GPS6MU2   | VCC / GND / TX / RX   | 3V3 / GND / GPIO16 (RX2) / GPIO17 (TX2) |
+| MPU-6050     | VCC / GND / SDA / SCL | 3V3 / GND / SDA / SCL                   |
+| Batería LiPo | BAT+ / BAT-           | VIN / GND                               |
