@@ -1394,7 +1394,19 @@ Aplicación web:
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review
 
-Para este sprint no se desarrollaron pruebas unitarias ni de integración, ya que el enfoque principal estuvo en el desarrollo de la landing page y la aplicación web.
+Para este sprint no se desarrollaron pruebas unitarias ni de integración, ya que el enfoque principal estuvo en el desarrollo de la landing page y la aplicación web. Sin embargo se desarrollaron tests con seleniumIDE para validar el correcto funcionamiento de la aplicación web.
+
+Test de creación de usuario:
+
+![selenium test](/assets/img/chapter-VI/testing-create-user-test.png)
+
+Testing de creación de cuartos:
+
+![selenium test](/assets/img/chapter-VI/testing-create-room-test.png)
+
+Testing de creación de residentes:
+
+![selenium test](/assets/img/chapter-VI/testing-add-resident-test.png)
 
 #### 6.2.1.6. Execution Evidence for Sprint Review
 
@@ -1451,6 +1463,37 @@ El despliegue fue exitoso y la landing page está disponible para los usuarios.
 
 ![Landing Page Deployment](/assets/img/chapter-VI/deployment-evidence-landing-page-2.png)
 
+Aplicación web:
+
+Para desplegar la aplicación web se usó cloudflare pages, se creó un repositorio específico para el frontend de la aplicación, donde se desarrolló la interfaz y las funcionalidades básicas. Una vez finalizado el desarrollo, se configuró Cloudflare Pages para conectar el repositorio y desplegar automáticamente la aplicación cada vez que se realizaba un push a la rama principal. Esto permitió un proceso de despliegue continuo y facilitó el acceso inmediato a la aplicación web a través de una URL pública.
+
+Iniciamos sesión en cloudflare pages:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment1.jpeg)
+
+Importamos el repositorio de github:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment2.jpeg)
+
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment3.jpeg)
+
+Elegimos la rama a desplegar:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment4.jpeg)
+
+Se configuró el proceso de despliegue y se inició el despliegue de la aplicación web:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment5.jpeg)
+
+Registro del despliegue exitoso de la aplicación web:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment6.jpeg)
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment7.jpeg)
+
+
+
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
 
@@ -1462,6 +1505,7 @@ Landing Page: Para esta entrega, las modificaciones de la landing page fueron po
 
 
 Aplicación web:
+
 
 
 ## 6.3. Validation Interviews
