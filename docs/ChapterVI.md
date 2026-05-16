@@ -1452,9 +1452,9 @@ Para este sprint no se documentaron servicios específicos, ya que el enfoque pr
 Para este sprint se realizó el despliegue de dos artefactos: Landing page y frontend. La landing page se desplegó utilizando GitHub Pages, lo que permitió su acceso inmediato y facilitó la recopilación de feedback de los usuarios. El frontend se desplegó usando cloudflare pages.
 
 
-Landing page:
+Landing page: https://veyra-landing-page.pages.dev
 
-Para deplegar con github pages, se creó un repositorio específico para la landing page, donde se desarrolló el contenido y diseño de la página. Una vez finalizado el desarrollo, se configuró GitHub Pages para publicar la página directamente desde el repositorio, lo que permitió su acceso inmediato a través de una URL pública.
+Para deplegar con cloudflare pages, se creó un repositorio específico para la landing page, donde se desarrolló el contenido y diseño de la página. Una vez finalizado el desarrollo, se configuró Cloudflare Pages para conectar el repositorio y desplegar automáticamente la landing page cada vez que se realizaba un push a la rama principal. Esto permitió un proceso de despliegue continuo y facilitó el acceso inmediato a la landing page a través de una URL pública.
 
 ![Landing Page Deployment](/assets/img/chapter-VI/deployment-evidence-landing-page.png)
 
@@ -1463,7 +1463,7 @@ El despliegue fue exitoso y la landing page está disponible para los usuarios.
 
 ![Landing Page Deployment](/assets/img/chapter-VI/deployment-evidence-landing-page-2.png)
 
-Aplicación web:
+Aplicación web: https://app.veyra.metasoft.pe/home
 
 Para desplegar la aplicación web se usó cloudflare pages, se creó un repositorio específico para el frontend de la aplicación, donde se desarrolló la interfaz y las funcionalidades básicas. Una vez finalizado el desarrollo, se configuró Cloudflare Pages para conectar el repositorio y desplegar automáticamente la aplicación cada vez que se realizaba un push a la rama principal. Esto permitió un proceso de despliegue continuo y facilitó el acceso inmediato a la aplicación web a través de una URL pública.
 
@@ -1505,6 +1505,8 @@ Landing Page: Para esta entrega, las modificaciones de la landing page fueron po
 
 
 Aplicación web:
+
+![GitHub Insights](/assets/img/chapter-VI/insights-webapp.png)
 
 
 
