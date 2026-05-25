@@ -1,0 +1,72 @@
+input-files:
+  - README.md
+  - docs/chapter-I.md
+  - docs/chapter-II.md
+  - docs/chapter-III.md
+  - docs/chapter-IV.md
+  - docs/ChapterV.md
+  - docs/ChapterVI.md
+  - docs/conclusions.md
+  - docs/Bibliography.md
+  - docs/anexos.md
+
+output-file: upc-pre-202610-1asi0572-17757-metasoft-report-av2.pdf
+
+from: markdown+raw_html+pipe_tables+gfm_auto_identifiers+smart
+
+citeproc: true
+bibliography:
+  - docs/referencias.bib
+csl:  pandoc/csl/apa-7.csl
+
+template: "pandoc/templates/eisvogel.tex"
+
+toc: false
+number-sections: false
+
+resource-path:
+  - .
+  - assets
+  - assets/img
+  - assets/img/introduction
+  - assets/img/chapter-I
+  - assets/img/chapter-II
+  - assets/img/chapter-III
+  - assets/img/chapter-IV
+  - assets/img/chapter-V
+  - assets/img/chapter-V/veyra-wireframes
+  - assets/img/chapter-V/veyra-wireframes/web-application
+  - assets/img/chapter-V/veyra-wireframes/mobile-application
+  - assets/img/chapter-VI
+
+filters:
+  - type: lua
+    path: pandoc/filters/fix-paths.lua
+
+include-in-header:
+  - pandoc/header.tex
+
+include-before-body:
+  - pandoc/cover.tex
+
+variables:
+  titlepage: false
+  geometry: "margin=2.5cm"
+  colorlinks: true
+  linkcolor: "NavyBlue"
+  toccolor: "NavyBlue"
+  urlcolor: "NavyBlue"
+  table-use-row-colors: true
+  figureTitle: " "
+  tableTitle: " "
+  listings-disable-line-numbers: true
+  mainfont: "Arial"
+  monofont: "Courier New"
+
+metadata:
+  title: "Veyra"
+  subtitle: "Informe de Trabajo Final"
+  author: "Metasoft"
+  date: "Mayo, 2026"
+  lang: "es"
+  nocite: "@*"
