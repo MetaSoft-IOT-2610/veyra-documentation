@@ -1510,4 +1510,266 @@ Aplicación web:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+### 6.2.1. Sprint 2
+
+El primer sprint se centró en sentar las bases tecnológicas de VEYRA, logrando el desarrollo de la interfaz web y la landing page. 
+
+#### 6.2.1.1. Sprint Planning
+
+Se realizó el sprint planning con el objetivo de definir las tareas y objetivos para el primer sprint, enfocándonos en el desarrollo de la interfaz web y la landing page. Durante la planificación, se asignaron responsabilidades a cada miembro del equipo y se estableció la meta del sprint.
+
+| Sprint #                        | Sprint 1                                                                                                                                                                                                                                                                                                     |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Sprint Planning Background      |                                                                                                                                                                                                                                                                                                              |
+| Date                            | 26/05/2026                                                                                                                                                                                                                                                                                                   |
+| Time                            | 01:00 PM                                                                                                                                                                                                                                                                                                     |
+| Location                        | Universidad                                                                                                                                                                                                                                                                               |
+| Prepared By                     | Janover Saldaña                                                                                                                                                                                                                                                                                                |
+| Attendees (to planning meeting) | Janover Saldaña / Dayro Rios / Vicente Quijandria / Renato Calvo / Renzo Llerena / Renzo Villafuerte / Oscar Armas                                                                                                                                                                                                                      |
+| Sprint 1 Review Summary         | We have achieved the landing page and web application deployments, delivering the core views to the customers, using fake API. We consider that we achieved the objective, deploying both artifacts |
+| Sprint 1 Retrospective Summary  | We consider that we need to fix some views and improve the development environment with gitflow.                                                                                                          |
+| Sprint Goal & User Stories      |         |
+| Sprint 2 Goal                   | Our focus is on delivering the core functionalities of the web application, the creation of the two IoT devices, and the development of the embedded and edge applications. <br> We believe this will create a good impression on clients and encourage active use of the product. <br> This will be confirmed when clients actively interact with the new features and devices that will be offered to them.
+
+| Sprint 2 Velocity               | 23 Velocity                                                                                                                                                                                                                                                                                                  |
+| Sum of Story Points             |   Story Points.                                                                                                                                                                                                                                                                                             |
+
+#### 6.2.1.2. Aspect Leaders and Collaborators
+
+Se designaron líderes para cada uno de los aspectos clave del proyecto, con el objetivo de garantizar una gestión eficiente y una clara asignación de responsabilidades. Cada líder se encargará de coordinar las actividades relacionadas con su aspecto, mientras que los colaboradores apoyarán en la ejecución de las tareas asignadas.
+ 
+| Team Member (Last Name, First Name) | Aspect: Nursing | Aspect: Activities |Aspect: Health | Aspect: Tracking | Aspect: Subscriptions and payments | Aspect: Communications |
+|-------------------------------------|---------|---------|-------|----------|-----------|---------|
+| Calvo Yalan, Renato Guillermo       | L       | C       | C     |  C       | C        | C       |
+| Armas Sánchez, Oscar Javier         | C       | L       | C     |  C       | C        | C       |
+| Rios Piñan, Dayro Richard           | C       | C       | C     |  C       | C        | C       |
+| Llerena Delgado, Renzo Miguel       | C       | C       | C     |  C       | L        | C       |
+| 	Quijandria Araneda, Vicente       | C       | C       | C     |  L       | C        | C       |
+| 	Saldaña Vela, Janover Gonzalo     | C       | C       | C     |  C       | C        | L       |
+| 	Villafuerte Tapia, Renzo Alonso   | C      | C       | L     |  C       | C        | C       |
+
+
+#### 6.2.1.3. Sprint Backlog
+
+Se repartieron las tareas del sprint entre los miembros del equipo, asignando responsabilidades claras para cada user story y work-item. El backlog se organizó de manera que se priorizaron las tareas críticas para el desarrollo de la landing page y la implementación de las funcionalidades básicas de la aplicación web. 
+
+A continuación se presenta el backlog detallado para el Sprint 1:
+
+| Sprint # | Sprint 2 | | | | | | |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **User Story** | | **Work-Item / Task** | | | | | |
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
+
+
+#### 6.2.1.4. Development Evidence for Sprint Review
+
+Landing page:
+
+
+| Repository          | Branch               | Commit Id       | Commit Message                                                       | Commit Message Body | Commited on (Date) |
+|--------------------|----------------------|-----------------|-----------------------------------------------------------------------|---------------------|--------------------|
+| veyra-landing-page | main                 | 55e5230…676884e | feat: center align text in card content for improved layout          | —                   | 09/04/2026         |
+| veyra-landing-page | main                 | 8084648…55e5230 | feat: refine member5 description                                     | Pull request merge  | 08/04/2026         |
+| veyra-landing-page | main                 | 8084648…55e5230 | feat: refine member5 description for clarity and engagement          | Pull request merge  | 08/04/2026         |
+| veyra-landing-page | develop              | fec7cdf…07898b9 | feat: refine member5 description for improved clarity and engagement | —                   | 08/04/2026         |
+| veyra-landing-page | feature/team-section | f0b9306…9ca0eb6 | feat(team): update member info and readme structure                  | —                   | 08/04/2026         |
+| veyra-landing-page | main                 | b6abbfe…8084648 | feat(team): update member info and readme structure                  | Pull request merge  | 08/04/2026         |
+| veyra-landing-page | develop              | b6abbfe…fec7cdf | docs: update project description and documentation structure         | —                   | 08/04/2026         |
+| veyra-landing-page | feature/team-section | 570a3a9…f0b9306 | feat: update Renzo Llerena's team member description                 | —                   | 08/04/2026         |
+| veyra-landing-page | feature/team-section | b6abbfe…570a3a9 | feat: update Renzo Llerena's team member description                 | —                   | 08/04/2026         |
+| veyra-landing-page | main                 | ead8de4…b6abbfe | feat: enhance legal drawers with bilingual support                   | —                   | 08/04/2026         |
+| veyra-landing-page | feature/team-section | 2e95442…b6abbfe | feat: enhance legal drawers with bilingual support                   | —                   | 04/04/2026         |
+| veyra-landing-page | develop              | dc534ed…b6abbfe | feat: enhance legal drawers with bilingual support                   | —                   | 04/04/2026         |
+| veyra-landing-page | feature/footer       | 3f9ca45…b6abbfe | feat: update Privacy Policy and Terms of Service                     | —                   | 04/04/2026         |
+| veyra-landing-page | feature/footer       | 992738f…3f9ca45 | feat: implement legal drawers for Terms of Service and Privacy       | —                   | 04/04/2026         |
+| veyra-landing-page | feature/footer       | 0ca565a…992738f | feat: redesign footer section with improved layout                   | —                   | 03/04/2026         |
+| veyra-landing-page | feature/footer       | dc534ed…0ca565a | feat: implement language switcher and scroll to top button           | —                   | 03/04/2026         |
+| veyra-landing-page | develop              | 2e95442…dc534ed | feat: implement language switcher and scroll to top button           | —                   | 03/04/2026         |
+| veyra-landing-page | develop              | 72b2878…2e95442 | feat: updated member3 description                                    | —                   | 03/04/2026         |
+| veyra-landing-page | feature/team-section | 72b2878…2e95442 | feat: updated member3 description                                    | —                   | 02/04/2026         |
+| veyra-landing-page | feature/team-section | 72b2878         | feat: added photos, descriptions and names of Dayro and Renzo        | —                   | 02/04/2026         |
+| veyra-landing-page | develop              | 7b237d3…72b2878 | feat: added photos, descriptions and names of Dayro and Renzo        | —                   | 01/04/2026         |
+| veyra-landing-page | develop              | ead8de4…7b237d3 | feat: added photo, name and description of Vicente                   | —                   | 01/04/2026         |
+| veyra-landing-page | develop              | ead8de4         | first commit                                                         | —                   | 01/04/2026         |
+| veyra-landing-page | main                 | ead8de4         | first commit                                                         | —                   | 01/04/2026         |
+
+Aplicación web:
+
+| Repository          | Branch             | Commit Id         | Commit Message                                                              | Commit Message Body | Commited on (Date) |
+|--------------------|--------------------|-------------------|------------------------------------------------------------------------------|---------------------|--------------------|
+| veyra-web-app | feature/nursing    | b217f97…ef92914   | feat(environment): update API base URLs and add fake API URL for development | —                   | 15/05/2026         |
+| veyra-web-app | develop            | 986abba…c7f4cc5   | feat(activities, alerts): add routing, translations, and mock server         | —                   | 15/05/2026         |
+| veyra-web-app | feature/payments   | 1e548d7…e6c03f3   | feat(payments): implement payment confirmation page with success message      | —                   | 15/05/2026         |
+| veyra-web-app | feature/health     | 986abba           | Merge remote-tracking branch 'origin/feature/shared' into develop            | —                   | 15/05/2026         |
+| veyra-web-app | feature/healt      | —                 | Deleted branch                                                               | —                   | 15/05/2026         |
+| veyra-web-app | feature/healt      | 986abba           | Merge remote-tracking branch 'origin/feature/shared' into develop            | —                   | 15/05/2026         |
+| veyra-web-app | develop            | 3c4ab10…986abba   | Merge remote-tracking branch 'origin/feature/shared' into develop            | —                   | 15/05/2026         |
+| veyra-web-app | feature/shared     | 23b0efd…08c2c94   | feat(iam): implement default user session for development                    | —                   | 15/05/2026         |
+| veyra-web-app | feature/payments   | c613846…1e548d7   | feat(payments): enhance checkout layout and add back button                  | —                   | 15/05/2026         |
+| veyra-web-app | feature/shared     | 21e71ed…23b0efd   | refactor(layout): enhance footer design and improve session state            | —                   | 15/05/2026         |
+| veyra-web-app | feature/shared     | dda9040…21e71ed   | feat(iam): implement session management improvements                         | —                   | 15/05/2026         |
+| veyra-web-app | feature/shared     | dab0fa6…dda9040   | chore: update Angular dependencies and refactor layout components            | —                   | 15/05/2026         |
+| veyra-web-app | feature/nursing    | c613846…b217f97   | feat(relatives): add CreateRelativeCommandApiEndpoint                        | —                   | 14/05/2026         |
+| veyra-web-app | develop            | 2dc80f0…3c4ab10   | Feature/activities                                                           | Pull request merge  | 13/05/2026         |
+| veyra-web-app | feature/activities | 70e3b6c…cdb05eb   | feat(activities): enhance ActivitiesStore with computed signals              | —                   | 13/05/2026         |
+| veyra-web-app | feature/activities | 842e939…70e3b6c   | feat(activities): implement translation for activity list and detail         | —                   | 13/05/2026         |
+| veyra-web-app | feature/activities | 2dc80f0…842e939   | feat(activities): update environment configuration for activities API         | —                   | 13/05/2026         |
+| veyra-web-app | feature/activities | 2dc80f0           | Merge pull request #1 from MetaSoft-IOT-2610/feature/shared                  | —                   | 09/05/2026         |
+| veyra-web-app | feature/analytics  | 2dc80f0           | Merge pull request #1 from MetaSoft-IOT-2610/feature/shared                  | —                   | 08/05/2026         |
+| veyra-web-app | feature/analytics  | —                 | Deleted branch                                                               | —                   | 08/05/2026         |
+| veyra-web-app | feature/analytics  | c613846…9998bf1   | docs(analytics): add backend specification for analytics BC                  | —                   | 07/05/2026         |
+| veyra-web-app | develop            | c613846…2dc80f0   | Merge pull request #1 from MetaSoft-IOT-2610/feature/shared                  | Pull request merge  | 02/04/2026         |
+| veyra-web-app | feature/shared     | c613846…dab0fa6   | feat(shared): update startup name in toolbar                                 | —                   | 02/04/2026         |
+| veyra-web-app | feature/docs       | c613846           | first commit                                                                 | —                   | 02/04/2026         |
+
+
+Edge app:
+
+| Repository          | Branch             | Commit Id         | Commit Message                                                              | Commit Message Body | Commited on (Date) |
+|--------------------|--------------------|-------------------|------------------------------------------------------------------------------|---------------------|--------------------|
+|                    |                    |                   |                                                                              |                     |                    |
+
+
+Embedded app: 
+
+| Repository          | Branch             | Commit Id         | Commit Message                                                              | Commit Message Body | Commited on (Date) |
+|--------------------|--------------------|-------------------|------------------------------------------------------------------------------|---------------------|--------------------|
+|                    |                    |                   |                                                                              |                     |                    |
+
+
+Mobile app: 
+
+| Repository          | Branch             | Commit Id         | Commit Message                                                              | Commit Message Body | Commited on (Date) |
+|--------------------|--------------------|-------------------|------------------------------------------------------------------------------|---------------------|--------------------|
+|                    |                    |                   |                                                                              |                     |                    |
+
+#### 6.2.1.5. Testing Suite Evidence for Sprint Review
+
+
+
+#### 6.2.1.6. Execution Evidence for Sprint Review
+
+Landing page:
+
+Se desarrolló la landing page de VEYRA, la cual se publicó utilizando GitHub Pages para garantizar su accesibilidad inmediata.
+
+Hero section:
+
+![Landing Page](/assets/img/chapter-VI/execution-evidence-landing.png)
+
+Benefits section:
+
+![Landing Page](/assets/img/chapter-VI/execution-evidence-landing-2.png)
+
+Aplicación web:
+
+Se desarolló la aplicación web de Veyra, implementando las funcionalidades básicas para la gestión de residentes, personal asistencial y dispositivos IoT, este último simulado con data ficticia. Se estableció una base sólida para la escalabilidad y mantenimiento del sistema en futuras iteraciones. Fue desplegado usando Cloudflare Pages, lo que permitió su acceso inmediato. 
+
+Vista del dashboard de la aplicación web:
+
+![web application execution](/assets/img/chapter-VI/execution-evidence-web-application.png)
+
+Vista de los IOT devices (simulacion):
+
+![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-2.png)
+
+vista de los residentes:
+
+![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-3.png)
+
+Vista de los cuartos:
+
+![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-4.png)
+
+
+#### 6.2.1.7. Services Documentation Evidence for Sprint Review
+
+
+#### 6.2.1.8. Software Deployment Evidence for Sprint Review
+
+Para este sprint se realizó el despliegue de dos artefactos: Landing page y frontend. La landing page se desplegó utilizando GitHub Pages, lo que permitió su acceso inmediato y facilitó la recopilación de feedback de los usuarios. El frontend se desplegó usando cloudflare pages.
+
+
+Landing page: https://veyra-landing-page.pages.dev
+
+Para deplegar con cloudflare pages, se creó un repositorio específico para la landing page, donde se desarrolló el contenido y diseño de la página. Una vez finalizado el desarrollo, se configuró Cloudflare Pages para conectar el repositorio y desplegar automáticamente la landing page cada vez que se realizaba un push a la rama principal. Esto permitió un proceso de despliegue continuo y facilitó el acceso inmediato a la landing page a través de una URL pública.
+
+![Landing Page Deployment](/assets/img/chapter-VI/deployment-evidence-landing-page.png)
+
+
+El despliegue fue exitoso y la landing page está disponible para los usuarios.
+
+![Landing Page Deployment](/assets/img/chapter-VI/deployment-evidence-landing-page-2.png)
+
+Aplicación web: https://app.veyra.metasoft.pe/home
+
+Para desplegar la aplicación web se usó cloudflare pages, se creó un repositorio específico para el frontend de la aplicación, donde se desarrolló la interfaz y las funcionalidades básicas. Una vez finalizado el desarrollo, se configuró Cloudflare Pages para conectar el repositorio y desplegar automáticamente la aplicación cada vez que se realizaba un push a la rama principal. Esto permitió un proceso de despliegue continuo y facilitó el acceso inmediato a la aplicación web a través de una URL pública.
+
+Iniciamos sesión en cloudflare pages:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment1.jpeg)
+
+Importamos el repositorio de github:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment2.jpeg)
+
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment3.jpeg)
+
+Elegimos la rama a desplegar:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment4.jpeg)
+
+Se configuró el proceso de despliegue y se inició el despliegue de la aplicación web:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment5.jpeg)
+
+Registro del despliegue exitoso de la aplicación web:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment6.jpeg)
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment7.jpeg)
+
+
+Backend: 
+
+
+Aplicación móvil:
+
+
+Edge app:
+
+
+Embedded app:
+
+
+
+#### 6.2.1.9. Team Collaboration Insights during Sprint
+
+Durante el desarrollo de este sprint, se usó github insights para analizar la colaboración del equipo. Se observó una alta participación de todos los miembros en las tareas asignadas, con un enfoque colaborativo en la revisión de código y la integración de funcionalidades. La comunicación efectiva a través de pull requests y comentarios contribuyó a mantener un flujo de trabajo ágil y a resolver rápidamente cualquier impedimento que surgió durante el desarrollo.
+
+Landing Page: Para esta entrega, las modificaciones de la landing page fueron pocas ya que se enfocó en el desarrollo de la aplicación web, sin embargo, se realizaron algunos ajustes menores en el contenido y diseño para mejorar la claridad y atractivo de la página. La colaboración en este aspecto fue fluida, con revisiones rápidas y feedback constructivo entre los miembros del equipo.
+
+
+
+Aplicación web:
+
+
+Backend:
+
+
+Aplicación móvil:
+
+
 ## 6.3. Video About-the-Product
