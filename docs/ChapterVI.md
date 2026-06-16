@@ -1509,11 +1509,11 @@ Aplicación web:
 ![GitHub Insights](/assets/img/chapter-VI/insights-webapp.png)
 
 
-### 6.2.1. Sprint 2
+### 6.2.2. Sprint 2
 
 El primer sprint se centró en sentar las bases tecnológicas de VEYRA, logrando el desarrollo de la interfaz web y la landing page. 
-
-#### 6.2.1.1. Sprint Planning
+  
+#### 6.2.2.1. Sprint Planning
 
 Se realizó el sprint planning con el objetivo de definir las tareas y objetivos para el primer sprint, enfocándonos en el desarrollo de la interfaz web y la landing page. Durante la planificación, se asignaron responsabilidades a cada miembro del equipo y se estableció la meta del sprint.
 
@@ -1532,7 +1532,7 @@ Se realizó el sprint planning con el objetivo de definir las tareas y objetivos
 | Sprint 2 Velocity               | 23 Velocity                                                                                                  |
 | Sum of Story Points             |   Story Points.                                                                                                                                                                                                                                                                                             |
 
-#### 6.2.1.2. Aspect Leaders and Collaborators
+#### 6.2.2.2. Aspect Leaders and Collaborators
 
 Se designaron líderes para cada uno de los aspectos clave del proyecto, con el objetivo de garantizar una gestión eficiente y una clara asignación de responsabilidades. Cada líder se encargará de coordinar las actividades relacionadas con su aspecto, mientras que los colaboradores apoyarán en la ejecución de las tareas asignadas.
  
@@ -1547,19 +1547,83 @@ Se designaron líderes para cada uno de los aspectos clave del proyecto, con el 
 | 	Villafuerte Tapia, Renzo Alonso   | C      | C       | L     |  C       | C        | C       |
 
 
-#### 6.2.1.3. Sprint Backlog
+#### 6.2.2.3. Sprint Backlog
 
-Se repartieron las tareas del sprint entre los miembros del equipo, asignando responsabilidades claras para cada user story y work-item. El backlog se organizó de manera que se priorizaron las tareas críticas para el desarrollo de la landing page y la implementación de las funcionalidades básicas de la aplicación web. 
+Se repartieron las tareas del sprint entre los miembros del equipo, asignando responsabilidades claras para cada user story y work-item. El backlog se organizó de manera que se priorizaron las tareas críticas para el desarrollo de la landing page y la implementación de las funcionalidades básicas de la aplicación web.
 
-A continuación se presenta el backlog detallado para el Sprint 1:
+| Id | Title | Id (Task) | Title (Task) | Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---|---|---|
+| TS005 | Control de acceso basado en roles (RBAC) | 1 | Matriz de permisos | Definición de la estructura de roles y permisos en la base de datos. | 4 | Calvo Yálan, Renato Guillermo | In-Process |
+| TS005 | Control de acceso basado en roles (RBAC) | 2 | Middleware de autorización | Implementación de interceptores para validar el rol en cada endpoint. | 6 | Armas Sánchez, Oscar Javier | To-do |
+| TS006 | Gestión de sesiones y tokens | 1 | Flujo JWT Core | Configuración de la generación de Access Tokens y Refresh Tokens. | 5 | Llerena Delgado, Renzo Miguel | Done |
+| TS006 | Gestión de sesiones y tokens | 2 | Persistencia de sesiones | Implementación de la lógica para invalidar tokens en el servidor. | 4 | Rios Piñan, Dayro Richard | Done |
+| TS011 | Política de seguridad de contraseñas | 1 | Hashing irreversible | Integración de algoritmos de cifrado (Bcrypt) para credenciales. | 3 | Saldaña Vela, Janover Gonzalo | Done |
+| TS011 | Política de seguridad de contraseñas | 2 | Validación de complejidad | Lógica de validación de requisitos mínimos de seguridad en el backend. | 2 | Villafuerte Tapia, Renzo Alonso | To-Review |
+| TS012 | Protección contra fuerza bruta | 1 | Rate Limiting | Configuración de límites de intentos por IP y cuenta de usuario. | 4 | Quijandria Araneda, Vicente | In-Process |
+| TS012 | Protección contra fuerza bruta | 2 | Lógica de bloqueo | Implementación de periodos de enfriamiento de 15 minutos tras fallos. | 3 | Calvo Yálan, Renato Guillermo | To-do |
+| TS014 | Registro de auditoría | 1 | Esquema de auditoría | Diseño del modelo de datos para persistir acciones de alto impacto. | 3 | Armas Sánchez, Oscar Javier | Done |
+| TS014 | Registro de auditoría | 2 | Auditoría transaccional | Implementación de decoradores para registrar cambios clínicos automáticamente. | 5 | Llerena Delgado, Renzo Miguel | In-Process |
+| MS006 | Configuración del residente en dispositivo | 1 | Modo Configuración | Lógica de botones físicos para entrar en modo de emparejamiento. | 4 | Rios Piñan, Dayro Richard | Done |
+| MS006 | Configuración del residente en dispositivo | 2 | Almacenamiento EEPROM | Persistencia del ID del residente en la memoria no volátil del hardware. | 4 | Saldaña Vela, Janover Gonzalo | Done |
+| MS001 | Indicadores de pulsación y saturación | 1 | Driver de Sensor I2C | Optimización de la lectura de datos de los sensores de oxígeno y pulso. | 5 | Villafuerte Tapia, Renzo Alonso | In-Process |
+| MS001 | Indicadores de pulsación y saturación | 2 | Renderizado UI | Actualización de los indicadores en la pantalla del dispositivo IoT. | 3 | Quijandria Araneda, Vicente | To-do |
+| MS005 | Indicador de temperatura corporal | 1 | Adquisición Térmica | Procesamiento de señales analógicas del sensor de temperatura. | 3 | Calvo Yálan, Renato Guillermo | Done |
+| MS005 | Indicador de temperatura corporal | 2 | Manejo de Errores V | Lógica de aviso visual ante lecturas fuera de rango fisiológico. | 2 | Armas Sánchez, Oscar Javier | In-Process |
+| MS004 | Indicador visual de conectividad | 1 | Gestión de Estado de Red | Monitoreo de la conexión WiFi y comunicación con el servidor. | 2 | Llerena Delgado, Renzo Miguel | Done |
+| MS004 | Indicador visual de conectividad | 2 | Feedback LED | Implementación de patrones de parpadeo según estado de conexión. | 1 | Rios Piñan, Dayro Richard | Done |
+| MS007 | Indicador de nivel de batería | 1 | Lectura ADC | Implementación de la lectura de voltaje para estimar porcentaje de carga. | 3 | Saldaña Vela, Janover Gonzalo | Done |
+| MS007 | Indicador de nivel de batería | 2 | Alerta Crítica | Interrupción visual cuando la batería baja del umbral del 15%. | 2 | Villafuerte Tapia, Renzo Alonso | To-do |
+| MS002 | Botón físico de geolocalización | 1 | Debouncing de Botón | Filtrado de señales falsas del botón físico de GPS. | 2 | Quijandria Araneda, Vicente | Done |
+| MS002 | Botón físico de geolocalización | 2 | Control de Energía GPS | Lógica de encendido/apagado del módulo para ahorro de batería. | 4 | Calvo Yálan, Renato Guillermo | In-Process |
+| MS003 | Transmisión de datos al servidor | 1 | Serialización de Datos | Formateo de lecturas en paquetes JSON con marcas de tiempo UTC. | 4 | Armas Sánchez, Oscar Javier | Done |
+| MS003 | Transmisión de datos al servidor | 2 | Queue de Reintento | Implementación de buffer local ante pérdida de conectividad. | 6 | Llerena Delgado, Renzo Miguel | In-Process |
+| MS008 | Actualización OTA | 1 | Cliente de Descarga Segura | Lógica de descarga fragmentada de firmware desde el backend. | 6 | Rios Piñan, Dayro Richard | To-do |
+| MS008 | Actualización OTA | 2 | Verificación de Firma | Validación de integridad de la versión antes de aplicar el reinicio. | 4 | Saldaña Vela, Janover Gonzalo | To-do |
+| TS001 | Integración con sensores de signos vitales | 1 | Ingesta de Datos | Implementación de API REST/MQTT para recepción de telemetría. | 5 | Villafuerte Tapia, Renzo Alonso | In-Process |
+| TS001 | Integración con sensores de signos vitales | 2 | Pipeline de Procesamiento | Normalización y guardado de datos en el perfil del residente. | 4 | Quijandria Araneda, Vicente | Done |
+| TS008 | Ciclo de vida de dispositivos IoT | 1 | CRUD de Dispositivos | Módulo administrativo para registrar y vincular números de serie. | 4 | Calvo Yálan, Renato Guillermo | Done |
+| TS008 | Ciclo de vida de dispositivos IoT | 2 | Heartbeat Monitor | Servicio de detección de inactividad del dispositivo tras 60s. | 3 | Armas Sánchez, Oscar Javier | In-Process |
+| TS007 | Canal en tiempo real | 1 | Configuración WebSocket | Setup de servidor de comunicación bidireccional en el backend. | 5 | Llerena Delgado, Renzo Miguel | Done |
+| TS007 | Canal en tiempo real | 2 | Broadcast de Eventos | Lógica para emitir alertas instantáneas a las sesiones activas. | 4 | Rios Piñan, Dayro Richard | In-Process |
+| TS020 | Almacenamiento de ubicación GPS | 1 | Persistencia Geoespacial | Guardado de coordenadas vinculadas a la identidad del residente. | 3 | Saldaña Vela, Janover Gonzalo | Done |
+| TS020 | Almacenamiento de ubicación GPS | 2 | Rutina de Purga | Proceso automático para eliminar historial fuera del periodo de retención. | 3 | Villafuerte Tapia, Renzo Alonso | To-do |
+| TS004 | Servicio de notificaciones push | 1 | Integración FCM | Configuración de Firebase Cloud Messaging para web y móvil. | 5 | Quijandria Araneda, Vicente | In-Process |
+| TS004 | Servicio de notificaciones push | 2 | Despacho de Notificaciones | Orquestador de envío de mensajes según el tipo de alerta. | 4 | Calvo Yálan, Renato Guillermo | To-do |
+| TS003 | Servicio de mensajería interna | 1 | Backend de Chat | Implementación de la lógica de envío y lectura de mensajes. | 4 | Armas Sánchez, Oscar Javier | Done |
+| TS003 | Servicio de mensajería interna | 2 | Historial de Mensajes | API para la consulta paginada de conversaciones previas. | 3 | Llerena Delgado, Renzo Miguel | In-Process |
+| TS009 | Almacenamiento local móvil | 1 | Cache Indexada | Implementación de base de datos local (SQLite/Room) en la app. | 5 | Rios Piñan, Dayro Richard | To-do |
+| TS009 | Almacenamiento local móvil | 2 | Sync Manager | Lógica de sincronización diferencial al recuperar conexión. | 4 | Saldaña Vela, Janover Gonzalo | To-do |
+| US-59 | Configuración institucional | 1 | CRUD Institución | Formulario de datos generales y zona horaria. | 4 | Villafuerte Tapia, Renzo Alonso | Done |
+| US-59 | Configuración institucional | 2 | Asset Management | Integración del sistema de carga de logos corporativos. | 3 | Quijandria Araneda, Vicente | To-Review |
+| US-14 | Consulta de salud actual | 1 | UI Dashboard Familiar | Diseño de la vista de estado actual con indicadores visuales. | 4 | Calvo Yálan, Renato Guillermo | Done |
+| US-14 | Consulta de salud actual | 2 | Integración Real-time | Conexión de la vista móvil con el flujo de datos del servidor. | 3 | Armas Sánchez, Oscar Javier | In-Process |
+| US-15 | Historial con filtros | 1 | Listado Clínico | Vista de historial con orden cronológico descendente. | 4 | Llerena Delgado, Renzo Miguel | Done |
+| US-15 | Historial con filtros | 2 | Lógica de Filtros | Implementación de selectores de rango de fecha en el frontend. | 3 | Rios Piñan, Dayro Richard | Done |
+| US-16 | Notificación de alerta crítica | 1 | UI de Notificación | Creación de componentes visuales para alertas en la app móvil. | 3 | Saldaña Vela, Janover Gonzalo | To-Review |
+| US-16 | Notificación de alerta crítica | 2 | Deep Linking | Redirección directa desde la notificación al detalle de la alerta. | 3 | Villafuerte Tapia, Renzo Alonso | To-do |
+| US-49 | Envío de mensajes al personal | 1 | UI Composición Chat | Diseño de la interfaz de envío de mensajes para familiares. | 4 | Quijandria Araneda, Vicente | Done |
+| US-49 | Envío de mensajes al personal | 2 | Delivery Status | Indicadores visuales de envío exitoso y errores de red. | 2 | Calvo Yálan, Renato Guillermo | In-Process |
+| US-57 | Gestión de permisos de notificación | 1 | Request Permission Flow | Implementación del diálogo de solicitud de permisos al inicio. | 2 | Armas Sánchez, Oscar Javier | Done |
+| US-57 | Gestión de permisos de notificación | 2 | Estado de Permisos | Lógica para informar limitaciones si el usuario rechaza avisos. | 2 | Llerena Delgado, Renzo Miguel | Done |
+| US-58 | Registro de evento clínico móvil | 1 | Formulario de Observación | Desarrollo de la interfaz móvil para registrar hechos clínicos. | 3 | Rios Piñan, Dayro Richard | In-Process |
+| US-58 | Registro de evento clínico móvil | 2 | Offline Queue | Persistencia temporal de observaciones sin internet. | 4 | Saldaña Vela, Janover Gonzalo | To-do |
+| TS017 | Gestión de imágenes con Cloudinary | 1 | SDK Integration | Configuración de la subida segura (signed uploads) a Cloudinary. | 3 | Villafuerte Tapia, Renzo Alonso | Done |
+| TS017 | Gestión de imágenes con Cloudinary | 2 | Optimización de Perfil | Configuración de transformaciones (crop, quality) para fotos. | 3 | Quijandria Araneda, Vicente | To-Review |
+| TS010 | Correo transaccional | 1 | Email Provider Setup | Configuración de SendGrid o Amazon SES en el backend. | 3 | Calvo Yálan, Renato Guillermo | Done |
+| TS010 | Correo transaccional | 2 | Lógica de Recuperación | Implementación del flujo de envío de links de restablecimiento. | 3 | Armas Sánchez, Oscar Javier | In-Process |
+| TS013 | Textos en español e inglés | 1 | Estructura i18n | Setup de diccionarios JSON y sistema de cambio de idioma. | 3 | Llerena Delgado, Renzo Miguel | Done |
+| TS013 | Textos en español e inglés | 2 | Traducción de Landing | Implementación de las claves de traducción en la parte pública. | 4 | Rios Piñan, Dayro Richard | In-Process |
+| TS015 | Paginación de listados | 1 | Helper de Paginación | Desarrollo de utilidad genérica para consultas SQL/NoSQL. | 3 | Saldaña Vela, Janover Gonzalo | Done |
+| TS015 | Paginación de listados | 2 | Componente Tabla P | Implementación de controles de página en la interfaz web. | 3 | Villafuerte Tapia, Renzo Alonso | To-do |
+| TS016 | Integración con Stripe | 1 | Webhook Handler | Implementación de endpoint para recibir eventos de pago de Stripe. | 5 | Quijandria Araneda, Vicente | In-Process |
+| TS016 | Integración con Stripe | 2 | Flujo de Checkout | Integración del SDK de Stripe para el proceso de suscripción. | 5 | Calvo Yálan, Renato Guillermo | To-do |
+| TS021 | Histórico de cambios clínicos | 1 | Audit Model Clinical | Creación del modelo para cambios en parámetros por residente. | 3 | Armas Sánchez, Oscar Javier | Done |
+| TS021 | Histórico de cambios clínicos | 2 | Lógica de Evaluación V | Asegurar que alertas antiguas usen umbrales del pasado. | 5 | Llerena Delgado, Renzo Miguel | In-Process |
+| TS002 | Servicio de evaluación de alertas | 1 | Engine de Evaluación | Desarrollo de la lógica que compara lecturas vs parámetros. | 5 | Rios Piñan, Dayro Richard | Done |
+| TS002 | Servicio de evaluación de alertas | 2 | Dispatcher de Alertas | Servicio que dispara el flujo de notificaciones y avisos web. | 4 | Saldaña Vela, Janover Gonzalo | In-Process |
 
-| Sprint # | Sprint 2 | | | | | | |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **User Story** | | **Work-Item / Task** | | | | | |
-| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
 
-
-#### 6.2.1.4. Development Evidence for Sprint Review
+#### 6.2.2.4. Development Evidence for Sprint Review
 
 Landing page:
 
@@ -1641,11 +1705,11 @@ Mobile app:
 |--------------------|--------------------|-------------------|------------------------------------------------------------------------------|---------------------|--------------------|
 |                    |                    |                   |                                                                              |                     |                    |
 
-#### 6.2.1.5. Testing Suite Evidence for Sprint Review
+#### 6.2.2.5. Testing Suite Evidence for Sprint Review
 
 
 
-#### 6.2.1.6. Execution Evidence for Sprint Review
+#### 6.2.2.6. Execution Evidence for Sprint Review
 
 Landing page:
 
@@ -1680,10 +1744,10 @@ Vista de los cuartos:
 ![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-4.png)
 
 
-#### 6.2.1.7. Services Documentation Evidence for Sprint Review
+#### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
 
-#### 6.2.1.8. Software Deployment Evidence for Sprint Review
+#### 6.2.2.8. Software Deployment Evidence for Sprint Review
 
 Para este sprint se realizó el despliegue de dos artefactos: Landing page y frontend. La landing page se desplegó utilizando GitHub Pages, lo que permitió su acceso inmediato y facilitó la recopilación de feedback de los usuarios. El frontend se desplegó usando cloudflare pages.
 
@@ -1742,7 +1806,7 @@ Embedded app:
 
 
 
-#### 6.2.1.9. Team Collaboration Insights during Sprint
+#### 6.2.2.9. Team Collaboration Insights during Sprint
 
 Durante el desarrollo de este sprint, se usó github insights para analizar la colaboración del equipo. Se observó una alta participación de todos los miembros en las tareas asignadas, con un enfoque colaborativo en la revisión de código y la integración de funcionalidades. La comunicación efectiva a través de pull requests y comentarios contribuyó a mantener un flujo de trabajo ágil y a resolver rápidamente cualquier impedimento que surgió durante el desarrollo.
 
