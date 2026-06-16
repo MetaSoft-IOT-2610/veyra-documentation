@@ -1509,18 +1509,6 @@ Aplicación web:
 ![GitHub Insights](/assets/img/chapter-VI/insights-webapp.png)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 ### 6.2.1. Sprint 2
 
 El primer sprint se centró en sentar las bases tecnológicas de VEYRA, logrando el desarrollo de la interfaz web y la landing page. 
@@ -1540,9 +1528,10 @@ Se realizó el sprint planning con el objetivo de definir las tareas y objetivos
 | Sprint 1 Review Summary         | We have achieved the landing page and web application deployments, delivering the core views to the customers, using fake API. We consider that we achieved the objective, deploying both artifacts |
 | Sprint 1 Retrospective Summary  | We consider that we need to fix some views and improve the development environment with gitflow.                                                                                                          |
 | Sprint Goal & User Stories      |         |
-| Sprint 2 Goal                   | Our focus is on delivering the core functionalities of the web application, the creation of the two IoT devices, and the development of the embedded and edge applications. <br> We believe this will create a good impression on clients and encourage active use of the product. <br> This will be confirmed when clients actively interact with the new features and devices that will be offered to them.
-
-| Sprint 2 Velocity               | 23 Velocity                                                                                                                                                                                                                                                                                                  |
+| Sprint 2 Goal                   | Our focus is on delivering the foundational ecosystem of the product, encompassing the core web and mobile experiences along with the required embedded and edge infrastructure, implementing features such as staff management, analytics, register IoT devices, register residents, visualize alerts.
+We believe this will encourage active early adoption by providing clients with a functional, multi-platform solution.
+This will be confirmed when clients complete their first end-to-end workflow using both the applications and the connected devices.
+| Sprint 2 Velocity               | 23 Velocity                                                                                                  |
 | Sum of Story Points             |   Story Points.                                                                                                                                                                                                                                                                                             |
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
