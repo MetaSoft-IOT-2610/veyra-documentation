@@ -1687,9 +1687,16 @@ Aplicación web:
 
 Edge app:
 
-| Repository          | Branch             | Commit Id         | Commit Message                                                              | Commit Message Body | Commited on (Date) |
-|--------------------|--------------------|-------------------|------------------------------------------------------------------------------|---------------------|--------------------|
-|                    |                    |                   |                                                                              |                     |                    |
+| Repository      | Branch | Commit Id | Commit Message                                                                            | Commit Message Body | Commited on (Date) |
+|-----------------|--------|-----------|-------------------------------------------------------------------------------------------|---------------------|--------------------|
+| veyra-edge-app  | main   | 77981ba   | docs: updated the readme and added requirements.txt                                       | —                   | 16/06/2026         |
+| veyra-edge-app  | main   | 3dc9e6b   | feat: added the service and exceptions in monitoring bc interface and infrastructure layer | —                   | 16/06/2026         |
+| veyra-edge-app  | main   | 3cbc75f   | feat: added the service and exceptions in iam bc interface layer                          | —                   | 16/06/2026         |
+| veyra-edge-app  | main   | c429960   | feat: added the service and exceptions in iam bc                                          | —                   | 16/06/2026         |
+| veyra-edge-app  | main   | 3086119   | feat: added the service in monitoring bc                                                  | —                   | 16/06/2026         |
+| veyra-edge-app  | main   | 2149724   | feat: added the models in iam bc                                                          | —                   | 16/06/2026         |
+| veyra-edge-app  | main   | 01be5c0   | feat: implemented config and database infrastructure layer                                | —                   | 16/06/2026         |
+| veyra-edge-app  | main   | 7ce8825   | feat: added the service module in iam bc                                                  | —                   | 16/06/2026         |
 
 
 Embedded app: 
