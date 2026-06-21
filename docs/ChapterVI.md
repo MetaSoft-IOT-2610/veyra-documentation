@@ -1722,6 +1722,24 @@ Mobile app:
 
 #### 6.2.2.5. Testing Suite Evidence for Sprint Review
 
+En este sprint se implementaron pruebas unitarias para los servicios de gestión de residentes, personal asistencial y dispositivos IoT. Se utilizó JUnit para las pruebas de backend y Jasmine/Karma para las pruebas de frontend. A continuación se presentan ejemplos de los casos de prueba implementados:
+
+Test para email:
+
+![Email Test](/assets/img/chapter-VI/test-email.png)
+
+Test para notificaciones push:
+
+![Push Notification Test](/assets/img/chapter-VI/test-push.png)
+
+Test para notificaciones de usuario:
+
+![Push Notification Test](/assets/img/chapter-VI/test-user-notifications.png)
+
+Test para notificaciones push de usuario:
+
+![Push Notification Test](/assets/img/chapter-VI/test-user-push.png)
+
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
 Landing page:
@@ -1744,7 +1762,7 @@ Vista del dashboard de la aplicación web:
 
 ![web application execution](/assets/img/chapter-VI/execution-evidence-web-application.png)
 
-Vista de los IOT devices (simulacion):
+Vista de los IOT devices:
 
 ![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-2.png)
 
@@ -1952,6 +1970,30 @@ Registro del despliegue exitoso de la aplicación web:
 
 Backend:
 
+Creamos nuestra instancia de MySQL en Aiven:
+
+![Backend Deployment](/assets/img/chapter-VI/deployment-aiven.png)
+
+Luego cramos nuestro cluster en MongoDB Atlas:
+
+![Backend Deployment](/assets/img/chapter-VI/deployment-mongodb.png)
+
+Creamos nuestro servicio de Container Registry en Azure:
+
+![Backend Deployment](/assets/img/chapter-VI/deployment-20.png)
+
+Creamos nuestro servicio de Container Apps en Azure:
+
+![Backend Deployment](/assets/img/chapter-VI/deployment21.png)
+
+Subimos nuestra imagen a Container Registry:
+
+![Backend Deployment](/assets/img/chapter-VI/deployment-docker-image.png)
+
+Verificamos nuestro despliegue en Container Apps:
+
+![Backend Deployment](/assets/img/chapter-VI/deployment21.png)
+
 Aplicación móvil:
 
 Edge app:
@@ -1964,10 +2006,26 @@ Durante el desarrollo de este sprint, se usó github insights para analizar la c
 
 Landing Page: Para esta entrega, las modificaciones de la landing page fueron pocas ya que se enfocó en el desarrollo de la aplicación web, sin embargo, se realizaron algunos ajustes menores en el contenido y diseño para mejorar la claridad y atractivo de la página. La colaboración en este aspecto fue fluida, con revisiones rápidas y feedback constructivo entre los miembros del equipo.
 
+Landing page:
+
+No se hicieron modificaciones para este sprint.
+
 Aplicación web:
+
+![Web Application Collaboration](/assets/img/chapter-VI/insights2-backend.png)
 
 Backend:
 
+![Backend Collaboration](/assets/img/chapter-VI/insights2-backend.png)
+
 Aplicación móvil:
+
+Embedded app:
+
+![Mobile Application Collaboration](/assets/img/chapter-VI/insights2-embedded.png)
+
+Edge app:
+
+![Edge Application Collaboration](/assets/img/chapter-VI/insights2-edge.png)
 
 ## 6.3. Video About-the-Product
