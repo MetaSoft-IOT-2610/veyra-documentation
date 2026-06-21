@@ -1786,18 +1786,14 @@ Tabla de commits relacionados al desarrollo de los servicios:
 | Endpoint | HTTP Method | Sintaxis | Parámetros | Response (ejemplo) |
 | :--- | :--- | :--- | :--- | :--- |
 | **Medications** | | | | |
-| Get medication by ID | GET | `/api/v1/medications/{medicationId}` | `medicationId` | `{ "id": 0, "residentId": 0, "name": "string", "description": "string", "amount": 0, "expirationDate": "2026-06-21", "drugPresentation": "string", "dosage": "string" }`  |
+| Get medication by ID | GET | `/api/v1/medications{medicationId}` | `medicationId` | `{ "id": 0, "residentId": 0,"name": "string", "description": "string", "amount": 0,"expirationDate": "2026-06-21", "drugPresentation": "string","dosage": "string" }`  |
 | **Person profiles** | | | | |
-| Get person profile by id | GET | `/api/v1/person-profiles/{personProfileId}` | `personProfileId` | {
-  `"id": 0,"fullName": "string","dni": "string","birthDate": "2026-06-21","age": 0,"photo": "string","phoneNumber": "string","emailAddress": "string","streetAddress": "string"`
+| Get person profile by id | GET | `/api/v1/person-profiles/{personProfileId}` | `personProfileId` | `{"id": 0,"fullName": "string","dni": "string","birthDate": "2026-06-21","age": 0,"photo": "string","phoneNumber": "string","emailAddress": "string","streetAddress": "string"`
 } |
-| Person profile updated by id | PUT | `/api/v1/person-profiles/{personProfileId}` | `personProfileId` | {
-  `"dni": "string","firstName": "string","lastName": "string","birthDate": "2026-06-21","age": 0,"emailAddress": "string","street": "string","number": "string","city": "string","postalCode": "string","country": "string","photoBase64": "string","phoneNumber": "string"`
-}|
+| Person profile updated by id | PUT | `/api/v1/person-profiles/{personProfileId}` | `personProfileId` | `{"dni": "string","firstName": "string","lastName": "string","birthDate": "2026-06-21","age": 0,"emailAddress": "string","street": "string","number": "string","city": "string","postalCode": "string","country": "string","photoBase64": "string","phoneNumber": "string"}`|
 | Person profile delete by id | DELETE | `/api/v1/person-profiles/{personProfileId}` | `personProfileId` | |
 | Get all person profiles | GET | `/api/v1/person-profiles` | Ninguno | `[{"id": 0,"fullName": "string","dni": "string","birthDate": "2026-06-21","age": 0,"photo": "string","phoneNumber": "string","emailAddress": "string","streetAddress": "string"}]` |
-| Create a new person profile | POST | `/api/v1/person-profiles` | Ninguno | 
-`{"id": 0,"fullName": "string","dni": "string","birthDate": "2026-06-21","age": 0,"photo": "string","phoneNumber": "string","emailAddress": "string","streetAddress": "string"}` |
+| Create a new person profile | POST | `/api/v1/person-profiles` | Ninguno | `{"id": 0,"fullName": "string","dni": "string","birthDate": "2026-06-21","age": 0,"photo": "string","phoneNumber": "string","emailAddress": "string","streetAddress": "string"}` |
 | **Push Notifications** | | | | |
 | Send push notification | POST | `/api/v1/push-notifications` | Ninguno | `{"message": "Email accepted for delivery"}` |
 | Send push notification to user | POST | `/api/v1/push-notifications/users/{userId}` | `userId` | `{"message": "string","notificationId": 0,"deliveredCount": 0}` |
