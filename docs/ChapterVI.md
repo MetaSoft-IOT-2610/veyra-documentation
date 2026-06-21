@@ -1598,6 +1598,8 @@ Se repartieron las tareas del sprint entre los miembros del equipo, asignando re
 
 #### 6.2.2.4. Development Evidence for Sprint Review
 
+En este sprint se logró el despliegue exitoso de la landing page, aplicación web, web services, prototipo del dispositivo y edge api, cumpliendo con los objetivos establecidos para esta fase del proyecto como la implementación de los core features, que son manejo de staff, segmentación de roles, analíticas, etc. A continuación se presenta la evidencia de cada uno de estos despliegues.
+
 Landing page:
 
 | Repository         | Branch               | Commit Id       | Commit Message                                                       | Commit Message Body | Commited on (Date) |
@@ -2028,4 +2030,12 @@ Edge app:
 
 ![Edge Application Collaboration](/assets/img/chapter-VI/insights2-edge.png)
 
-## 6.3. Video About-the-Product
+## 6.3. Validation Interviews.
+
+### 6.3.1. Diseño de Entrevistas.
+
+### 6.3.2. Registro de Entrevistas.
+
+### 6.3.3. Evaluaciones según heurísticas.
+
+### 6.4. Video About-the-Product.
