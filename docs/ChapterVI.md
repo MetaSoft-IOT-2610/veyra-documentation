@@ -2034,6 +2034,42 @@ Edge app:
 
 ### 6.3.1. Diseño de Entrevistas.
 
+### Preguntas para el Segmento: Administrador de Casa de Reposo
+
+**Perfil y contexto**
+1. ¿Cuál es su experiencia previa con aplicaciones o sistemas de software, y qué tan cómodo se siente usando interfaces digitales en general?
+2. ¿Cuáles son los principales desafíos que enfrenta en la gestión de su casa de reposo?
+3. ¿Cómo gestiona actualmente la información de los residentes y su medicación?
+
+**Expectativas del producto**
+4. ¿Qué funcionalidades y beneficios principales busca obtener de una aplicación como VEYRA?
+5. ¿Qué tan preparado se siente su equipo para manejar datos sensibles de salud y ubicación bajo regulaciones de protección de datos?
+
+**Evaluación del prototipo**
+6. Tras la demostración, ¿qué aspecto de la interfaz le pareció más confuso o difícil de entender?
+
+**Cierre**
+7. En una escala del 1 al 10, ¿qué tan probable es que recomendara VEYRA a otro administrador? ¿Por qué?
+8. ¿Qué mejoras sugiere para la próxima versión?
+
+### Preguntas para el Segmento: Familiar de Adulto Mayor
+
+**Perfil y contexto**
+1. ¿Qué tan cómodo se siente usando aplicaciones móviles en general?
+2. ¿Cómo valida actualmente si el cuidado que recibe su familiar es de calidad?
+
+**Expectativas del producto**
+3. ¿Con qué frecuencia desearía recibir actualizaciones sobre el estado de su familiar?
+4. ¿Qué información o funcionalidades considera esenciales en una aplicación como VEYRA?
+5. ¿Cuáles son sus preocupaciones principales respecto a la privacidad de los datos de su familiar?
+
+**Evaluación del prototipo**
+6. Tras la demostración, ¿cómo describiría su experiencia general con la interfaz de la aplicación?
+7. ¿Qué aspectos de la aplicación le generan dudas o desconfianza?
+
+**Cierre**
+8. ¿Qué cambios recomendaría antes de usar la aplicación regularmente?
+
 ### 6.3.2. Registro de Entrevistas.
 
 ### 6.3.3. Evaluaciones según heurísticas.
