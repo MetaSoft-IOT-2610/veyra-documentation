@@ -2221,19 +2221,19 @@ Edge app:
   <tbody>
     <tr>
       <td><strong>Nombre Completo</strong></td>
-      <td></td>
+      <td>Jaime Rafael Fernandez Cueto</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td></td>
+      <td>59</td>
     </tr>
     <tr>
       <td><strong>Distrito</strong></td>
-      <td></td>
+      <td>Chorrillos</td>
     </tr>
     <tr>
       <td><strong>Ocupación</strong></td>
-      <td></td>
+      <td>Ingeniero Agronomo</td>
     </tr>
     <tr>
       <td><strong>Fecha de Entrevista</strong></td>
@@ -2241,7 +2241,7 @@ Edge app:
     </tr>
     <tr>
       <td><strong>Duración</strong></td>
-      <td>/td>
+      <td>5:32</td>
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
@@ -2249,13 +2249,13 @@ Edge app:
     </tr>
     <tr>
       <td><strong>Timing</strong></td>
-      <td></td>
+      <td>0:00 - 5:32</td>
     </tr>
   </tbody>
 </table>
 
 <p><strong>Screenshot del video:</strong></p>
-<img src="../images/interview-administrator-1.jpg" alt="Interview Administrator 1">
+<img src="../assets/img/chapter-VI/interview-family-1.png" alt="Interview Family 1">
 
 <p><strong>Resumen de Respuestas:</strong></p>
 
@@ -2267,19 +2267,19 @@ Edge app:
   <tbody>
     <tr>
       <td><strong>Nombre Completo</strong></td>
-      <td></td>
+      <td>Juan Carlos Erausquin Goyburu</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td></td>
+      <td>27</td>
     </tr>
     <tr>
       <td><strong>Distrito</strong></td>
-      <td></td>
+      <td>Surco</td>
     </tr>
     <tr>
       <td><strong>Ocupación</strong></td>
-      <td></td>
+      <td>Ventas</td>
     </tr>
     <tr>
       <td><strong>Fecha de Entrevista</strong></td>
@@ -2287,7 +2287,7 @@ Edge app:
     </tr>
     <tr>
       <td><strong>Duración</strong></td>
-      <td></td>
+      <td>3:53</td>
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
@@ -2295,13 +2295,13 @@ Edge app:
     </tr>
     <tr>
       <td><strong>Timing</strong></td>
-      <td></td>
+      <td>5:33 - 9:26</td>
     </tr>
   </tbody>
 </table>
 
 <p><strong>Screenshot del video:</strong></p>
-<img src="../images/interview-administrator-2.jpg" alt="Interview Administrator 2">
+<img src="../assets/img/chapter-VI/interview-family-2.png" alt="Interview Family 2">
 
 <p><strong>Resumen de Respuestas:</strong></p>
 
@@ -2314,19 +2314,19 @@ Edge app:
   <tbody>
     <tr>
       <td><strong>Nombre Completo</strong></td>
-      <td></td>
+      <td>Adrian de la Torre Lorenzo</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td></td>
+      <td>23</td>
     </tr>
     <tr>
       <td><strong>Distrito</strong></td>
-      <td></td>
+      <td>San Isidro</td>
     </tr>
     <tr>
       <td><strong>Ocupación</strong></td>
-      <td></td>
+      <td>Estudiante</td>
     </tr>
     <tr>
       <td><strong>Fecha de Entrevista</strong></td>
@@ -2334,7 +2334,7 @@ Edge app:
     </tr>
     <tr>
       <td><strong>Duración</strong></td>
-      <td></td>
+      <td>3:22</td>
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
@@ -2342,13 +2342,13 @@ Edge app:
     </tr>
     <tr>
       <td><strong>Timing</strong></td>
-      <td></td>
+      <td>9:27 - 12:49</td>
     </tr>
   </tbody>
 </table>
 
 <p><strong>Screenshot del video:</strong></p>
-<img src="../images/interview-administrator-2.jpg" alt="Interview Administrator 2">
+<img src="../assets/img/chapter-VI/interview-family-3.png" alt="Interview Family 3">
 
 <p><strong>Resumen de Respuestas:</strong></p>
 
