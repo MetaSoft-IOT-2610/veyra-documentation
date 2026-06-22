@@ -2258,7 +2258,7 @@ Edge app:
 <img src="../assets/img/chapter-VI/interview-family-1.png" alt="Interview Family 1">
 
 <p><strong>Resumen de Respuestas:</strong></p>
-
+Jaime le parecio muy buena la plataforma, le parecia muy importante el seguimiento en tiempo real de los signos vitales de su familiar, le gustaria añadir un seguimiento de las comidas de su familiar.
 <hr>
 
 <h4>Entrevista 2 - Familiar de Adulto Mayor (Segmento 2)</h4>
@@ -2304,7 +2304,7 @@ Edge app:
 <img src="../assets/img/chapter-VI/interview-family-2.png" alt="Interview Family 2">
 
 <p><strong>Resumen de Respuestas:</strong></p>
-
+Juan Carlos le parecio muy buena la plataforma, encuentra muy importante los datos que puede acceder en ella, intentaria hacer la interfaz mas intuitiva sobretodo para personas mayores.
 <hr>
 
 
@@ -2351,7 +2351,7 @@ Edge app:
 <img src="../assets/img/chapter-VI/interview-family-3.png" alt="Interview Family 3">
 
 <p><strong>Resumen de Respuestas:</strong></p>
-
+Adrian estuvo muy feliz con la plataforma, no encontro algun problema o posible cambio, le parecio util y facil de usar.
 
 
 ### 6.3.3. Evaluaciones según heurísticas.
