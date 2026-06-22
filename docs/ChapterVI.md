@@ -1998,9 +1998,25 @@ Verificamos nuestro despliegue en Container Apps:
 
 Aplicación móvil:
 
+Despliegue en Firebase para android:
+
+![deployment-evidence-mobile-app](/assets/img/chapter-VI/deployment-mobile1.png)
+
+Despliegue en Firebase para iOS:
+
+![deployment-evidence-mobile-app](/assets/img/chapter-VI/deployment-mobile2.png)
+
+Agregar firebase para Xcode para el despliege de iOS:
+
+![deployment-evidence-mobile-app](/assets/img/chapter-VI/deployment-mobile3.png)
+
 Edge app:
 
+![deployment-evidence-edge-app](/assets/img/chapter-VI/deployment-edge.jpeg)
+
 Embedded app:
+
+![deployment-evidence-embedded-app](/assets/img/chapter-VI/deployment-embedded.jpeg)
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint
 
@@ -2021,6 +2037,8 @@ Backend:
 ![Backend Collaboration](/assets/img/chapter-VI/insights2-backend.png)
 
 Aplicación móvil:
+
+![Mobile Application Collaboration](/assets/img/chapter-VI/insights-mobile.png)
 
 Embedded app:
 
