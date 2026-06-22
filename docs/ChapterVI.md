@@ -2074,4 +2074,306 @@ Edge app:
 
 ### 6.3.3. Evaluaciones según heurísticas.
 
+<p><strong>CARRERA:</strong> Ingeniería de Software</p>
+<p><strong>CURSO:</strong> Desarrollo de Soluciones IOT</p>
+<p><strong>NRC:</strong> 17757</p>
+<p><strong>PROFESOR:</strong> Ángel Augusto Velasquez Nuñez</p>
+<p><strong>AUDITOR:</strong> El equipo de Veyra</p>
+<p><strong>CLIENTE(S):</strong> Administradores de Casas de Reposo y Familiares</p>
+
+<br>
+
+<strong>TAREAS A EVALUAR:</strong>
+<p>El alcance de esta evaluación incluye la revisión de las siguientes tareas:</p>
+<ul>
+  <li>Revisión de la consistencia de lenguaje (Inglés/Español)</li>
+  <li>Validación de los flujos de registro y acceso</li>
+  <li>Comprobar si el diseño transmite confianza y profesionalismo</li>
+  <li>Validar si la información presentada resulta atractiva y relevante</li>
+  <li>Evaluar la gestión de errores en vistas de tabla</li>
+  <li>Revisión de la usabilidad de formularios de inventario</li>
+  <li>Evaluación de la carga de información crítica (habitaciones)</li>
+  <li>Revisión de la claridad de los botones de acción (CTAs)</li>
+</ul>
+
+<br>
+
+<strong>ESCALA DE SEVERIDAD:</strong>
+<p>Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:</p>
+
+<table>
+    <tr>
+        <th style="border: 1px solid #dddddd; padding: 8px; text-align: center;">Nivel</th>
+        <th style="border: 1px solid #dddddd; padding: 8px; text-align: center;">Descripción</th>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #dddddd; padding: 8px; text-align: center;">1</td>
+        <td style="border: 1px solid #dddddd; padding: 8px; text-align: justify;">Problema superficial: puede ser fácilmente superado por el usuario ó ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo.</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #dddddd; padding: 8px; text-align: center;">2</td>
+        <td style="border: 1px solid #dddddd; padding: 8px; text-align: justify;">Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja para resolverlo de cara al siguiente release.</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #dddddd; padding: 8px; text-align: center;">3</td>
+        <td style="border: 1px solid #dddddd; padding: 8px; text-align: justify;">Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta.</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #dddddd; padding: 8px; text-align: center;">4</td>
+        <td style="border: 1px solid #dddddd; padding: 8px; text-align: justify;">Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento.</td>
+    </tr>
+</table>
+
+<strong>TABLA RESUMEN:</strong>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Problema</th>
+      <th>Escala de severidad</th>
+      <th>Heurística/Principio violada(o)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Los mensajes de confirmación de carga no siempre aparecen, dejando al usuario con duda sobre si la acción se completó.</td>
+      <td>2</td>
+      <td>Usability: Visibility of system status</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Jerga técnica en la sección de reportes ("Fetch entities", "Null Pointer") confunde a los usuarios administradores sin perfil técnico.</td>
+      <td>2</td>
+      <td>Usability: Match between system and the real world</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>No hay opción de deshacer cambios inmediatamente después de registrar un medicamento erróneo en el inventario.</td>
+      <td>3</td>
+      <td>Usability: User control and freedom</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Iconografía inconsistente entre la sección de "Residentes" y "Personal" para acciones similares (editar/borrar).</td>
+      <td>1</td>
+      <td>Usability: Consistency and standards</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>No hay una ventana de confirmación (modal) al presionar el botón de eliminar un perfil de residente, lo que puede causar pérdida de datos accidental.</td>
+      <td>3</td>
+      <td>Usability: Error prevention</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>El menú desplegable de "Tipos de Medicamentos" tiene muchas opciones sin agrupar, obligando al usuario a recordar nombres exactos en lugar de reconocer categorías.</td>
+      <td>2</td>
+      <td>Usability: Recognition rather than recall</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>No existen atajos de teclado para acciones frecuentes como "Guardar" o "Nuevo Registro", reduciendo la eficiencia para usuarios expertos.</td>
+      <td>2</td>
+      <td>Usability: Flexibility and efficiency of use</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Demasiada información y columnas irrelevantes en la vista principal del dashboard dificultan la lectura rápida de métricas clave.</td>
+      <td>2</td>
+      <td>Usability: Aesthetic and minimalist design</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Falta documentación en pantalla (tooltips) para explicar campos complejos como "Dosificación por intervalo".</td>
+      <td>3</td>
+      <td>Usability: Help and documentation</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Los mensajes de error en el login (ej: "Error 401") no sugieren si el problema fue la contraseña o el usuario, impidiendo la recuperación rápida.</td>
+      <td>2</td>
+      <td>Usability: Help users recognize, diagnose, and recover from errors</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Descripción Detallada de Problemas Críticos</h4>
+
+<p><strong>Problema 1: Confusión de rol en formulario de registro y mezcla de idiomas.</strong></p>
+<p>
+<p><strong>Severidad: 3</strong></p>
+<p>
+  <strong>Heurística/Principio violada(o):</strong> Usability: Visibility of system status y Consistency and standards.
+</p>
+<p>
+  <strong>Problema:</strong> El contexto de la navegación lateral indica "Staff", pero el botón de acción dice "Register Resident" (Registrar Residente), confundiendo al usuario sobre qué rol está registrando. Además, el formulario utiliza una mezcla de inglés y español para las etiquetas de los campos (`dni*`, `birthdate*`, `phone number*`).
+</p>
+
+<img src="../images/problem1.png" alt="image of problem 1">
+
+<p>
+  <strong>Recomendación:</strong> Corregir la consistencia del sistema. Si la sección es "Staff", el botón debe ser "Register Staff" o "Registrar Personal". Estandarizar el idioma de todos los campos a español para mantener la coherencia lingüística en la interfaz y mejorar la experiencia del usuario.
+</p>
+
+<hr>
+
+<p><strong>Problema 2: Error de carga de datos críticos de Habitaciones.</strong></p>
+<p>
+<p><strong>Severidad: 4</strong></p>
+<p>
+  <strong>Heurística/Principio violada(o):</strong> Usability: Help users recognize, diagnose, and recover from errors.
+</p>
+<p>
+  <strong>Problema:</strong> La vista de "Rooms" (Habitaciones) muestra un error técnico grave: "Resource not found: Failed to fetch entities", que impide la carga de información fundamental. El mensaje técnico no es útil para el usuario, no explica qué sucedió y no ofrece una solución. Adicionalmente, los encabezados de la tabla presentan inconsistencia lingüística.
+</p>
+
+<img src="../images/problem2.png" alt="image of problem 2">
+
+<p>
+  <strong>Recomendación:</strong> Reemplazar el error técnico por un mensaje amigable y orientador, como "No se pudieron cargar las habitaciones. Por favor, intente recargar la página o contacte a soporte." Asegurar que las columnas de la tabla tengan una nomenclatura consistente (ej. "Número", "Tipo", "Estado").
+</p>
+
+<hr>
+
+
+<p><strong>Problema 3: Botón de acción con etiqueta de código en inventario.</strong></p>
+<p>
+<p><strong>Severidad: 3</strong></p>
+<p>
+  <strong>Heurística/Principio violada(o):</strong> Usability: Match between system and the real world y Consistency and standards.
+</p>
+<p>
+  <strong>Problema:</strong> El botón de acción principal al final del formulario de inventario muestra la etiqueta de código "medication.add". Este error impide la usabilidad, rompe la confianza y es una inconsistencia grave. También persiste la mezcla de idiomas en los botones, como "Cancel".
+</p>
+
+<img src="../images/problem3.png" alt="image of problem 3">
+
+<p>
+  <strong>Recomendación:</strong> Corregir la etiqueta del botón de acción principal a un texto claro y legible, como "Añadir Medicamento" o "Guardar". Estandarizar el idioma de todos los botones de acción a español (ej. "Cancelar").
+</p>
+
+<hr>
+
+<p><strong>Problema 4: Llamadas a la acción (CTAs) con etiquetas de desarrollo en Login.</strong></p>
+<p>
+<p><strong>Severidad: 4</strong></p>
+<p>
+  <strong>Heurística/Principio violada(o):</strong> Usability: Match between system and the real world y Aesthetic and minimalist design.
+</p>
+<p>
+  <strong>Problema:</strong> La página de inicio de sesión muestra etiquetas de código como `auth.already-have-account`, `-> auth.sign-in` y `AUTH.OR-CREATE-ACCOUNT` en lugar del texto destinado al usuario. Esto es un error de alto impacto que impide la tarea fundamental de acceso al sistema y afecta la credibilidad.
+</p>
+
+<img src="../images/problem4.png" alt="image of problem 4">
+
+<p>
+  <strong>Recomendación:</strong> Corregir las etiquetas de localización/texto a frases amigables y claras, como "¿Ya tienes una cuenta?", el botón debe decir "Iniciar Sesión", y el separador "O crear una cuenta".
+</p>
+
+<hr>
+
+<p><strong>Problema 5: "0" como valor inicial y mezcla de idiomas en Inventario.</strong></p>
+<p>
+<p><strong>Severidad: 2</strong></p>
+<p>
+  <strong>Heurística/Principio violada(o):</strong> Usability: Error Prevention y Consistency and standards.
+</p>
+<p>
+  <strong>Problema:</strong> El uso del valor "0" como valor inicial en campos de entrada numérica (`Quantity*`, `Unit Cost*`, etc.) puede confundir al usuario, quien podría no borrarlo o pensar que es un placeholder. La inconsistencia en los títulos de las secciones (`Stock Status`, `Value`) en inglés es un problema constante.
+</p>
+
+<img src="../images/problem5.png" alt="image of problem 5">
+
+<p>
+  <strong>Recomendación:</strong> Asegurarse de que los campos de entrada de datos estén vacíos o utilicen un placeholder de texto para evitar confusiones. Estandarizar la nomenclatura de las secciones a español (ej. "Estado de Stock" y "Valoración").
+</p>
+
+<hr>
+
 ### 6.4. Video About-the-Product.
+
+<p>
+  El video "About the Product" presenta de manera clara y atractiva la propuesta de valor de VEYRA, 
+  los problemas que resuelve y cómo funciona la solución para ambos segmentos objetivo.
+</p>
+
+<h4>Información General del Video</h4>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><strong>Título del Video</strong></td>
+      <td>VEYRA: Comprehensive Care Management for Nursing Homes</td>
+    </tr>
+    <tr>
+      <td><strong>Duración</strong></td>
+      <td>2 minutos 0 segundos</td>
+    </tr>
+    <tr>
+      <td><strong>Fecha de Grabación</strong></td>
+      <td>21/06/2026</td>
+    </tr>
+    <tr>
+      <td><strong>URL YouTube</strong></td>
+      <td><a href="https://youtu.be/imto6GDSWEg">https://youtu.be/imto6GDSWEg</a></td>
+    </tr>
+    <tr>
+      <td><strong>URL Microsoft Stream</strong></td>
+      <td><a href="https://shorturl.at/v6KPY">https://shorturl.at/v6KPY</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Screenshot del video:</strong></p>
+<img src="../assets/img/chapter-VI/AboutTheProduct-image.png" alt="About the Product Video">
+
+<h4>Contenido del Video</h4>
+
+<p>
+  El video está estructurado en las siguientes secciones:
+</p>
+
+<ol>
+  <li>
+    <strong>Introducción (0:00 - 0:30):</strong> Presentación del problema - Complejidad en la gestión 
+    de casas de reposo y preocupaciones de familiares sobre el cuidado de sus seres queridos.
+  </li>
+  <li>
+    <strong>Propuesta de Solución (0:30 - 1:45):</strong> Presentación de VEYRA como la solución integral 
+    para la gestión de residentes, medicamentos, empleados y comunicación con familiares.
+  </li>
+  <li>
+    <strong>Funcionalidades Principales (1:45 - 3:15):</strong> Demostración de las características clave:
+    <ul>
+      <li>Gestión de residentes y datos de salud</li>
+      <li>Control de medicamentos y recordatorios</li>
+      <li>Portal para familiares</li>
+      <li>Generación de reportes</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Beneficios (3:15 - 4:00):</strong> Énfasis en beneficios para ambos segmentos - Eficiencia 
+    operacional, transparencia y tranquilidad para familiares.
+  </li>
+  <li>
+    <strong>Llamada a la Acción (4:00 - 4:32):</strong> Invitación a visitar el Landing Page y conocer 
+    más sobre VEYRA.
+  </li>
+</ol>
+
+
+<h4>Inscripción en Landing Page</h4>
+
+<p>
+  El video "About the Product" está embebido en el Landing Page en la sección de "Acerca del Producto", 
+  permitiendo que visitantes del sitio vean una introducción visual de VEYRA antes de registrarse o 
+  solicitar más información.
+</p>
+
+<p>
+  <strong>URL del Landing Page donde está el video:</strong> 
+  <a href="https://veyra.metasoft.pe/">https://veyra.metasoft.pe/</a>
+</p>
+
