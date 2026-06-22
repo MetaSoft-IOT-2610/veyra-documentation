@@ -171,7 +171,23 @@ Este gráfico muestra la aplicación de GitFlow en el proyecto, evidenciando la 
 
 ![img.png](assets/img/introduction/network-graph-tb1.png)
 
+## Reporte de colaboración de la entrega del AV2
 
+Durante la tercera fase de colaboración del informe, el equipo centró sus esfuerzos en la implementación técnica del Sprint 2, abarcando el desarrollo e integración del Backend, el Edge API, la Embedded Application, la segunda versión del Frontend y el Landing Page. Cada integrante asumió el liderazgo de un componente crítico del ecosistema digital, asegurando la sincronización entre las capas del sistema y el cumplimiento de los estándares de calidad definidos. Se actualizó el C4 Model para reflejar la arquitectura resultante y se desplegaron las nuevas versiones en producción.
+
+En la siguiente imagen se muestra el número de commits realizados por cada miembro del equipo, lo que refleja la contribución individual al desarrollo del proyecto. Cada barra representa a un miembro del equipo y la altura de la barra indica el número total de commits realizados por esa persona.
+
+![img.png](assets/img/introduction/pulse-av2.png)
+
+Aquí se muestra el gráfico de clones del repositorio, que indica la cantidad de veces que el repositorio ha sido clonado por los miembros del equipo. Cada punto en el gráfico representa un evento de clonación, y la altura de cada punto refleja la cantidad de clones realizados en ese momento específico.
+
+![img.png](assets/img/introduction/git-clones-av2.png)
+
+**Ramificación del proyecto usando GitFlow:**
+
+Este gráfico muestra la aplicación de GitFlow en el proyecto, evidenciando la organización de ramas principales, de desarrollo, de funcionalidades y de releases utilizadas por el equipo durante el ciclo de trabajo.
+
+![img.png](assets/img/introduction/network-graph-av2.png)
 ---
 
 ## Tabla de contenido
