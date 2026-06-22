@@ -2102,19 +2102,19 @@ Edge app:
   <tbody>
     <tr>
       <td><strong>Nombre Completo</strong></td>
-      <td></td>
+      <td>Pedro Sanchez</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td></td>
+      <td>30</td>
     </tr>
     <tr>
       <td><strong>Distrito</strong></td>
-      <td></td>
+      <td>SJL</td>
     </tr>
     <tr>
       <td><strong>Ocupación</strong></td>
-      <td></td>
+      <td>Administrador de casa de reposo</td>
     </tr>
     <tr>
       <td><strong>Fecha de Entrevista</strong></td>
@@ -2122,7 +2122,7 @@ Edge app:
     </tr>
     <tr>
       <td><strong>Duración</strong></td>
-      <td>/td>
+      <td>4 min 40 seg<td>
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
@@ -2130,13 +2130,13 @@ Edge app:
     </tr>
     <tr>
       <td><strong>Timing</strong></td>
-      <td></td>
+      <td>12:50 - 17:37</td>
     </tr>
   </tbody>
 </table>
 
 <p><strong>Screenshot del video:</strong></p>
-<img src="../images/interview-administrator-1.jpg" alt="Interview Administrator 1">
+![Interview Administrator 1](/assets/img/chapter-VI/oscar1.png)
 
 <p><strong>Resumen de Respuestas:</strong></p>
 
@@ -2148,19 +2148,19 @@ Edge app:
   <tbody>
     <tr>
       <td><strong>Nombre Completo</strong></td>
-      <td></td>
+      <td>Andrés Fernandez</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td></td>
+      <td>23</td>
     </tr>
     <tr>
       <td><strong>Distrito</strong></td>
-      <td></td>
+      <td>Salamanca</td>
     </tr>
     <tr>
       <td><strong>Ocupación</strong></td>
-      <td></td>
+      <td>Administrador de casa de reposo</td>
     </tr>
     <tr>
       <td><strong>Fecha de Entrevista</strong></td>
@@ -2168,7 +2168,7 @@ Edge app:
     </tr>
     <tr>
       <td><strong>Duración</strong></td>
-      <td></td>
+      <td>4min 55 seg</td>
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
@@ -2176,13 +2176,12 @@ Edge app:
     </tr>
     <tr>
       <td><strong>Timing</strong></td>
-      <td></td>
+      <td>17:37-21:59</td>
     </tr>
   </tbody>
 </table>
 
-<p><strong>Screenshot del video:</strong></p>
-<img src="../images/interview-administrator-2.jpg" alt="Interview Administrator 2">
+![Interview Administrator 1](/assets/img/chapter-VI/oscar2.png)
 
 <p><strong>Resumen de Respuestas:</strong></p>
 
@@ -2195,19 +2194,19 @@ Edge app:
   <tbody>
     <tr>
       <td><strong>Nombre Completo</strong></td>
-      <td></td>
+      <td>Alexander Gutierrez</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td></td>
+      <td>26</td>
     </tr>
     <tr>
       <td><strong>Distrito</strong></td>
-      <td></td>
+      <td>San Isidro</td>
     </tr>
     <tr>
       <td><strong>Ocupación</strong></td>
-      <td></td>
+      <td>Administrador de casa de reposo</td>
     </tr>
     <tr>
       <td><strong>Fecha de Entrevista</strong></td>
@@ -2215,7 +2214,7 @@ Edge app:
     </tr>
     <tr>
       <td><strong>Duración</strong></td>
-      <td></td>
+      <td>5min 10 seg</td>
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
@@ -2223,13 +2222,13 @@ Edge app:
     </tr>
     <tr>
       <td><strong>Timing</strong></td>
-      <td></td>
+      <td>21:59 - 26:47</td>
     </tr>
   </tbody>
 </table>
 
-<p><strong>Screenshot del video:</strong></p>
-<img src="../images/interview-administrator-2.jpg" alt="Interview Administrator 2">
+![Interview Administrator 1](/assets/img/chapter-VI/oscar3.png)
+
 
 <p><strong>Resumen de Respuestas:</strong></p>
 
