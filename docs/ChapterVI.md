@@ -2072,6 +2072,151 @@ Edge app:
 
 ### 6.3.2. Registro de Entrevistas.
 
+<p>
+  Las entrevistas de validación se llevaron a cabo con usuarios de ambos segmentos objetivo. 
+  A continuación se presenta el registro detallado de las entrevistas realizadas, incluyendo 
+  información del entrevistado, capturas de video y análisis de respuestas.
+</p>
+
+<h4>Entrevista 1 - Administrador de Casa de Reposo (Segmento 1)</h4>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><strong>Nombre Completo</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Distrito</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Ocupación</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Fecha de Entrevista</strong></td>
+      <td>21/06/2026</td>
+    </tr>
+    <tr>
+      <td><strong>Duración</strong></td>
+      <td>/td>
+    </tr>
+    <tr>
+      <td><strong>URL Microsoft Stream</strong></td>
+      <td>[Incluir URL del video de la entrevista 1]</td>
+    </tr>
+    <tr>
+      <td><strong>Timing</strong></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Screenshot del video:</strong></p>
+<img src="../images/interview-administrator-1.jpg" alt="Interview Administrator 1">
+
+<p><strong>Resumen de Respuestas:</strong></p>
+
+<hr>
+
+<h4>Entrevista 2 - Administrador de Casa de Reposo (Segmento 1)</h4>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><strong>Nombre Completo</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Distrito</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Ocupación</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Fecha de Entrevista</strong></td>
+      <td>21/06/2026</td>
+    </tr>
+    <tr>
+      <td><strong>Duración</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>URL Microsoft Stream</strong></td>
+      <td>[Incluir URL del video de la entrevista 2]</td>
+    </tr>
+    <tr>
+      <td><strong>Timing</strong></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Screenshot del video:</strong></p>
+<img src="../images/interview-administrator-2.jpg" alt="Interview Administrator 2">
+
+<p><strong>Resumen de Respuestas:</strong></p>
+
+<hr>
+
+
+<h4>Entrevista 3 - Administrador de Casa de Reposo (Segmento 1)</h4>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><strong>Nombre Completo</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Distrito</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Ocupación</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>Fecha de Entrevista</strong></td>
+      <td>21/06/2026</td>
+    </tr>
+    <tr>
+      <td><strong>Duración</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>URL Microsoft Stream</strong></td>
+      <td>[Incluir URL del video de la entrevista 2]</td>
+    </tr>
+    <tr>
+      <td><strong>Timing</strong></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Screenshot del video:</strong></p>
+<img src="../images/interview-administrator-2.jpg" alt="Interview Administrator 2">
+
+<p><strong>Resumen de Respuestas:</strong></p>
+
+
+
 ### 6.3.3. Evaluaciones según heurísticas.
 
 <p><strong>CARRERA:</strong> Ingeniería de Software</p>
