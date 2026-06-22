@@ -2511,7 +2511,7 @@ Adrian estuvo muy feliz con la plataforma, no encontro algun problema o posible 
   <strong>Problema:</strong> El contexto de la navegación lateral indica "Staff", pero el botón de acción dice "Register Resident" (Registrar Residente), confundiendo al usuario sobre qué rol está registrando. Además, el formulario utiliza una mezcla de inglés y español para las etiquetas de los campos (`dni*`, `birthdate*`, `phone number*`).
 </p>
 
-<img src="../images/problem1.png" alt="image of problem 1">
+![](/assets/img/chapter-VI/execution-evidence-web-application-3.png)
 
 <p>
   <strong>Recomendación:</strong> Corregir la consistencia del sistema. Si la sección es "Staff", el botón debe ser "Register Staff" o "Registrar Personal". Estandarizar el idioma de todos los campos a español para mantener la coherencia lingüística en la interfaz y mejorar la experiencia del usuario.
@@ -2529,8 +2529,7 @@ Adrian estuvo muy feliz con la plataforma, no encontro algun problema o posible 
   <strong>Problema:</strong> La vista de "Rooms" (Habitaciones) muestra un error técnico grave: "Resource not found: Failed to fetch entities", que impide la carga de información fundamental. El mensaje técnico no es útil para el usuario, no explica qué sucedió y no ofrece una solución. Adicionalmente, los encabezados de la tabla presentan inconsistencia lingüística.
 </p>
 
-<img src="../images/problem2.png" alt="image of problem 2">
-
+![](/assets/img/chapter-VI/execution-evidence-web-application-4.png)
 <p>
   <strong>Recomendación:</strong> Reemplazar el error técnico por un mensaje amigable y orientador, como "No se pudieron cargar las habitaciones. Por favor, intente recargar la página o contacte a soporte." Asegurar que las columnas de la tabla tengan una nomenclatura consistente (ej. "Número", "Tipo", "Estado").
 </p>
@@ -2548,8 +2547,7 @@ Adrian estuvo muy feliz con la plataforma, no encontro algun problema o posible 
   <strong>Problema:</strong> El botón de acción principal al final del formulario de inventario muestra la etiqueta de código "medication.add". Este error impide la usabilidad, rompe la confianza y es una inconsistencia grave. También persiste la mezcla de idiomas en los botones, como "Cancel".
 </p>
 
-<img src="../images/problem3.png" alt="image of problem 3">
-
+![](/assets/img/chapter-VI/execution-evidence-web-application.png)
 <p>
   <strong>Recomendación:</strong> Corregir la etiqueta del botón de acción principal a un texto claro y legible, como "Añadir Medicamento" o "Guardar". Estandarizar el idioma de todos los botones de acción a español (ej. "Cancelar").
 </p>
@@ -2566,7 +2564,7 @@ Adrian estuvo muy feliz con la plataforma, no encontro algun problema o posible 
   <strong>Problema:</strong> La página de inicio de sesión muestra etiquetas de código como `auth.already-have-account`, `-> auth.sign-in` y `AUTH.OR-CREATE-ACCOUNT` en lugar del texto destinado al usuario. Esto es un error de alto impacto que impide la tarea fundamental de acceso al sistema y afecta la credibilidad.
 </p>
 
-<img src="../images/problem4.png" alt="image of problem 4">
+![](/assets/img/chapter-VI/execution-evidence-web-application-2.png)
 
 <p>
   <strong>Recomendación:</strong> Corregir las etiquetas de localización/texto a frases amigables y claras, como "¿Ya tienes una cuenta?", el botón debe decir "Iniciar Sesión", y el separador "O crear una cuenta".
@@ -2584,7 +2582,7 @@ Adrian estuvo muy feliz con la plataforma, no encontro algun problema o posible 
   <strong>Problema:</strong> El uso del valor "0" como valor inicial en campos de entrada numérica (`Quantity*`, `Unit Cost*`, etc.) puede confundir al usuario, quien podría no borrarlo o pensar que es un placeholder. La inconsistencia en los títulos de las secciones (`Stock Status`, `Value`) en inglés es un problema constante.
 </p>
 
-<img src="../images/problem5.png" alt="image of problem 5">
+![](/assets/img/chapter-VI/execution-evidence-web-application-2.png)
 
 <p>
   <strong>Recomendación:</strong> Asegurarse de que los campos de entrada de datos estén vacíos o utilicen un placeholder de texto para evitar confusiones. Estandarizar la nomenclatura de las secciones a español (ej. "Estado de Stock" y "Valoración").
