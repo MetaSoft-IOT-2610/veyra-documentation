@@ -1990,15 +1990,15 @@ Aplicación móvil:
 
 Despliegue en Firebase para android:
 
-![deployment-evidence-mobile-app](/assets/img/chapter-VI/deployment-mobile1.png)
+![deployment-evidence-mobile-app](/assets/img/chapter-VI/deployment-mobile1.jpeg)
 
 Despliegue en Firebase para iOS:
 
-![deployment-evidence-mobile-app](/assets/img/chapter-VI/deployment-mobile2.png)
+![deployment-evidence-mobile-app](/assets/img/chapter-VI/deployment-mobile2.jpeg)
 
 Agregar firebase para Xcode para el despliege de iOS:
 
-![deployment-evidence-mobile-app](/assets/img/chapter-VI/deployment-mobile3.png)
+![deployment-evidence-mobile-app](/assets/img/chapter-VI/deployment-mobile3.jpeg)
 
 Edge app:
 
@@ -2016,9 +2016,13 @@ Landing Page: Para esta entrega, las modificaciones de la landing page fueron po
 
 Landing page:
 
-No se hicieron modificaciones para este sprint.
+Se agregaron los videos about the team y about the product:
+
+![Landing Page Collaboration](/assets/img/chapter-VI/insights2-landing.png)
 
 Aplicación web:
+
+Se realizó la conexión del frontend con el backend y se implementaron los features principales para los administradores, familiares y personal asistencial. Además se realizó la conexion con los datos obtenidos del dispositivo IoT.
 
 ![Web Application Collaboration](/assets/img/chapter-VI/insights2-backend.png)
 
