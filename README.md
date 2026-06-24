@@ -1,57 +1,52 @@
-<div style="font-family: Arial, sans-serif; padding: 20px 60px;">
+<div align="center">
 
-<!-- Institución -->
-<p style="text-align: center;"><img src="./assets/img/introduction/logo-upc.png" width="130" alt="UPC Logo"></p>
+<img src="./assets/img/introduction/logo-upc.png" width="60" alt="UPC Logo">
 
-<h1 style="font-size: 24px; margin: 0 0 6px 0; text-align: center;"><strong>Universidad Peruana de Ciencias Aplicadas</strong></h1>
-<p style="font-size: 14px; margin: 3px 0; text-align: center;"><strong>Facultad de Ingeniería</strong></p>
-<p style="font-size: 14px; margin: 3px 0; text-align: center;"><strong>Carrera de Ingeniería de Software</strong></p>
-<p style="font-size: 14px; margin: 3px 0; text-align: center;"><strong>Ciclo:</strong> 202610</p>
+Universidad Peruana de Ciencias Aplicadas
 
-<br>
+Carrera de Ingeniería de Software
 
-<!-- Datos del curso -->
-<p style="font-size: 14px; margin: 4px 0; text-align: center;"><strong>Código del curso:</strong> 1ASI0572</p>
-<p style="font-size: 14px; margin: 4px 0; text-align: center;"><strong>Nombre del curso:</strong> Desarrollo de Soluciones IoT</p>
-<p style="font-size: 14px; margin: 4px 0; text-align: center;"><strong>NRC:</strong> 17757</p>
-<p style="font-size: 14px; margin: 4px 0; text-align: center;"><strong>Profesor:</strong> Ángel Augusto Velásquez Núñez</p>
+**1ASI0572**
 
-<br>
-<!-- Informe -->
-<h2 style="font-size: 20px; margin: 16px 0; text-align: center;"><strong>Informe de Trabajo Final</strong></h2>
+**Desarrollo de Soluciones IoT**
 
-<br>
+NRC
 
-<!-- Startup y Producto -->
-<p style="font-size: 14px; margin: 4px 0; text-align: center;"><strong>Nombre del Startup:</strong> Metasoft</p>
-<p style="font-size: 14px; margin: 4px 0; text-align: center;"><strong>Nombre del Producto:</strong> Veyra</p>
+**17757**
 
-<br>
+**Informe del Trabajo Final**
 
-<!-- Integrantes -->
-<h3 style="font-size: 16px; margin: 0 0 8px 0; letter-spacing: 1px; text-transform: uppercase;  text-align: center;"><strong>Relación de Integrantes</strong></h3>
+Docente
 
-<table style="margin: 0 auto; border-collapse: collapse; font-size: 12px;">
-  <thead>
-    <tr style="background-color: #f0f0f0;">
-      <th style="padding: 5px 20px; border: 1px solid #ccc; text-align: center;">Código</th>
-      <th style="padding: 5px 20px; border: 1px solid #ccc; text-align: left;">Apellidos y Nombres</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">u202217053</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Calvo Yálan, Renato Guillermo</td></tr>
-    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">U20211G192</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Armas Sánchez, Oscar Javier</td></tr>
-    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">U202312399</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Llerena Delgado, Renzo Miguel</td></tr>
-    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">U201822697</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Quijandria Araneda, Vicente</td></tr>
-    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">U202315283</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Rios Piñan, Dayro Richard</td></tr>
-    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">U20201B510</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Saldaña Vela, Janover Gonzalo</td></tr>
-    <tr><td style="padding: 4px 20px; border: 1px solid #ccc; text-align: center;">U202310670</td><td style="padding: 4px 20px; border: 1px solid #ccc;">Villafuerte Tapia, Renzo Alonso</td></tr>
-  </tbody>
-</table>
+**Velásquez Núñez, Ángel Augusto**
 
-<br>
+Equipo
 
-<p style="font-size: 12px; margin-bottom: 20px; text-align: center;"><strong>Mayo, 2026</strong></p>
+**Metasoft**
+
+Proyecto
+
+**Veyra**
+
+**Integrantes**
+
+**Código** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Apellidos y Nombres**
+
+u202217053 &nbsp;&nbsp;&nbsp; Calvo Yálan, Renato Guillermo
+
+U20211G192 &nbsp;&nbsp;&nbsp; Armas Sánchez, Oscar Javier
+
+U202312399 &nbsp;&nbsp;&nbsp; Llerena Delgado, Renzo Miguel
+
+U201822697 &nbsp;&nbsp;&nbsp; Quijandria Araneda, Vicente
+
+U202315283 &nbsp;&nbsp;&nbsp; Rios Piñan, Dayro Richard
+
+U20201B510 &nbsp;&nbsp;&nbsp; Saldaña Vela, Janover Gonzalo
+
+U202310670 &nbsp;&nbsp;&nbsp; Villafuerte Tapia, Renzo Alonso
+
+**Período 202610**
 
 </div>
 
