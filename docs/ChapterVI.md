@@ -256,13 +256,13 @@ Para HTML y CSS se aplica un espaciado de **2 espacios** por nivel de indentaci�
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Document Title</title>
-  </head>
-  <body>
-    <h1>Main Heading</h1>
-    <p>Paragraph content inside the document body.</p>
-  </body>
+<head>
+  <title>Document Title</title>
+</head>
+<body>
+<h1>Main Heading</h1>
+<p>Paragraph content inside the document body.</p>
+</body>
 </html>
 ```
 
@@ -287,28 +287,28 @@ HTML, acrónimo de HyperText Markup Language en inglés, es un lenguaje de marca
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Animales Exóticos</title>
-  </head>
-  <body>
-    <h1>Lemur de Madagascar</h1>
-    <p>
-      El lémur de Madagascar es un primate endémico de la isla de Madagascar en
-      el Océano Índico.
-    </p>
+<head>
+  <title>Animales Exóticos</title>
+</head>
+<body>
+<h1>Lemur de Madagascar</h1>
+<p>
+  El lémur de Madagascar es un primate endémico de la isla de Madagascar en
+  el Océano Índico.
+</p>
 
-    <h1>Pangolín</h1>
-    <p>
-      El pangolín es un mamífero cubierto de escamas que se encuentra en
-      regiones de África y Asia.
-    </p>
+<h1>Pangolín</h1>
+<p>
+  El pangolín es un mamífero cubierto de escamas que se encuentra en
+  regiones de África y Asia.
+</p>
 
-    <h1>Ocelote</h1>
-    <p>
-      El ocelote es un felino salvaje que habita en América del Sur y Central,
-      conocido por su pelaje moteado.
-    </p>
-  </body>
+<h1>Ocelote</h1>
+<p>
+  El ocelote es un felino salvaje que habita en América del Sur y Central,
+  conocido por su pelaje moteado.
+</p>
+</body>
 </html>
 ```
 
@@ -358,9 +358,9 @@ CSS, conocido por sus siglas en inglés, Cascading Style Sheets (Hojas de Estilo
 ```css
 border-top: 0;
 font:
-  100%/1.6 palatino,
-  georgia,
-  serif;
+100%/1.6 palatino,
+         georgia,
+         serif;
 padding: 0 1em 0;
 ```
 
@@ -777,11 +777,11 @@ Gherkin es un Lenguaje Específico de Dominio (DSL) utilizado para escribir los 
 
 ```gherkin
 Scenario: Nurse receives critical heart rate alert
-  Given the resident "Carlos Ruiz" has a configured threshold of 100 bpm
-  When the IoT device reports a heart rate of 130 bpm
-  Then a critical alert is triggered
-  And the nursing dashboard displays the alert in red
-  And a push notification is sent to the assigned nurse
+Given the resident "Carlos Ruiz" has a configured threshold of 100 bpm
+When the IoT device reports a heart rate of 130 bpm
+Then a critical alert is triggered
+And the nursing dashboard displays the alert in red
+And a push notification is sent to the assigned nurse
 ```
 
 - **Step with Tables**
@@ -789,10 +789,10 @@ Scenario: Nurse receives critical heart rate alert
 
 ```gherkin
 Then the system records the following vital signs:
-  | Sign        | Value | Unit |
-  | Heart Rate  | 130   | bpm  |
-  | SpO2        | 94    | %    |
-  | Temperature | 38.5  | °C   |
+| Sign        | Value | Unit |
+| Heart Rate  | 130   | bpm  |
+| SpO2        | 94    | %    |
+| Temperature | 38.5  | °C   |
 ```
 
 - **Reducing Noise**
@@ -809,16 +809,16 @@ Then the system processes it normally
 
 ```gherkin
 Scenario: Alert is triggered when heart rate exceeds threshold
-  Given the threshold is set to 100 bpm
-  When the sensor reports 115 bpm
-  Then an alert is created with severity "high"
+Given the threshold is set to 100 bpm
+When the sensor reports 115 bpm
+Then an alert is created with severity "high"
 
 # --------------------------
 
 Scenario: No alert is triggered within normal range
-  Given the threshold is set to 100 bpm
-  When the sensor reports 78 bpm
-  Then no alert is created
+Given the threshold is set to 100 bpm
+When the sensor reports 78 bpm
+Then no alert is created
 ```
 
 ### 6.1.4. Software Deployment Configuration
@@ -927,7 +927,7 @@ Los servicios backend de VEYRA están desarrollados con **Java / Spring Boot** y
 3. En **Deployment Center**, conectar el repositorio de GitHub y configurar el pipeline de GitHub Actions:
 
    | Campo           | Valor                                            |
-   | --------------- | ------------------------------------------------ |
+         | --------------- | ------------------------------------------------ |
    | Source          | GitHub                                           |
    | Organization    | MetaSoft-IOT-2610                                |
    | Repository      | veyra-backend                                    |
@@ -940,16 +940,16 @@ Los servicios backend de VEYRA están desarrollados con **Java / Spring Boot** y
 <!-- TODO: Imagen — Captura del panel "Deployment Center" del App Service en Azure con la configuración de GitHub Actions completada -->
 
 4. Agregar el **Publish Profile** como secret en el repositorio de GitHub. Este paso es requerido por el workflow de GitHub Actions para autenticar el despliegue:
-   - En el portal de Azure, ir a **App Service → Overview → Get publish profile** y descargar el archivo `.PublishSettings`.
-   - En GitHub, ir a **Settings → Secrets and variables → Actions → New repository secret**.
-   - Crear el secret con el nombre `AZURE_WEBAPP_PUBLISH_PROFILE` y pegar el contenido del archivo descargado como valor.
+- En el portal de Azure, ir a **App Service → Overview → Get publish profile** y descargar el archivo `.PublishSettings`.
+- En GitHub, ir a **Settings → Secrets and variables → Actions → New repository secret**.
+- Crear el secret con el nombre `AZURE_WEBAPP_PUBLISH_PROFILE` y pegar el contenido del archivo descargado como valor.
 
 <!-- TODO: Imagen — Captura de la sección "Actions secrets" en GitHub mostrando el secret `AZURE_WEBAPP_PUBLISH_PROFILE` creado correctamente -->
 
 5. Configurar las variables de entorno en **Configuration → Application settings**:
 
    | Variable                     | Descripción                                       |
-   | ---------------------------- | ------------------------------------------------- |
+         | ---------------------------- | ------------------------------------------------- |
    | `SPRING_DATASOURCE_URL`      | JDBC URL de Azure MySQL Flexible Server           |
    | `SPRING_DATASOURCE_USERNAME` | Usuario de la base de datos                       |
    | `SPRING_DATASOURCE_PASSWORD` | Contraseña (almacenar en Azure Key Vault)         |
@@ -982,8 +982,8 @@ La aplicación móvil está desarrollada con **Flutter** y distribuida a través
 **Pasos de despliegue:**
 
 1. Configurar el proyecto en Firebase Console (https://console.firebase.google.com):
-   - Crear o seleccionar el proyecto `veyra-platform`.
-   - Navegar a **App Distribution** y registrar las aplicaciones Android e iOS.
+- Crear o seleccionar el proyecto `veyra-platform`.
+- Navegar a **App Distribution** y registrar las aplicaciones Android e iOS.
 
 <!-- TODO: Imagen — Captura de Firebase Console mostrando la sección "App Distribution" con la app de Android y/o iOS ya registrada y el listado de grupos de testers -->
 
@@ -1077,7 +1077,7 @@ Los dispositivos IoT del entorno del hogar de reposo ejecutan dos aplicaciones e
 2. Configurar las variables de entorno en el archivo `.env`:
 
    | Variable           | Descripción                                |
-   | ------------------ | ------------------------------------------ |
+         | ------------------ | ------------------------------------------ |
    | `EDGE_DEVICE_PORT` | Puerto serie o red del dispositivo IoT     |
    | `API_SYNC_URL`     | URL de la API de Azure para sincronización |
    | `SQLITE_DB_PATH`   | Ruta local de la base de datos SQLite      |
@@ -2042,6 +2042,596 @@ Edge app:
 
 ![Edge Application Collaboration](/assets/img/chapter-VI/insights2-edge.png)
 
+### 6.2.3. Sprint 3
+
+En el tercer y último sprint se completó la integración total del ecosistema VEYRA, consolidando el backend en Azure, la aplicación móvil Flutter con notificaciones push y localización GPS en tiempo real, la landing page con todos los elementos de conversión, y los dispositivos IoT embebidos con transmisión de datos en vivo al backend.
+
+#### 6.2.3.1. Sprint Planning
+
+Se realizó el sprint planning con el objetivo de cerrar todos los features pendientes, integrar los sistemas y dejar el producto listo para la entrega final. Se priorizaron las historias de usuario relacionadas con la experiencia de usuario final, la observabilidad del sistema IoT y la robustez del despliegue en producción.
+
+| Sprint #                        | Sprint 3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| :------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Sprint Planning Background**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Date                            | [INSERTAR FECHA, ej. 23/06/2026]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Time                            | [INSERTAR HORA, ej. 01:00 PM]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Location                        | [INSERTAR LUGAR, ej. Universidad / Google Meet]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Prepared By                     | [INSERTAR NOMBRE DEL SCRUM MASTER]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Attendees (to planning meeting) | Janover Saldaña / Dayro Rios / Vicente Quijandria / Renato Calvo / Renzo Llerena / Renzo Villafuerte / Oscar Armas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Sprint 2 Review Summary         | We achieved the deployment of the full backend on Azure Container Apps, the first functional version of the mobile application, the edge service, and the embedded device prototype. Core features including staff management, resident registration, real-time IoT device monitoring, push notifications, and in-app messaging were delivered. We consider the sprint objective was met, with the system operating end-to-end across all layers.                                                                                                                                                                                                                                                               |
+| Sprint 2 Retrospective Summary  | We identified that some Engineering Tasks were estimated below the 4-hour threshold, which made tracking less precise. In this sprint we commit to decomposing all tasks within the 4–8 hour range and ensuring all states (To Do, In Process, To Review, Done) are represented in the board. We also need to complete missing landing page sections (pitch message, social media links, contact info) and strengthen the overall responsive experience.                                                                                                                                                                                                                                                        |
+| **Sprint Goal & User Stories**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Sprint 3 Goal                   | Our focus is on delivering a production-ready, fully integrated VEYRA ecosystem where residents' vital signs and location captured by the IoT device flow in real time to both the web and mobile applications, triggering push alerts when anomalies are detected, while the landing page communicates the platform's value proposition with a complete set of CTAs, contact information, and social media links. We believe this will validate VEYRA as a trustworthy, market-ready product. This will be confirmed when an end-to-end demo shows a resident's anomalous reading generating a push notification received on the mobile app within seconds. |
+| Sprint 3 Velocity               | [INSERTAR VELOCIDAD, ej. 25 Velocity]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Sum of Story Points             | [INSERTAR SUMA DE STORY POINTS, ej. 55 Story Points]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+
+#### 6.2.3.2. Aspect Leaders and Collaborators
+
+Se mantuvieron los líderes designados en el sprint anterior para cada aspecto del sistema, garantizando continuidad en la coordinación de actividades y la integración de los componentes finales.
+
+| Team Member (Last Name, First Name) | Aspect: Nursing | Aspect: Activities | Aspect: Health | Aspect: Tracking | Aspect: Subscriptions and Payments | Aspect: Communications |
+| :---------------------------------- | :-------------- | :----------------- | :------------- | :--------------- | :--------------------------------- | :--------------------- |
+| Calvo Yalan, Renato Guillermo       | L               | C                  | C              | C                | C                                  | C                      |
+| Armas Sánchez, Oscar Javier         | C               | L                  | C              | C                | C                                  | C                      |
+| Rios Piñan, Dayro Richard           | L               | C                  | C              | C                | C                                  | C                      |
+| Llerena Delgado, Renzo Miguel       | C               | C                  | C              | C                | L                                  | C                      |
+| Quijandria Araneda, Vicente         | C               | C                  | C              | L                | C                                  | C                      |
+| Saldaña Vela, Janover Gonzalo       | C               | C                  | C              | C                | C                                  | L                      |
+| Villafuerte Tapia, Renzo Alonso     | C               | C                  | L              | C                | C                                  | C                      |
+
+#### 6.2.3.3. Sprint Backlog
+
+Se descompusieron todos los User Stories asignados al Sprint 3 en Engineering Tasks, cada una estimada en un rango de 4 a 8 horas. El tablero de seguimiento fue gestionado mediante [INSERTAR HERRAMIENTA: Trello / GitHub Projects / Jira / Linear] y refleja la evolución de las tareas a través de los estados To Do, In Process, To Review y Done.
+
+Captura del tablero ágil al cierre del sprint:
+
+<!-- CAPTURA: Inserta aquí una captura del tablero (Trello/Jira/GitHub Projects) mostrando las columnas To Do, In Process, To Review, Done con las tareas del sprint -->
+<!-- Figura 6.3.3.1. Tablero de seguimiento del Sprint 3 en [HERRAMIENTA]. -->
+![Sprint 3 Board](/assets/img/chapter-VI/s3-sprint-board.png)
+
+URL del tablero: [INSERTAR URL PÚBLICA DEL TABLERO ÁGIL]
+
+| Id     | Title (User Story / Tech Story)                        | Id (Task) | Title (Task)                       | Description                                                                                | Estimation (Hours) | Assigned To                     | Status     |
+| :----- | :----------------------------------------------------- | :-------- | :--------------------------------- | :----------------------------------------------------------------------------------------- | :----------------- | :------------------------------ | :--------- |
+| [US-X] | [INSERTAR NOMBRE DEL USER STORY 1]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+| [US-X] | [INSERTAR NOMBRE DEL USER STORY 1]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+| [US-X] | [INSERTAR NOMBRE DEL USER STORY 2]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | In-Process |
+| [US-X] | [INSERTAR NOMBRE DEL USER STORY 2]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | To-Review  |
+| [US-X] | [INSERTAR NOMBRE DEL USER STORY 3]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | To-Do      |
+| [US-X] | [INSERTAR NOMBRE DEL USER STORY 3]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+| [TS-X] | [INSERTAR NOMBRE DEL TECH STORY 1]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+| [TS-X] | [INSERTAR NOMBRE DEL TECH STORY 1]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | To-Review  |
+| [TS-X] | [INSERTAR NOMBRE DEL TECH STORY 2]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | In-Process |
+| [TS-X] | [INSERTAR NOMBRE DEL TECH STORY 2]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | To-Do      |
+| [US-X] | [INSERTAR NOMBRE DEL USER STORY 4]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+| [US-X] | [INSERTAR NOMBRE DEL USER STORY 4]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+| [US-X] | [INSERTAR NOMBRE DEL USER STORY 5]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | In-Process |
+| [US-X] | [INSERTAR NOMBRE DEL USER STORY 5]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | To-Review  |
+| [TS-X] | [INSERTAR NOMBRE DEL TECH STORY 3]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+| [TS-X] | [INSERTAR NOMBRE DEL TECH STORY 3]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+| [US-X] | Landing page: Pitch message y secciones de conversión  | T01       | Pitch message section              | Redacción e implementación de la sección de mensaje de valor central en la landing page.   | 4                  | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+| [US-X] | Landing page: Pitch message y secciones de conversión  | T02       | CTA section con enlace a la app    | Implementación del bloque CTA principal vinculado a la URL de la aplicación desplegada.    | 4                  | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+| [US-X] | Landing page: Contacto y redes sociales                | T01       | Sección de información de contacto | Desarrollo de la sección de contacto con email, teléfono y formulario básico.              | 4                  | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+| [US-X] | Landing page: Contacto y redes sociales                | T02       | Vínculos a redes sociales          | Integración de íconos y enlaces a LinkedIn, Instagram y otras redes del startup.           | 4                  | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+| [US-X] | Landing page: Video del producto                       | T01       | Sección explicativa con screenshots | Implementación de la sección que explica el propósito de la plataforma con capturas/video. | 5                  | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+| [US-X] | Landing page: Responsive Design                        | T01       | Breakpoints móvil y tablet         | Ajuste de estilos CSS/Tailwind para correcta visualización en pantallas menores a 768px.   | 5                  | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
+
+#### 6.2.3.4. Development Evidence for Sprint Review
+
+En este sprint final se completó la integración de todos los artefactos del ecosistema VEYRA, consolidando el flujo de datos desde el dispositivo IoT embebido hasta las interfaces web y móvil. A continuación se presenta la evidencia de commits por repositorio.
+
+Landing page:
+
+| Repository         | Branch                 | Commit Id | Commit Message                                                               | Commit Message Body | Commited on (Date)          |
+| :----------------- | :--------------------- | :-------- | :--------------------------------------------------------------------------- | :------------------ | :-------------------------- |
+| veyra-landing-page | main                   | [SHA]     | [INSERTAR MENSAJE DE COMMIT]                                                 | —                   | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-landing-page | feature/pitch-and-cta  | [SHA]     | feat(landing): add pitch message section and hero CTA linked to web app      | —                   | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-landing-page | feature/contact-social | [SHA]     | feat(landing): add contact section and social media links                    | —                   | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-landing-page | feature/product-video  | [SHA]     | feat(landing): embed product demo video and add platform screenshots section | —                   | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-landing-page | feature/responsive     | [SHA]     | fix(landing): apply responsive breakpoints for mobile and tablet             | —                   | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-landing-page | develop                | [SHA]     | [INSERTAR MENSAJE DE COMMIT]                                                 | —                   | [INSERTAR FECHA DD/MM/YYYY] |
+
+Aplicación web:
+
+| Repository    | Branch                     | Commit Id | Commit Message               | Commit Message Body | Commited on (Date)          |
+| :------------ | :------------------------- | :-------- | :--------------------------- | :------------------ | :-------------------------- |
+| veyra-web-app | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | —                   | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-web-app | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | —                   | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-web-app | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | —                   | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-web-app | develop                    | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pull request merge  | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-web-app | main                       | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pull request merge  | [INSERTAR FECHA DD/MM/YYYY] |
+
+Backend:
+
+| Repository                      | Branch                     | Commit Id | Commit Message               | Commit Message Body                   | Commited on (Date)          |
+| :------------------------------ | :------------------------- | :-------- | :--------------------------- | :------------------------------------ | :-------------------------- |
+| MetaSoft-IOT-2610/veyra-backend | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | [INSERTAR AUTOR] pushed X commits     | [INSERTAR FECHA DD/MM/YYYY] |
+| MetaSoft-IOT-2610/veyra-backend | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | [INSERTAR AUTOR] pushed X commits     | [INSERTAR FECHA DD/MM/YYYY] |
+| MetaSoft-IOT-2610/veyra-backend | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | [INSERTAR AUTOR] pushed X commits     | [INSERTAR FECHA DD/MM/YYYY] |
+| MetaSoft-IOT-2610/veyra-backend | develop                    | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pull request merge                    | [INSERTAR FECHA DD/MM/YYYY] |
+
+Aplicación móvil:
+
+| Repository               | Branch                     | Commit Id | Commit Message               | Commit Message Body | Commited on (Date)          |
+| :----------------------- | :------------------------- | :-------- | :--------------------------- | :------------------ | :-------------------------- |
+| veyra-mobile-application | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-mobile-application | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-mobile-application | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-mobile-application | develop                    | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Merge branch        | [INSERTAR FECHA DD/MM/YYYY] |
+
+Edge app:
+
+| Repository             | Branch                     | Commit Id | Commit Message               | Commit Message Body | Commited on (Date)          |
+| :--------------------- | :------------------------- | :-------- | :--------------------------- | :------------------ | :-------------------------- |
+| veyra-tracking-service | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-tracking-service | develop                    | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
+
+Embedded app:
+
+| Repository            | Branch                     | Commit Id | Commit Message                    | Commit Message Body | Commited on (Date)          |
+| :-------------------- | :------------------------- | :-------- | :-------------------------------- | :------------------ | :-------------------------- |
+| veyra-embedded-device | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT]      | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-embedded-device | develop                    | [SHA]     | [INSERTAR MENSAJE DE COMMIT]      | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-embedded-device | main                       | [SHA]     | Merge branch 'release/[VERSIÓN]'  | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
+
+#### 6.2.3.5. Testing Suite Evidence for Sprint Review
+
+En este sprint final se realizaron pruebas de integración y de sistema para validar los flujos críticos del ecosistema VEYRA. A continuación se presenta la evidencia de las pruebas realizadas.
+
+Tabla de commits relacionados al testing:
+
+| Repository                      | Branch                     | Commit Id | Commit Message                                       | Commit Message Body                   | Commited on (Date)          |
+| :------------------------------ | :------------------------- | :-------- | :--------------------------------------------------- | :------------------------------------ | :-------------------------- |
+| MetaSoft-IOT-2610/veyra-backend | feature/[INSERTAR FEATURE] | [SHA]     | test([MÓDULO]): [INSERTAR DESCRIPCIÓN DE LA PRUEBA]  | [INSERTAR AUTOR] pushed X commits     | [INSERTAR FECHA DD/MM/YYYY] |
+| MetaSoft-IOT-2610/veyra-backend | feature/[INSERTAR FEATURE] | [SHA]     | test([MÓDULO]): [INSERTAR DESCRIPCIÓN DE LA PRUEBA]  | [INSERTAR AUTOR] pushed X commits     | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-mobile-application        | feature/[INSERTAR FEATURE] | [SHA]     | test([MÓDULO]): [INSERTAR DESCRIPCIÓN DE LA PRUEBA]  | Pushed X commits                      | [INSERTAR FECHA DD/MM/YYYY] |
+| veyra-web-app                   | feature/[INSERTAR FEATURE] | [SHA]     | test([MÓDULO]): [INSERTAR DESCRIPCIÓN DE LA PRUEBA]  | Pushed X commits                      | [INSERTAR FECHA DD/MM/YYYY] |
+
+Evidencia de ejecución de pruebas:
+
+<!-- CAPTURA: Inserta aquí captura de los tests corriendo (terminal, IDE, CI/CD) para el backend -->
+<!-- Figura 6.3.5.1. Ejecución de pruebas unitarias/integración del backend de VEYRA. -->
+![Testing Evidence - Backend](/assets/img/chapter-VI/s3-testing-backend.png)
+
+<!-- CAPTURA: Inserta aquí captura de los tests de la aplicación web o móvil -->
+<!-- Figura 6.3.5.2. Ejecución de pruebas en la aplicación web/móvil de VEYRA. -->
+![Testing Evidence - Frontend](/assets/img/chapter-VI/s3-testing-frontend.png)
+
+Tabla resumen de casos de prueba ejecutados:
+
+| Caso de Prueba | Descripción                                           | Precondición                                               | Pasos                                                                                                                                              | Resultado Esperado                                                          | Resultado Obtenido  | Estado |
+| :------------- | :---------------------------------------------------- | :--------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- | :------------------ | :----- |
+| TC-S3-01       | [INSERTAR NOMBRE DEL CASO DE PRUEBA]                  | [INSERTAR PRECONDICIÓN]                                    | [INSERTAR PASOS]                                                                                                                                   | [INSERTAR RESULTADO ESPERADO]                                               | [INSERTAR OBTENIDO] | PASS   |
+| TC-S3-02       | [INSERTAR NOMBRE DEL CASO DE PRUEBA]                  | [INSERTAR PRECONDICIÓN]                                    | [INSERTAR PASOS]                                                                                                                                   | [INSERTAR RESULTADO ESPERADO]                                               | [INSERTAR OBTENIDO] | PASS   |
+| TC-S3-03       | Flujo de alerta IoT end-to-end                        | Residente con dispositivo IoT asignado                     | 1. Dispositivo envía lectura de SpO2 < 90%. 2. Backend evalúa alerta. 3. Se despacha push notification.                                            | App móvil recibe notificación push en menos de 5 segundos.                  | [INSERTAR OBTENIDO] | PASS   |
+| TC-S3-04       | Autenticación JWT con rol familiar                    | Usuario familiar registrado en el sistema                  | 1. POST /api/v1/authentication/sign-in con credenciales válidas. 2. Usar token en endpoint protegido.                                              | Respuesta 200 OK con token válido y acceso al recurso.                      | [INSERTAR OBTENIDO] | PASS   |
+| TC-S3-05       | Visualización de ubicación GPS en mapa                | Dispositivo IoT asignado a residente, con GPS activo       | 1. Dispositivo POST /api/v1/locations. 2. Familiar abre mapa en app móvil.                                                                         | Marcador del residente aparece en la coordenada enviada.                    | [INSERTAR OBTENIDO] | PASS   |
+| TC-S3-06       | CTA de landing page vinculado a aplicación desplegada | Landing page publicada en producción                       | 1. Abrir landing page. 2. Hacer clic en el botón CTA principal.                                                                                    | Redirección a https://app.veyra.metasoft.pe/home                            | [INSERTAR OBTENIDO] | PASS   |
+| TC-S3-07       | [INSERTAR NOMBRE DEL CASO DE PRUEBA]                  | [INSERTAR PRECONDICIÓN]                                    | [INSERTAR PASOS]                                                                                                                                   | [INSERTAR RESULTADO ESPERADO]                                               | [INSERTAR OBTENIDO] | PASS   |
+
+#### 6.2.3.6. Execution Evidence for Sprint Review
+
+Durante este sprint final se consolidó el ecosistema completo de VEYRA, integrando de forma funcional todos los artefactos: landing page, aplicación web, aplicación móvil (Flutter), backend (Spring Boot desplegado en Azure Container Apps), edge app y embedded app. A continuación se presenta la evidencia de ejecución de los flujos principales del sistema.
+
+---
+
+**Landing page:**
+
+La landing page de VEYRA se mantiene publicada con acceso continuo, incorporando el video "About the Product" y el video "About the Team" integrados en las secciones correspondientes. Se completaron las secciones de pitch message, CTA vinculado a la aplicación desplegada, información de contacto y vínculos a redes sociales.
+
+Hero section actualizada:
+
+<!-- CAPTURA: Inserta aquí captura de la hero section de la landing page -->
+<!-- Figura 6.3.6.1. Vista de la hero section de la landing page de VEYRA. -->
+![Landing Page - Hero Section](/assets/img/chapter-VI/s3-execution-landing-hero.png)
+
+Sección "About the Product" con video del producto:
+
+<!-- CAPTURA: Inserta aquí captura de la sección About the Product con el video incrustado -->
+<!-- Figura 6.3.6.2. Sección "About the Product" de la landing page de VEYRA. -->
+![Landing Page - About the Product](/assets/img/chapter-VI/s3-execution-landing-about-product.png)
+
+Sección de pitch message y CTA:
+
+<!-- CAPTURA: Inserta aquí captura del pitch message y el botón CTA principal vinculado a la app -->
+<!-- Figura 6.3.6.3. Sección de pitch message y Call-To-Action de la landing page de VEYRA. -->
+![Landing Page - Pitch and CTA](/assets/img/chapter-VI/s3-execution-landing-cta.png)
+
+Sección de contacto y redes sociales:
+
+<!-- CAPTURA: Inserta aquí captura de la sección de contacto e íconos de redes sociales -->
+<!-- Figura 6.3.6.4. Sección de contacto y vínculos a redes sociales de la landing page de VEYRA. -->
+![Landing Page - Contact and Social](/assets/img/chapter-VI/s3-execution-landing-contact.png)
+
+---
+
+**Aplicación web:**
+
+La aplicación web fue completada con todos los flujos críticos para los tres perfiles de usuario: administrador, personal asistencial y familiar. Se integró la visualización en tiempo real de datos provenientes de los dispositivos IoT mediante WebSocket.
+
+Vista del dashboard con métricas en tiempo real:
+
+<!-- CAPTURA: Inserta aquí captura del dashboard de la aplicación web con datos IoT reales -->
+<!-- Figura 6.3.6.5. Dashboard de la aplicación web de VEYRA con métricas de dispositivos IoT. -->
+![Web App - Dashboard](/assets/img/chapter-VI/s3-execution-web-dashboard.png)
+
+Vista de monitoreo de signos vitales del residente:
+
+<!-- CAPTURA: Inserta aquí captura de la pantalla de signos vitales -->
+<!-- Figura 6.3.6.6. Pantalla de signos vitales de un residente en la aplicación web. -->
+![Web App - Vital Signs](/assets/img/chapter-VI/s3-execution-web-vitalsigns.png)
+
+Vista de gestión de actividades:
+
+<!-- CAPTURA: Inserta aquí captura de la pantalla de actividades -->
+<!-- Figura 6.3.6.7. Pantalla de gestión de actividades en la aplicación web. -->
+![Web App - Activities](/assets/img/chapter-VI/s3-execution-web-activities.png)
+
+Vista del módulo de mensajería en tiempo real (WebSocket):
+
+<!-- CAPTURA: Inserta aquí captura del chat entre familiar y personal -->
+<!-- Figura 6.3.6.8. Módulo de mensajería en tiempo real entre familiar y personal asistencial. -->
+![Web App - Chat](/assets/img/chapter-VI/s3-execution-web-chat.png)
+
+---
+
+**Aplicación móvil (Flutter):**
+
+La aplicación móvil fue finalizada para los perfiles de familiar y personal asistencial, con notificaciones push (Firebase Cloud Messaging) integradas y visualización de la ubicación GPS del residente en tiempo real.
+
+Vista del flujo de onboarding del familiar:
+
+<!-- CAPTURA: Inserta aquí captura del flujo de onboarding en la app móvil -->
+<!-- Figura 6.3.6.9. Flujo de onboarding del familiar en la aplicación móvil de VEYRA. -->
+![Mobile App - Onboarding](/assets/img/chapter-VI/s3-execution-mobile-onboarding.png)
+
+Vista del mapa de ubicación GPS del residente:
+
+<!-- CAPTURA: Inserta aquí captura del mapa en tiempo real -->
+<!-- Figura 6.3.6.10. Visualización de la ubicación GPS del residente en la aplicación móvil. -->
+![Mobile App - GPS Map](/assets/img/chapter-VI/s3-execution-mobile-gps.png)
+
+Vista de notificaciones push recibidas:
+
+<!-- CAPTURA: Inserta aquí captura de las notificaciones push en el dispositivo -->
+<!-- Figura 6.3.6.11. Notificaciones push recibidas en la aplicación móvil. -->
+![Mobile App - Push Notifications](/assets/img/chapter-VI/s3-execution-mobile-notifications.png)
+
+---
+
+**Edge app y Embedded app:**
+
+La edge app actúa como intermediario entre los dispositivos embebidos y el backend en Azure, procesando y enviando las mediciones al endpoint `/api/v1/locations` y al endpoint `/api/v1/measurements`. La embedded app captura las métricas del sensor y las transmite vía HTTP a la edge app.
+
+Vista del proceso de la edge app en ejecución:
+
+<!-- CAPTURA: Inserta aquí captura de la consola/log de la edge app -->
+<!-- Figura 6.3.6.12. Log de la edge app procesando datos del dispositivo IoT. -->
+![Edge App - Execution](/assets/img/chapter-VI/s3-execution-edge-app.png)
+
+Vista del dispositivo embebido enviando datos:
+
+<!-- CAPTURA: Inserta aquí captura del dispositivo embebido (sensor + microcontrolador) -->
+<!-- Figura 6.3.6.13. Dispositivo embebido de VEYRA transmitiendo métricas de salud. -->
+![Embedded App - Execution](/assets/img/chapter-VI/s3-execution-embedded-app.png)
+
+---
+
+**Video de demostración del Sprint 3:**
+
+> **Video de demostración:** [INSERTAR URL de Microsoft Stream / Clipchamp aquí]
+> **Duración:** [INSERTAR duración, ej. 5 min 30 seg]
+>
+> El video muestra el flujo completo del sistema: registro y onboarding de un nuevo residente, monitoreo de signos vitales desde la web y la app móvil, recepción de una alerta push ante una anomalía detectada por el dispositivo IoT, y la gestión de actividades desde el perfil de personal asistencial.
+
+#### 6.2.3.7. Services Documentation Evidence for Sprint Review
+
+En este sprint final se completó la documentación de todos los endpoints de la API REST de VEYRA mediante OpenAPI/Swagger. La especificación está desplegada junto al backend en Azure Container Apps y es accesible en la ruta `/swagger-ui/index.html` de la URL del servicio.
+
+Captura de la interfaz Swagger UI desplegada:
+
+<!-- CAPTURA: Inserta aquí captura de Swagger UI en producción (Azure) -->
+<!-- Figura 6.3.7.1. Documentación OpenAPI/Swagger de la API de VEYRA desplegada en Azure. -->
+![API Documentation - Swagger UI](/assets/img/chapter-VI/s3-swagger-ui.png)
+
+A continuación se presenta la tabla completa de endpoints documentados en este sprint:
+
+| Verbo HTTP | Sintaxis / Endpoint | Parámetros | Ejemplo de Respuesta / Explicación | Enlace de Documentación Desplegada |
+| :--------- | :------------------ | :--------- | :--------------------------------- | :--------------------------------- |
+| **Measurements** | | | | |
+| GET | `/api/v1/measurements` | Ninguno | `[{"id":"string","deviceId":0}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Measurements/getAllMeasurements) |
+| GET | `/api/v1/measurements/{measurementId}` | `measurementId` | `{"id":"string","deviceId":0,"timestamp":"string","values":{}}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Measurements/getMeasurementById) |
+| POST | `/api/v1/measurements` | Ninguno | `{"id":"string","deviceId":0,"timestamp":"string","values":{}}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Measurements/createMeasurement) |
+| **Locations** | | | | |
+| POST | `/api/v1/locations` | Ninguno | `{"id":"string","deviceId":"string","latitude":0.1,"longitude":0.1,"recordedAt":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Locations/recordLocation) |
+| GET | `/api/v1/locations/{deviceId}/latest` | `deviceId` | `{"id":"string","deviceId":"string","latitude":0.1,"longitude":0.1,"recordedAt":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Locations/getLatestLocation) |
+| **Vital Signs** | | | | |
+| GET | `/api/v1/resident/{residentId}/vital-signs` | `residentId` | `[{"id":0,"residentId":0,"measurementId":"string","severityLevel":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/VitalSigns/getVitalSigns) |
+| **Activities** | | | | |
+| PUT | `/api/v1/activities/{activityId}` | `activityId` | `{"id":0,"nursingHomeId":0,"residentId":0,"healthcareStaffId":0,"type":"string","title":"string","status":"string","isRecurring":true,"recurringDays":["string"]}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Activities/updateActivity) |
+| DELETE | `/api/v1/activities/{activityId}` | `activityId` | `204 No Content` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Activities/deleteActivity) |
+| PATCH | `/api/v1/activities/{activityId}/complete` | `activityId` | `{"id":0,"nursingHomeId":0,"residentId":0,"healthcareStaffId":0,"type":"string","title":"string","status":"string","isRecurring":true,"recurringDays":["string"]}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Activities/completeActivity) |
+| **Medications** | | | | |
+| GET | `/api/v1/medications/{medicationId}` | `medicationId` | `{"id":0,"residentId":0,"name":"string","description":"string","amount":0,"expirationDate":"2026-06-29","drugPresentation":"string","dosage":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Medications/getMedicationById) |
+| **Push Notifications** | | | | |
+| POST | `/api/v1/push-notifications` | Ninguno | `{"message":"Email accepted for delivery"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/PushNotifications/sendPushNotification) |
+| POST | `/api/v1/push-notifications/users/{userId}` | `userId` | `{"message":"string","notificationId":0,"deliveredCount":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/PushNotifications/sendPushNotificationToUser) |
+| **Conversations** | | | | |
+| POST | `/api/v1/conversations` | Ninguno | `{"id":0,"type":"string","groupName":"string","status":"string","participantUserIds":[0],"lastMessageAt":"string","createdAt":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Conversations/createOrRetrieveConversation) |
+| GET | `/api/v1/conversations/{conversationId}` | `conversationId` | `{"id":0,"type":"string","groupName":"string","status":"string","participantUserIds":[0],"lastMessageAt":"string","createdAt":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Conversations/getConversationById) |
+| PATCH | `/api/v1/conversations/{conversationId}/read` | `conversationId` | `{"id":0,"type":"string","groupName":"string","status":"string","participantUserIds":[0],"lastMessageAt":"string","createdAt":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Conversations/markConversationAsRead) |
+| GET | `/api/v1/conversations/{conversationId}/messages` | `conversationId` | `[{"id":0,"conversationId":0,"senderUserId":0,"content":"string","createdAt":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/ConversationMessages/getMessages) |
+| POST | `/api/v1/conversations/{conversationId}/messages` | `conversationId` | `{"id":0,"conversationId":0,"senderUserId":0,"content":"string","createdAt":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/ConversationMessages/sendMessage) |
+| **Devices** | | | | |
+| GET | `/api/v1/devices` | Ninguno | `[{"id":0,"nursingHomeId":0,"deviceType":"string","status":"string","residentId":0,"assignedAt":"string","macAddress":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Devices/getAllDevices) |
+| GET | `/api/v1/devices/{deviceId}` | `deviceId` | `{"id":0,"nursingHomeId":0,"deviceType":"string","status":"string","residentId":0,"assignedAt":"string","macAddress":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Devices/getDeviceById) |
+| PUT | `/api/v1/devices/{deviceId}` | `deviceId` | `{"id":0,"nursingHomeId":0,"deviceType":"string","status":"string","residentId":0,"assignedAt":"string","macAddress":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Devices/updateDevice) |
+| PATCH | `/api/v1/devices/{deviceId}/status` | `deviceId` | `{"id":0,"nursingHomeId":0,"deviceType":"string","status":"string","residentId":0,"assignedAt":"string","macAddress":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Devices/changeDeviceStatus) |
+| POST | `/api/v1/devices/{deviceId}/assignments` | `deviceId` | `{"id":0,"nursingHomeId":0,"deviceType":"string","status":"string","residentId":0,"assignedAt":"string","macAddress":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Devices/assignDeviceToResident) |
+| DELETE | `/api/v1/devices/{deviceId}/assignments` | `deviceId` | `204 No Content` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Devices/unassignDevice) |
+| **Nursing Homes** | | | | |
+| GET | `/api/v1/nursing-homes` | Ninguno | `[{"id":0,"businessProfileId":0,"administratorId":0}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/getAllNursingHomes) |
+| GET | `/api/v1/nursing-homes/{nursingHomeId}` | `nursingHomeId` | `{"id":0,"businessProfileId":0,"administratorId":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/getNursingHomeById) |
+| GET | `/api/v1/nursing-homes/{nursingHomeId}/residents` | `nursingHomeId` | `[{"id":0,"personProfileId":0,"status":"string","roomId":0}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/getResidents) |
+| POST | `/api/v1/nursing-homes/{nursingHomeId}/residents` | `nursingHomeId` | `{"id":0,"personProfileId":0,"status":"string","roomId":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/createResident) |
+| GET | `/api/v1/nursing-homes/{nursingHomeId}/staff` | `nursingHomeId` | `[{"id":0,"personProfileId":0,"status":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/getAllStaff) |
+| POST | `/api/v1/nursing-homes/{nursingHomeId}/staff` | `nursingHomeId` | `{"id":0,"personProfileId":0,"status":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/createStaff) |
+| GET | `/api/v1/nursing-homes/{nursingHomeId}/rooms` | `nursingHomeId` | `[{"id":0,"roomNumber":"string","nursingHomeId":0,"capacity":0,"type":"string","occupied":0,"status":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/getRooms) |
+| POST | `/api/v1/nursing-homes/{nursingHomeId}/rooms` | `nursingHomeId` | `{"id":0,"roomNumber":"string","nursingHomeId":0,"capacity":0,"type":"string","occupied":0,"status":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/addRoom) |
+| GET | `/api/v1/nursing-homes/{nursingHomeId}/devices` | `nursingHomeId` | `{"devices":[{"id":0,"nursingHomeId":0,"deviceType":"string","status":"string","residentId":0,"assignedAt":"string","macAddress":"string"}]}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/getDevices) |
+| POST | `/api/v1/nursing-homes/{nursingHomeId}/devices` | `nursingHomeId` | `{"id":0,"nursingHomeId":0,"deviceType":"string","status":"string","residentId":0,"assignedAt":"string","macAddress":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/registerDevice) |
+| GET | `/api/v1/nursing-homes/{nursingHomeId}/activities` | `nursingHomeId` | `[{"id":0,"nursingHomeId":0,"residentId":0,"healthcareStaffId":0,"type":"string","title":"string","status":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/getActivities) |
+| POST | `/api/v1/nursing-homes/{nursingHomeId}/activities` | `nursingHomeId` | `{"residentId":0,"healthcareStaffId":0,"type":"string","title":"string","isRecurring":true,"recurringDays":["string"]}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/createActivity) |
+| GET | `/api/v1/nursing-homes/{nursingHomeId}/relatives` | `nursingHomeId` | `[{"id":0,"firstName":"string","lastName":"string","email":"string","residentId":0,"nursingHomeId":0,"userId":0}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/getRelatives) |
+| POST | `/api/v1/nursing-homes/{nursingHomeId}/relatives` | `nursingHomeId` | `{"id":0,"firstName":"string","lastName":"string","email":"string","residentId":0,"nursingHomeId":0,"userId":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/addRelative) |
+| GET | `/api/v1/nursing-homes/{nursingHomeId}/residents-admissions` | `nursingHomeId` | `{"labels":["string"],"values":[0],"metricType":"string","total":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/getAdmissionsAnalytics) |
+| GET | `/api/v1/nursing-homes/{nursingHomeId}/staff-hires` | `nursingHomeId` | `{"labels":["string"],"values":[0],"metricType":"string","total":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/getStaffHiresAnalytics) |
+| GET | `/api/v1/nursing-homes/{nursingHomeId}/staff-terminations` | `nursingHomeId` | `{"labels":["string"],"values":[0],"metricType":"string","total":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/getStaffTerminationsAnalytics) |
+| GET | `/api/v1/nursing-homes/{nursingHomeId}/rooms/{roomStatus}` | `nursingHomeId`, `roomStatus` | `[{"id":0,"roomNumber":"string","nursingHomeId":0,"capacity":0,"type":"string","occupied":0,"status":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/NursingHomes/getRoomsByStatus) |
+| **Authentication** | | | | |
+| POST | `/api/v1/authentication/sign-up` | Ninguno | `{"id":0,"username":"string","roles":["string"]}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Authentication/signUp) |
+| POST | `/api/v1/authentication/sign-in` | Ninguno | `{"id":0,"username":"string","roles":["string"],"token":"string","entityId":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Authentication/signIn) |
+| POST | `/api/v1/authentication/set-password` | Ninguno | `204 No Content` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Authentication/setPassword) |
+| **Users** | | | | |
+| GET | `/api/v1/users` | Ninguno | `[{"id":0,"username":"string","roles":["string"]}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Users/getAllUsers) |
+| GET | `/api/v1/users/{userId}` | `userId` | `{"id":0,"username":"string","roles":["string"]}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Users/getUserById) |
+| GET | `/api/v1/users/{userId}/notifications` | `userId` | `[{"id":0,"userId":0,"title":"string","body":"string","status":"string","createdAt":"string","readAt":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/UserNotifications/listNotifications) |
+| GET | `/api/v1/users/{userId}/notifications/unread-count` | `userId` | `{"unreadCount":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/UserNotifications/getUnreadCount) |
+| PATCH | `/api/v1/users/{userId}/notifications/{notificationId}/read` | `userId`, `notificationId` | `{"id":0,"userId":0,"title":"string","body":"string","status":"string","createdAt":"string","readAt":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/UserNotifications/markAsRead) |
+| PATCH | `/api/v1/users/{userId}/notifications/read-all` | `userId` | `{"markedCount":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/UserNotifications/markAllAsRead) |
+| GET | `/api/v1/users/{userId}/conversations` | `userId` | `[{"id":0,"type":"string","groupName":"string","participantUserIds":[0],"lastMessageAt":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/UserConversations/listConversations) |
+| GET | `/api/v1/users/{userId}/conversations/unread-count` | `userId` | `{"unreadCount":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/UserConversations/getUnreadCount) |
+| GET | `/api/v1/users/{userId}/subscriptions` | `userId` | `[{"id":0,"userId":0,"stripeSubscriptionId":"string","planType":"string","period":"string","amount":0.1,"currency":"string","status":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Users/getSubscriptions) |
+| POST | `/api/v1/users/{userId}/subscriptions` | `userId` | `{"id":0,"userId":0,"stripeSubscriptionId":"string","planType":"string","period":"string","amount":0.1,"currency":"string","status":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Users/createSubscription) |
+| GET | `/api/v1/users/{userId}/subscriptions/active` | `userId` | `{"id":0,"userId":0,"stripeSubscriptionId":"string","planType":"string","period":"string","amount":0.1,"currency":"string","status":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Users/getActiveSubscription) |
+| PUT | `/api/v1/users/{userId}/subscriptions/{subscriptionId}` | `userId`, `subscriptionId` | `{"id":0,"userId":0,"stripeSubscriptionId":"string","planType":"string","period":"string","amount":0.1,"currency":"string","status":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Users/updateSubscription) |
+| POST | `/api/v1/users/{userId}/subscriptions/{subscriptionId}/cancel` | `userId`, `subscriptionId` | `{"id":0,"userId":0,"stripeSubscriptionId":"string","planType":"string","period":"string","amount":0.1,"currency":"string","status":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Users/cancelSubscription) |
+| GET | `/api/v1/users/{userId}/push-tokens` | `userId` | `[{"id":0,"userId":0,"token":"string","platform":"ANDROID","lastSeenAt":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/UserPushTokens/listPushTokens) |
+| POST | `/api/v1/users/{userId}/push-tokens` | `userId` | `{"id":0,"userId":0,"token":"string","platform":"ANDROID","lastSeenAt":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/UserPushTokens/registerPushToken) |
+| DELETE | `/api/v1/users/{userId}/push-tokens` | `userId` | `204 No Content` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/UserPushTokens/unregisterPushToken) |
+| **Staff** | | | | |
+| PUT | `/api/v1/staff/{staffMemberId}` | `staffMemberId` | `{"id":0,"personProfileId":0,"status":"string","emergencyContactFirstName":"string","emergencyContactLastName":"string","emergencyContactPhoneNumber":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Staff/updateStaffMember) |
+| GET | `/api/v1/staff/{staffMemberId}/contracts` | `staffMemberId` | `[{"id":0,"staffMemberId":0,"startDate":"string","endDate":"string","typeOfContract":"string","staffRole":"string","workShift":"string","status":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Staff/getContracts) |
+| POST | `/api/v1/staff/{staffMemberId}/contracts` | `staffMemberId` | `{"id":0,"staffMemberId":0,"startDate":"string","endDate":"string","typeOfContract":"string","staffRole":"string","workShift":"string","status":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Staff/addContract) |
+| GET | `/api/v1/staff/{staffMemberId}/contracts/{contractId}` | `staffMemberId`, `contractId` | `{"id":0,"staffMemberId":0,"startDate":"string","endDate":"string","typeOfContract":"string","staffRole":"string","workShift":"string","status":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Staff/getContractById) |
+| PATCH | `/api/v1/staff/{staffMemberId}/contracts/{contractId}` | `staffMemberId`, `contractId` | `{"id":0,"staffMemberId":0,"startDate":"string","endDate":"string","typeOfContract":"string","staffRole":"string","workShift":"string","status":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Staff/updateContractStatus) |
+| GET | `/api/v1/staff/{staffMemberId}/contracts/active` | `staffMemberId` | `{"id":0,"staffMemberId":0,"startDate":"string","endDate":"string","typeOfContract":"string","staffRole":"string","workShift":"string","status":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Staff/getActiveContract) |
+| GET | `/api/v1/staff/{staffMemberId}/nursing-homes` | `staffMemberId` | `{"businessProfileId":0,"staffId":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Staff/getNursingHomeByStaffId) |
+| GET | `/api/v1/staff/by-user/{userId}/nursing-homes` | `userId` | `{"businessProfileId":0,"staffId":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Staff/getNursingHomeByUserId) |
+| **Residents** | | | | |
+| GET | `/api/v1/residents/{residentId}` | `residentId` | `{"id":0,"personProfileId":0,"status":"string","roomId":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Residents/getResidentById) |
+| PUT | `/api/v1/residents/{residentId}` | `residentId` | `{"id":0,"personProfileId":0,"status":"string","roomId":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Residents/updateResident) |
+| DELETE | `/api/v1/residents/{residentId}` | `residentId` | `204 No Content` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Residents/deleteResident) |
+| GET | `/api/v1/residents/{residentId}/medications` | `residentId` | `[{"id":0,"residentId":0,"name":"string","description":"string","amount":0,"expirationDate":"string","drugPresentation":"string","dosage":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Residents/getMedications) |
+| POST | `/api/v1/residents/{residentId}/medications` | `residentId` | `{"id":0,"residentId":0,"name":"string","description":"string","amount":0,"expirationDate":"string","drugPresentation":"string","dosage":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Residents/createMedication) |
+| GET | `/api/v1/residents/{residentId}/allergies` | `residentId` | `[{"id":0,"residentId":0,"allergenName":"string","reaction":"string","severityLevel":"string","typeOfAllergy":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Residents/getAllergies) |
+| POST | `/api/v1/residents/{residentId}/allergies` | `residentId` | `{"id":0,"residentId":0,"allergenName":"string","reaction":"string","severityLevel":"string","typeOfAllergy":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Residents/registerAllergy) |
+| GET | `/api/v1/residents/{residentId}/devices` | `residentId` | `[{"id":0,"nursingHomeId":0,"deviceType":"string","status":"string","residentId":0,"assignedAt":"string","macAddress":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Residents/getDevicesByResident) |
+| **Administrators** | | | | |
+| POST | `/api/v1/administrators` | Ninguno | `{"id":0,"userId":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Administrators/createAdministrator) |
+| GET | `/api/v1/administrators/{administratorId}/nursing-homes` | `administratorId` | `{"id":0,"businessProfileId":0,"administratorId":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Administrators/getNursingHomeByAdminId) |
+| POST | `/api/v1/administrators/{administratorId}/nursing-homes` | `administratorId` | `{"id":0,"businessProfileId":0,"administratorId":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Administrators/createNursingHome) |
+| GET | `/api/v1/administrators/{userId}` | `userId` | `{"id":0,"userId":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Administrators/getAdminByUserId) |
+| **Person Profiles** | | | | |
+| GET | `/api/v1/person-profiles` | Ninguno | `[{"id":0,"fullName":"string","dni":"string","birthDate":"string","age":0,"photo":"string","phoneNumber":"string","emailAddress":"string","streetAddress":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/PersonProfiles/getAllPersonProfiles) |
+| POST | `/api/v1/person-profiles` | Ninguno | `{"id":0,"fullName":"string","dni":"string","birthDate":"string","age":0,"photo":"string","phoneNumber":"string","emailAddress":"string","streetAddress":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/PersonProfiles/createPersonProfile) |
+| GET | `/api/v1/person-profiles/{personProfileId}` | `personProfileId` | `{"id":0,"fullName":"string","dni":"string","birthDate":"string","age":0,"photo":"string","phoneNumber":"string","emailAddress":"string","streetAddress":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/PersonProfiles/getPersonProfileById) |
+| PUT | `/api/v1/person-profiles/{personProfileId}` | `personProfileId` | `{"id":0,"fullName":"string","dni":"string","birthDate":"string","age":0,"photo":"string","phoneNumber":"string","emailAddress":"string","streetAddress":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/PersonProfiles/updatePersonProfile) |
+| DELETE | `/api/v1/person-profiles/{personProfileId}` | `personProfileId` | `204 No Content` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/PersonProfiles/deletePersonProfile) |
+| **Business Profiles** | | | | |
+| GET | `/api/v1/business-profiles` | Ninguno | `[{"id":0,"businessName":"string","emailAddress":"string","phoneNumber":"string","streetAddress":"string","photo":"string","ruc":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/BusinessProfiles/getAllBusinessProfiles) |
+| POST | `/api/v1/business-profiles` | Ninguno | `{"id":0,"businessName":"string","emailAddress":"string","phoneNumber":"string","streetAddress":"string","photo":"string","ruc":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/BusinessProfiles/createBusinessProfile) |
+| GET | `/api/v1/business-profiles/{businessId}` | `businessId` | `{"id":0,"businessName":"string","emailAddress":"string","phoneNumber":"string","streetAddress":"string","photo":"string","ruc":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/BusinessProfiles/getBusinessProfileById) |
+| **Subscriptions** | | | | |
+| GET | `/api/v1/subscriptions/{subscriptionId}/payments` | `subscriptionId` | `[{"id":0,"subscriptionId":0,"stripePaymentIntentId":"string","amount":0.1,"currency":"string","status":"string","receiptUrl":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Subscriptions/listPayments) |
+| POST | `/api/v1/subscriptions/{subscriptionId}/payments` | `subscriptionId` | `{"id":0,"subscriptionId":0,"stripePaymentIntentId":"string","amount":0.1,"currency":"string","status":"string","receiptUrl":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Subscriptions/processPayment) |
+| **Payments** | | | | |
+| GET | `/api/v1/payments/{paymentId}` | `paymentId` | `{"id":0,"subscriptionId":0,"stripePaymentIntentId":"string","amount":0.1,"currency":"string","status":"string","receiptUrl":"string"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Payments/getPaymentById) |
+| **Email Notifications** | | | | |
+| POST | `/api/v1/email-notifications/templates` | Ninguno | `{"message":"Email accepted for delivery"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/EmailNotifications/sendTemplateEmail) |
+| POST | `/api/v1/email-notifications/rendered-templates` | Ninguno | `{"message":"Email accepted for delivery"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/EmailNotifications/sendRenderedTemplateEmail) |
+| POST | `/api/v1/email-notifications/plain` | Ninguno | `{"message":"Email accepted for delivery"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/EmailNotifications/sendPlainEmail) |
+| POST | `/api/v1/email-notifications/html` | Ninguno | `{"message":"Email accepted for delivery"}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/EmailNotifications/sendHtmlEmail) |
+| **Relatives** | | | | |
+| PUT | `/api/v1/relatives/{relativeId}` | `relativeId` | `{"id":0,"firstName":"string","lastName":"string","email":"string","residentId":0,"nursingHomeId":0,"userId":0}` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Relatives/updateRelative) |
+| GET | `/api/v1/relatives/{relativeId}/residents` | `relativeId` | `[{"id":0,"personProfileId":0,"status":"string","roomId":0}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Relatives/getResidentsByRelativeId) |
+| **Roles** | | | | |
+| GET | `/api/v1/roles` | Ninguno | `[{"id":0,"name":"string"}]` | [Swagger](https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html#/Roles/getAllRoles) |
+
+#### 6.2.3.8. Software Deployment Evidence for Sprint Review
+
+En este sprint final se consolidó la infraestructura de despliegue completa del ecosistema VEYRA. Todos los artefactos del sistema se encuentran en producción: landing page, aplicación web, backend REST API, aplicación móvil y los componentes del sistema embebido (edge app y embedded app).
+
+---
+
+**Justificación del despliegue en la nube (Microsoft Azure):**
+
+El backend de VEYRA fue desplegado en **Microsoft Azure** utilizando el servicio **Azure Container Apps**, el cual permite la ejecución de contenedores Docker en un entorno serverless y escalable. Esta decisión se tomó por las siguientes razones:
+
+- **Escalabilidad automática:** Azure Container Apps gestiona el escalado de réplicas de forma automática según la carga de tráfico, lo que garantiza disponibilidad continua del servicio REST API sin intervención manual.
+- **Integración nativa con Azure Container Registry (ACR):** Las imágenes Docker del backend Spring Boot son publicadas en ACR y desplegadas directamente desde allí, manteniendo un pipeline CI/CD consistente.
+- **Conectividad con bases de datos gestionadas:** El backend se conecta a una instancia de **MySQL gestionada en Aiven** (para datos relacionales) y a un clúster de **MongoDB Atlas** (para datos de mediciones IoT no relacionales), ambos accesibles mediante cadenas de conexión configuradas como variables de entorno seguras en Azure.
+- **Soporte para Firebase Cloud Messaging (FCM):** La variable de entorno `FIREBASE_CREDENTIALS_JSON` es inyectada en el contenedor en formato Base64, permitiendo el envío de notificaciones push sin exponer credenciales en el repositorio.
+- **HTTPS por defecto:** Azure Container Apps provee un dominio HTTPS gestionado automáticamente, eliminando la necesidad de configurar certificados TLS manualmente.
+
+La configuración de recursos del entorno de producción es la siguiente:
+
+| Recurso | Servicio Azure | Configuración |
+| :------ | :------------- | :------------ |
+| Backend API | Azure Container Apps | 0.5 vCPU, 1 GiB RAM, mín. 1 réplica |
+| Registro de imágenes | Azure Container Registry | SKU Basic |
+| Base de datos relacional | Aiven MySQL | Plan Startup (1 vCPU, 1 GiB RAM) |
+| Base de datos NoSQL | MongoDB Atlas | Cluster M0 (Free Tier) |
+| Notificaciones push | Firebase Cloud Messaging (Google) | Plan Spark (integrado vía credencial JSON) |
+
+URL del backend en producción: `https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io`
+
+---
+
+**Diagrama C4 de Despliegue:**
+
+<!-- DIAGRAMA: Inserta aquí tu Diagrama C4 de nivel de Despliegue (Deployment Diagram) -->
+<!-- Figura 6.3.8.1. Diagrama C4 de despliegue del ecosistema VEYRA en Microsoft Azure. -->
+![C4 Deployment Diagram](/assets/img/chapter-VI/s3-c4-deployment-diagram.png)
+
+---
+
+**Landing page:**
+
+La landing page continúa desplegada en Cloudflare Pages con dominio público.
+
+URL: `https://veyra-landing-page.pages.dev`
+
+<!-- CAPTURA: Inserta aquí captura del panel de Cloudflare Pages mostrando el despliegue activo -->
+<!-- Figura 6.3.8.2. Panel de Cloudflare Pages con el despliegue activo de la landing page. -->
+![Landing Page - Cloudflare Deployment](/assets/img/chapter-VI/s3-deployment-landing.png)
+
+---
+
+**Aplicación web:**
+
+La aplicación web fue desplegada en Cloudflare Pages conectada a la rama `main` del repositorio, con despliegue continuo habilitado.
+
+URL: `https://app.veyra.metasoft.pe/home`
+
+<!-- CAPTURA: Inserta aquí captura del panel de Cloudflare Pages mostrando el despliegue activo del frontend -->
+<!-- Figura 6.3.8.3. Panel de Cloudflare Pages con el despliegue activo de la aplicación web. -->
+![Web App - Cloudflare Deployment](/assets/img/chapter-VI/s3-deployment-webapp.png)
+
+---
+
+**Backend (Spring Boot en Azure Container Apps):**
+
+Publicación de la imagen Docker en Azure Container Registry:
+
+<!-- CAPTURA: Inserta aquí captura del ACR con la imagen publicada -->
+<!-- Figura 6.3.8.4. Imagen Docker del backend publicada en Azure Container Registry. -->
+![Backend - ACR Push](/assets/img/chapter-VI/s3-deployment-acr.png)
+
+Configuración de la revisión activa en Azure Container Apps:
+
+<!-- CAPTURA: Inserta aquí captura del panel de Azure Container Apps mostrando el estado Running -->
+<!-- Figura 6.3.8.5. Revisión activa del backend en Azure Container Apps con estado Running. -->
+![Backend - Container Apps](/assets/img/chapter-VI/s3-deployment-containerapp.png)
+
+Variables de entorno configuradas en el contenedor:
+
+<!-- CAPTURA: Inserta aquí captura de las variables de entorno del Container App (censurar valores sensibles) -->
+<!-- Figura 6.3.8.6. Variables de entorno configuradas en Azure Container Apps para el backend de VEYRA. -->
+![Backend - Env Vars](/assets/img/chapter-VI/s3-deployment-envvars.png)
+
+Verificación del health check del backend:
+
+<!-- CAPTURA: Inserta aquí captura del endpoint /actuator/health o equivalente respondiendo 200 OK -->
+<!-- Figura 6.3.8.7. Respuesta exitosa del health check del backend desplegado en Azure. -->
+![Backend - Health Check](/assets/img/chapter-VI/s3-deployment-healthcheck.png)
+
+---
+
+**Aplicación móvil (Flutter — Firebase App Distribution):**
+
+La aplicación móvil fue distribuida mediante **Firebase App Distribution** para pruebas internas en Android e iOS.
+
+Distribución para Android:
+
+<!-- CAPTURA: Inserta aquí captura del panel de Firebase App Distribution para Android -->
+<!-- Figura 6.3.8.8. Distribución de la aplicación móvil Android en Firebase App Distribution. -->
+![Mobile App - Android Distribution](/assets/img/chapter-VI/s3-deployment-mobile-android.png)
+
+Distribución para iOS:
+
+<!-- CAPTURA: Inserta aquí captura del panel de Firebase App Distribution para iOS -->
+<!-- Figura 6.3.8.9. Distribución de la aplicación móvil iOS en Firebase App Distribution. -->
+![Mobile App - iOS Distribution](/assets/img/chapter-VI/s3-deployment-mobile-ios.png)
+
+---
+
+**Edge app:**
+
+<!-- CAPTURA: Inserta aquí captura de la edge app desplegada/en ejecución en el dispositivo edge -->
+<!-- Figura 6.3.8.10. Edge app desplegada y en ejecución, enviando datos al backend de Azure. -->
+![Edge App - Deployment](/assets/img/chapter-VI/s3-deployment-edge.png)
+
+---
+
+**Embedded app:**
+
+<!-- CAPTURA: Inserta aquí captura del dispositivo embebido con el firmware cargado y enviando datos -->
+<!-- Figura 6.3.8.11. Dispositivo embebido de VEYRA con firmware cargado y transmitiendo métricas. -->
+![Embedded App - Deployment](/assets/img/chapter-VI/s3-deployment-embedded.png)
+
+#### 6.2.3.9. Team Collaboration Insights during Sprint
+
+Durante este sprint final se utilizó GitHub Insights para analizar la contribución de cada miembro del equipo. Se observó una participación activa y distribuida en todos los repositorios del ecosistema, con revisiones de código a través de Pull Requests y comunicación constante para la integración de los componentes.
+
+Landing page:
+
+Se completaron las secciones pendientes: pitch message, CTA vinculado a la aplicación desplegada, información de contacto, vínculos a redes sociales y sección explicativa del producto con capturas y video. Se aplicaron los ajustes de Responsive Design para dispositivos móviles y tablet.
+
+<!-- CAPTURA: Inserta aquí la captura de GitHub Insights (Contributors / Commits) del repositorio veyra-landing-page -->
+<!-- Figura 6.3.9.1. Insights de colaboración en el repositorio de la landing page durante el Sprint 3. -->
+![Landing Page Collaboration](/assets/img/chapter-VI/s3-insights-landing.png)
+
+Aplicación web:
+
+Se completaron los flujos de usuario para los tres perfiles (administrador, personal asistencial y familiar), integrando la visualización en tiempo real de datos IoT y el módulo de mensajería por WebSocket.
+
+<!-- CAPTURA: Inserta aquí la captura de GitHub Insights del repositorio veyra-web-app -->
+<!-- Figura 6.3.9.2. Insights de colaboración en el repositorio de la aplicación web durante el Sprint 3. -->
+![Web App Collaboration](/assets/img/chapter-VI/s3-insights-webapp.png)
+
+Backend:
+
+Se finalizaron los endpoints de mediciones, signos vitales y localización GPS, asegurando la integración completa con los dispositivos IoT y la correcta documentación en Swagger UI desplegado en Azure.
+
+<!-- CAPTURA: Inserta aquí la captura de GitHub Insights del repositorio veyra-backend -->
+<!-- Figura 6.3.9.3. Insights de colaboración en el repositorio del backend durante el Sprint 3. -->
+![Backend Collaboration](/assets/img/chapter-VI/s3-insights-backend.png)
+
+Aplicación móvil:
+
+Se completó el flujo de onboarding del familiar, la visualización GPS en tiempo real, las notificaciones push y el módulo de mensajería, dejando la aplicación lista para distribución vía Firebase App Distribution.
+
+<!-- CAPTURA: Inserta aquí la captura de GitHub Insights del repositorio veyra-mobile-application -->
+<!-- Figura 6.3.9.4. Insights de colaboración en el repositorio de la aplicación móvil durante el Sprint 3. -->
+![Mobile App Collaboration](/assets/img/chapter-VI/s3-insights-mobile.png)
+
+Embedded app:
+
+Se cerró la integración del firmware con el driver GPS (NEO-6M), el sensor de oximetría y pulso (MAX30102), y la transmisión de datos al backend de Azure a través de la edge app.
+
+<!-- CAPTURA: Inserta aquí la captura de GitHub Insights del repositorio veyra-embedded-device -->
+<!-- Figura 6.3.9.5. Insights de colaboración en el repositorio del embedded device durante el Sprint 3. -->
+![Embedded App Collaboration](/assets/img/chapter-VI/s3-insights-embedded.png)
+
+Edge app:
+
+Se estabilizó el servicio de tracking para el procesamiento y envío de coordenadas GPS y métricas de salud al backend en tiempo real.
+
+<!-- CAPTURA: Inserta aquí la captura de GitHub Insights del repositorio veyra-tracking-service -->
+<!-- Figura 6.3.9.6. Insights de colaboración en el repositorio de la edge app durante el Sprint 3. -->
+![Edge App Collaboration](/assets/img/chapter-VI/s3-insights-edge.png)
+
 ## 6.3. Validation Interviews.
 
 ### 6.3.1. Diseño de Entrevistas.
@@ -2667,4 +3257,3 @@ Adrian estuvo muy feliz con la plataforma, no encontro algun problema o posible 
   <strong>URL del Landing Page donde está el video:</strong> 
   <a href="https://veyra.metasoft.pe/">https://veyra.metasoft.pe/</a>
 </p>
-
