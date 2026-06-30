@@ -2133,22 +2133,51 @@ Landing page:
 
 Aplicación web:
 
-| Repository    | Branch                     | Commit Id | Commit Message               | Commit Message Body | Commited on (Date)          |
-| :------------ | :------------------------- | :-------- | :--------------------------- | :------------------ | :-------------------------- |
-| veyra-web-app | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | —                   | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-web-app | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | —                   | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-web-app | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | —                   | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-web-app | develop                    | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pull request merge  | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-web-app | main                       | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pull request merge  | [INSERTAR FECHA DD/MM/YYYY] |
+| Repository    | Branch             | Commit Id       | Commit Message                                                               | Commit Message Body | Commited on (Date) |
+| ------------- | ------------------ | --------------- | ---------------------------------------------------------------------------- | ------------------- | ------------------ |
+| veyra-web-app | feature/nursing    | b217f97…ef92914 | feat(environment): update API base URLs and add fake API URL for development | —                   | 15/05/2026         |
+| veyra-web-app | develop            | 986abba…c7f4cc5 | feat(activities, alerts): add routing, translations, and mock server         | —                   | 15/05/2026         |
+| veyra-web-app | feature/payments   | 1e548d7…e6c03f3 | feat(payments): implement payment confirmation page with success message     | —                   | 15/05/2026         |
+| veyra-web-app | feature/health     | 986abba         | Merge remote-tracking branch 'origin/feature/shared' into develop            | —                   | 15/05/2026         |
+| veyra-web-app | feature/healt      | —               | Deleted branch                                                               | —                   | 15/05/2026         |
+| veyra-web-app | feature/healt      | 986abba         | Merge remote-tracking branch 'origin/feature/shared' into develop            | —                   | 15/05/2026         |
+| veyra-web-app | develop            | 3c4ab10…986abba | Merge remote-tracking branch 'origin/feature/shared' into develop            | —                   | 15/05/2026         |
+| veyra-web-app | feature/shared     | 23b0efd…08c2c94 | feat(iam): implement default user session for development                    | —                   | 15/05/2026         |
+| veyra-web-app | feature/payments   | c613846…1e548d7 | feat(payments): enhance checkout layout and add back button                  | —                   | 15/05/2026         |
+| veyra-web-app | feature/shared     | 21e71ed…23b0efd | refactor(layout): enhance footer design and improve session state            | —                   | 15/05/2026         |
+| veyra-web-app | feature/shared     | dda9040…21e71ed | feat(iam): implement session management improvements                         | —                   | 15/05/2026         |
+| veyra-web-app | feature/shared     | dab0fa6…dda9040 | chore: update Angular dependencies and refactor layout components            | —                   | 15/05/2026         |
+| veyra-web-app | feature/nursing    | c613846…b217f97 | feat(relatives): add CreateRelativeCommandApiEndpoint                        | —                   | 14/05/2026         |
+| veyra-web-app | develop            | 2dc80f0…3c4ab10 | Feature/activities                                                           | Pull request merge  | 13/05/2026         |
+| veyra-web-app | feature/activities | 70e3b6c…cdb05eb | feat(activities): enhance ActivitiesStore with computed signals              | —                   | 13/05/2026         |
+| veyra-web-app | feature/activities | 842e939…70e3b6c | feat(activities): implement translation for activity list and detail         | —                   | 13/05/2026         |
+| veyra-web-app | feature/activities | 2dc80f0…842e939 | feat(activities): update environment configuration for activities API        | —                   | 13/05/2026         |
+| veyra-web-app | feature/activities | 2dc80f0         | Merge pull request #1 from MetaSoft-IOT-2610/feature/shared                  | —                   | 09/05/2026         |
+| veyra-web-app | feature/analytics  | 2dc80f0         | Merge pull request #1 from MetaSoft-IOT-2610/feature/shared                  | —                   | 08/05/2026         |
+| veyra-web-app | feature/analytics  | —               | Deleted branch                                                               | —                   | 08/05/2026         |
+| veyra-web-app | feature/analytics  | c613846…9998bf1 | docs(analytics): add backend specification for analytics BC                  | —                   | 07/05/2026         |
+| veyra-web-app | develop            | c613846…2dc80f0 | Merge pull request #1 from MetaSoft-IOT-2610/feature/shared                  | Pull request merge  | 02/04/2026         |
+| veyra-web-app | feature/shared     | c613846…dab0fa6 | feat(shared): update startup name in toolbar                                 | —                   | 02/04/2026         |
+| veyra-web-app | feature/docs       | c613846         | first commit                                                                 | —                   | 02/04/2026         |
 
 Backend:
 
-| Repository                      | Branch                     | Commit Id | Commit Message               | Commit Message Body                   | Commited on (Date)          |
-| :------------------------------ | :------------------------- | :-------- | :--------------------------- | :------------------------------------ | :-------------------------- |
-| MetaSoft-IOT-2610/veyra-backend | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | [INSERTAR AUTOR] pushed X commits     | [INSERTAR FECHA DD/MM/YYYY] |
-| MetaSoft-IOT-2610/veyra-backend | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | [INSERTAR AUTOR] pushed X commits     | [INSERTAR FECHA DD/MM/YYYY] |
-| MetaSoft-IOT-2610/veyra-backend | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | [INSERTAR AUTOR] pushed X commits     | [INSERTAR FECHA DD/MM/YYYY] |
-| MetaSoft-IOT-2610/veyra-backend | develop                    | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pull request merge                    | [INSERTAR FECHA DD/MM/YYYY] |
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| MetaSoft-IOT-2610 | develop | 75cd960 | Merge pull request #19 from MetaSoft-IOT-2610/fix/deploiment | Pull request merge | 21/06/2026 |
+| MetaSoft-IOT-2610 | develop | - | Merge branch 'feature/ingest-device-location' into develop | Ingest device location merge | 20/06/2026 |
+| MetaSoft-IOT-2610 | feature/measurements-management | 01a0780 | RenatoCY created feature/measurements-management | Branch creation | 20/06/2026 |
+| MetaSoft-IOT-2610 | feature/measurements-management | - | RenatoCY deleted feature/measurements-management | Deleted branch | 20/06/2026 |
+| MetaSoft-IOT-2610 | develop | - | Merge branch 'feature/ingest-device-location' into develop | Ingest device location merge | 20/06/2026 |
+| MetaSoft-IOT-2610 | feature/measurements-management | 01a0780 | RenatoCY created feature/measurements-management | Branch creation | 20/06/2026 |
+| MetaSoft-IOT-2610 | fix/deploiment | 7edc894 | fix(fcm): add FIREBASE_CREDENTIALS_JSON base64 support for cloud deployment | Racso24k pushed 1 commit | 20/06/2026 |
+| MetaSoft-IOT-2610 | feature/relative-onboarding-flow | 975bc05 | feat(onboarding): implement application and domain command services for onboarding | RenatoCY pushed 6 commits | 19/06/2026 |
+| MetaSoft-IOT-2610 | feature/health | 6edcae8 | feat(health): add various value objects and commands for device and user health | Renxoll pushed 1 commit | 19/06/2026 |
+| MetaSoft-IOT-2610 | feature/communication | c9cdb35 | feat(gitignore): add secrets directory to .gitignore to prevent committing credentials | JanoverSaldana pushed 2 commits | 07/06/2026 |
+| MetaSoft-IOT-2610 | feature/communication | cd8269b | feat(communication): implement WebSocket support with JWT validation and messaging architecture | JanoverSaldana pushed 2 commits | 07/06/2026 |
+| MetaSoft-IOT-2610 | feature/communication | 9c19e7b | feat(communication): add getOrCreateDirectConversation method to Communication service | JanoverSaldana pushed 2 commits | 07/06/2026 |
+| MetaSoft-IOT-2610 | feature/tracking | 00bfbe6 | fix(tracking): add UpdateDeviceCommand and DeleteDeviceCommand to Device application services | vquijandria pushed 1 commit | 07/06/2026 |
+| MetaSoft-IOT-2610 | feature/tracking | f36949e | fix(tracking): remove UTF-8 BOM from Java files | vquijandria pushed 1 commit | 07/06/2026 |
 
 Aplicación móvil:
 
@@ -2247,31 +2276,23 @@ Sección de contacto y redes sociales:
 
 **Aplicación web:**
 
-La aplicación web fue completada con todos los flujos críticos para los tres perfiles de usuario: administrador, personal asistencial y familiar. Se integró la visualización en tiempo real de datos provenientes de los dispositivos IoT mediante WebSocket.
+Se desarolló la aplicación web de Veyra, implementando las funcionalidades básicas para la gestión de residentes, personal asistencial y dispositivos IoT, este último simulado con data ficticia. Se estableció una base sólida para la escalabilidad y mantenimiento del sistema en futuras iteraciones. Fue desplegado usando Cloudflare Pages, lo que permitió su acceso inmediato.
 
-Vista del dashboard con métricas en tiempo real:
+Vista del dashboard de la aplicación web:
 
-<!-- CAPTURA: Inserta aquí captura del dashboard de la aplicación web con datos IoT reales -->
-<!-- Figura 6.3.6.5. Dashboard de la aplicación web de VEYRA con métricas de dispositivos IoT. -->
-![Web App - Dashboard](/assets/img/chapter-VI/s3-execution-web-dashboard.png)
+![web application execution](/assets/img/chapter-VI/execution-evidence-web-application.png)
 
-Vista de monitoreo de signos vitales del residente:
+Vista de los IOT devices:
 
-<!-- CAPTURA: Inserta aquí captura de la pantalla de signos vitales -->
-<!-- Figura 6.3.6.6. Pantalla de signos vitales de un residente en la aplicación web. -->
-![Web App - Vital Signs](/assets/img/chapter-VI/s3-execution-web-vitalsigns.png)
+![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-2.png)
 
-Vista de gestión de actividades:
+vista de los residentes:
 
-<!-- CAPTURA: Inserta aquí captura de la pantalla de actividades -->
-<!-- Figura 6.3.6.7. Pantalla de gestión de actividades en la aplicación web. -->
-![Web App - Activities](/assets/img/chapter-VI/s3-execution-web-activities.png)
+![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-3.png)
 
-Vista del módulo de mensajería en tiempo real (WebSocket):
+Vista de los cuartos:
 
-<!-- CAPTURA: Inserta aquí captura del chat entre familiar y personal -->
-<!-- Figura 6.3.6.8. Módulo de mensajería en tiempo real entre familiar y personal asistencial. -->
-![Web App - Chat](/assets/img/chapter-VI/s3-execution-web-chat.png)
+![web application execution](/assets/img/chapter-VI/execution-evidence-web-application-4.png)
 
 ---
 
@@ -2330,9 +2351,7 @@ En este sprint final se completó la documentación de todos los endpoints de la
 
 Captura de la interfaz Swagger UI desplegada:
 
-<!-- CAPTURA: Inserta aquí captura de Swagger UI en producción (Azure) -->
-<!-- Figura 6.3.7.1. Documentación OpenAPI/Swagger de la API de VEYRA desplegada en Azure. -->
-![API Documentation - Swagger UI](/assets/img/chapter-VI/s3-swagger-ui.png)
+![API Documentation](/assets/img/chapter-VI/web-services-s2.png)
 
 A continuación se presenta la tabla completa de endpoints documentados en este sprint:
 
@@ -2510,41 +2529,61 @@ URL: `https://veyra-landing-page.pages.dev`
 
 **Aplicación web:**
 
-La aplicación web fue desplegada en Cloudflare Pages conectada a la rama `main` del repositorio, con despliegue continuo habilitado.
+Para desplegar la aplicación web se usó cloudflare pages, se creó un repositorio específico para el frontend de la aplicación, donde se desarrolló la interfaz y las funcionalidades básicas. Una vez finalizado el desarrollo, se configuró Cloudflare Pages para conectar el repositorio y desplegar automáticamente la aplicación cada vez que se realizaba un push a la rama principal. Esto permitió un proceso de despliegue continuo y facilitó el acceso inmediato a la aplicación web a través de una URL pública.
 
 URL: `https://app.veyra.metasoft.pe/home`
 
-<!-- CAPTURA: Inserta aquí captura del panel de Cloudflare Pages mostrando el despliegue activo del frontend -->
-<!-- Figura 6.3.8.3. Panel de Cloudflare Pages con el despliegue activo de la aplicación web. -->
-![Web App - Cloudflare Deployment](/assets/img/chapter-VI/s3-deployment-webapp.png)
+Iniciamos sesión en cloudflare pages:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment1.jpeg)
+
+Importamos el repositorio de github:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment2.jpeg)
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment3.jpeg)
+
+Elegimos la rama a desplegar:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment4.jpeg)
+
+Se configuró el proceso de despliegue y se inició el despliegue de la aplicación web:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment5.jpeg)
+
+Registro del despliegue exitoso de la aplicación web:
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment6.jpeg)
+
+![Web Application Deployment](/assets/img/chapter-VI/deployment7.jpeg)
 
 ---
 
-**Backend (Spring Boot en Azure Container Apps):**
+**Backend:**
 
-Publicación de la imagen Docker en Azure Container Registry:
+Creamos nuestra instancia de MySQL en Aiven: https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io
 
-<!-- CAPTURA: Inserta aquí captura del ACR con la imagen publicada -->
-<!-- Figura 6.3.8.4. Imagen Docker del backend publicada en Azure Container Registry. -->
-![Backend - ACR Push](/assets/img/chapter-VI/s3-deployment-acr.png)
+![Backend Deployment](/assets/img/chapter-VI/deployment-aiven.png)
 
-Configuración de la revisión activa en Azure Container Apps:
+Luego cramos nuestro cluster en MongoDB Atlas:
 
-<!-- CAPTURA: Inserta aquí captura del panel de Azure Container Apps mostrando el estado Running -->
-<!-- Figura 6.3.8.5. Revisión activa del backend en Azure Container Apps con estado Running. -->
-![Backend - Container Apps](/assets/img/chapter-VI/s3-deployment-containerapp.png)
+![Backend Deployment](/assets/img/chapter-VI/deployment-mongodb.png)
 
-Variables de entorno configuradas en el contenedor:
+Creamos nuestro servicio de Container Registry en Azure:
 
-<!-- CAPTURA: Inserta aquí captura de las variables de entorno del Container App (censurar valores sensibles) -->
-<!-- Figura 6.3.8.6. Variables de entorno configuradas en Azure Container Apps para el backend de VEYRA. -->
-![Backend - Env Vars](/assets/img/chapter-VI/s3-deployment-envvars.png)
+![Backend Deployment](/assets/img/chapter-VI/deployment-20.png)
 
-Verificación del health check del backend:
+Creamos nuestro servicio de Container Apps en Azure:
 
-<!-- CAPTURA: Inserta aquí captura del endpoint /actuator/health o equivalente respondiendo 200 OK -->
-<!-- Figura 6.3.8.7. Respuesta exitosa del health check del backend desplegado en Azure. -->
-![Backend - Health Check](/assets/img/chapter-VI/s3-deployment-healthcheck.png)
+![Backend Deployment](/assets/img/chapter-VI/deployment21.png)
+
+Subimos nuestra imagen a Container Registry:
+
+![Backend Deployment](/assets/img/chapter-VI/deployment-docker-image.png)
+
+Verificamos nuestro despliegue en Container Apps:
+
+![Backend Deployment](/assets/img/chapter-VI/deployment21.png)
 
 ---
 
@@ -2594,19 +2633,13 @@ Se completaron las secciones pendientes: pitch message, CTA vinculado a la aplic
 
 Aplicación web:
 
-Se completaron los flujos de usuario para los tres perfiles (administrador, personal asistencial y familiar), integrando la visualización en tiempo real de datos IoT y el módulo de mensajería por WebSocket.
+Se realizó la conexión del frontend con el backend y se implementaron los features principales para los administradores, familiares y personal asistencial. Además se realizó la conexion con los datos obtenidos del dispositivo IoT.
 
-<!-- CAPTURA: Inserta aquí la captura de GitHub Insights del repositorio veyra-web-app -->
-<!-- Figura 6.3.9.2. Insights de colaboración en el repositorio de la aplicación web durante el Sprint 3. -->
-![Web App Collaboration](/assets/img/chapter-VI/s3-insights-webapp.png)
+![Web Application Collaboration](/assets/img/chapter-VI/insights2-backend.png)
 
 Backend:
 
-Se finalizaron los endpoints de mediciones, signos vitales y localización GPS, asegurando la integración completa con los dispositivos IoT y la correcta documentación en Swagger UI desplegado en Azure.
-
-<!-- CAPTURA: Inserta aquí la captura de GitHub Insights del repositorio veyra-backend -->
-<!-- Figura 6.3.9.3. Insights de colaboración en el repositorio del backend durante el Sprint 3. -->
-![Backend Collaboration](/assets/img/chapter-VI/s3-insights-backend.png)
+![Backend Collaboration](/assets/img/chapter-VI/insights2-backend.png)
 
 Aplicación móvil:
 
