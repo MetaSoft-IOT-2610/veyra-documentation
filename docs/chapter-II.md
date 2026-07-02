@@ -566,21 +566,74 @@ Tras la exploración inicial, el equipo ordenó cronológicamente los eventos de
 
 ## 2.5 Ubiquitous Language
 
-Con el fin de garantizar una comunicación fluida entre los desarrolladores, el personal médico y los familiares, se ha elaborado el siguiente glosario. Estos términos deben utilizarse de manera coherente en las reuniones de trabajo, el código fuente (clases, métodos, bases de datos) y la interfaz de usuario.
+Con el fin de garantizar una comunicación fluida y sin ambigüedades entre los desarrolladores, el personal médico, el personal de cuidado, los administradores y los familiares, se ha elaborado el siguiente glosario de términos del dominio del cuidado geriátrico. Todos los términos derivan directamente de los actores y eventos identificados en el Big Picture Event Storming (sección 2.4) y deben utilizarse de manera coherente en las reuniones de trabajo, el código fuente (clases, métodos, bases de datos) y la interfaz de usuario. El glosario recoge únicamente vocabulario propio del negocio (no términos técnicos de ingeniería de software) y se presenta en inglés con su equivalente en español entre paréntesis.
 
+**Actores del Dominio**
+
+- **Resident (Residente):** Adulto mayor admitido en la casa de reposo que recibe cuidado y monitoreo continuo. Es el sujeto central de todos los eventos del dominio.
+- **Relative (Familiar):** Persona vinculada a un residente que inicia la solicitud de admisión, aporta su información y documentos, realiza pagos y recibe notificaciones sobre su estado.
+- **Administrator (Administrador):** Responsable de la gestión operativa de la casa de reposo: aprueba o rechaza admisiones, registra residentes, asigna habitaciones y gestiona al personal.
+- **Doctor (Médico):** Profesional de la salud que realiza la evaluación médica inicial, registra diagnósticos, prescribe medicamentos y efectúa las visitas y chequeos médicos del residente.
+- **Staff Member (Personal de Cuidado):** Personal de atención directa que cubre turnos y ejecuta las actividades diarias de cuidado del residente (alimentación, higiene, actividades recreativas y registro de signos vitales).
+
+**Admisión y Registro (Flujos de Pre-admisión y Admisión Formal)**
 
 - **Nursing Home (Casa de Reposo):** Establecimiento de larga estadía diseñado para el cuidado integral de adultos mayores, ya sea de forma temporal o permanente.
-- **Healthcare Staff (Personal de Cuidado):** Personal de atención directa encargado de ejecutar el plan de cuidado, administrar medicamentos, registrar signos vitales y asistir en la higiene diaria.
-- **Medical Record (Historia Clínica):** Registro centralizado del historial de salud del residente, incluyendo diagnósticos, alergias y antecedentes médicos.
-- **Care Quotation (Cotización de Atención):** Estimación inicial de costos y servicios proporcionada al responsable antes de la admisión formal.
-- **Care Plan (Plan de Cuidado):** Estrategia individualizada que define las necesidades médicas, alimenticias y de atención diaria del residente durante un período determinado.
-- **Treatment Plan (Plan de Tratamiento):** Régimen médico específico que incluye medicamentos, terapias y controles periódicos.
-- **Medication Schedule (Horario de Medicación):** Cronograma que indica los momentos exactos en que deben administrarse los medicamentos al residente.
-- **Consent Documents (Documentos de Consentimiento):** Documentación legal firmada por el responsable que autoriza la atención médica y procedimientos necesarios.
-- **Vital Signs (Signos Vitales):** Indicadores fisiológicos como frecuencia cardíaca, temperatura u oxigenación monitoreados regularmente.
-- **Shift Handover (Cambio de Turno):** Proceso de transferencia de información clínica y tareas entre el personal de enfermería.
-- **Adverse Reaction (Reacción Adversa):** Respuesta negativa e inesperada del residente tras la administración de un medicamento.
-- **Critical Condition (Condición Crítica):** Estado de salud grave que requiere atención médica inmediata.
-- **Visit Restriction (Restricción de Visitas):** Medida temporal que limita el acceso de visitas al residente por razones médicas o administrativas.
-- **Hotspot (Punto Crítico):** Situación especial del proceso que requiere reglas de negocio específicas.
+- **Admission Request (Solicitud de Admisión):** Petición inicial presentada por el familiar para iniciar el proceso de ingreso de un adulto mayor.
+- **Resident Documents (Documentos del Residente):** Documentación aportada por el familiar que es enviada y luego verificada como parte del proceso de admisión.
+- **Care Quotation (Cotización de Atención):** Estimación de costos y servicios solicitada por el familiar y emitida por la casa de reposo antes de la admisión formal.
+- **Admission (Admisión):** Proceso formal de ingreso de un adulto mayor como residente; puede ser aprobada, rechazada o cancelada.
+- **Waitlist (Lista de Espera):** Estado en el que queda una solicitud de admisión cuando no existe cupo disponible de inmediato.
+- **Consent Documents (Documentos de Consentimiento):** Documentación legal firmada por el responsable que autoriza la atención médica y los procedimientos necesarios.
+- **Emergency Contact (Contacto de Emergencia):** Persona designada para ser contactada ante situaciones urgentes relacionadas con el residente.
+- **Admission Payment (Pago de Admisión):** Pago inicial (incluida la tarifa de registro) procesado y registrado como parte de la admisión formal del residente.
+- **Invoice (Comprobante):** Documento de cobro emitido por los servicios prestados al residente.
+- **Room (Habitación):** Espacio físico de la casa de reposo que se marca como disponible y se asigna a un residente.
+- **Discharge (Alta / Egreso):** Salida definitiva de un residente de la casa de reposo.
 
+**Evaluación y Registro Clínico**
+
+- **Medical Record (Historia Clínica):** Registro centralizado del historial de salud del residente, creado durante la admisión e incluyendo diagnósticos y antecedentes médicos.
+- **Medical Assessment (Evaluación Médica Inicial):** Valoración clínica inicial del residente realizada al momento de su ingreso.
+- **Diagnosis (Diagnóstico):** Identificación de la condición médica del residente realizada por el médico.
+- **Care Plan (Plan de Cuidado):** Estrategia individualizada que define las necesidades médicas, alimenticias y de atención diaria del residente durante un período determinado.
+- **Clinical Summary (Resumen Clínico):** Síntesis actualizada del estado clínico del residente.
+- **Medical Checkup (Chequeo Médico):** Revisión médica del residente realizada durante la visita del doctor.
+
+**Gestión de Medicación**
+
+- **Medication (Medicamento):** Sustancia administrada al residente como parte de su plan de cuidado.
+- **Prescription (Receta Médica):** Indicación médica de un medicamento con su dosis y frecuencia de administración.
+- **Medication Supply (Suministro de Medicamentos):** Existencias de medicamentos de la casa de reposo, que se reabastecen cuando son insuficientes.
+- **External Medication (Medicación Externa):** Medicamento recibido desde fuera de la casa de reposo para un residente.
+- **Expired Medication (Medicación Vencida):** Medicamento cuya fecha de vencimiento ha sido superada y es detectado para su retiro.
+
+**Monitoreo de Salud**
+
+- **Vital Signs (Signos Vitales):** Indicadores fisiológicos del residente registrados de forma continua para evaluar su estado de salud.
+- **Abnormal Vital Signs (Signos Vitales Anormales):** Signos vitales del residente que se detectan fuera de los rangos esperados.
+- **Clinical Abnormality (Anomalía Clínica):** Situación fuera de lo normal detectada en el estado de salud del residente.
+
+**Cuidado Diario y Actividades**
+
+- **Meal (Alimentación):** Comida brindada al residente y registrada al ser completada.
+- **Hygiene Support (Apoyo de Higiene):** Asistencia de aseo e higiene personal proporcionada al residente.
+- **Recreational Activity (Actividad Recreativa):** Actividad de esparcimiento realizada con el residente como parte de su cuidado integral.
+- **Outing (Salida):** Actividad que implica el traslado del residente fuera de las instalaciones de la casa de reposo.
+- **Activity Schedule (Cronograma de Actividades):** Programación de las actividades diarias del residente, publicada y asignada al personal.
+
+**Personal y Turnos**
+
+- **Shift (Turno):** Período de trabajo del personal de cuidado, que se inicia y se finaliza dentro de la casa de reposo.
+- **Staff Contract (Contrato del Personal):** Acuerdo laboral del personal de la casa de reposo, que puede ser finalizado o renovado.
+
+**Visitas y Comunicación**
+
+- **Visit (Visita):** Encuentro presencial de un familiar con el residente en la casa de reposo.
+- **Meeting (Reunión):** Encuentro programado entre la casa de reposo y los familiares para coordinar el cuidado del residente.
+- **Complaint (Queja):** Reclamo registrado por un residente o familiar respecto a la atención recibida.
+
+**Emergencias y Notificaciones**
+
+- **Medical Emergency (Emergencia Médica):** Situación de salud grave del residente que es reportada para su atención inmediata.
+- **Notification (Notificación):** Aviso enviado a los familiares o al personal ante cambios relevantes en el estado del residente.
