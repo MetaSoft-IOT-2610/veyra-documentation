@@ -874,6 +874,8 @@ El contexto HCM gestiona el ciclo de vida del personal del hogar de reposo y su 
 
 El diagrama de componentes de este contexto se modela en Structurizr DSL (`docs/c4/software-architecture.dsl`, vista `component api "HcmComponents"`), a partir de los controladores, servicios de aplicación, agregados de dominio, repositorios y fachadas ACL reales descritos en las secciones anteriores. Renderízalo con Structurizr Lite o `structurizr export` y reemplaza esta nota por la imagen (PNG/SVG) exportada.
 
+![hcm components](../assets/img/chapter-IV/HcmComponents.png)
+
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 
