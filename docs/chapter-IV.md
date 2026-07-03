@@ -961,6 +961,7 @@ No existe un endpoint para consultar actividades por residente ni un "listar tod
 
 El diagrama de componentes de este contexto se modela en Structurizr DSL (`docs/c4/software-architecture.dsl`, vista `component api "ActivitiesComponents"`), a partir de los controladores, servicios de aplicación, agregados de dominio, repositorios y fachadas ACL reales descritos en las secciones anteriores. Renderízalo con Structurizr Lite o `structurizr export` y reemplaza esta nota por la imagen (PNG/SVG) exportada.
 
+![communication components](../assets/img/chapter-IV/CommunicationComponents.png)
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
 
