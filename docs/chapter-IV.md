@@ -1308,6 +1308,7 @@ Profiles **no consume** ninguna ACL de otro contexto — su única dependencia e
 
 El diagrama de componentes de este contexto se modela en Structurizr DSL (`docs/c4/software-architecture.dsl`, vista `component api "ProfilesComponents"`), a partir de los controladores, servicios de aplicación, agregados de dominio, repositorios y fachadas ACL reales descritos en las secciones anteriores. Renderízalo con Structurizr Lite o `structurizr export` y reemplaza esta nota por la imagen (PNG/SVG) exportada.
 
+![profiles components](../assets/img/chapter-IV/ProfilesComponents.png)
 
 #### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
 
