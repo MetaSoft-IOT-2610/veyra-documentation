@@ -2133,32 +2133,17 @@ Landing page:
 
 Aplicación web:
 
-| Repository    | Branch             | Commit Id       | Commit Message                                                               | Commit Message Body | Commited on (Date) |
-| ------------- | ------------------ | --------------- | ---------------------------------------------------------------------------- | ------------------- | ------------------ |
-| veyra-web-app | feature/nursing    | b217f97…ef92914 | feat(environment): update API base URLs and add fake API URL for development | —                   | 15/05/2026         |
-| veyra-web-app | develop            | 986abba…c7f4cc5 | feat(activities, alerts): add routing, translations, and mock server         | —                   | 15/05/2026         |
-| veyra-web-app | feature/payments   | 1e548d7…e6c03f3 | feat(payments): implement payment confirmation page with success message     | —                   | 15/05/2026         |
-| veyra-web-app | feature/health     | 986abba         | Merge remote-tracking branch 'origin/feature/shared' into develop            | —                   | 15/05/2026         |
-| veyra-web-app | feature/healt      | —               | Deleted branch                                                               | —                   | 15/05/2026         |
-| veyra-web-app | feature/healt      | 986abba         | Merge remote-tracking branch 'origin/feature/shared' into develop            | —                   | 15/05/2026         |
-| veyra-web-app | develop            | 3c4ab10…986abba | Merge remote-tracking branch 'origin/feature/shared' into develop            | —                   | 15/05/2026         |
-| veyra-web-app | feature/shared     | 23b0efd…08c2c94 | feat(iam): implement default user session for development                    | —                   | 15/05/2026         |
-| veyra-web-app | feature/payments   | c613846…1e548d7 | feat(payments): enhance checkout layout and add back button                  | —                   | 15/05/2026         |
-| veyra-web-app | feature/shared     | 21e71ed…23b0efd | refactor(layout): enhance footer design and improve session state            | —                   | 15/05/2026         |
-| veyra-web-app | feature/shared     | dda9040…21e71ed | feat(iam): implement session management improvements                         | —                   | 15/05/2026         |
-| veyra-web-app | feature/shared     | dab0fa6…dda9040 | chore: update Angular dependencies and refactor layout components            | —                   | 15/05/2026         |
-| veyra-web-app | feature/nursing    | c613846…b217f97 | feat(relatives): add CreateRelativeCommandApiEndpoint                        | —                   | 14/05/2026         |
-| veyra-web-app | develop            | 2dc80f0…3c4ab10 | Feature/activities                                                           | Pull request merge  | 13/05/2026         |
-| veyra-web-app | feature/activities | 70e3b6c…cdb05eb | feat(activities): enhance ActivitiesStore with computed signals              | —                   | 13/05/2026         |
-| veyra-web-app | feature/activities | 842e939…70e3b6c | feat(activities): implement translation for activity list and detail         | —                   | 13/05/2026         |
-| veyra-web-app | feature/activities | 2dc80f0…842e939 | feat(activities): update environment configuration for activities API        | —                   | 13/05/2026         |
-| veyra-web-app | feature/activities | 2dc80f0         | Merge pull request #1 from MetaSoft-IOT-2610/feature/shared                  | —                   | 09/05/2026         |
-| veyra-web-app | feature/analytics  | 2dc80f0         | Merge pull request #1 from MetaSoft-IOT-2610/feature/shared                  | —                   | 08/05/2026         |
-| veyra-web-app | feature/analytics  | —               | Deleted branch                                                               | —                   | 08/05/2026         |
-| veyra-web-app | feature/analytics  | c613846…9998bf1 | docs(analytics): add backend specification for analytics BC                  | —                   | 07/05/2026         |
-| veyra-web-app | develop            | c613846…2dc80f0 | Merge pull request #1 from MetaSoft-IOT-2610/feature/shared                  | Pull request merge  | 02/04/2026         |
-| veyra-web-app | feature/shared     | c613846…dab0fa6 | feat(shared): update startup name in toolbar                                 | —                   | 02/04/2026         |
-| veyra-web-app | feature/docs       | c613846         | first commit                                                                 | —                   | 02/04/2026         |
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| veyra-web-app | feature/pulse-threshold-alerts | c1cb85b | fix(web): show empty vital values cleanly | — | 02/07/2026 |
+| veyra-web-app | feature/pulse-threshold-alerts | 8e920c5 | feat(web): show resident cards for device assignment | — | 02/07/2026 |
+| veyra-web-app | develop | 8c42406 | Merge branch 'release/1.7.0' | — | 23/06/2026 |
+| veyra-web-app | main | 8c42406 | Merge branch 'release/1.7.0' | — | 23/06/2026 |
+| veyra-web-app | release/1.7.0 | ab0a245 | fix(tracking): display telemetry timestamps in America/Lima | — | 23/06/2026 |
+| veyra-web-app | develop | ab0a245 | fix(tracking): display telemetry timestamps in America/Lima | — | 23/06/2026 |
+| veyra-web-app | develop | 218d21a | Merge branch 'feature/doctor-view' into develop | — | 22/06/2026 |
+| veyra-web-app | develop | 310807c | Merge pull request #21 from MetaSoft-IOT-2610/feature/health | Pull request merge | 21/06/2026 |
+| veyra-web-app | feature/health | a3df909 | feat(health): update endpoint paths for vital sign thresholds | — | 21/06/2026 |
 
 Backend:
 
@@ -2181,27 +2166,53 @@ Backend:
 
 Aplicación móvil:
 
-| Repository               | Branch                     | Commit Id | Commit Message               | Commit Message Body | Commited on (Date)          |
-| :----------------------- | :------------------------- | :-------- | :--------------------------- | :------------------ | :-------------------------- |
-| veyra-mobile-application | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-mobile-application | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-mobile-application | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-mobile-application | develop                    | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Merge branch        | [INSERTAR FECHA DD/MM/YYYY] |
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| veyra-Mobile-Application | main | 1b349c0 | Merge branch 'release/v1.4.0' into main | — | 02/07/2026 |
+| veyra-Mobile-Application | release/v1.4.0 | 3f62da9 | Merge branch 'feature/show-live-telemetry' into develop (TS-009) | — | 02/07/2026 |
+| veyra-Mobile-Application | develop | 3f62da9 | Merge branch 'feature/show-live-telemetry' into develop (TS-009) | — | 02/07/2026 |
+| veyra-Mobile-Application | feature/show-live-telemetry | 9863ae4 | feat(ui): refactor labels to english | — | 02/07/2026 |
+| veyra-Mobile-Application | feature/show-live-telemetry | 524f49c | feat(family): update FamilyPortalBloc factory registration with addit… | — | 01/07/2026 |
+| veyra-Mobile-Application | feature/show-live-telemetry | 71ef9e5 | feature(family): added widget to show vital signs from resident | — | 01/07/2026 |
+| veyra-Mobile-Application | feature/family-mobile-ui | ea75a5e | perf(mobile): optimize lists, network calls and assets | — | 22/06/2026 |
+| veyra-Mobile-Application | feature/family-mobile-ui | 1e472f0 | fix(app): extend splash presentation timing | — | 22/06/2026 |
+| veyra-Mobile-Application | feature/family-mobile-ui | c5ff749 | feat(app): add animated Veyra splash screen | — | 22/06/2026 |
+| veyra-Mobile-Application | develop | e6ba87d | feat(profile): add photo display for resident and staff detail pages | — | 22/06/2026 |
+| veyra-Mobile-Application | release/1.0.0 | e08b223 | merge: integrate doctor portal | — | 22/06/2026 |
+| veyra-Mobile-Application | feature/view-pictures | e6ba87d | feat(profile): add photo display for resident and staff detail pages | — | 22/06/2026 |
 
 Edge app:
 
-| Repository             | Branch                     | Commit Id | Commit Message               | Commit Message Body | Commited on (Date)          |
-| :--------------------- | :------------------------- | :-------- | :--------------------------- | :------------------ | :-------------------------- |
-| veyra-tracking-service | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-tracking-service | develop                    | [SHA]     | [INSERTAR MENSAJE DE COMMIT] | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| veyra-edge | feature/pulse-threshold-alerts | 822c76a | docs(edge): document hardware telemetry flow | — | 02/07/2026 |
+| veyra-edge | main | 7ee5b97 | Merge pull request #3 from MetaSoft-IOT-2610/release/1.1.0 | Pull request merge | 01/07/2026 |
+| veyra-edge | release/1.1.0 | 2310a2f | Merge pull request #2 from MetaSoft-IOT-2610/feature/threshold-sync-o… | — | 01/07/2026 |
+| veyra-edge | develop | 2310a2f | Merge pull request #2 from MetaSoft-IOT-2610/feature/threshold-sync-o… | Pull request merge | 01/07/2026 |
+| veyra-edge | main | 49a4d51 | Merge pull request #1 from MetaSoft-IOT-2610/feature/monitoring-measu… | — | 01/07/2026 |
+| veyra-edge | release/0.7.0 | 49a4d51 | Merge pull request #1 from MetaSoft-IOT-2610/feature/monitoring-measu… | — | 01/07/2026 |
+| veyra-edge | feature/send-data-ignoring-thresholds | b8003e7 | feat(tests): test to checko thresholds violations | — | 30/06/2026 |
+| veyra-edge | feature/send-data-ignoring-thresholds | 7d5f8e4 | Merge branch 'feature/save-local-data' into develop (TS-009) | — | 30/06/2026 |
+| veyra-edge | feature/threshold-sync-on-telemetry | 572c717 | feat(monitoring): sync thresholds from cloud on every telemetry request | — | 30/06/2026 |
+| veyra-edge | main | 7d5f8e4 | Merge branch 'feature/save-local-data' into develop (TS-009) | — | 29/06/2026 |
+| veyra-edge | feature/save-local-data | 9b1905d | feat(tests): add comprehensive tests for threshold cloud synchronizat… | — | 29/06/2026 |
+| veyra-edge | feature/save-local-data | d00b044 | feat(sync): implement cloud synchronization for vital-sign thresholds | — | 29/06/2026 |
 
 Embedded app:
 
-| Repository            | Branch                     | Commit Id | Commit Message                    | Commit Message Body | Commited on (Date)          |
-| :-------------------- | :------------------------- | :-------- | :-------------------------------- | :------------------ | :-------------------------- |
-| veyra-embedded-device | feature/[INSERTAR FEATURE] | [SHA]     | [INSERTAR MENSAJE DE COMMIT]      | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-embedded-device | develop                    | [SHA]     | [INSERTAR MENSAJE DE COMMIT]      | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-embedded-device | main                       | [SHA]     | Merge branch 'release/[VERSIÓN]'  | Pushed X commits    | [INSERTAR FECHA DD/MM/YYYY] |
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| veyra-embedded-app | bugfix/recalibrate-temperature` | dbd6ba9 | fix(lm35): use ESP32 calibrated ADC for temperature readings | — | 03/07/2026 |
+| veyra-embedded-app | bugfix/recalibrate-temperature` | 7231cd8 | Merge branch 'release/1.0.0' into develop | — | 01/07/2026 |
+| veyra-embedded-app | feature/threshold-fetch-on-telemetry` | cdaba38 | feat(edge): fetch thresholds from edge after each telemetry publish | — | 30/06/2026 |
+| veyra-embedded-app | release/1.0.0` | 216aeb8 | chore(release): prepare 1.0.0 | — | 24/06/2026 |
+| veyra-embedded-app | feature/max30102-i2c-fifo-stability` | 52dcaaa | fix(max30102): stabilize I2C FIFO polling and simplify vitals pipeline | — | 24/06/2026 |
+| veyra-embedded-app | main` | 52ef9ca | Merge branch 'release/1.0.0' | — | 24/06/2026 |
+| veyra-embedded-app | develop` | 7231cd8 | Merge branch 'release/1.0.0' into develop | — | 24/06/2026 |
+| veyra-embedded-app | develop` | a59f8db | Merge branch 'release/0.5.0' | — | 23/06/2026 |
+| veyra-embedded-app | release/0.5.0` | 7db81e2 | Merge branch 'main' into develop | — | 23/06/2026 |
+| veyra-embedded-app | main` | a59f8db | Merge branch 'release/0.5.0' | — | 23/06/2026 |
+
 
 #### 6.2.3.5. Testing Suite Evidence for Sprint Review
 
