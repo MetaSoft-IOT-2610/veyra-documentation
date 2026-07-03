@@ -531,6 +531,7 @@ Repositorios Spring Data JPA sobre la base de datos relacional: `AdministratorRe
 
 El diagrama de componentes de este contexto se modela en Structurizr DSL (`docs/c4/software-architecture.dsl`, vista `component api "NursingComponents"`), a partir de los controladores, servicios de aplicación, agregados de dominio, repositorios y fachadas ACL reales descritos en las secciones anteriores. Renderízalo con Structurizr Lite o `structurizr export` y reemplaza esta nota por la imagen (PNG/SVG) exportada.
 
+![Nursing components](../assets/img/chapter-IV/NursingComponents.png)
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
