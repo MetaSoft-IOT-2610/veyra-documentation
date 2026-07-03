@@ -1206,6 +1206,8 @@ No se emiten eventos de dominio desde `User`; el sembrado de roles al arrancar s
 
 El diagrama de componentes de este contexto se modela en Structurizr DSL (`docs/c4/software-architecture.dsl`, vista `component api "IamComponents"`), a partir de los controladores, servicios de aplicación, agregados de dominio, repositorios y fachadas ACL reales descritos en las secciones anteriores. Renderízalo con Structurizr Lite o `structurizr export` y reemplaza esta nota por la imagen (PNG/SVG) exportada.
 
+![iam components](../assets/img/chapter-IV/IamComponents.png)
+
 
 #### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
 
