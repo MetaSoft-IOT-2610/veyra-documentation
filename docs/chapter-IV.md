@@ -768,6 +768,7 @@ El contexto Health es hoy el **motor de detección de anomalías clínicas** y e
 
 El diagrama de componentes de este contexto se modela en Structurizr DSL (`docs/c4/software-architecture.dsl`, vista `component api "HealthComponents"`), a partir de los controladores, servicios de aplicación, agregados de dominio, repositorios y fachadas ACL reales descritos en las secciones anteriores. Renderízalo con Structurizr Lite o `structurizr export` y reemplaza esta nota por la imagen (PNG/SVG) exportada.
 
+![health components](../assets/img/chapter-IV/HealthComponents.png)
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
 
