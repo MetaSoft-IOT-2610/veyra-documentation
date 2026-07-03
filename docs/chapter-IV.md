@@ -1494,6 +1494,8 @@ Todos son `@EventListener` en proceso (vía `ApplicationEventPublisher` de Sprin
 
 El diagrama de componentes de este contexto se modela en Structurizr DSL (`docs/c4/software-architecture.dsl`, vista `component api "AnalyticsComponents"`), a partir de los controladores, servicios de aplicación, agregados de dominio, repositorios y fachadas ACL reales descritos en las secciones anteriores. Renderízalo con Structurizr Lite o `structurizr export` y reemplaza esta nota por la imagen (PNG/SVG) exportada.
 
+![payments components](../assets/img/chapter-IV/PaymentsComponents.png)
+
 
 #### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams
 
