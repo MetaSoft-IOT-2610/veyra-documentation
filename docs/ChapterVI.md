@@ -2530,11 +2530,14 @@ URL del backend en producción: `https://veyra-backend.redwave-e7e23e62.canadace
 
 La landing page continúa desplegada en Cloudflare Pages con dominio público.
 
-URL: `https://veyra-landing-page.pages.dev`
+URL: `https://veyra.metasoft.pe`
 
 <!-- CAPTURA: Inserta aquí captura del panel de Cloudflare Pages mostrando el despliegue activo -->
 <!-- Figura 6.3.8.2. Panel de Cloudflare Pages con el despliegue activo de la landing page. -->
 ![Landing Page - Cloudflare Deployment](/assets/img/chapter-VI/s3-deployment-landing.png)
+
+
+![Landing Page - Cloudflare Deployment](/assets/img/chapter-VI/s3-deployment-landing2.png)
 
 ---
 
@@ -2542,7 +2545,7 @@ URL: `https://veyra-landing-page.pages.dev`
 
 Para desplegar la aplicación web se usó cloudflare pages, se creó un repositorio específico para el frontend de la aplicación, donde se desarrolló la interfaz y las funcionalidades básicas. Una vez finalizado el desarrollo, se configuró Cloudflare Pages para conectar el repositorio y desplegar automáticamente la aplicación cada vez que se realizaba un push a la rama principal. Esto permitió un proceso de despliegue continuo y facilitó el acceso inmediato a la aplicación web a través de una URL pública.
 
-URL: `https://app.veyra.metasoft.pe/home`
+URL: https://app.veyra.metasoft.pe/home
 
 Iniciamos sesión en cloudflare pages:
 
@@ -2604,14 +2607,11 @@ La aplicación móvil fue distribuida mediante **Firebase App Distribution** par
 
 Distribución para Android:
 
-<!-- CAPTURA: Inserta aquí captura del panel de Firebase App Distribution para Android -->
-<!-- Figura 6.3.8.8. Distribución de la aplicación móvil Android en Firebase App Distribution. -->
+
 ![Mobile App - Android Distribution](/assets/img/chapter-VI/s3-deployment-mobile-android.png)
 
 Distribución para iOS:
 
-<!-- CAPTURA: Inserta aquí captura del panel de Firebase App Distribution para iOS -->
-<!-- Figura 6.3.8.9. Distribución de la aplicación móvil iOS en Firebase App Distribution. -->
 ![Mobile App - iOS Distribution](/assets/img/chapter-VI/s3-deployment-mobile-ios.png)
 
 ---
@@ -2866,27 +2866,27 @@ Se estabilizó el servicio de tracking para el procesamiento y envío de coorden
   <tbody>
     <tr>
       <td><strong>Nombre Completo</strong></td>
-      <td>Jaime Rafael Fernandez Cueto</td>
+      <td>Ariana Yasan Laredo</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td>59</td>
+      <td>25</td>
     </tr>
     <tr>
       <td><strong>Distrito</strong></td>
-      <td>Chorrillos</td>
+      <td>San Juan de Miraflores</td>
     </tr>
     <tr>
       <td><strong>Ocupación</strong></td>
-      <td>Ingeniero Agronomo</td>
+      <td>Estudiante de Marketing, Deportista calificada</td>
     </tr>
     <tr>
       <td><strong>Fecha de Entrevista</strong></td>
-      <td>21/06/2026</td>
+      <td>02/07/2026</td>
     </tr>
     <tr>
       <td><strong>Duración</strong></td>
-      <td>5:32</td>
+      <td>6:09</td>
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
@@ -2894,7 +2894,7 @@ Se estabilizó el servicio de tracking para el procesamiento y envío de coorden
     </tr>
     <tr>
       <td><strong>Timing</strong></td>
-      <td>0:00 - 5:32</td>
+      <td>0:00 - 6:09</td>
     </tr>
   </tbody>
 </table>
@@ -2903,7 +2903,15 @@ Se estabilizó el servicio de tracking para el procesamiento y envío de coorden
 <img src="../assets/img/chapter-VI/interview-family-1.png" alt="Interview Family 1">
 
 <p><strong>Resumen de Respuestas:</strong></p>
-Jaime le parecio muy buena la plataforma, le parecia muy importante el seguimiento en tiempo real de los signos vitales de su familiar, le gustaria añadir un seguimiento de las comidas de su familiar.
+
+Ariana Yasan, es deportista calificada y estudiante de administración y marketing, tiene 25 años de edad y reside en San Juan de Miraflores. 
+Se siente bastante cómoda utilizando aplicaciones móviles en su vida cotidiana y valora que tengan interfaces sencillas e intuitivas. Tras presenciar la demostración de la aplicación VEYRA, describió la interfaz como limpia, fácil de navegar y muy visual. Destacó positivamente el uso de códigos de color e indicadores que permiten entender el estado de su familiar "a golpe de vista" sin saturar la pantalla con textos densos, lo cual se adapta perfectamente a su ajustada rutina diaria.
+
+Actualmente, Ariana valida la calidad del cuidado de forma muy informal y reactiva, dependiendo de la observación directa en sus visitas físicas (revisando el ánimo, higiene y entorno) y de llamadas telefónicas esporádicas o cuadernos de control manuales. Esto la obliga a "confiar a ciegas" en el personal. Para solucionar esto, desearía recibir un resumen diario al final de la jornada con datos básicos de alimentación, medicación y ánimo, además de notificaciones inmediatas ante cualquier incidente médico, buscando un balance ágil que no sature de trabajo administrativo a los cuidadores.
+
+Para la usuaria, las funciones indispensables en la aplicación incluyen un módulo de monitoreo de salud diario para signos vitales y la lista de actividades que realiza su familiar en la casa de reposo. Respecto a la privacidad, su mayor preocupación es la seguridad de la historia clínica, los diagnósticos y los registros visuales o bitácoras. Por ello, exige estrictos controles de acceso para garantizar que esta información sensible solo sea visible para ella y el personal autorizado.
+
+La principal desconfianza de la usuaria no es tecnológica, sino operativa: teme que la alta carga laboral de los cuidadores provoque un desfase o retraso en el registro de los datos, generando falsas alarmas en la familia (por ejemplo, no saber si una pastilla no se dio o si solo olvidaron anotarla). Como recomendación clave antes de adoptar la aplicación de forma regular, sugiere implementar un sistema de confirmación obligatoria o "doble check" para las tareas más críticas, como la administración de fármacos delicados, garantizando así la rigurosidad del proceso.
 <hr>
 
 <h4>Entrevista 2 - Familiar de Adulto Mayor (Segmento 2)</h4>
@@ -2912,27 +2920,27 @@ Jaime le parecio muy buena la plataforma, le parecia muy importante el seguimien
   <tbody>
     <tr>
       <td><strong>Nombre Completo</strong></td>
-      <td>Juan Carlos Erausquin Goyburu</td>
+      <td>Rocío Piñan Saavedra</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td>27</td>
+      <td>52</td>
     </tr>
     <tr>
       <td><strong>Distrito</strong></td>
-      <td>Surco</td>
+      <td>Villa EL Salvador</td>
     </tr>
     <tr>
       <td><strong>Ocupación</strong></td>
-      <td>Ventas</td>
+      <td>Ama de casa</td>
     </tr>
     <tr>
       <td><strong>Fecha de Entrevista</strong></td>
-      <td>21/06/2026</td>
+      <td>03/07/2026</td>
     </tr>
     <tr>
       <td><strong>Duración</strong></td>
-      <td>3:53</td>
+      <td>4:38</td>
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
@@ -2940,7 +2948,7 @@ Jaime le parecio muy buena la plataforma, le parecia muy importante el seguimien
     </tr>
     <tr>
       <td><strong>Timing</strong></td>
-      <td>5:33 - 9:26</td>
+      <td>6:09 - 10:47</td>
     </tr>
   </tbody>
 </table>
@@ -2949,7 +2957,14 @@ Jaime le parecio muy buena la plataforma, le parecia muy importante el seguimien
 <img src="../assets/img/chapter-VI/interview-family-2.png" alt="Interview Family 2">
 
 <p><strong>Resumen de Respuestas:</strong></p>
-Juan Carlos le parecio muy buena la plataforma, encuentra muy importante los datos que puede acceder en ella, intentaria hacer la interfaz mas intuitiva sobretodo para personas mayores.
+
+La entrevistada, Rocío Piñán, es una ama de casa de 52 años residente de Villa El Salvador. Se siente cómoda utilizando aplicaciones móviles en su vida diaria y manifiesta curiosidad y apertura hacia nuevas herramientas digitales que le puedan ser de utilidad, lo que la convierte en una usuaria dispuesta a adoptar la tecnología para el cuidado familiar.
+
+Actualmente, Rocío valida la calidad del cuidado de su familiar mediante la contratación de una enfermera particular que le brinda seguridad y confirmación de los procedimientos, complementando esto con visitas al hospital para corroborar el estado de salud directamente con el médico. Debido a que la salud de su familiar varía día a día, considera indispensable recibir actualizaciones de forma diaria. En cuanto a la privacidad, su principal preocupación es la confidencialidad, enfatizando que no le gustaría que personas ajenas al entorno familiar tengan acceso a los datos de salud.
+
+Tras la demostración de la aplicación, la usuaria describió la interfaz como "interesante", destacando que genera la sensación de estar monitoreando de cerca al familiar a pesar de que este se encuentre en una casa de reposo. Para ella, las funcionalidades esenciales de la plataforma son la visualización de los signos vitales en tiempo real y el registro de las actividades diarias programadas.
+
+La principal duda o desconfianza de la entrevistada radica en la precisión técnica, específicamente sobre si los datos de los signos vitales mostrados son completamente exactos. Como recomendación clave antes de usar la aplicación de forma regular, sugirió implementar un sistema de alertas o alarmas sonoras/notificaciones inmediatas que se activen automáticamente cuando los signos vitales se salgan de los rangos normales, permitiendo reaccionar a tiempo ante una situación de riesgo.
 <hr>
 
 
@@ -2959,27 +2974,27 @@ Juan Carlos le parecio muy buena la plataforma, encuentra muy importante los dat
   <tbody>
     <tr>
       <td><strong>Nombre Completo</strong></td>
-      <td>Adrian de la Torre Lorenzo</td>
+      <td>Richard Rios Sandoval</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td>23</td>
+      <td>55</td>
     </tr>
     <tr>
       <td><strong>Distrito</strong></td>
-      <td>San Isidro</td>
+      <td>Villa El Salvador</td>
     </tr>
     <tr>
       <td><strong>Ocupación</strong></td>
-      <td>Estudiante</td>
+      <td>Militar</td>
     </tr>
     <tr>
       <td><strong>Fecha de Entrevista</strong></td>
-      <td>21/06/2026</td>
+      <td>03/07/2026</td>
     </tr>
     <tr>
       <td><strong>Duración</strong></td>
-      <td>3:22</td>
+      <td>7:25</td>
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
@@ -2987,7 +3002,7 @@ Juan Carlos le parecio muy buena la plataforma, encuentra muy importante los dat
     </tr>
     <tr>
       <td><strong>Timing</strong></td>
-      <td>9:27 - 12:49</td>
+      <td>10:47 - 18:12</td>
     </tr>
   </tbody>
 </table>
@@ -2996,7 +3011,14 @@ Juan Carlos le parecio muy buena la plataforma, encuentra muy importante los dat
 <img src="../assets/img/chapter-VI/interview-family-3.png" alt="Interview Family 3">
 
 <p><strong>Resumen de Respuestas:</strong></p>
-Adrian estuvo muy feliz con la plataforma, no encontro algun problema o posible cambio, le parecio util y facil de usar.
+
+El participante es Richard Ríos Sandoval, un militar de 55 años que reside en el distrito de Villa El Salvador. Se muestra muy a favor del uso de herramientas digitales, señalando que la tecnología avanza con rapidez y que los aplicativos móviles constituyen una base fundamental en el mundo moderno, lo que demuestra una disposición positiva hacia la adopción del sistema.
+
+En lo que respecta al cuidado de su familiar, Richard prioriza mantenerse constantemente al pendiente de su estado de salud y considera que las innovaciones tecnológicas son un gran soporte para lograrlo. Debido a esto, manifiesta que le gustaría recibir actualizaciones de manera diaria y a la brevedad posible ante cualquier situación o cambio que se presente, enfatizando la importancia de la puntualidad y la inmediatez en el flujo de la información.
+
+Tras observar la presentación de la página web del negocio y la demostración de la aplicación móvil (que incluye datos del familiar, métricas de salud en tiempo real y el módulo de tareas), el entrevistado calificó la experiencia como "muy interesante". Desde su punto de vista, las características mostradas cumplen bien con las necesidades del paciente y son esenciales para mantener correctamente informada a la persona que se encuentra al otro lado de la plataforma.
+
+La principal fuente de duda o desconfianza para el usuario no se debe a un fallo de diseño, sino al hecho de que se trata de un software nuevo, lo que implica pasar por un proceso de familiarización y adaptación a la herramienta ("acostumbrarse a la costumbre"). Finalmente, como recomendación antes de implementar la app de forma regular, aconseja que el sistema nunca pierda de vista "la parte humana" de los pacientes y que garantice que toda la información crítica llegue siempre de manera puntual a los familiares.
 
 
 ### 6.3.3. Evaluaciones según heurísticas.
