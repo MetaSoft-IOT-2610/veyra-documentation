@@ -2313,21 +2313,16 @@ La aplicación móvil fue finalizada para los perfiles de familiar y personal as
 
 Vista del flujo de onboarding del familiar:
 
-<!-- CAPTURA: Inserta aquí captura del flujo de onboarding en la app móvil -->
-<!-- Figura 6.3.6.9. Flujo de onboarding del familiar en la aplicación móvil de VEYRA. -->
-![Mobile App - Onboarding](/assets/img/chapter-VI/s3-execution-mobile-onboarding.png)
+![Mobile App - Onboarding](/assets/img/chapter-VI/execution-mobile1.png)
 
-Vista del mapa de ubicación GPS del residente:
+Vista de signos vitales del residente:
 
-<!-- CAPTURA: Inserta aquí captura del mapa en tiempo real -->
-<!-- Figura 6.3.6.10. Visualización de la ubicación GPS del residente en la aplicación móvil. -->
-![Mobile App - GPS Map](/assets/img/chapter-VI/s3-execution-mobile-gps.png)
+![Mobile App](/assets/img/chapter-VI/execution-mobile-3.png)
 
-Vista de notificaciones push recibidas:
+Vista de resumen para el administrador:
 
-<!-- CAPTURA: Inserta aquí captura de las notificaciones push en el dispositivo -->
-<!-- Figura 6.3.6.11. Notificaciones push recibidas en la aplicación móvil. -->
-![Mobile App - Push Notifications](/assets/img/chapter-VI/s3-execution-mobile-notifications.png)
+![Mobile App](/assets/img/chapter-VI/execution-mobile-4.png)
+
 
 ---
 
@@ -2339,13 +2334,13 @@ Vista del proceso de la edge app en ejecución:
 
 <!-- CAPTURA: Inserta aquí captura de la consola/log de la edge app -->
 <!-- Figura 6.3.6.12. Log de la edge app procesando datos del dispositivo IoT. -->
-![Edge App - Execution](/assets/img/chapter-VI/s3-execution-edge-app.png)
+![Edge App - Execution](/assets/img/chapter-VI/execution-edge.jpg)
 
 Vista del dispositivo embebido enviando datos:
 
 <!-- CAPTURA: Inserta aquí captura del dispositivo embebido (sensor + microcontrolador) -->
 <!-- Figura 6.3.6.13. Dispositivo embebido de VEYRA transmitiendo métricas de salud. -->
-![Embedded App - Execution](/assets/img/chapter-VI/s3-execution-embedded-app.png)
+![Embedded App - Execution](/assets/img/chapter-VI/execution-embedded.jpeg)
 
 ---
 
@@ -2618,16 +2613,12 @@ Distribución para iOS:
 
 **Edge app:**
 
-<!-- CAPTURA: Inserta aquí captura de la edge app desplegada/en ejecución en el dispositivo edge -->
-<!-- Figura 6.3.8.10. Edge app desplegada y en ejecución, enviando datos al backend de Azure. -->
 ![Edge App - Deployment](/assets/img/chapter-VI/s3-deployment-edge.png)
 
 ---
 
 **Embedded app:**
 
-<!-- CAPTURA: Inserta aquí captura del dispositivo embebido con el firmware cargado y enviando datos -->
-<!-- Figura 6.3.8.11. Dispositivo embebido de VEYRA con firmware cargado y transmitiendo métricas. -->
 ![Embedded App - Deployment](/assets/img/chapter-VI/s3-deployment-embedded.png)
 
 #### 6.2.3.9. Team Collaboration Insights during Sprint
@@ -2638,8 +2629,6 @@ Landing page:
 
 Se completaron las secciones pendientes: pitch message, CTA vinculado a la aplicación desplegada, información de contacto, vínculos a redes sociales y sección explicativa del producto con capturas y video. Se aplicaron los ajustes de Responsive Design para dispositivos móviles y tablet.
 
-<!-- CAPTURA: Inserta aquí la captura de GitHub Insights (Contributors / Commits) del repositorio veyra-landing-page -->
-<!-- Figura 6.3.9.1. Insights de colaboración en el repositorio de la landing page durante el Sprint 3. -->
 ![Landing Page Collaboration](/assets/img/chapter-VI/s3-insights-landing.png)
 
 Aplicación web:
@@ -2650,52 +2639,57 @@ Se realizó la conexión del frontend con el backend y se implementaron los feat
 
 Backend:
 
-![Backend Collaboration](/assets/img/chapter-VI/insights2-backend.png)
+![Backend Collaboration](/assets/img/chapter-VI/insights3-backend.png)
 
 Aplicación móvil:
 
 Se completó el flujo de onboarding del familiar, la visualización GPS en tiempo real, las notificaciones push y el módulo de mensajería, dejando la aplicación lista para distribución vía Firebase App Distribution.
 
-<!-- CAPTURA: Inserta aquí la captura de GitHub Insights del repositorio veyra-mobile-application -->
-<!-- Figura 6.3.9.4. Insights de colaboración en el repositorio de la aplicación móvil durante el Sprint 3. -->
-![Mobile App Collaboration](/assets/img/chapter-VI/s3-insights-mobile.png)
+
+![Mobile App Collaboration](/assets/img/chapter-VI/insights-mobile3.png)
 
 Embedded app:
 
 Se cerró la integración del firmware con el driver GPS (NEO-6M), el sensor de oximetría y pulso (MAX30102), y la transmisión de datos al backend de Azure a través de la edge app.
 
-<!-- CAPTURA: Inserta aquí la captura de GitHub Insights del repositorio veyra-embedded-device -->
-<!-- Figura 6.3.9.5. Insights de colaboración en el repositorio del embedded device durante el Sprint 3. -->
-![Embedded App Collaboration](/assets/img/chapter-VI/s3-insights-embedded.png)
+![Embedded App Collaboration](/assets/img/chapter-VI/insights-embedded3.png)
 
 Edge app:
 
 Se estabilizó el servicio de tracking para el procesamiento y envío de coordenadas GPS y métricas de salud al backend en tiempo real.
 
-<!-- CAPTURA: Inserta aquí la captura de GitHub Insights del repositorio veyra-tracking-service -->
-<!-- Figura 6.3.9.6. Insights de colaboración en el repositorio de la edge app durante el Sprint 3. -->
-![Edge App Collaboration](/assets/img/chapter-VI/s3-insights-edge.png)
+
+![Edge App Collaboration](/assets/img/chapter-VI/insights-edge3.png)
 
 ## 6.3. Validation Interviews.
 
+Las entrevistas de validación se realizaron con usuarios de ambos segmentos objetivo: administradores de casas de reposo y familiares de adultos mayores. El objetivo fue evaluar la usabilidad, funcionalidad y aceptación del prototipo de VEYRA, así como recopilar sugerencias para mejoras futuras.
+
 ### 6.3.1. Diseño de Entrevistas.
+
+El diseño de las entrevistas se centró en obtener información cualitativa sobre la experiencia del usuario, sus expectativas y percepciones sobre la aplicación. Se estructuraron en cuatro bloques principales: perfil y contexto, expectativas del producto, evaluación del prototipo y cierre.
 
 ### Preguntas para el Segmento: Administrador de Casa de Reposo
 
 **Perfil y contexto**
+
 1. ¿Cuál es su experiencia previa con aplicaciones o sistemas de software, y qué tan cómodo se siente usando interfaces digitales en general?
 2. ¿Cuáles son los principales desafíos que enfrenta en la gestión de su casa de reposo?
 3. ¿Cómo gestiona actualmente la información de los residentes y su medicación?
 
 **Expectativas del producto**
+
 4. ¿Qué funcionalidades y beneficios principales busca obtener de una aplicación como VEYRA?
+
 5. ¿Qué tan preparado se siente su equipo para manejar datos sensibles de salud y ubicación bajo regulaciones de protección de datos?
 
 **Evaluación del prototipo**
+
 6. Tras la demostración, ¿qué aspecto de la interfaz le pareció más confuso o difícil de entender?
 
 **Cierre**
-7. En una escala del 1 al 10, ¿qué tan probable es que recomendara VEYRA a otro administrador? ¿Por qué?
+
+7. En una escala del 1 al 10, ¿qué tan probable es que recomendara VEYRA a otro administrador? ¿Por qué? 
 8. ¿Qué mejoras sugiere para la próxima versión?
 
 ### Preguntas para el Segmento: Familiar de Adulto Mayor
@@ -2705,15 +2699,18 @@ Se estabilizó el servicio de tracking para el procesamiento y envío de coorden
 2. ¿Cómo valida actualmente si el cuidado que recibe su familiar es de calidad?
 
 **Expectativas del producto**
+
 3. ¿Con qué frecuencia desearía recibir actualizaciones sobre el estado de su familiar?
 4. ¿Qué información o funcionalidades considera esenciales en una aplicación como VEYRA?
 5. ¿Cuáles son sus preocupaciones principales respecto a la privacidad de los datos de su familiar?
 
 **Evaluación del prototipo**
+
 6. Tras la demostración, ¿cómo describiría su experiencia general con la interfaz de la aplicación?
 7. ¿Qué aspectos de la aplicación le generan dudas o desconfianza?
 
 **Cierre**
+
 8. ¿Qué cambios recomendaría antes de usar la aplicación regularmente?
 
 ### 6.3.2. Registro de Entrevistas.
