@@ -45,6 +45,7 @@ Proyecto
 </table>
 
 **Período 202610**
+
 **Julio**
 </div>
 
@@ -189,7 +190,7 @@ Durante la cuarta fase de colaboración del informe, el equipo centró sus esfue
 
 En la siguiente imagen se muestra el número de commits realizados por cada miembro del equipo, lo que refleja la contribución individual al desarrollo del proyecto. Cada barra representa a un miembro del equipo y la altura de la barra indica el número total de commits realizados por esa persona.
 
-![img.png](assets/img/introduction/pulse-tb2.png)
+![img.png](assets/img/introduction/pulse-tb1.png)
 
 Aquí se muestra el gráfico de clones del repositorio, que indica la cantidad de veces que el repositorio ha sido clonado por los miembros del equipo. Cada punto en el gráfico representa un evento de clonación, y la altura de cada punto refleja la cantidad de clones realizados en ese momento específico.
 
