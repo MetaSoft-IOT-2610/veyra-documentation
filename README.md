@@ -49,7 +49,7 @@ Proyecto
 **Julio**
 </div>
 
----
+<div style="page-break-after: always;"></div>
 
 ## Report Version History
 
@@ -88,7 +88,8 @@ Proyecto
 | 2.5     | 06/05/2026 | Villafuerte Tapia, Renzo Alonso | Se incorporó el Capítulo V completo: Style Guidelines, Information Architecture, Landing Page UI Design, Applications UX/UI Design, Prototyping e IoT Device Design.     |
 | 2.6     | 07/05/2026 | Saldaña Vela, Janover Gonzalo   | Se corrigieron los diagramas C4 (Context, Container, Deployment) y se completó el Domain Layer de todos los Bounded Contexts. Se añadió el Capítulo VI con el Sprint 1.  |
 | 2.7     | 08/05/2026 | Armas Sánchez, Oscar Javier     | Se corrigió redacción general del documento, se actualizó el Collaboration Insights con evidencias del TB1 y se desplegó la primera versión del Landing Page y Frontend. |
----
+
+<div style="page-break-after: always;"></div>
 
 ## Project Report Collaboration Insights
 
@@ -98,7 +99,7 @@ Proyecto
 
 Github Collaboration Insights proporciona un cronograma que muestra las principales ramas y los procesos de fusión que han ocurrido. Todas las ramas se han generado siguiendo los principios de GitFlow, lo que garantiza una organización efectiva al utilizar un sistema de control de versiones.
 
-Janover Gonzalo Saldaña Vela (JanoverSaldana)
+Saldaña Vela, Janover Gonzalo (JanoverSaldana)
 Calvo Yálan, Renato Guillermo (RenatoCY)
 Armas Sánchez, Oscar Javier (Racso24k)
 Llerena Delgado, Renzo Miguel (Renxoll)
@@ -134,7 +135,7 @@ Durante la primera fase de elaboración del informe, el equipo centró sus esfue
 Finalmente, estos gráficos representan la cantidad de commits realizados por cada miembro del equipo en el repositorio del proyecto. Cada barra representa a un miembro del equipo y la altura de la barra indica el número total de commits realizados por esa persona.
 
 En la siguiente imagen se muestra el número de commits realizados por cada miembro del equipo, lo que refleja la contribución individual al desarrollo del proyecto. Cada barra representa a un miembro del equipo y la altura de la barra indica el número total de commits realizados por esa persona.
- 
+
 ![img.png](assets/img/introduction/pulse-av1.png)
 
 Aquí se muestra el gráfico de clones del repositorio, que indica la cantidad de veces que el repositorio ha sido clonado por los miembros del equipo. Cada punto en el gráfico representa un evento de clonación, y la altura de cada punto refleja la cantidad de clones realizados en ese momento específico.
@@ -203,6 +204,7 @@ Este gráfico muestra la aplicación de GitFlow en el proyecto, evidenciando la 
 ![img.png](assets/img/introduction/network-graph-tb2.png)
 
 ---
+<div style="page-break-after: always;"></div>
 
 ## Tabla de contenido
 
@@ -392,7 +394,9 @@ Este gráfico muestra la aplicación de GitFlow en el proyecto, evidenciando la 
 
 - [Bibliografía](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#bibliograf%C3%ADa)
 - [Anexos](https://github.com/MetaSoft-IOT-2610/veyra-documentation/blob/main/docs/ChapterVI.md#anexos)
----
+
+<div style="page-break-after: always;"></div>
+
 ## ABET – EAC - Student Outcome 5
 
 El curso contribuye al cumplimiento del Student Outcome ABET:
