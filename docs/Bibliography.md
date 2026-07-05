@@ -32,3 +32,27 @@
 - UXPressia. (s.f.). *User vs. Buyer Persona: Differences and free template*. Recuperado de https://uxpressia.com/blog/user-persona-vs-buyer-persona-difference
 - Vernon, V. (2016). *Domain-Driven Design Distilled*. Addison-Wesley Professional. Recuperado de https://www.oreilly.com/library/view/domain-driven-design-distilled/9780134434964/
 - Vernon, V. (s.f.). *Domain-Driven Design Reference*. Recuperado de https://domainlanguage.com/ddd/reference/
+- Cloudinary. (s.f.). *Cloudinary Documentation*. Recuperado de https://cloudinary.com/documentation
+- Espressif Systems. (s.f.). *ESP32 Series Datasheet*. Recuperado de https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
+- Espressif Systems. (s.f.). *ESP-IDF Programming Guide*. Recuperado de https://docs.espressif.com/projects/esp-idf/en/latest/esp32/
+- Google Cloud. (s.f.). *Google Cloud IoT Architecture and Best Practices*. Recuperado de https://cloud.google.com/architecture/iot
+- HiveMQ. (s.f.). *MQTT Essentials*. Recuperado de https://www.hivemq.com/mqtt-essentials/
+- IBM. (s.f.). *What is Edge Computing?*. Recuperado de https://www.ibm.com/topics/edge-computing
+- IETF. (2011). *RFC 6455: The WebSocket Protocol*. Recuperado de https://datatracker.ietf.org/doc/html/rfc6455
+- Institute of Electrical and Electronics Engineers (IEEE). (s.f.). *IoT Standards and Reference Architecture*. Recuperado de https://standards.ieee.org/initiatives/internet-things/
+- ISO/IEC. (2014). *ISO/IEC 20922:2016 -- Information technology -- Message Queuing Telemetry Transport (MQTT) v3.1.1*. Recuperado de https://www.iso.org/standard/69466.html
+- MongoDB. (s.f.). *MongoDB Manual*. Recuperado de https://www.mongodb.com/docs/manual/
+- OASIS. (2012). *STOMP Protocol Specification, Version 1.2*. Recuperado de https://stomp.github.io/stomp-specification-1.2.html
+- OASIS. (2019). *MQTT Version 5.0 Specification*. Recuperado de https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html
+- Oracle. (s.f.). *MySQL 8.0 Reference Manual*. Recuperado de https://dev.mysql.com/doc/refman/8.0/en/
+- OWASP Foundation. (s.f.). *OWASP Internet of Things Project*. Recuperado de https://owasp.org/www-project-internet-of-things/
+- Pallets Projects. (s.f.). *Flask Documentation*. Recuperado de https://flask.palletsprojects.com/
+- Pallets Projects. (s.f.). *Jinja Documentation*. Recuperado de https://jinja.palletsprojects.com/
+- Peewee ORM. (s.f.). *Peewee: a small, expressive ORM*. Recuperado de https://docs.peewee-orm.com/
+- Percival, H., & Gregory, B. (2020). *Architecture Patterns with Python*. O'Reilly Media. Recuperado de https://www.cosmicpython.com/
+- Python Software Foundation. (s.f.). *PEP 8 -- Style Guide for Python Code*. Recuperado de https://peps.python.org/pep-0008/
+- Redis. (s.f.). *Redis Documentation*. Recuperado de https://redis.io/docs/latest/
+- Reitz, K. (s.f.). *Requests: HTTP for Humans*. Recuperado de https://requests.readthedocs.io/
+- SendGrid (Twilio). (s.f.). *SendGrid API Documentation*. Recuperado de https://www.twilio.com/docs/sendgrid
+- Spring. (s.f.). *Spring Framework: WebSocket Support*. Recuperado de https://docs.spring.io/spring-framework/reference/web/websocket.html
+- Wokwi. (s.f.). *Wokwi Docs: Simulate Arduino, ESP32, and more*. Recuperado de https://docs.wokwi.com/
