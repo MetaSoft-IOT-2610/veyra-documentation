@@ -30,24 +30,22 @@ Proyecto
 
 **Integrantes**
 
-**Código** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Apellidos y Nombres**
-
-u202217053 &nbsp;&nbsp;&nbsp; Calvo Yálan, Renato Guillermo
-
-U20211G192 &nbsp;&nbsp;&nbsp; Armas Sánchez, Oscar Javier
-
-U202312399 &nbsp;&nbsp;&nbsp; Llerena Delgado, Renzo Miguel
-
-U201822697 &nbsp;&nbsp;&nbsp; Quijandria Araneda, Vicente
-
-U202315283 &nbsp;&nbsp;&nbsp; Rios Piñan, Dayro Richard
-
-U20201B510 &nbsp;&nbsp;&nbsp; Saldaña Vela, Janover Gonzalo
-
-U202310670 &nbsp;&nbsp;&nbsp; Villafuerte Tapia, Renzo Alonso
+<table style="border-collapse: collapse; border: none;">
+  <tr>
+    <th style="border: none; text-align: left;">Código</th>
+    <th style="border: none; text-align: left;">Apellidos y Nombres</th>
+  </tr>
+  <tr><td style="border: none;">U202217053</td><td style="border: none;">Calvo Yálan, Renato Guillermo</td></tr>
+  <tr><td style="border: none;">U20211G192</td><td style="border: none;">Armas Sánchez, Oscar Javier</td></tr>
+  <tr><td style="border: none;">U202312399</td><td style="border: none;">Llerena Delgado, Renzo Miguel</td></tr>
+  <tr><td style="border: none;">U201822697</td><td style="border: none;">Quijandria Araneda, Vicente</td></tr>
+  <tr><td style="border: none;">U202315283</td><td style="border: none;">Rios Piñan, Dayro Richard</td></tr>
+  <tr><td style="border: none;">U20201B510</td><td style="border: none;">Saldaña Vela, Janover Gonzalo</td></tr>
+  <tr><td style="border: none;">U202310670</td><td style="border: none;">Villafuerte Tapia, Renzo Alonso</td></tr>
+</table>
 
 **Período 202610**
-
+**Julio**
 </div>
 
 ---
@@ -183,6 +181,26 @@ Aquí se muestra el gráfico de clones del repositorio, que indica la cantidad d
 Este gráfico muestra la aplicación de GitFlow en el proyecto, evidenciando la organización de ramas principales, de desarrollo, de funcionalidades y de releases utilizadas por el equipo durante el ciclo de trabajo.
 
 ![img.png](assets/img/introduction/network-graph-av2.png)
+
+
+## Reporte de colaboración de la entrega del TB2
+
+Durante la cuarta fase de colaboración del informe, el equipo centró sus esfuerzos en la implementación técnica del Sprint 3, abarcando el desarrollo e integración de las nuevas funcionalidades del Backend, el Edge API, la Embedded Application y el Frontend. Cada integrante asumió el liderazgo de un componente crítico del ecosistema digital, asegurando la sincronización entre las capas del sistema y el cumplimiento de los estándares de calidad definidos. Se actualizó el C4  para reflejar la arquitectura resultante y se desplegaron las nuevas versiones.
+
+En la siguiente imagen se muestra el número de commits realizados por cada miembro del equipo, lo que refleja la contribución individual al desarrollo del proyecto. Cada barra representa a un miembro del equipo y la altura de la barra indica el número total de commits realizados por esa persona.
+
+![img.png](assets/img/introduction/pulse-tb2.png)
+
+Aquí se muestra el gráfico de clones del repositorio, que indica la cantidad de veces que el repositorio ha sido clonado por los miembros del equipo. Cada punto en el gráfico representa un evento de clonación, y la altura de cada punto refleja la cantidad de clones realizados en ese momento específico.
+
+![img.png](assets/img/introduction/git-clones-tb2.png)
+
+**Ramificación del proyecto usando GitFlow:**
+
+Este gráfico muestra la aplicación de GitFlow en el proyecto, evidenciando la organización de ramas principales, de desarrollo, de funcionalidades y de releases utilizadas por el equipo durante el ciclo de trabajo.
+
+![img.png](assets/img/introduction/network-graph-tb2.png)
+
 ---
 
 ## Tabla de contenido
