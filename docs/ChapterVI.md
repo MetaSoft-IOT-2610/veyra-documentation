@@ -2220,12 +2220,12 @@ En este sprint final se realizaron pruebas de integración y de sistema para val
 
 Tabla de commits relacionados al testing:
 
-| Repository                      | Branch                     | Commit Id | Commit Message                                       | Commit Message Body                   | Commited on (Date)          |
-| :------------------------------ | :------------------------- | :-------- | :--------------------------------------------------- | :------------------------------------ | :-------------------------- |
-| MetaSoft-IOT-2610/veyra-backend | feature/[INSERTAR FEATURE] | [SHA]     | test([MÓDULO]): [INSERTAR DESCRIPCIÓN DE LA PRUEBA]  | [INSERTAR AUTOR] pushed X commits     | [INSERTAR FECHA DD/MM/YYYY] |
-| MetaSoft-IOT-2610/veyra-backend | feature/[INSERTAR FEATURE] | [SHA]     | test([MÓDULO]): [INSERTAR DESCRIPCIÓN DE LA PRUEBA]  | [INSERTAR AUTOR] pushed X commits     | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-mobile-application        | feature/[INSERTAR FEATURE] | [SHA]     | test([MÓDULO]): [INSERTAR DESCRIPCIÓN DE LA PRUEBA]  | Pushed X commits                      | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-web-app                   | feature/[INSERTAR FEATURE] | [SHA]     | test([MÓDULO]): [INSERTAR DESCRIPCIÓN DE LA PRUEBA]  | Pushed X commits                      | [INSERTAR FECHA DD/MM/YYYY] |
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| veyra-backend | develop | a0050e0 | test(activities): update unit tests for Activity aggregate | Updated unit tests for the Activity aggregate to ensure business rules and invariants. | 06/07/2026 |
+| veyra-backend | feature/tests | a0050e0 | test(activities): update unit tests for Activity aggregate | Final commit to feature branch before synchronization or deletion. | 06/07/2026 |
+| veyra-backend | feature/tests | 161a2d8 | test(users): add unit tests for UserCommandServiceImpl | Added comprehensive unit tests validating user command services and persistence layer. | 06/07/2026 |
+| veyra-backend | feat/tests | 161a2d8 | test(users): add unit tests for UserCommandServiceImpl | Initial suite of unit tests for UserCommandServiceImpl handling user creation and updates. | 06/07/2026 |
 
 Evidencia de ejecución de pruebas:
 
