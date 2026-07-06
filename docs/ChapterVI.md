@@ -2229,25 +2229,59 @@ Tabla de commits relacionados al testing:
 
 Evidencia de ejecución de pruebas:
 
-<!-- CAPTURA: Inserta aquí captura de los tests corriendo (terminal, IDE, CI/CD) para el backend -->
-<!-- Figura 6.3.5.1. Ejecución de pruebas unitarias/integración del backend de VEYRA. -->
-![Testing Evidence - Backend](/assets/img/chapter-VI/s3-testing-backend.png)
+Tests correspondientes a Activities:
 
-<!-- CAPTURA: Inserta aquí captura de los tests de la aplicación web o móvil -->
-<!-- Figura 6.3.5.2. Ejecución de pruebas en la aplicación web/móvil de VEYRA. -->
-![Testing Evidence - Frontend](/assets/img/chapter-VI/s3-testing-frontend.png)
+![Testing Evidence - Backend1](/assets/img/chapter-VI/s3-test1.png)
+
+
+![Testing Evidence - Backend2](/assets/img/chapter-VI/s3-test2.png)
+
+Tests correspondientes a Communications:
+
+![Testing Evidence - Backend3](/assets/img/chapter-VI/s3-test3.png)
+
+![Testing Evidence - Backend4](/assets/img/chapter-VI/s3-test4.png)
+
+
+![Testing Evidence - Backend5](/assets/img/chapter-VI/s3-test5.png)
+
+
+![Testing Evidence - Backend6](/assets/img/chapter-VI/s3-test6.png)
+
+Tests correspondientes a Health:
+
+![Testing Evidence - Backend7](/assets/img/chapter-VI/s3-test7.png)
+
+
+![Testing Evidence - Backend8](/assets/img/chapter-VI/s3-test8.png)
+
+Tests correspondientes a Profiles:
+
+![Testing Evidence - Backend9](/assets/img/chapter-VI/s3-test9.png)
+
+
+![Testing Evidence - Backend10](/assets/img/chapter-VI/s3-test10.png)
+
 
 Tabla resumen de casos de prueba ejecutados:
 
-| Caso de Prueba | Descripción                                           | Precondición                                               | Pasos                                                                                                                                              | Resultado Esperado                                                          | Resultado Obtenido  | Estado |
-| :------------- | :---------------------------------------------------- | :--------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- | :------------------ | :----- |
-| TC-S3-01       | [INSERTAR NOMBRE DEL CASO DE PRUEBA]                  | [INSERTAR PRECONDICIÓN]                                    | [INSERTAR PASOS]                                                                                                                                   | [INSERTAR RESULTADO ESPERADO]                                               | [INSERTAR OBTENIDO] | PASS   |
-| TC-S3-02       | [INSERTAR NOMBRE DEL CASO DE PRUEBA]                  | [INSERTAR PRECONDICIÓN]                                    | [INSERTAR PASOS]                                                                                                                                   | [INSERTAR RESULTADO ESPERADO]                                               | [INSERTAR OBTENIDO] | PASS   |
-| TC-S3-03       | Flujo de alerta IoT end-to-end                        | Residente con dispositivo IoT asignado                     | 1. Dispositivo envía lectura de SpO2 < 90%. 2. Backend evalúa alerta. 3. Se despacha push notification.                                            | App móvil recibe notificación push en menos de 5 segundos.                  | [INSERTAR OBTENIDO] | PASS   |
-| TC-S3-04       | Autenticación JWT con rol familiar                    | Usuario familiar registrado en el sistema                  | 1. POST /api/v1/authentication/sign-in con credenciales válidas. 2. Usar token en endpoint protegido.                                              | Respuesta 200 OK con token válido y acceso al recurso.                      | [INSERTAR OBTENIDO] | PASS   |
-| TC-S3-05       | Visualización de ubicación GPS en mapa                | Dispositivo IoT asignado a residente, con GPS activo       | 1. Dispositivo POST /api/v1/locations. 2. Familiar abre mapa en app móvil.                                                                         | Marcador del residente aparece en la coordenada enviada.                    | [INSERTAR OBTENIDO] | PASS   |
-| TC-S3-06       | CTA de landing page vinculado a aplicación desplegada | Landing page publicada en producción                       | 1. Abrir landing page. 2. Hacer clic en el botón CTA principal.                                                                                    | Redirección a https://app.veyra.metasoft.pe/home                            | [INSERTAR OBTENIDO] | PASS   |
-| TC-S3-07       | [INSERTAR NOMBRE DEL CASO DE PRUEBA]                  | [INSERTAR PRECONDICIÓN]                                    | [INSERTAR PASOS]                                                                                                                                   | [INSERTAR RESULTADO ESPERADO]                                               | [INSERTAR OBTENIDO] | PASS   |
+| Bounded Context | Componente / Clase de Prueba | Objetivo de Negocio / ¿Qué hace la prueba? | Tipo de prueba |
+| :--- | :--- | :--- | :--- |
+| **Nursing** | `ResidentCommandServiceImplTest` | Valida la correcta creación y actualización de residentes mediante servicios. | Integración |
+| **Payments** | `PaymentDomainTest` | Comprueba las reglas de validación de negocio dentro del dominio de pagos. | Unitaria |
+| **Payments** | `PaymentCommandServiceImplTest` | Prueba el flujo de comandos de procesamiento de pagos y respuesta del servicio. | Integración |
+| **Payments** | `SubscriptionCommandServiceImplTest` | Valida la lógica de creación y gestión de estados de suscripción. | Integración |
+| **Profiles** | `PersonProfileDomainTest` | Asegura la integridad de los datos en el agregado PersonProfile. | Unitaria |
+| **Profiles** | `PersonProfileCommandServiceImplTest` | Valida la persistencia y gestión de comandos de perfiles de usuario. | Integración |
+| **Health** | `HealthAggregateTest` | Asegura que el agregado Health cumpla con las invariantes de negocio y reglas de validación. | Unitaria |
+| **Health** | `HealthCommandServiceImplTest` | Valida la correcta gestión de comandos relacionados a métricas de salud y telemetría. | Integración |
+| **Metrics** | `MeasurementCommandServiceImplTest` | Comprueba la correcta ingestión y almacenamiento de analiticas. | Integración |
+| **Metrics** | `MetricAggregateTest` | Asegura que las reglas de negocio para analiticas se cumplan y se validen correctamente. | Unitaria |
+| **Communications** | `EmailNotificationCommandServiceImplTest` | Valida la correcta creación y envío de notificaciones por correo electrónico. | Integración |
+| **Communications** | `UserNotificationCommandServiceImplTest` | Comprueba la correcta gestión de notificaciones push y su persistencia en el sistema. | Integración |
+| **Profiles** | `UserProfileCommandServiceImplTest` | Valida la correcta creación y actualización de perfiles de usuario. | Integración |
+| **Profiles** | `UserProfileDomainTest` | Asegura la integridad de los datos en el agregado UserProfile. | Unitaria |
+
 
 #### 6.2.3.6. Execution Evidence for Sprint Review
 
