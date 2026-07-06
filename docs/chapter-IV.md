@@ -1220,7 +1220,7 @@ Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
 
 El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo del negocio de contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
 
-![iam back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/iam/iam-backend-diagram.puml)
+![iam back](../assets/img/chapter-IV/iam-backend-diagram.png)
 
 ##### 4.2.7.6.2. Bounded Context Database Design Diagram
 
