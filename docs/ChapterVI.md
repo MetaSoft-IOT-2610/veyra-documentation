@@ -2793,6 +2793,9 @@ El diseño de las entrevistas se centró en obtener información cualitativa sob
 </table>
 
 <p><strong>Screenshot del video:</strong></p>
+
+<br>
+
 ![Interview Administrator 1](/assets/img/chapter-VI/oscar1.png)
 
 <p><strong>Resumen de Respuestas:</strong></p>
@@ -2808,6 +2811,62 @@ Andrés califica la probabilidad de recomendar VEYRA a otros administradores con
 <hr>
 
 <h4>Entrevista 2 - Administrador de Casa de Reposo (Segmento 1)</h4>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><strong>Nombre Completo</strong></td>
+      <td>Manuel Molina</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <td><strong>Distrito</strong></td>
+      <td>San Isidro</td>
+    </tr>
+    <tr>
+      <td><strong>Ocupación</strong></td>
+      <td>Administrador de casa de reposo</td>
+    </tr>
+    <tr>
+      <td><strong>Fecha de Entrevista</strong></td>
+      <td>21/06/2026</td>
+    </tr>
+    <tr>
+      <td><strong>Duración</strong></td>
+      <td>5min 06 seg</td>
+    </tr>
+    <tr>
+      <td><strong>URL Microsoft Stream</strong></td>
+      <td>[Incluir URL del video de la entrevista 2]</td>
+    </tr>
+    <tr>
+      <td><strong>Timing</strong></td>
+      <td>21:59 - 26:47</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+![Interview Administrator 1](/assets/img/chapter-VI/renato1.png)
+
+
+<p><strong>Resumen de Respuestas:</strong></p>
+
+Manuel Alejandro relata que sus experiencias previas con software de gestión no fueron buenas debido a la pérdida de datos y a errores de cálculo en los sistemas que utilizaba. Actualmente, el control de la información de los residentes y médicos se realiza mediante Excel, una herramienta que genera retrasos operativos considerables debido a que no todo el personal de la casa de reposo sabe utilizarla. Además, detalla que sus mayores desafíos logísticos radican en la mala sincronización del estado de los cuartos y en un grave retraso en el sistema de alertas, lo que les impide distinguir las notificaciones actuales de las ya expiradas.
+
+Tras revisar la propuesta de VEYRA, el administrador destaca que la interfaz es mucho más nítida, amigable y bonita que las soluciones anteriores. Valora positivamente que los datos se almacenen correctamente, reflejando con precisión las fechas y el estatus en tiempo real. En cuanto a la preparación de su equipo para adoptar tecnología y dispositivos físicos, menciona que, aunque hay personal mayor con dificultades digitales, la distribución limpia de la aplicación facilitará enormemente su implementación en el día a día.
+
+A pesar de la buena impresión general, el entrevistado identificó puntos específicos para refinar el prototipo. En la sección de habitaciones, recomienda detallar con mayor claridad el "tipo" de cuarto, puesto que términos como "individual" o "doble" no siempre resultan obvios para todos. Asimismo, sugirió simplificar los estados o el "estatus", eliminando términos ambiguos o guiones intermedios (como los apartados de enfermería) para limitarse a indicadores directos y claros como "ocupado" o "habilitado".
+
+Manuel Alejandro califica la probabilidad de recomendar VEYRA a otros administradores con un 9 de 10. Fundamenta esta excelente nota en el gran diseño visual y en el correcto almacenamiento de la información, aclarando que el punto restante se debe exclusivamente a los pequeños detalles de claridad de texto mencionados. Concluye señalando que el sistema actual no presenta ninguna falla crítica o urgente, mostrando total confianza en el estado del prototipo.
+
+<hr>
+
+<h4>Entrevista 3 - Administrador de Casa de Reposo (Segmento 1)</h4>
 
 <table border="1" cellpadding="4" cellspacing="0">
   <tbody>
@@ -2851,51 +2910,6 @@ Andrés califica la probabilidad de recomendar VEYRA a otros administradores con
 <p><strong>Resumen de Respuestas:</strong></p>
 
 <hr>
-
-
-<h4>Entrevista 3 - Administrador de Casa de Reposo (Segmento 1)</h4>
-
-<table border="1" cellpadding="4" cellspacing="0">
-  <tbody>
-    <tr>
-      <td><strong>Nombre Completo</strong></td>
-      <td>Alexander Gutierrez</td>
-    </tr>
-    <tr>
-      <td><strong>Edad</strong></td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <td><strong>Distrito</strong></td>
-      <td>San Isidro</td>
-    </tr>
-    <tr>
-      <td><strong>Ocupación</strong></td>
-      <td>Administrador de casa de reposo</td>
-    </tr>
-    <tr>
-      <td><strong>Fecha de Entrevista</strong></td>
-      <td>21/06/2026</td>
-    </tr>
-    <tr>
-      <td><strong>Duración</strong></td>
-      <td>5min 10 seg</td>
-    </tr>
-    <tr>
-      <td><strong>URL Microsoft Stream</strong></td>
-      <td>[Incluir URL del video de la entrevista 2]</td>
-    </tr>
-    <tr>
-      <td><strong>Timing</strong></td>
-      <td>21:59 - 26:47</td>
-    </tr>
-  </tbody>
-</table>
-
-![Interview Administrator 1](/assets/img/chapter-VI/oscar3.png)
-
-
-<p><strong>Resumen de Respuestas:</strong></p>
 
 <h4>Entrevista 1 - Familiar de Adulto Mayor (Segmento 2)</h4>
 
