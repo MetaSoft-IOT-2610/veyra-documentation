@@ -256,13 +256,13 @@ Para HTML y CSS se aplica un espaciado de **2 espacios** por nivel de indentaci�
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Document Title</title>
-</head>
-<body>
-<h1>Main Heading</h1>
-<p>Paragraph content inside the document body.</p>
-</body>
+  <head>
+    <title>Document Title</title>
+  </head>
+  <body>
+    <h1>Main Heading</h1>
+    <p>Paragraph content inside the document body.</p>
+  </body>
 </html>
 ```
 
@@ -287,28 +287,28 @@ HTML, acrónimo de HyperText Markup Language en inglés, es un lenguaje de marca
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Animales Exóticos</title>
-</head>
-<body>
-<h1>Lemur de Madagascar</h1>
-<p>
-  El lémur de Madagascar es un primate endémico de la isla de Madagascar en
-  el Océano Índico.
-</p>
+  <head>
+    <title>Animales Exóticos</title>
+  </head>
+  <body>
+    <h1>Lemur de Madagascar</h1>
+    <p>
+      El lémur de Madagascar es un primate endémico de la isla de Madagascar en
+      el Océano Índico.
+    </p>
 
-<h1>Pangolín</h1>
-<p>
-  El pangolín es un mamífero cubierto de escamas que se encuentra en
-  regiones de África y Asia.
-</p>
+    <h1>Pangolín</h1>
+    <p>
+      El pangolín es un mamífero cubierto de escamas que se encuentra en
+      regiones de África y Asia.
+    </p>
 
-<h1>Ocelote</h1>
-<p>
-  El ocelote es un felino salvaje que habita en América del Sur y Central,
-  conocido por su pelaje moteado.
-</p>
-</body>
+    <h1>Ocelote</h1>
+    <p>
+      El ocelote es un felino salvaje que habita en América del Sur y Central,
+      conocido por su pelaje moteado.
+    </p>
+  </body>
 </html>
 ```
 
@@ -358,9 +358,9 @@ CSS, conocido por sus siglas en inglés, Cascading Style Sheets (Hojas de Estilo
 ```css
 border-top: 0;
 font:
-100%/1.6 palatino,
-         georgia,
-         serif;
+  100%/1.6 palatino,
+  georgia,
+  serif;
 padding: 0 1em 0;
 ```
 
@@ -777,11 +777,11 @@ Gherkin es un Lenguaje Específico de Dominio (DSL) utilizado para escribir los 
 
 ```gherkin
 Scenario: Nurse receives critical heart rate alert
-Given the resident "Carlos Ruiz" has a configured threshold of 100 bpm
-When the IoT device reports a heart rate of 130 bpm
-Then a critical alert is triggered
-And the nursing dashboard displays the alert in red
-And a push notification is sent to the assigned nurse
+  Given the resident "Carlos Ruiz" has a configured threshold of 100 bpm
+  When the IoT device reports a heart rate of 130 bpm
+  Then a critical alert is triggered
+  And the nursing dashboard displays the alert in red
+  And a push notification is sent to the assigned nurse
 ```
 
 - **Step with Tables**
@@ -789,10 +789,10 @@ And a push notification is sent to the assigned nurse
 
 ```gherkin
 Then the system records the following vital signs:
-| Sign        | Value | Unit |
-| Heart Rate  | 130   | bpm  |
-| SpO2        | 94    | %    |
-| Temperature | 38.5  | °C   |
+  | Sign        | Value | Unit |
+  | Heart Rate  | 130   | bpm  |
+  | SpO2        | 94    | %    |
+  | Temperature | 38.5  | °C   |
 ```
 
 - **Reducing Noise**
@@ -809,16 +809,16 @@ Then the system processes it normally
 
 ```gherkin
 Scenario: Alert is triggered when heart rate exceeds threshold
-Given the threshold is set to 100 bpm
-When the sensor reports 115 bpm
-Then an alert is created with severity "high"
+  Given the threshold is set to 100 bpm
+  When the sensor reports 115 bpm
+  Then an alert is created with severity "high"
 
 # --------------------------
 
 Scenario: No alert is triggered within normal range
-Given the threshold is set to 100 bpm
-When the sensor reports 78 bpm
-Then no alert is created
+  Given the threshold is set to 100 bpm
+  When the sensor reports 78 bpm
+  Then no alert is created
 ```
 
 ### 6.1.4. Software Deployment Configuration
@@ -927,7 +927,7 @@ Los servicios backend de VEYRA están desarrollados con **Java / Spring Boot** y
 3. En **Deployment Center**, conectar el repositorio de GitHub y configurar el pipeline de GitHub Actions:
 
    | Campo           | Valor                                            |
-         | --------------- | ------------------------------------------------ |
+   | --------------- | ------------------------------------------------ |
    | Source          | GitHub                                           |
    | Organization    | MetaSoft-IOT-2610                                |
    | Repository      | veyra-backend                                    |
@@ -940,16 +940,16 @@ Los servicios backend de VEYRA están desarrollados con **Java / Spring Boot** y
 <!-- TODO: Imagen — Captura del panel "Deployment Center" del App Service en Azure con la configuración de GitHub Actions completada -->
 
 4. Agregar el **Publish Profile** como secret en el repositorio de GitHub. Este paso es requerido por el workflow de GitHub Actions para autenticar el despliegue:
-- En el portal de Azure, ir a **App Service → Overview → Get publish profile** y descargar el archivo `.PublishSettings`.
-- En GitHub, ir a **Settings → Secrets and variables → Actions → New repository secret**.
-- Crear el secret con el nombre `AZURE_WEBAPP_PUBLISH_PROFILE` y pegar el contenido del archivo descargado como valor.
+   - En el portal de Azure, ir a **App Service → Overview → Get publish profile** y descargar el archivo `.PublishSettings`.
+   - En GitHub, ir a **Settings → Secrets and variables → Actions → New repository secret**.
+   - Crear el secret con el nombre `AZURE_WEBAPP_PUBLISH_PROFILE` y pegar el contenido del archivo descargado como valor.
 
 <!-- TODO: Imagen — Captura de la sección "Actions secrets" en GitHub mostrando el secret `AZURE_WEBAPP_PUBLISH_PROFILE` creado correctamente -->
 
 5. Configurar las variables de entorno en **Configuration → Application settings**:
 
    | Variable                     | Descripción                                       |
-         | ---------------------------- | ------------------------------------------------- |
+   | ---------------------------- | ------------------------------------------------- |
    | `SPRING_DATASOURCE_URL`      | JDBC URL de Azure MySQL Flexible Server           |
    | `SPRING_DATASOURCE_USERNAME` | Usuario de la base de datos                       |
    | `SPRING_DATASOURCE_PASSWORD` | Contraseña (almacenar en Azure Key Vault)         |
@@ -1524,7 +1524,6 @@ Se repartieron las tareas del sprint entre los miembros del equipo, asignando re
 | TS006 | Gestión de sesiones y tokens               | 2         | Persistencia de sesiones   | Implementación de la lógica para invalidar tokens en el servidor.              | 4                  | Rios Piñan, Dayro Richard       | Done       |
 | TS011 | Política de seguridad de contraseñas       | 1         | Hashing irreversible       | Integración de algoritmos de cifrado (Bcrypt) para credenciales.               | 3                  | Saldaña Vela, Janover Gonzalo   | Done       |
 | TS011 | Política de seguridad de contraseñas       | 2         | Validación de complejidad  | Lógica de validación de requisitos mínimos de seguridad en el backend.         | 2                  | Villafuerte Tapia, Renzo Alonso | To-Review  |
-| TS012 | Protección contra fuerza bruta             | 1         | Rate Limiting              | Configuración de límites de intentos por IP y cuenta de usuario.               | 4                  | Quijandria Araneda, Vicente     | In-Process |
 | TS012 | Protección contra fuerza bruta             | 2         | Lógica de bloqueo          | Implementación de periodos de enfriamiento de 15 minutos tras fallos.          | 3                  | Calvo Yálan, Renato Guillermo   | To-do      |
 | TS014 | Registro de auditoría                      | 1         | Esquema de auditoría       | Diseño del modelo de datos para persistir acciones de alto impacto.            | 3                  | Armas Sánchez, Oscar Javier     | Done       |
 | TS014 | Registro de auditoría                      | 2         | Auditoría transaccional    | Implementación de decoradores para registrar cambios clínicos automáticamente. | 5                  | Llerena Delgado, Renzo Miguel   | In-Process |
@@ -1544,7 +1543,6 @@ Se repartieron las tareas del sprint entre los miembros del equipo, asignando re
 | MS003 | Transmisión de datos al servidor           | 2         | Queue de Reintento         | Implementación de buffer local ante pérdida de conectividad.                   | 6                  | Llerena Delgado, Renzo Miguel   | In-Process |
 | MS008 | Actualización OTA                          | 1         | Cliente de Descarga Segura | Lógica de descarga fragmentada de firmware desde el backend.                   | 6                  | Rios Piñan, Dayro Richard       | To-do      |
 | MS008 | Actualización OTA                          | 2         | Verificación de Firma      | Validación de integridad de la versión antes de aplicar el reinicio.           | 4                  | Saldaña Vela, Janover Gonzalo   | To-do      |
-| TS001 | Integración con sensores de signos vitales | 1         | Ingesta de Datos           | Implementación de API REST/MQTT para recepción de telemetría.                  | 5                  | Villafuerte Tapia, Renzo Alonso | In-Process |
 | TS001 | Integración con sensores de signos vitales | 2         | Pipeline de Procesamiento  | Normalización y guardado de datos en el perfil del residente.                  | 4                  | Quijandria Araneda, Vicente     | Done       |
 | TS008 | Ciclo de vida de dispositivos IoT          | 1         | CRUD de Dispositivos       | Módulo administrativo para registrar y vincular números de serie.              | 4                  | Calvo Yálan, Renato Guillermo   | Done       |
 | TS008 | Ciclo de vida de dispositivos IoT          | 2         | Heartbeat Monitor          | Servicio de detección de inactividad del dispositivo tras 60s.                 | 3                  | Armas Sánchez, Oscar Javier     | In-Process |
@@ -1553,9 +1551,7 @@ Se repartieron las tareas del sprint entre los miembros del equipo, asignando re
 | TS020 | Almacenamiento de ubicación GPS            | 1         | Persistencia Geoespacial   | Guardado de coordenadas vinculadas a la identidad del residente.               | 3                  | Saldaña Vela, Janover Gonzalo   | Done       |
 | TS020 | Almacenamiento de ubicación GPS            | 2         | Rutina de Purga            | Proceso automático para eliminar historial fuera del periodo de retención.     | 3                  | Villafuerte Tapia, Renzo Alonso | To-do      |
 | TS004 | Servicio de notificaciones push            | 1         | Integración FCM            | Configuración de Firebase Cloud Messaging para web y móvil.                    | 5                  | Quijandria Araneda, Vicente     | In-Process |
-| TS004 | Servicio de notificaciones push            | 2         | Despacho de Notificaciones | Orquestador de envío de mensajes según el tipo de alerta.                      | 4                  | Calvo Yálan, Renato Guillermo   | To-do      |
 | TS003 | Servicio de mensajería interna             | 1         | Backend de Chat            | Implementación de la lógica de envío y lectura de mensajes.                    | 4                  | Armas Sánchez, Oscar Javier     | Done       |
-| TS003 | Servicio de mensajería interna             | 2         | Historial de Mensajes      | API para la consulta paginada de conversaciones previas.                       | 3                  | Llerena Delgado, Renzo Miguel   | In-Process |
 | TS009 | Almacenamiento local móvil                 | 1         | Cache Indexada             | Implementación de base de datos local (SQLite/Room) en la app.                 | 5                  | Rios Piñan, Dayro Richard       | To-do      |
 | TS009 | Almacenamiento local móvil                 | 2         | Sync Manager               | Lógica de sincronización diferencial al recuperar conexión.                    | 4                  | Saldaña Vela, Janover Gonzalo   | To-do      |
 | US-59 | Configuración institucional                | 1         | CRUD Institución           | Formulario de datos generales y zona horaria.                                  | 4                  | Villafuerte Tapia, Renzo Alonso | Done       |
@@ -1566,7 +1562,6 @@ Se repartieron las tareas del sprint entre los miembros del equipo, asignando re
 | US-15 | Historial con filtros                      | 2         | Lógica de Filtros          | Implementación de selectores de rango de fecha en el frontend.                 | 3                  | Rios Piñan, Dayro Richard       | Done       |
 | US-16 | Notificación de alerta crítica             | 1         | UI de Notificación         | Creación de componentes visuales para alertas en la app móvil.                 | 3                  | Saldaña Vela, Janover Gonzalo   | To-Review  |
 | US-16 | Notificación de alerta crítica             | 2         | Deep Linking               | Redirección directa desde la notificación al detalle de la alerta.             | 3                  | Villafuerte Tapia, Renzo Alonso | To-do      |
-| US-49 | Envío de mensajes al personal              | 1         | UI Composición Chat        | Diseño de la interfaz de envío de mensajes para familiares.                    | 4                  | Quijandria Araneda, Vicente     | Done       |
 | US-49 | Envío de mensajes al personal              | 2         | Delivery Status            | Indicadores visuales de envío exitoso y errores de red.                        | 2                  | Calvo Yálan, Renato Guillermo   | In-Process |
 | US-57 | Gestión de permisos de notificación        | 1         | Request Permission Flow    | Implementación del diálogo de solicitud de permisos al inicio.                 | 2                  | Armas Sánchez, Oscar Javier     | Done       |
 | US-57 | Gestión de permisos de notificación        | 2         | Estado de Permisos         | Lógica para informar limitaciones si el usuario rechaza avisos.                | 2                  | Llerena Delgado, Renzo Miguel   | Done       |
@@ -1582,10 +1577,6 @@ Se repartieron las tareas del sprint entre los miembros del equipo, asignando re
 | TS015 | Paginación de listados                     | 2         | Componente Tabla P         | Implementación de controles de página en la interfaz web.                      | 3                  | Villafuerte Tapia, Renzo Alonso | To-do      |
 | TS016 | Integración con Stripe                     | 1         | Webhook Handler            | Implementación de endpoint para recibir eventos de pago de Stripe.             | 5                  | Quijandria Araneda, Vicente     | In-Process |
 | TS016 | Integración con Stripe                     | 2         | Flujo de Checkout          | Integración del SDK de Stripe para el proceso de suscripción.                  | 5                  | Calvo Yálan, Renato Guillermo   | To-do      |
-| TS021 | Histórico de cambios clínicos              | 1         | Audit Model Clinical       | Creación del modelo para cambios en parámetros por residente.                  | 3                  | Armas Sánchez, Oscar Javier     | Done       |
-| TS021 | Histórico de cambios clínicos              | 2         | Lógica de Evaluación V     | Asegurar que alertas antiguas usen umbrales del pasado.                        | 5                  | Llerena Delgado, Renzo Miguel   | In-Process |
-| TS002 | Servicio de evaluación de alertas          | 1         | Engine de Evaluación       | Desarrollo de la lógica que compara lecturas vs parámetros.                    | 5                  | Rios Piñan, Dayro Richard       | Done       |
-| TS002 | Servicio de evaluación de alertas          | 2         | Dispatcher de Alertas      | Servicio que dispara el flujo de notificaciones y avisos web.                  | 4                  | Saldaña Vela, Janover Gonzalo   | In-Process |
 
 #### 6.2.2.4. Development Evidence for Sprint Review
 
@@ -2053,17 +2044,17 @@ Se realizó el sprint planning con el objetivo de cerrar todos los features pend
 | Sprint #                        | Sprint 3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | :------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Sprint Planning Background**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Date                            | [INSERTAR FECHA, ej. 23/06/2026]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Time                            | [INSERTAR HORA, ej. 01:00 PM]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| Location                        | [INSERTAR LUGAR, ej. Universidad / Google Meet]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Prepared By                     | [INSERTAR NOMBRE DEL SCRUM MASTER]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Date                            | 24/06/2026                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Time                            | 1:00PM                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Location                        | Google Meet                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Prepared By                     | Janover Saldaña                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | Attendees (to planning meeting) | Janover Saldaña / Dayro Rios / Vicente Quijandria / Renato Calvo / Renzo Llerena / Renzo Villafuerte / Oscar Armas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | Sprint 2 Review Summary         | We achieved the deployment of the full backend on Azure Container Apps, the first functional version of the mobile application, the edge service, and the embedded device prototype. Core features including staff management, resident registration, real-time IoT device monitoring, push notifications, and in-app messaging were delivered. We consider the sprint objective was met, with the system operating end-to-end across all layers.                                                                                                                                                                                                                                                               |
 | Sprint 2 Retrospective Summary  | We identified that some Engineering Tasks were estimated below the 4-hour threshold, which made tracking less precise. In this sprint we commit to decomposing all tasks within the 4–8 hour range and ensuring all states (To Do, In Process, To Review, Done) are represented in the board. We also need to complete missing landing page sections (pitch message, social media links, contact info) and strengthen the overall responsive experience.                                                                                                                                                                                                                                                        |
 | **Sprint Goal & User Stories**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Sprint 3 Goal                   | Our focus is on delivering a production-ready, fully integrated VEYRA ecosystem where residents' vital signs and location captured by the IoT device flow in real time to both the web and mobile applications, triggering push alerts when anomalies are detected, while the landing page communicates the platform's value proposition with a complete set of CTAs, contact information, and social media links. We believe this will validate VEYRA as a trustworthy, market-ready product. This will be confirmed when an end-to-end demo shows a resident's anomalous reading generating a push notification received on the mobile app within seconds. |
-| Sprint 3 Velocity               | [INSERTAR VELOCIDAD, ej. 25 Velocity]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Sum of Story Points             | [INSERTAR SUMA DE STORY POINTS, ej. 55 Story Points]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Sprint 3 Goal                   | Our focus is on delivering visitors with an overview of Veyra’s benefits, uses, and subscription options; offer nursing home administrators tools for human capital management, analytics on hiring and staff turnover, and management of IoT devices connected to the nursing home; to family members of nursing home residents, dashboards where they can view residents’ scheduled activities and monitor them via IoT devices, receiving telemetry data from temperature, geolocation, heart rate, and oxygen saturation sensors, and using thresholds to detect anomalies in the data logs; as well as providing front-end, back-end, edge, and device developers with the necessary tools to connect the flow of telemetry data from the devices to the platform’s cloud services. <br> We believe this This will allow visitors to obtain accurate information about the purpose and value of the solution. Similarly, administrators will be able to easily manage nursing home staff, family members, and residents. It will also make it easier for developers to implement features related to IoT devices, validated email registration, thresholds, and telemetry. <br> This will be confirmed when the conversion rate of visitors to registered customers increases as visitors are able to review Veyra’s benefits, understand its use cases, and select the subscription option that best suits their institution. Likewise, this will be confirmed when operational efficiency and staff retention increase as nursing home administrators are able to manage human resources, analyze staff turnover, and control IoT devices from the platform. It will also be confirmed when family members’ satisfaction and peace-of-mind scores improve as they are able to view residents’ scheduled activities and monitor their vital signs through real-time alerts based on anomaly thresholds. Finally, it will be confirmed that technology deployment time (time-to-market) will decrease when front-end, back-end, edge, and device developers successfully integrate the telemetry data flow from sensors into the platform’s cloud services. |
+| Sprint 3 Velocity               | 24                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Sum of Story Points             | 62 Story Points                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 #### 6.2.3.2. Aspect Leaders and Collaborators
 
@@ -2091,31 +2082,41 @@ Captura del tablero ágil al cierre del sprint:
 
 URL del tablero: [INSERTAR URL PÚBLICA DEL TABLERO ÁGIL]
 
-| Id     | Title (User Story / Tech Story)                        | Id (Task) | Title (Task)                       | Description                                                                                | Estimation (Hours) | Assigned To                     | Status     |
-| :----- | :----------------------------------------------------- | :-------- | :--------------------------------- | :----------------------------------------------------------------------------------------- | :----------------- | :------------------------------ | :--------- |
-| [US-X] | [INSERTAR NOMBRE DEL USER STORY 1]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-| [US-X] | [INSERTAR NOMBRE DEL USER STORY 1]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-| [US-X] | [INSERTAR NOMBRE DEL USER STORY 2]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | In-Process |
-| [US-X] | [INSERTAR NOMBRE DEL USER STORY 2]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | To-Review  |
-| [US-X] | [INSERTAR NOMBRE DEL USER STORY 3]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | To-Do      |
-| [US-X] | [INSERTAR NOMBRE DEL USER STORY 3]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-| [TS-X] | [INSERTAR NOMBRE DEL TECH STORY 1]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-| [TS-X] | [INSERTAR NOMBRE DEL TECH STORY 1]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | To-Review  |
-| [TS-X] | [INSERTAR NOMBRE DEL TECH STORY 2]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | In-Process |
-| [TS-X] | [INSERTAR NOMBRE DEL TECH STORY 2]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | To-Do      |
-| [US-X] | [INSERTAR NOMBRE DEL USER STORY 4]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-| [US-X] | [INSERTAR NOMBRE DEL USER STORY 4]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-| [US-X] | [INSERTAR NOMBRE DEL USER STORY 5]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | In-Process |
-| [US-X] | [INSERTAR NOMBRE DEL USER STORY 5]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | To-Review  |
-| [TS-X] | [INSERTAR NOMBRE DEL TECH STORY 3]                     | T01       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-| [TS-X] | [INSERTAR NOMBRE DEL TECH STORY 3]                     | T02       | [INSERTAR NOMBRE DE TAREA]         | [INSERTAR DESCRIPCIÓN DE LA TAREA DE INGENIERÍA]                                           | [4–8]              | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-| [US-X] | Landing page: Pitch message y secciones de conversión  | T01       | Pitch message section              | Redacción e implementación de la sección de mensaje de valor central en la landing page.   | 4                  | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-| [US-X] | Landing page: Pitch message y secciones de conversión  | T02       | CTA section con enlace a la app    | Implementación del bloque CTA principal vinculado a la URL de la aplicación desplegada.    | 4                  | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-| [US-X] | Landing page: Contacto y redes sociales                | T01       | Sección de información de contacto | Desarrollo de la sección de contacto con email, teléfono y formulario básico.              | 4                  | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-| [US-X] | Landing page: Contacto y redes sociales                | T02       | Vínculos a redes sociales          | Integración de íconos y enlaces a LinkedIn, Instagram y otras redes del startup.           | 4                  | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-| [US-X] | Landing page: Video del producto                       | T01       | Sección explicativa con screenshots | Implementación de la sección que explica el propósito de la plataforma con capturas/video. | 5                  | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-| [US-X] | Landing page: Responsive Design                        | T01       | Breakpoints móvil y tablet         | Ajuste de estilos CSS/Tailwind para correcta visualización en pantallas menores a 768px.   | 5                  | [INSERTAR NOMBRE DE MIEMBRO]    | Done       |
-
+| Id    | Title (User Story / Tech Story)                | Id (Task) | Title (Task)                               | Description                                                                          | Estimation (Hours) | Assigned To                     | Status     |
+| :---- | :--------------------------------------------- | :-------- | :----------------------------------------- | :----------------------------------------------------------------------------------- | :----------------- | :------------------------------ | :--------- |
+| US-20 | Definición de parámetros clínicos              | 1         | UI de Configuración de Umbrales            | Interfaz para que el médico defina los rangos (mín/máx) de signos vitales.           | 6                  | Calvo Yálan, Renato Guillermo   | Done       |
+| US-20 | Definición de parámetros clínicos              | 2         | Persistencia de Umbrales por Residente     | Endpoint para guardar la configuración de umbrales en el perfil del residente.       | 5                  | Armas Sánchez, Oscar Javier     | Done       |
+| US-21 | Modificación de parámetros clínicos            | 1         | Lógica de Actualización de Umbrales        | Servicio para modificar los umbrales existentes de un residente.                     | 4                  | Llerena Delgado, Renzo Miguel   | Done       |
+| US-21 | Modificación de parámetros clínicos            | 2         | Pruebas de Integración para Actualización  | Validar que el endpoint de modificación actualiza los umbrales correctamente.        | 4                  | Llerena Delgado, Renzo Miguel   | Done       |
+| US-22 | Consulta de parámetros configurados            | 1         | Vista de Umbrales Vigentes                 | Componente UI para mostrar los umbrales actuales del residente.                      | 4                  | Rios Piñan, Dayro Richard       | Done       |
+| US-22 | Consulta de parámetros configurados            | 2         | Endpoint de Consulta de Umbrales           | API para obtener los umbrales configurados para un residente específico.             | 4                  | Rios Piñan, Dayro Richard       | Done       |
+| US-35 | Registro y vinculación de dispositivo          | 1         | Endpoint de Vinculación Dispositivo-Residente | API para asociar un ID de dispositivo a un residente específico.                     | 6                  | Saldaña Vela, Janover Gonzalo   | Done       |
+| US-35 | Registro y vinculación de dispositivo          | 2         | UI de Asignación de Dispositivo            | Interfaz en la app web para que el admin asigne un dispositivo a un residente.       | 5                  | Saldaña Vela, Janover Gonzalo   | Done       |
+| US-36 | Desvinculación de dispositivo                  | 1         | Lógica de Desvinculación de Dispositivo    | Servicio para liberar un dispositivo y dejarlo disponible para otro residente.       | 4                  | Villafuerte Tapia, Renzo Alonso | Done       |
+| US-36 | Desvinculación de dispositivo                  | 2         | Confirmación de Desvinculación en UI       | Modal de confirmación en la app web antes de desvincular un dispositivo.             | 4                  | Villafuerte Tapia, Renzo Alonso | Done       |
+| US-68 | Recepción de aviso de alerta clínica           | 1         | Integración de Notificaciones Push (Móvil) | Conectar la app móvil a Firebase (FCM) para recibir alertas de umbrales.           | 7                  | Quijandria Araneda, Vicente     | Done       |
+| US-68 | Recepción de aviso de alerta clínica           | 2         | Servicio de Notificación en Backend        | Lógica en el backend para enviar la notificación push cuando se genera una alerta.   | 6                  | Quijandria Araneda, Vicente     | Done       |
+| US-70 | Detalle de una alerta activa                   | 1         | Vista de Detalle de Alerta (Móvil y Web)   | UI que muestra el valor detectado vs el umbral configurado y datos del dispositivo.  | 6                  | Calvo Yálan, Renato Guillermo   | Done       |
+| US-70 | Detalle de una alerta activa                   | 2         | Endpoint de Detalle de Alerta              | API para obtener la información completa de una alerta específica.                   | 5                  | Calvo Yálan, Renato Guillermo   | Done       |
+| TS-001 | Integración con sensores de signos vitales     | 1         | Endpoint de Ingesta de Telemetría          | API para recibir y procesar los paquetes de datos de la edge app.                    | 8                  | Armas Sánchez, Oscar Javier     | Done       |
+| TS-001 | Integración con sensores de signos vitales     | 2         | Persistencia de Telemetría en BD NoSQL     | Guardar los datos de telemetría en la base de datos de series temporales.            | 6                  | Armas Sánchez, Oscar Javier     | Done       |
+| TS-002 | Servicio de evaluación de alertas              | 1         | Motor de Reglas de Umbrales                | Lógica que compara la telemetría entrante con los umbrales y dispara eventos.      | 8                  | Llerena Delgado, Renzo Miguel   | Done       |
+| TS-002 | Servicio de evaluación de alertas              | 2         | Creación de Evento de Alerta               | Generar y persistir un evento de alerta cuando se viola un umbral.                   | 5                  | Llerena Delgado, Renzo Miguel   | Done       |
+| TS-007 | Canal en tiempo real                           | 1         | Sincronización de Telemetría con UI        | Implementar WebSocket para empujar datos de signos vitales a la web y móvil.       | 7                  | Rios Piñan, Dayro Richard       | Done       |
+| TS-007 | Canal en tiempo real                           | 2         | Configuración de WebSocket en Backend      | Establecer el servidor WebSocket y los canales de suscripción por residente.         | 6                  | Rios Piñan, Dayro Richard       | Done       |
+| TS-021 | Histórico de cambios clínicos                  | 1         | Modelo de Auditoría de Umbrales            | Estructura en BD para registrar quién, cuándo y por qué se cambió un umbral.       | 5                  | Saldaña Vela, Janover Gonzalo   | Done       |
+| TS-021 | Histórico de cambios clínicos                  | 2         | Lógica de Registro de Auditoría            | Implementar el guardado automático del registro de auditoría al modificar umbrales.  | 4                  | Saldaña Vela, Janover Gonzalo   | Done       |
+| MS-001 | Indicadores de pulsación y saturación          | 1         | Calibración de Sensor MAX30102             | Ajustar el algoritmo de lectura del sensor para mejorar la precisión de SpO2.      | 6                  | Villafuerte Tapia, Renzo Alonso | Done       |
+| MS-001 | Indicadores de pulsación y saturación          | 2         | Visualización en Pantalla LCD              | Mostrar los valores de pulso y SpO2 en la pantalla del dispositivo.                  | 4                  | Villafuerte Tapia, Renzo Alonso | Done       |
+| MS-003 | Transmisión de datos al servidor               | 1         | Formateo de Paquete de Telemetría          | Estructurar los datos del sensor (pulso, SpO2, temp) en un JSON para la edge app. | 5                  | Quijandria Araneda, Vicente     | Done       |
+| MS-003 | Transmisión de datos al servidor               | 2         | Lógica de Envío HTTP a Edge App            | Implementar el cliente HTTP en el firmware para enviar los datos a la edge app.    | 5                  | Quijandria Araneda, Vicente     | Done       |
+| MS-008 | Actualización OTA                              | 1         | Cliente OTA en Firmware                    | Implementar la lógica en el ESP32 para descargar y aplicar nuevo firmware.         | 8                  | Calvo Yálan, Renato Guillermo   | Done       |
+| MS-008 | Actualización OTA                              | 2         | Endpoint de Servidor OTA                   | API en el backend para servir los binarios de firmware y gestionar versiones.      | 7                  | Calvo Yálan, Renato Guillermo   | Done       |
+| TS021 | Histórico de cambios clínicos              | 1         | Audit Model Clinical       | Creación del modelo para cambios en parámetros por residente.                  | 3                  | Armas Sánchez, Oscar Javier     | Done       |
+| TS021 | Histórico de cambios clínicos              | 2         | Lógica de Evaluación V     | Asegurar que alertas antiguas usen umbrales del pasado.                        | 5                  | Llerena Delgado, Renzo Miguel   | In-Process |
+| TS002 | Servicio de evaluación de alertas          | 1         | Engine de Evaluación       | Desarrollo de la lógica que compara lecturas vs parámetros.                    | 5                  | Rios Piñan, Dayro Richard       | Done       |
+| TS002 | Servicio de evaluación de alertas          | 2         | Integración con Backend    | Conectar el engine de evaluación con el backend para recibir lecturas.         | 4                  | Quijandria Araneda, Vicente     | Done       |
+| TS002 | Servicio de evaluación de alertas          | 3         | Pruebas Unitarias           | Crear pruebas unitarias para el engine de evaluación.                           | 4                  | Saldaña Vela, Janover Gonzalo   | Done       |
 #### 6.2.3.4. Development Evidence for Sprint Review
 
 En este sprint final se completó la integración de todos los artefactos del ecosistema VEYRA, consolidando el flujo de datos desde el dispositivo IoT embebido hasta las interfaces web y móvil. A continuación se presenta la evidencia de commits por repositorio.
@@ -2220,34 +2221,68 @@ En este sprint final se realizaron pruebas de integración y de sistema para val
 
 Tabla de commits relacionados al testing:
 
-| Repository                      | Branch                     | Commit Id | Commit Message                                       | Commit Message Body                   | Commited on (Date)          |
-| :------------------------------ | :------------------------- | :-------- | :--------------------------------------------------- | :------------------------------------ | :-------------------------- |
-| MetaSoft-IOT-2610/veyra-backend | feature/[INSERTAR FEATURE] | [SHA]     | test([MÓDULO]): [INSERTAR DESCRIPCIÓN DE LA PRUEBA]  | [INSERTAR AUTOR] pushed X commits     | [INSERTAR FECHA DD/MM/YYYY] |
-| MetaSoft-IOT-2610/veyra-backend | feature/[INSERTAR FEATURE] | [SHA]     | test([MÓDULO]): [INSERTAR DESCRIPCIÓN DE LA PRUEBA]  | [INSERTAR AUTOR] pushed X commits     | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-mobile-application        | feature/[INSERTAR FEATURE] | [SHA]     | test([MÓDULO]): [INSERTAR DESCRIPCIÓN DE LA PRUEBA]  | Pushed X commits                      | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-web-app                   | feature/[INSERTAR FEATURE] | [SHA]     | test([MÓDULO]): [INSERTAR DESCRIPCIÓN DE LA PRUEBA]  | Pushed X commits                      | [INSERTAR FECHA DD/MM/YYYY] |
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| veyra-backend | develop | a0050e0 | test(activities): update unit tests for Activity aggregate | Updated unit tests for the Activity aggregate to ensure business rules and invariants. | 06/07/2026 |
+| veyra-backend | feature/tests | a0050e0 | test(activities): update unit tests for Activity aggregate | Final commit to feature branch before synchronization or deletion. | 06/07/2026 |
+| veyra-backend | feature/tests | 161a2d8 | test(users): add unit tests for UserCommandServiceImpl | Added comprehensive unit tests validating user command services and persistence layer. | 06/07/2026 |
+| veyra-backend | feat/tests | 161a2d8 | test(users): add unit tests for UserCommandServiceImpl | Initial suite of unit tests for UserCommandServiceImpl handling user creation and updates. | 06/07/2026 |
 
 Evidencia de ejecución de pruebas:
 
-<!-- CAPTURA: Inserta aquí captura de los tests corriendo (terminal, IDE, CI/CD) para el backend -->
-<!-- Figura 6.3.5.1. Ejecución de pruebas unitarias/integración del backend de VEYRA. -->
-![Testing Evidence - Backend](/assets/img/chapter-VI/s3-testing-backend.png)
+Tests correspondientes a Activities:
 
-<!-- CAPTURA: Inserta aquí captura de los tests de la aplicación web o móvil -->
-<!-- Figura 6.3.5.2. Ejecución de pruebas en la aplicación web/móvil de VEYRA. -->
-![Testing Evidence - Frontend](/assets/img/chapter-VI/s3-testing-frontend.png)
+![Testing Evidence - Backend1](/assets/img/chapter-VI/s3-test1.png)
+
+
+![Testing Evidence - Backend2](/assets/img/chapter-VI/s3-test2.png)
+
+Tests correspondientes a Communications:
+
+![Testing Evidence - Backend3](/assets/img/chapter-VI/s3-test3.png)
+
+![Testing Evidence - Backend4](/assets/img/chapter-VI/s3-test4.png)
+
+
+![Testing Evidence - Backend5](/assets/img/chapter-VI/s3-test5.png)
+
+
+![Testing Evidence - Backend6](/assets/img/chapter-VI/s3-test6.png)
+
+Tests correspondientes a Health:
+
+![Testing Evidence - Backend7](/assets/img/chapter-VI/s3-test7.png)
+
+
+![Testing Evidence - Backend8](/assets/img/chapter-VI/s3-test8.png)
+
+Tests correspondientes a Profiles:
+
+![Testing Evidence - Backend9](/assets/img/chapter-VI/s3-test9.png)
+
+
+![Testing Evidence - Backend10](/assets/img/chapter-VI/s3-test10.png)
+
 
 Tabla resumen de casos de prueba ejecutados:
 
-| Caso de Prueba | Descripción                                           | Precondición                                               | Pasos                                                                                                                                              | Resultado Esperado                                                          | Resultado Obtenido  | Estado |
-| :------------- | :---------------------------------------------------- | :--------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- | :------------------ | :----- |
-| TC-S3-01       | [INSERTAR NOMBRE DEL CASO DE PRUEBA]                  | [INSERTAR PRECONDICIÓN]                                    | [INSERTAR PASOS]                                                                                                                                   | [INSERTAR RESULTADO ESPERADO]                                               | [INSERTAR OBTENIDO] | PASS   |
-| TC-S3-02       | [INSERTAR NOMBRE DEL CASO DE PRUEBA]                  | [INSERTAR PRECONDICIÓN]                                    | [INSERTAR PASOS]                                                                                                                                   | [INSERTAR RESULTADO ESPERADO]                                               | [INSERTAR OBTENIDO] | PASS   |
-| TC-S3-03       | Flujo de alerta IoT end-to-end                        | Residente con dispositivo IoT asignado                     | 1. Dispositivo envía lectura de SpO2 < 90%. 2. Backend evalúa alerta. 3. Se despacha push notification.                                            | App móvil recibe notificación push en menos de 5 segundos.                  | [INSERTAR OBTENIDO] | PASS   |
-| TC-S3-04       | Autenticación JWT con rol familiar                    | Usuario familiar registrado en el sistema                  | 1. POST /api/v1/authentication/sign-in con credenciales válidas. 2. Usar token en endpoint protegido.                                              | Respuesta 200 OK con token válido y acceso al recurso.                      | [INSERTAR OBTENIDO] | PASS   |
-| TC-S3-05       | Visualización de ubicación GPS en mapa                | Dispositivo IoT asignado a residente, con GPS activo       | 1. Dispositivo POST /api/v1/locations. 2. Familiar abre mapa en app móvil.                                                                         | Marcador del residente aparece en la coordenada enviada.                    | [INSERTAR OBTENIDO] | PASS   |
-| TC-S3-06       | CTA de landing page vinculado a aplicación desplegada | Landing page publicada en producción                       | 1. Abrir landing page. 2. Hacer clic en el botón CTA principal.                                                                                    | Redirección a https://app.veyra.metasoft.pe/home                            | [INSERTAR OBTENIDO] | PASS   |
-| TC-S3-07       | [INSERTAR NOMBRE DEL CASO DE PRUEBA]                  | [INSERTAR PRECONDICIÓN]                                    | [INSERTAR PASOS]                                                                                                                                   | [INSERTAR RESULTADO ESPERADO]                                               | [INSERTAR OBTENIDO] | PASS   |
+| Bounded Context | Componente / Clase de Prueba | Objetivo de Negocio / ¿Qué hace la prueba? | Tipo de prueba |
+| :--- | :--- | :--- | :--- |
+| **Nursing** | `ResidentCommandServiceImplTest` | Valida la correcta creación y actualización de residentes mediante servicios. | Integración |
+| **Payments** | `PaymentDomainTest` | Comprueba las reglas de validación de negocio dentro del dominio de pagos. | Unitaria |
+| **Payments** | `PaymentCommandServiceImplTest` | Prueba el flujo de comandos de procesamiento de pagos y respuesta del servicio. | Integración |
+| **Payments** | `SubscriptionCommandServiceImplTest` | Valida la lógica de creación y gestión de estados de suscripción. | Integración |
+| **Profiles** | `PersonProfileDomainTest` | Asegura la integridad de los datos en el agregado PersonProfile. | Unitaria |
+| **Profiles** | `PersonProfileCommandServiceImplTest` | Valida la persistencia y gestión de comandos de perfiles de usuario. | Integración |
+| **Health** | `HealthAggregateTest` | Asegura que el agregado Health cumpla con las invariantes de negocio y reglas de validación. | Unitaria |
+| **Health** | `HealthCommandServiceImplTest` | Valida la correcta gestión de comandos relacionados a métricas de salud y telemetría. | Integración |
+| **Metrics** | `MeasurementCommandServiceImplTest` | Comprueba la correcta ingestión y almacenamiento de analiticas. | Integración |
+| **Metrics** | `MetricAggregateTest` | Asegura que las reglas de negocio para analiticas se cumplan y se validen correctamente. | Unitaria |
+| **Communications** | `EmailNotificationCommandServiceImplTest` | Valida la correcta creación y envío de notificaciones por correo electrónico. | Integración |
+| **Communications** | `UserNotificationCommandServiceImplTest` | Comprueba la correcta gestión de notificaciones push y su persistencia en el sistema. | Integración |
+| **Profiles** | `UserProfileCommandServiceImplTest` | Valida la correcta creación y actualización de perfiles de usuario. | Integración |
+| **Profiles** | `UserProfileDomainTest` | Asegura la integridad de los datos en el agregado UserProfile. | Unitaria |
+
 
 #### 6.2.3.6. Execution Evidence for Sprint Review
 
@@ -2513,14 +2548,6 @@ URL del backend en producción: `https://veyra-backend.redwave-e7e23e62.canadace
 
 ---
 
-**Diagrama C4 de Despliegue:**
-
-<!-- DIAGRAMA: Inserta aquí tu Diagrama C4 de nivel de Despliegue (Deployment Diagram) -->
-<!-- Figura 6.3.8.1. Diagrama C4 de despliegue del ecosistema VEYRA en Microsoft Azure. -->
-![C4 Deployment Diagram](/assets/img/chapter-VI/s3-c4-deployment-diagram.png)
-
----
-
 **Landing page:**
 
 La landing page continúa desplegada en Cloudflare Pages con dominio público.
@@ -2607,11 +2634,13 @@ Distribución para Android:
 
 Distribución para iOS:
 
-![Mobile App - iOS Distribution](/assets/img/chapter-VI/s3-deployment-mobile-ios.png)
+![deployment-evidence-mobile-app3](/assets/img/chapter-VI/deployment-mobile2.jpeg)
 
 ---
 
 **Edge app:**
+
+El edge app se compila de manera local en la misma red que el embedded app para que haya comunicación, no se usarón servicios de nube.
 
 ![Edge App - Deployment](/assets/img/chapter-VI/s3-deployment-edge.png)
 
@@ -2619,7 +2648,10 @@ Distribución para iOS:
 
 **Embedded app:**
 
-![Embedded App - Deployment](/assets/img/chapter-VI/s3-deployment-embedded.png)
+El embedded app se despliega en arduino IDE para que el ESP32 contenga la lógica programada y con ayuda de una batería portatil esta puede ser transportada a cualquier lugar para pruebas.
+
+![Edge App - deployment](/assets/img/chapter-VI/execution-edge.jpg)
+
 
 #### 6.2.3.9. Team Collaboration Insights during Sprint
 
@@ -2727,15 +2759,15 @@ El diseño de las entrevistas se centró en obtener información cualitativa sob
   <tbody>
     <tr>
       <td><strong>Nombre Completo</strong></td>
-      <td>Pedro Sanchez</td>
+      <td>Andrés Torres</td>
     </tr>
     <tr>
       <td><strong>Edad</strong></td>
-      <td>30</td>
+      <td>23</td>
     </tr>
     <tr>
       <td><strong>Distrito</strong></td>
-      <td>SJL</td>
+      <td>Salamanca</td>
     </tr>
     <tr>
       <td><strong>Ocupación</strong></td>
@@ -2743,11 +2775,11 @@ El diseño de las entrevistas se centró en obtener información cualitativa sob
     </tr>
     <tr>
       <td><strong>Fecha de Entrevista</strong></td>
-      <td>21/06/2026</td>
+      <td>1/07/2026</td>
     </tr>
     <tr>
       <td><strong>Duración</strong></td>
-      <td>4 min 40 seg<td>
+      <td>5 min 19 seg<td>
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
@@ -2764,6 +2796,14 @@ El diseño de las entrevistas se centró en obtener información cualitativa sob
 ![Interview Administrator 1](/assets/img/chapter-VI/oscar1.png)
 
 <p><strong>Resumen de Respuestas:</strong></p>
+
+El administrador Andrés Tores señala que su experiencia previa con sistemas de software no ha sido del todo positiva, debido a que muchas aplicaciones actuales manejan interfaces confusas que dificultan la accesibilidad y la navegación fluida. Respecto a la gestión de la casa de reposo, explica que su principal desafío es el alto nivel de atención y cuidado delicado que requieren los adultos mayores, una tarea compleja de supervisar de manera constante mientras se atienden en paralelo otras responsabilidades administrativas.
+
+Actualmente, la información de los residentes y el control de su medicación se manejan de forma predominantemente manual, utilizando fólderes, hojas de papel y carpetas físicas, apoyándose apenas en herramientas básicas como Excel para intentar automatizar ligeramente el registro. Ante esta situación, sus expectativas con respecto a VEYRA apuntan a cubrir necesidades básicas y críticas de control, priorizando la toma y centralización de datos personales, así como el monitoreo de signos vitales esenciales como el pulso cardíaco y la saturación de oxígeno.
+
+Frente a la gestión de datos sensibles de salud bajo regulaciones de protección, el administrador admite que existe un margen de duda natural, pero considera que es una necesidad indispensable. Afirma que si el equipo de desarrollo garantiza que el software está bien regulado y enfocado en blindar la privacidad de los adultos mayores, su personal se siente preparado para asumir este manejo. Tras observar la demostración, su percepción del prototipo fue sumamente positiva, calificando la interfaz como muy intuitiva y fácil de navegar, rompiendo así con la mala experiencia que solía tener con otros sistemas complejos del mercado.
+
+Andrés califica la probabilidad de recomendar VEYRA a otros administradores con un 8 de 10. Justifica su puntuación afirmando que la herramienta es bastante buena y posee un gran potencial para el sector. Sin embargo, recalca que "no todo puede ser perfecto" en una primera etapa, por lo que su nota contempla la expectativa de que se implementen mejoras necesarias en las próximas versiones antes de considerarla una solución definitiva.
 
 <hr>
 
