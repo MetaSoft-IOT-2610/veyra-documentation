@@ -1122,12 +1122,16 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Communication. Muestra las relaciones de composición, herencia y dependencia entre
 los elementos del dominio.
 
+![communication back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/communication/communication-backend-diagram.puml)
+
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Communication, incluyendo las tablas, columnas, claves primarias,
 claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado
 de datos adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/communication/communication-database-diagram.puml)
 
 ### 4.2.7 Bounded Context: Identity and Access Management (IAM)
 
