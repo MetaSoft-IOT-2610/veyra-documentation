@@ -892,7 +892,7 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto H
 Muestra las relaciones de composición, herencia y dependencia entre los elementos
 del dominio.
 
-![hcm back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/hcm/hcm-backend-diagram.puml)
+![hcm back](../assets/img/chapter-IV/hcm-backend-diagram.png)
 
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram
 
