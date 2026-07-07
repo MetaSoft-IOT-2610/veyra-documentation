@@ -547,7 +547,7 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Nursing. Muestra las relaciones de composición, herencia y dependencia entre los
 elementos del dominio.
 
-![nursing back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/nursing/nursing-backend-diagram.puml)
+![nursing back](../assets/img/chapter-IV/nursing-backend-diagram.png)
 
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
@@ -557,8 +557,7 @@ Bounded Context Nursing, incluyendo las tablas, columnas, claves primarias, clav
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
 
-![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/nursing/nursing-database-diagram.puml)
-
+![Diagrama de base de datos](../assets/img/chapter-IV/nursing-database-diagram.png)
 ### 4.2.2. Bounded Context: Tracking
 
 En esta sección, el equipo presenta las clases identificadas y las detalla a manera de
@@ -655,6 +654,7 @@ atributos y métodos considerados, junto con las relaciones entre ellas.
 
 El diagrama de componentes de este contexto se modela en Structurizr DSL (`docs/c4/software-architecture.dsl`, vista `component api "TrackingComponents"`), a partir de los controladores, servicios de aplicación, agregados de dominio, repositorios y fachadas ACL reales descritos en las secciones anteriores. Renderízalo con Structurizr Lite o `structurizr export` y reemplaza esta nota por la imagen (PNG/SVG) exportada.
 
+![health components](../assets/img/chapter-IV/TrackingComponents.png)
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -892,7 +892,7 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto H
 Muestra las relaciones de composición, herencia y dependencia entre los elementos
 del dominio.
 
-![hcm back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/hcm/hcm-backend-diagram.puml)
+![hcm back](../assets/img/chapter-IV/hcm-backend-diagram.png)
 
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram
 
@@ -961,7 +961,7 @@ No existe un endpoint para consultar actividades por residente ni un "listar tod
 
 El diagrama de componentes de este contexto se modela en Structurizr DSL (`docs/c4/software-architecture.dsl`, vista `component api "ActivitiesComponents"`), a partir de los controladores, servicios de aplicación, agregados de dominio, repositorios y fachadas ACL reales descritos en las secciones anteriores. Renderízalo con Structurizr Lite o `structurizr export` y reemplaza esta nota por la imagen (PNG/SVG) exportada.
 
-![communication components](../assets/img/chapter-IV/CommunicationComponents.png)
+![communication components](../assets/img/chapter-IV/ActivitiesComponents.png)
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1107,7 +1107,7 @@ No existen endpoints de autorización, denegación o programación de visitas en
 
 El diagrama de componentes de este contexto se modela en Structurizr DSL (`docs/c4/software-architecture.dsl`, vista `component api "CommunicationComponents"`), a partir de los controladores, servicios de aplicación, agregados de dominio, repositorios y fachadas ACL reales descritos en las secciones anteriores. Renderízalo con Structurizr Lite o `structurizr export` y reemplaza esta nota por la imagen (PNG/SVG) exportada.
 
-![activities components](../assets/img/chapter-IV/ActivitiesComponents.png)
+![activities components](../assets/img/chapter-IV/CommunicationComponents.png)
 
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1122,12 +1122,16 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Communication. Muestra las relaciones de composición, herencia y dependencia entre
 los elementos del dominio.
 
+![communication back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/communication/communication-backend-diagram.puml)
+
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos muestra el esquema de persistencia del
 Bounded Context Communication, incluyendo las tablas, columnas, claves primarias,
 claves foráneas y relaciones entre entidades. Refleja las decisiones de modelado
 de datos adoptadas para soportar el dominio.
+
+![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/communication/communication-database-diagram.puml)
 
 ### 4.2.7 Bounded Context: Identity and Access Management (IAM)
 
@@ -1217,7 +1221,7 @@ Los diagramas de nivel de código ofrecen una vista detallada de las estructuras
 
 El diagrama de clases de la capa de dominio representa las entidades, objetos de valor, agregados e interfaces que conforman el modelo del negocio de contexto delimitado. Muestra las relaciones de composición, herencia y dependencia entre los elementos del dominio.
 
-![iam back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/iam/iam-backend-diagram.puml)
+![iam back](../assets/img/chapter-IV/iam-backend-diagram.png)
 
 ##### 4.2.7.6.2. Bounded Context Database Design Diagram
 
@@ -1325,7 +1329,7 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Profiles. Muestra las relaciones de composición, herencia y dependencia entre los
 elementos del dominio.
 
-![profiles back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/profiles/profiles-backend-diagram.puml)
+![profiles back](../assets/img/chapter-IV/profiles-backend-diagram.png)
 
 ##### 4.2.8.6.2. Bounded Context Database Design Diagram
 
@@ -1410,6 +1414,7 @@ El nombre del contexto en el código es `payments` (el paquete es `platform.paym
 
 El diagrama de componentes de este contexto se modela en Structurizr DSL (`docs/c4/software-architecture.dsl`, vista `component api "PaymentsComponents"`), a partir de los controladores, servicios de aplicación, agregados de dominio, repositorios y fachadas ACL reales descritos en las secciones anteriores. Renderízalo con Structurizr Lite o `structurizr export` y reemplaza esta nota por la imagen (PNG/SVG) exportada.
 
+![subscriptions components](../assets/img/chapter-IV/PaymentsComponents.png)
 
 #### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1424,7 +1429,7 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Subscriptions & Payments. Muestra las relaciones de composición, herencia y
 dependencia entre los elementos del dominio.
 
-![subscriptions back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/payments/payments-backend-diagram.puml)
+![subscriptions back](../assets/img/chapter-IV/payments-backend-diagram.png)
 
 ##### 4.2.9.6.2. Bounded Context Database Design Diagram
 
@@ -1496,7 +1501,7 @@ Todos son `@EventListener` en proceso (vía `ApplicationEventPublisher` de Sprin
 
 El diagrama de componentes de este contexto se modela en Structurizr DSL (`docs/c4/software-architecture.dsl`, vista `component api "AnalyticsComponents"`), a partir de los controladores, servicios de aplicación, agregados de dominio, repositorios y fachadas ACL reales descritos en las secciones anteriores. Renderízalo con Structurizr Lite o `structurizr export` y reemplaza esta nota por la imagen (PNG/SVG) exportada.
 
-![payments components](../assets/img/chapter-IV/PaymentsComponents.png)
+![payments components](../assets/img/chapter-IV/AnalyticsComponents.png)
 
 
 #### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams
@@ -1512,7 +1517,7 @@ valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Analytics. Muestra las relaciones de composición, herencia y dependencia entre los
 elementos del dominio.
 
-![analytics back](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/analytics/analytics-backend-diagram.puml)
+![analytics back](../assets/img/chapter-IV/analytics-backend-diagram.png)
 
 ##### 4.2.10.6.2. Bounded Context Database Design Diagram
 
@@ -1521,4 +1526,4 @@ Bounded Context Analytics, incluyendo las tablas, columnas, claves primarias, cl
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
 
-![Diagrama de base de datos](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/MetaSoft-IOT-2610/veyra-backend/refs/heads/feature/docs/docs/diagrams/analytics/analytics-database-diagram.puml)
+![Diagrama de base de datos](../assets/img/chapter-IV/analytics-database-diagram.png)

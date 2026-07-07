@@ -2072,15 +2072,14 @@ Se mantuvieron los líderes designados en el sprint anterior para cada aspecto d
 
 #### 6.2.3.3. Sprint Backlog
 
-Se descompusieron todos los User Stories asignados al Sprint 3 en Engineering Tasks, cada una estimada en un rango de 4 a 8 horas. El tablero de seguimiento fue gestionado mediante [INSERTAR HERRAMIENTA: Trello / GitHub Projects / Jira / Linear] y refleja la evolución de las tareas a través de los estados To Do, In Process, To Review y Done.
+Se descompusieron todos los User Stories asignados al Sprint 3 en Engineering Tasks, cada una estimada en un rango de 4 a 8 horas. El tablero de seguimiento fue gestionado mediante Jira y refleja la evolución de las tareas a través de los estados To Do, In Process, To Review y Done.
 
 Captura del tablero ágil al cierre del sprint:
 
-<!-- CAPTURA: Inserta aquí una captura del tablero (Trello/Jira/GitHub Projects) mostrando las columnas To Do, In Process, To Review, Done con las tareas del sprint -->
-<!-- Figura 6.3.3.1. Tablero de seguimiento del Sprint 3 en [HERRAMIENTA]. -->
 ![Sprint 3 Board](/assets/img/chapter-VI/s3-sprint-board.png)
 
-URL del tablero: [INSERTAR URL PÚBLICA DEL TABLERO ÁGIL]
+
+URL del tablero: https://upc-pre-202610-iot-metasoft.atlassian.net/jira/software/projects/ME/boards/3/backlog?atlOrigin=eyJpIjoiMTAxNWZlMjhmYTAyNGMzNmI0ZWJjNjVmNjJhMDRmZTAiLCJwIjoiaiJ9
 
 | Id    | Title (User Story / Tech Story)                | Id (Task) | Title (Task)                               | Description                                                                          | Estimation (Hours) | Assigned To                     | Status     |
 | :---- | :--------------------------------------------- | :-------- | :----------------------------------------- | :----------------------------------------------------------------------------------- | :----------------- | :------------------------------ | :--------- |
@@ -2123,14 +2122,12 @@ En este sprint final se completó la integración de todos los artefactos del ec
 
 Landing page:
 
-| Repository         | Branch                 | Commit Id | Commit Message                                                               | Commit Message Body | Commited on (Date)          |
-| :----------------- | :--------------------- | :-------- | :--------------------------------------------------------------------------- | :------------------ | :-------------------------- |
-| veyra-landing-page | main                   | [SHA]     | [INSERTAR MENSAJE DE COMMIT]                                                 | —                   | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-landing-page | feature/pitch-and-cta  | [SHA]     | feat(landing): add pitch message section and hero CTA linked to web app      | —                   | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-landing-page | feature/contact-social | [SHA]     | feat(landing): add contact section and social media links                    | —                   | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-landing-page | feature/product-video  | [SHA]     | feat(landing): embed product demo video and add platform screenshots section | —                   | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-landing-page | feature/responsive     | [SHA]     | fix(landing): apply responsive breakpoints for mobile and tablet             | —                   | [INSERTAR FECHA DD/MM/YYYY] |
-| veyra-landing-page | develop                | [SHA]     | [INSERTAR MENSAJE DE COMMIT]                                                 | —                   | [INSERTAR FECHA DD/MM/YYYY] |
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| veyra-landing | main | 1029770 | Merge branch 'feature/video-about-the-product' into develop | Syncing main branch with the latest product video feature updates. | 06/07/2026 |
+| veyra-landing | develop | 1029770 | Merge branch 'feature/video-about-the-product' into develop | Merged the feature branch to update the product video integration into development environment. | 06/07/2026 |
+| veyra-landing | feature/video-about-the-product | 7d34246 | feat(video): update "About Us" video link in index.html | Added the new official promotional and explanatory video link to the landing page layout. | 06/07/2026 |
+| veyra-landing | develop | 89cbf18 | Merge pull request #19 from MetaSoft-IOT-2610/develop | Main development branch synchronization from external repository pull request. | 06/07/2026 |
 
 Aplicación web:
 
@@ -2296,26 +2293,15 @@ La landing page de VEYRA se mantiene publicada con acceso continuo, incorporando
 
 Hero section actualizada:
 
-<!-- CAPTURA: Inserta aquí captura de la hero section de la landing page -->
-<!-- Figura 6.3.6.1. Vista de la hero section de la landing page de VEYRA. -->
+
 ![Landing Page - Hero Section](/assets/img/chapter-VI/s3-execution-landing-hero.png)
 
 Sección "About the Product" con video del producto:
 
-<!-- CAPTURA: Inserta aquí captura de la sección About the Product con el video incrustado -->
-<!-- Figura 6.3.6.2. Sección "About the Product" de la landing page de VEYRA. -->
 ![Landing Page - About the Product](/assets/img/chapter-VI/s3-execution-landing-about-product.png)
-
-Sección de pitch message y CTA:
-
-<!-- CAPTURA: Inserta aquí captura del pitch message y el botón CTA principal vinculado a la app -->
-<!-- Figura 6.3.6.3. Sección de pitch message y Call-To-Action de la landing page de VEYRA. -->
-![Landing Page - Pitch and CTA](/assets/img/chapter-VI/s3-execution-landing-cta.png)
 
 Sección de contacto y redes sociales:
 
-<!-- CAPTURA: Inserta aquí captura de la sección de contacto e íconos de redes sociales -->
-<!-- Figura 6.3.6.4. Sección de contacto y vínculos a redes sociales de la landing page de VEYRA. -->
 ![Landing Page - Contact and Social](/assets/img/chapter-VI/s3-execution-landing-contact.png)
 
 ---
@@ -2552,7 +2538,7 @@ URL del backend en producción: `https://veyra-backend.redwave-e7e23e62.canadace
 
 La landing page continúa desplegada en Cloudflare Pages con dominio público.
 
-URL: `https://veyra.metasoft.pe`
+URL: https://veyra.metasoft.pe
 
 <!-- CAPTURA: Inserta aquí captura del panel de Cloudflare Pages mostrando el despliegue activo -->
 <!-- Figura 6.3.8.2. Panel de Cloudflare Pages con el despliegue activo de la landing page. -->
@@ -2597,8 +2583,10 @@ Registro del despliegue exitoso de la aplicación web:
 
 **Backend:**
 
-Creamos nuestra instancia de MySQL en Aiven: https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io
+Link backend: https://veyra-backend.redwave-e7e23e62.canadacentral.azurecontainerapps.io/swagger-ui/index.html
 
+
+Creamos nuestra instancia de MySQL en Aiven:
 ![Backend Deployment](/assets/img/chapter-VI/deployment-aiven.png)
 
 Luego cramos nuestro cluster en MongoDB Atlas:
@@ -2753,7 +2741,123 @@ El diseño de las entrevistas se centró en obtener información cualitativa sob
   información del entrevistado, capturas de video y análisis de respuestas.
 </p>
 
+Link de las entrevistas: https://tinyurl.com/52ywdern
+
+Link completo: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315283_upc_edu_pe/IQC4RuWgyEO5RYJoocUpytpHAbMvEB8zQKHxW4fUiVlDB4A?e=x3wXsM&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+
+
+<hr>
+
 <h4>Entrevista 1 - Administrador de Casa de Reposo (Segmento 1)</h4>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><strong>Nombre Completo</strong></td>
+      <td>Dominic Fernandez</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td><strong>Distrito</strong></td>
+      <td>San Isidro</td>
+    </tr>
+    <tr>
+      <td><strong>Ocupación</strong></td>
+      <td>Administrador de casa de reposo</td>
+    </tr>
+    <tr>
+      <td><strong>Fecha de Entrevista</strong></td>
+      <td>01/07/2026</td>
+    </tr>
+    <tr>
+      <td><strong>Duración</strong></td>
+      <td>11 min 26 seg</td>
+    </tr>
+    <tr>
+      <td><strong>URL Microsoft Stream</strong></td>
+      <td> https://tinyurl.com/4t9mvh2z </td>
+    </tr>
+    <tr>
+      <td><strong>Timing</strong></td>
+      <td>0:00-11:26</td>
+    </tr>
+  </tbody>
+</table>
+
+![Interview Administrator 1](/assets/img/chapter-VI/renato2.png)
+
+<p><strong>Resumen de Respuestas:</strong></p>
+
+El entrevistado es Dominic, un administrador con aproximadamente cinco años de experiencia en la dirección de una casa de reposo y entre ocho y nueve años trabajando con sistemas de software en el sector salud (tanto privado como en áreas sin digitalizar). Actualmente, la institución que dirige gestiona toda la información de manera 100% tradicional: las historias clínicas, recetas médicas e inventarios de fármacos se registran y almacenan en formato papel. Esto representa su mayor desafío operativo, pues ante una emergencia médica se vuelve complejo mantener la información ordenada y accesible para todo el personal en tiempo real. Su expectativa clave con VEYRA es agilizar los procesos y centralizar los datos para encontrarlos rápido, reduciendo el esfuerzo mental y visual de buscar en archivos físicos.
+
+Tras la demostración de la interfaz, Dominic evaluó la experiencia de manera muy positiva, describiéndola como ordenada e intuitiva. Destacó de forma particular la paleta de colores y la estructura visual, afirmando que facilita la localización rápida de pacientes, familiares o médicos responsables. Sin embargo, identificó una inconsistencia visual importante en la arquitectura de la plataforma: notó que la palabra "Enfermería" aparece de forma repetitiva en la parte superior de casi todas las vistas (por ejemplo, en "Registro inicial de residencia de enfermería"). Esto le generó confusión, ya que da la impresión de que todo el software pertenece exclusivamente al rol de enfermería, desplazando o invisibilizando el trabajo del personal médico.
+
+Al revisar los módulos específicos, el administrador ofreció comentarios críticos para la madurez del producto. En la sección de farmacia, resaltó la necesidad de ser sumamente detallistas con la presentación del fármaco (ampollas, tabletas, jarabes) y su dosificación exacta debido a las distintas vías de administración. Respecto al flujo de las alertas biométricas generadas por los dispositivos IoT, Dominic hizo una precisión operativa fundamental desde la gestión de salud: el primer reporte o notificación en tiempo real debería ser recibido obligatoriamente por el personal de enfermería de turno en la residencia, para que ellos evalúen la situación y procedan a activar los canales de comunicación con el médico a cargo y el tutor familiar, evitando alarmas innecesarias o desvíos en el protocolo de atención interna.
+
+Como propuestas de mejora definitivas para las próximas versiones, Dominic sugirió robustecer el perfil de los profesionales médicos incluyendo datos como su colegiatura e historia laboral, lo que brinda transparencia a las familias en una entidad privada. Asimismo, recomendó que en el historial de residentes no solo figure el fármaco, sino el nombre exacto del médico que lo prescribió y un registro histórico si el tratamiento es modificado por otro profesional de turno. Justificó esta necesidad explicando que, en el sector salud, la plataforma digital debe funcionar con el rigor de una auditoría médica, ya que la historia clínica es el documento médico-legal definitivo que protege a la institución y al personal de salud frente a posibles demandas.
+
+<hr>
+
+<h4>Entrevista 2 - Administrador de Casa de Reposo (Segmento 1)</h4>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><strong>Nombre Completo</strong></td>
+      <td>Manuel Molina</td>
+    </tr>
+    <tr>
+      <td><strong>Edad</strong></td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <td><strong>Distrito</strong></td>
+      <td>San Isidro</td>
+    </tr>
+    <tr>
+      <td><strong>Ocupación</strong></td>
+      <td>Administrador de casa de reposo</td>
+    </tr>
+    <tr>
+      <td><strong>Fecha de Entrevista</strong></td>
+      <td>02/07/2026</td>
+    </tr>
+    <tr>
+      <td><strong>Duración</strong></td>
+      <td>5min 06 seg</td>
+    </tr>
+    <tr>
+      <td><strong>URL Microsoft Stream</strong></td>
+      <td> https://tinyurl.com/3hh4avjy </td>
+    </tr>
+    <tr>
+      <td><strong>Timing</strong></td>
+      <td>11:26 - 16:32</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+![Interview Administrator 1](/assets/img/chapter-VI/renato1.png)
+
+
+<p><strong>Resumen de Respuestas:</strong></p>
+
+Manuel Alejandro relata que sus experiencias previas con software de gestión no fueron buenas debido a la pérdida de datos y a errores de cálculo en los sistemas que utilizaba. Actualmente, el control de la información de los residentes y médicos se realiza mediante Excel, una herramienta que genera retrasos operativos considerables debido a que no todo el personal de la casa de reposo sabe utilizarla. Además, detalla que sus mayores desafíos logísticos radican en la mala sincronización del estado de los cuartos y en un grave retraso en el sistema de alertas, lo que les impide distinguir las notificaciones actuales de las ya expiradas.
+
+Tras revisar la propuesta de VEYRA, el administrador destaca que la interfaz es mucho más nítida, amigable y bonita que las soluciones anteriores. Valora positivamente que los datos se almacenen correctamente, reflejando con precisión las fechas y el estatus en tiempo real. En cuanto a la preparación de su equipo para adoptar tecnología y dispositivos físicos, menciona que, aunque hay personal mayor con dificultades digitales, la distribución limpia de la aplicación facilitará enormemente su implementación en el día a día.
+
+A pesar de la buena impresión general, el entrevistado identificó puntos específicos para refinar el prototipo. En la sección de habitaciones, recomienda detallar con mayor claridad el "tipo" de cuarto, puesto que términos como "individual" o "doble" no siempre resultan obvios para todos. Asimismo, sugirió simplificar los estados o el "estatus", eliminando términos ambiguos o guiones intermedios (como los apartados de enfermería) para limitarse a indicadores directos y claros como "ocupado" o "habilitado".
+
+Manuel Alejandro califica la probabilidad de recomendar VEYRA a otros administradores con un 9 de 10. Fundamenta esta excelente nota en el gran diseño visual y en el correcto almacenamiento de la información, aclarando que el punto restante se debe exclusivamente a los pequeños detalles de claridad de texto mencionados. Concluye señalando que el sistema actual no presenta ninguna falla crítica o urgente, mostrando total confianza en el estado del prototipo.
+
+<hr>
+
+<h4>Entrevista 3 - Administrador de Casa de Reposo (Segmento 1)</h4>
 
 <table border="1" cellpadding="4" cellspacing="0">
   <tbody>
@@ -2775,7 +2879,7 @@ El diseño de las entrevistas se centró en obtener información cualitativa sob
     </tr>
     <tr>
       <td><strong>Fecha de Entrevista</strong></td>
-      <td>1/07/2026</td>
+      <td>01/07/2026</td>
     </tr>
     <tr>
       <td><strong>Duración</strong></td>
@@ -2783,16 +2887,19 @@ El diseño de las entrevistas se centró en obtener información cualitativa sob
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
-      <td>[Incluir URL del video de la entrevista 1]</td>
+      <td> https://tinyurl.com/nhkjd7xf  </td>
     </tr>
     <tr>
       <td><strong>Timing</strong></td>
-      <td>12:50 - 17:37</td>
+      <td>16:32 - 21:51</td>
     </tr>
   </tbody>
 </table>
 
 <p><strong>Screenshot del video:</strong></p>
+
+<br>
+
 ![Interview Administrator 1](/assets/img/chapter-VI/oscar1.png)
 
 <p><strong>Resumen de Respuestas:</strong></p>
@@ -2807,95 +2914,6 @@ Andrés califica la probabilidad de recomendar VEYRA a otros administradores con
 
 <hr>
 
-<h4>Entrevista 2 - Administrador de Casa de Reposo (Segmento 1)</h4>
-
-<table border="1" cellpadding="4" cellspacing="0">
-  <tbody>
-    <tr>
-      <td><strong>Nombre Completo</strong></td>
-      <td>Andrés Fernandez</td>
-    </tr>
-    <tr>
-      <td><strong>Edad</strong></td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <td><strong>Distrito</strong></td>
-      <td>Salamanca</td>
-    </tr>
-    <tr>
-      <td><strong>Ocupación</strong></td>
-      <td>Administrador de casa de reposo</td>
-    </tr>
-    <tr>
-      <td><strong>Fecha de Entrevista</strong></td>
-      <td>21/06/2026</td>
-    </tr>
-    <tr>
-      <td><strong>Duración</strong></td>
-      <td>4min 55 seg</td>
-    </tr>
-    <tr>
-      <td><strong>URL Microsoft Stream</strong></td>
-      <td>[Incluir URL del video de la entrevista 2]</td>
-    </tr>
-    <tr>
-      <td><strong>Timing</strong></td>
-      <td>17:37-21:59</td>
-    </tr>
-  </tbody>
-</table>
-
-![Interview Administrator 1](/assets/img/chapter-VI/oscar2.png)
-
-<p><strong>Resumen de Respuestas:</strong></p>
-
-<hr>
-
-
-<h4>Entrevista 3 - Administrador de Casa de Reposo (Segmento 1)</h4>
-
-<table border="1" cellpadding="4" cellspacing="0">
-  <tbody>
-    <tr>
-      <td><strong>Nombre Completo</strong></td>
-      <td>Alexander Gutierrez</td>
-    </tr>
-    <tr>
-      <td><strong>Edad</strong></td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <td><strong>Distrito</strong></td>
-      <td>San Isidro</td>
-    </tr>
-    <tr>
-      <td><strong>Ocupación</strong></td>
-      <td>Administrador de casa de reposo</td>
-    </tr>
-    <tr>
-      <td><strong>Fecha de Entrevista</strong></td>
-      <td>21/06/2026</td>
-    </tr>
-    <tr>
-      <td><strong>Duración</strong></td>
-      <td>5min 10 seg</td>
-    </tr>
-    <tr>
-      <td><strong>URL Microsoft Stream</strong></td>
-      <td>[Incluir URL del video de la entrevista 2]</td>
-    </tr>
-    <tr>
-      <td><strong>Timing</strong></td>
-      <td>21:59 - 26:47</td>
-    </tr>
-  </tbody>
-</table>
-
-![Interview Administrator 1](/assets/img/chapter-VI/oscar3.png)
-
-
-<p><strong>Resumen de Respuestas:</strong></p>
 
 <h4>Entrevista 1 - Familiar de Adulto Mayor (Segmento 2)</h4>
 
@@ -2923,15 +2941,15 @@ Andrés califica la probabilidad de recomendar VEYRA a otros administradores con
     </tr>
     <tr>
       <td><strong>Duración</strong></td>
-      <td>6:09</td>
+      <td>3 min 43 seg</td>
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
-      <td>[Incluir URL del video de la entrevista 1]</td>
+      <td> https://tinyurl.com/yzzak43z </td>
     </tr>
     <tr>
       <td><strong>Timing</strong></td>
-      <td>0:00 - 6:09</td>
+      <td>21:51 - 25:35</td>
     </tr>
   </tbody>
 </table>
@@ -2981,11 +2999,11 @@ La principal desconfianza de la usuaria no es tecnológica, sino operativa: teme
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
-      <td>[Incluir URL del video de la entrevista 2]</td>
+      <td> https://tinyurl.com/3jb9a68p </td>
     </tr>
     <tr>
       <td><strong>Timing</strong></td>
-      <td>6:09 - 10:47</td>
+      <td>25:35 - 30:13</td>
     </tr>
   </tbody>
 </table>
@@ -3035,11 +3053,11 @@ La principal duda o desconfianza de la entrevistada radica en la precisión téc
     </tr>
     <tr>
       <td><strong>URL Microsoft Stream</strong></td>
-      <td>[Incluir URL del video de la entrevista 2]</td>
+      <td> https://tinyurl.com/y3ehn8b7 </td>
     </tr>
     <tr>
       <td><strong>Timing</strong></td>
-      <td>10:47 - 18:12</td>
+      <td>30:13 - 37:38</td>
     </tr>
   </tbody>
 </table>
