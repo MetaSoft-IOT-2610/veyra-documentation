@@ -1526,4 +1526,4 @@ Bounded Context Analytics, incluyendo las tablas, columnas, claves primarias, cl
 foráneas y relaciones entre entidades. Refleja las decisiones de modelado de datos
 adoptadas para soportar el dominio.
 
-![Diagrama de base de datos](../assets/img/chapter-IV/analytics-backend-diagram.png)
+![Diagrama de base de datos](../assets/img/chapter-IV/analytics-database-diagram.png)
