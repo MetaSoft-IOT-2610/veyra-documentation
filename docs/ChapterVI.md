@@ -1076,11 +1076,11 @@ Los dispositivos IoT del entorno del hogar de reposo ejecutan dos aplicaciones e
 
 2. Configurar las variables de entorno en el archivo `.env`:
 
-   | Variable           | Descripción                                |
-         | ------------------ | ------------------------------------------ |
-   | `EDGE_DEVICE_PORT` | Puerto serie o red del dispositivo IoT     |
-   | `API_SYNC_URL`     | URL de la API de Azure para sincronización |
-   | `SQLITE_DB_PATH`   | Ruta local de la base de datos SQLite      |
+| Variable           | Descripción                                |
+| ------------------ | ------------------------------------------ |
+| `EDGE_DEVICE_PORT` | Puerto serie o red del dispositivo IoT     |
+| `API_SYNC_URL`     | URL de la API de Azure para sincronización |
+| `SQLITE_DB_PATH`   | Ruta local de la base de datos SQLite      |
 
 3. Instalar dependencias e iniciar el servicio:
 
