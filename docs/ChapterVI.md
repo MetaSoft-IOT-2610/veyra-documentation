@@ -1076,11 +1076,11 @@ Los dispositivos IoT del entorno del hogar de reposo ejecutan dos aplicaciones e
 
 2. Configurar las variables de entorno en el archivo `.env`:
 
-   | Variable           | Descripción                                |
-         | ------------------ | ------------------------------------------ |
-   | `EDGE_DEVICE_PORT` | Puerto serie o red del dispositivo IoT     |
-   | `API_SYNC_URL`     | URL de la API de Azure para sincronización |
-   | `SQLITE_DB_PATH`   | Ruta local de la base de datos SQLite      |
+| Variable           | Descripción                                |
+| ------------------ | ------------------------------------------ |
+| `EDGE_DEVICE_PORT` | Puerto serie o red del dispositivo IoT     |
+| `API_SYNC_URL`     | URL de la API de Azure para sincronización |
+| `SQLITE_DB_PATH`   | Ruta local de la base de datos SQLite      |
 
 3. Instalar dependencias e iniciar el servicio:
 
@@ -1660,11 +1660,12 @@ Backend:
 | MetaSoft-IOT-2610 | feature/tracking | f36949e | fix(tracking): remove UTF-8 BOM from Java files | vquijandria pushed 1 commit | 07/06/2026 |
 
 Edge app:
+
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
-|------------|--------|-----------|----------------|---------------------|--------------------|
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | veyra-tracking-service | main | 77333ee…77981ba | docs: updated the readme and added requirements.txt | Pushed 8 commits | 16/06/2026 |
 | veyra-tracking-service | develop | 77333ee…77981ba | docs: updated the readme and added requirements.txt | Pushed 8 commits | 16/06/2026 |
-| veyra-tracking-service | feature/tracking | 77333ee…77981ba | docs: updated the readme and added requirements.txt | Pushed 8 commits | 16/06/2026 |
+| veyra-tracking-service | feature/tracking | 77333ee77981ba | docs: updated the readme and added requirements.txt | Pushed 8 commits | 16/06/2026 |
 | veyra-tracking-service | feature/tracking | 77333ee | Initial commit | Created branch | 16/06/2026 |
 | veyra-tracking-service | develop | 77333ee | Initial commit | Created branch | 16/06/2026 |
 
@@ -2367,8 +2368,8 @@ Vista del dispositivo embebido enviando datos:
 
 **Video de demostración del Sprint 3:**
 
-> **Video de demostración:** [INSERTAR URL de Microsoft Stream / Clipchamp aquí]
-> **Duración:** [INSERTAR duración, ej. 5 min 30 seg]
+> **Video de demostración:** https://tinyurl.com/nktdvr8j
+> **Duración:** 5 min 9 seg
 >
 > El video muestra el flujo completo del sistema: registro y onboarding de un nuevo residente, monitoreo de signos vitales desde la web y la app móvil, recepción de una alerta push ante una anomalía detectada por el dispositivo IoT, y la gestión de actividades desde el perfil de personal asistencial.
 
