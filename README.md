@@ -429,8 +429,9 @@ Este gráfico muestra la aplicación de GitFlow en el proyecto, evidenciando la 
         - [6.3.3. Evaluaciones según heurísticas](docs/ChapterVI.md#633-evaluaciones-según-heurísticas)
     - [6.4. Video About-the-Product](docs/ChapterVI.md#64-video-about-the-product)
 
-- [Conclusiones](docs/conclusions.md#conclusiones)
-    - [Conclusiones y recomendaciones](docs/conclusions.md#conclusiones-y-recomendaciones)
+- [Conclusiones y recomendaciones](docs/conclusions.md#conclusiones-y-recomendaciones)
+    - [Conclusiones](docs/conclusions.md#conclusiones)
+    - [Recomendaciones](docs/conclusions.md#recomendaciones)
     - [Video About-the-Team](docs/anexos.md#anexo-c-videos-del-proyecto)
 
 - [Bibliografía](docs/Bibliography.md#bibliografía)
