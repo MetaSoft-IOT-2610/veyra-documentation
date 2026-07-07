@@ -1660,11 +1660,12 @@ Backend:
 | MetaSoft-IOT-2610 | feature/tracking | f36949e | fix(tracking): remove UTF-8 BOM from Java files | vquijandria pushed 1 commit | 07/06/2026 |
 
 Edge app:
+
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
-|------------|--------|-----------|----------------|---------------------|--------------------|
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | veyra-tracking-service | main | 77333ee…77981ba | docs: updated the readme and added requirements.txt | Pushed 8 commits | 16/06/2026 |
 | veyra-tracking-service | develop | 77333ee…77981ba | docs: updated the readme and added requirements.txt | Pushed 8 commits | 16/06/2026 |
-| veyra-tracking-service | feature/tracking | 77333ee…77981ba | docs: updated the readme and added requirements.txt | Pushed 8 commits | 16/06/2026 |
+| veyra-tracking-service | feature/tracking | 77333ee77981ba | docs: updated the readme and added requirements.txt | Pushed 8 commits | 16/06/2026 |
 | veyra-tracking-service | feature/tracking | 77333ee | Initial commit | Created branch | 16/06/2026 |
 | veyra-tracking-service | develop | 77333ee | Initial commit | Created branch | 16/06/2026 |
 
