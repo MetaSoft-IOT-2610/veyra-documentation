@@ -1414,6 +1414,7 @@ El nombre del contexto en el código es `payments` (el paquete es `platform.paym
 
 El diagrama de componentes de este contexto se modela en Structurizr DSL (`docs/c4/software-architecture.dsl`, vista `component api "PaymentsComponents"`), a partir de los controladores, servicios de aplicación, agregados de dominio, repositorios y fachadas ACL reales descritos en las secciones anteriores. Renderízalo con Structurizr Lite o `structurizr export` y reemplaza esta nota por la imagen (PNG/SVG) exportada.
 
+![subscriptions components](../assets/img/chapter-IV/PaymentsComponents.png)
 
 #### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1427,7 +1428,7 @@ El diagrama de clases de la capa de dominio representa las entidades, objetos de
 valor, agregados e interfaces que conforman el modelo del negocio del contexto
 Subscriptions & Payments. Muestra las relaciones de composición, herencia y
 dependencia entre los elementos del dominio.
-(
+
 ![subscriptions back](../assets/img/chapter-IV/payments-backend-diagram.png)
 
 ##### 4.2.9.6.2. Bounded Context Database Design Diagram
