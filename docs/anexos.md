@@ -7,7 +7,7 @@ A continuación se listan los enlaces a los entornos de producción y los reposi
 
 | Recurso                                         | URL                                                                                                                                      |
 |-------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| **Repositorio Project Report**                  | [https://github.com/MetaSoft-IOT-2610/veyra-documentation/tree/main](https://github.com/MetaSoft-IOT-2610/veyra-documentation/tree/main) |
+| **Repositorio Project Report**                  | [https://github.com/MetaSoft-IOT-2610/veyra-report/tree/main](https://github.com/MetaSoft-IOT-2610/veyra-report/tree/main) |
 | **Landing Page (Cloudflare Pages)**             | [https://veyra.metasoft.pe](https://veyra.metasoft.pe)                                                                                   |
 | **Frontend Web Application (Cloudflare Pages)** | [https://app.veyra.metasoft.pe/](https://app.veyra.metasoft.pe/)                                                                         |
 | **Repositorio Landing Page**                    | [https://github.com/MetaSoft-IOT-2610/veyra-landing-page](https://github.com/MetaSoft-IOT-2610/veyra-landing-page)                       |
@@ -24,6 +24,7 @@ Registro histórico de todas las exposiciones y videos promocionales presentados
 | **Video de Exposición AV1** | Microsoft Stream | [https://bit.ly/42zMn04 ](https://bit.ly/42zMn04 ) |
 | **Video de Exposición TB1** | Microsoft Stream | [https://bit.ly/4nvJhnt](https://bit.ly/4nvJhnt)   | 
 | **Video de Exposición AV2** | Microsoft Stream | [http://bit.ly/4vlnYrV ](http://bit.ly/4vlnYrV)    |
+| **Video de Exposición TB2** | Microsoft Stream | [https://tinyurl.com/mvkkrf9u](https://tinyurl.com/mvkkrf9u)   | 
 
 
 #### Anexo C: Videos del Proyecto
