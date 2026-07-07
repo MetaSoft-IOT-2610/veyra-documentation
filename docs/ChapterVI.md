@@ -125,6 +125,12 @@ A continuación, se describe la gestión del código fuente, también conocida p
 
 4. [ ] URL del repositorio del Back-End: veyra-backend - https://github.com/MetaSoft-IOT-2610/veyra-backend
 
+5. [ ] URL del repositorio del Mobile: veyra-mobile - https://github.com/MetaSoft-IOT-2610/Veyra-Mobile-Application
+  
+6. [ ] URL del repositorio del Embedded: veyra-embedded-app  - https://github.com/MetaSoft-IOT-2610/veyra-embedded-app
+     
+7. [ ] URL del repositorio del Edge: veyra-edge - https://github.com/MetaSoft-IOT-2610/veyra-edge
+
 **GitFlow**
 
 GitFlow es un modelo alternativo para la creación de ramas en Git que se ha convertido en una herramienta esencial para muchos desarrolladores en los últimos años. Este flujo de trabajo de control de versiones, desarrollado y popularizado por Vicent Driessen, desempeña un papel crucial en la gestión de las versiones de un código, facilitando la creación ordenada de nuevas características (Features) y correcciones de problemas urgentes (Hotfixes).
